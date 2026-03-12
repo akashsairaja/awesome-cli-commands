@@ -4,5 +4,7 @@
   "subcategoryId": "basics",
   "title": "Clone repository",
   "command": "git clone <url>",
-  "description": "Clone a repository to local machine."
+  "description": "Clone a remote repository to your local machine.",
+  "tags": ["clone", "download", "remote"],
+  "example": "git clone https://github.com/user/repo.git"
 }

@@ -4,5 +4,7 @@
   "subcategoryId": "basics",
   "title": "Initialize repository",
   "command": "git init",
-  "description": "Create a new Git repository."
+  "description": "Create a new Git repository in the current directory.",
+  "tags": ["init", "setup", "new-project"],
+  "example": "cd my-project && git init"
 }

@@ -4,5 +4,7 @@
   "subcategoryId": "basics",
   "title": "Clone with depth",
   "command": "git clone --depth 1 <url>",
-  "description": "Shallow clone with only latest commit."
+  "description": "Shallow clone with only the latest commit for faster downloads.",
+  "tags": ["clone", "shallow", "performance", "ci"],
+  "example": "git clone --depth 1 https://github.com/torvalds/linux.git"
 }

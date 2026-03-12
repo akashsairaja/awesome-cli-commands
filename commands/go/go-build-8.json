@@ -1,0 +1,8 @@
+{
+  "id": "go-build-8",
+  "categoryId": "go",
+  "subcategoryId": "go-build",
+  "title": "Build stripped binary",
+  "command": "go build -ldflags=\"-w -s\"",
+  "description": "Strip debug info for smaller binary size."
+}

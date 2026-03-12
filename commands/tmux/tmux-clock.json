@@ -1,0 +1,9 @@
+{
+  "id": "tmux-clock",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-config",
+  "title": "Show clock",
+  "command": "Ctrl+b t",
+  "description": "Display clock in current pane",
+  "tags": ["clock", "time", "display"]
+}

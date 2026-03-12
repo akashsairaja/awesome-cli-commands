@@ -1,0 +1,8 @@
+{
+  "id": "snow-24",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-streamlit",
+  "title": "Describe Streamlit app",
+  "command": "snow streamlit describe <app-name>",
+  "description": "Get details about a Streamlit app."
+}

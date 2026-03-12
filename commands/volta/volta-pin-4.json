@@ -1,0 +1,8 @@
+{
+  "id": "volta-pin-4",
+  "categoryId": "volta",
+  "subcategoryId": "volta-pin",
+  "title": "View pinned tools",
+  "command": "cat package.json | jq '.volta'",
+  "description": "View Volta configuration in package.json."
+}

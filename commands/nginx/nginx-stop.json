@@ -1,0 +1,9 @@
+{
+  "id": "nginx-stop",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-control",
+  "title": "Stop Nginx",
+  "command": "sudo nginx -s stop",
+  "description": "Stop Nginx server immediately",
+  "tags": ["stop", "kill", "terminate"]
+}

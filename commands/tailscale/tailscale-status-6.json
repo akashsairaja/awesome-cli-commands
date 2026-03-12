@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-status-6",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-status",
+  "title": "Status as JSON",
+  "command": "tailscale status --json",
+  "description": "Output status in JSON format for scripting."
+}

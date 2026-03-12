@@ -1,0 +1,8 @@
+{
+  "id": "bash-18",
+  "categoryId": "bash",
+  "subcategoryId": "variables",
+  "title": "Default value",
+  "command": "echo ${VAR:-default}",
+  "description": "Use default if variable unset."
+}

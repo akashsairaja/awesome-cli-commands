@@ -1,0 +1,8 @@
+{
+  "id": "bruno-env-6",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-env",
+  "title": "Override env variable",
+  "command": "bru run --env staging --env-var baseUrl=http://localhost:3000",
+  "description": "Override a single variable at runtime."
+}

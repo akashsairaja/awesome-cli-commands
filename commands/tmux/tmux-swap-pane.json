@@ -1,0 +1,9 @@
+{
+  "id": "tmux-swap-pane",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-panes",
+  "title": "Swap panes",
+  "command": "Ctrl+b {  or  Ctrl+b }",
+  "description": "Swap pane with previous/next",
+  "tags": ["pane", "swap", "move"]
+}

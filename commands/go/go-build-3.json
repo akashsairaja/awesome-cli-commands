@@ -1,0 +1,8 @@
+{
+  "id": "go-build-3",
+  "categoryId": "go",
+  "subcategoryId": "go-build",
+  "title": "Build with verbose",
+  "command": "go build -v",
+  "description": "Verbose output showing compiled packages."
+}

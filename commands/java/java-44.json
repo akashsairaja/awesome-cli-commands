@@ -1,0 +1,8 @@
+{
+  "id": "java-44",
+  "categoryId": "java",
+  "subcategoryId": "java-diagnostics",
+  "title": "Monitor GC activity",
+  "command": "jstat -gc <pid> 1000",
+  "description": "Display GC statistics every second."
+}

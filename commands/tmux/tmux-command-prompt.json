@@ -1,0 +1,9 @@
+{
+  "id": "tmux-command-prompt",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-config",
+  "title": "Command prompt",
+  "command": "Ctrl+b :",
+  "description": "Open tmux command prompt",
+  "tags": ["command", "prompt", "input"]
+}

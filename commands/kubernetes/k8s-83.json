@@ -1,0 +1,8 @@
+{
+  "id": "k8s-83",
+  "categoryId": "kubernetes",
+  "subcategoryId": "ingress",
+  "title": "Create ingress",
+  "command": "kubectl create ingress <name> --rule='host/path=service:port'",
+  "description": "Create an ingress rule."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "spark-gs-3",
+  "title": "Launch PySpark shell",
+  "command": "pyspark",
+  "description": "Start an interactive PySpark shell for running Spark with Python",
+  "categoryId": "spark",
+  "subcategoryId": "getting-started"
+}

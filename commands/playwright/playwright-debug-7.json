@@ -1,0 +1,8 @@
+{
+  "id": "playwright-debug-7",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-debug",
+  "title": "View trace file",
+  "command": "npx playwright show-trace trace.zip",
+  "description": "Open trace viewer for debugging."
+}

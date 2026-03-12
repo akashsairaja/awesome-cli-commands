@@ -1,0 +1,8 @@
+{
+  "id": "minikube-docker-3",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-docker",
+  "title": "Load local image",
+  "command": "minikube image load myapp:latest",
+  "description": "Load image into minikube."
+}

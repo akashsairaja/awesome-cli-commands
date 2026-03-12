@@ -1,0 +1,8 @@
+{
+  "id": "volta-config-5",
+  "categoryId": "volta",
+  "subcategoryId": "volta-config",
+  "title": "Fish completions",
+  "command": "volta completions fish",
+  "description": "Generate fish shell completions."
+}

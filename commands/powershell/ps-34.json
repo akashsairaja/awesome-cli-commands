@@ -1,0 +1,8 @@
+{
+  "id": "ps-34",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-network",
+  "title": "Get IP addresses",
+  "command": "Get-NetIPAddress",
+  "description": "List all IP addresses."
+}

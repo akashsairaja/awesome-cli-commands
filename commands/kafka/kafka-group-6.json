@@ -1,0 +1,8 @@
+{
+  "id": "kafka-group-6",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-groups",
+  "title": "Delete group",
+  "command": "kafka-consumer-groups.sh --delete --group my-group --bootstrap-server localhost:9092",
+  "description": "Delete a consumer group."
+}

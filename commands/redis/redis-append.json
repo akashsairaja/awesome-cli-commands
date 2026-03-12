@@ -1,0 +1,9 @@
+{
+  "id": "redis-append",
+  "categoryId": "redis",
+  "subcategoryId": "redis-strings",
+  "title": "Append to string",
+  "command": "APPEND key value",
+  "description": "Append value to existing string",
+  "tags": ["append", "string", "concat"]
+}

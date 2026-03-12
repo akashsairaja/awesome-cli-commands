@@ -1,0 +1,9 @@
+{
+  "id": "azure-webapp-list",
+  "categoryId": "azure",
+  "subcategoryId": "azure-webapp",
+  "title": "List Web Apps",
+  "command": "az webapp list --output table",
+  "description": "List all web apps in subscription",
+  "tags": ["webapp", "list"]
+}

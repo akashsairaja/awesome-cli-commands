@@ -1,0 +1,9 @@
+{
+  "id": "jq-delete-key",
+  "categoryId": "jq",
+  "subcategoryId": "jq-objects",
+  "title": "Delete key",
+  "command": "cat file.json | jq 'del(.key)'",
+  "description": "Remove key from object",
+  "tags": ["object", "delete", "remove"]
+}

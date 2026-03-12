@@ -1,0 +1,8 @@
+{
+  "id": "ps-16",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-processes",
+  "title": "Start process",
+  "command": "Start-Process notepad",
+  "description": "Start a new process."
+}

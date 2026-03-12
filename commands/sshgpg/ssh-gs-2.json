@@ -1,0 +1,8 @@
+{
+  "id": "ssh-gs-2",
+  "title": "Generate SSH key (Ed25519)",
+  "command": "ssh-keygen -t ed25519 -C \"your_email@example.com\"",
+  "description": "Generate a new Ed25519 SSH key pair with an email comment",
+  "categoryId": "sshgpg",
+  "subcategoryId": "getting-started"
+}

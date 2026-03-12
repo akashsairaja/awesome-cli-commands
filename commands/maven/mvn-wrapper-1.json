@@ -1,0 +1,8 @@
+{
+  "id": "mvn-wrapper-1",
+  "categoryId": "maven",
+  "subcategoryId": "mvn-wrapper",
+  "title": "Generate wrapper (script-only)",
+  "command": "mvn wrapper:wrapper",
+  "description": "Generate mvnw and mvnw.cmd scripts using the default only-script type. Downloads Maven via wget/curl or PowerShell at build time."
+}

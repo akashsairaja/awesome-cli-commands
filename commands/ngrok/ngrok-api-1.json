@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-api-1",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-api",
+  "title": "List tunnels (API)",
+  "command": "curl http://localhost:4040/api/tunnels",
+  "description": "Get active tunnels via local API."
+}

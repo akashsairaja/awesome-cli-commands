@@ -1,0 +1,8 @@
+{
+  "id": "k8s-gs-1",
+  "title": "Install kubectl (macOS)",
+  "command": "brew install kubectl",
+  "description": "Install kubectl CLI using Homebrew on macOS",
+  "categoryId": "kubernetes",
+  "subcategoryId": "getting-started"
+}

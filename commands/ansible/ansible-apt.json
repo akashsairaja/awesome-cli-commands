@@ -1,0 +1,9 @@
+{
+  "id": "ansible-apt",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-adhoc",
+  "title": "Install Package (Apt)",
+  "command": "ansible all -m apt -a \"name=nginx state=present\" -b",
+  "description": "Install a package using apt with sudo",
+  "tags": ["apt", "package", "install"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "db-101",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Dump all databases",
+  "command": "mysqldump -u root -p --all-databases > all_dbs.sql",
+  "description": "Export all databases including users and grants."
+}

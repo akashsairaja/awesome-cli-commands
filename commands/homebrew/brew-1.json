@@ -1,0 +1,8 @@
+{
+  "id": "brew-1",
+  "categoryId": "homebrew",
+  "subcategoryId": "packages",
+  "title": "Install package",
+  "command": "brew install <package>",
+  "description": "Install a Homebrew package."
+}

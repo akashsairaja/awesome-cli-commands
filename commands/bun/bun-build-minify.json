@@ -1,0 +1,9 @@
+{
+  "id": "bun-build-minify",
+  "categoryId": "bun",
+  "subcategoryId": "bun-build",
+  "title": "Build Minified",
+  "command": "bun build ./src/index.ts --outdir ./dist --minify",
+  "description": "Bundle with minification",
+  "tags": ["build", "minify", "production"]
+}

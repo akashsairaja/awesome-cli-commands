@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-share-4",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-share",
+  "title": "Stop serving",
+  "command": "tailscale serve off",
+  "description": "Stop serving all ports."
+}

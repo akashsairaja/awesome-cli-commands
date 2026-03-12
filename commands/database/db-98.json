@@ -1,0 +1,8 @@
+{
+  "id": "db-98",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Repair table",
+  "command": "REPAIR TABLE tablename;",
+  "description": "Repair a corrupted MyISAM table."
+}

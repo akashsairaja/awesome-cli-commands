@@ -1,0 +1,8 @@
+{
+  "id": "podman-rootless-1",
+  "categoryId": "podman",
+  "subcategoryId": "podman-rootless",
+  "title": "Check rootless",
+  "command": "podman info --format '{{.Host.Security.Rootless}}'",
+  "description": "Check if running rootless."
+}

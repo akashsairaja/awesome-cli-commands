@@ -1,0 +1,8 @@
+{
+  "id": "bash-88",
+  "categoryId": "bash",
+  "subcategoryId": "conditionals",
+  "title": "Is writable",
+  "command": "[ -w file ] && echo \"writable\"",
+  "description": "Check if file is writable."
+}

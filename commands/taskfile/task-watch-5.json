@@ -1,0 +1,8 @@
+{
+  "id": "task-watch-5",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-watch",
+  "title": "Timestamp method",
+  "command": "tasks:\n  build:\n    method: timestamp\n    sources:\n      - src/**/*.go\n    generates:\n      - bin/app\n    cmds:\n      - go build -o bin/app",
+  "description": "Use timestamps for up-to-date checks."
+}

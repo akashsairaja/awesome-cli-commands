@@ -1,0 +1,8 @@
+{
+  "id": "snow-14",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-sql",
+  "title": "SQL with database context",
+  "command": "snow sql -q \"SELECT ...\" --database MY_DB --schema MY_SCHEMA",
+  "description": "Execute query with specific database context."
+}

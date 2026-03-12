@@ -1,0 +1,8 @@
+{
+  "id": "minikube-addons-2",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-addons",
+  "title": "Enable dashboard",
+  "command": "minikube addons enable dashboard",
+  "description": "Enable Kubernetes dashboard."
+}

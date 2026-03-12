@@ -1,0 +1,8 @@
+{
+  "id": "grafana-dashboard-7",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-dashboard",
+  "title": "Get dashboard permissions",
+  "command": "curl -s http://localhost:3000/api/dashboards/uid/DASHBOARD_UID/permissions -H 'Authorization: Bearer TOKEN'",
+  "description": "View dashboard access permissions."
+}

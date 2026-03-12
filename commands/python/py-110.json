@@ -1,0 +1,8 @@
+{
+  "id": "py-110",
+  "categoryId": "python",
+  "subcategoryId": "python-ruff",
+  "title": "Check code",
+  "command": "ruff check .",
+  "description": "Lint all files in current directory."
+}

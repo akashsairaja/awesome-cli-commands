@@ -1,0 +1,9 @@
+{
+  "id": "netlify-logout",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-env",
+  "title": "Logout from Netlify",
+  "command": "netlify logout",
+  "description": "Logout from Netlify",
+  "tags": ["logout", "auth"]
+}

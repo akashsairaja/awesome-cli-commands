@@ -1,0 +1,8 @@
+{
+  "id": "fzf-3",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-fzf",
+  "title": "Open in editor",
+  "command": "vim $(fzf)",
+  "description": "Find and open file in Vim."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-stack-1",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-stack",
+  "title": "Create stack",
+  "command": "pulumi stack init dev",
+  "description": "Create a new stack."
+}

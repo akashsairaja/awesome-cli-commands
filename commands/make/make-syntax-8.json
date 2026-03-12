@@ -1,0 +1,8 @@
+{
+  "id": "make-syntax-8",
+  "categoryId": "make",
+  "subcategoryId": "make-syntax",
+  "title": "Shell function",
+  "command": "FILES := $(shell find src -name '*.c')",
+  "description": "Capture shell command output."
+}

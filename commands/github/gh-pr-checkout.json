@@ -1,0 +1,9 @@
+{
+  "id": "gh-pr-checkout",
+  "categoryId": "github",
+  "subcategoryId": "gh-pr",
+  "title": "Checkout pull request",
+  "command": "gh pr checkout <number>",
+  "description": "Check out a pull request branch locally",
+  "tags": ["pr", "checkout", "branch"]
+}

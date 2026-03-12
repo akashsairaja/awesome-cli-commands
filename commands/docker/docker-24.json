@@ -1,0 +1,8 @@
+{
+  "id": "docker-24",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Inspect container",
+  "command": "docker inspect <container>",
+  "description": "Show detailed container information."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "temporal-namespace-4",
+  "categoryId": "temporal",
+  "subcategoryId": "namespace",
+  "title": "List namespaces",
+  "command": "temporal operator namespace list",
+  "description": "Display all namespaces on the server."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-storage-rb",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-storage",
+  "title": "Delete Bucket",
+  "command": "gsutil rb gs://<bucket-name>",
+  "description": "Delete an empty bucket",
+  "tags": ["storage", "delete", "bucket"]
+}

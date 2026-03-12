@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-status-14",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-status",
+  "title": "Check version",
+  "command": "tailscale version",
+  "description": "Show Tailscale client and daemon version."
+}

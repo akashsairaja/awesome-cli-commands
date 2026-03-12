@@ -1,0 +1,8 @@
+{
+  "id": "db-65",
+  "categoryId": "database",
+  "subcategoryId": "mongodb",
+  "title": "Collection stats",
+  "command": "db.collection.stats()",
+  "description": "Show collection storage statistics."
+}

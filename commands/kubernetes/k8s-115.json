@@ -1,0 +1,8 @@
+{
+  "id": "k8s-115",
+  "categoryId": "kubernetes",
+  "subcategoryId": "hpa",
+  "title": "Create HPA",
+  "command": "kubectl autoscale deployment/<name> --min=2 --max=10 --cpu-percent=80",
+  "description": "Create autoscaler for a deployment."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "task-run-2",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-run",
+  "title": "Run specific task",
+  "command": "task build",
+  "description": "Run a specific task by name."
+}

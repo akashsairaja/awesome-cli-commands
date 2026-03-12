@@ -1,0 +1,8 @@
+{
+  "id": "vim-50",
+  "categoryId": "vim",
+  "subcategoryId": "text-objects",
+  "title": "Change inside tag",
+  "command": "cit",
+  "description": "Replace text inside HTML/XML tag."
+}

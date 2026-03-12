@@ -1,0 +1,9 @@
+{
+  "id": "firebase-logout",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-deploy",
+  "title": "Logout from Firebase",
+  "command": "firebase logout",
+  "description": "Logout from Firebase",
+  "tags": ["logout", "auth"]
+}

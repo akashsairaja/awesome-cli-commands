@@ -1,0 +1,9 @@
+{
+  "id": "nginx-perf-workers",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-performance",
+  "title": "Worker process tuning",
+  "command": "worker_processes auto; worker_rlimit_nofile 100000;",
+  "description": "Auto-configure workers per CPU core",
+  "tags": ["performance", "workers", "cpu", "tuning"]
+}

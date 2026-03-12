@@ -1,0 +1,8 @@
+{
+  "id": "databricks-11",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-jobs",
+  "title": "Get job details",
+  "command": "databricks jobs get --job-id <job-id>",
+  "description": "Get detailed information about a specific job."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "mvn-profile-1",
+  "categoryId": "maven",
+  "subcategoryId": "profiles",
+  "title": "Build with profile",
+  "command": "mvn install -Pprod",
+  "description": "Activate named profile."
+}

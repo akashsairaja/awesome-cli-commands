@@ -1,0 +1,56 @@
+{
+  "id": "terraform-remote-backend-setup",
+  "stackId": "terraform",
+  "name": "Configure S3/GCS Remote State Backend",
+  "description": "Set up a remote state backend with S3 or GCS for team collaboration, state locking, and disaster recovery.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "tags": ["backend", "remote", "s3", "gcs", "state-locking"],
+  "prerequisites": ["Terraform installed", "AWS or GCP credentials configured"],
+  "steps": [
+    {
+      "title": "Create the S3 bucket for state storage",
+      "description": "Create a versioned, encrypted S3 bucket to store Terraform state files.",
+      "command": "aws s3api create-bucket --bucket my-tf-state-bucket --region us-east-1\naws s3api put-bucket-versioning --bucket my-tf-state-bucket --versioning-configuration Status=Enabled\naws s3api put-bucket-encryption --bucket my-tf-state-bucket --server-side-encryption-configuration '{\"Rules\":[{\"ApplyServerSideEncryptionByDefault\":{\"SSEAlgorithm\":\"AES256\"}}]}'",
+      "tip": "Enable versioning to recover from accidental state corruption or deletion."
+    },
+    {
+      "title": "Create a DynamoDB table for state locking",
+      "description": "Create a DynamoDB table to enable state locking, preventing concurrent operations.",
+      "command": "aws dynamodb create-table --table-name tf-state-lock --attribute-definitions AttributeName=LockID,AttributeType=S --key-schema AttributeName=LockID,KeyType=HASH --billing-mode PAY_PER_REQUEST"
+    },
+    {
+      "title": "Configure the backend in Terraform",
+      "description": "Add the S3 backend configuration to your Terraform code.",
+      "command": "cat <<'EOF' > backend.tf\nterraform {\n  backend \"s3\" {\n    bucket         = \"my-tf-state-bucket\"\n    key            = \"global/terraform.tfstate\"\n    region         = \"us-east-1\"\n    dynamodb_table = \"tf-state-lock\"\n    encrypt        = true\n  }\n}\nEOF"
+    },
+    {
+      "title": "Initialize the backend",
+      "description": "Run terraform init to configure the backend and migrate any existing local state.",
+      "command": "terraform init",
+      "warning": "If you have existing local state, Terraform will ask if you want to migrate it. Answer 'yes' to preserve your resources."
+    },
+    {
+      "title": "Verify the backend is working",
+      "description": "Confirm that state is being stored remotely and locking is functional.",
+      "command": "terraform state list && aws s3 ls s3://my-tf-state-bucket/global/"
+    }
+  ],
+  "fullScript": "#!/bin/bash\nset -euo pipefail\n\n# Terraform Remote Backend Setup (AWS S3 + DynamoDB)\n\nBUCKET_NAME=\"${1:?Usage: $0 <bucket-name> [region]}\"\nREGION=\"${2:-us-east-1}\"\nTABLE_NAME=\"tf-state-lock\"\n\necho \"==> Creating S3 bucket: ${BUCKET_NAME}...\"\nif [ \"$REGION\" = \"us-east-1\" ]; then\n  aws s3api create-bucket --bucket \"$BUCKET_NAME\" --region \"$REGION\"\nelse\n  aws s3api create-bucket --bucket \"$BUCKET_NAME\" --region \"$REGION\" --create-bucket-configuration LocationConstraint=\"$REGION\"\nfi\n\necho \"==> Enabling versioning...\"\naws s3api put-bucket-versioning --bucket \"$BUCKET_NAME\" --versioning-configuration Status=Enabled\n\necho \"==> Enabling encryption...\"\naws s3api put-bucket-encryption --bucket \"$BUCKET_NAME\" --server-side-encryption-configuration '{\"Rules\":[{\"ApplyServerSideEncryptionByDefault\":{\"SSEAlgorithm\":\"AES256\"}}]}'\n\necho \"==> Blocking public access...\"\naws s3api put-public-access-block --bucket \"$BUCKET_NAME\" --public-access-block-configuration BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true\n\necho \"==> Creating DynamoDB lock table: ${TABLE_NAME}...\"\naws dynamodb create-table   --table-name \"$TABLE_NAME\"   --attribute-definitions AttributeName=LockID,AttributeType=S   --key-schema AttributeName=LockID,KeyType=HASH   --billing-mode PAY_PER_REQUEST   --region \"$REGION\" 2>/dev/null || echo \"Table may already exist\"\n\necho \"\"\necho \"==> Backend ready. Add this to your Terraform config:\"\ncat <<EOF\n\nterraform {\n  backend \"s3\" {\n    bucket         = \"$BUCKET_NAME\"\n    key            = \"global/terraform.tfstate\"\n    region         = \"$REGION\"\n    dynamodb_table = \"$TABLE_NAME\"\n    encrypt        = true\n  }\n}\nEOF\n\necho \"\"\necho \"Then run: terraform init\"",
+  "faq": [
+    {
+      "question": "Why use DynamoDB for state locking?",
+      "answer": "DynamoDB provides atomic lock operations. Without locking, two people running terraform apply simultaneously could corrupt the state file by writing conflicting changes."
+    },
+    {
+      "question": "Can I use GCS instead of S3?",
+      "answer": "Yes. Replace the S3 backend with: backend \"gcs\" { bucket = \"my-tf-state\" prefix = \"terraform/state\" }. GCS has built-in locking so no separate lock table is needed."
+    },
+    {
+      "question": "How do I share the backend across a team?",
+      "answer": "Commit the backend.tf to version control. Each team member runs terraform init, which configures their local Terraform to use the shared remote backend. Ensure all team members have cloud credentials."
+    }
+  ],
+  "relatedRecipes": ["terraform-state-migration", "terraform-secret-management"],
+  "lastUpdated": "2026-03-11"
+}

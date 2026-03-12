@@ -1,0 +1,8 @@
+{
+  "id": "hf-30",
+  "categoryId": "huggingface",
+  "subcategoryId": "hf-cache",
+  "title": "Scan cache",
+  "command": "huggingface-cli scan-cache",
+  "description": "Show all cached models and their sizes."
+}

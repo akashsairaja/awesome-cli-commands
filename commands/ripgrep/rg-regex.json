@@ -1,0 +1,9 @@
+{
+  "id": "rg-regex",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-search",
+  "title": "Regex search",
+  "command": "rg \"func\\w+\\(\"",
+  "description": "Search using regular expression",
+  "tags": ["search", "regex", "pattern"]
+}

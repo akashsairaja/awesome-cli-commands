@@ -1,0 +1,8 @@
+{
+  "id": "java-33",
+  "categoryId": "java",
+  "subcategoryId": "java-tools",
+  "title": "Generate Javadoc",
+  "command": "javadoc -d docs -sourcepath src -subpackages com.example",
+  "description": "Generate HTML API documentation from source code."
+}

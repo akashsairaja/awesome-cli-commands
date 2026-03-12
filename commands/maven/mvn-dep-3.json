@@ -1,0 +1,8 @@
+{
+  "id": "mvn-dep-3",
+  "categoryId": "maven",
+  "subcategoryId": "dependencies",
+  "title": "Resolve dependencies",
+  "command": "mvn dependency:resolve",
+  "description": "Download all dependencies."
+}

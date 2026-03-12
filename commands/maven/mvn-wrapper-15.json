@@ -1,0 +1,8 @@
+{
+  "id": "mvn-wrapper-15",
+  "categoryId": "maven",
+  "subcategoryId": "mvn-wrapper",
+  "title": "Use custom repository for wrapper",
+  "command": "MVNW_REPOURL=https://repo.example.com/maven2 ./mvnw clean install",
+  "description": "Download Maven distribution from an internal repository manager instead of Apache."
+}

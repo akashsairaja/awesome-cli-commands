@@ -1,0 +1,8 @@
+{
+  "id": "pg-io-2",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-import",
+  "title": "Copy from CSV",
+  "command": "\\copy users FROM 'users.csv' WITH CSV HEADER",
+  "description": "Import data from CSV file."
+}

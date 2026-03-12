@@ -1,0 +1,8 @@
+{
+  "id": "xh-output-13",
+  "categoryId": "xh",
+  "subcategoryId": "xh-output",
+  "title": "Print request only",
+  "command": "xh --print=HB GET https://api.example.com",
+  "description": "Print request headers (H) and body (B) only."
+}

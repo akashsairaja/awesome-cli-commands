@@ -1,0 +1,9 @@
+{
+  "id": "azure-nsg-create",
+  "categoryId": "azure",
+  "subcategoryId": "azure-network",
+  "title": "Create Network Security Group",
+  "command": "az network nsg create --resource-group <rg> --name <nsg-name>",
+  "description": "Create a network security group",
+  "tags": ["nsg", "create", "firewall"]
+}

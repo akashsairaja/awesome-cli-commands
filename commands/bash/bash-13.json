@@ -1,0 +1,8 @@
+{
+  "id": "bash-13",
+  "categoryId": "bash",
+  "subcategoryId": "scripting",
+  "title": "Error trap",
+  "command": "trap 'echo \"Error on line $LINENO\"' ERR",
+  "description": "Handle errors with line number."
+}

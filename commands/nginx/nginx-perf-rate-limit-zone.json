@@ -1,0 +1,9 @@
+{
+  "id": "nginx-perf-rate-limit-zone",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-performance",
+  "title": "Rate limit per IP",
+  "command": "limit_req_zone $binary_remote_addr zone=mylimit:10m rate=10r/s;",
+  "description": "Limit each IP to 10 requests per second",
+  "tags": ["performance", "rate-limit", "throttle", "ip"]
+}

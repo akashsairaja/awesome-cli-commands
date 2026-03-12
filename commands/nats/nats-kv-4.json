@@ -1,0 +1,8 @@
+{
+  "id": "nats-kv-4",
+  "categoryId": "nats",
+  "subcategoryId": "nats-kv",
+  "title": "Get value",
+  "command": "nats kv get my-kv key1",
+  "description": "Retrieve value for key."
+}

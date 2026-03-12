@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-sql-describe",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-sql",
+  "title": "Describe SQL Instance",
+  "command": "gcloud sql instances describe <name>",
+  "description": "Get detailed info about a Cloud SQL instance",
+  "tags": ["sql", "describe", "info"]
+}

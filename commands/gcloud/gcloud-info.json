@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-info",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-auth",
+  "title": "Show gcloud Info",
+  "command": "gcloud info",
+  "description": "Display gcloud CLI properties, installation path, and active configuration",
+  "tags": ["info", "debug", "diagnostics"]
+}

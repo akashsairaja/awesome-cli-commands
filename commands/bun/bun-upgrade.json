@@ -1,0 +1,9 @@
+{
+  "id": "bun-upgrade",
+  "categoryId": "bun",
+  "subcategoryId": "bun-tools",
+  "title": "Upgrade Bun",
+  "command": "bun upgrade",
+  "description": "Update Bun to latest version",
+  "tags": ["upgrade", "update", "version"]
+}

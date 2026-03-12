@@ -1,0 +1,8 @@
+{
+  "id": "spark-5",
+  "categoryId": "spark",
+  "subcategoryId": "spark-submit",
+  "title": "Submit JAR application",
+  "command": "spark-submit --class com.example.Main app.jar arg1 arg2",
+  "description": "Submit Scala/Java application with main class."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "checkov-checks-9",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-checks",
+  "title": "Create baseline",
+  "command": "checkov -d . --create-baseline",
+  "description": "Create baseline of current findings."
+}

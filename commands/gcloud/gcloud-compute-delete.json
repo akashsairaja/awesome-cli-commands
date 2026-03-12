@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-compute-delete",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-compute",
+  "title": "Delete VM Instance",
+  "command": "gcloud compute instances delete <name> --zone=<zone>",
+  "description": "Delete a VM instance",
+  "tags": ["vm", "delete", "cleanup"]
+}

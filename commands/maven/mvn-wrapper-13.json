@@ -1,0 +1,8 @@
+{
+  "id": "mvn-wrapper-13",
+  "categoryId": "maven",
+  "subcategoryId": "mvn-wrapper",
+  "title": "Check wrapper Maven version",
+  "command": "./mvnw --version",
+  "description": "Show the Maven version the wrapper downloads and uses."
+}

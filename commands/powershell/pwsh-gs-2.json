@@ -1,0 +1,8 @@
+{
+  "id": "pwsh-gs-2",
+  "title": "Check PowerShell version",
+  "command": "pwsh --version",
+  "description": "Verify PowerShell is installed and display the current version",
+  "categoryId": "powershell",
+  "subcategoryId": "getting-started"
+}

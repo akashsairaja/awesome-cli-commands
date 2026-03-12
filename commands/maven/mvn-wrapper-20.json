@@ -1,0 +1,8 @@
+{
+  "id": "mvn-wrapper-20",
+  "categoryId": "maven",
+  "subcategoryId": "mvn-wrapper",
+  "title": "Debug build with wrapper",
+  "command": "./mvnwDebug clean install",
+  "description": "Start Maven in debug mode (JDWP on port 8000) for remote debugging. Requires -DincludeDebug=true during generation."
+}

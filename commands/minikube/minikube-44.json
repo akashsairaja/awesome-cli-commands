@@ -1,0 +1,8 @@
+{
+  "id": "minikube-44",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-config",
+  "title": "Set default driver",
+  "command": "minikube config set driver docker",
+  "description": "Set default container driver."
+}

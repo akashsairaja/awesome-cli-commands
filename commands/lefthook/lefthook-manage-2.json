@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-manage-2",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-manage",
+  "title": "Skip hooks once",
+  "command": "git commit --no-verify -m 'message'",
+  "description": "Skip hooks for single commit."
+}

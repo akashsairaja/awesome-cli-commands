@@ -1,0 +1,8 @@
+{
+  "id": "hurl-run-4",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-run",
+  "title": "Very verbose",
+  "command": "hurl --very-verbose api.hurl",
+  "description": "Show all details including timings."
+}

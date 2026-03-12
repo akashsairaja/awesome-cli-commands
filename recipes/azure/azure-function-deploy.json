@@ -1,0 +1,55 @@
+{
+  "id": "azure-function-deploy",
+  "stackId": "azure",
+  "name": "Deploy Azure Functions from the CLI",
+  "description": "Create a serverless function app and deploy functions using Azure CLI and Azure Functions Core Tools.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "tags": ["functions", "serverless", "deploy", "faas"],
+  "prerequisites": [
+    "Azure CLI installed",
+    "Azure Functions Core Tools installed",
+    "Active Azure subscription"
+  ],
+  "steps": [
+    {
+      "title": "Create a resource group and storage account",
+      "command": "az group create --name func-rg --location eastus && az storage account create --name funcstore$RANDOM --resource-group func-rg --sku Standard_LRS",
+      "description": "Functions require a storage account for triggers and state management."
+    },
+    {
+      "title": "Create the function app",
+      "command": "az functionapp create --resource-group func-rg --consumption-plan-location eastus --runtime node --runtime-version 20 --functions-version 4 --name myfunc-unique --storage-account funcstore",
+      "description": "Creates a consumption-plan function app that scales automatically and bills per execution.",
+      "tip": "Consumption plan is free for the first 1 million executions per month."
+    },
+    {
+      "title": "Initialize a local function project",
+      "command": "func init MyFuncProject --worker-runtime node --language javascript",
+      "description": "Scaffolds a local project with the required configuration files."
+    },
+    {
+      "title": "Create a function",
+      "command": "cd MyFuncProject && func new --name HttpTrigger --template \"HTTP trigger\"",
+      "description": "Adds an HTTP-triggered function to the project."
+    },
+    {
+      "title": "Deploy to Azure",
+      "command": "func azure functionapp publish myfunc-unique",
+      "description": "Packages and deploys all functions in the project to the remote function app."
+    }
+  ],
+  "fullScript": "# Deploy Azure Functions from CLI\naz group create --name func-rg --location eastus\naz storage account create --name funcstore --resource-group func-rg --sku Standard_LRS\naz functionapp create --resource-group func-rg --consumption-plan-location eastus --runtime node --runtime-version 20 --functions-version 4 --name myfunc-unique --storage-account funcstore\nfunc init MyFuncProject --worker-runtime node --language javascript\ncd MyFuncProject\nfunc new --name HttpTrigger --template \"HTTP trigger\"\nfunc azure functionapp publish myfunc-unique",
+  "faq": [
+    {
+      "question": "What is the difference between Consumption and Premium plans?",
+      "answer": "Consumption scales to zero and bills per execution. Premium keeps instances warm for lower latency and supports VNet integration, but has a baseline cost."
+    },
+    {
+      "question": "Can I test functions locally before deploying?",
+      "answer": "Yes. Run 'func start' in your project directory to start a local runtime. Functions are available at http://localhost:7071/api/<function-name>."
+    }
+  ],
+  "relatedRecipes": ["azure-webapp-deploy", "azure-storage-management"],
+  "lastUpdated": "2026-03-11"
+}

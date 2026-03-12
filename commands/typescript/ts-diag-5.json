@@ -1,0 +1,8 @@
+{
+  "id": "ts-diag-5",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-diagnostics",
+  "title": "Generate CPU profile",
+  "command": "tsc --generateCpuProfile tsc-profile.cpuprofile",
+  "description": "Create CPU profile for deep performance analysis (Chrome DevTools compatible)."
+}

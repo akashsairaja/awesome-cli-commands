@@ -1,0 +1,8 @@
+{
+  "id": "docker-9",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Run with CPU limit",
+  "command": "docker run -d --cpus=1.5 <image>",
+  "description": "Limit container to 1.5 CPUs."
+}

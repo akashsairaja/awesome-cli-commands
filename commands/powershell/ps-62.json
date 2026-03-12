@@ -1,0 +1,8 @@
+{
+  "id": "ps-62",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-pipeline",
+  "title": "Measure objects",
+  "command": "Get-Process | Measure-Object CPU -Sum -Average",
+  "description": "Calculate statistics."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gradle-dependencies-lock",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-dependencies",
+  "title": "Lock Dependencies",
+  "command": "./gradlew dependencies --write-locks",
+  "description": "Generate dependency lock file",
+  "tags": ["dependencies", "lock", "reproducible"]
+}

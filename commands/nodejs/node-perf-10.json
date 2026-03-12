@@ -1,0 +1,8 @@
+{
+  "id": "node-perf-10",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-perf",
+  "title": "CPU profile interval",
+  "command": "node --cpu-prof --cpu-prof-interval=500 app.js",
+  "description": "Set CPU profiling sample interval (microseconds)."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "deno-run-allow-all",
+  "categoryId": "deno",
+  "subcategoryId": "deno-run",
+  "title": "Run with All Permissions",
+  "command": "deno run -A script.ts",
+  "description": "Run script with all permissions (dev only)",
+  "tags": ["run", "permissions", "all"]
+}

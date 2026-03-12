@@ -1,0 +1,9 @@
+{
+  "id": "azure-vm-start",
+  "categoryId": "azure",
+  "subcategoryId": "azure-compute",
+  "title": "Start VM",
+  "command": "az vm start --resource-group <rg> --name <vm-name>",
+  "description": "Start a stopped virtual machine",
+  "tags": ["vm", "start", "power"]
+}

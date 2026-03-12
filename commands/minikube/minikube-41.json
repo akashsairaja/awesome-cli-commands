@@ -1,0 +1,8 @@
+{
+  "id": "minikube-41",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-node",
+  "title": "List cluster nodes",
+  "command": "minikube node list",
+  "description": "List all nodes in cluster."
+}

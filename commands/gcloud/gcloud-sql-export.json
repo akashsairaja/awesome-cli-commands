@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-sql-export",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-sql",
+  "title": "Export SQL Database",
+  "command": "gcloud sql export sql <instance> gs://<bucket>/<file.sql> --database=<db-name>",
+  "description": "Export a database to a SQL dump in Cloud Storage",
+  "tags": ["sql", "export", "backup"]
+}

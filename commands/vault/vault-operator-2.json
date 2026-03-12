@@ -1,0 +1,8 @@
+{
+  "id": "vault-operator-2",
+  "categoryId": "vault",
+  "subcategoryId": "vault-operator",
+  "title": "Unseal Vault",
+  "command": "vault operator unseal",
+  "description": "Unseal Vault with unseal key."
+}

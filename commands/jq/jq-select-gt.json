@@ -1,0 +1,9 @@
+{
+  "id": "jq-select-gt",
+  "categoryId": "jq",
+  "subcategoryId": "jq-filters",
+  "title": "Filter greater than",
+  "command": "cat file.json | jq '.[] | select(.count > 10)'",
+  "description": "Filter where value greater than",
+  "tags": ["select", "greater", "compare"]
+}

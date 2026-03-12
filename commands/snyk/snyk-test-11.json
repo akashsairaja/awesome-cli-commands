@@ -1,0 +1,8 @@
+{
+  "id": "snyk-test-11",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-test",
+  "title": "Fail on fixable only",
+  "command": "snyk test --fail-on=upgradable",
+  "description": "Only fail if there are upgradable vulnerabilities."
+}

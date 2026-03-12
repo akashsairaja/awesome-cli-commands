@@ -1,0 +1,8 @@
+{
+  "id": "supa-gs-2",
+  "title": "Check Supabase CLI version",
+  "command": "supabase --version",
+  "description": "Verify Supabase CLI is installed and display version",
+  "categoryId": "supabase",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "pg-performance-15",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-performance",
+  "title": "Reset query statistics",
+  "command": "SELECT pg_stat_statements_reset();",
+  "description": "Reset all pg_stat_statements counters. Useful after tuning to measure improvements."
+}

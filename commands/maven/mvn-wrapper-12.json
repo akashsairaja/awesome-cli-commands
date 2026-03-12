@@ -1,0 +1,8 @@
+{
+  "id": "mvn-wrapper-12",
+  "categoryId": "maven",
+  "subcategoryId": "mvn-wrapper",
+  "title": "Verify with wrapper",
+  "command": "./mvnw verify",
+  "description": "Run integration tests using the wrapper."
+}

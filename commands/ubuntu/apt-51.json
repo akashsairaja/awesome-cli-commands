@@ -1,0 +1,8 @@
+{
+  "id": "apt-51",
+  "categoryId": "ubuntu",
+  "subcategoryId": "system",
+  "title": "Upgrade Ubuntu release",
+  "command": "sudo do-release-upgrade",
+  "description": "Upgrade to the next Ubuntu LTS or regular release."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "hurl-options-6",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-options",
+  "title": "JUnit report",
+  "command": "hurl --test --report-junit results.xml api.hurl",
+  "description": "Generate JUnit XML report."
+}

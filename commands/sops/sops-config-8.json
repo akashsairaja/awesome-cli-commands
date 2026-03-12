@@ -1,0 +1,8 @@
+{
+  "id": "sops-config-8",
+  "categoryId": "sops",
+  "subcategoryId": "sops-config",
+  "title": "Show file metadata",
+  "command": "sops filestatus secrets.enc.yaml",
+  "description": "Show encryption metadata of a file."
+}

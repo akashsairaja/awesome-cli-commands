@@ -1,0 +1,9 @@
+{
+  "id": "firebase-firestore-delete",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-firestore",
+  "title": "Delete Firestore data",
+  "command": "firebase firestore:delete --all-collections",
+  "description": "Delete all data in Firestore (use with caution)",
+  "tags": ["firestore", "delete", "data"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "vim-gs-1",
+  "title": "Check Vim version",
+  "command": "vim --version",
+  "description": "Display Vim version and compiled feature flags",
+  "categoryId": "vim",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "mongo-users-7",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-users",
+  "title": "Show all users",
+  "command": "db.getUsers()",
+  "description": "List all users in the current database with their roles."
+}

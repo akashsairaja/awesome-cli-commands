@@ -1,0 +1,8 @@
+{
+  "id": "git-14",
+  "categoryId": "git",
+  "subcategoryId": "basics",
+  "title": "Push",
+  "command": "git push",
+  "description": "Push commits to remote."
+}

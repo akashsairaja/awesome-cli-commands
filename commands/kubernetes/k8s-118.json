@@ -1,0 +1,8 @@
+{
+  "id": "k8s-118",
+  "categoryId": "kubernetes",
+  "subcategoryId": "debugging",
+  "title": "Watch events",
+  "command": "kubectl get events -w",
+  "description": "Watch events in real-time."
+}

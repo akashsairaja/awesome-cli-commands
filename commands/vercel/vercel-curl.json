@@ -1,0 +1,9 @@
+{
+  "id": "vercel-curl",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-testing",
+  "title": "Curl with bypass token",
+  "command": "vercel curl /api/hello",
+  "description": "Make request with auto bypass token",
+  "tags": ["curl", "request", "api"]
+}

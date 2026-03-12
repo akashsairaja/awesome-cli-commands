@@ -1,0 +1,8 @@
+{
+  "id": "npm-ws-7",
+  "categoryId": "npm",
+  "subcategoryId": "npm-workspaces",
+  "title": "yarn workspace",
+  "command": "yarn workspace @myapp/core build",
+  "description": "Run command in specific yarn workspace."
+}

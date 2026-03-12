@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-config-8",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-config",
+  "title": "Custom fail text",
+  "command": "pre-commit:\n  commands:\n    lint:\n      run: npm run lint\n      fail_text: 'Linting failed! Run npm run lint:fix'",
+  "description": "Show custom message when command fails."
+}

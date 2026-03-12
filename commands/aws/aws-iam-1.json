@@ -1,0 +1,8 @@
+{
+  "id": "aws-iam-1",
+  "categoryId": "aws",
+  "subcategoryId": "iam",
+  "title": "Get caller identity",
+  "command": "aws sts get-caller-identity",
+  "description": "Show current account and user/role info."
+}

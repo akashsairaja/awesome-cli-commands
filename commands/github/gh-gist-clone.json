@@ -1,0 +1,9 @@
+{
+  "id": "gh-gist-clone",
+  "categoryId": "github",
+  "subcategoryId": "gh-gist",
+  "title": "Clone gist",
+  "command": "gh gist clone <gist-id>",
+  "description": "Clone a gist locally",
+  "tags": ["gist", "clone", "download"]
+}

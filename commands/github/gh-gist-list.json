@@ -1,0 +1,9 @@
+{
+  "id": "gh-gist-list",
+  "categoryId": "github",
+  "subcategoryId": "gh-gist",
+  "title": "List gists",
+  "command": "gh gist list",
+  "description": "List your gists",
+  "tags": ["gist", "list", "show"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ansible-automation-list-tasks",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-automation",
+  "title": "List All Tasks",
+  "command": "ansible-playbook playbook.yml --list-tasks",
+  "description": "Display all tasks for pipeline documentation",
+  "tags": ["automation", "list", "tasks", "ci-cd"]
+}

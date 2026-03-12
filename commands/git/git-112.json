@@ -1,0 +1,8 @@
+{
+  "id": "git-112",
+  "categoryId": "git",
+  "subcategoryId": "submodules",
+  "title": "Initialize submodules",
+  "command": "git submodule init",
+  "description": "Initialize submodule configuration."
+}

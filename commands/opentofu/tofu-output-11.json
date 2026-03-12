@@ -1,0 +1,8 @@
+{
+  "id": "tofu-output-11",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-output",
+  "title": "Show version",
+  "command": "tofu version",
+  "description": "Display OpenTofu and provider versions."
+}

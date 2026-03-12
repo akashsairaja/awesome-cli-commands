@@ -1,0 +1,8 @@
+{
+  "id": "ps-59",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-pipeline",
+  "title": "ForEach shorthand",
+  "command": "1..5 | % { $_ * 2 }",
+  "description": "% is alias for ForEach-Object."
+}

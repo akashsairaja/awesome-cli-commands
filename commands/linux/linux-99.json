@@ -1,0 +1,8 @@
+{
+  "id": "linux-99",
+  "categoryId": "linux",
+  "subcategoryId": "processes",
+  "title": "Monitor disk I/O by process",
+  "command": "sudo iotop -o",
+  "description": "Show only processes actively performing disk I/O operations."
+}

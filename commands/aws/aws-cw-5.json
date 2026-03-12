@@ -1,0 +1,8 @@
+{
+  "id": "aws-cw-5",
+  "categoryId": "aws",
+  "subcategoryId": "cloudwatch",
+  "title": "Get metrics",
+  "command": "aws cloudwatch get-metric-statistics --namespace AWS/EC2 --metric-name CPUUtilization --dimensions Name=InstanceId,Value=i-xxx --start-time 2024-01-01T00:00:00Z --end-time 2024-01-02T00:00:00Z --period 3600 --statistics Average",
+  "description": "Get metric statistics."
+}

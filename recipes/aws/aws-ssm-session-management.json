@@ -1,0 +1,63 @@
+{
+  "id": "aws-ssm-session-management",
+  "stackId": "aws",
+  "name": "Secure Shell Access via SSM Without SSH Keys",
+  "description": "Connect to EC2 instances securely using AWS Systems Manager Session Manager, eliminating the need for SSH keys, bastion hosts, or open inbound ports.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "trending": false,
+  "tags": ["ssm", "session-manager", "security", "ec2", "access"],
+  "prerequisites": [
+    "AWS CLI v2 installed and configured",
+    "Session Manager plugin installed for the AWS CLI",
+    "EC2 instance with SSM Agent running and IAM instance profile attached"
+  ],
+  "steps": [
+    {
+      "title": "Verify the instance is managed by SSM",
+      "description": "Check that the target EC2 instance appears in the SSM managed instances list, confirming the agent is running and has connectivity.",
+      "command": "aws ssm describe-instance-information --filters Key=InstanceIds,Values=i-0example --query 'InstanceInformationList[*].{InstanceId:InstanceId,PingStatus:PingStatus,AgentVersion:AgentVersion,Platform:PlatformName}' --output table",
+      "tip": "If the instance does not appear, verify the instance has an IAM role with AmazonSSMManagedInstanceCore policy and that the SSM Agent is running."
+    },
+    {
+      "title": "Start an interactive session",
+      "description": "Open a shell session to the EC2 instance through SSM, tunneled over HTTPS without requiring any inbound ports.",
+      "command": "aws ssm start-session --target i-0example",
+      "tip": "Session Manager sessions are logged in CloudTrail and can optionally stream session output to S3 or CloudWatch for auditing."
+    },
+    {
+      "title": "Run a command without an interactive session",
+      "description": "Execute a one-off command across one or more instances using SSM Run Command without opening an interactive shell.",
+      "command": "aws ssm send-command --instance-ids i-0example --document-name \"AWS-RunShellScript\" --parameters commands=[\"df -h\",\"free -m\",\"uptime\"] --query Command.CommandId --output text",
+      "tip": "SSM Run Command can target multiple instances at once using instance IDs, tags, or resource groups."
+    },
+    {
+      "title": "Get command output",
+      "description": "Retrieve the output of a previously executed Run Command by its command ID.",
+      "command": "aws ssm get-command-invocation --command-id COMMAND_ID_HERE --instance-id i-0example --query '{Status:Status,Output:StandardOutputContent}' --output json"
+    },
+    {
+      "title": "Start a port forwarding session",
+      "description": "Forward a remote port from the EC2 instance to your local machine through SSM, useful for accessing databases or internal services without VPN.",
+      "command": "aws ssm start-session --target i-0example --document-name AWS-StartPortForwardingSession --parameters '{\"portNumber\":[\"5432\"],\"localPortNumber\":[\"15432\"]}'",
+      "warning": "Port forwarding keeps running until you press Ctrl+C. Your local port 15432 will forward to port 5432 on the remote instance, so you can connect with tools like psql -h localhost -p 15432."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# SSM Session Manager Operations\n# Usage: ./ssm-connect.sh <action> <instance-id> [options]\n# Actions: connect, run, forward, list\n\nset -euo pipefail\n\nACTION=\"${1:?Usage: $0 <connect|run|forward|list> <instance-id> [options]}\"\n\ncase \"$ACTION\" in\n  connect)\n    INSTANCE_ID=\"${2:?Provide instance ID}\"\n    echo \"Checking SSM agent status...\"\n    STATUS=$(aws ssm describe-instance-information \\\n      --filters \"Key=InstanceIds,Values=$INSTANCE_ID\" \\\n      --query 'InstanceInformationList[0].PingStatus' --output text 2>/dev/null || echo \"NotFound\")\n\n    if [ \"$STATUS\" != \"Online\" ]; then\n      echo \"Instance $INSTANCE_ID is not online in SSM (status: $STATUS)\"\n      echo \"Verify the instance has an IAM role with AmazonSSMManagedInstanceCore policy.\"\n      exit 1\n    fi\n\n    echo \"Connecting to $INSTANCE_ID via Session Manager...\"\n    aws ssm start-session --target \"$INSTANCE_ID\"\n    ;;\n\n  run)\n    INSTANCE_ID=\"${2:?Provide instance ID}\"\n    COMMAND=\"${3:?Provide command to run (in quotes)}\"\n    echo \"Running command on $INSTANCE_ID: $COMMAND\"\n\n    CMD_ID=$(aws ssm send-command \\\n      --instance-ids \"$INSTANCE_ID\" \\\n      --document-name \"AWS-RunShellScript\" \\\n      --parameters \"commands=[\"$COMMAND\"]\" \\\n      --query 'Command.CommandId' --output text)\n\n    echo \"Command ID: $CMD_ID\"\n    echo \"Waiting for completion...\"\n    sleep 3\n\n    aws ssm get-command-invocation \\\n      --command-id \"$CMD_ID\" \\\n      --instance-id \"$INSTANCE_ID\" \\\n      --query '{Status:Status,Output:StandardOutputContent,Error:StandardErrorContent}' \\\n      --output json | jq .\n    ;;\n\n  forward)\n    INSTANCE_ID=\"${2:?Provide instance ID}\"\n    REMOTE_PORT=\"${3:?Provide remote port}\"\n    LOCAL_PORT=\"${4:-$REMOTE_PORT}\"\n    echo \"Forwarding localhost:$LOCAL_PORT -> $INSTANCE_ID:$REMOTE_PORT\"\n    echo \"Press Ctrl+C to stop.\"\n    aws ssm start-session \\\n      --target \"$INSTANCE_ID\" \\\n      --document-name AWS-StartPortForwardingSession \\\n      --parameters \"portNumber=[$REMOTE_PORT],localPortNumber=[$LOCAL_PORT]\"\n    ;;\n\n  list)\n    echo \"=== SSM Managed Instances ===\"\n    aws ssm describe-instance-information \\\n      --query 'InstanceInformationList[*].{InstanceId:InstanceId,Name:ComputerName,Status:PingStatus,Agent:AgentVersion,OS:PlatformName}' \\\n      --output table\n    ;;\n\n  *)\n    echo \"Unknown action: $ACTION (use connect, run, forward, or list)\"\n    exit 1\n    ;;\nesac",
+  "faq": [
+    {
+      "question": "What are the prerequisites for Session Manager to work?",
+      "answer": "The EC2 instance needs the SSM Agent running (pre-installed on Amazon Linux and recent Ubuntu AMIs), an IAM instance profile with the AmazonSSMManagedInstanceCore managed policy, and outbound HTTPS (443) connectivity to the SSM service endpoints (directly or via VPC endpoints)."
+    },
+    {
+      "question": "How do I audit who accessed instances via Session Manager?",
+      "answer": "Every session start and termination is logged in AWS CloudTrail as StartSession and TerminateSession events. You can also enable session logging in SSM preferences to stream full session I/O to an S3 bucket or CloudWatch log group for complete audit trails."
+    },
+    {
+      "question": "Can I use Session Manager with instances in private subnets?",
+      "answer": "Yes. Create VPC endpoints for ssm, ssmmessages, and ec2messages services in your VPC. The SSM Agent communicates outbound over HTTPS, so no inbound ports or NAT gateway are required when using VPC endpoints."
+    }
+  ],
+  "relatedRecipes": ["aws-ec2-instance-management", "aws-assume-role-workflow"],
+  "lastUpdated": "2026-03-11"
+}

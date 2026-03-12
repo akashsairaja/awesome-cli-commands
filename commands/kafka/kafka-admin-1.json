@@ -1,0 +1,8 @@
+{
+  "id": "kafka-admin-1",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-admin",
+  "title": "Describe cluster",
+  "command": "kafka-metadata.sh --snapshot /var/kafka/logs/__cluster_metadata-0/00000000000000000000.log --command describe",
+  "description": "Show cluster metadata."
+}

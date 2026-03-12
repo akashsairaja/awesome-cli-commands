@@ -1,0 +1,8 @@
+{
+  "id": "httpie-requests-20",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-requests",
+  "title": "Follow redirects",
+  "command": "http --follow GET https://example.com/old-page",
+  "description": "Automatically follow 3xx redirects."
+}

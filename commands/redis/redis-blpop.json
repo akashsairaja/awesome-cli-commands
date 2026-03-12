@@ -1,0 +1,9 @@
+{
+  "id": "redis-blpop",
+  "categoryId": "redis",
+  "subcategoryId": "redis-lists",
+  "title": "Blocking pop from head",
+  "command": "BLPOP key timeout",
+  "description": "Pop from head or block until available",
+  "tags": ["blpop", "list", "blocking"]
+}

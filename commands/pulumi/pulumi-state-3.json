@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-state-3",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-state",
+  "title": "Import resource",
+  "command": "pulumi import aws:s3/bucket:Bucket mybucket my-existing-bucket",
+  "description": "Import existing resource into state."
+}

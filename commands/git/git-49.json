@@ -1,0 +1,8 @@
+{
+  "id": "git-49",
+  "categoryId": "git",
+  "subcategoryId": "stash",
+  "title": "Stash including untracked",
+  "command": "git stash -u",
+  "description": "Stash including untracked files."
+}

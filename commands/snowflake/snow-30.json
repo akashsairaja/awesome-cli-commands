@@ -1,0 +1,8 @@
+{
+  "id": "snow-30",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-cortex",
+  "title": "Text completion (SQL)",
+  "command": "snow sql -q \"SELECT SNOWFLAKE.CORTEX.COMPLETE('llama3.1-70b', 'Explain data warehousing')\"",
+  "description": "Generate text using Cortex LLM."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tf-mod-7",
+  "categoryId": "terraform",
+  "subcategoryId": "modules",
+  "title": "Show current state",
+  "command": "terraform show",
+  "description": "Display current state or saved plan."
+}

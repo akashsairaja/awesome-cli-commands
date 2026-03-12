@@ -1,0 +1,65 @@
+{
+  "id": "terraform-module-creation",
+  "stackId": "terraform",
+  "name": "Create Reusable Terraform Modules",
+  "description": "Build, structure, and publish reusable Terraform modules with inputs, outputs, and proper documentation.",
+  "difficulty": "advanced",
+  "timeMinutes": 20,
+  "tags": ["module", "reusable", "DRY", "composition", "registry"],
+  "prerequisites": [
+    "Terraform installed",
+    "Understanding of Terraform resources",
+    "Git repository for module hosting"
+  ],
+  "steps": [
+    {
+      "title": "Create the module directory structure",
+      "description": "Set up the standard file layout for a Terraform module with variables, outputs, and main configuration.",
+      "command": "mkdir -p modules/vpc && touch modules/vpc/{main.tf,variables.tf,outputs.tf,README.md,versions.tf}"
+    },
+    {
+      "title": "Define input variables",
+      "description": "Declare configurable inputs with types, defaults, descriptions, and validation rules.",
+      "command": "cat <<'EOF' > modules/vpc/variables.tf\nvariable \"vpc_cidr\" {\n  type        = string\n  description = \"CIDR block for the VPC\"\n  default     = \"10.0.0.0/16\"\n  validation {\n    condition     = can(cidrhost(var.vpc_cidr, 0))\n    error_message = \"Must be a valid CIDR block.\"\n  }\n}\n\nvariable \"environment\" {\n  type        = string\n  description = \"Environment name (dev, staging, prod)\"\n}\n\nvariable \"public_subnet_count\" {\n  type        = number\n  description = \"Number of public subnets\"\n  default     = 2\n}\nEOF"
+    },
+    {
+      "title": "Write the main resource definitions",
+      "description": "Implement the core resources that the module creates and manages.",
+      "command": "cat <<'EOF' > modules/vpc/main.tf\nresource \"aws_vpc\" \"this\" {\n  cidr_block           = var.vpc_cidr\n  enable_dns_hostnames = true\n  tags = {\n    Name        = \"${var.environment}-vpc\"\n    Environment = var.environment\n    ManagedBy   = \"terraform\"\n  }\n}\nEOF",
+      "tip": "Use the 'this' naming convention for the primary resource in a single-resource module."
+    },
+    {
+      "title": "Define module outputs",
+      "description": "Export values that consumers of the module will need for connecting other resources.",
+      "command": "cat <<'EOF' > modules/vpc/outputs.tf\noutput \"vpc_id\" {\n  description = \"The ID of the VPC\"\n  value       = aws_vpc.this.id\n}\n\noutput \"vpc_cidr\" {\n  description = \"The CIDR block of the VPC\"\n  value       = aws_vpc.this.cidr_block\n}\nEOF"
+    },
+    {
+      "title": "Call the module from root configuration",
+      "description": "Use the module in your root configuration by referencing the local path and passing variables.",
+      "command": "cat <<'EOF' > main.tf\nmodule \"vpc\" {\n  source = \"./modules/vpc\"\n\n  vpc_cidr           = \"10.0.0.0/16\"\n  environment        = \"prod\"\n  public_subnet_count = 3\n}\n\noutput \"vpc_id\" {\n  value = module.vpc.vpc_id\n}\nEOF"
+    },
+    {
+      "title": "Validate and test the module",
+      "description": "Initialize, validate, and plan the configuration to ensure the module works correctly.",
+      "command": "terraform init && terraform validate && terraform plan",
+      "warning": "Always run validate before plan to catch syntax and type errors early."
+    }
+  ],
+  "fullScript": "#!/bin/bash\nset -euo pipefail\n\n# Terraform Module Scaffolding Script\n# Creates a well-structured module with all required files\n\nMODULE_NAME=\"${1:?Usage: $0 <module-name>}\"\nMODULE_DIR=\"modules/${MODULE_NAME}\"\n\necho \"==> Creating module: ${MODULE_NAME}\"\nmkdir -p \"${MODULE_DIR}\"\n\ncat > \"${MODULE_DIR}/versions.tf\" <<'EOF'\nterraform {\n  required_version = \">= 1.5.0\"\n  required_providers {\n    aws = {\n      source  = \"hashicorp/aws\"\n      version = \"~> 5.0\"\n    }\n  }\n}\nEOF\n\ncat > \"${MODULE_DIR}/variables.tf\" <<'EOF'\nvariable \"environment\" {\n  type        = string\n  description = \"Environment name\"\n}\n\nvariable \"tags\" {\n  type        = map(string)\n  description = \"Additional tags to apply\"\n  default     = {}\n}\nEOF\n\ncat > \"${MODULE_DIR}/main.tf\" <<EOF\n# Main resources for ${MODULE_NAME} module\n# TODO: Add your resource definitions here\nEOF\n\ncat > \"${MODULE_DIR}/outputs.tf\" <<EOF\n# Outputs for ${MODULE_NAME} module\n# TODO: Export values for consumers\nEOF\n\ncat > \"${MODULE_DIR}/README.md\" <<EOF\n# ${MODULE_NAME} Module\n\n## Usage\n\n\\`\\`\\`hcl\nmodule \"${MODULE_NAME}\" {\n  source      = \"./modules/${MODULE_NAME}\"\n  environment = \"dev\"\n}\n\\`\\`\\`\n\n## Inputs\n\n| Name | Description | Type | Default |\n|------|-------------|------|---------|\n| environment | Environment name | string | - |\n| tags | Additional tags | map(string) | {} |\n\n## Outputs\n\n(Add outputs here)\nEOF\n\necho \"==> Module scaffolded at ${MODULE_DIR}/\"\nls -la \"${MODULE_DIR}/\"\necho \"\"\necho \"Next steps:\"\necho \"  1. Edit ${MODULE_DIR}/main.tf to add resources\"\necho \"  2. Edit ${MODULE_DIR}/variables.tf to add inputs\"\necho \"  3. Edit ${MODULE_DIR}/outputs.tf to export values\"\necho \"  4. Run: terraform init && terraform validate\"",
+  "faq": [
+    {
+      "question": "Should I pin provider versions inside modules?",
+      "answer": "Define required_providers in the module's versions.tf with a version constraint, but let the root module lock the exact version. Use pessimistic constraints like ~> 5.0."
+    },
+    {
+      "question": "How do I version a module for consumers?",
+      "answer": "Use Git tags (v1.0.0, v1.1.0) and reference them in the source URL: source = \"git::https://github.com/org/module.git?ref=v1.0.0\". For Terraform Registry, publish with semantic versioning."
+    },
+    {
+      "question": "What is the difference between a module and a root configuration?",
+      "answer": "A root configuration is what you run terraform apply on. A module is a reusable package of resources called from a root configuration or other modules. Every Terraform config is technically a module."
+    }
+  ],
+  "relatedRecipes": ["terraform-workspace-management", "terraform-ci-automation"],
+  "lastUpdated": "2026-03-11"
+}

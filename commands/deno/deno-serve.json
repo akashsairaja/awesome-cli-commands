@@ -1,0 +1,9 @@
+{
+  "id": "deno-serve",
+  "categoryId": "deno",
+  "subcategoryId": "deno-run",
+  "title": "Serve HTTP",
+  "command": "deno serve --port 8000 server.ts",
+  "description": "Run HTTP server with Deno.serve",
+  "tags": ["serve", "http", "server"]
+}

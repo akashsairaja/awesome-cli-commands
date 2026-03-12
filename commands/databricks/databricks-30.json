@@ -1,0 +1,8 @@
+{
+  "id": "databricks-30",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-unity-catalog",
+  "title": "List catalogs",
+  "command": "databricks unity-catalog catalogs list",
+  "description": "List all catalogs in the metastore."
+}

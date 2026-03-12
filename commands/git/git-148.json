@@ -1,0 +1,8 @@
+{
+  "id": "git-148",
+  "categoryId": "git",
+  "subcategoryId": "worktree",
+  "title": "Move worktree",
+  "command": "git worktree move <path> <new-path>",
+  "description": "Move worktree to new location."
+}

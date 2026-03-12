@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-certs-17",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-certs",
+  "title": "Use with nginx",
+  "command": "mkcert -key-file /etc/nginx/ssl/key.pem -cert-file /etc/nginx/ssl/cert.pem localhost",
+  "description": "Generate certs directly into nginx SSL directory."
+}

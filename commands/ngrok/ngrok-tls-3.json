@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-tls-3",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-tls",
+  "title": "TLS with custom cert",
+  "command": "ngrok tls --crt=/path/to/cert.pem --key=/path/to/key.pem 443",
+  "description": "Use your own TLS certificate and key."
+}

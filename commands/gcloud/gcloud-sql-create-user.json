@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-sql-create-user",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-sql",
+  "title": "Create SQL User",
+  "command": "gcloud sql users create <username> --instance=<instance> --password=<password>",
+  "description": "Create a new user on a Cloud SQL instance",
+  "tags": ["sql", "user", "create"]
+}

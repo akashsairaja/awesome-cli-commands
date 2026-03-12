@@ -1,0 +1,8 @@
+{
+  "id": "k6-run-2",
+  "categoryId": "k6",
+  "subcategoryId": "k6-run",
+  "title": "Run with VUs and duration",
+  "command": "k6 run --vus 10 --duration 30s script.js",
+  "description": "Run with 10 virtual users for 30 seconds."
+}

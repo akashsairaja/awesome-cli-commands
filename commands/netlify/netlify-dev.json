@@ -1,0 +1,9 @@
+{
+  "id": "netlify-dev",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-deploy",
+  "title": "Run dev server",
+  "command": "netlify dev",
+  "description": "Run local development server with Netlify features",
+  "tags": ["dev", "local", "development"]
+}

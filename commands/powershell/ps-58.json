@@ -1,0 +1,8 @@
+{
+  "id": "ps-58",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-pipeline",
+  "title": "ForEach-Object",
+  "command": "1..5 | ForEach-Object { $_ * 2 }",
+  "description": "Transform each item in pipeline."
+}

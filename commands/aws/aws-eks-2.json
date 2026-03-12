@@ -1,0 +1,8 @@
+{
+  "id": "aws-eks-2",
+  "categoryId": "aws",
+  "subcategoryId": "eks",
+  "title": "Describe cluster",
+  "command": "aws eks describe-cluster --name production-cluster --region us-east-1 --query 'cluster.[status,version,endpoint]' --output table",
+  "description": "Get detailed cluster information and status."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "gh-gs-1",
+  "title": "Install GitHub CLI (macOS)",
+  "command": "brew install gh",
+  "description": "Install GitHub CLI using Homebrew on macOS",
+  "categoryId": "github",
+  "subcategoryId": "getting-started"
+}

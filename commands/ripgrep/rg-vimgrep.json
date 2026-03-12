@@ -1,0 +1,9 @@
+{
+  "id": "rg-vimgrep",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-output",
+  "title": "Vim-style output",
+  "command": "rg --vimgrep \"pattern\"",
+  "description": "Output in vim quickfix format",
+  "tags": ["output", "vim", "quickfix"]
+}

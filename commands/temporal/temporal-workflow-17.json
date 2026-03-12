@@ -1,0 +1,8 @@
+{
+  "id": "temporal-workflow-17",
+  "categoryId": "temporal",
+  "subcategoryId": "workflow",
+  "title": "Query with input",
+  "command": "temporal workflow query --workflow-id my-wf --name GetData --input '{\"filter\":\"active\"}'",
+  "description": "Query workflow with parameters."
+}

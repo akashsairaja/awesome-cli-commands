@@ -1,0 +1,9 @@
+{
+  "id": "nginx-ssl-certbot",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-ssl",
+  "title": "Install Let's Encrypt certificate",
+  "command": "sudo certbot --nginx -d example.com -d www.example.com",
+  "description": "Obtain free SSL with Certbot",
+  "tags": ["ssl", "certbot", "letsencrypt", "certificate"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "py-52",
+  "categoryId": "python",
+  "subcategoryId": "python-uv",
+  "title": "List Python versions",
+  "command": "uv python list",
+  "description": "Show available Python versions."
+}

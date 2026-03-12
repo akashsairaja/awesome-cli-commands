@@ -1,0 +1,8 @@
+{
+  "id": "ai-17",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-shellgpt",
+  "title": "Continue chat",
+  "command": "sgpt --chat myproject \"now add error handling\"",
+  "description": "Continue an existing chat session."
+}

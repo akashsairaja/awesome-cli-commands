@@ -1,0 +1,9 @@
+{
+  "id": "redis-sdiff",
+  "categoryId": "redis",
+  "subcategoryId": "redis-sets",
+  "title": "Difference of sets",
+  "command": "SDIFF key1 key2",
+  "description": "Get difference between sets",
+  "tags": ["sdiff", "set", "difference"]
+}

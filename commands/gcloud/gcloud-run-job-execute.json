@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-run-job-execute",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-run",
+  "title": "Execute Cloud Run Job",
+  "command": "gcloud run jobs execute <job> --region=us-central1",
+  "description": "Manually trigger a Cloud Run job execution",
+  "tags": ["run", "jobs", "execute", "trigger"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "scoop-install-1",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-install",
+  "title": "Install app",
+  "command": "scoop install git",
+  "description": "Install an application."
+}

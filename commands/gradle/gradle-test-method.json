@@ -1,0 +1,9 @@
+{
+  "id": "gradle-test-method",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-testing",
+  "title": "Run Single Test Method",
+  "command": "./gradlew test --tests \"*MyTest.testMethod\"",
+  "description": "Run a specific test method",
+  "tags": ["test", "method", "single"]
+}

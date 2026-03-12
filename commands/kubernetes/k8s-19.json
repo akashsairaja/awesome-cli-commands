@@ -1,0 +1,8 @@
+{
+  "id": "k8s-19",
+  "categoryId": "kubernetes",
+  "subcategoryId": "pods",
+  "title": "Execute command in pod",
+  "command": "kubectl exec -it <pod> -- /bin/sh",
+  "description": "Open interactive shell inside a pod."
+}

@@ -1,0 +1,60 @@
+{
+  "id": "bash-text-processing",
+  "stackId": "bash",
+  "name": "Text Processing Pipeline with sed, awk, cut, and sort",
+  "description": "Build text processing pipelines to transform, extract, and aggregate data from CSVs, TSVs, and structured text files using standard Unix tools.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "trending": true,
+  "trendingReason": "CLI text processing remains the fastest way to transform data without writing a full program",
+  "tags": ["text-processing", "sed", "awk", "cut", "sort", "pipeline"],
+  "prerequisites": ["Bash with GNU coreutils", "Structured text files (CSV, TSV, logs)"],
+  "steps": [
+    {
+      "title": "Extract columns from CSV/TSV data",
+      "description": "Use cut or awk to extract specific columns from delimited files.",
+      "command": "cut -d',' -f1,3,5 data.csv | head -10",
+      "tip": "Use awk -F',' '{print $1, $3}' for more control over output formatting and delimiters."
+    },
+    {
+      "title": "Transform text with sed substitutions",
+      "description": "Use sed to find and replace patterns, remove lines, or reformat text.",
+      "command": "sed -E 's/([0-9]{4})-([0-9]{2})-([0-9]{2})/\\3\\/\\2\\/\\1/g' dates.txt",
+      "tip": "Use -E for extended regex (no need to escape parentheses). Use -i.bak to edit in place with a backup."
+    },
+    {
+      "title": "Sort and deduplicate data",
+      "description": "Sort by specific columns and remove duplicate entries.",
+      "command": "sort -t',' -k2,2 -k1,1n data.csv | uniq",
+      "tip": "-t sets the delimiter, -k2,2 sorts by column 2, -k1,1n sorts column 1 numerically."
+    },
+    {
+      "title": "Aggregate and compute with awk",
+      "description": "Calculate sums, averages, and counts from columnar data.",
+      "command": "awk -F',' 'NR>1 {sum+=$3; count++} END {printf \"Total: %.2f\\nAverage: %.2f\\nCount: %d\\n\", sum, sum/count, count}' sales.csv"
+    },
+    {
+      "title": "Build a multi-stage pipeline",
+      "description": "Chain tools together to filter, transform, and summarize data in one command.",
+      "command": "cat access.log | awk '{print $1}' | sort | uniq -c | sort -rn | head -10",
+      "tip": "Read pipelines left to right: extract IPs, sort them, count unique occurrences, sort by count descending, show top 10."
+    }
+  ],
+  "fullScript": "#!/usr/bin/env bash\nset -euo pipefail\n\nFILE=${1:?'Usage: $0 <data-file>'}\n\n[[ ! -f \"$FILE\" ]] && { echo \"File not found: $FILE\" >&2; exit 1; }\n\n# Detect delimiter\nFIRST_LINE=$(head -1 \"$FILE\")\nif [[ \"$FIRST_LINE\" == *$'\\t'* ]]; then\n  DELIM=$'\\t'\n  echo \"Detected: TSV\"\nelif [[ \"$FIRST_LINE\" == *','* ]]; then\n  DELIM=','\n  echo \"Detected: CSV\"\nelse\n  DELIM=' '\n  echo \"Detected: space-delimited\"\nfi\n\necho \"\"\necho \"=== File Stats ===\"\necho \"Lines: $(wc -l < \"$FILE\")\"\necho \"Columns: $(head -1 \"$FILE\" | awk -F\"$DELIM\" '{print NF}')\"\necho \"Header: $(head -1 \"$FILE\")\"\n\necho \"\"\necho \"=== First 5 rows ===\"\nhead -6 \"$FILE\" | column -t -s\"$DELIM\"\n\necho \"\"\necho \"=== Unique values in column 1 ===\"\ntail -n +2 \"$FILE\" | cut -d\"$DELIM\" -f1 | sort | uniq -c | sort -rn | head -10\n\necho \"\"\necho \"=== Common Pipelines ===\"\necho \"Top values:    cut -d',' -f1 file | sort | uniq -c | sort -rn\"\necho \"Filter rows:   awk -F',' '\\$3 > 100' file\"\necho \"Replace text:  sed 's/old/new/g' file\"\necho \"Column stats:  awk -F',' '{sum+=\\$2} END{print sum}' file\"",
+  "faq": [
+    {
+      "question": "How do I handle CSV files with quoted fields containing commas?",
+      "answer": "Standard cut and awk do not handle quoted CSV fields correctly. Use csvtool, miller (mlr), or Python's csv module for proper RFC 4180 CSV parsing. Example: mlr --csv filter '$amount > 100' data.csv."
+    },
+    {
+      "question": "What is the difference between sort -n and sort -V?",
+      "answer": "-n sorts numerically (1, 2, 10, 20). -V sorts by version number (1.2.3, 1.10.0). Without -n, sort orders lexicographically (1, 10, 2, 20). Always use -n for numeric data."
+    },
+    {
+      "question": "How do I process very large files efficiently?",
+      "answer": "Use LC_ALL=C for faster locale-independent processing. Pipe through tools instead of loading into memory. Use split to break large files into chunks for parallel processing. For files over 10GB, consider using mawk instead of gawk for 2-5x speed improvement."
+    }
+  ],
+  "relatedRecipes": ["bash-log-processor", "bash-parallel-execution"],
+  "lastUpdated": "2026-03-11"
+}

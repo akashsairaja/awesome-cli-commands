@@ -1,0 +1,8 @@
+{
+  "id": "apt-38",
+  "categoryId": "ubuntu",
+  "subcategoryId": "systemd-services",
+  "title": "List all active services",
+  "command": "systemctl list-units --type=service --state=running",
+  "description": "Show all currently running systemd services."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "node-sec-1",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-security",
+  "title": "Enable permissions",
+  "command": "node --permission app.js",
+  "description": "Enable permission restrictions (Node.js 23.5+)."
+}

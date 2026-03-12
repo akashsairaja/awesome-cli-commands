@@ -1,0 +1,8 @@
+{
+  "id": "dbricks-gs-2",
+  "title": "Configure Databricks CLI",
+  "command": "databricks configure --token",
+  "description": "Set up Databricks CLI authentication with a personal access token",
+  "categoryId": "databricks",
+  "subcategoryId": "getting-started"
+}

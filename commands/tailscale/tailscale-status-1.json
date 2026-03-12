@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-status-1",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-status",
+  "title": "Show status",
+  "command": "tailscale status",
+  "description": "Show connection status and peers."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "checkov-scan-12",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-scan",
+  "title": "Scan from Docker",
+  "command": "docker run --tty --volume $(pwd):/tf bridgecrew/checkov -d /tf",
+  "description": "Run Checkov scan via Docker."
+}

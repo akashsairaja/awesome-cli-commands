@@ -1,0 +1,8 @@
+{
+  "id": "volta-install-10",
+  "categoryId": "volta",
+  "subcategoryId": "volta-install",
+  "title": "Uninstall global package",
+  "command": "volta uninstall typescript",
+  "description": "Uninstall a global package."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tofu-encryption-4",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-encryption",
+  "title": "Plan file encryption",
+  "command": "encryption {\n  plan {\n    method = method.aes_gcm.my_method\n  }\n}",
+  "description": "Encrypt plan files alongside state."
+}

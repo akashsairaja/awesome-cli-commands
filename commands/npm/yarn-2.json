@@ -1,0 +1,8 @@
+{
+  "id": "yarn-2",
+  "categoryId": "npm",
+  "subcategoryId": "yarn",
+  "title": "yarn PnP SDK",
+  "command": "yarn dlx @yarnpkg/sdks",
+  "description": "Generate editor SDKs for Plug'n'Play."
+}

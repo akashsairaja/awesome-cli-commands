@@ -1,0 +1,62 @@
+{
+  "id": "bash-parallel-execution",
+  "stackId": "bash",
+  "name": "Run Commands in Parallel with xargs and GNU Parallel",
+  "description": "Speed up batch operations by executing commands in parallel using xargs -P, GNU parallel, and background jobs with wait.",
+  "difficulty": "advanced",
+  "timeMinutes": 15,
+  "trending": false,
+  "tags": ["parallel", "xargs", "performance", "concurrency", "batch"],
+  "prerequisites": [
+    "Bash 4.0+",
+    "GNU coreutils (xargs)",
+    "GNU parallel (optional, for advanced usage)"
+  ],
+  "steps": [
+    {
+      "title": "Run commands in parallel with xargs",
+      "description": "Use xargs -P to run multiple processes simultaneously.",
+      "command": "find . -name '*.png' -print0 | xargs -0 -P 4 -I {} optipng -o2 {}",
+      "tip": "-P 4 runs 4 processes in parallel. -print0 and -0 handle filenames with spaces safely."
+    },
+    {
+      "title": "Process a list of URLs in parallel",
+      "description": "Download or check multiple URLs concurrently using xargs.",
+      "command": "cat urls.txt | xargs -P 8 -I {} curl -s -o /dev/null -w '{} %{http_code}\\n' {}"
+    },
+    {
+      "title": "Use GNU parallel for advanced parallel execution",
+      "description": "GNU parallel provides job logging, progress bars, and automatic load balancing.",
+      "command": "find . -name '*.csv' | parallel -j 4 --bar 'gzip {}'",
+      "tip": "Install with: brew install parallel (macOS) or apt install parallel (Ubuntu)."
+    },
+    {
+      "title": "Use background jobs with wait",
+      "description": "Run commands as background jobs and wait for all to complete.",
+      "command": "for i in 1 2 3 4; do\n  (echo \"Job $i starting\" && sleep $((RANDOM % 5)) && echo \"Job $i done\") &\ndone\nwait\necho \"All jobs complete\"",
+      "warning": "Without 'wait', the script may exit before background jobs finish. Always call wait before using the results."
+    },
+    {
+      "title": "Limit concurrency with a semaphore pattern",
+      "description": "Control the maximum number of concurrent background jobs.",
+      "command": "MAX_JOBS=4\nfor file in *.log; do\n  while [[ $(jobs -r | wc -l) -ge $MAX_JOBS ]]; do sleep 0.1; done\n  process_file \"$file\" &\ndone\nwait"
+    }
+  ],
+  "fullScript": "#!/usr/bin/env bash\nset -euo pipefail\n\n# Parallel Execution Examples\nMAX_PARALLEL=${1:-4}\nACTION=${2:-echo}\n\nlog() { echo \"[$(date +'%H:%M:%S')] $*\"; }\n\n# Method 1: xargs -P\nlog \"=== xargs parallel (max $MAX_PARALLEL) ===\"\nfind . -maxdepth 1 -name '*.txt' -print0 | xargs -0 -P \"$MAX_PARALLEL\" -I {} sh -c '\n  echo \"Processing: {}\"\n  wc -l \"{}\"\n'\n\n# Method 2: Background jobs with wait\nlog \"=== Background jobs ===\"\nPIDS=()\nfor i in $(seq 1 \"$MAX_PARALLEL\"); do\n  (\n    log \"Job $i started\"\n    sleep 1\n    log \"Job $i completed\"\n  ) &\n  PIDS+=($!)\ndone\n\n# Wait and check exit codes\nFAILED=0\nfor pid in \"${PIDS[@]}\"; do\n  wait \"$pid\" || ((FAILED++))\ndone\n\nlog \"All jobs complete. Failures: $FAILED\"\n[[ $FAILED -gt 0 ]] && exit 1 || exit 0",
+  "faq": [
+    {
+      "question": "What is the difference between xargs -P and GNU parallel?",
+      "answer": "xargs -P is built-in and handles simple parallel execution. GNU parallel adds features like progress bars (--bar), job logging (--joblog), retry on failure (--retries), remote execution (--sshlogin), and automatic output ordering. Use xargs for simple cases, parallel for complex workflows."
+    },
+    {
+      "question": "How many parallel jobs should I use?",
+      "answer": "For CPU-bound tasks, use the number of CPU cores: nproc or sysctl -n hw.ncpu. For I/O-bound tasks (network, disk), you can use 2-4x the core count. Start conservative and increase until you see diminishing returns."
+    },
+    {
+      "question": "How do I handle errors in parallel execution?",
+      "answer": "With xargs, check the exit code ($?). With background jobs, store PIDs and check each with 'wait $pid'. GNU parallel has --halt now,fail=1 to stop on the first failure or --joblog file.log to record successes and failures."
+    }
+  ],
+  "relatedRecipes": ["bash-text-processing", "bash-script-template"],
+  "lastUpdated": "2026-03-11"
+}

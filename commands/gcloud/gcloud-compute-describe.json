@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-compute-describe",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-compute",
+  "title": "Describe VM Instance",
+  "command": "gcloud compute instances describe <name> --zone=<zone>",
+  "description": "Get detailed information about a VM instance",
+  "tags": ["vm", "describe", "info"]
+}

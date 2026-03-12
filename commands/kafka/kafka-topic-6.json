@@ -1,0 +1,8 @@
+{
+  "id": "kafka-topic-6",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-topics",
+  "title": "Topic config",
+  "command": "kafka-configs.sh --describe --entity-type topics --entity-name my-topic --bootstrap-server localhost:9092",
+  "description": "Show topic configuration."
+}

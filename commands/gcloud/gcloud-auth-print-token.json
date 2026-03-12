@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-auth-print-token",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-auth",
+  "title": "Print Access Token",
+  "command": "gcloud auth print-access-token",
+  "description": "Print an access token for the active account (useful for API calls)",
+  "tags": ["auth", "token", "access"]
+}

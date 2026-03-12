@@ -1,0 +1,8 @@
+{
+  "id": "task-vars-8",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-vars",
+  "title": "Task-level env",
+  "command": "tasks:\n  build:\n    env:\n      GOOS: linux\n      GOARCH: amd64\n    cmds:\n      - go build -o app",
+  "description": "Set env variables per task."
+}

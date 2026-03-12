@@ -1,0 +1,8 @@
+{
+  "id": "sops-encrypt-7",
+  "categoryId": "sops",
+  "subcategoryId": "sops-encrypt",
+  "title": "Encrypt with Azure Key Vault",
+  "command": "sops -e --azure-kv https://myvault.vault.azure.net/keys/mykey/version secrets.yaml",
+  "description": "Encrypt using Azure Key Vault."
+}

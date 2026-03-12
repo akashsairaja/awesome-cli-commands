@@ -1,0 +1,9 @@
+{
+  "id": "netlify-init",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-sites",
+  "title": "Initialize site",
+  "command": "netlify init",
+  "description": "Initialize a new Netlify site in current directory",
+  "tags": ["init", "initialize", "setup"]
+}

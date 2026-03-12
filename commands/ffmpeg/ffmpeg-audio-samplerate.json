@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-audio-samplerate",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-audio",
+  "title": "Change sample rate",
+  "command": "ffmpeg -i input.mp3 -ar 44100 output.mp3",
+  "description": "Change audio sample rate",
+  "tags": ["audio", "samplerate", "resample"]
+}

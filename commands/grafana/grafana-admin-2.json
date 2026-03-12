@@ -1,0 +1,8 @@
+{
+  "id": "grafana-admin-2",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-admin",
+  "title": "Generate secret key",
+  "command": "grafana-cli admin secret-key",
+  "description": "Generate a new secret key."
+}

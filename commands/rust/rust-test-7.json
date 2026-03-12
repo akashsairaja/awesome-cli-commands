@@ -1,0 +1,8 @@
+{
+  "id": "rust-test-7",
+  "categoryId": "rust",
+  "subcategoryId": "rust-test",
+  "title": "Run benchmarks",
+  "command": "cargo bench",
+  "description": "Run all benchmarks."
+}

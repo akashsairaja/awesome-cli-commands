@@ -1,0 +1,8 @@
+{
+  "id": "nats-pub-6",
+  "categoryId": "nats",
+  "subcategoryId": "nats-pubsub",
+  "title": "Reply service",
+  "command": "nats reply greet.> 'Hello!'",
+  "description": "Listen for requests and send responses."
+}

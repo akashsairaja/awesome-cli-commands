@@ -1,0 +1,8 @@
+{
+  "id": "apt-70",
+  "categoryId": "ubuntu",
+  "subcategoryId": "ubuntu-network",
+  "title": "Delete UFW rule",
+  "command": "sudo ufw delete allow <port>/tcp",
+  "description": "Remove a previously added firewall rule."
+}

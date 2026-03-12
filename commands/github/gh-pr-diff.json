@@ -1,0 +1,9 @@
+{
+  "id": "gh-pr-diff",
+  "categoryId": "github",
+  "subcategoryId": "gh-pr",
+  "title": "View PR diff",
+  "command": "gh pr diff <number>",
+  "description": "View the diff of a pull request",
+  "tags": ["pr", "diff", "changes"]
+}

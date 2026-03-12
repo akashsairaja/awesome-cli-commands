@@ -1,0 +1,9 @@
+{
+  "id": "gradle-test-filter",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-testing",
+  "title": "Run Specific Tests",
+  "command": "./gradlew test --tests \"com.example.MyTest\"",
+  "description": "Run specific test classes or methods",
+  "tags": ["test", "filter", "specific"]
+}

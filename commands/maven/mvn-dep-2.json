@@ -1,0 +1,8 @@
+{
+  "id": "mvn-dep-2",
+  "categoryId": "maven",
+  "subcategoryId": "dependencies",
+  "title": "Filter tree",
+  "command": "mvn dependency:tree -Dincludes=com.google.*",
+  "description": "Show only matching dependencies."
+}

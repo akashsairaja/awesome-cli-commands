@@ -1,0 +1,8 @@
+{
+  "id": "ts-compile-9",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-compile",
+  "title": "Generate source maps",
+  "command": "tsc --sourceMap",
+  "description": "Generate .js.map files for debugging."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "nuget-install-10",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-install",
+  "title": "Add package from source",
+  "command": "dotnet add package MyPackage --source https://my-feed.example.com/v3/index.json",
+  "description": "Add package from a specific source."
+}

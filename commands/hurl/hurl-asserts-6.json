@@ -1,0 +1,8 @@
+{
+  "id": "hurl-asserts-6",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-asserts",
+  "title": "XPath assertion",
+  "command": "[Asserts]\nxpath \"//title\" == \"Home Page\"",
+  "description": "Assert XML/HTML with XPath."
+}

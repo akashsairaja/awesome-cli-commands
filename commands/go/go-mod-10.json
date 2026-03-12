@@ -1,0 +1,8 @@
+{
+  "id": "go-mod-10",
+  "categoryId": "go",
+  "subcategoryId": "go-mod",
+  "title": "Update all dependencies",
+  "command": "go get -u ./...",
+  "description": "Update all dependencies to latest minor/patch."
+}

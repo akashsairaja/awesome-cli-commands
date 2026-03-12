@@ -1,0 +1,8 @@
+{
+  "id": "apt-41",
+  "categoryId": "ubuntu",
+  "subcategoryId": "systemd-services",
+  "title": "List failed services",
+  "command": "systemctl --failed",
+  "description": "Show all services that have failed to start."
+}

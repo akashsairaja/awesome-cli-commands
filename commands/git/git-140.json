@@ -1,0 +1,8 @@
+{
+  "id": "git-140",
+  "categoryId": "git",
+  "subcategoryId": "git-config",
+  "title": "Enable autostash on rebase",
+  "command": "git config --global rebase.autoStash true",
+  "description": "Auto-stash before rebase."
+}

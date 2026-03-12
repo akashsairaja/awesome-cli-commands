@@ -1,0 +1,9 @@
+{
+  "id": "ansible-playbook-verbose",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-playbook",
+  "title": "Verbose Output",
+  "command": "ansible-playbook playbook.yml -vvv",
+  "description": "Run with detailed debug output",
+  "tags": ["playbook", "verbose", "debug"]
+}

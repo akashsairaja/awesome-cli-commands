@@ -1,0 +1,8 @@
+{
+  "id": "pg-io-3",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-import",
+  "title": "COPY (server-side)",
+  "command": "COPY users TO '/tmp/users.csv' WITH CSV HEADER;",
+  "description": "Server-side export (requires superuser)."
+}

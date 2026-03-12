@@ -1,0 +1,8 @@
+{
+  "id": "db-54",
+  "categoryId": "database",
+  "subcategoryId": "mongodb",
+  "title": "Update document",
+  "command": "db.collection.updateOne({ name: 'old' }, { $set: { name: 'new' } })",
+  "description": "Update a single matching document."
+}

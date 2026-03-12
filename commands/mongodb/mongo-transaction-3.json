@@ -1,0 +1,8 @@
+{
+  "id": "mongo-transaction-3",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-transactions",
+  "title": "Commit transaction",
+  "command": "session.commitTransaction()",
+  "description": "Persist all transaction changes."
+}

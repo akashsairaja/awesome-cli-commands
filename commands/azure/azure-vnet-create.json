@@ -1,0 +1,9 @@
+{
+  "id": "azure-vnet-create",
+  "categoryId": "azure",
+  "subcategoryId": "azure-network",
+  "title": "Create Virtual Network",
+  "command": "az network vnet create --resource-group <rg> --name <vnet-name> --address-prefix 10.0.0.0/16 --subnet-name default --subnet-prefix 10.0.0.0/24",
+  "description": "Create a VNet with a default subnet",
+  "tags": ["vnet", "create", "network"]
+}

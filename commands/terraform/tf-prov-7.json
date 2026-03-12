@@ -1,0 +1,8 @@
+{
+  "id": "tf-prov-7",
+  "categoryId": "terraform",
+  "subcategoryId": "providers",
+  "title": "Target specific resource",
+  "command": "terraform apply -target=aws_instance.example",
+  "description": "Apply only to specific resource."
+}

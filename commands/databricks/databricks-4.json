@@ -1,0 +1,8 @@
+{
+  "id": "databricks-4",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-clusters",
+  "title": "Terminate cluster",
+  "command": "databricks clusters delete --cluster-id <cluster-id>",
+  "description": "Terminate a running cluster."
+}

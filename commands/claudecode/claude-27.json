@@ -1,0 +1,8 @@
+{
+  "id": "claude-27",
+  "categoryId": "claudecode",
+  "subcategoryId": "context",
+  "title": "Compact with focus",
+  "command": "/compact authentication",
+  "description": "Compact conversation while preserving specific topic."
+}

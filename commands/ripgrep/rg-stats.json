@@ -1,0 +1,9 @@
+{
+  "id": "rg-stats",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-output",
+  "title": "Show search stats",
+  "command": "rg --stats \"pattern\"",
+  "description": "Show search statistics",
+  "tags": ["stats", "statistics", "summary"]
+}

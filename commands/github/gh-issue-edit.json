@@ -1,0 +1,9 @@
+{
+  "id": "gh-issue-edit",
+  "categoryId": "github",
+  "subcategoryId": "gh-issue",
+  "title": "Edit issue",
+  "command": "gh issue edit <number> --title \"<new-title>\"",
+  "description": "Edit an existing issue",
+  "tags": ["issue", "edit", "update"]
+}

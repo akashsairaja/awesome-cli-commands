@@ -1,0 +1,8 @@
+{
+  "id": "docker-12",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "List all containers",
+  "command": "docker ps -a",
+  "description": "Show all containers including stopped."
+}

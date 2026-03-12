@@ -1,0 +1,8 @@
+{
+  "id": "vim-63",
+  "categoryId": "vim",
+  "subcategoryId": "advanced-editing",
+  "title": "Unindent line",
+  "command": "<<",
+  "description": "Shift current line left."
+}

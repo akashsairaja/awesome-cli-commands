@@ -1,0 +1,9 @@
+{
+  "id": "ansible-playbook-vars",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-playbook",
+  "title": "Pass Extra Variables",
+  "command": "ansible-playbook playbook.yml -e \"env=production version=1.2.3\"",
+  "description": "Pass variables at runtime",
+  "tags": ["playbook", "variables", "extra"]
+}

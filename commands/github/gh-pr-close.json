@@ -1,0 +1,9 @@
+{
+  "id": "gh-pr-close",
+  "categoryId": "github",
+  "subcategoryId": "gh-pr",
+  "title": "Close pull request",
+  "command": "gh pr close <number>",
+  "description": "Close a pull request without merging",
+  "tags": ["pr", "close"]
+}

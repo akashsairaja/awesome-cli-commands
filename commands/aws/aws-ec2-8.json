@@ -1,0 +1,8 @@
+{
+  "id": "aws-ec2-8",
+  "categoryId": "aws",
+  "subcategoryId": "ec2",
+  "title": "List AMIs",
+  "command": "aws ec2 describe-images --owners self amazon --filters 'Name=name,Values=*ubuntu*' --query 'Images[*].[ImageId,Name]' --output table",
+  "description": "Search for AMIs by name pattern."
+}

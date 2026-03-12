@@ -1,0 +1,9 @@
+{
+  "id": "ansible-galaxy-collection-build",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-galaxy",
+  "title": "Build Collection",
+  "command": "ansible-galaxy collection build",
+  "description": "Build collection tarball from source",
+  "tags": ["galaxy", "collection", "build"]
+}

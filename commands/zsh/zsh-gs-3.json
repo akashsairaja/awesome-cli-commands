@@ -1,0 +1,8 @@
+{
+  "id": "zsh-gs-3",
+  "title": "Set Zsh as default shell",
+  "command": "chsh -s $(which zsh)",
+  "description": "Change the default login shell to Zsh",
+  "categoryId": "zsh",
+  "subcategoryId": "getting-started"
+}

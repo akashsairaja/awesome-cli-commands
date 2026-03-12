@@ -1,0 +1,49 @@
+{
+  "id": "pr-workflow-automation",
+  "stackId": "github",
+  "name": "PR Workflow Automation",
+  "description": "Streamline pull request creation, review, and merging using GitHub CLI for faster code review cycles.",
+  "difficulty": "beginner",
+  "timeMinutes": 5,
+  "trending": true,
+  "trendingReason": "CLI-driven PR workflows are faster than browser-based reviews",
+  "tags": ["pull-requests", "workflow", "automation", "review"],
+  "prerequisites": ["GitHub CLI (gh) installed and authenticated"],
+  "steps": [
+    {
+      "title": "Create a pull request from the current branch",
+      "description": "Open a PR with a title and body directly from the terminal.",
+      "command": "gh pr create --title 'feat: add user authentication' --body 'Implements JWT-based auth with refresh tokens'",
+      "tip": "Use --draft to create a draft PR that is not ready for review yet."
+    },
+    {
+      "title": "List open pull requests",
+      "description": "View all open PRs in the repository with status checks.",
+      "command": "gh pr list --state open --json number,title,author,reviewDecision --jq '.[] | \"#\\(.number) \\(.title) [\\(.reviewDecision)]\"'"
+    },
+    {
+      "title": "Check out a PR locally for review",
+      "description": "Fetch and check out a pull request branch to test it locally.",
+      "command": "gh pr checkout 42"
+    },
+    {
+      "title": "Approve and merge a PR",
+      "description": "Submit an approval review and merge the PR in one flow.",
+      "command": "gh pr review 42 --approve && gh pr merge 42 --squash --delete-branch",
+      "tip": "Use --squash for a clean history, --merge for a merge commit, or --rebase for a linear history."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# PR Workflow Automation\nset -euo pipefail\n\necho \"=== Open Pull Requests ===\"\ngh pr list --state open --limit 10\n\necho \"\"\necho \"=== PR Commands ===\"\necho \"Create:   gh pr create --title 'title' --body 'description'\"\necho \"Draft:    gh pr create --draft --title 'WIP: feature'\"\necho \"Checkout: gh pr checkout <number>\"\necho \"Review:   gh pr review <number> --approve\"\necho \"Merge:    gh pr merge <number> --squash --delete-branch\"\necho \"Status:   gh pr status\"\necho \"Diff:     gh pr diff <number>\"\necho \"Checks:   gh pr checks <number>\"",
+  "faq": [
+    {
+      "question": "How do I request specific reviewers?",
+      "answer": "Add --reviewer user1,user2 to the gh pr create command. You can also use --assignee to assign the PR."
+    },
+    {
+      "question": "Can I create a PR from a fork?",
+      "answer": "Yes. Push to your fork first, then use 'gh pr create --repo owner/repo' to target the upstream repository."
+    }
+  ],
+  "relatedRecipes": ["code-review-sync", "branch-protection-setup"],
+  "lastUpdated": "2026-03-11"
+}

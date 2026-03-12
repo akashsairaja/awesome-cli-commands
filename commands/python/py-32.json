@@ -1,0 +1,8 @@
+{
+  "id": "py-32",
+  "categoryId": "python",
+  "subcategoryId": "python-poetry",
+  "title": "Build package",
+  "command": "poetry build",
+  "description": "Build source and wheel distributions."
+}

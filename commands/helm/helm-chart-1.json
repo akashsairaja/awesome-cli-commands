@@ -1,0 +1,8 @@
+{
+  "id": "helm-chart-1",
+  "categoryId": "helm",
+  "subcategoryId": "helm-chart",
+  "title": "Show chart info",
+  "command": "helm show chart bitnami/nginx",
+  "description": "Display chart metadata."
+}

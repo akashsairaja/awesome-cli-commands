@@ -1,0 +1,8 @@
+{
+  "id": "ssh-41",
+  "categoryId": "sshgpg",
+  "subcategoryId": "connections",
+  "title": "GPG verify signature",
+  "command": "gpg --verify file.txt.sig file.txt",
+  "description": "Verify a detached GPG signature."
+}

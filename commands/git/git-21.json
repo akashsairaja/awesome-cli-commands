@@ -1,0 +1,8 @@
+{
+  "id": "git-21",
+  "categoryId": "git",
+  "subcategoryId": "commits",
+  "title": "Cherry-pick commit",
+  "command": "git cherry-pick <commit-hash>",
+  "description": "Apply a specific commit from another branch."
+}

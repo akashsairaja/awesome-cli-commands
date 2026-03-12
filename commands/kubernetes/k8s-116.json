@@ -1,0 +1,8 @@
+{
+  "id": "k8s-116",
+  "categoryId": "kubernetes",
+  "subcategoryId": "debugging",
+  "title": "Get events sorted by time",
+  "command": "kubectl get events --sort-by='.lastTimestamp'",
+  "description": "List cluster events sorted by most recent."
+}

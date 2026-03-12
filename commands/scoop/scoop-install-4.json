@@ -1,0 +1,8 @@
+{
+  "id": "scoop-install-4",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-install",
+  "title": "Install from URL",
+  "command": "scoop install https://raw.githubusercontent.com/user/bucket/main/app.json",
+  "description": "Install from a manifest URL."
+}

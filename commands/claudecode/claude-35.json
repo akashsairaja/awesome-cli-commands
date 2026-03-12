@@ -1,0 +1,8 @@
+{
+  "id": "claude-35",
+  "categoryId": "claudecode",
+  "subcategoryId": "context",
+  "title": "Export conversation",
+  "command": "/export",
+  "description": "Save conversation to a file."
+}

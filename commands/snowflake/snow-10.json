@@ -1,0 +1,8 @@
+{
+  "id": "snow-10",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-sql",
+  "title": "Execute SQL query",
+  "command": "snow sql -q \"SELECT * FROM table LIMIT 10\"",
+  "description": "Execute a single SQL query."
+}

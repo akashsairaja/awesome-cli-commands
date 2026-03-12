@@ -1,0 +1,8 @@
+{
+  "id": "ssh-22",
+  "categoryId": "sshgpg",
+  "subcategoryId": "config",
+  "title": "Fix SSH directory permissions",
+  "command": "chmod 700 ~/.ssh",
+  "description": "Set correct .ssh directory permissions."
+}

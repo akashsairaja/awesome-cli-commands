@@ -1,0 +1,8 @@
+{
+  "id": "temporal-schedule-2",
+  "categoryId": "temporal",
+  "subcategoryId": "schedule",
+  "title": "Create with cron",
+  "command": "temporal schedule create --schedule-id daily-job --cron '0 3 * * *' --workflow-id daily-wf --type DailyWorkflow --task-queue my-queue",
+  "description": "Create schedule using cron expression (daily at 3 AM)."
+}

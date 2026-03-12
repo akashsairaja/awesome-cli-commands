@@ -1,0 +1,9 @@
+{
+  "id": "supabase-test-serve",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-test",
+  "title": "Serve with test env",
+  "command": "supabase functions serve --env-file .env.test",
+  "description": "Serve functions with test environment",
+  "tags": ["test", "functions", "serve"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "checkov-checks-6",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-checks",
+  "title": "Check by framework prefix",
+  "command": "checkov -d . --check CKV_K8S",
+  "description": "Run only Kubernetes-prefixed checks."
+}

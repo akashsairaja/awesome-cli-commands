@@ -1,0 +1,8 @@
+{
+  "id": "npm-scripts-6",
+  "categoryId": "npm",
+  "subcategoryId": "npm-scripts",
+  "title": "npx specific version",
+  "command": "npx <package>@<version>",
+  "description": "Execute specific version of package."
+}

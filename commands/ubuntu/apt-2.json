@@ -1,0 +1,8 @@
+{
+  "id": "apt-2",
+  "categoryId": "ubuntu",
+  "subcategoryId": "apt-packages",
+  "title": "Upgrade all packages",
+  "command": "sudo apt upgrade",
+  "description": "Upgrade all installed packages."
+}

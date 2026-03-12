@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-certs-9",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-certs",
+  "title": "Multiple wildcard domains",
+  "command": "mkcert '*.app.local' '*.api.local' localhost",
+  "description": "Create cert with multiple wildcard domains."
+}

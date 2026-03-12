@@ -1,0 +1,8 @@
+{
+  "id": "ps-54",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-pipeline",
+  "title": "Where with script block",
+  "command": "Get-Process | Where-Object { $_.CPU -gt 10 -and $_.Name -like 'c*' }",
+  "description": "Filter with complex conditions."
+}

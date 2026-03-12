@@ -1,0 +1,8 @@
+{
+  "id": "brew-28",
+  "categoryId": "homebrew",
+  "subcategoryId": "brew-services",
+  "title": "List services",
+  "command": "brew services list",
+  "description": "List all managed services."
+}

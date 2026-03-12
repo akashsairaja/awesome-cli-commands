@@ -1,0 +1,8 @@
+{
+  "id": "zoxide-1",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-zoxide",
+  "title": "Jump to directory",
+  "command": "z project",
+  "description": "Jump to most frecent matching directory."
+}

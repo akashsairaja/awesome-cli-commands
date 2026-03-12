@@ -1,0 +1,59 @@
+{
+  "id": "playwright-codegen",
+  "stackId": "playwright",
+  "name": "Generate Tests by Recording Browser Actions",
+  "description": "Use Playwright Codegen to record user interactions in the browser and automatically generate test scripts with proper locators.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "trending": true,
+  "trendingReason": "Codegen dramatically lowers the barrier to writing E2E tests for non-testing-experts",
+  "tags": ["codegen", "recording", "locators", "productivity"],
+  "prerequisites": ["Playwright installed", "A running web application"],
+  "steps": [
+    {
+      "title": "Launch the code generator",
+      "description": "Open a browser with the codegen recorder attached.",
+      "command": "npx playwright codegen http://localhost:3000",
+      "tip": "Interact with the page normally. Every click, type, and navigation is recorded as test code in real time."
+    },
+    {
+      "title": "Generate code for a specific viewport",
+      "description": "Record tests at a specific screen size for responsive testing.",
+      "command": "npx playwright codegen --viewport-size=375,812 http://localhost:3000"
+    },
+    {
+      "title": "Record with authentication state",
+      "description": "Start codegen with a saved authentication state to skip login flows.",
+      "command": "npx playwright codegen --load-storage=auth.json http://localhost:3000",
+      "tip": "First save auth state with 'npx playwright codegen --save-storage=auth.json' after logging in manually."
+    },
+    {
+      "title": "Use the locator picker",
+      "description": "Launch the inspector to find robust locators for page elements.",
+      "command": "npx playwright open --inspector http://localhost:3000"
+    },
+    {
+      "title": "Generate tests in a specific language",
+      "description": "Output test code in your preferred language.",
+      "command": "npx playwright codegen --target=playwright-test http://localhost:3000",
+      "tip": "Supported targets include playwright-test (TypeScript), python-pytest, java-junit, and csharp-mstest."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Playwright Codegen Workflow\nset -euo pipefail\n\nTARGET_URL=${1:-\"http://localhost:3000\"}\n\necho \"=== Playwright Codegen ===\"\necho \"Target: $TARGET_URL\"\necho \"\"\necho \"Instructions:\"\necho \"1. A browser window will open with the code generator\"\necho \"2. Interact with the page to record actions\"\necho \"3. Copy the generated code from the right panel\"\necho \"4. Paste into your test file\"\necho \"\"\necho \"=== Tips ===\"\necho \"- Click 'Record' to start/stop recording\"\necho \"- Use 'Pick locator' to find the best selector for an element\"\necho \"- Use 'Assert visibility' to add expect() assertions\"\necho \"- Use 'Assert text' to verify text content\"\necho \"\"\necho \"=== Launching Codegen ===\"\nnpx playwright codegen \\\n  --target=playwright-test \\\n  \"$TARGET_URL\"",
+  "faq": [
+    {
+      "question": "How reliable are codegen-generated locators?",
+      "answer": "Playwright codegen uses a smart locator strategy that prefers role-based and text-based locators (getByRole, getByText, getByLabel) over CSS selectors. These are more resilient to DOM changes. Always review and refine generated locators for production tests."
+    },
+    {
+      "question": "Can I record assertions, not just actions?",
+      "answer": "Yes. In the codegen toolbar, click 'Assert visibility' to assert an element is visible, or 'Assert text' to verify text content. These generate expect() calls in the output code."
+    },
+    {
+      "question": "How do I handle dynamic content during recording?",
+      "answer": "Codegen records what you interact with. For dynamic elements, record the interaction and then manually edit the test to add appropriate waitFor conditions or use Playwright's auto-waiting which handles most cases automatically."
+    }
+  ],
+  "relatedRecipes": ["playwright-test-setup", "playwright-trace-debugging"],
+  "lastUpdated": "2026-03-11"
+}

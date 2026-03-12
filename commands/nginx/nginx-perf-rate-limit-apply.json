@@ -1,0 +1,9 @@
+{
+  "id": "nginx-perf-rate-limit-apply",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-performance",
+  "title": "Apply rate limit to location",
+  "command": "limit_req zone=mylimit burst=20 nodelay;",
+  "description": "Apply rate limit with burst allowance",
+  "tags": ["performance", "rate-limit", "burst", "nodelay"]
+}

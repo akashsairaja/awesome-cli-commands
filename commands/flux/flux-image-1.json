@@ -1,0 +1,8 @@
+{
+  "id": "flux-image-1",
+  "categoryId": "flux",
+  "subcategoryId": "flux-image",
+  "title": "Create image repository",
+  "command": "flux create image repository podinfo --image=ghcr.io/stefanprodan/podinfo --interval=5m",
+  "description": "Create ImageRepository to scan registry."
+}

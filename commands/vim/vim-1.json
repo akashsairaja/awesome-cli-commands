@@ -1,0 +1,8 @@
+{
+  "id": "vim-1",
+  "categoryId": "vim",
+  "subcategoryId": "navigation",
+  "title": "Basic movement",
+  "command": "h j k l",
+  "description": "Move left/down/up/right."
+}

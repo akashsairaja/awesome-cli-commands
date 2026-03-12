@@ -1,0 +1,8 @@
+{
+  "id": "tmux-gs-3",
+  "title": "Check tmux version",
+  "command": "tmux -V",
+  "description": "Display the installed tmux version",
+  "categoryId": "tmux",
+  "subcategoryId": "getting-started"
+}

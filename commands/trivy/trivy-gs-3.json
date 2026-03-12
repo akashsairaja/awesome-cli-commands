@@ -1,0 +1,8 @@
+{
+  "id": "trivy-gs-3",
+  "title": "Check Trivy version",
+  "command": "trivy --version",
+  "description": "Verify Trivy installation and display version info",
+  "categoryId": "trivy",
+  "subcategoryId": "getting-started"
+}

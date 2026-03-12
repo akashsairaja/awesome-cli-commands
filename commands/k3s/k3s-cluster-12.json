@@ -1,0 +1,8 @@
+{
+  "id": "k3s-cluster-12",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-cluster",
+  "title": "Stop k3s service",
+  "command": "sudo systemctl stop k3s",
+  "description": "Stop the k3s server process."
+}

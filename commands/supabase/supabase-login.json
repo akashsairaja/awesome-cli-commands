@@ -1,0 +1,9 @@
+{
+  "id": "supabase-login",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-auth",
+  "title": "Login to Supabase",
+  "command": "supabase login",
+  "description": "Login to Supabase account",
+  "tags": ["login", "auth"]
+}

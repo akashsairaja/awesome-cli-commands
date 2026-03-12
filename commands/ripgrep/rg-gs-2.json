@@ -1,0 +1,8 @@
+{
+  "id": "rg-gs-2",
+  "title": "Install ripgrep (Linux)",
+  "command": "sudo apt install ripgrep -y",
+  "description": "Install ripgrep using APT on Debian/Ubuntu Linux",
+  "categoryId": "ripgrep",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "snow-1",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-connections",
+  "title": "Add connection",
+  "command": "snow connection add",
+  "description": "Interactively add a new Snowflake connection."
+}

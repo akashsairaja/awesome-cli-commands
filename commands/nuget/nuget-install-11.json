@@ -1,0 +1,8 @@
+{
+  "id": "nuget-install-11",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-install",
+  "title": "List deprecated packages",
+  "command": "dotnet list package --deprecated",
+  "description": "Show packages marked as deprecated."
+}

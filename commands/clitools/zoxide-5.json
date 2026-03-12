@@ -1,0 +1,8 @@
+{
+  "id": "zoxide-5",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-zoxide",
+  "title": "Remove entry",
+  "command": "zoxide remove /path/to/dir",
+  "description": "Remove directory from database."
+}

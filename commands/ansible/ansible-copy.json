@@ -1,0 +1,9 @@
+{
+  "id": "ansible-copy",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-adhoc",
+  "title": "Copy File to Hosts",
+  "command": "ansible all -m copy -a \"src=/local/file dest=/remote/path\"",
+  "description": "Copy a file to remote hosts",
+  "tags": ["copy", "file", "transfer"]
+}

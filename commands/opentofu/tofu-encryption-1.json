@@ -1,0 +1,8 @@
+{
+  "id": "tofu-encryption-1",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-encryption",
+  "title": "Enable encryption",
+  "command": "terraform {\n  encryption {\n    key_provider \"pbkdf2\" \"my_passphrase\" {\n      passphrase = var.passphrase\n    }\n    method \"aes_gcm\" \"my_method\" {\n      keys = key_provider.pbkdf2.my_passphrase\n    }\n    state {\n      method = method.aes_gcm.my_method\n    }\n  }\n}",
+  "description": "Configure state encryption."
+}

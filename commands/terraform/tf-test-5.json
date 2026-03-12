@@ -1,0 +1,8 @@
+{
+  "id": "tf-test-5",
+  "categoryId": "terraform",
+  "subcategoryId": "terraform-test",
+  "title": "Test JSON output",
+  "command": "terraform test -json",
+  "description": "Output test results in JSON format for CI/CD."
+}

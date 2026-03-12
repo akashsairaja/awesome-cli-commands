@@ -1,0 +1,8 @@
+{
+  "id": "k3s-config-6",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-config",
+  "title": "Set custom data directory",
+  "command": "curl -sfL https://get.k3s.io | sh -s - --data-dir /opt/k3s",
+  "description": "Store k3s data in a custom directory instead of /var/lib/rancher/k3s."
+}

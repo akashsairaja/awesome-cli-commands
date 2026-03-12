@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-compute-stop",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-compute",
+  "title": "Stop VM Instance",
+  "command": "gcloud compute instances stop <name> --zone=<zone>",
+  "description": "Stop a running VM instance",
+  "tags": ["vm", "stop", "power"]
+}

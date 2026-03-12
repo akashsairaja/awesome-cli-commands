@@ -1,0 +1,8 @@
+{
+  "id": "git-72",
+  "categoryId": "git",
+  "subcategoryId": "remote",
+  "title": "Push with upstream",
+  "command": "git push -u origin <branch>",
+  "description": "Push and set upstream tracking."
+}

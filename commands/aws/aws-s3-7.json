@@ -1,0 +1,8 @@
+{
+  "id": "aws-s3-7",
+  "categoryId": "aws",
+  "subcategoryId": "s3",
+  "title": "Delete bucket",
+  "command": "aws s3 rb s3://bucket-name --force",
+  "description": "Delete bucket and all contents."
+}

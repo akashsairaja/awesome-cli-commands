@@ -1,0 +1,8 @@
+{
+  "id": "ps-63",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-pipeline",
+  "title": "First N items",
+  "command": "Get-Process | Select-Object -First 5",
+  "description": "Get first N items."
+}

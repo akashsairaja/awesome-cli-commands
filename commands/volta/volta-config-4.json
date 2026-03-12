@@ -1,0 +1,8 @@
+{
+  "id": "volta-config-4",
+  "categoryId": "volta",
+  "subcategoryId": "volta-config",
+  "title": "Zsh completions",
+  "command": "volta completions zsh",
+  "description": "Generate zsh shell completions."
+}

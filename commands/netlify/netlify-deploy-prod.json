@@ -1,0 +1,9 @@
+{
+  "id": "netlify-deploy-prod",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-deploy",
+  "title": "Deploy to production",
+  "command": "netlify deploy --prod",
+  "description": "Deploy directly to production",
+  "tags": ["deploy", "production", "prod"]
+}

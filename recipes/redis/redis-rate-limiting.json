@@ -1,0 +1,59 @@
+{
+  "id": "redis-rate-limiting",
+  "stackId": "redis",
+  "name": "Implement Rate Limiting with Redis",
+  "description": "Build an API rate limiter using Redis counters and sliding windows to protect services from abuse and traffic spikes.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "trending": true,
+  "trendingReason": "Essential for API security and preventing abuse in production services",
+  "tags": ["rate-limiting", "api", "security", "sliding-window"],
+  "prerequisites": ["Redis installed and running", "redis-cli available"],
+  "steps": [
+    {
+      "title": "Implement fixed-window rate limiting",
+      "description": "Use INCR with EXPIRE to count requests per time window.",
+      "command": "redis-cli MULTI\nredis-cli INCR ratelimit:user:1001:$(date +%s -d '1 minute ago' | cut -c1-9)0\nredis-cli EXPIRE ratelimit:user:1001:$(date +%s | cut -c1-9)0 120\nredis-cli EXEC",
+      "tip": "The key includes a truncated timestamp so it auto-rotates each window."
+    },
+    {
+      "title": "Simple counter increment and check",
+      "description": "Increment a counter for the current minute and check against a limit.",
+      "command": "redis-cli SET ratelimit:api:user1001 0 EX 60 NX && redis-cli INCR ratelimit:api:user1001",
+      "tip": "NX ensures the key is only set if it does not exist, preserving the counter within the window."
+    },
+    {
+      "title": "Check current request count",
+      "description": "Read the current counter value to decide if the request should be allowed.",
+      "command": "redis-cli GET ratelimit:api:user1001"
+    },
+    {
+      "title": "Implement sliding window with sorted sets",
+      "description": "Use a sorted set to track individual request timestamps for a precise sliding window.",
+      "command": "redis-cli ZADD ratelimit:sliding:user1001 $(date +%s) $(uuidgen) && redis-cli ZREMRANGEBYSCORE ratelimit:sliding:user1001 0 $(($(date +%s)-60)) && redis-cli ZCARD ratelimit:sliding:user1001",
+      "warning": "Sorted set rate limiting uses more memory than counters. Use it only when precision matters."
+    },
+    {
+      "title": "Set expiration on sliding window key",
+      "description": "Ensure the sorted set key expires to prevent memory leaks for inactive users.",
+      "command": "redis-cli EXPIRE ratelimit:sliding:user1001 120"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Redis Rate Limiting Demo\nset -euo pipefail\n\nUSER_ID=\"user1001\"\nLIMIT=10\nWINDOW=60\n\necho \"=== Fixed Window Rate Limiter ===\"\nKEY=\"ratelimit:api:$USER_ID\"\nredis-cli SET \"$KEY\" 0 EX $WINDOW NX > /dev/null 2>&1\nCOUNT=$(redis-cli INCR \"$KEY\")\necho \"Request count: $COUNT / $LIMIT\"\n\nif [ \"$COUNT\" -gt \"$LIMIT\" ]; then\n  echo \"RATE LIMITED - request denied\"\n  TTL=$(redis-cli TTL \"$KEY\")\n  echo \"Retry after: $TTL seconds\"\nelse\n  echo \"ALLOWED - request processed\"\nfi\n\necho \"\"\necho \"=== Sliding Window Rate Limiter ===\"\nSKEY=\"ratelimit:sliding:$USER_ID\"\nNOW=$(date +%s)\nWINDOW_START=$((NOW - WINDOW))\n\n# Remove old entries\nredis-cli ZREMRANGEBYSCORE \"$SKEY\" 0 \"$WINDOW_START\" > /dev/null\n# Add current request\nredis-cli ZADD \"$SKEY\" \"$NOW\" \"$NOW:$$\" > /dev/null\nredis-cli EXPIRE \"$SKEY\" $((WINDOW * 2)) > /dev/null\n# Check count\nSCOUNT=$(redis-cli ZCARD \"$SKEY\")\necho \"Sliding window count: $SCOUNT / $LIMIT\"\n\nif [ \"$SCOUNT\" -gt \"$LIMIT\" ]; then\n  echo \"RATE LIMITED - request denied\"\nelse\n  echo \"ALLOWED - request processed\"\nfi",
+  "faq": [
+    {
+      "question": "Fixed window vs sliding window rate limiting?",
+      "answer": "Fixed window is simpler and uses less memory (one counter per window) but allows burst traffic at window boundaries. Sliding window is precise but uses a sorted set entry per request."
+    },
+    {
+      "question": "How do I return rate limit headers to the client?",
+      "answer": "After checking the counter, return X-RateLimit-Limit (max), X-RateLimit-Remaining (limit - count), and X-RateLimit-Reset (TTL of the key as Unix timestamp) in your HTTP response headers."
+    },
+    {
+      "question": "Will rate limiting work across multiple app servers?",
+      "answer": "Yes, since all servers share the same Redis instance, the counters are centralized and consistent across all application nodes."
+    }
+  ],
+  "relatedRecipes": ["redis-lua-scripting", "redis-session-store"],
+  "lastUpdated": "2026-03-11"
+}

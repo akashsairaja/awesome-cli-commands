@@ -1,0 +1,8 @@
+{
+  "id": "linux-20",
+  "categoryId": "linux",
+  "subcategoryId": "text",
+  "title": "Replace text in multiple files",
+  "command": "find . -type f -name '*.js' -exec sed -i 's/old/new/g' {} +",
+  "description": "Find and replace text in all matching files."
+}

@@ -1,0 +1,53 @@
+{
+  "id": "multi-stage-build-optimizer",
+  "stackId": "docker",
+  "name": "Multi-Stage Build Optimizer",
+  "description": "Reduce Docker image size dramatically by using multi-stage builds to separate build dependencies from the runtime image.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "Smaller images mean faster deploys and reduced attack surface",
+  "tags": ["build", "optimization", "multi-stage", "images"],
+  "prerequisites": ["Docker installed", "A Dockerfile to optimize"],
+  "steps": [
+    {
+      "title": "Check current image size",
+      "description": "See how large the existing image is before optimization.",
+      "command": "docker images --format 'table {{.Repository}}\\t{{.Tag}}\\t{{.Size}}' | head -10"
+    },
+    {
+      "title": "Build with target stage for development",
+      "description": "Build only up to a specific stage in a multi-stage Dockerfile.",
+      "command": "docker build --target builder -t myapp:dev .",
+      "tip": "Use --target to build intermediate stages for debugging or development without running the full build."
+    },
+    {
+      "title": "Build the production image",
+      "description": "Build the final slim production image with only runtime dependencies.",
+      "command": "docker build -t myapp:prod ."
+    },
+    {
+      "title": "Compare image sizes",
+      "description": "Verify the size reduction between development and production images.",
+      "command": "docker images myapp"
+    },
+    {
+      "title": "Inspect image layers",
+      "description": "See what each layer contributes to the image size.",
+      "command": "docker history myapp:prod --format 'table {{.Size}}\\t{{.CreatedBy}}' --no-trunc"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Multi-Stage Build Optimizer\nset -euo pipefail\n\nIMAGE_NAME=${1:?\"Usage: $0 <image-name>\"}\n\necho \"=== Current Image Size ===\"\ndocker images \"$IMAGE_NAME\" --format 'table {{.Repository}}\\t{{.Tag}}\\t{{.Size}}' 2>/dev/null || echo \"Image not found\"\n\necho \"\"\necho \"=== Building production image ===\"\ndocker build -t \"$IMAGE_NAME:optimized\" .\n\necho \"\"\necho \"=== Image Comparison ===\"\ndocker images \"$IMAGE_NAME\" --format 'table {{.Repository}}\\t{{.Tag}}\\t{{.Size}}'\n\necho \"\"\necho \"=== Layer Analysis ===\"\ndocker history \"$IMAGE_NAME:optimized\" --format 'table {{.Size}}\\t{{.CreatedBy}}' | head -15\n\necho \"\"\necho \"=== Optimization Tips ===\"\necho \"1. Use alpine or distroless as final base\"\necho \"2. Combine RUN commands to reduce layers\"\necho \"3. Order Dockerfile commands by change frequency (least to most)\"\necho \"4. Use .dockerignore to exclude unnecessary files\"\necho \"5. Copy only required artifacts from builder stage\"",
+  "faq": [
+    {
+      "question": "What base image should I use for the final stage?",
+      "answer": "Alpine Linux (5MB) for most cases, or Google's distroless images for maximum security. For Go apps, you can even use 'scratch' (0MB)."
+    },
+    {
+      "question": "Does multi-stage increase build time?",
+      "answer": "Build time may increase slightly because of additional stages, but Docker caches each stage independently. Subsequent builds are fast if earlier stages haven't changed."
+    }
+  ],
+  "relatedRecipes": ["image-size-audit", "dockerfile-linting-security"],
+  "lastUpdated": "2026-03-11"
+}

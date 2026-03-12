@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-functions-describe",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-functions",
+  "title": "Describe Function",
+  "command": "gcloud functions describe <name> --region=<region>",
+  "description": "Get details of a Cloud Function",
+  "tags": ["functions", "describe", "info"]
+}

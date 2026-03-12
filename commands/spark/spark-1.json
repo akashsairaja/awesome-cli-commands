@@ -1,0 +1,8 @@
+{
+  "id": "spark-1",
+  "categoryId": "spark",
+  "subcategoryId": "spark-submit",
+  "title": "Submit Python application",
+  "command": "spark-submit app.py",
+  "description": "Submit a PySpark application to the cluster."
+}

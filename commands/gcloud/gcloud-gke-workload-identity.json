@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-gke-workload-identity",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-gke",
+  "title": "Enable Workload Identity",
+  "command": "gcloud container clusters update <name> --zone=<zone> --workload-pool=<project-id>.svc.id.goog",
+  "description": "Enable Workload Identity to securely access Google APIs from pods",
+  "tags": ["gke", "workload-identity", "security"]
+}

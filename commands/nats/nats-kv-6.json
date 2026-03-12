@@ -1,0 +1,8 @@
+{
+  "id": "nats-kv-6",
+  "categoryId": "nats",
+  "subcategoryId": "nats-kv",
+  "title": "Update (CAS)",
+  "command": "nats kv update my-kv key1 'new-value' 13",
+  "description": "Update only if revision matches (compare-and-swap)."
+}

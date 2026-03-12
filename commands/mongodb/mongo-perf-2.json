@@ -1,0 +1,8 @@
+{
+  "id": "mongo-perf-2",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-performance",
+  "title": "Current operations",
+  "command": "db.currentOp()",
+  "description": "Show all currently running database operations."
+}

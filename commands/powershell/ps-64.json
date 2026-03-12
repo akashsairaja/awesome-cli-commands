@@ -1,0 +1,8 @@
+{
+  "id": "ps-64",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-pipeline",
+  "title": "Skip N items",
+  "command": "Get-Process | Select-Object -Skip 5",
+  "description": "Skip first N items."
+}

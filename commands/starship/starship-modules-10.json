@@ -1,0 +1,8 @@
+{
+  "id": "starship-modules-10",
+  "categoryId": "starship",
+  "subcategoryId": "starship-modules",
+  "title": "AWS module config",
+  "command": "[aws]\nformat = 'on [$symbol($profile )(\\($region\\))]($style) '",
+  "description": "Display AWS profile and region."
+}

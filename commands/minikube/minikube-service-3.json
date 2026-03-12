@@ -1,0 +1,8 @@
+{
+  "id": "minikube-service-3",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-service",
+  "title": "List services",
+  "command": "minikube service list",
+  "description": "List all services with URLs."
+}

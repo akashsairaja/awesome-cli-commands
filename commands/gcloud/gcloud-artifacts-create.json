@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-artifacts-create",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-artifacts",
+  "title": "Create Artifact Repository",
+  "command": "gcloud artifacts repositories create <repo> --repository-format=docker --location=us",
+  "description": "Create a new Artifact Registry repository for Docker images",
+  "tags": ["artifacts", "repository", "create", "docker"]
+}

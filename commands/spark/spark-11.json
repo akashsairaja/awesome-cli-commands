@@ -1,0 +1,8 @@
+{
+  "id": "spark-11",
+  "categoryId": "spark",
+  "subcategoryId": "spark-shell",
+  "title": "Start PySpark shell",
+  "command": "pyspark",
+  "description": "Launch interactive Python shell with Spark context."
+}

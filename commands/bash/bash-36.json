@@ -1,0 +1,8 @@
+{
+  "id": "bash-36",
+  "categoryId": "bash",
+  "subcategoryId": "loops",
+  "title": "Loop with index",
+  "command": "for i in \"${!arr[@]}\"; do echo \"$i: ${arr[$i]}\"; done",
+  "description": "Loop with array indices."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "java-10",
+  "categoryId": "java",
+  "subcategoryId": "java-runtime",
+  "title": "Run Java class",
+  "command": "java MyClass",
+  "description": "Run a compiled Java class with main method."
+}

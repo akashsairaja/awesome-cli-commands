@@ -1,0 +1,9 @@
+{
+  "id": "gh-issue-reopen",
+  "categoryId": "github",
+  "subcategoryId": "gh-issue",
+  "title": "Reopen issue",
+  "command": "gh issue reopen <number>",
+  "description": "Reopen a closed issue",
+  "tags": ["issue", "reopen", "open"]
+}

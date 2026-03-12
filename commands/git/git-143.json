@@ -1,0 +1,8 @@
+{
+  "id": "git-143",
+  "categoryId": "git",
+  "subcategoryId": "git-config",
+  "title": "Create alias",
+  "command": "git config --global alias.co checkout",
+  "description": "Create git command alias."
+}

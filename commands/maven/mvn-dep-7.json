@@ -1,0 +1,8 @@
+{
+  "id": "mvn-dep-7",
+  "categoryId": "maven",
+  "subcategoryId": "dependencies",
+  "title": "Copy dependencies",
+  "command": "mvn dependency:copy-dependencies -DoutputDirectory=lib",
+  "description": "Copy deps to lib folder."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "helm-dev-2",
+  "categoryId": "helm",
+  "subcategoryId": "helm-dev",
+  "title": "Lint chart",
+  "command": "helm lint ./mychart",
+  "description": "Check chart for issues and best practices."
+}

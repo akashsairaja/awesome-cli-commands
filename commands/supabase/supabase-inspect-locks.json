@@ -1,0 +1,9 @@
+{
+  "id": "supabase-inspect-locks",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-inspect",
+  "title": "Show exclusive locks",
+  "command": "supabase inspect db locks --local",
+  "description": "Show queries with exclusive locks",
+  "tags": ["inspect", "locks", "debug"]
+}

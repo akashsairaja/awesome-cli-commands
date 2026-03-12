@@ -1,0 +1,8 @@
+{
+  "id": "hurl-syntax-6",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-syntax",
+  "title": "DELETE request",
+  "command": "DELETE https://api.example.com/users/1\nHTTP 204",
+  "description": "DELETE request to remove resource."
+}

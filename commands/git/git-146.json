@@ -1,0 +1,8 @@
+{
+  "id": "git-146",
+  "categoryId": "git",
+  "subcategoryId": "worktree",
+  "title": "Lock worktree",
+  "command": "git worktree lock <path>",
+  "description": "Prevent worktree from being removed."
+}

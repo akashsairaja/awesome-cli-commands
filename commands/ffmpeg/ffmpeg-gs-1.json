@@ -1,0 +1,8 @@
+{
+  "id": "ffmpeg-gs-1",
+  "title": "Install FFmpeg (macOS)",
+  "command": "brew install ffmpeg",
+  "description": "Install FFmpeg using Homebrew on macOS",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "git-120",
+  "categoryId": "git",
+  "subcategoryId": "tags",
+  "title": "Create lightweight tag",
+  "command": "git tag <tagname>",
+  "description": "Create a simple tag."
+}

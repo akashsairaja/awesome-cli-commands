@@ -1,0 +1,8 @@
+{
+  "id": "git-57",
+  "categoryId": "git",
+  "subcategoryId": "stash",
+  "title": "Clear all stashes",
+  "command": "git stash clear",
+  "description": "Remove all stashes."
+}

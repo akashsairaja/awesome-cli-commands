@@ -1,0 +1,8 @@
+{
+  "id": "react-sb-2",
+  "categoryId": "react",
+  "subcategoryId": "react-storybook",
+  "title": "Start Storybook",
+  "command": "npm run storybook",
+  "description": "Start Storybook dev server (default: localhost:6006)."
+}

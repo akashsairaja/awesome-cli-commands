@@ -1,0 +1,8 @@
+{
+  "id": "ps-21",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-system",
+  "title": "Get system info",
+  "command": "Get-ComputerInfo",
+  "description": "Display detailed system information."
+}

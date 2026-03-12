@@ -1,0 +1,8 @@
+{
+  "id": "k8s-137",
+  "categoryId": "kubernetes",
+  "subcategoryId": "helm",
+  "title": "Install chart",
+  "command": "helm install <release> <chart>",
+  "description": "Install a Helm chart."
+}

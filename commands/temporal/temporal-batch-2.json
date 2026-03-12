@@ -1,0 +1,8 @@
+{
+  "id": "temporal-batch-2",
+  "categoryId": "temporal",
+  "subcategoryId": "batch",
+  "title": "Describe batch job",
+  "command": "temporal batch describe --job-id my-batch-job",
+  "description": "Show batch operation progress and status."
+}

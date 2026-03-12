@@ -1,0 +1,8 @@
+{
+  "id": "jest-debugging-6",
+  "categoryId": "jest",
+  "subcategoryId": "jest-debugging",
+  "title": "Set timeout",
+  "command": "jest --testTimeout=10000",
+  "description": "Set test timeout in milliseconds."
+}

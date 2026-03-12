@@ -1,0 +1,8 @@
+{
+  "id": "ollama-23",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-server",
+  "title": "Check server status",
+  "command": "curl http://localhost:11434",
+  "description": "Verify the server is running."
+}

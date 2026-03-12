@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-config-2",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-config",
+  "title": "Edit config file",
+  "command": "ngrok config edit",
+  "description": "Open ngrok.yml in editor."
+}

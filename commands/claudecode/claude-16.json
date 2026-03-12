@@ -1,0 +1,8 @@
+{
+  "id": "claude-16",
+  "categoryId": "claudecode",
+  "subcategoryId": "general",
+  "title": "Pull cloud session locally",
+  "command": "claude --teleport <session-id>",
+  "description": "Pull a cloud session to your local machine."
+}

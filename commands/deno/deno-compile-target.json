@@ -1,0 +1,9 @@
+{
+  "id": "deno-compile-target",
+  "categoryId": "deno",
+  "subcategoryId": "deno-compile",
+  "title": "Cross-Compile",
+  "command": "deno compile --target x86_64-unknown-linux-gnu script.ts",
+  "description": "Compile for different platform",
+  "tags": ["compile", "cross", "target"]
+}

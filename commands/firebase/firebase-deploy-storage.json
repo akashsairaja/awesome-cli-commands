@@ -1,0 +1,9 @@
+{
+  "id": "firebase-deploy-storage",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-deploy",
+  "title": "Deploy Storage rules",
+  "command": "firebase deploy --only storage",
+  "description": "Deploy Cloud Storage rules",
+  "tags": ["deploy", "storage", "rules"]
+}

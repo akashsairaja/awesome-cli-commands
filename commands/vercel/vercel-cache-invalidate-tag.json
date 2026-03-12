@@ -1,0 +1,9 @@
+{
+  "id": "vercel-cache-invalidate-tag",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-cache",
+  "title": "Invalidate cache by tag",
+  "command": "vercel cache invalidate --tag <tag>",
+  "description": "Invalidate cached content by tag",
+  "tags": ["cache", "invalidate", "tag"]
+}

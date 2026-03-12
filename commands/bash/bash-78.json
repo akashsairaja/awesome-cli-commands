@@ -1,0 +1,8 @@
+{
+  "id": "bash-78",
+  "categoryId": "bash",
+  "subcategoryId": "conditionals",
+  "title": "If-else",
+  "command": "if [ -f file ]; then echo \"exists\"; else echo \"missing\"; fi",
+  "description": "If with else clause."
+}

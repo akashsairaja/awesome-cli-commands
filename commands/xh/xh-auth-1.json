@@ -1,0 +1,8 @@
+{
+  "id": "xh-auth-1",
+  "categoryId": "xh",
+  "subcategoryId": "xh-auth",
+  "title": "Basic Auth",
+  "command": "xh -a username:password GET https://api.example.com/protected",
+  "description": "Use Basic Authentication."
+}

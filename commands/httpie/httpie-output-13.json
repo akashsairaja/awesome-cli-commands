@@ -1,0 +1,8 @@
+{
+  "id": "httpie-output-13",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-output",
+  "title": "Continue interrupted download",
+  "command": "http --download --continue GET https://example.com/large-file.zip",
+  "description": "Resume a partially completed download."
+}

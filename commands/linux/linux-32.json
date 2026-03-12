@@ -1,0 +1,8 @@
+{
+  "id": "linux-32",
+  "categoryId": "linux",
+  "subcategoryId": "files",
+  "title": "Detect file type",
+  "command": "file myfile",
+  "description": "Determine the type of a file based on its content."
+}

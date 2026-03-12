@@ -1,0 +1,8 @@
+{
+  "id": "composer-update-12",
+  "categoryId": "composer",
+  "subcategoryId": "composer-update",
+  "title": "Outdated direct only",
+  "command": "composer outdated --direct",
+  "description": "Show outdated direct dependencies only."
+}

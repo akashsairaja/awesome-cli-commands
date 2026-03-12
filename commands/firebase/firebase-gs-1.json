@@ -1,0 +1,8 @@
+{
+  "id": "firebase-gs-1",
+  "title": "Install Firebase CLI",
+  "command": "npm i -g firebase-tools",
+  "description": "Install the Firebase CLI globally via npm",
+  "categoryId": "firebase",
+  "subcategoryId": "getting-started"
+}

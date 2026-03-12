@@ -1,0 +1,8 @@
+{
+  "id": "task-vars-7",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-vars",
+  "title": ".TASK variable",
+  "command": "tasks:\n  build:\n    cmds:\n      - echo \"Running {{.TASK}}\"",
+  "description": "Built-in variable with current task name."
+}

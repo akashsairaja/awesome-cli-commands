@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-uninstall-6",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-uninstall",
+  "title": "Find all mkcert certs",
+  "command": "find . -name '*-key.pem' -o -name '*.p12' | head -20",
+  "description": "Locate mkcert-generated files recursively."
+}

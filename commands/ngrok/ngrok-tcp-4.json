@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-tcp-4",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-tcp",
+  "title": "TCP tunnel for MySQL",
+  "command": "ngrok tcp 3306",
+  "description": "Expose MySQL for remote access."
+}

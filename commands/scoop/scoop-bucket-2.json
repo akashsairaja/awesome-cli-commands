@@ -1,0 +1,8 @@
+{
+  "id": "scoop-bucket-2",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-bucket",
+  "title": "List buckets",
+  "command": "scoop bucket list",
+  "description": "List added buckets."
+}

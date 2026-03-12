@@ -1,0 +1,8 @@
+{
+  "id": "starship-install-10",
+  "categoryId": "starship",
+  "subcategoryId": "starship-install",
+  "title": "XDG config path",
+  "command": "mkdir -p ~/.config && touch ~/.config/starship.toml",
+  "description": "Create config at the default XDG path."
+}

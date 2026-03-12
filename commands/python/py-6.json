@@ -1,0 +1,8 @@
+{
+  "id": "py-6",
+  "categoryId": "python",
+  "subcategoryId": "python-pip",
+  "title": "Uninstall package",
+  "command": "pip uninstall requests -y",
+  "description": "Remove a package without confirmation."
+}

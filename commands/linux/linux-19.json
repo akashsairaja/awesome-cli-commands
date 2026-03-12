@@ -1,0 +1,8 @@
+{
+  "id": "linux-19",
+  "categoryId": "linux",
+  "subcategoryId": "text",
+  "title": "Recursive grep with context",
+  "command": "grep -rn -B2 -A2 'pattern' .",
+  "description": "Search recursively with context lines."
+}

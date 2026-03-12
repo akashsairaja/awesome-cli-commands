@@ -1,0 +1,8 @@
+{
+  "id": "bash-4",
+  "categoryId": "bash",
+  "subcategoryId": "scripting",
+  "title": "Exit on error",
+  "command": "set -e",
+  "description": "Exit immediately if command fails."
+}

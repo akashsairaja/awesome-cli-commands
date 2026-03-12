@@ -1,0 +1,8 @@
+{
+  "id": "composer-update-10",
+  "categoryId": "composer",
+  "subcategoryId": "composer-update",
+  "title": "Why is package installed",
+  "command": "composer why vendor/package",
+  "description": "Show why a package is depended upon."
+}

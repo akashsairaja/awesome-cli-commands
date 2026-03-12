@@ -1,0 +1,8 @@
+{
+  "id": "delta-1",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-delta",
+  "title": "Configure git",
+  "command": "git config --global core.pager delta",
+  "description": "Set delta as default git pager."
+}

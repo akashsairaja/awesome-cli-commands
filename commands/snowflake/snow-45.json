@@ -1,0 +1,8 @@
+{
+  "id": "snow-45",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-git",
+  "title": "List files in repo",
+  "command": "snow git list-files <repository-name> --ref main",
+  "description": "List files in a Git repository at a specific ref."
+}

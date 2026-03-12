@@ -1,0 +1,8 @@
+{
+  "id": "ai-32",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-copilot",
+  "title": "Suggest for specific shell",
+  "command": "gh copilot suggest -t shell \"compress all PDFs\"",
+  "description": "Get suggestions for a specific target (shell, git, gh)."
+}

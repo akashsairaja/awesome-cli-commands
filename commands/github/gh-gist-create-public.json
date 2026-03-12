@@ -1,0 +1,9 @@
+{
+  "id": "gh-gist-create-public",
+  "categoryId": "github",
+  "subcategoryId": "gh-gist",
+  "title": "Create public gist",
+  "command": "gh gist create <file> --public",
+  "description": "Create a public gist",
+  "tags": ["gist", "create", "public"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-sql-create-mysql",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-sql",
+  "title": "Create MySQL Instance",
+  "command": "gcloud sql instances create <name> --database-version=MYSQL_8_0 --tier=db-n1-standard-1 --region=<region>",
+  "description": "Create a Cloud SQL instance with MySQL 8.0",
+  "tags": ["sql", "create", "mysql", "database"]
+}

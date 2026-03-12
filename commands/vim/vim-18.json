@@ -1,0 +1,8 @@
+{
+  "id": "vim-18",
+  "categoryId": "vim",
+  "subcategoryId": "search",
+  "title": "Next/previous match",
+  "command": "n / N",
+  "description": "Go to next/previous match."
+}

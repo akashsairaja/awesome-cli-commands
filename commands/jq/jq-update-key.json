@@ -1,0 +1,9 @@
+{
+  "id": "jq-update-key",
+  "categoryId": "jq",
+  "subcategoryId": "jq-objects",
+  "title": "Update key value",
+  "command": "cat file.json | jq '.key = \"new value\"'",
+  "description": "Update value of existing key",
+  "tags": ["object", "update", "set"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "playwright-test-4",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-test",
+  "title": "Run headed",
+  "command": "npx playwright test --headed",
+  "description": "Run tests with browser visible."
+}

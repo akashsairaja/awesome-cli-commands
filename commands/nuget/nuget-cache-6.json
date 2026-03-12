@@ -1,0 +1,8 @@
+{
+  "id": "nuget-cache-6",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-cache",
+  "title": "Show global packages path",
+  "command": "dotnet nuget locals global-packages -l",
+  "description": "Show global packages folder location."
+}

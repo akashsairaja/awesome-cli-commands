@@ -1,0 +1,8 @@
+{
+  "id": "checkov-gs-3",
+  "title": "Scan current directory",
+  "command": "checkov -d .",
+  "description": "Run Checkov to scan all supported IaC files in the current directory",
+  "categoryId": "checkov",
+  "subcategoryId": "getting-started"
+}

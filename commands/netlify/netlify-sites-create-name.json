@@ -1,0 +1,9 @@
+{
+  "id": "netlify-sites-create-name",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-sites",
+  "title": "Create site with name",
+  "command": "netlify sites:create --name <sitename>",
+  "description": "Create a new site with specific name",
+  "tags": ["sites", "create", "name"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "pg-users-17",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-users",
+  "title": "Grant role membership",
+  "command": "GRANT readonly TO appuser;",
+  "description": "Add user to a group role, inheriting its permissions."
+}

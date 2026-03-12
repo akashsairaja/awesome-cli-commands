@@ -1,0 +1,8 @@
+{
+  "id": "linux-75",
+  "categoryId": "linux",
+  "subcategoryId": "ssh",
+  "title": "Generate SSH key pair",
+  "command": "ssh-keygen -t ed25519 -C 'your@email.com'",
+  "description": "Generate a modern Ed25519 SSH key pair."
+}

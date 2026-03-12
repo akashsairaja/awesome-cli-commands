@@ -1,0 +1,8 @@
+{
+  "id": "grafana-admin-3",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-admin",
+  "title": "Migrate data",
+  "command": "grafana-cli admin data-migration",
+  "description": "Run data migration."
+}

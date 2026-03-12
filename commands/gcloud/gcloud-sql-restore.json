@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-sql-restore",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-sql",
+  "title": "Restore from Backup",
+  "command": "gcloud sql backups restore <backup-id> --restore-instance=<instance>",
+  "description": "Restore a Cloud SQL instance from a backup",
+  "tags": ["sql", "restore", "backup"]
+}

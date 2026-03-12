@@ -1,0 +1,8 @@
+{
+  "id": "flux-image-4",
+  "categoryId": "flux",
+  "subcategoryId": "flux-image",
+  "title": "Get image policies",
+  "command": "flux get images all",
+  "description": "List all image automation resources."
+}

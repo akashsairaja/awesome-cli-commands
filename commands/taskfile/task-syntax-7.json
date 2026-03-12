@@ -1,0 +1,8 @@
+{
+  "id": "task-syntax-7",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-syntax",
+  "title": "Platform-specific",
+  "command": "tasks:\n  setup:\n    platforms: [linux, darwin]\n    cmds:\n      - chmod +x ./run.sh",
+  "description": "Run task only on specific OS."
+}

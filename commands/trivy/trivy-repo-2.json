@@ -1,0 +1,8 @@
+{
+  "id": "trivy-repo-2",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-repo",
+  "title": "Scan for secrets",
+  "command": "trivy repo --scanners secret https://github.com/user/repo",
+  "description": "Scan repository for secrets."
+}

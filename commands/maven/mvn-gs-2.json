@@ -1,0 +1,8 @@
+{
+  "id": "mvn-gs-2",
+  "title": "Check Maven version",
+  "command": "mvn --version",
+  "description": "Verify Maven is installed and display version with Java details",
+  "categoryId": "maven",
+  "subcategoryId": "getting-started"
+}

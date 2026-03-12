@@ -1,0 +1,8 @@
+{
+  "id": "k3s-cluster-5",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-cluster",
+  "title": "Uninstall agent",
+  "command": "/usr/local/bin/k3s-agent-uninstall.sh",
+  "description": "Remove k3s agent node."
+}

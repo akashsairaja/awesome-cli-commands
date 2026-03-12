@@ -1,0 +1,8 @@
+{
+  "id": "rust-project-1",
+  "categoryId": "rust",
+  "subcategoryId": "rust-project",
+  "title": "Create new project",
+  "command": "cargo new my-project",
+  "description": "Create new Cargo binary project."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ts-build-8",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-build",
+  "title": "Build multiple projects",
+  "command": "tsc --build packages/*/tsconfig.json",
+  "description": "Build multiple project configs simultaneously (monorepo pattern)."
+}

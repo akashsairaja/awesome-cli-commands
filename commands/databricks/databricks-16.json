@@ -1,0 +1,8 @@
+{
+  "id": "databricks-16",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-jobs",
+  "title": "Cancel run",
+  "command": "databricks runs cancel --run-id <run-id>",
+  "description": "Cancel a running job execution."
+}

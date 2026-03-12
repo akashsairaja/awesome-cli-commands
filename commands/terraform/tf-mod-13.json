@@ -1,0 +1,8 @@
+{
+  "id": "tf-mod-13",
+  "categoryId": "terraform",
+  "subcategoryId": "modules",
+  "title": "Use var file",
+  "command": "terraform apply -var-file=\"prod.tfvars\"",
+  "description": "Load variables from file."
+}

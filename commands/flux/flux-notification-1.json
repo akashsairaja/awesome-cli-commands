@@ -1,0 +1,8 @@
+{
+  "id": "flux-notification-1",
+  "categoryId": "flux",
+  "subcategoryId": "flux-notification",
+  "title": "Create Slack provider",
+  "command": "flux create alert-provider slack --type=slack --secret-ref=slack-webhook",
+  "description": "Create notification provider for Slack."
+}

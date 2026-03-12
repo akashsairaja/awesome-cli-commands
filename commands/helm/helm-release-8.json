@@ -1,0 +1,8 @@
+{
+  "id": "helm-release-8",
+  "categoryId": "helm",
+  "subcategoryId": "helm-release",
+  "title": "Uninstall release",
+  "command": "helm uninstall my-release",
+  "description": "Remove a release from the cluster."
+}

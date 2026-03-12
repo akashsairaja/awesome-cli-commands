@@ -1,0 +1,8 @@
+{
+  "id": "checkov-custom-5",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-custom",
+  "title": "Composite YAML policy",
+  "command": "metadata:\n  id: CUSTOM_2\n  name: S3 encryption and versioning\ndefinition:\n  and:\n    - cond_type: attribute\n      resource_types:\n        - aws_s3_bucket\n      attribute: versioning.enabled\n      operator: is_true\n    - cond_type: attribute\n      resource_types:\n        - aws_s3_bucket\n      attribute: server_side_encryption_configuration\n      operator: exists",
+  "description": "Composite policy with AND logic."
+}

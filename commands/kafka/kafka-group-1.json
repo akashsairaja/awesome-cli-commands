@@ -1,0 +1,8 @@
+{
+  "id": "kafka-group-1",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-groups",
+  "title": "List groups",
+  "command": "kafka-consumer-groups.sh --list --bootstrap-server localhost:9092",
+  "description": "List all consumer groups."
+}

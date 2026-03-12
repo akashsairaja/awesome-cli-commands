@@ -1,0 +1,8 @@
+{
+  "id": "playwright-debug-1",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-debug",
+  "title": "Debug mode",
+  "command": "npx playwright test --debug",
+  "description": "Run with Playwright Inspector."
+}

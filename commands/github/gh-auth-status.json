@@ -1,0 +1,9 @@
+{
+  "id": "gh-auth-status",
+  "categoryId": "github",
+  "subcategoryId": "gh-auth",
+  "title": "Check auth status",
+  "command": "gh auth status",
+  "description": "View authentication status and active account",
+  "tags": ["auth", "status", "whoami"]
+}

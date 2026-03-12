@@ -1,0 +1,9 @@
+{
+  "id": "nginx-404-errors",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-logs",
+  "title": "Find 404 errors",
+  "command": "sudo grep \" 404 \" /var/log/nginx/access.log | tail -20",
+  "description": "Show recent 404 errors",
+  "tags": ["log", "404", "errors"]
+}

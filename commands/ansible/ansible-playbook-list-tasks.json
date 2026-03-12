@@ -1,0 +1,9 @@
+{
+  "id": "ansible-playbook-list-tasks",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-playbook",
+  "title": "List Tasks",
+  "command": "ansible-playbook playbook.yml --list-tasks",
+  "description": "Show all tasks without running",
+  "tags": ["playbook", "list", "tasks"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "claude-73",
+  "categoryId": "claudecode",
+  "subcategoryId": "utilities",
+  "title": "Report bug",
+  "command": "/bug",
+  "description": "Report an issue directly from Claude Code."
+}

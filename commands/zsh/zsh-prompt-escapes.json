@@ -1,0 +1,9 @@
+{
+  "id": "zsh-prompt-escapes",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-prompt",
+  "title": "Prompt escape codes",
+  "command": "# %n=user %m=host %~=dir %#=prompt %F{color}=fg %f=reset",
+  "description": "Common prompt escape sequences reference",
+  "tags": ["prompt", "escapes", "reference"]
+}

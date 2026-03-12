@@ -1,0 +1,8 @@
+{
+  "id": "httpie-gs-1",
+  "title": "Install HTTPie (macOS)",
+  "command": "brew install httpie",
+  "description": "Install HTTPie HTTP client using Homebrew on macOS",
+  "categoryId": "httpie",
+  "subcategoryId": "getting-started"
+}

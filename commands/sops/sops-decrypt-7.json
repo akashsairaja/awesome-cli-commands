@@ -1,0 +1,8 @@
+{
+  "id": "sops-decrypt-7",
+  "categoryId": "sops",
+  "subcategoryId": "sops-decrypt",
+  "title": "Decrypt for piping",
+  "command": "sops -d secrets.enc.yaml | kubectl apply -f -",
+  "description": "Decrypt and pipe to another command."
+}

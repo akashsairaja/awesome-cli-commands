@@ -1,0 +1,9 @@
+{
+  "id": "jq-pretty-print",
+  "categoryId": "jq",
+  "subcategoryId": "jq-basics",
+  "title": "Pretty print JSON",
+  "command": "cat file.json | jq '.'",
+  "description": "Format and colorize JSON output",
+  "tags": ["pretty", "format", "print"]
+}

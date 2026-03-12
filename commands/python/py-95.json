@@ -1,0 +1,8 @@
+{
+  "id": "py-95",
+  "categoryId": "python",
+  "subcategoryId": "python-pytest",
+  "title": "Stop on first failure",
+  "command": "pytest -x",
+  "description": "Exit after first test failure."
+}

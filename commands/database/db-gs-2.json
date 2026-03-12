@@ -1,0 +1,8 @@
+{
+  "id": "db-gs-2",
+  "title": "Check MySQL version",
+  "command": "mysql --version",
+  "description": "Verify MySQL is installed and display the current version",
+  "categoryId": "database",
+  "subcategoryId": "getting-started"
+}

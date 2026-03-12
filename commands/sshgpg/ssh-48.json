@@ -1,0 +1,8 @@
+{
+  "id": "ssh-48",
+  "categoryId": "sshgpg",
+  "subcategoryId": "config",
+  "title": "ProxyJump config",
+  "command": "Host internal\n  HostName 10.0.0.5\n  ProxyJump bastion",
+  "description": "Configure jump host in SSH config."
+}

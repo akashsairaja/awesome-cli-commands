@@ -1,0 +1,8 @@
+{
+  "id": "bash-56",
+  "categoryId": "bash",
+  "subcategoryId": "arrays",
+  "title": "Delete element",
+  "command": "unset 'arr[1]'",
+  "description": "Remove element at index."
+}

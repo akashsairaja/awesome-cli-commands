@@ -1,0 +1,8 @@
+{
+  "id": "linux-gs-3",
+  "title": "Update system packages",
+  "command": "sudo apt update && sudo apt upgrade -y",
+  "description": "Refresh package lists and upgrade all packages on Debian/Ubuntu",
+  "categoryId": "linux",
+  "subcategoryId": "getting-started"
+}

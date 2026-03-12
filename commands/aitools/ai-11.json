@@ -1,0 +1,8 @@
+{
+  "id": "ai-11",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-shellgpt",
+  "title": "Generate shell command",
+  "command": "sgpt --shell \"find all files larger than 100MB\"",
+  "description": "Generate a shell command from description."
+}

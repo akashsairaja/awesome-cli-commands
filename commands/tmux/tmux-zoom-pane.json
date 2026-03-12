@@ -1,0 +1,9 @@
+{
+  "id": "tmux-zoom-pane",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-panes",
+  "title": "Zoom pane",
+  "command": "Ctrl+b z",
+  "description": "Toggle pane zoom (fullscreen)",
+  "tags": ["pane", "zoom", "fullscreen"]
+}

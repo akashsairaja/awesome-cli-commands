@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-manage-7",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-manage",
+  "title": "Skip specific hook",
+  "command": "LEFTHOOK_EXCLUDE=lint git commit -m 'message'",
+  "description": "Skip a named command during hook run."
+}

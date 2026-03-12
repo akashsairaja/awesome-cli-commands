@@ -1,0 +1,8 @@
+{
+  "id": "git-28",
+  "categoryId": "git",
+  "subcategoryId": "commits",
+  "title": "Fixup commit",
+  "command": "git commit --fixup <commit>",
+  "description": "Create fixup commit for autosquash."
+}

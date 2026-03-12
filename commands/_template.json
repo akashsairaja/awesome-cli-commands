@@ -1,0 +1,9 @@
+{
+  "id": "stack-1",
+  "categoryId": "stack-name",
+  "subcategoryId": "basics",
+  "title": "Command title",
+  "command": "command --flag",
+  "description": "What this command does.",
+  "tags": ["tag1", "tag2"]
+}

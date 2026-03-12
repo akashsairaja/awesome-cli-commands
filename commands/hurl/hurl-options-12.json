@@ -1,0 +1,8 @@
+{
+  "id": "hurl-options-12",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-options",
+  "title": "Multiple variables",
+  "command": "hurl --variable host=localhost --variable port=8080 --variable token=abc api.hurl",
+  "description": "Pass multiple variables at once."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "npm-scripts-4",
+  "categoryId": "npm",
+  "subcategoryId": "npm-scripts",
+  "title": "List scripts",
+  "command": "npm run",
+  "description": "Show all available scripts."
+}

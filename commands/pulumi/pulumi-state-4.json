@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-state-4",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-state",
+  "title": "Delete from state",
+  "command": "pulumi state delete urn:pulumi:dev::myproject::aws:s3/bucket:Bucket::mybucket",
+  "description": "Remove resource from state."
+}

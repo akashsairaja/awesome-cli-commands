@@ -1,0 +1,8 @@
+{
+  "id": "mvn-wrapper-14",
+  "categoryId": "maven",
+  "subcategoryId": "mvn-wrapper",
+  "title": "Enable verbose download output",
+  "command": "MVNW_VERBOSE=true ./mvnw clean install",
+  "description": "Show detailed download progress when the wrapper fetches Maven."
+}

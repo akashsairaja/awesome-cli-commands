@@ -1,0 +1,8 @@
+{
+  "id": "helm-debug-5",
+  "categoryId": "helm",
+  "subcategoryId": "helm-debug",
+  "title": "Helm version",
+  "command": "helm version",
+  "description": "Show Helm client version."
+}

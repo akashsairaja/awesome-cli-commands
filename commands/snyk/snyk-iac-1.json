@@ -1,0 +1,8 @@
+{
+  "id": "snyk-iac-1",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-iac",
+  "title": "Test IaC files",
+  "command": "snyk iac test",
+  "description": "Scan IaC files for misconfigurations."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "firebase-serve",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-hosting",
+  "title": "Serve locally",
+  "command": "firebase serve",
+  "description": "Start local hosting server",
+  "tags": ["serve", "local", "hosting"]
+}

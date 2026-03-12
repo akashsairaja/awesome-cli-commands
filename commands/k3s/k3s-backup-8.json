@@ -1,0 +1,8 @@
+{
+  "id": "k3s-backup-8",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-backup",
+  "title": "Restore from S3 snapshot",
+  "command": "k3s server --cluster-reset --cluster-reset-restore-path=s3-backup --etcd-s3 --etcd-s3-bucket my-bucket --etcd-s3-region us-east-1",
+  "description": "Restore cluster from an S3-stored etcd snapshot."
+}

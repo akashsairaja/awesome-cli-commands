@@ -1,0 +1,9 @@
+{
+  "id": "zsh-suffix-alias",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-aliases",
+  "title": "Suffix alias",
+  "command": "alias -s txt=code",
+  "description": "Open .txt files with code by typing filename",
+  "tags": ["alias", "suffix", "extension"]
+}

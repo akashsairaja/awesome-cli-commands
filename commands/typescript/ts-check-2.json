@@ -1,0 +1,8 @@
+{
+  "id": "ts-check-2",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-check",
+  "title": "Type check in watch mode",
+  "command": "tsc --noEmit --watch",
+  "description": "Continuous type checking in background."
+}

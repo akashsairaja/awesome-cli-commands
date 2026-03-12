@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-compute-ssh",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-compute",
+  "title": "SSH to Instance",
+  "command": "gcloud compute ssh <instance-name> --zone=<zone>",
+  "description": "SSH into a VM instance",
+  "tags": ["vm", "ssh", "connect"]
+}

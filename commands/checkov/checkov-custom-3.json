@@ -1,0 +1,8 @@
+{
+  "id": "checkov-custom-3",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-custom",
+  "title": "External Git checks",
+  "command": "checkov -d . --external-checks-git https://github.com/org/policies",
+  "description": "Load policies from Git repo."
+}

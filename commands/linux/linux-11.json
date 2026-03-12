@@ -1,0 +1,8 @@
+{
+  "id": "linux-11",
+  "categoryId": "linux",
+  "subcategoryId": "processes",
+  "title": "Find process by name",
+  "command": "pgrep -fl <process-name>",
+  "description": "Find process ID and command line by name."
+}

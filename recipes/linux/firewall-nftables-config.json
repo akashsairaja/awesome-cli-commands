@@ -1,0 +1,54 @@
+{
+  "id": "firewall-nftables-config",
+  "stackId": "linux",
+  "name": "Firewall Configuration with nftables",
+  "description": "Configure and manage firewall rules using nftables or ufw to control network traffic and protect services.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": false,
+  "tags": ["firewall", "nftables", "ufw", "security"],
+  "prerequisites": ["Linux shell access", "Root or sudo access"],
+  "steps": [
+    {
+      "title": "Check current firewall status",
+      "description": "View the current firewall status and rules.",
+      "command": "sudo ufw status verbose 2>/dev/null || sudo nft list ruleset 2>/dev/null || sudo iptables -L -n"
+    },
+    {
+      "title": "Enable ufw and set default policies",
+      "description": "Enable the firewall with deny-by-default for incoming traffic.",
+      "command": "sudo ufw default deny incoming && sudo ufw default allow outgoing && sudo ufw enable",
+      "warning": "Make sure to allow SSH before enabling the firewall or you may lock yourself out."
+    },
+    {
+      "title": "Allow specific services",
+      "description": "Open ports for services that need to accept incoming connections.",
+      "command": "sudo ufw allow ssh && sudo ufw allow 80/tcp && sudo ufw allow 443/tcp",
+      "tip": "You can also use service names: sudo ufw allow 'Nginx Full'"
+    },
+    {
+      "title": "Allow access from a specific IP",
+      "description": "Restrict access to a port from a specific IP address or subnet.",
+      "command": "sudo ufw allow from 10.0.0.0/24 to any port 5432 proto tcp",
+      "tip": "This is useful for database ports that should only be accessible from your application servers."
+    },
+    {
+      "title": "View and delete specific rules",
+      "description": "List numbered rules and delete a specific one.",
+      "command": "sudo ufw status numbered && echo 'Delete with: sudo ufw delete <number>'"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Firewall Configuration\nset -euo pipefail\n\necho \"=== Firewall Status ===\"\nif command -v ufw &>/dev/null; then\n  sudo ufw status verbose\nelif command -v nft &>/dev/null; then\n  sudo nft list ruleset | head -30\nelse\n  sudo iptables -L -n | head -20\nfi\n\necho \"\"\necho \"=== Open Ports ===\"\nss -tlnp\n\necho \"\"\necho \"=== Firewall Commands (ufw) ===\"\necho \"Enable:       sudo ufw enable\"\necho \"Disable:      sudo ufw disable\"\necho \"Allow port:   sudo ufw allow 80/tcp\"\necho \"Allow SSH:    sudo ufw allow ssh\"\necho \"Allow IP:     sudo ufw allow from 10.0.0.0/24\"\necho \"Deny:         sudo ufw deny 3306/tcp\"\necho \"Delete:       sudo ufw delete allow 80/tcp\"\necho \"Reset:        sudo ufw reset\"",
+  "faq": [
+    {
+      "question": "Should I use ufw or nftables directly?",
+      "answer": "ufw is a user-friendly frontend for iptables/nftables. Use it for simple server setups. Use nftables directly for complex rules, performance tuning, or when you need features like sets and maps."
+    },
+    {
+      "question": "How do I prevent locking myself out?",
+      "answer": "Always allow SSH before enabling the firewall: 'sudo ufw allow ssh'. If using a cloud provider, also ensure the security group/network ACL allows SSH access."
+    }
+  ],
+  "relatedRecipes": ["security-hardening-checklist", "network-diagnostics-toolkit"],
+  "lastUpdated": "2026-03-11"
+}

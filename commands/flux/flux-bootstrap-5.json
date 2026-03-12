@@ -1,0 +1,8 @@
+{
+  "id": "flux-bootstrap-5",
+  "categoryId": "flux",
+  "subcategoryId": "flux-bootstrap",
+  "title": "Uninstall Flux",
+  "command": "flux uninstall --namespace=flux-system",
+  "description": "Remove Flux components from cluster."
+}

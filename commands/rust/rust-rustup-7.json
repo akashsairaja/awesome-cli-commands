@@ -1,0 +1,8 @@
+{
+  "id": "rust-rustup-7",
+  "categoryId": "rust",
+  "subcategoryId": "rust-rustup",
+  "title": "Override for directory",
+  "command": "rustup override set nightly",
+  "description": "Use specific toolchain for current directory."
+}

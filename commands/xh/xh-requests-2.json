@@ -1,0 +1,8 @@
+{
+  "id": "xh-requests-2",
+  "categoryId": "xh",
+  "subcategoryId": "xh-requests",
+  "title": "POST JSON",
+  "command": "xh POST https://api.example.com/users name=John email=john@example.com",
+  "description": "POST JSON data (= for strings)."
+}

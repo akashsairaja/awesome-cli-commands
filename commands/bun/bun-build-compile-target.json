@@ -1,0 +1,9 @@
+{
+  "id": "bun-build-compile-target",
+  "categoryId": "bun",
+  "subcategoryId": "bun-build",
+  "title": "Cross-Compile",
+  "command": "bun build --compile --target=bun-linux-x64 ./src/index.ts",
+  "description": "Compile for different platform",
+  "tags": ["build", "cross", "compile"]
+}

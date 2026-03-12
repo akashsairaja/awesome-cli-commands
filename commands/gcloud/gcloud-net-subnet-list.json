@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-net-subnet-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-networking",
+  "title": "List Subnets",
+  "command": "gcloud compute networks subnets list",
+  "description": "List all subnets across all VPC networks",
+  "tags": ["subnet", "list", "network"]
+}

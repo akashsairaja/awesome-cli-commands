@@ -1,0 +1,9 @@
+{
+  "id": "bun-pm-ls",
+  "categoryId": "bun",
+  "subcategoryId": "bun-package",
+  "title": "List Packages",
+  "command": "bun pm ls",
+  "description": "List installed packages",
+  "tags": ["list", "packages", "installed"]
+}

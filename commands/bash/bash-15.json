@@ -1,0 +1,8 @@
+{
+  "id": "bash-15",
+  "categoryId": "bash",
+  "subcategoryId": "scripting",
+  "title": "Remove trap",
+  "command": "trap - EXIT",
+  "description": "Remove a previously set trap."
+}

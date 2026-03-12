@@ -1,0 +1,8 @@
+{
+  "id": "helm-release-4",
+  "categoryId": "helm",
+  "subcategoryId": "helm-release",
+  "title": "Release history",
+  "command": "helm history my-release",
+  "description": "View release revision history."
+}

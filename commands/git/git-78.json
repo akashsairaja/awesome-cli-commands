@@ -1,0 +1,8 @@
+{
+  "id": "git-78",
+  "categoryId": "git",
+  "subcategoryId": "remote",
+  "title": "Sync fork with upstream",
+  "command": "git fetch upstream && git rebase upstream/main",
+  "description": "Update fork with upstream changes."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "rust-gs-3",
+  "title": "Create new project",
+  "command": "cargo new myproject",
+  "description": "Create a new Rust project with Cargo",
+  "categoryId": "rust",
+  "subcategoryId": "getting-started"
+}

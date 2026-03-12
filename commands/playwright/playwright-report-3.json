@@ -1,0 +1,8 @@
+{
+  "id": "playwright-report-3",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-report",
+  "title": "JSON reporter",
+  "command": "npx playwright test --reporter=json",
+  "description": "Output results as JSON."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "vim-9",
+  "categoryId": "vim",
+  "subcategoryId": "editing",
+  "title": "New line below/above",
+  "command": "o / O",
+  "description": "Insert new line below/above."
+}

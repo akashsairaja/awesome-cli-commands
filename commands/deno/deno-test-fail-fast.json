@@ -1,0 +1,9 @@
+{
+  "id": "deno-test-fail-fast",
+  "categoryId": "deno",
+  "subcategoryId": "deno-test",
+  "title": "Fail Fast",
+  "command": "deno test --fail-fast",
+  "description": "Stop on first test failure",
+  "tags": ["test", "fail-fast", "quick"]
+}

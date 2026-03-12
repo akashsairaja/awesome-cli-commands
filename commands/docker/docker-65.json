@@ -1,0 +1,8 @@
+{
+  "id": "docker-65",
+  "categoryId": "docker",
+  "subcategoryId": "networks",
+  "title": "Create network with subnet",
+  "command": "docker network create --subnet=172.18.0.0/16 <network>",
+  "description": "Create network with custom subnet."
+}

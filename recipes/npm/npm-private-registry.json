@@ -1,0 +1,66 @@
+{
+  "id": "npm-private-registry",
+  "stackId": "npm",
+  "name": "Set Up and Use Private npm Registries",
+  "description": "Configure and publish to private npm registries using Verdaccio, GitHub Packages, or npm Teams for internal package distribution.",
+  "difficulty": "advanced",
+  "timeMinutes": 18,
+  "tags": ["private", "registry", "enterprise", "verdaccio", "github-packages"],
+  "prerequisites": [
+    "Node.js and npm installed",
+    "Docker installed (for Verdaccio option)",
+    "npm account or GitHub account"
+  ],
+  "steps": [
+    {
+      "title": "Run a local Verdaccio registry",
+      "description": "Start a self-hosted npm registry for development and testing.",
+      "command": "docker run -d --name verdaccio -p 4873:4873 verdaccio/verdaccio",
+      "tip": "Verdaccio proxies the public npm registry by default, so you can install public packages through it while hosting private ones."
+    },
+    {
+      "title": "Configure npm to use the private registry",
+      "description": "Set the registry URL for a specific scope.",
+      "command": "npm config set @myorg:registry http://localhost:4873/",
+      "tip": "Scope-based registry config lets you use a private registry for @myorg/* packages while everything else goes to the public registry."
+    },
+    {
+      "title": "Authenticate with the private registry",
+      "description": "Login to the private registry to publish and install private packages.",
+      "command": "npm login --registry http://localhost:4873/"
+    },
+    {
+      "title": "Publish to the private registry",
+      "description": "Push a package to your private registry.",
+      "command": "npm publish --registry http://localhost:4873/"
+    },
+    {
+      "title": "Configure .npmrc for the project",
+      "description": "Create a project-level .npmrc to share registry config with the team.",
+      "command": "echo '@myorg:registry=http://localhost:4873/' > .npmrc && echo '//localhost:4873/:_authToken=${NPM_TOKEN}' >> .npmrc",
+      "warning": "Never commit auth tokens to .npmrc. Use environment variables and add .npmrc to .gitignore if it contains secrets. Use a .npmrc template checked into git with token placeholders."
+    },
+    {
+      "title": "Configure GitHub Packages as an alternative",
+      "description": "Use GitHub Packages as a private registry for your organization.",
+      "command": "npm config set @myorg:registry https://npm.pkg.github.com && npm login --registry https://npm.pkg.github.com --scope=@myorg"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Private npm Registry Setup with Verdaccio\nset -euo pipefail\n\nREGISTRY_PORT=${1:-4873}\nSCOPE=${2:-\"@myorg\"}\n\necho \"=== Starting Verdaccio ===\"\ndocker run -d \\\n  --name verdaccio \\\n  -p \"$REGISTRY_PORT:4873\" \\\n  -v verdaccio-storage:/verdaccio/storage \\\n  -v verdaccio-conf:/verdaccio/conf \\\n  verdaccio/verdaccio\n\necho \"Waiting for Verdaccio to start...\"\nsleep 3\n\nREGISTRY_URL=\"http://localhost:$REGISTRY_PORT\"\n\necho \"\"\necho \"=== Configuring npm ===\"\nnpm config set \"$SCOPE:registry\" \"$REGISTRY_URL/\"\n\necho \"\"\necho \"=== Registry Status ===\"\ncurl -s \"$REGISTRY_URL/-/ping\" && echo \" Registry is healthy\" || echo \"Registry is not responding\"\n\necho \"\"\necho \"=== Project .npmrc Template ===\"\ncat << NPMRC\n# Add to .npmrc (do NOT commit tokens)\n$SCOPE:registry=$REGISTRY_URL/\n//localhost:$REGISTRY_PORT/:_authToken=\\${NPM_TOKEN}\nNPMRC\n\necho \"\"\necho \"=== Next Steps ===\"\necho \"1. Login:   npm login --registry $REGISTRY_URL\"\necho \"2. Publish: npm publish --registry $REGISTRY_URL\"\necho \"3. Install: npm install $SCOPE/mypackage\"\necho \"4. Web UI:  open $REGISTRY_URL\"",
+  "faq": [
+    {
+      "question": "What are the options for hosting a private npm registry?",
+      "answer": "Options include: Verdaccio (self-hosted, free, Docker-friendly), GitHub Packages (free for public, paid for private), npm Teams/Pro (paid, npmjs.com), GitLab Packages (built into GitLab), and Artifactory/Nexus for enterprise setups."
+    },
+    {
+      "question": "How do I configure different registries for different scopes?",
+      "answer": "Set scope-specific registries in .npmrc: '@myorg:registry=https://private.example.com'. Unscoped packages will continue to use the default npm registry. You can have multiple scopes pointing to different registries."
+    },
+    {
+      "question": "How do I handle authentication tokens safely?",
+      "answer": "Use environment variables in .npmrc: '//registry.example.com/:_authToken=${NPM_TOKEN}'. Set the NPM_TOKEN env var in your shell profile or CI secrets. Never commit actual tokens to version control."
+    }
+  ],
+  "relatedRecipes": ["npm-publish-package", "npm-workspace-setup"],
+  "lastUpdated": "2026-03-11"
+}

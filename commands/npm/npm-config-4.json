@@ -1,0 +1,8 @@
+{
+  "id": "npm-config-4",
+  "categoryId": "npm",
+  "subcategoryId": "npm-config",
+  "title": "Edit config",
+  "command": "npm config edit",
+  "description": "Open config in editor."
+}

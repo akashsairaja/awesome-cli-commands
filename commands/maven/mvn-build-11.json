@@ -1,0 +1,8 @@
+{
+  "id": "mvn-build-11",
+  "categoryId": "maven",
+  "subcategoryId": "build",
+  "title": "Debug output",
+  "command": "mvn -X install",
+  "description": "Build with debug logging."
+}

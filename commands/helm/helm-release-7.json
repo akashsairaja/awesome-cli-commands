@@ -1,0 +1,8 @@
+{
+  "id": "helm-release-7",
+  "categoryId": "helm",
+  "subcategoryId": "helm-release",
+  "title": "Get manifest",
+  "command": "helm get manifest my-release",
+  "description": "Get Kubernetes manifests for release."
+}

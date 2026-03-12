@@ -1,0 +1,8 @@
+{
+  "id": "vim-60",
+  "categoryId": "vim",
+  "subcategoryId": "macros",
+  "title": "Yank to register",
+  "command": "\"ayy",
+  "description": "Copy line to named register a."
+}

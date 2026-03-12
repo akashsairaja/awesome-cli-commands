@@ -1,0 +1,8 @@
+{
+  "id": "scoop-manage-3",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-manage",
+  "title": "Cleanup old versions",
+  "command": "scoop cleanup *",
+  "description": "Remove old versions of all apps."
+}

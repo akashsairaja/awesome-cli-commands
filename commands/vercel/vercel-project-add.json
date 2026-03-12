@@ -1,0 +1,9 @@
+{
+  "id": "vercel-project-add",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-projects",
+  "title": "Add project",
+  "command": "vercel project add <name>",
+  "description": "Create a new project",
+  "tags": ["project", "add", "create"]
+}

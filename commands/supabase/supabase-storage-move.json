@@ -1,0 +1,9 @@
+{
+  "id": "supabase-storage-move",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-storage",
+  "title": "Move or rename object",
+  "command": "supabase storage mv supabase://bucket/old.png supabase://bucket/new.png --local",
+  "description": "Move or rename storage object",
+  "tags": ["storage", "move", "rename"]
+}

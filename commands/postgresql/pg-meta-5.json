@@ -1,0 +1,8 @@
+{
+  "id": "pg-meta-5",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-meta",
+  "title": "Describe table",
+  "command": "\\d tablename",
+  "description": "Show table structure."
+}

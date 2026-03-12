@@ -1,0 +1,8 @@
+{
+  "id": "mvn-plugin-5",
+  "categoryId": "maven",
+  "subcategoryId": "plugins",
+  "title": "Run exec plugin",
+  "command": "mvn exec:java -Dexec.mainClass=\"com.example.Main\"",
+  "description": "Execute Java main class."
+}

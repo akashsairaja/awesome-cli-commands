@@ -1,0 +1,8 @@
+{
+  "id": "ssh-54",
+  "categoryId": "sshgpg",
+  "subcategoryId": "config",
+  "title": "ControlMaster multiplexing",
+  "command": "Host *\n  ControlMaster auto\n  ControlPath ~/.ssh/sockets/%r@%h-%p\n  ControlPersist 600",
+  "description": "Reuse SSH connections for speed."
+}

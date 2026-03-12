@@ -1,0 +1,8 @@
+{
+  "id": "k6-cloud-6",
+  "categoryId": "k6",
+  "subcategoryId": "k6-cloud",
+  "title": "Cloud with project ID",
+  "command": "k6 cloud --project-id 12345 script.js",
+  "description": "Run cloud test in specific project."
+}

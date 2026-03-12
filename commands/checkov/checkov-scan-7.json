@@ -1,0 +1,8 @@
+{
+  "id": "checkov-scan-7",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-scan",
+  "title": "Scan CloudFormation",
+  "command": "checkov -d . --framework cloudformation",
+  "description": "Scan CloudFormation templates."
+}

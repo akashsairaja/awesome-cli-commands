@@ -1,0 +1,8 @@
+{
+  "id": "sops-config-3",
+  "categoryId": "sops",
+  "subcategoryId": "sops-config",
+  "title": "Exec with decrypted env",
+  "command": "sops exec-env secrets.enc.yaml 'echo $DB_PASSWORD'",
+  "description": "Export decrypted values as environment."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-config-6",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-config",
+  "title": "Select region",
+  "command": "ngrok http --region=eu 3000",
+  "description": "Start tunnel in a specific region (us, eu, ap, au)."
+}

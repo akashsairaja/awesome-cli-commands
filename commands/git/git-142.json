@@ -1,0 +1,8 @@
+{
+  "id": "git-142",
+  "categoryId": "git",
+  "subcategoryId": "git-config",
+  "title": "List all config",
+  "command": "git config --list",
+  "description": "Show all git configuration."
+}

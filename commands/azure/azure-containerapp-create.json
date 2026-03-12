@@ -1,0 +1,9 @@
+{
+  "id": "azure-containerapp-create",
+  "categoryId": "azure",
+  "subcategoryId": "azure-containerapp",
+  "title": "Create Container App",
+  "command": "az containerapp create -n myapp -g rg --image myimage:latest",
+  "description": "Create a new container app with specified image",
+  "tags": ["containerapp", "create", "container"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "nuget-pack-1",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-pack",
+  "title": "Pack with nuspec",
+  "command": "nuget pack MyPackage.nuspec",
+  "description": "Create package from nuspec file."
+}

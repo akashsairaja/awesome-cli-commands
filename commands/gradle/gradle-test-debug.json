@@ -1,0 +1,9 @@
+{
+  "id": "gradle-test-debug",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-testing",
+  "title": "Debug Tests",
+  "command": "./gradlew test --debug-jvm",
+  "description": "Run tests with debugger attached",
+  "tags": ["test", "debug", "jvm"]
+}

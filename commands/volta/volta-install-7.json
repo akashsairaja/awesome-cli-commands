@@ -1,0 +1,8 @@
+{
+  "id": "volta-install-7",
+  "categoryId": "volta",
+  "subcategoryId": "volta-install",
+  "title": "Install latest Node.js",
+  "command": "volta install node@latest",
+  "description": "Install latest Node.js current release."
+}

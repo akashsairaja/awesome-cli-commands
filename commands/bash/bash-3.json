@@ -1,0 +1,8 @@
+{
+  "id": "bash-3",
+  "categoryId": "bash",
+  "subcategoryId": "scripting",
+  "title": "Debug mode",
+  "command": "bash -x script.sh",
+  "description": "Run script in debug mode."
+}

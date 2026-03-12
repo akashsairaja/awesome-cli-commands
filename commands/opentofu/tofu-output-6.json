@@ -1,0 +1,8 @@
+{
+  "id": "tofu-output-6",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-output",
+  "title": "Format recursively",
+  "command": "tofu fmt -recursive",
+  "description": "Format .tf files in all subdirectories."
+}

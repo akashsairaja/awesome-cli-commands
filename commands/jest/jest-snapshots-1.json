@@ -1,0 +1,8 @@
+{
+  "id": "jest-snapshots-1",
+  "categoryId": "jest",
+  "subcategoryId": "jest-snapshots",
+  "title": "Update snapshots",
+  "command": "jest -u",
+  "description": "Update all failing snapshots."
+}

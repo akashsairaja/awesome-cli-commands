@@ -1,0 +1,8 @@
+{
+  "id": "playwright-ui-5",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-ui",
+  "title": "UI mode host",
+  "command": "npx playwright test --ui-host=0.0.0.0",
+  "description": "Run UI mode accessible from network."
+}

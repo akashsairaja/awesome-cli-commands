@@ -1,0 +1,9 @@
+{
+  "id": "gh-repo-create-private",
+  "categoryId": "github",
+  "subcategoryId": "gh-repo",
+  "title": "Create private repository",
+  "command": "gh repo create <name> --private",
+  "description": "Create a new private GitHub repository",
+  "tags": ["repo", "create", "new", "private"]
+}

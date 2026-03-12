@@ -1,0 +1,9 @@
+{
+  "id": "ansible-vault-edit",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-vault",
+  "title": "Edit Encrypted File",
+  "command": "ansible-vault edit secrets.yml",
+  "description": "Edit an encrypted file in place",
+  "tags": ["vault", "edit", "modify"]
+}

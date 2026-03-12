@@ -1,0 +1,8 @@
+{
+  "id": "nats-consumer-5",
+  "categoryId": "nats",
+  "subcategoryId": "nats-consumer",
+  "title": "Get next message",
+  "command": "nats consumer next ORDERS DISPATCH",
+  "description": "Retrieve next available message from pull consumer."
+}

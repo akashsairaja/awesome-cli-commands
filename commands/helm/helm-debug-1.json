@@ -1,0 +1,8 @@
+{
+  "id": "helm-debug-1",
+  "categoryId": "helm",
+  "subcategoryId": "helm-debug",
+  "title": "Debug install",
+  "command": "helm install my-release ./mychart --debug --dry-run",
+  "description": "Show rendered templates with debug info."
+}

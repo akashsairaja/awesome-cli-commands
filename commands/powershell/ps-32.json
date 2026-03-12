@@ -1,0 +1,8 @@
+{
+  "id": "ps-32",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-system",
+  "title": "Get disk space",
+  "command": "Get-PSDrive -PSProvider FileSystem",
+  "description": "Show disk space usage."
+}

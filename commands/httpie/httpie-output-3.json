@@ -1,0 +1,8 @@
+{
+  "id": "httpie-output-3",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-output",
+  "title": "Verbose output",
+  "command": "http --verbose GET https://api.example.com",
+  "description": "Show request and response."
+}

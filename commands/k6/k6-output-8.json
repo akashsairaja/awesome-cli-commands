@@ -1,0 +1,8 @@
+{
+  "id": "k6-output-8",
+  "categoryId": "k6",
+  "subcategoryId": "k6-output",
+  "title": "Datadog output",
+  "command": "K6_STATSD_ADDR=localhost:8125 k6 run --out output-statsd script.js",
+  "description": "Send metrics to Datadog via StatsD."
+}

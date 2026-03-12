@@ -1,0 +1,8 @@
+{
+  "id": "python-gs-3",
+  "title": "Create virtual environment",
+  "command": "python3 -m venv venv",
+  "description": "Create a new virtual environment named 'venv'",
+  "categoryId": "python",
+  "subcategoryId": "getting-started"
+}

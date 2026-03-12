@@ -1,0 +1,8 @@
+{
+  "id": "claude-57",
+  "categoryId": "claudecode",
+  "subcategoryId": "agents",
+  "title": "Create custom agent",
+  "command": "/agents create",
+  "description": "Create a new custom agent."
+}

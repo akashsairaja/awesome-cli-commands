@@ -1,0 +1,8 @@
+{
+  "id": "apt-37",
+  "categoryId": "ubuntu",
+  "subcategoryId": "systemd-services",
+  "title": "Reload service config",
+  "command": "sudo systemctl reload <service>",
+  "description": "Reload service configuration without full restart."
+}

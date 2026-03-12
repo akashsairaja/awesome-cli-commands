@@ -1,0 +1,9 @@
+{
+  "id": "netlify-open-admin",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-deploy",
+  "title": "Open admin panel",
+  "command": "netlify open --admin",
+  "description": "Open site admin panel in browser",
+  "tags": ["open", "admin", "dashboard"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "flux-gs-2",
+  "title": "Check prerequisites",
+  "command": "flux check --pre",
+  "description": "Verify cluster meets Flux requirements",
+  "categoryId": "flux",
+  "subcategoryId": "getting-started"
+}

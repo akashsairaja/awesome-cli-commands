@@ -1,0 +1,8 @@
+{
+  "id": "rust-quality-6",
+  "categoryId": "rust",
+  "subcategoryId": "rust-quality",
+  "title": "Auto-fix warnings",
+  "command": "cargo fix",
+  "description": "Automatically fix compiler warnings."
+}

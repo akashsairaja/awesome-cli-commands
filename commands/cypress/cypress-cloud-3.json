@@ -1,0 +1,8 @@
+{
+  "id": "cypress-cloud-3",
+  "categoryId": "cypress",
+  "subcategoryId": "cypress-cloud",
+  "title": "Tag test run",
+  "command": "npx cypress run --record --tag 'production,smoke'",
+  "description": "Add tags to test recording."
+}

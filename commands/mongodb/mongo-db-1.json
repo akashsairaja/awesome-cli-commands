@@ -1,0 +1,8 @@
+{
+  "id": "mongo-db-1",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-database",
+  "title": "Show databases",
+  "command": "show dbs",
+  "description": "List all databases."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k6-options-16",
+  "categoryId": "k6",
+  "subcategoryId": "k6-options",
+  "title": "Per-VU iterations",
+  "command": "export const options = {\n  scenarios: {\n    per_vu: {\n      executor: 'per-vu-iterations',\n      vus: 10,\n      iterations: 100,\n    },\n  },\n};",
+  "description": "Each VU runs fixed iterations."
+}

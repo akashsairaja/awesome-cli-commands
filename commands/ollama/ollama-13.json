@@ -1,0 +1,8 @@
+{
+  "id": "ollama-13",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-run",
+  "title": "Run with verbose output",
+  "command": "ollama run llama2 --verbose",
+  "description": "Show generation statistics and timing."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "checkov-checks-2",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-checks",
+  "title": "Skip specific check",
+  "command": "checkov -d . --skip-check CKV_AWS_1",
+  "description": "Skip a specific check."
+}

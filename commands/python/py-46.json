@@ -1,0 +1,8 @@
+{
+  "id": "py-46",
+  "categoryId": "python",
+  "subcategoryId": "python-uv",
+  "title": "pip install (compatible)",
+  "command": "uv pip install requests",
+  "description": "Install package using pip-compatible interface."
+}

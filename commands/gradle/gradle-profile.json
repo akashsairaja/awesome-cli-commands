@@ -1,0 +1,9 @@
+{
+  "id": "gradle-profile",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-projects",
+  "title": "Profile Build",
+  "command": "./gradlew build --profile",
+  "description": "Generate build timing report",
+  "tags": ["profile", "performance", "timing"]
+}

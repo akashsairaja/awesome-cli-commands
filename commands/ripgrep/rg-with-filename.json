@@ -1,0 +1,9 @@
+{
+  "id": "rg-with-filename",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-output",
+  "title": "Show filenames always",
+  "command": "rg -H \"pattern\"",
+  "description": "Always show filenames",
+  "tags": ["output", "filename", "show"]
+}

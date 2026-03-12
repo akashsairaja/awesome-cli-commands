@@ -1,0 +1,8 @@
+{
+  "id": "xh-requests-10",
+  "categoryId": "xh",
+  "subcategoryId": "xh-requests",
+  "title": "OPTIONS request",
+  "command": "xh OPTIONS https://api.example.com/users",
+  "description": "Check allowed HTTP methods for a resource."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "brew-31",
+  "categoryId": "homebrew",
+  "subcategoryId": "brew-services",
+  "title": "Restart service",
+  "command": "brew services restart <service>",
+  "description": "Restart a service."
+}

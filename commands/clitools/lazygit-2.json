@@ -1,0 +1,8 @@
+{
+  "id": "lazygit-2",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-lazygit",
+  "title": "In specific repo",
+  "command": "lazygit -p /path/to/repo",
+  "description": "Open lazygit in another repository."
+}

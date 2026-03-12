@@ -1,0 +1,8 @@
+{
+  "id": "starship-modules-15",
+  "categoryId": "starship",
+  "subcategoryId": "starship-modules",
+  "title": "Go module config",
+  "command": "[golang]\nformat = \"via [$symbol$version]($style) \"",
+  "description": "Customize Go version display."
+}

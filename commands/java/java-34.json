@@ -1,0 +1,8 @@
+{
+  "id": "java-34",
+  "categoryId": "java",
+  "subcategoryId": "java-tools",
+  "title": "List trusted CA certs",
+  "command": "keytool -list -cacerts",
+  "description": "List all trusted CA certificates in the JDK keystore."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tofu-state-8",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-state",
+  "title": "Force unlock state",
+  "command": "tofu force-unlock LOCK_ID",
+  "description": "Manually unlock a stuck state lock."
+}

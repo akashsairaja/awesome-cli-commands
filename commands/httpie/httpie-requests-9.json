@@ -1,0 +1,8 @@
+{
+  "id": "httpie-requests-9",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-requests",
+  "title": "HEAD request",
+  "command": "http HEAD https://api.example.com/users",
+  "description": "Send a HEAD request to get headers without a body."
+}

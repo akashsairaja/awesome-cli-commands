@@ -1,0 +1,8 @@
+{
+  "id": "tofu-plan-2",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-plan",
+  "title": "Save plan",
+  "command": "tofu plan -out=tfplan",
+  "description": "Save plan to file."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-http-4",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-http",
+  "title": "With basic auth",
+  "command": "ngrok http --basic-auth='user:password' 3000",
+  "description": "Add basic authentication."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k3s-install-2",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-install",
+  "title": "Install without traefik",
+  "command": "curl -sfL https://get.k3s.io | sh -s - --disable traefik",
+  "description": "Install without built-in ingress."
+}

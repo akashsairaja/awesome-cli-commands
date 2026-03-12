@@ -1,0 +1,8 @@
+{
+  "id": "bat-4",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-bat",
+  "title": "Specific language",
+  "command": "bat -l json file",
+  "description": "Force specific language highlighting."
+}

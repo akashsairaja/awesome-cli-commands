@@ -1,0 +1,8 @@
+{
+  "id": "ai-24",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-aider",
+  "title": "Use architect mode",
+  "command": "aider --architect",
+  "description": "Use architect mode for complex refactoring."
+}

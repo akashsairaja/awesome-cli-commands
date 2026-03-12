@@ -1,0 +1,8 @@
+{
+  "id": "py-49",
+  "categoryId": "python",
+  "subcategoryId": "python-uv",
+  "title": "Run tool (uvx)",
+  "command": "uvx ruff check .",
+  "description": "Run a tool in temporary isolated environment."
+}

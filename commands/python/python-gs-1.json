@@ -1,0 +1,8 @@
+{
+  "id": "python-gs-1",
+  "title": "Install Python (macOS)",
+  "command": "brew install python",
+  "description": "Install Python 3 using Homebrew on macOS",
+  "categoryId": "python",
+  "subcategoryId": "getting-started"
+}

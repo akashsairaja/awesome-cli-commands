@@ -1,0 +1,8 @@
+{
+  "id": "helm-repo-4",
+  "categoryId": "helm",
+  "subcategoryId": "helm-repo",
+  "title": "Remove repository",
+  "command": "helm repo remove bitnami",
+  "description": "Remove a chart repository."
+}

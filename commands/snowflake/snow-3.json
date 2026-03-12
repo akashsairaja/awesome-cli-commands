@@ -1,0 +1,8 @@
+{
+  "id": "snow-3",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-connections",
+  "title": "Test connection",
+  "command": "snow connection test --connection <name>",
+  "description": "Test a specific connection configuration."
+}

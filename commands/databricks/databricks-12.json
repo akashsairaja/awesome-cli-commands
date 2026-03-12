@@ -1,0 +1,8 @@
+{
+  "id": "databricks-12",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-jobs",
+  "title": "Run job now",
+  "command": "databricks jobs run-now --job-id <job-id>",
+  "description": "Trigger an immediate run of a job."
+}

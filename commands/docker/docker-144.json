@@ -1,0 +1,8 @@
+{
+  "id": "docker-144",
+  "categoryId": "docker",
+  "subcategoryId": "buildx",
+  "title": "Inspect multi-arch image",
+  "command": "docker buildx imagetools inspect <image>",
+  "description": "View details of multi-platform image manifest and architectures."
+}

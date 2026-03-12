@@ -1,0 +1,8 @@
+{
+  "id": "docker-53",
+  "categoryId": "docker",
+  "subcategoryId": "images",
+  "title": "Create image from container",
+  "command": "docker commit <container> <image>:<tag>",
+  "description": "Create image from container changes."
+}

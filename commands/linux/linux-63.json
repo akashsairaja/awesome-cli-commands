@@ -1,0 +1,8 @@
+{
+  "id": "linux-63",
+  "categoryId": "linux",
+  "subcategoryId": "disk",
+  "title": "Estimate file space usage",
+  "command": "du -sh /var/log",
+  "description": "Show the total size of a specific directory."
+}

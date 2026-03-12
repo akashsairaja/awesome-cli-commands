@@ -1,0 +1,8 @@
+{
+  "id": "bash-97",
+  "categoryId": "bash",
+  "subcategoryId": "conditionals",
+  "title": "Ternary style",
+  "command": "[[ $x -gt 5 ]] && echo \"big\" || echo \"small\"",
+  "description": "Inline conditional expression."
+}

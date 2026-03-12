@@ -1,0 +1,8 @@
+{
+  "id": "go-gs-1",
+  "title": "Install Go (macOS)",
+  "command": "brew install go",
+  "description": "Install Go using Homebrew on macOS",
+  "categoryId": "go",
+  "subcategoryId": "getting-started"
+}

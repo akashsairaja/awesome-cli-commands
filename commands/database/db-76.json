@@ -1,0 +1,8 @@
+{
+  "id": "db-76",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Revoke all privileges",
+  "command": "REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'appuser'@'localhost';",
+  "description": "Remove all privileges and grant option from a user."
+}

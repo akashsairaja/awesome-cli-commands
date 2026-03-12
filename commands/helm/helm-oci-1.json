@@ -1,0 +1,8 @@
+{
+  "id": "helm-oci-1",
+  "categoryId": "helm",
+  "subcategoryId": "helm-oci",
+  "title": "Push to OCI registry",
+  "command": "helm push mychart-0.1.0.tgz oci://registry.example.com/helm-charts",
+  "description": "Push packaged chart to OCI-compliant registry."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "make-debug-5",
+  "categoryId": "make",
+  "subcategoryId": "make-debug",
+  "title": "Print variable",
+  "command": "make -p | grep 'VAR ='",
+  "description": "Find variable value in database."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "redis-sadd",
+  "categoryId": "redis",
+  "subcategoryId": "redis-sets",
+  "title": "Add to set",
+  "command": "SADD key member",
+  "description": "Add member to set",
+  "tags": ["sadd", "set", "add"]
+}

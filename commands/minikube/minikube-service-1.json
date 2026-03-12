@@ -1,0 +1,8 @@
+{
+  "id": "minikube-service-1",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-service",
+  "title": "Open service",
+  "command": "minikube service myapp",
+  "description": "Open service in browser."
+}

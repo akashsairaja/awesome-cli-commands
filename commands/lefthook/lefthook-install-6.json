@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-install-6",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-install",
+  "title": "Force reinstall hooks",
+  "command": "lefthook install -f",
+  "description": "Force reinstall all Git hooks."
+}

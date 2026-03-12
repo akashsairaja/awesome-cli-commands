@@ -1,0 +1,51 @@
+{
+  "id": "bash-argument-parsing",
+  "stackId": "bash",
+  "name": "Parse CLI Arguments with getopts and Long Options",
+  "description": "Handle short and long command-line options, required arguments, and positional parameters in bash scripts using getopts and case statements.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": false,
+  "tags": ["arguments", "getopts", "cli", "options", "parsing"],
+  "prerequisites": ["Bash 4.0+", "Basic bash scripting knowledge"],
+  "steps": [
+    {
+      "title": "Parse short options with getopts",
+      "description": "Use the built-in getopts for simple short option parsing with flags and arguments.",
+      "command": "cat > parse_args.sh << 'EOF'\n#!/usr/bin/env bash\nset -euo pipefail\n\nVERBOSE=false\nOUTPUT=\"\"\n\nwhile getopts ':hvo:' opt; do\n  case \"$opt\" in\n    h) echo \"Usage: $0 [-v] [-o output] file\"; exit 0 ;;\n    v) VERBOSE=true ;;\n    o) OUTPUT=\"$OPTARG\" ;;\n    :) echo \"Option -$OPTARG requires an argument\" >&2; exit 1 ;;\n    ?) echo \"Unknown option: -$OPTARG\" >&2; exit 1 ;;\n  esac\ndone\nshift $((OPTIND - 1))\n\necho \"Verbose: $VERBOSE, Output: $OUTPUT, Remaining: $*\"\nEOF\nchmod +x parse_args.sh",
+      "tip": "The colon after an option letter (like o:) means that option requires an argument."
+    },
+    {
+      "title": "Add long option support with a case statement",
+      "description": "Handle --long-option style flags using a while/case loop.",
+      "command": "cat > parse_long.sh << 'EOF'\n#!/usr/bin/env bash\nset -euo pipefail\n\nVERBOSE=false\nOUTPUT=\"\"\nDRY_RUN=false\nFILES=()\n\nwhile [[ $# -gt 0 ]]; do\n  case \"$1\" in\n    -h|--help)     echo \"Usage: $0 [options] files...\"; exit 0 ;;\n    -v|--verbose)  VERBOSE=true; shift ;;\n    -o|--output)   OUTPUT=\"${2:?'--output requires a value'}\"; shift 2 ;;\n    -d|--dry-run)  DRY_RUN=true; shift ;;\n    --)            shift; FILES+=(\"$@\"); break ;;\n    -*)            echo \"Unknown option: $1\" >&2; exit 1 ;;\n    *)             FILES+=(\"$1\"); shift ;;\n  esac\ndone\n\necho \"Verbose=$VERBOSE Output=$OUTPUT DryRun=$DRY_RUN Files=${FILES[*]}\"\nEOF\nchmod +x parse_long.sh"
+    },
+    {
+      "title": "Validate required arguments",
+      "description": "Check that required options and positional arguments are provided.",
+      "command": "echo '[[ -z \"$OUTPUT\" ]] && { echo \"Error: --output is required\" >&2; exit 1; }' && echo '[[ ${#FILES[@]} -eq 0 ]] && { echo \"Error: at least one file required\" >&2; exit 1; }'"
+    },
+    {
+      "title": "Test the argument parser",
+      "description": "Run the script with various option combinations to verify parsing.",
+      "command": "./parse_long.sh -v --output result.txt --dry-run file1.txt file2.txt"
+    }
+  ],
+  "fullScript": "#!/usr/bin/env bash\nset -euo pipefail\n\n# Argument Parsing Template\nVERBOSE=false\nOUTPUT=\"\"\nDRY_RUN=false\nFILES=()\n\nusage() {\n  cat << EOF\nUsage: $(basename \"$0\") [OPTIONS] <files...>\n\nOptions:\n  -h, --help           Show this help\n  -v, --verbose        Enable verbose output\n  -o, --output FILE    Output file (required)\n  -d, --dry-run        Show actions without executing\n  --                   End of options\n\nExamples:\n  $(basename \"$0\") -v -o result.txt input.csv\n  $(basename \"$0\") --output=result.txt *.log\nEOF\n  exit 0\n}\n\nwhile [[ $# -gt 0 ]]; do\n  case \"$1\" in\n    -h|--help)     usage ;;\n    -v|--verbose)  VERBOSE=true; shift ;;\n    -o|--output)   OUTPUT=\"${2:?'--output requires a value'}\"; shift 2 ;;\n    --output=*)    OUTPUT=\"${1#*=}\"; shift ;;\n    -d|--dry-run)  DRY_RUN=true; shift ;;\n    --)            shift; FILES+=(\"$@\"); break ;;\n    -*)            echo \"Unknown option: $1\" >&2; exit 1 ;;\n    *)             FILES+=(\"$1\"); shift ;;\n  esac\ndone\n\n[[ -z \"$OUTPUT\" ]] && { echo \"Error: --output is required\" >&2; exit 1; }\n[[ ${#FILES[@]} -eq 0 ]] && { echo \"Error: at least one file required\" >&2; exit 1; }\n\necho \"Output: $OUTPUT\"\necho \"Files: ${FILES[*]}\"\n$VERBOSE && echo \"Verbose mode enabled\"\n$DRY_RUN && echo \"Dry run mode\"",
+  "faq": [
+    {
+      "question": "Should I use getopts or a while/case loop?",
+      "answer": "Use getopts for simple scripts with short options only. Use a while/case loop when you need long options (--verbose), equals syntax (--output=file), or complex validation. Most production scripts use the while/case pattern."
+    },
+    {
+      "question": "How do I handle --option=value syntax?",
+      "answer": "Add a pattern like '--output=*') OUTPUT=\"${1#*=}\"; shift ;;' which strips everything before and including the = sign to extract the value."
+    },
+    {
+      "question": "What does -- (double dash) mean?",
+      "answer": "Double dash signals the end of options. Everything after -- is treated as positional arguments, even if it starts with a dash. This lets users pass filenames like '-weird-name.txt' without it being interpreted as an option."
+    }
+  ],
+  "relatedRecipes": ["bash-script-template", "bash-error-handling"],
+  "lastUpdated": "2026-03-11"
+}

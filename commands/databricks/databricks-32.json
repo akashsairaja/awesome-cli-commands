@@ -1,0 +1,8 @@
+{
+  "id": "databricks-32",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-unity-catalog",
+  "title": "List tables",
+  "command": "databricks unity-catalog tables list --catalog-name <cat> --schema-name <schema>",
+  "description": "List tables in a schema."
+}

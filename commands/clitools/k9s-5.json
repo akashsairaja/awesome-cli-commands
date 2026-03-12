@@ -1,0 +1,8 @@
+{
+  "id": "k9s-5",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-k9s",
+  "title": "Read-only mode",
+  "command": "k9s --readonly",
+  "description": "Prevent modifications."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tsx-4",
+  "categoryId": "typescript",
+  "subcategoryId": "tsx",
+  "title": "tsx REPL",
+  "command": "tsx",
+  "description": "Start fast interactive TypeScript REPL."
+}

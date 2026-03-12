@@ -1,0 +1,9 @@
+{
+  "id": "gradle-wrapper-validate",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-wrapper",
+  "title": "Validate Wrapper",
+  "command": "./gradlew wrapper --validate-url",
+  "description": "Verify wrapper distribution URL",
+  "tags": ["wrapper", "validate", "security"]
+}

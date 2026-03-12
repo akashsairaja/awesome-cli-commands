@@ -1,0 +1,8 @@
+{
+  "id": "volta-config-2",
+  "categoryId": "volta",
+  "subcategoryId": "volta-config",
+  "title": "Bash completions",
+  "command": "volta completions bash",
+  "description": "Generate bash shell completions."
+}

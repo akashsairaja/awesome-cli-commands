@@ -1,0 +1,8 @@
+{
+  "id": "aws-ec2-1",
+  "categoryId": "aws",
+  "subcategoryId": "ec2",
+  "title": "List instances",
+  "command": "aws ec2 describe-instances --query 'Reservations[].Instances[].[InstanceId,State.Name,Tags[?Key==`Name`].Value|[0]]' --output table",
+  "description": "List instances with ID, state, and name."
+}

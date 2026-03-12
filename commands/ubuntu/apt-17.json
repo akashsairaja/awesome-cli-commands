@@ -1,0 +1,8 @@
+{
+  "id": "apt-17",
+  "categoryId": "ubuntu",
+  "subcategoryId": "users",
+  "title": "Change password",
+  "command": "sudo passwd <username>",
+  "description": "Change user password."
+}

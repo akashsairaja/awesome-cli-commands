@@ -1,0 +1,8 @@
+{
+  "id": "eza-1",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-eza",
+  "title": "Long listing",
+  "command": "eza -l",
+  "description": "Detailed file listing with colors."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "snyk-iac-7",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-iac",
+  "title": "Detect IaC drift",
+  "command": "snyk iac describe --only-unmanaged",
+  "description": "Detect unmanaged cloud resources (drift detection)."
+}

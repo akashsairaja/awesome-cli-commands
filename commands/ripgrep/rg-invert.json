@@ -1,0 +1,9 @@
+{
+  "id": "rg-invert",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-search",
+  "title": "Invert match",
+  "command": "rg -v \"pattern\"",
+  "description": "Show lines that don't match",
+  "tags": ["search", "invert", "exclude"]
+}

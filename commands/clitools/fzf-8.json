@@ -1,0 +1,8 @@
+{
+  "id": "fzf-8",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-fzf",
+  "title": "Reverse search (Ctrl+R)",
+  "command": "export FZF_CTRL_R_OPTS='--reverse'",
+  "description": "Configure Ctrl+R history search."
+}

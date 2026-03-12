@@ -1,0 +1,8 @@
+{
+  "id": "mongo-users-3",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-users",
+  "title": "Create read-write user",
+  "command": "db.createUser({ user: \"appuser\", pwd: \"password\", roles: [{ role: \"readWrite\", db: \"mydb\" }] })",
+  "description": "Create a user with read and write access to a specific database."
+}

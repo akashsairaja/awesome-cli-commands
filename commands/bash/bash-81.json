@@ -1,0 +1,8 @@
+{
+  "id": "bash-81",
+  "categoryId": "bash",
+  "subcategoryId": "conditionals",
+  "title": "Regex match",
+  "command": "if [[ \"$str\" =~ ^[0-9]+$ ]]; then echo \"number\"; fi",
+  "description": "Match against regex pattern."
+}

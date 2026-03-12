@@ -1,0 +1,8 @@
+{
+  "id": "bash-16",
+  "categoryId": "bash",
+  "subcategoryId": "variables",
+  "title": "Set variable",
+  "command": "VAR=\"value\"",
+  "description": "Assign value to variable."
+}

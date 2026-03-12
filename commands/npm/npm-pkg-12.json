@@ -1,0 +1,8 @@
+{
+  "id": "npm-pkg-12",
+  "categoryId": "npm",
+  "subcategoryId": "npm-packages",
+  "title": "yarn why",
+  "command": "yarn why <package>",
+  "description": "Explain why package is installed (shows chain)."
+}

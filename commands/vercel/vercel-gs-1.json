@@ -1,0 +1,8 @@
+{
+  "id": "vercel-gs-1",
+  "title": "Install Vercel CLI",
+  "command": "npm i -g vercel",
+  "description": "Install the Vercel CLI globally via npm",
+  "categoryId": "vercel",
+  "subcategoryId": "getting-started"
+}

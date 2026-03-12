@@ -1,0 +1,54 @@
+{
+  "id": "disk-management-lvm",
+  "stackId": "linux",
+  "name": "Disk Management with LVM",
+  "description": "Manage logical volumes, extend filesystems, and monitor disk health using LVM and standard disk utilities.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "trending": false,
+  "tags": ["disk", "lvm", "storage", "filesystems"],
+  "prerequisites": ["Linux shell access", "Root or sudo access", "LVM installed"],
+  "steps": [
+    {
+      "title": "View physical volumes",
+      "description": "List all physical volumes in the LVM system.",
+      "command": "sudo pvs"
+    },
+    {
+      "title": "View volume groups and free space",
+      "description": "Check volume groups and how much space is available for new logical volumes.",
+      "command": "sudo vgs"
+    },
+    {
+      "title": "List logical volumes with details",
+      "description": "View all logical volumes and their sizes.",
+      "command": "sudo lvs -o lv_name,vg_name,lv_size,lv_attr"
+    },
+    {
+      "title": "Extend a logical volume and resize the filesystem",
+      "description": "Add more space to an existing logical volume and grow the filesystem to use it.",
+      "command": "sudo lvextend -L +10G /dev/vg0/lv_data && sudo resize2fs /dev/vg0/lv_data",
+      "warning": "For XFS filesystems, use 'xfs_growfs /mount/point' instead of resize2fs.",
+      "tip": "Use -l +100%FREE to use all remaining free space in the volume group."
+    },
+    {
+      "title": "Check filesystem health",
+      "description": "Verify filesystem integrity. Must be run on unmounted or read-only filesystems.",
+      "command": "sudo fsck -n /dev/vg0/lv_data",
+      "warning": "Never run fsck on a mounted read-write filesystem. Use -n for a read-only check."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Disk Management Overview\nset -euo pipefail\n\necho \"=== Disk Usage ===\"\ndf -h | grep -v tmpfs\n\necho \"\"\necho \"=== Block Devices ===\"\nlsblk -f\n\necho \"\"\necho \"=== LVM Status ===\"\necho \"--- Physical Volumes ---\"\nsudo pvs 2>/dev/null || echo \"No PVs or LVM not installed\"\n\necho \"\"\necho \"--- Volume Groups ---\"\nsudo vgs 2>/dev/null || echo \"No VGs\"\n\necho \"\"\necho \"--- Logical Volumes ---\"\nsudo lvs 2>/dev/null || echo \"No LVs\"\n\necho \"\"\necho \"=== Disk Health ===\"\nfor disk in $(lsblk -dn -o NAME | grep -E '^sd|^nvme'); do\n  echo \"--- /dev/$disk ---\"\n  sudo smartctl -H \"/dev/$disk\" 2>/dev/null | grep -i 'health\\|result' || echo \"SMART not available\"\ndone",
+  "faq": [
+    {
+      "question": "Can I extend a logical volume while the filesystem is mounted?",
+      "answer": "Yes, for ext4 and XFS filesystems. lvextend and resize2fs/xfs_growfs support online resizing. No unmount is needed for growing (but shrinking ext4 requires unmounting)."
+    },
+    {
+      "question": "How do I add a new disk to an existing volume group?",
+      "answer": "Create a physical volume with 'pvcreate /dev/sdb', then extend the volume group with 'vgextend vg0 /dev/sdb'. The new space is immediately available for lvextend."
+    }
+  ],
+  "relatedRecipes": ["system-monitoring-dashboard", "performance-tuning-sysctl"],
+  "lastUpdated": "2026-03-11"
+}

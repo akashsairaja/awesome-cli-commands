@@ -1,0 +1,8 @@
+{
+  "id": "hurl-asserts-2",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-asserts",
+  "title": "JSONPath assertion",
+  "command": "[Asserts]\njsonpath \"$.users\" count == 10\njsonpath \"$.users[0].name\" == \"John\"",
+  "description": "Assert JSON response values."
+}

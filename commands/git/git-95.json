@@ -1,0 +1,8 @@
+{
+  "id": "git-95",
+  "categoryId": "git",
+  "subcategoryId": "reflog",
+  "title": "View reflog",
+  "command": "git reflog",
+  "description": "Show reference log (all HEAD changes)."
+}

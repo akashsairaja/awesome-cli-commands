@@ -1,0 +1,8 @@
+{
+  "id": "volta-install-3",
+  "categoryId": "volta",
+  "subcategoryId": "volta-install",
+  "title": "Install npm",
+  "command": "volta install npm",
+  "description": "Install specific npm version."
+}

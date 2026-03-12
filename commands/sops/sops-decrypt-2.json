@@ -1,0 +1,8 @@
+{
+  "id": "sops-decrypt-2",
+  "categoryId": "sops",
+  "subcategoryId": "sops-decrypt",
+  "title": "Decrypt to stdout",
+  "command": "sops -d secrets.enc.yaml",
+  "description": "Decrypt and print to stdout."
+}

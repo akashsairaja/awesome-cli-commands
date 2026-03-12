@@ -1,0 +1,8 @@
+{
+  "id": "docker-37",
+  "categoryId": "docker",
+  "subcategoryId": "images",
+  "title": "Pull image",
+  "command": "docker pull <image>:<tag>",
+  "description": "Download image from registry."
+}

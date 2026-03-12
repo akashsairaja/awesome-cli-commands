@@ -1,0 +1,8 @@
+{
+  "id": "ps-42",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-objects",
+  "title": "Access hashtable",
+  "command": "$hash['Key1']  # or $hash.Key1",
+  "description": "Get value from hashtable."
+}

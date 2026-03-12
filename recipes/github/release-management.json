@@ -1,0 +1,52 @@
+{
+  "id": "release-management",
+  "stackId": "github",
+  "name": "Release Management",
+  "description": "Create, manage, and publish GitHub releases with auto-generated changelogs and asset attachments.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": false,
+  "tags": ["releases", "changelog", "versioning", "tags"],
+  "prerequisites": ["GitHub CLI (gh) installed and authenticated"],
+  "steps": [
+    {
+      "title": "List existing releases",
+      "description": "View all releases for the repository.",
+      "command": "gh release list --limit 10"
+    },
+    {
+      "title": "Create a release with auto-generated notes",
+      "description": "Create a new release with automatically generated changelog from merged PRs.",
+      "command": "gh release create v1.2.0 --generate-notes --title 'v1.2.0'",
+      "tip": "The --generate-notes flag creates release notes from PR titles and labels since the last release."
+    },
+    {
+      "title": "Create a pre-release",
+      "description": "Mark a release as a pre-release for beta or release candidate versions.",
+      "command": "gh release create v2.0.0-rc.1 --prerelease --generate-notes --title 'v2.0.0 Release Candidate 1'"
+    },
+    {
+      "title": "Upload assets to a release",
+      "description": "Attach binary files, archives, or other assets to an existing release.",
+      "command": "gh release upload v1.2.0 ./dist/app-linux-amd64.tar.gz ./dist/app-darwin-arm64.tar.gz"
+    },
+    {
+      "title": "Download release assets",
+      "description": "Download all assets from a specific release.",
+      "command": "gh release download v1.2.0 --dir ./downloads"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Release Management\nset -euo pipefail\n\nVERSION=${1:?\"Usage: $0 <version> [--prerelease]\"}\nPRERELEASE=${2:-\"\"}\n\necho \"=== Current Releases ===\"\ngh release list --limit 5\n\necho \"\"\necho \"=== Creating Release $VERSION ===\"\nif [ \"$PRERELEASE\" = \"--prerelease\" ]; then\n  gh release create \"$VERSION\" --prerelease --generate-notes --title \"$VERSION\"\nelse\n  gh release create \"$VERSION\" --generate-notes --title \"$VERSION\"\nfi\n\necho \"\"\necho \"=== Release Commands ===\"\necho \"View:     gh release view $VERSION\"\necho \"Upload:   gh release upload $VERSION ./file.tar.gz\"\necho \"Edit:     gh release edit $VERSION --notes 'Updated notes'\"\necho \"Delete:   gh release delete $VERSION\"\necho \"Download: gh release download $VERSION --dir ./downloads\"",
+  "faq": [
+    {
+      "question": "How do I customize auto-generated release notes?",
+      "answer": "Create a .github/release.yml file to configure which labels map to which changelog categories and which contributors to exclude."
+    },
+    {
+      "question": "Should I create the Git tag before or during release creation?",
+      "answer": "gh release create automatically creates the tag if it does not exist. If you want to sign the tag or create an annotated tag, create it manually first with git tag."
+    }
+  ],
+  "relatedRecipes": ["actions-debug-workflow", "pr-workflow-automation"],
+  "lastUpdated": "2026-03-11"
+}

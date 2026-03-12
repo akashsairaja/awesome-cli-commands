@@ -1,0 +1,8 @@
+{
+  "id": "clitools-gs-3",
+  "title": "Install bat (macOS)",
+  "command": "brew install bat",
+  "description": "Install bat cat replacement with syntax highlighting using Homebrew",
+  "categoryId": "clitools",
+  "subcategoryId": "getting-started"
+}

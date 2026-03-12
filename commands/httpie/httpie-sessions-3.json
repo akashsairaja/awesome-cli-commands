@@ -1,0 +1,8 @@
+{
+  "id": "httpie-sessions-3",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-sessions",
+  "title": "Read-only session",
+  "command": "http --session-read-only=api GET https://api.example.com/data",
+  "description": "Use session without saving changes."
+}

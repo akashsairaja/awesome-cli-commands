@@ -1,0 +1,55 @@
+{
+  "id": "azure-identity-setup",
+  "stackId": "azure",
+  "name": "Managed Identity and RBAC Setup",
+  "description": "Configure managed identities for Azure resources and assign role-based access control to eliminate credential management.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "tags": ["identity", "rbac", "security", "managed-identity"],
+  "prerequisites": [
+    "Azure CLI installed",
+    "Owner or User Access Administrator role on the subscription"
+  ],
+  "steps": [
+    {
+      "title": "Enable system-assigned managed identity",
+      "command": "az webapp identity assign --name myapp-unique --resource-group myapp-rg",
+      "description": "Creates a system-assigned managed identity tied to the lifecycle of the web app.",
+      "tip": "The output includes the principalId which you need for role assignments."
+    },
+    {
+      "title": "Create a user-assigned managed identity",
+      "command": "az identity create --name myapp-identity --resource-group myapp-rg --location eastus",
+      "description": "User-assigned identities can be shared across multiple resources."
+    },
+    {
+      "title": "Assign a role to the identity",
+      "command": "az role assignment create --assignee <principalId> --role \"Storage Blob Data Contributor\" --scope /subscriptions/<sub-id>/resourceGroups/myapp-rg",
+      "description": "Grants the managed identity permission to read and write blobs in the resource group."
+    },
+    {
+      "title": "List role assignments",
+      "command": "az role assignment list --assignee <principalId> --output table",
+      "description": "Shows all roles assigned to the identity across scopes."
+    },
+    {
+      "title": "Verify identity access",
+      "command": "az login --identity && az storage blob list --account-name mystorageacct --container-name uploads --auth-mode login",
+      "description": "Tests that the managed identity can access the target resource.",
+      "warning": "This only works when run from the Azure resource that has the identity assigned."
+    }
+  ],
+  "fullScript": "# Managed identity and RBAC setup\naz webapp identity assign --name myapp-unique --resource-group myapp-rg\naz identity create --name myapp-identity --resource-group myapp-rg --location eastus\n# Replace <principalId> with the output from the identity assign command\naz role assignment create --assignee <principalId> --role \"Storage Blob Data Contributor\" --scope /subscriptions/<sub-id>/resourceGroups/myapp-rg\naz role assignment list --assignee <principalId> --output table",
+  "faq": [
+    {
+      "question": "What is the difference between system-assigned and user-assigned managed identities?",
+      "answer": "System-assigned identities are tied to a single resource and deleted when the resource is deleted. User-assigned identities are standalone resources that can be attached to multiple services."
+    },
+    {
+      "question": "Can managed identities access resources in other subscriptions?",
+      "answer": "Yes, as long as the identity is granted a role assignment at the target resource, resource group, or subscription scope."
+    }
+  ],
+  "relatedRecipes": ["azure-aks-cluster", "azure-storage-management"],
+  "lastUpdated": "2026-03-11"
+}

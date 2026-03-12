@@ -1,0 +1,8 @@
+{
+  "id": "ollama-15",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-run",
+  "title": "Run with system prompt",
+  "command": "ollama run llama2 --system \"You are a helpful coding assistant\"",
+  "description": "Set a persistent system prompt for the session."
+}

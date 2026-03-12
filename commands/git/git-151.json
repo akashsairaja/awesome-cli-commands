@@ -1,0 +1,8 @@
+{
+  "id": "git-151",
+  "categoryId": "git",
+  "subcategoryId": "maintenance",
+  "title": "Run maintenance tasks",
+  "command": "git maintenance run",
+  "description": "Manually run repository maintenance tasks."
+}

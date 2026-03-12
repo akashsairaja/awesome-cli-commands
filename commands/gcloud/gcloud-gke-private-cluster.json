@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-gke-private-cluster",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-gke",
+  "title": "Create Private Cluster",
+  "command": "gcloud container clusters create <name> --zone=<zone> --enable-private-nodes --master-ipv4-cidr=172.16.0.0/28 --enable-ip-alias",
+  "description": "Create a private cluster with no public IPs on nodes",
+  "tags": ["gke", "private", "security"]
+}

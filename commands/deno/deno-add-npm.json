@@ -1,0 +1,9 @@
+{
+  "id": "deno-add-npm",
+  "categoryId": "deno",
+  "subcategoryId": "deno-package",
+  "title": "Add npm Package",
+  "command": "deno add npm:lodash",
+  "description": "Add an npm package to deno.json",
+  "tags": ["add", "npm", "package"]
+}

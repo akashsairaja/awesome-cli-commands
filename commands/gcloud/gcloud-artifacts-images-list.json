@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-artifacts-images-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-artifacts",
+  "title": "List Docker Images",
+  "command": "gcloud artifacts docker images list <location>-docker.pkg.dev/<project>/<repo>",
+  "description": "List all Docker images in an Artifact Registry repository",
+  "tags": ["artifacts", "docker", "images", "list"]
+}

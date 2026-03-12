@@ -1,0 +1,8 @@
+{
+  "id": "apt-25",
+  "categoryId": "ubuntu",
+  "subcategoryId": "apt-packages",
+  "title": "Hold package version",
+  "command": "sudo apt-mark hold <package>",
+  "description": "Prevent a package from being upgraded."
+}

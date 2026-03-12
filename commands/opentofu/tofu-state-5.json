@@ -1,0 +1,8 @@
+{
+  "id": "tofu-state-5",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-state",
+  "title": "Remove from state",
+  "command": "tofu state rm aws_instance.web",
+  "description": "Remove resource from state."
+}

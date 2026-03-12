@@ -1,0 +1,9 @@
+{
+  "id": "gh-auth-token",
+  "categoryId": "github",
+  "subcategoryId": "gh-auth",
+  "title": "Print auth token",
+  "command": "gh auth token",
+  "description": "Print the auth token for the current account",
+  "tags": ["auth", "token", "print"]
+}

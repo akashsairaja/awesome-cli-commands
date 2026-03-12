@@ -1,0 +1,8 @@
+{
+  "id": "linux-65",
+  "categoryId": "linux",
+  "subcategoryId": "text",
+  "title": "Stream edit with sed",
+  "command": "sed -n '10,20p' file.txt",
+  "description": "Print only lines 10 through 20 of a file."
+}

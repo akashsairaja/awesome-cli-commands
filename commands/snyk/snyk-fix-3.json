@@ -1,0 +1,8 @@
+{
+  "id": "snyk-fix-3",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-fix",
+  "title": "Ignore with expiry",
+  "command": "snyk ignore --id=SNYK-JS-LODASH-590103 --expiry=2026-06-01",
+  "description": "Temporarily ignore a vulnerability until a date."
+}

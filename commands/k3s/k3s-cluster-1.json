@@ -1,0 +1,8 @@
+{
+  "id": "k3s-cluster-1",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-cluster",
+  "title": "Get node token",
+  "command": "sudo cat /var/lib/rancher/k3s/server/node-token",
+  "description": "Get token to join agents."
+}

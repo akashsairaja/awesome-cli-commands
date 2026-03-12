@@ -1,0 +1,57 @@
+{
+  "id": "playwright-visual-regression",
+  "stackId": "playwright",
+  "name": "Screenshot Comparison Testing",
+  "description": "Implement visual regression testing with Playwright to detect unintended UI changes by comparing screenshots against golden baselines.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "tags": ["visual", "screenshots", "regression", "comparison"],
+  "prerequisites": ["Playwright test project set up", "A visually stable web application"],
+  "steps": [
+    {
+      "title": "Write a visual comparison test",
+      "description": "Create a test that captures and compares a full-page screenshot.",
+      "command": "cat > tests/visual.spec.ts << 'EOF'\nimport { test, expect } from '@playwright/test';\n\ntest('homepage visual regression', async ({ page }) => {\n  await page.goto('/');\n  await expect(page).toHaveScreenshot('homepage.png', {\n    fullPage: true,\n    maxDiffPixelRatio: 0.01,\n  });\n});\n\ntest('button component visual', async ({ page }) => {\n  await page.goto('/components');\n  const button = page.getByRole('button', { name: 'Submit' });\n  await expect(button).toHaveScreenshot('submit-button.png');\n});\nEOF"
+    },
+    {
+      "title": "Generate baseline screenshots",
+      "description": "Run the test for the first time to create golden reference images.",
+      "command": "npx playwright test tests/visual.spec.ts --update-snapshots",
+      "tip": "Baseline screenshots are stored in a __snapshots__ directory next to your test file. Commit these to version control."
+    },
+    {
+      "title": "Run the visual comparison",
+      "description": "Execute the tests to compare current screenshots against baselines.",
+      "command": "npx playwright test tests/visual.spec.ts",
+      "warning": "Visual tests are sensitive to rendering differences across OS and browser versions. Always generate baselines in the same environment where tests run (typically CI)."
+    },
+    {
+      "title": "Configure comparison thresholds",
+      "description": "Adjust sensitivity settings in the Playwright config.",
+      "command": "cat << 'EOF'\n// Add to playwright.config.ts use section:\nuse: {\n  screenshot: 'only-on-failure',\n},\nexpect: {\n  toHaveScreenshot: {\n    maxDiffPixelRatio: 0.01,\n    threshold: 0.2,\n    animations: 'disabled',\n  },\n},\nEOF",
+      "tip": "Set 'animations: disabled' to prevent flaky tests caused by mid-animation screenshots."
+    },
+    {
+      "title": "Review visual diffs in the report",
+      "description": "Open the HTML report to see side-by-side comparisons of failures.",
+      "command": "npx playwright show-report"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Playwright Visual Regression Testing\nset -euo pipefail\n\necho \"=== Visual Regression Test Workflow ===\"\n\n# Check for existing snapshots\nSNAPSHOT_DIR=\"tests/__snapshots__\"\nif [ -d \"$SNAPSHOT_DIR\" ]; then\n  SNAPSHOT_COUNT=$(find \"$SNAPSHOT_DIR\" -name '*.png' | wc -l)\n  echo \"Existing baselines: $SNAPSHOT_COUNT screenshots\"\nelse\n  echo \"No baselines found. Will generate on first run.\"\nfi\n\necho \"\"\necho \"=== Running Visual Tests ===\"\nif [ \"${1:-}\" = \"--update\" ]; then\n  echo \"Updating baseline screenshots...\"\n  npx playwright test tests/visual.spec.ts --update-snapshots\n  echo \"\"\n  echo \"New baselines generated. Review and commit them:\"\n  find \"$SNAPSHOT_DIR\" -name '*.png' -newer package.json 2>/dev/null | head -10\nelse\n  npx playwright test tests/visual.spec.ts || true\n  echo \"\"\n  echo \"=== View Report ===\"\n  echo \"Run: npx playwright show-report\"\nfi\n\necho \"\"\necho \"=== Commands ===\"\necho \"Run tests:       npx playwright test tests/visual.spec.ts\"\necho \"Update baselines: npx playwright test tests/visual.spec.ts --update-snapshots\"\necho \"View report:     npx playwright show-report\"",
+  "faq": [
+    {
+      "question": "Why do visual tests fail across different operating systems?",
+      "answer": "Font rendering, anti-aliasing, and sub-pixel rendering differ between macOS, Linux, and Windows. Always generate baseline screenshots in the same environment where tests run. Use Docker or CI as the canonical environment for consistency."
+    },
+    {
+      "question": "How do I handle dynamic content in visual tests?",
+      "answer": "Mask dynamic elements with 'await expect(page).toHaveScreenshot({ mask: [page.locator('.timestamp')] })'. You can also use page.evaluate to freeze dates, hide ads, or replace dynamic content before taking the screenshot."
+    },
+    {
+      "question": "What is maxDiffPixelRatio vs threshold?",
+      "answer": "maxDiffPixelRatio sets the maximum acceptable percentage of different pixels (0.01 = 1%). threshold sets the color difference sensitivity per pixel (0 = exact match, 1 = any color). Use both together for optimal results."
+    }
+  ],
+  "relatedRecipes": ["playwright-trace-debugging", "playwright-ci-setup"],
+  "lastUpdated": "2026-03-11"
+}

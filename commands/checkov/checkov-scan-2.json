@@ -1,0 +1,8 @@
+{
+  "id": "checkov-scan-2",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-scan",
+  "title": "Scan specific file",
+  "command": "checkov -f main.tf",
+  "description": "Scan specific file."
+}

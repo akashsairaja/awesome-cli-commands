@@ -1,0 +1,8 @@
+{
+  "id": "ps-18",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-processes",
+  "title": "Top CPU processes",
+  "command": "Get-Process | Sort-Object CPU -Descending | Select-Object -First 10",
+  "description": "Show top CPU-consuming processes."
+}

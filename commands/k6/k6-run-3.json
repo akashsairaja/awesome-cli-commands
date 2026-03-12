@@ -1,0 +1,8 @@
+{
+  "id": "k6-run-3",
+  "categoryId": "k6",
+  "subcategoryId": "k6-run",
+  "title": "Run with iterations",
+  "command": "k6 run --iterations 100 script.js",
+  "description": "Run a fixed number of iterations."
+}

@@ -1,0 +1,57 @@
+{
+  "id": "gcloud-cloud-run-deploy",
+  "stackId": "gcloud",
+  "name": "Deploy Containers to Cloud Run",
+  "description": "Build and deploy a containerized application to Cloud Run with automatic HTTPS, scaling, and custom domain support.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "Cloud Run is the fastest way to deploy containers on GCP with zero infrastructure management.",
+  "tags": ["cloud-run", "containers", "deploy", "serverless"],
+  "prerequisites": ["gcloud CLI installed", "GCP project created", "Docker image or source code"],
+  "steps": [
+    {
+      "title": "Authenticate and set the project",
+      "command": "gcloud auth login && gcloud config set project my-project-id",
+      "description": "Signs in to GCP and selects the target project."
+    },
+    {
+      "title": "Enable required APIs",
+      "command": "gcloud services enable run.googleapis.com artifactregistry.googleapis.com",
+      "description": "Enables the Cloud Run and Artifact Registry APIs if not already active."
+    },
+    {
+      "title": "Deploy from source code",
+      "command": "gcloud run deploy myservice --source . --region us-central1 --allow-unauthenticated",
+      "description": "Builds the container using Cloud Build, pushes to Artifact Registry, and deploys to Cloud Run in one command.",
+      "tip": "If you already have an image, use --image instead of --source."
+    },
+    {
+      "title": "Set environment variables",
+      "command": "gcloud run services update myservice --region us-central1 --set-env-vars \"DB_HOST=10.0.0.1,NODE_ENV=production\"",
+      "description": "Configures environment variables for the running service."
+    },
+    {
+      "title": "View service URL and status",
+      "command": "gcloud run services describe myservice --region us-central1 --format \"value(status.url)\"",
+      "description": "Retrieves the auto-provisioned HTTPS URL for the service."
+    }
+  ],
+  "fullScript": "# Deploy to Cloud Run\ngcloud auth login\ngcloud config set project my-project-id\ngcloud services enable run.googleapis.com artifactregistry.googleapis.com\ngcloud run deploy myservice --source . --region us-central1 --allow-unauthenticated\ngcloud run services update myservice --region us-central1 --set-env-vars \"DB_HOST=10.0.0.1,NODE_ENV=production\"\ngcloud run services describe myservice --region us-central1 --format \"value(status.url)\"",
+  "faq": [
+    {
+      "question": "How does Cloud Run pricing work?",
+      "answer": "Cloud Run charges per 100ms of CPU and memory used while handling requests. Idle instances cost nothing on the default scale-to-zero configuration. The free tier includes 2 million requests per month."
+    },
+    {
+      "question": "Can I use a custom domain with Cloud Run?",
+      "answer": "Yes. Use 'gcloud beta run domain-mappings create --service myservice --domain app.example.com --region us-central1' and add the provided DNS records."
+    },
+    {
+      "question": "What is the maximum request timeout on Cloud Run?",
+      "answer": "The default timeout is 5 minutes, configurable up to 60 minutes using --timeout flag."
+    }
+  ],
+  "relatedRecipes": ["gcloud-artifact-registry", "gcloud-cloud-functions"],
+  "lastUpdated": "2026-03-11"
+}

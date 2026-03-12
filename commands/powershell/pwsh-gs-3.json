@@ -1,0 +1,8 @@
+{
+  "id": "pwsh-gs-3",
+  "title": "Launch PowerShell",
+  "command": "pwsh",
+  "description": "Start an interactive PowerShell session",
+  "categoryId": "powershell",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "bun-gs-2",
+  "title": "Install Bun (Windows)",
+  "command": "powershell -c \"irm bun.sh/install.ps1 | iex\"",
+  "description": "Install Bun on Windows using PowerShell",
+  "categoryId": "bun",
+  "subcategoryId": "getting-started"
+}

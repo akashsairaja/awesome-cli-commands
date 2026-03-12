@@ -1,0 +1,8 @@
+{
+  "id": "ps-68",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-pipeline",
+  "title": "Format as list",
+  "command": "Get-Process | Select-Object -First 1 | Format-List *",
+  "description": "Display all properties as list."
+}

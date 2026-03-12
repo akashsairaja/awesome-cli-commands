@@ -1,0 +1,8 @@
+{
+  "id": "k3s-backup-10",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-backup",
+  "title": "Backup kubeconfig",
+  "command": "sudo cp /etc/rancher/k3s/k3s.yaml ~/k3s-kubeconfig-backup.yaml",
+  "description": "Create a backup copy of the kubeconfig file."
+}

@@ -1,0 +1,60 @@
+{
+  "id": "ts-strict-migration",
+  "stackId": "typescript",
+  "name": "Migrate to Strict TypeScript Incrementally",
+  "description": "Enable strict mode in an existing TypeScript project one flag at a time to avoid a massive migration and catch type errors gradually.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "Teams adopting strict TypeScript report 20-40% fewer runtime bugs in production",
+  "tags": ["strict", "migration", "tsconfig", "type-safety", "refactoring"],
+  "prerequisites": ["Existing TypeScript project", "Working build pipeline"],
+  "steps": [
+    {
+      "title": "Check current strictness level",
+      "description": "Review your tsconfig.json to see which strict flags are already enabled.",
+      "command": "cat tsconfig.json | grep -A 20 'compilerOptions'"
+    },
+    {
+      "title": "Enable strict flags one at a time",
+      "description": "Instead of enabling strict: true all at once, enable individual flags and fix errors incrementally.",
+      "command": "npx tsc --noEmit --noImplicitAny 2>&1 | head -30",
+      "tip": "Recommended order: noImplicitAny, strictNullChecks, strictFunctionTypes, strictBindCallApply, noImplicitThis, alwaysStrict."
+    },
+    {
+      "title": "Count errors for each strict flag",
+      "description": "Measure the scope of each flag before committing to fix it.",
+      "command": "echo \"noImplicitAny: $(npx tsc --noEmit --noImplicitAny 2>&1 | grep -c 'error TS')\" && echo \"strictNullChecks: $(npx tsc --noEmit --strictNullChecks 2>&1 | grep -c 'error TS')\""
+    },
+    {
+      "title": "Enable strictNullChecks and fix null errors",
+      "description": "This is typically the most impactful flag. Fix undefined access patterns with optional chaining and nullish coalescing.",
+      "command": "npx tsc --noEmit --strictNullChecks 2>&1 | grep 'error TS' | sort | uniq -c | sort -rn | head -10",
+      "tip": "Use optional chaining (?.) and nullish coalescing (??) instead of non-null assertions (!) wherever possible.",
+      "warning": "Non-null assertions (!) silence the compiler but do not fix the underlying issue. Prefer proper null checks."
+    },
+    {
+      "title": "Enable full strict mode",
+      "description": "Once all individual flags pass, enable strict: true to lock in all current and future strict checks.",
+      "command": "npx json -I -f tsconfig.json -e 'this.compilerOptions.strict = true' && npx tsc --noEmit",
+      "tip": "After enabling strict: true, you can remove the individual flags since strict enables all of them."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Incremental Strict TypeScript Migration\nset -euo pipefail\n\necho \"=== Current TypeScript Errors ===\"\nCURRENT=$(npx tsc --noEmit 2>&1 | grep -c 'error TS' || true)\necho \"Current errors: $CURRENT\"\n\necho \"\"\necho \"=== Error Count Per Strict Flag ===\"\nfor flag in noImplicitAny strictNullChecks strictFunctionTypes strictBindCallApply noImplicitThis alwaysStrict; do\n  COUNT=$(npx tsc --noEmit --$flag 2>&1 | grep -c 'error TS' || true)\n  echo \"$flag: $COUNT errors\"\ndone\n\necho \"\"\necho \"=== Recommended Migration Order ===\"\necho \"1. alwaysStrict        (usually zero errors)\"\necho \"2. noImplicitThis      (rare in modern React/Node)\"\necho \"3. strictBindCallApply (low impact)\"\necho \"4. strictFunctionTypes (moderate impact)\"\necho \"5. noImplicitAny       (high impact, most common)\"\necho \"6. strictNullChecks    (highest impact, most valuable)\"",
+  "faq": [
+    {
+      "question": "Can I enable strict mode for new files only?",
+      "answer": "Yes. Use a tsconfig.strict.json that extends your base config with strict: true, and apply it to new directories via project references. Or use // @ts-strict-mode comments with ts-strict-plugin."
+    },
+    {
+      "question": "Is strict: true the strictest setting?",
+      "answer": "No. strict: true enables a set of flags but there are additional strict-ish options like noUncheckedIndexedAccess, exactOptionalPropertyTypes, and noPropertyAccessFromIndexSignature that provide even more type safety."
+    },
+    {
+      "question": "How do I handle third-party libraries without strict types?",
+      "answer": "Create declaration files (.d.ts) to patch incomplete types, or use module augmentation. For untyped packages, install @types/package-name if available, or create a minimal declaration with 'declare module \"package-name\";'."
+    }
+  ],
+  "relatedRecipes": ["ts-config-optimization", "ts-migration-from-js"],
+  "lastUpdated": "2026-03-11"
+}

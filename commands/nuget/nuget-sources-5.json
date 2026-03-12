@@ -1,0 +1,8 @@
+{
+  "id": "nuget-sources-5",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-sources",
+  "title": "Update source credentials",
+  "command": "dotnet nuget update source MyFeed -u newuser -p newPAT --store-password-in-clear-text",
+  "description": "Update credentials for an existing source."
+}

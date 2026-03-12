@@ -1,0 +1,9 @@
+{
+  "id": "gradle-wrapper",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-wrapper",
+  "title": "Generate Wrapper",
+  "command": "gradle wrapper",
+  "description": "Generate Gradle wrapper files",
+  "tags": ["wrapper", "generate", "gradlew"]
+}

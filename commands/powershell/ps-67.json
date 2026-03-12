@@ -1,0 +1,8 @@
+{
+  "id": "ps-67",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-pipeline",
+  "title": "Format as table",
+  "command": "Get-Process | Format-Table Name, CPU, WorkingSet -AutoSize",
+  "description": "Display as formatted table."
+}

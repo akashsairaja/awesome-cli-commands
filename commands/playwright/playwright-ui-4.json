@@ -1,0 +1,8 @@
+{
+  "id": "playwright-ui-4",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-ui",
+  "title": "UI mode port",
+  "command": "npx playwright test --ui-port=8080",
+  "description": "Run UI mode on custom port."
+}

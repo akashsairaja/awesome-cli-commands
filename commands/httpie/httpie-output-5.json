@@ -1,0 +1,8 @@
+{
+  "id": "httpie-output-5",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-output",
+  "title": "Print specific parts",
+  "command": "http --print=hb GET https://api.example.com",
+  "description": "Print headers (h) and body (b)."
+}

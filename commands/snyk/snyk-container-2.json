@@ -1,0 +1,8 @@
+{
+  "id": "snyk-container-2",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-container",
+  "title": "Test with Dockerfile",
+  "command": "snyk container test myapp:latest --file=Dockerfile",
+  "description": "Include Dockerfile for fix suggestions."
+}

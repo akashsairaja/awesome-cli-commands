@@ -1,0 +1,8 @@
+{
+  "id": "spark-36",
+  "categoryId": "spark",
+  "subcategoryId": "spark-config",
+  "title": "Configure broadcast threshold",
+  "command": "spark-submit --conf spark.sql.autoBroadcastJoinThreshold=100m app.py",
+  "description": "Set threshold for automatic broadcast joins."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "playwright-a11y-1",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-a11y",
+  "title": "Run with visible browser",
+  "command": "npx playwright test --project=chromium --headed",
+  "description": "Run tests in specific browser with UI."
+}

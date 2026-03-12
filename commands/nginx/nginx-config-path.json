@@ -1,0 +1,9 @@
+{
+  "id": "nginx-config-path",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-config",
+  "title": "Show config path",
+  "command": "nginx -t 2>&1 | grep 'configuration file'",
+  "description": "Show path to main configuration file",
+  "tags": ["config", "path", "location"]
+}

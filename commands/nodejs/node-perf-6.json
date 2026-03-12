@@ -1,0 +1,8 @@
+{
+  "id": "node-perf-6",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-perf",
+  "title": "Expose GC",
+  "command": "node --expose-gc app.js",
+  "description": "Expose global gc() function for manual GC."
+}

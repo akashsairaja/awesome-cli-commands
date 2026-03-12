@@ -1,0 +1,8 @@
+{
+  "id": "task-syntax-9",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-syntax",
+  "title": "Deferred cleanup",
+  "command": "tasks:\n  build:\n    cmds:\n      - defer: rm -f tmp.log\n      - go build -o app . > tmp.log",
+  "description": "Deferred command runs on exit."
+}

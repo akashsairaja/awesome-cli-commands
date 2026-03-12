@@ -1,0 +1,63 @@
+{
+  "id": "bash-script-template",
+  "stackId": "bash",
+  "name": "Production-Ready Bash Script Template",
+  "description": "Create a reusable bash script template with strict error handling, argument parsing, logging, cleanup traps, and help text.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "Well-structured bash scripts prevent outages caused by silent failures in CI/CD pipelines",
+  "tags": ["template", "best-practices", "error-handling", "boilerplate"],
+  "prerequisites": ["Bash 4.0+ installed", "Basic shell scripting knowledge"],
+  "steps": [
+    {
+      "title": "Create the script file with a shebang",
+      "description": "Start with the bash shebang and strict mode flags to catch errors early.",
+      "command": "cat > script.sh << 'SCRIPTEOF'\n#!/usr/bin/env bash\nset -euo pipefail\nIFS=$'\\n\\t'\nSCRIPTEOF",
+      "tip": "Use #!/usr/bin/env bash instead of #!/bin/bash for portability across systems where bash may not be in /bin."
+    },
+    {
+      "title": "Add script metadata and constants",
+      "description": "Define the script name, version, and directory for reliable relative paths.",
+      "command": "echo 'readonly SCRIPT_NAME=\"$(basename \"$0\")\"' >> script.sh && echo 'readonly SCRIPT_DIR=\"$(cd \"$(dirname \"$0\")\" && pwd)\"' >> script.sh && echo 'readonly VERSION=\"1.0.0\"' >> script.sh"
+    },
+    {
+      "title": "Add a usage function",
+      "description": "Create a help function that documents all options and arguments.",
+      "command": "cat >> script.sh << 'USAGEEOF'\n\nusage() {\n  cat << EOF\nUsage: ${SCRIPT_NAME} [OPTIONS] <argument>\n\nOptions:\n  -h, --help      Show this help message\n  -v, --verbose   Enable verbose output\n  -d, --dry-run   Show what would be done without executing\n  --version       Show version\n\nExamples:\n  ${SCRIPT_NAME} -v /path/to/target\n  ${SCRIPT_NAME} --dry-run /path/to/target\nEOF\n  exit 0\n}\nUSAGEEOF"
+    },
+    {
+      "title": "Add a cleanup trap",
+      "description": "Register a cleanup function that runs on exit, error, or interrupt to remove temp files.",
+      "command": "cat >> script.sh << 'TRAPEOF'\n\ncleanup() {\n  local exit_code=$?\n  # Remove temp files, restore state, etc.\n  rm -f \"${TMPFILE:-}\" 2>/dev/null || true\n  exit \"$exit_code\"\n}\ntrap cleanup EXIT ERR INT TERM\nTRAPEOF",
+      "warning": "Always quote variable expansions in cleanup to avoid word splitting on filenames with spaces."
+    },
+    {
+      "title": "Add a logging function",
+      "description": "Create colored log functions for consistent output formatting.",
+      "command": "cat >> script.sh << 'LOGEOF'\n\nlog()   { echo \"[$(date +'%Y-%m-%d %H:%M:%S')] [INFO]  $*\"; }\nwarn()  { echo \"[$(date +'%Y-%m-%d %H:%M:%S')] [WARN]  $*\" >&2; }\nerror() { echo \"[$(date +'%Y-%m-%d %H:%M:%S')] [ERROR] $*\" >&2; }\ndie()   { error \"$*\"; exit 1; }\nLOGEOF"
+    },
+    {
+      "title": "Make the script executable and test it",
+      "description": "Set execute permissions and verify the script runs without errors.",
+      "command": "chmod +x script.sh && ./script.sh --help"
+    }
+  ],
+  "fullScript": "#!/usr/bin/env bash\nset -euo pipefail\nIFS=$'\\n\\t'\n\nreadonly SCRIPT_NAME=\"$(basename \"$0\")\"\nreadonly SCRIPT_DIR=\"$(cd \"$(dirname \"$0\")\" && pwd)\"\nreadonly VERSION=\"1.0.0\"\n\n# --- Logging ---\nlog()   { echo \"[$(date +'%Y-%m-%d %H:%M:%S')] [INFO]  $*\"; }\nwarn()  { echo \"[$(date +'%Y-%m-%d %H:%M:%S')] [WARN]  $*\" >&2; }\nerror() { echo \"[$(date +'%Y-%m-%d %H:%M:%S')] [ERROR] $*\" >&2; }\ndie()   { error \"$*\"; exit 1; }\n\n# --- Cleanup ---\ncleanup() {\n  local exit_code=$?\n  rm -f \"${TMPFILE:-}\" 2>/dev/null || true\n  exit \"$exit_code\"\n}\ntrap cleanup EXIT ERR INT TERM\n\n# --- Usage ---\nusage() {\n  cat << EOF\nUsage: ${SCRIPT_NAME} [OPTIONS] <argument>\n\nOptions:\n  -h, --help      Show this help message\n  -v, --verbose   Enable verbose output\n  -d, --dry-run   Show what would be done\n  --version       Show version\n\nExamples:\n  ${SCRIPT_NAME} -v /path/to/target\nEOF\n  exit 0\n}\n\n# --- Main ---\nVERBOSE=false\nDRY_RUN=false\n\nwhile [[ $# -gt 0 ]]; do\n  case \"$1\" in\n    -h|--help)    usage ;;\n    -v|--verbose) VERBOSE=true; shift ;;\n    -d|--dry-run) DRY_RUN=true; shift ;;\n    --version)    echo \"$VERSION\"; exit 0 ;;\n    -*)           die \"Unknown option: $1\" ;;\n    *)            break ;;\n  esac\ndone\n\n[[ $# -lt 1 ]] && die \"Missing required argument. Use --help for usage.\"\n\nTARGET=\"$1\"\nlog \"Processing: $TARGET\"",
+  "faq": [
+    {
+      "question": "What does set -euo pipefail do?",
+      "answer": "-e exits on any error, -u treats unset variables as errors, -o pipefail catches errors in piped commands. Together they prevent silent failures that cause data loss or incorrect behavior."
+    },
+    {
+      "question": "Why use IFS=$'\\n\\t' at the top?",
+      "answer": "The default IFS includes spaces, which causes word splitting on filenames with spaces. Setting IFS to only newline and tab prevents this class of bugs when iterating over file lists or command output."
+    },
+    {
+      "question": "Should I use bash or POSIX sh for scripts?",
+      "answer": "Use bash for scripts that run on known systems (CI, servers) where bash is available. Use POSIX sh (#!/bin/sh) only for maximum portability across minimal environments like Alpine containers or embedded systems."
+    }
+  ],
+  "relatedRecipes": ["bash-error-handling", "bash-argument-parsing"],
+  "lastUpdated": "2026-03-11"
+}

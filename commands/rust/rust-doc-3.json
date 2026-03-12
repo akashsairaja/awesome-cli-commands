@@ -1,0 +1,8 @@
+{
+  "id": "rust-doc-3",
+  "categoryId": "rust",
+  "subcategoryId": "rust-doc",
+  "title": "Docs without deps",
+  "command": "cargo doc --no-deps",
+  "description": "Build docs for current crate only."
+}

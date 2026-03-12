@@ -1,0 +1,8 @@
+{
+  "id": "kafka-admin-4",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-admin",
+  "title": "Log dirs",
+  "command": "kafka-log-dirs.sh --describe --bootstrap-server localhost:9092",
+  "description": "Show log directory info."
+}

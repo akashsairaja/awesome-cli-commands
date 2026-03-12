@@ -1,0 +1,8 @@
+{
+  "id": "make-syntax-6",
+  "categoryId": "make",
+  "subcategoryId": "make-syntax",
+  "title": "Define function",
+  "command": "define COMPILE\n\t$(CC) -c $1 -o $2\nendef",
+  "description": "Define multi-line variable/function."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "supabase-functions-new",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-functions",
+  "title": "Create new function",
+  "command": "supabase functions new <name>",
+  "description": "Create a new Edge Function",
+  "tags": ["functions", "new", "create"]
+}

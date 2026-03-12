@@ -1,0 +1,8 @@
+{
+  "id": "composer-publish-9",
+  "categoryId": "composer",
+  "subcategoryId": "composer-publish",
+  "title": "Fund maintainers",
+  "command": "composer fund",
+  "description": "Show funding links for dependencies."
+}

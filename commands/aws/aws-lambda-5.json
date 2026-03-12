@@ -1,0 +1,8 @@
+{
+  "id": "aws-lambda-5",
+  "categoryId": "aws",
+  "subcategoryId": "lambda",
+  "title": "Get function config",
+  "command": "aws lambda get-function-configuration --function-name myfunction",
+  "description": "Show function configuration."
+}

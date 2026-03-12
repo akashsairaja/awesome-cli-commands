@@ -1,0 +1,8 @@
+{
+  "id": "claude-24",
+  "categoryId": "claudecode",
+  "subcategoryId": "context",
+  "title": "Initialize CLAUDE.md",
+  "command": "/init",
+  "description": "Create project CLAUDE.md context file."
+}

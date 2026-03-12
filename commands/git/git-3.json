@@ -1,0 +1,8 @@
+{
+  "id": "git-3",
+  "categoryId": "git",
+  "subcategoryId": "basics",
+  "title": "Clone with depth",
+  "command": "git clone --depth 1 <url>",
+  "description": "Shallow clone with only latest commit."
+}

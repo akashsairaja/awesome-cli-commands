@@ -1,0 +1,9 @@
+{
+  "id": "gh-auth-login-web",
+  "categoryId": "github",
+  "subcategoryId": "gh-auth",
+  "title": "Login via web browser",
+  "command": "gh auth login --web",
+  "description": "Authenticate using web browser flow",
+  "tags": ["auth", "login", "web", "browser"]
+}

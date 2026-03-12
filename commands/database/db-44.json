@@ -1,0 +1,8 @@
+{
+  "id": "db-44",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Restore MySQL database",
+  "command": "mysql -u root -p dbname < backup.sql",
+  "description": "Restore database from SQL dump file."
+}

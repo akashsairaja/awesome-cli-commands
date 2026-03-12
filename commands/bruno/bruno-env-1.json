@@ -1,0 +1,8 @@
+{
+  "id": "bruno-env-1",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-env",
+  "title": "List environments",
+  "command": "bru env list",
+  "description": "List available environments."
+}

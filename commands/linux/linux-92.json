@@ -1,0 +1,8 @@
+{
+  "id": "linux-92",
+  "categoryId": "linux",
+  "subcategoryId": "network",
+  "title": "Set default gateway",
+  "command": "sudo ip route add default via 192.168.1.1",
+  "description": "Configure the default gateway for internet access."
+}

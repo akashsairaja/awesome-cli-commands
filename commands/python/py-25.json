@@ -1,0 +1,8 @@
+{
+  "id": "py-25",
+  "categoryId": "python",
+  "subcategoryId": "python-poetry",
+  "title": "Remove dependency",
+  "command": "poetry remove requests",
+  "description": "Remove a package from dependencies."
+}

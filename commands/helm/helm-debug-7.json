@@ -1,0 +1,8 @@
+{
+  "id": "helm-debug-7",
+  "categoryId": "helm",
+  "subcategoryId": "helm-debug",
+  "title": "Get all release info",
+  "command": "helm get all my-release",
+  "description": "Get all information about a release (manifest, values, hooks, notes)."
+}

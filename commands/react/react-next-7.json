@@ -1,0 +1,8 @@
+{
+  "id": "react-next-7",
+  "categoryId": "react",
+  "subcategoryId": "react-nextjs",
+  "title": "System info",
+  "command": "next info",
+  "description": "Display system info for debugging."
+}

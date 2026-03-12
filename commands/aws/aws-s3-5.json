@@ -1,0 +1,8 @@
+{
+  "id": "aws-s3-5",
+  "categoryId": "aws",
+  "subcategoryId": "s3",
+  "title": "Sync to S3",
+  "command": "aws s3 sync ./dist s3://bucket-name --delete",
+  "description": "Sync directory, deleting removed files."
+}

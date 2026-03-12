@@ -1,0 +1,8 @@
+{
+  "id": "docker-75",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "Rebuild and start",
+  "command": "docker compose up -d --build",
+  "description": "Rebuild images and start services."
+}

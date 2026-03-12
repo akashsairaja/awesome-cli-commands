@@ -1,0 +1,9 @@
+{
+  "id": "prisma-migrate-diff",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-migrate",
+  "title": "Show schema diff",
+  "command": "npx prisma migrate diff --from-schema-datamodel prisma/schema.prisma --to-schema-datasource prisma/schema.prisma",
+  "description": "Show differences between schema and database",
+  "tags": ["migrate", "diff", "compare"]
+}

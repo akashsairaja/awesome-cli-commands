@@ -1,0 +1,8 @@
+{
+  "id": "grafana-plugins-7",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-plugins",
+  "title": "Check for plugin updates",
+  "command": "grafana-cli plugins list-versions grafana-piechart-panel",
+  "description": "List available versions of a plugin."
+}

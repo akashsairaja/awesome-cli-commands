@@ -1,0 +1,8 @@
+{
+  "id": "eza-7",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-eza",
+  "title": "Group directories",
+  "command": "eza -l --group-directories-first",
+  "description": "List directories before files."
+}

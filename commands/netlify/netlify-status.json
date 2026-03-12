@@ -1,0 +1,9 @@
+{
+  "id": "netlify-status",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-sites",
+  "title": "Show site status",
+  "command": "netlify status",
+  "description": "Show current site status and configuration",
+  "tags": ["status", "info", "site"]
+}

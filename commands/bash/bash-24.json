@@ -1,0 +1,8 @@
+{
+  "id": "bash-24",
+  "categoryId": "bash",
+  "subcategoryId": "variables",
+  "title": "Arithmetic expansion",
+  "command": "result=$((a + b))",
+  "description": "Perform arithmetic calculation."
+}

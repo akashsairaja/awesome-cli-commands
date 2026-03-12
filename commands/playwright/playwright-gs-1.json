@@ -1,0 +1,8 @@
+{
+  "id": "playwright-gs-1",
+  "title": "Initialize Playwright project",
+  "command": "npm init playwright@latest",
+  "description": "Create a new Playwright project with configuration",
+  "categoryId": "playwright",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "checkov-output-4",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-output",
+  "title": "Compact output",
+  "command": "checkov -d . --compact",
+  "description": "Show compact output."
+}

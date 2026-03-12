@@ -1,0 +1,8 @@
+{
+  "id": "snyk-monitor-6",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-monitor",
+  "title": "Monitor with target reference",
+  "command": "snyk monitor --target-reference=main",
+  "description": "Tag the snapshot with a branch or version reference."
+}

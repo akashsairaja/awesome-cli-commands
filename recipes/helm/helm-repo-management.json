@@ -1,0 +1,51 @@
+{
+  "id": "helm-repo-management",
+  "stackId": "helm",
+  "name": "Manage Helm Repositories",
+  "description": "Add, update, search, and manage Helm chart repositories to discover and install charts from public and private sources.",
+  "difficulty": "beginner",
+  "timeMinutes": 6,
+  "tags": ["repositories", "search", "registry", "charts"],
+  "prerequisites": ["Helm 3 installed"],
+  "steps": [
+    {
+      "title": "Add popular chart repositories",
+      "description": "Register commonly used Helm chart repositories.",
+      "command": "helm repo add bitnami https://charts.bitnami.com/bitnami && helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx && helm repo add jetstack https://charts.jetstack.io"
+    },
+    {
+      "title": "Update all repositories",
+      "description": "Fetch the latest chart index from all configured repos.",
+      "command": "helm repo update",
+      "tip": "Run this before searching or installing to make sure you have the latest chart versions."
+    },
+    {
+      "title": "Search for charts across repositories",
+      "description": "Find charts by keyword across all added repos.",
+      "command": "helm search repo postgres --versions | head -15"
+    },
+    {
+      "title": "List configured repositories",
+      "description": "View all currently registered Helm repositories.",
+      "command": "helm repo list"
+    },
+    {
+      "title": "Remove a repository",
+      "description": "Unregister a Helm chart repository you no longer need.",
+      "command": "helm repo remove <repo-name>"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Helm Repository Management\nset -euo pipefail\n\necho \"=== Current Repositories ===\"\nhelm repo list 2>/dev/null || echo \"No repositories configured\"\n\necho \"\"\necho \"=== Adding Common Repos ===\"\nrepos=(\n  \"bitnami https://charts.bitnami.com/bitnami\"\n  \"ingress-nginx https://kubernetes.github.io/ingress-nginx\"\n  \"jetstack https://charts.jetstack.io\"\n  \"prometheus-community https://prometheus-community.github.io/helm-charts\"\n  \"grafana https://grafana.github.io/helm-charts\"\n)\n\nfor entry in \"${repos[@]}\"; do\n  name=$(echo \"$entry\" | awk '{print $1}')\n  url=$(echo \"$entry\" | awk '{print $2}')\n  helm repo add \"$name\" \"$url\" 2>/dev/null && echo \"Added: $name\" || echo \"Already exists: $name\"\ndone\n\necho \"\"\necho \"=== Updating All Repos ===\"\nhelm repo update\n\necho \"\"\necho \"=== Repository Summary ===\"\nhelm repo list",
+  "faq": [
+    {
+      "question": "Where is the local repository cache stored?",
+      "answer": "Helm stores repository cache in the Helm cache directory, typically ~/.cache/helm/repository/. Each repo gets an index YAML file that lists all available charts and versions."
+    },
+    {
+      "question": "How do I add a repository that requires authentication?",
+      "answer": "Use --username and --password flags: 'helm repo add myrepo https://charts.example.com --username user --password pass'. For certificate auth, use --cert-file and --key-file."
+    }
+  ],
+  "relatedRecipes": ["helm-chart-install", "helm-oci-registry"],
+  "lastUpdated": "2026-03-11"
+}

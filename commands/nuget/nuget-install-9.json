@@ -1,0 +1,8 @@
+{
+  "id": "nuget-install-9",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-install",
+  "title": "List vulnerable packages",
+  "command": "dotnet list package --vulnerable",
+  "description": "Show packages with known vulnerabilities."
+}

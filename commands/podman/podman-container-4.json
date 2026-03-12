@@ -1,0 +1,8 @@
+{
+  "id": "podman-container-4",
+  "categoryId": "podman",
+  "subcategoryId": "podman-container",
+  "title": "Stop container",
+  "command": "podman stop myapp",
+  "description": "Stop a running container."
+}

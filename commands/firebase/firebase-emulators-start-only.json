@@ -1,0 +1,9 @@
+{
+  "id": "firebase-emulators-start-only",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-emulators",
+  "title": "Start specific emulators",
+  "command": "firebase emulators:start --only functions,firestore",
+  "description": "Start only specified emulators",
+  "tags": ["emulators", "start", "only"]
+}

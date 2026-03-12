@@ -1,0 +1,8 @@
+{
+  "id": "py-27",
+  "categoryId": "python",
+  "subcategoryId": "python-poetry",
+  "title": "Install with sync",
+  "command": "poetry install --sync",
+  "description": "Install and remove packages not in lock file."
+}

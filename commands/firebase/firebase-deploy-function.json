@@ -1,0 +1,9 @@
+{
+  "id": "firebase-deploy-function",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-deploy",
+  "title": "Deploy specific function",
+  "command": "firebase deploy --only functions:<functionName>",
+  "description": "Deploy a specific Cloud Function",
+  "tags": ["deploy", "function", "specific"]
+}

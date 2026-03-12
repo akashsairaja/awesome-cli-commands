@@ -1,0 +1,8 @@
+{
+  "id": "aws-s3-2",
+  "categoryId": "aws",
+  "subcategoryId": "s3",
+  "title": "List bucket contents",
+  "command": "aws s3 ls s3://bucket-name/ --recursive",
+  "description": "List all objects in bucket."
+}

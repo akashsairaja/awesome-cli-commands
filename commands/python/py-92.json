@@ -1,0 +1,8 @@
+{
+  "id": "py-92",
+  "categoryId": "python",
+  "subcategoryId": "python-pytest",
+  "title": "Run specific file",
+  "command": "pytest tests/test_api.py",
+  "description": "Run tests in a specific file."
+}

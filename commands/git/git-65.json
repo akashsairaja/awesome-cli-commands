@@ -1,0 +1,8 @@
+{
+  "id": "git-65",
+  "categoryId": "git",
+  "subcategoryId": "rebase",
+  "title": "Skip commit during rebase",
+  "command": "git rebase --skip",
+  "description": "Skip current commit and continue."
+}

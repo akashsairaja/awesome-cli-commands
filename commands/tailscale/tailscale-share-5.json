@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-share-5",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-share",
+  "title": "Serve files",
+  "command": "tailscale serve https / /path/to/files",
+  "description": "Serve static files."
+}

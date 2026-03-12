@@ -1,0 +1,8 @@
+{
+  "id": "checkov-scan-13",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-scan",
+  "title": "Scan Serverless framework",
+  "command": "checkov -d . --framework serverless",
+  "description": "Scan Serverless Framework config."
+}

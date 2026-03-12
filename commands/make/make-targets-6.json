@@ -1,0 +1,8 @@
+{
+  "id": "make-targets-6",
+  "categoryId": "make",
+  "subcategoryId": "make-targets",
+  "title": "Check",
+  "command": "make check",
+  "description": "Verify build (often same as test)."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "composer-publish-11",
+  "categoryId": "composer",
+  "subcategoryId": "composer-publish",
+  "title": "Global update",
+  "command": "composer global update",
+  "description": "Update all globally installed packages."
+}

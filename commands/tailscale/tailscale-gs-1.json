@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-gs-1",
+  "title": "Install Tailscale (macOS)",
+  "command": "brew install tailscale",
+  "description": "Install Tailscale VPN client using Homebrew on macOS",
+  "categoryId": "tailscale",
+  "subcategoryId": "getting-started"
+}

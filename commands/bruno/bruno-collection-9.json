@@ -1,0 +1,8 @@
+{
+  "id": "bruno-collection-9",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-collection",
+  "title": "Collection folder structure",
+  "command": "my-api/\n  bruno.json\n  environments/\n    dev.bru\n    staging.bru\n  users/\n    Get Users.bru\n    Create User.bru\n  auth/\n    Login.bru",
+  "description": "Standard collection directory layout."
+}

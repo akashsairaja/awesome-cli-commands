@@ -1,0 +1,68 @@
+{
+  "id": "ansible-ci-integration",
+  "stackId": "ansible",
+  "name": "Ansible in CI/CD Pipelines",
+  "description": "Integrate Ansible playbooks into GitHub Actions, GitLab CI, or Jenkins pipelines for automated infrastructure deployment on every push.",
+  "difficulty": "advanced",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "GitOps and infrastructure-as-code pipelines are becoming the standard for production deployments.",
+  "tags": ["ci-cd", "github-actions", "pipeline", "automation", "gitops"],
+  "prerequisites": [
+    "Ansible installed",
+    "CI/CD platform access",
+    "Vault password or secrets management",
+    "SSH key for target hosts"
+  ],
+  "steps": [
+    {
+      "title": "Create a requirements file for CI",
+      "command": "cat > requirements.yml << 'EOF'\n---\ncollections:\n  - name: community.general\n  - name: ansible.posix\nroles:\n  - name: geerlingguy.docker\nEOF",
+      "description": "Pins all role and collection dependencies so CI installs are reproducible."
+    },
+    {
+      "title": "Create a GitHub Actions workflow",
+      "command": "mkdir -p .github/workflows && cat > .github/workflows/deploy.yml << 'EOF'\nname: Deploy Infrastructure\non:\n  push:\n    branches: [main]\n    paths: [\"ansible/**\"]\njobs:\n  deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - name: Install Ansible\n        run: pip install ansible\n      - name: Install dependencies\n        run: ansible-galaxy install -r requirements.yml\n      - name: Run playbook\n        run: ansible-playbook site.yml -i inventory.ini\n        env:\n          ANSIBLE_VAULT_PASSWORD: ${{ secrets.VAULT_PASSWORD }}\n          ANSIBLE_HOST_KEY_CHECKING: \"false\"\nEOF",
+      "description": "Triggers deployment only when Ansible files change on the main branch.",
+      "tip": "Store the vault password and SSH private key as GitHub repository secrets.",
+      "warning": "Never commit vault passwords or SSH keys to version control."
+    },
+    {
+      "title": "Configure SSH key for CI",
+      "command": "mkdir -p ~/.ssh && echo \"$SSH_PRIVATE_KEY\" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa",
+      "description": "Writes the SSH private key from a CI secret to the runner filesystem."
+    },
+    {
+      "title": "Run a syntax check in CI",
+      "command": "ansible-playbook site.yml --syntax-check",
+      "description": "Validates playbook syntax without executing anything. Catches YAML errors early in the pipeline."
+    },
+    {
+      "title": "Run in check mode as a CI gate",
+      "command": "ansible-playbook site.yml --check --diff",
+      "description": "Shows what changes would be made without applying them. Useful as a pull request validation step."
+    },
+    {
+      "title": "Lint playbooks with ansible-lint",
+      "command": "pip install ansible-lint && ansible-lint site.yml roles/",
+      "description": "Runs ansible-lint to catch best practice violations and potential issues before deployment."
+    }
+  ],
+  "fullScript": "# Ansible CI/CD integration\npip install ansible ansible-lint\nansible-galaxy install -r requirements.yml\nansible-lint site.yml roles/\nansible-playbook site.yml --syntax-check\nansible-playbook site.yml --check --diff\n# Full deploy (only in main branch CI)\nansible-playbook site.yml -i inventory.ini",
+  "faq": [
+    {
+      "question": "How do I pass the vault password in CI without a prompt?",
+      "answer": "Use a vault password file: 'echo $ANSIBLE_VAULT_PASSWORD > .vault_pass && ansible-playbook site.yml --vault-password-file .vault_pass'. Or set the ANSIBLE_VAULT_PASSWORD_FILE environment variable."
+    },
+    {
+      "question": "Should I run ansible-playbook --check in pull requests?",
+      "answer": "Yes. Running in check mode on PRs shows reviewers exactly what infrastructure changes the code will produce. Combine with --diff for a complete change preview."
+    },
+    {
+      "question": "How do I handle different environments in CI?",
+      "answer": "Use separate inventory files per environment (inventory/staging.ini, inventory/production.ini) and trigger the appropriate one based on the branch or manual approval gates."
+    }
+  ],
+  "relatedRecipes": ["ansible-vault-secrets", "ansible-role-creation"],
+  "lastUpdated": "2026-03-11"
+}

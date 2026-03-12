@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-sql-backups-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-sql",
+  "title": "List Backups",
+  "command": "gcloud sql backups list --instance=<instance>",
+  "description": "List all automated and on-demand backups for an instance",
+  "tags": ["sql", "backup", "list"]
+}

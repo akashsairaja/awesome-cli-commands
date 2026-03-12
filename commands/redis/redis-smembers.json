@@ -1,0 +1,9 @@
+{
+  "id": "redis-smembers",
+  "categoryId": "redis",
+  "subcategoryId": "redis-sets",
+  "title": "Get all set members",
+  "command": "SMEMBERS key",
+  "description": "Get all members of set",
+  "tags": ["smembers", "set", "all"]
+}

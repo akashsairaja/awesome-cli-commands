@@ -1,0 +1,8 @@
+{
+  "id": "node-mod-4",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-modules",
+  "title": "Allow require(ESM)",
+  "command": "node --experimental-require-module app.js",
+  "description": "Allow require() for ES modules (Node.js 22+)."
+}

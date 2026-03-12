@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-compute-types",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-compute",
+  "title": "List Machine Types",
+  "command": "gcloud compute machine-types list --filter=\"zone:<zone>\"",
+  "description": "Show available machine types in zone",
+  "tags": ["vm", "machine-type", "sizes"]
+}

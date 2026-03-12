@@ -1,0 +1,9 @@
+{
+  "id": "nginx-proxy-no-buffer",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-reverse-proxy",
+  "title": "Disable proxy buffering",
+  "command": "proxy_buffering off; proxy_cache off;",
+  "description": "Disable buffering for SSE or streaming",
+  "tags": ["proxy", "buffering", "streaming", "sse"]
+}

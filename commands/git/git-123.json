@@ -1,0 +1,8 @@
+{
+  "id": "git-123",
+  "categoryId": "git",
+  "subcategoryId": "tags",
+  "title": "Tag specific commit",
+  "command": "git tag <tagname> <commit>",
+  "description": "Tag a specific commit."
+}

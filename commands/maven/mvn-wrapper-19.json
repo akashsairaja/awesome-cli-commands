@@ -1,0 +1,8 @@
+{
+  "id": "mvn-wrapper-19",
+  "categoryId": "maven",
+  "subcategoryId": "mvn-wrapper",
+  "title": "Offline build with wrapper",
+  "command": "./mvnw install -o",
+  "description": "Build using only locally cached dependencies via the wrapper."
+}

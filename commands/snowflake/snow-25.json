@@ -1,0 +1,8 @@
+{
+  "id": "snow-25",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-streamlit",
+  "title": "Drop Streamlit app",
+  "command": "snow streamlit drop <app-name>",
+  "description": "Remove a Streamlit app from Snowflake."
+}

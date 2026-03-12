@@ -1,0 +1,9 @@
+{
+  "id": "azure-func-config",
+  "categoryId": "azure",
+  "subcategoryId": "azure-functions",
+  "title": "Configure Function Settings",
+  "command": "az functionapp config appsettings set --resource-group <rg> --name <name> --settings KEY=value",
+  "description": "Set function app configuration",
+  "tags": ["functions", "config", "settings"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-gke-operations",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-gke",
+  "title": "List Cluster Operations",
+  "command": "gcloud container operations list --zone=<zone>",
+  "description": "List recent cluster operations (create, upgrade, resize)",
+  "tags": ["gke", "operations", "status"]
+}

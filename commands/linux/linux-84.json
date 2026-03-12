@@ -1,0 +1,8 @@
+{
+  "id": "linux-84",
+  "categoryId": "linux",
+  "subcategoryId": "systemd",
+  "title": "Generate boot timeline graph",
+  "command": "systemd-analyze plot > boot.svg",
+  "description": "Create an SVG visualization of the boot process timeline."
+}

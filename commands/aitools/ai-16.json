@@ -1,0 +1,8 @@
+{
+  "id": "ai-16",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-shellgpt",
+  "title": "Start chat session",
+  "command": "sgpt --chat myproject \"help me debug this\"",
+  "description": "Start a named chat session for context."
+}

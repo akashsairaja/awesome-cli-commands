@@ -1,0 +1,64 @@
+{
+  "id": "redis-cache-setup",
+  "stackId": "redis",
+  "name": "Set Up Redis as Application Cache with TTL",
+  "description": "Configure Redis as a fast in-memory cache for your application with key expiration policies to manage memory efficiently.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "Caching is the most common Redis use case and a critical skill for reducing database load in production",
+  "tags": ["cache", "ttl", "performance", "key-expiration", "memory"],
+  "prerequisites": ["Redis installed and running", "redis-cli available"],
+  "steps": [
+    {
+      "title": "Verify Redis is running",
+      "description": "Confirm that your Redis server is up and responding to commands.",
+      "command": "redis-cli ping",
+      "tip": "You should see PONG as the response. If not, start Redis with 'redis-server' or 'sudo systemctl start redis'."
+    },
+    {
+      "title": "Set a key with a TTL",
+      "description": "Store a cached value with an automatic expiration time in seconds.",
+      "command": "redis-cli SET user:1001:profile '{\"name\":\"alice\",\"email\":\"alice@example.com\"}' EX 3600",
+      "tip": "EX sets expiration in seconds. Use PX for milliseconds."
+    },
+    {
+      "title": "Check remaining TTL on a key",
+      "description": "Inspect how many seconds remain before a key expires.",
+      "command": "redis-cli TTL user:1001:profile"
+    },
+    {
+      "title": "Set a default eviction policy",
+      "description": "Configure Redis to automatically evict least-recently-used keys when memory is full.",
+      "command": "redis-cli CONFIG SET maxmemory-policy allkeys-lru",
+      "warning": "This changes the running config only. Add 'maxmemory-policy allkeys-lru' to redis.conf for persistence across restarts."
+    },
+    {
+      "title": "Set a memory limit",
+      "description": "Cap Redis memory usage to prevent it from consuming all available RAM.",
+      "command": "redis-cli CONFIG SET maxmemory 256mb"
+    },
+    {
+      "title": "Verify cache hit and miss with GET",
+      "description": "Retrieve a cached value and confirm it returns data before expiration and nil after.",
+      "command": "redis-cli GET user:1001:profile"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Redis Cache Setup\nset -euo pipefail\n\necho \"=== Verifying Redis ===\"\nredis-cli ping\n\necho \"\"\necho \"=== Configuring memory and eviction ===\"\nredis-cli CONFIG SET maxmemory 256mb\nredis-cli CONFIG SET maxmemory-policy allkeys-lru\n\necho \"\"\necho \"=== Setting sample cached keys ===\"\nredis-cli SET user:1001:profile '{\"name\":\"alice\",\"email\":\"alice@example.com\"}' EX 3600\nredis-cli SET user:1002:profile '{\"name\":\"bob\",\"email\":\"bob@example.com\"}' EX 3600\nredis-cli SET api:rates:usd '{\"rate\":1.0}' EX 300\n\necho \"\"\necho \"=== Verifying keys ===\"\nredis-cli TTL user:1001:profile\nredis-cli GET user:1001:profile\n\necho \"\"\necho \"=== Memory usage ===\"\nredis-cli INFO memory | grep used_memory_human",
+  "faq": [
+    {
+      "question": "What happens when a key expires?",
+      "answer": "Redis uses a combination of lazy expiration (checked on access) and periodic active expiration (sampling keys every 100ms). Expired keys are removed automatically and GET returns nil."
+    },
+    {
+      "question": "Should I use allkeys-lru or volatile-lru?",
+      "answer": "Use allkeys-lru if all keys are cache data that can be regenerated. Use volatile-lru if you mix cached keys (with TTL) and persistent keys (without TTL) and only want to evict the cached ones."
+    },
+    {
+      "question": "How do I check cache hit rate?",
+      "answer": "Run 'redis-cli INFO stats' and look at keyspace_hits and keyspace_misses. Hit rate = hits / (hits + misses). Aim for 90%+ in production."
+    }
+  ],
+  "relatedRecipes": ["redis-session-store", "redis-monitoring"],
+  "lastUpdated": "2026-03-11"
+}

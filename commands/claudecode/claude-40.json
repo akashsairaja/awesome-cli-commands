@@ -1,0 +1,8 @@
+{
+  "id": "claude-40",
+  "categoryId": "claudecode",
+  "subcategoryId": "config",
+  "title": "Open settings",
+  "command": "/config",
+  "description": "Open settings interface."
+}

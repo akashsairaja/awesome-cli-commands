@@ -1,0 +1,8 @@
+{
+  "id": "claude-31",
+  "categoryId": "claudecode",
+  "subcategoryId": "context",
+  "title": "View session statistics",
+  "command": "/stats",
+  "description": "Show usage statistics and trends."
+}

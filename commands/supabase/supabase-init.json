@@ -1,0 +1,9 @@
+{
+  "id": "supabase-init",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-db",
+  "title": "Initialize Supabase",
+  "command": "supabase init",
+  "description": "Initialize Supabase in current directory",
+  "tags": ["init", "initialize", "setup"]
+}

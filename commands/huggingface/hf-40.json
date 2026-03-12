@@ -1,0 +1,8 @@
+{
+  "id": "hf-40",
+  "categoryId": "huggingface",
+  "subcategoryId": "hf-api",
+  "title": "Get repo info",
+  "command": "huggingface-cli repo-info meta-llama/Llama-2-7b-hf",
+  "description": "Display repository metadata and statistics."
+}

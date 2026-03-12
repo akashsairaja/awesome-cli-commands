@@ -1,0 +1,52 @@
+{
+  "id": "ts-eslint-setup",
+  "stackId": "typescript",
+  "name": "Set Up TypeScript ESLint with Type-Aware Rules",
+  "description": "Configure ESLint with typescript-eslint for type-aware linting rules that catch bugs the compiler misses, including no-floating-promises and consistent-type-imports.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "typescript-eslint v8 flat config is now the standard for TypeScript linting",
+  "tags": ["eslint", "linting", "type-aware", "code-quality", "automation"],
+  "prerequisites": ["TypeScript project with tsconfig.json"],
+  "steps": [
+    {
+      "title": "Install typescript-eslint",
+      "description": "Add ESLint and typescript-eslint packages for flat config support.",
+      "command": "pnpm add -D eslint @eslint/js typescript-eslint"
+    },
+    {
+      "title": "Create eslint.config.mjs with type-aware rules",
+      "description": "Set up a flat config that enables type-checked linting rules.",
+      "command": "cat > eslint.config.mjs << 'EOF'\nimport eslint from '@eslint/js';\nimport tseslint from 'typescript-eslint';\n\nexport default tseslint.config(\n  eslint.configs.recommended,\n  ...tseslint.configs.strictTypeChecked,\n  ...tseslint.configs.stylisticTypeChecked,\n  {\n    languageOptions: {\n      parserOptions: {\n        projectService: true,\n        tsconfigRootDir: import.meta.dirname,\n      },\n    },\n  },\n  {\n    rules: {\n      '@typescript-eslint/no-floating-promises': 'error',\n      '@typescript-eslint/consistent-type-imports': 'error',\n      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],\n    },\n  },\n  { ignores: ['dist/', 'node_modules/', '*.config.*'] },\n);\nEOF",
+      "tip": "Use strictTypeChecked for maximum safety. Fall back to recommendedTypeChecked if strict has too many errors initially."
+    },
+    {
+      "title": "Run the linter",
+      "description": "Execute ESLint across all TypeScript files and review errors.",
+      "command": "npx eslint . --max-warnings=0"
+    },
+    {
+      "title": "Add a lint script and fix command",
+      "description": "Add convenient npm scripts for linting.",
+      "command": "npm pkg set scripts.lint='eslint .' scripts.lint:fix='eslint . --fix'"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# TypeScript ESLint Setup\nset -euo pipefail\n\necho \"=== Installing dependencies ===\"\npnpm add -D eslint @eslint/js typescript-eslint\n\necho \"=== Creating eslint.config.mjs ===\"\ncat > eslint.config.mjs << 'EOF'\nimport eslint from '@eslint/js';\nimport tseslint from 'typescript-eslint';\n\nexport default tseslint.config(\n  eslint.configs.recommended,\n  ...tseslint.configs.strictTypeChecked,\n  ...tseslint.configs.stylisticTypeChecked,\n  {\n    languageOptions: {\n      parserOptions: {\n        projectService: true,\n        tsconfigRootDir: import.meta.dirname,\n      },\n    },\n  },\n  {\n    rules: {\n      '@typescript-eslint/no-floating-promises': 'error',\n      '@typescript-eslint/consistent-type-imports': 'error',\n      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],\n    },\n  },\n  { ignores: ['dist/', 'node_modules/', '*.config.*'] },\n);\nEOF\n\necho \"=== Adding scripts ===\"\nnpm pkg set scripts.lint=\"eslint .\"\nnpm pkg set scripts.lint:fix=\"eslint . --fix\"\n\necho \"=== Running linter ===\"\nnpx eslint . --max-warnings=0",
+  "faq": [
+    {
+      "question": "What are type-aware rules and why do they matter?",
+      "answer": "Type-aware rules use the TypeScript compiler's type information during linting. They catch issues like unhandled promises (no-floating-promises), unsafe any usage, and incorrect type assertions that regular ESLint rules cannot detect."
+    },
+    {
+      "question": "Is type-aware linting slow?",
+      "answer": "It is slower than syntax-only linting because it requires type-checking. Use projectService: true (typescript-eslint v8+) for faster performance. For large projects, consider running type-aware rules only in CI and using faster syntax rules locally."
+    },
+    {
+      "question": "How do I migrate from .eslintrc to flat config?",
+      "answer": "Create eslint.config.mjs and move your rules there. Replace extends with imported configs, replace env/globals with languageOptions, and use the ignores property instead of .eslintignore. The typescript-eslint docs have a detailed migration guide."
+    }
+  ],
+  "relatedRecipes": ["ts-config-optimization", "ts-type-checking-ci"],
+  "lastUpdated": "2026-03-11"
+}

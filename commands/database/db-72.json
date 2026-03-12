@@ -1,0 +1,8 @@
+{
+  "id": "db-72",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Grant read-write access",
+  "command": "GRANT SELECT, INSERT, UPDATE, DELETE ON mydb.* TO 'appuser'@'localhost';",
+  "description": "Grant CRUD operations on all tables in a database."
+}

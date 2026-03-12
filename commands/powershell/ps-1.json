@@ -1,0 +1,8 @@
+{
+  "id": "ps-1",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-files",
+  "title": "List files recursively",
+  "command": "Get-ChildItem -Recurse",
+  "description": "List all files and folders recursively."
+}

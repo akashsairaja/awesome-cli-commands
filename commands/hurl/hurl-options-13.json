@@ -1,0 +1,8 @@
+{
+  "id": "hurl-options-13",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-options",
+  "title": "Glob pattern files",
+  "command": "hurl --test tests/**/*.hurl",
+  "description": "Run all Hurl files with glob pattern."
+}

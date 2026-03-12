@@ -1,0 +1,8 @@
+{
+  "id": "gradle-gs-2",
+  "title": "Check Gradle version",
+  "command": "gradle --version",
+  "description": "Verify Gradle installation and display version info",
+  "categoryId": "gradle",
+  "subcategoryId": "getting-started"
+}

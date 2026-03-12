@@ -1,0 +1,8 @@
+{
+  "id": "hurl-asserts-1",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-asserts",
+  "title": "Status assertion",
+  "command": "HTTP 200",
+  "description": "Assert HTTP status code."
+}

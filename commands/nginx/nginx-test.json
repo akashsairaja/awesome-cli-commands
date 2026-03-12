@@ -1,0 +1,9 @@
+{
+  "id": "nginx-test",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-control",
+  "title": "Test configuration",
+  "command": "sudo nginx -t",
+  "description": "Test configuration syntax",
+  "tags": ["test", "config", "validate"]
+}

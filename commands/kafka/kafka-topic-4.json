@@ -1,0 +1,8 @@
+{
+  "id": "kafka-topic-4",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-topics",
+  "title": "Delete topic",
+  "command": "kafka-topics.sh --delete --topic my-topic --bootstrap-server localhost:9092",
+  "description": "Delete a topic."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "bash-95",
+  "categoryId": "bash",
+  "subcategoryId": "conditionals",
+  "title": "OR condition",
+  "command": "[ -f a ] || [ -f b ] && echo \"one exists\"",
+  "description": "Combine conditions with OR."
+}

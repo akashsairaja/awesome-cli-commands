@@ -1,0 +1,8 @@
+{
+  "id": "aws-s3-9",
+  "categoryId": "aws",
+  "subcategoryId": "s3",
+  "title": "Get bucket size",
+  "command": "aws s3 ls s3://bucket --recursive --summarize | tail -2",
+  "description": "Show total bucket size and object count."
+}

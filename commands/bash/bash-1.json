@@ -1,0 +1,8 @@
+{
+  "id": "bash-1",
+  "categoryId": "bash",
+  "subcategoryId": "scripting",
+  "title": "Shebang line",
+  "command": "#!/bin/bash",
+  "description": "Standard bash script header."
+}

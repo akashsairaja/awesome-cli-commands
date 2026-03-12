@@ -1,0 +1,9 @@
+{
+  "id": "prisma-init-sqlite",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-generate",
+  "title": "Initialize with SQLite",
+  "command": "npx prisma init --datasource-provider sqlite",
+  "description": "Initialize Prisma with SQLite for local development",
+  "tags": ["init", "sqlite", "local"]
+}

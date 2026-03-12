@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-certs-3",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-certs",
+  "title": "Generate wildcard cert",
+  "command": "mkcert '*.local.dev' local.dev",
+  "description": "Create wildcard certificate."
+}

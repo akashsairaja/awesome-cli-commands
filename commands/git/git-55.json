@@ -1,0 +1,8 @@
+{
+  "id": "git-55",
+  "categoryId": "git",
+  "subcategoryId": "stash",
+  "title": "Pop stash",
+  "command": "git stash pop",
+  "description": "Apply and remove latest stash."
+}

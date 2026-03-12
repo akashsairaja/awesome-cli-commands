@@ -1,0 +1,8 @@
+{
+  "id": "db-11",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Show databases",
+  "command": "SHOW DATABASES;",
+  "description": "List all MySQL databases."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "kafka-connect-1",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-connect",
+  "title": "List connectors",
+  "command": "curl -s localhost:8083/connectors | jq",
+  "description": "List all connectors."
+}

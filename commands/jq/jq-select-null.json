@@ -1,0 +1,9 @@
+{
+  "id": "jq-select-null",
+  "categoryId": "jq",
+  "subcategoryId": "jq-filters",
+  "title": "Filter non-null values",
+  "command": "cat file.json | jq '.[] | select(.key != null)'",
+  "description": "Filter out null values",
+  "tags": ["select", "null", "filter"]
+}

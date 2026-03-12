@@ -1,0 +1,8 @@
+{
+  "id": "nuget-install-8",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-install",
+  "title": "List outdated packages",
+  "command": "dotnet list package --outdated",
+  "description": "Show packages with newer versions available."
+}

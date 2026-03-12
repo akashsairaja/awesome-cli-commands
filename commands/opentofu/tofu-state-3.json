@@ -1,0 +1,8 @@
+{
+  "id": "tofu-state-3",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-state",
+  "title": "Move resource",
+  "command": "tofu state mv aws_instance.old aws_instance.new",
+  "description": "Rename resource in state."
+}

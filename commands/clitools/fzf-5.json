@@ -1,0 +1,8 @@
+{
+  "id": "fzf-5",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-fzf",
+  "title": "Git branch switch",
+  "command": "git checkout $(git branch | fzf)",
+  "description": "Fuzzy search and checkout branch."
+}

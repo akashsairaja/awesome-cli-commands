@@ -1,0 +1,8 @@
+{
+  "id": "snow-42",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-git",
+  "title": "List Git repositories",
+  "command": "snow git list-repositories",
+  "description": "List configured Git repositories."
+}

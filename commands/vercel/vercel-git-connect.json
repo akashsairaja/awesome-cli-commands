@@ -1,0 +1,9 @@
+{
+  "id": "vercel-git-connect",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-integrations",
+  "title": "Connect Git provider",
+  "command": "vercel git connect",
+  "description": "Link Git provider to Vercel",
+  "tags": ["git", "connect", "link"]
+}

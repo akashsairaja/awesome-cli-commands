@@ -1,0 +1,8 @@
+{
+  "id": "bash-17",
+  "categoryId": "bash",
+  "subcategoryId": "variables",
+  "title": "Export variable",
+  "command": "export VAR=\"value\"",
+  "description": "Export variable to environment."
+}

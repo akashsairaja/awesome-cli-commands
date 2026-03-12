@@ -1,0 +1,8 @@
+{
+  "id": "bruno-env-4",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-env",
+  "title": "Environment file structure",
+  "command": "vars {\n  baseUrl: https://api.dev.example.com\n  apiVersion: v1\n}\nvars:secret [\n  authToken\n]",
+  "description": "Example environment.bru file format."
+}

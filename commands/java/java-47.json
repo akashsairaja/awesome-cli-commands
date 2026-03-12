@@ -1,0 +1,8 @@
+{
+  "id": "java-47",
+  "categoryId": "java",
+  "subcategoryId": "java-diagnostics",
+  "title": "Force garbage collection",
+  "command": "jcmd <pid> GC.run",
+  "description": "Trigger full garbage collection (use sparingly)."
+}

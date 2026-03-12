@@ -1,0 +1,8 @@
+{
+  "id": "packer-hcl-6",
+  "categoryId": "packer",
+  "subcategoryId": "packer-hcl",
+  "title": "File provisioner",
+  "command": "provisioner \"file\" {\n  source      = \"config/app.conf\"\n  destination = \"/tmp/app.conf\"\n}",
+  "description": "Upload files to the build instance."
+}

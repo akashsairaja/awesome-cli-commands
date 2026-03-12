@@ -1,0 +1,59 @@
+{
+  "id": "go-test-coverage",
+  "stackId": "go",
+  "name": "Testing Workflow with Coverage Reports",
+  "description": "Run Go tests with race detection, generate coverage reports, and visualize coverage in the browser.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "Coverage-driven development is now standard in Go CI pipelines",
+  "tags": ["testing", "coverage", "ci", "quality"],
+  "prerequisites": ["Go 1.21+ installed", "A Go project with tests"],
+  "steps": [
+    {
+      "title": "Run all tests with verbose output",
+      "description": "Execute the full test suite with verbose output and race detection enabled.",
+      "command": "go test ./... -v -race",
+      "tip": "The -race flag detects data races at runtime. Always use it in CI."
+    },
+    {
+      "title": "Generate a coverage profile",
+      "description": "Run tests and output a coverage profile file for analysis.",
+      "command": "go test ./... -coverprofile=coverage.out -covermode=atomic"
+    },
+    {
+      "title": "View coverage summary by function",
+      "description": "Display a breakdown of coverage percentage per function.",
+      "command": "go tool cover -func=coverage.out"
+    },
+    {
+      "title": "Open coverage report in the browser",
+      "description": "Generate an HTML coverage report and open it for visual inspection.",
+      "command": "go tool cover -html=coverage.out -o coverage.html",
+      "tip": "Green lines are covered, red lines are not. Focus on uncovered branches in critical paths."
+    },
+    {
+      "title": "Enforce minimum coverage threshold",
+      "description": "Parse coverage output and fail the build if total coverage is below a threshold.",
+      "command": "go test ./... -coverprofile=coverage.out && total=$(go tool cover -func=coverage.out | grep total | awk '{print $3}' | tr -d '%') && echo \"Coverage: ${total}%\" && [ $(echo \"$total >= 70\" | bc) -eq 1 ] || (echo 'FAIL: coverage below 70%' && exit 1)",
+      "warning": "Set a realistic threshold. Forcing 100% coverage leads to low-value tests."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Go Test Coverage Workflow\nset -euo pipefail\n\nTHRESHOLD=${1:-70}\n\necho \"=== Running Tests with Race Detection ===\"\ngo test ./... -v -race -coverprofile=coverage.out -covermode=atomic\n\necho \"\"\necho \"=== Coverage by Function ===\"\ngo tool cover -func=coverage.out\n\necho \"\"\necho \"=== Coverage Summary ===\"\nTOTAL=$(go tool cover -func=coverage.out | grep total | awk '{print $3}' | tr -d '%')\necho \"Total coverage: ${TOTAL}%\"\necho \"Threshold: ${THRESHOLD}%\"\n\nif [ \"$(echo \"$TOTAL >= $THRESHOLD\" | bc)\" -eq 1 ]; then\n  echo \"PASS: Coverage meets threshold\"\nelse\n  echo \"FAIL: Coverage below threshold\"\n  exit 1\nfi\n\necho \"\"\necho \"=== Generate HTML Report ===\"\ngo tool cover -html=coverage.out -o coverage.html\necho \"Open coverage.html in your browser to view the report\"",
+  "faq": [
+    {
+      "question": "What is the difference between covermode set and atomic?",
+      "answer": "The 'set' mode records whether a statement was executed. The 'atomic' mode counts exact executions and is safe with -race. Use 'atomic' in CI for accuracy."
+    },
+    {
+      "question": "How do I exclude generated files from coverage?",
+      "answer": "Add '//go:build !coverage' build tags to generated files, or filter them in your CI script by grepping the coverage output."
+    },
+    {
+      "question": "Can I merge coverage from multiple test runs?",
+      "answer": "Yes. Use 'go test -coverprofile' for each package separately, then merge with tools like gocovmerge or the built-in -coverpkg flag to measure cross-package coverage."
+    }
+  ],
+  "relatedRecipes": ["go-linting-pipeline", "go-benchmark-profiling"],
+  "lastUpdated": "2026-03-11"
+}

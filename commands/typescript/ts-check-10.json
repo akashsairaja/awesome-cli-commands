@@ -1,0 +1,8 @@
+{
+  "id": "ts-check-10",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-check",
+  "title": "Skip library checks",
+  "command": "tsc --skipLibCheck",
+  "description": "Skip type checking of all declaration files (*.d.ts) for faster builds."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "vim-14",
+  "categoryId": "vim",
+  "subcategoryId": "editing",
+  "title": "Change inner word",
+  "command": "ciw",
+  "description": "Change word under cursor."
+}

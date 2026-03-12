@@ -1,0 +1,8 @@
+{
+  "id": "tofu-state-4",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-state",
+  "title": "Import resource",
+  "command": "tofu import aws_instance.web i-1234567890",
+  "description": "Import existing resource."
+}

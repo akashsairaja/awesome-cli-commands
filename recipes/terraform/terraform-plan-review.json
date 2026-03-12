@@ -1,0 +1,54 @@
+{
+  "id": "terraform-plan-review",
+  "stackId": "terraform",
+  "name": "Safe Plan-Apply Workflow",
+  "description": "Review Terraform plans carefully and use targeted applies to minimize blast radius when making infrastructure changes.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "tags": ["plan", "apply", "review", "safety", "targeted"],
+  "prerequisites": ["Terraform installed"],
+  "steps": [
+    {
+      "title": "Run terraform plan and save to file",
+      "description": "Generate an execution plan and save it as a binary file for later review or application.",
+      "command": "terraform plan -out=tfplan",
+      "tip": "Always save the plan to a file. This ensures the exact reviewed plan is what gets applied."
+    },
+    {
+      "title": "Review the plan in detail",
+      "description": "Display the saved plan in human-readable format to review every change before applying.",
+      "command": "terraform show tfplan"
+    },
+    {
+      "title": "Apply only the saved plan",
+      "description": "Apply the exact saved plan without re-computing changes, ensuring consistency with what was reviewed.",
+      "command": "terraform apply tfplan",
+      "warning": "Never run 'terraform apply' without a saved plan in production. It recomputes changes which may differ from what you reviewed."
+    },
+    {
+      "title": "Target a specific resource for apply",
+      "description": "Apply changes to only a specific resource when you want to limit the blast radius.",
+      "command": "terraform plan -target=aws_instance.web -out=tfplan",
+      "tip": "Targeted applies are useful for debugging but should not be the norm. Terraform warns about this for a reason."
+    },
+    {
+      "title": "Use detailed exit codes in CI",
+      "description": "Use -detailed-exitcode to programmatically determine if changes are pending (exit 2) or clean (exit 0).",
+      "command": "terraform plan -detailed-exitcode; echo \"Exit code: $?\"",
+      "tip": "Exit code 0 means no changes, 1 means error, 2 means changes pending. Useful for CI/CD decision logic."
+    }
+  ],
+  "fullScript": "#!/bin/bash\nset -euo pipefail\n\n# Safe Terraform Plan-Apply Workflow\n# Reviews plan and prompts before applying\n\necho \"==> Running terraform plan...\"\nterraform plan -out=tfplan -detailed-exitcode 2>&1 | tee /tmp/tf-plan-output.txt\nEXIT_CODE=${PIPESTATUS[0]}\n\nif [ \"$EXIT_CODE\" -eq 0 ]; then\n  echo \"No changes needed. Infrastructure is up to date.\"\n  exit 0\nelif [ \"$EXIT_CODE\" -eq 1 ]; then\n  echo \"ERROR: Plan failed. Check the output above.\"\n  exit 1\nfi\n\necho \"\"\necho \"==> Plan summary:\"\nterraform show -no-color tfplan | grep -E \"^(Plan:|  #|  \\+|  -|  ~)\" | head -30\n\necho \"\"\nread -p \"Apply this plan? (yes/no): \" CONFIRM\nif [ \"$CONFIRM\" = \"yes\" ]; then\n  echo \"==> Applying plan...\"\n  terraform apply tfplan\n  echo \"==> Apply complete.\"\nelse\n  echo \"==> Apply cancelled.\"\n  rm -f tfplan\nfi",
+  "faq": [
+    {
+      "question": "Why save the plan to a file instead of applying directly?",
+      "answer": "Between running plan and apply, resources may change. A saved plan guarantees the exact changes you reviewed are applied, with no surprises from concurrent modifications."
+    },
+    {
+      "question": "Is it safe to use -target regularly?",
+      "answer": "Targeted applies should be used sparingly. They can leave state inconsistent because dependent resources are skipped. Use them for debugging or emergency fixes, not as standard workflow."
+    }
+  ],
+  "relatedRecipes": ["terraform-destroy-safely", "terraform-drift-detection"],
+  "lastUpdated": "2026-03-11"
+}

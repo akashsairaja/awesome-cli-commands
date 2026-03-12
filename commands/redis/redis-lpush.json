@@ -1,0 +1,9 @@
+{
+  "id": "redis-lpush",
+  "categoryId": "redis",
+  "subcategoryId": "redis-lists",
+  "title": "Push to list head",
+  "command": "LPUSH key value",
+  "description": "Insert value at beginning of list",
+  "tags": ["lpush", "list", "head"]
+}

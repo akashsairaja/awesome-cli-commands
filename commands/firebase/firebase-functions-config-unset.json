@@ -1,0 +1,9 @@
+{
+  "id": "firebase-functions-config-unset",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-functions",
+  "title": "Unset function config",
+  "command": "firebase functions:config:unset service.key",
+  "description": "Remove a function configuration key",
+  "tags": ["functions", "config", "unset", "remove"]
+}

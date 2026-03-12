@@ -1,0 +1,8 @@
+{
+  "id": "linux-85",
+  "categoryId": "linux",
+  "subcategoryId": "systemd",
+  "title": "Validate unit file syntax",
+  "command": "systemd-analyze verify <unit>",
+  "description": "Check a systemd unit file for syntax errors and configuration issues."
+}

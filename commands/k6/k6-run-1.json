@@ -1,0 +1,8 @@
+{
+  "id": "k6-run-1",
+  "categoryId": "k6",
+  "subcategoryId": "k6-run",
+  "title": "Run test script",
+  "command": "k6 run script.js",
+  "description": "Run a k6 test script."
+}

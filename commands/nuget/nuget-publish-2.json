@@ -1,0 +1,8 @@
+{
+  "id": "nuget-publish-2",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-publish",
+  "title": "Push to nuget.org",
+  "command": "dotnet nuget push MyPackage.1.0.0.nupkg -k API_KEY -s https://api.nuget.org/v3/index.json",
+  "description": "Push package to NuGet.org."
+}

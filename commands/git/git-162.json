@@ -1,0 +1,8 @@
+{
+  "id": "git-162",
+  "categoryId": "git",
+  "subcategoryId": "advanced",
+  "title": "Switch to detached HEAD",
+  "command": "git switch --detach <commit>",
+  "description": "Switch to commit in detached HEAD state."
+}

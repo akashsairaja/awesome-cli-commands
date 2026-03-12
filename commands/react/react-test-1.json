@@ -1,0 +1,8 @@
+{
+  "id": "react-test-1",
+  "categoryId": "react",
+  "subcategoryId": "react-testing",
+  "title": "Run Jest tests",
+  "command": "jest",
+  "description": "Run all Jest tests once."
+}

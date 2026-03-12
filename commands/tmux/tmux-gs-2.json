@@ -1,0 +1,8 @@
+{
+  "id": "tmux-gs-2",
+  "title": "Install tmux (Linux)",
+  "command": "sudo apt install tmux -y",
+  "description": "Install tmux terminal multiplexer on Debian/Ubuntu Linux",
+  "categoryId": "tmux",
+  "subcategoryId": "getting-started"
+}

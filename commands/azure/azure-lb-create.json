@@ -1,0 +1,9 @@
+{
+  "id": "azure-lb-create",
+  "categoryId": "azure",
+  "subcategoryId": "azure-network",
+  "title": "Create Load Balancer",
+  "command": "az network lb create --resource-group <rg> --name <lb-name> --sku Standard --frontend-ip-name myFrontEnd --backend-pool-name myBackEnd",
+  "description": "Create a standard load balancer",
+  "tags": ["load-balancer", "create", "network"]
+}

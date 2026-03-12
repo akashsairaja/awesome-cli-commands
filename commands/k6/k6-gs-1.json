@@ -1,0 +1,8 @@
+{
+  "id": "k6-gs-1",
+  "title": "Install k6 (macOS)",
+  "command": "brew install k6",
+  "description": "Install k6 load testing tool using Homebrew on macOS",
+  "categoryId": "k6",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "apt-61",
+  "categoryId": "ubuntu",
+  "subcategoryId": "system",
+  "title": "Set hostname",
+  "command": "sudo hostnamectl set-hostname <new-hostname>",
+  "description": "Change the system hostname permanently."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "apt-27",
+  "categoryId": "ubuntu",
+  "subcategoryId": "apt-packages",
+  "title": "Install local deb file",
+  "command": "sudo dpkg -i package.deb && sudo apt install -f",
+  "description": "Install a local .deb file and fix any missing dependencies."
+}

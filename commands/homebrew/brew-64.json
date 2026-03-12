@@ -1,0 +1,8 @@
+{
+  "id": "brew-64",
+  "categoryId": "homebrew",
+  "subcategoryId": "bundle",
+  "title": "Force cleanup",
+  "command": "brew bundle cleanup --force",
+  "description": "Remove packages not in Brewfile."
+}

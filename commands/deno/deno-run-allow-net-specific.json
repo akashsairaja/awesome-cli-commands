@@ -1,0 +1,9 @@
+{
+  "id": "deno-run-allow-net-specific",
+  "categoryId": "deno",
+  "subcategoryId": "deno-run",
+  "title": "Allow Specific Host",
+  "command": "deno run --allow-net=api.example.com script.ts",
+  "description": "Allow network access to specific host only",
+  "tags": ["run", "permissions", "host"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "db-74",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Grant with grant option",
+  "command": "GRANT ALL ON mydb.* TO 'admin'@'localhost' WITH GRANT OPTION;",
+  "description": "Allow user to grant their privileges to other users."
+}

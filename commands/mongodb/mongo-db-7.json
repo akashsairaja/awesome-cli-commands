@@ -1,0 +1,8 @@
+{
+  "id": "mongo-db-7",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-database",
+  "title": "Drop database",
+  "command": "db.dropDatabase()",
+  "description": "Delete current database."
+}

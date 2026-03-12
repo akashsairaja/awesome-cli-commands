@@ -1,0 +1,8 @@
+{
+  "id": "httpie-requests-4",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-requests",
+  "title": "Query parameters",
+  "command": "http GET https://api.example.com/search q==search page==1",
+  "description": "Add query parameters (== syntax)."
+}

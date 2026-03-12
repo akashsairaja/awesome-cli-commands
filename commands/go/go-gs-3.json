@@ -1,0 +1,8 @@
+{
+  "id": "go-gs-3",
+  "title": "Initialize Go module",
+  "command": "go mod init myproject",
+  "description": "Initialize a new Go module in the current directory",
+  "categoryId": "go",
+  "subcategoryId": "getting-started"
+}

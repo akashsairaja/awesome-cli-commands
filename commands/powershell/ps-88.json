@@ -1,0 +1,8 @@
+{
+  "id": "ps-88",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-remoting",
+  "title": "Copy from remote",
+  "command": "Copy-Item -Path C:\\Temp\\file.txt -Destination . -FromSession $session",
+  "description": "Copy file from remote computer."
+}

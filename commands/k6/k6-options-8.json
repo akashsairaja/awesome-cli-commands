@@ -1,0 +1,8 @@
+{
+  "id": "k6-options-8",
+  "categoryId": "k6",
+  "subcategoryId": "k6-options",
+  "title": "Check thresholds",
+  "command": "export const options = {\n  thresholds: {\n    checks: ['rate>0.99'],\n    http_req_duration: ['p(95)<300', 'p(99)<500'],\n    http_req_failed: ['rate<0.01'],\n  },\n};",
+  "description": "Threshold on check pass rate."
+}

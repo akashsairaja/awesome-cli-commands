@@ -1,0 +1,9 @@
+{
+  "id": "gh-issue-list",
+  "categoryId": "github",
+  "subcategoryId": "gh-issue",
+  "title": "List issues",
+  "command": "gh issue list",
+  "description": "List open issues in repository",
+  "tags": ["issue", "list", "show"]
+}

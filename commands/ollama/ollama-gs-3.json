@@ -1,0 +1,8 @@
+{
+  "id": "ollama-gs-3",
+  "title": "Pull a model",
+  "command": "ollama pull llama2",
+  "description": "Download the Llama 2 model for local inference",
+  "categoryId": "ollama",
+  "subcategoryId": "getting-started"
+}

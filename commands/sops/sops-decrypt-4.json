@@ -1,0 +1,8 @@
+{
+  "id": "sops-decrypt-4",
+  "categoryId": "sops",
+  "subcategoryId": "sops-decrypt",
+  "title": "Decrypt in place",
+  "command": "sops -d -i secrets.enc.yaml",
+  "description": "Decrypt file in place."
+}

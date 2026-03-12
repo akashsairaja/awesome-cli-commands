@@ -1,0 +1,8 @@
+{
+  "id": "git-138",
+  "categoryId": "git",
+  "subcategoryId": "git-config",
+  "title": "Set default editor",
+  "command": "git config --global core.editor vim",
+  "description": "Set default text editor."
+}

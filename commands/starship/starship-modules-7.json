@@ -1,0 +1,8 @@
+{
+  "id": "starship-modules-7",
+  "categoryId": "starship",
+  "subcategoryId": "starship-modules",
+  "title": "Python module config",
+  "command": "[python]\nformat = \"via [$symbol$version ($virtualenv)]($style) \"",
+  "description": "Show Python version and virtualenv."
+}

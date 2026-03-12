@@ -1,0 +1,8 @@
+{
+  "id": "ps-8",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-files",
+  "title": "Append to file",
+  "command": "Add-Content -Path file.txt -Value \"new line\"",
+  "description": "Append content to existing file."
+}

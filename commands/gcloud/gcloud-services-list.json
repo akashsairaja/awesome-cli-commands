@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-services-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-projects",
+  "title": "List Enabled APIs",
+  "command": "gcloud services list --enabled",
+  "description": "Show enabled APIs in project",
+  "tags": ["services", "list", "api"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "spark-48",
+  "categoryId": "spark",
+  "subcategoryId": "spark-cluster",
+  "title": "Check cluster status",
+  "command": "curl http://spark-master:8080/json/",
+  "description": "Query Spark master REST API for cluster status."
+}

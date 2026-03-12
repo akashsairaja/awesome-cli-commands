@@ -1,0 +1,9 @@
+{
+  "id": "tmux-toggle-layout",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-panes",
+  "title": "Toggle layouts",
+  "command": "Ctrl+b Space",
+  "description": "Cycle through pane layouts",
+  "tags": ["pane", "layout", "arrange"]
+}

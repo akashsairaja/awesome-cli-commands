@@ -1,0 +1,8 @@
+{
+  "id": "db-34",
+  "categoryId": "database",
+  "subcategoryId": "postgresql",
+  "title": "Check table size",
+  "command": "SELECT pg_size_pretty(pg_total_relation_size('tablename'));",
+  "description": "Show total table size including indexes."
+}

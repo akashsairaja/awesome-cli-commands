@@ -1,0 +1,9 @@
+{
+  "id": "tmux-join-pane",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-panes",
+  "title": "Join pane from window",
+  "command": "tmux join-pane -s :1",
+  "description": "Move window 1 as pane here",
+  "tags": ["pane", "join", "window"]
+}

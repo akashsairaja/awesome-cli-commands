@@ -1,0 +1,8 @@
+{
+  "id": "bash-90",
+  "categoryId": "bash",
+  "subcategoryId": "conditionals",
+  "title": "File not empty",
+  "command": "[ -s file ] && echo \"has content\"",
+  "description": "Check if file has size > 0."
+}

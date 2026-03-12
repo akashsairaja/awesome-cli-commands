@@ -1,0 +1,8 @@
+{
+  "id": "bash-59",
+  "categoryId": "bash",
+  "subcategoryId": "arrays",
+  "title": "Array from command",
+  "command": "arr=($(ls *.txt))",
+  "description": "Populate array from command output."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "azure-nsg-rule",
+  "categoryId": "azure",
+  "subcategoryId": "azure-network",
+  "title": "Add NSG Rule",
+  "command": "az network nsg rule create --resource-group <rg> --nsg-name <nsg> --name AllowHTTPS --priority 100 --destination-port-ranges 443 --access Allow --protocol Tcp",
+  "description": "Add an inbound rule to NSG",
+  "tags": ["nsg", "rule", "firewall"]
+}

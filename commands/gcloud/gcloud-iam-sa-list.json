@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-iam-sa-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-iam",
+  "title": "List Service Accounts",
+  "command": "gcloud iam service-accounts list",
+  "description": "List all service accounts in project",
+  "tags": ["iam", "service-account", "list"]
+}

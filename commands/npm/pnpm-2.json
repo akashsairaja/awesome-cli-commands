@@ -1,0 +1,8 @@
+{
+  "id": "pnpm-2",
+  "categoryId": "npm",
+  "subcategoryId": "pnpm",
+  "title": "pnpm patch",
+  "command": "pnpm patch <package>",
+  "description": "Extract package to temp directory for patching."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "spark-32",
+  "categoryId": "spark",
+  "subcategoryId": "spark-config",
+  "title": "Enable Kryo serializer",
+  "command": "spark-submit --conf spark.serializer=org.apache.spark.serializer.KryoSerializer app.py",
+  "description": "Use faster Kryo serialization instead of Java."
+}

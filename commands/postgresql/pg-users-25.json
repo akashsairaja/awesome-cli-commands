@@ -1,0 +1,8 @@
+{
+  "id": "pg-users-25",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-users",
+  "title": "Grant connect only",
+  "command": "GRANT CONNECT ON DATABASE mydb TO appuser;",
+  "description": "Allow user to connect to database without any table access."
+}

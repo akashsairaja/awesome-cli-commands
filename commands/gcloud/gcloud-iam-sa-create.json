@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-iam-sa-create",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-iam",
+  "title": "Create Service Account",
+  "command": "gcloud iam service-accounts create <name> --display-name=\"<display-name>\"",
+  "description": "Create a new service account",
+  "tags": ["iam", "service-account", "create"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "linux-28",
+  "categoryId": "linux",
+  "subcategoryId": "files",
+  "title": "Remove directory recursively",
+  "command": "rm -rf /path/to/directory",
+  "description": "Force remove a directory and all contents. Use with caution."
+}

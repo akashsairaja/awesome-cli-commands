@@ -1,0 +1,8 @@
+{
+  "id": "k6-gs-3",
+  "title": "Check k6 version",
+  "command": "k6 version",
+  "description": "Verify k6 installation and display version info",
+  "categoryId": "k6",
+  "subcategoryId": "getting-started"
+}

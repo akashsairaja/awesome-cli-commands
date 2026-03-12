@@ -1,0 +1,69 @@
+{
+  "id": "interactive-rebase-workflow",
+  "stackId": "git",
+  "name": "Clean Commit History with Interactive Rebase",
+  "description": "Squash, reorder, reword, and edit commits using interactive rebase to craft a clear, logical commit history before merging.",
+  "difficulty": "advanced",
+  "timeMinutes": 15,
+  "trending": false,
+  "tags": ["rebase", "squash", "history", "cleanup", "workflow"],
+  "prerequisites": [
+    "Git installed",
+    "A feature branch with multiple commits",
+    "Understanding of commit history and HEAD references"
+  ],
+  "steps": [
+    {
+      "title": "Review recent commit history",
+      "command": "git log --oneline --graph -15",
+      "description": "Visualize the last 15 commits with a graph to understand the current history and decide how many commits to rebase.",
+      "tip": "Use --author to filter commits if working on a shared branch."
+    },
+    {
+      "title": "Start interactive rebase",
+      "command": "git rebase -i HEAD~5",
+      "description": "Opens your editor with the last 5 commits. Each line starts with 'pick'. Change the action word to squash, reword, edit, drop, or fixup.",
+      "warning": "Never rebase commits that have already been pushed to a shared branch unless you coordinate with your team."
+    },
+    {
+      "title": "Squash fixup commits into their parent",
+      "command": "# In the editor, change 'pick' to 'fixup' for commits to squash silently\n# Or use 'squash' to combine and edit the commit message\npick abc1234 feat: add user authentication\nfixup def5678 fix typo in auth module\nfixup ghi9012 add missing import",
+      "description": "Fixup merges a commit into the one above it and discards the fixup commit message. Squash does the same but lets you edit the combined message.",
+      "tip": "Use 'git commit --fixup=<hash>' while working to pre-mark commits for auto-squashing with 'git rebase -i --autosquash'."
+    },
+    {
+      "title": "Reorder commits for logical grouping",
+      "command": "# Simply rearrange lines in the editor:\npick abc1234 feat: add user model\npick jkl3456 feat: add user API routes\npick mno7890 feat: add user UI components\npick def5678 test: add user test suite",
+      "description": "Move lines up or down to reorder commits. Git will replay them in the new order. Conflicts may arise if commits depend on each other."
+    },
+    {
+      "title": "Resolve any conflicts during rebase",
+      "command": "git status\n# Fix conflicts in listed files, then:\ngit add .\ngit rebase --continue",
+      "description": "If Git encounters conflicts while replaying commits, fix them, stage the resolutions, and continue the rebase.",
+      "tip": "Use 'git rebase --abort' at any point to cancel and return to the original state."
+    },
+    {
+      "title": "Force push the cleaned branch",
+      "command": "git push --force-with-lease",
+      "description": "Push the rewritten history. The --force-with-lease flag prevents overwriting commits pushed by others since your last fetch.",
+      "warning": "Always use --force-with-lease instead of --force. It is a safety net against accidentally overwriting a collaborator's work."
+    }
+  ],
+  "fullScript": "#!/usr/bin/env bash\n# interactive-rebase-workflow.sh — Guided interactive rebase\nset -euo pipefail\n\nCOMMIT_COUNT=\"${1:-5}\"\nBRANCH=$(git rev-parse --abbrev-ref HEAD)\n\necho \"Current branch: $BRANCH\"\necho \"\"\necho \"=== Last $COMMIT_COUNT commits ===\"\ngit log --oneline --graph -\"$COMMIT_COUNT\"\n\necho \"\"\necho \"Rebase actions cheatsheet:\"\necho \"  pick   = keep commit as-is\"\necho \"  reword = keep commit, edit message\"\necho \"  squash = merge into previous, edit combined message\"\necho \"  fixup  = merge into previous, discard this message\"\necho \"  drop   = remove commit entirely\"\necho \"  edit   = pause after commit for amending\"\necho \"\"\nread -rp \"Start interactive rebase for last $COMMIT_COUNT commits? (y/N) \" confirm\nif [[ \"$confirm\" =~ ^[Yy]$ ]]; then\n  git rebase -i HEAD~\"$COMMIT_COUNT\"\n  echo \"\"\n  echo \"Rebase complete. New history:\"\n  git log --oneline --graph -\"$COMMIT_COUNT\"\n  echo \"\"\n  read -rp \"Push with --force-with-lease? (y/N) \" push_confirm\n  if [[ \"$push_confirm\" =~ ^[Yy]$ ]]; then\n    git push --force-with-lease\n    echo \"Pushed successfully.\"\n  fi\nfi",
+  "faq": [
+    {
+      "question": "What is the difference between squash and fixup?",
+      "answer": "Both merge a commit into the one above it. Squash opens an editor to combine both commit messages, while fixup silently discards the fixup commit's message and keeps only the parent's."
+    },
+    {
+      "question": "Can I undo an interactive rebase after completing it?",
+      "answer": "Yes. Use 'git reflog' to find the commit hash before the rebase, then 'git reset --hard <hash>' to restore the original history. This works as long as you have not garbage collected."
+    },
+    {
+      "question": "How do I use autosquash to automate fixup commits?",
+      "answer": "When committing, use 'git commit --fixup=<target-hash>'. Then run 'git rebase -i --autosquash HEAD~N'. Git will automatically reorder fixup commits and mark them with the fixup action."
+    }
+  ],
+  "relatedRecipes": ["cherry-pick-workflow", "conventional-commits-setup", "git-blame-archaeology"],
+  "lastUpdated": "2026-03-11"
+}

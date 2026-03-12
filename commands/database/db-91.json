@@ -1,0 +1,8 @@
+{
+  "id": "db-91",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Flush tables with read lock",
+  "command": "FLUSH TABLES WITH READ LOCK;",
+  "description": "Close all tables and lock for read. Used before backup for consistent snapshot."
+}

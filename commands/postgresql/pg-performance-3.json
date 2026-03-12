@@ -1,0 +1,8 @@
+{
+  "id": "pg-performance-3",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-performance",
+  "title": "Table access statistics",
+  "command": "SELECT relname, seq_scan, idx_scan, n_tup_ins, n_tup_upd, n_tup_del, n_live_tup, n_dead_tup FROM pg_stat_user_tables ORDER BY n_dead_tup DESC;",
+  "description": "View table access patterns, sequential vs index scans, and dead tuple counts for vacuum planning."
+}

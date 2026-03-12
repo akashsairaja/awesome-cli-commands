@@ -1,0 +1,9 @@
+{
+  "id": "firebase-functions-list",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-functions",
+  "title": "List functions",
+  "command": "firebase functions:list",
+  "description": "List all deployed Cloud Functions",
+  "tags": ["functions", "list", "show"]
+}

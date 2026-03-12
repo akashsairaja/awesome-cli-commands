@@ -1,0 +1,8 @@
+{
+  "id": "packer-hcl-1",
+  "categoryId": "packer",
+  "subcategoryId": "packer-hcl",
+  "title": "Basic source block",
+  "command": "source \"amazon-ebs\" \"ubuntu\" {\n  ami_name = \"my-ami\"\n  instance_type = \"t2.micro\"\n  region = \"us-east-1\"\n  source_ami_filter {\n    filters = { name = \"ubuntu/images/*\" }\n    owners = [\"099720109477\"]\n    most_recent = true\n  }\n  ssh_username = \"ubuntu\"\n}",
+  "description": "HCL2 source block example."
+}

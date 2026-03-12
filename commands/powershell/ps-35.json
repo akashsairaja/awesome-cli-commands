@@ -1,0 +1,8 @@
+{
+  "id": "ps-35",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-network",
+  "title": "DNS lookup",
+  "command": "Resolve-DnsName google.com",
+  "description": "Resolve DNS name."
+}

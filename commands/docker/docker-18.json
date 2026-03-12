@@ -1,0 +1,8 @@
+{
+  "id": "docker-18",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Execute command in container",
+  "command": "docker exec -it <container> /bin/bash",
+  "description": "Open interactive shell in running container."
+}

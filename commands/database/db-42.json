@@ -1,0 +1,8 @@
+{
+  "id": "db-42",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Change user password",
+  "command": "ALTER USER 'user'@'localhost' IDENTIFIED BY 'newpass';",
+  "description": "Change password for a MySQL user."
+}

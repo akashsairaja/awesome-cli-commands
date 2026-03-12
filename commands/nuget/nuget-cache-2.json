@@ -1,0 +1,8 @@
+{
+  "id": "nuget-cache-2",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-cache",
+  "title": "Clear all caches",
+  "command": "dotnet nuget locals all -c",
+  "description": "Clear all NuGet caches."
+}

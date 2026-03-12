@@ -1,0 +1,8 @@
+{
+  "id": "packer-gs-1",
+  "title": "Install Packer (macOS)",
+  "command": "brew install packer",
+  "description": "Install HashiCorp Packer using Homebrew on macOS",
+  "categoryId": "packer",
+  "subcategoryId": "getting-started"
+}

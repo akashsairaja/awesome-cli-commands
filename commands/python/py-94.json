@@ -1,0 +1,8 @@
+{
+  "id": "py-94",
+  "categoryId": "python",
+  "subcategoryId": "python-pytest",
+  "title": "Filter by name",
+  "command": "pytest -k \"login or signup\"",
+  "description": "Run tests matching name pattern."
+}

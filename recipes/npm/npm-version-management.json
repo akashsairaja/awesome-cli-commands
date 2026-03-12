@@ -1,0 +1,64 @@
+{
+  "id": "npm-version-management",
+  "stackId": "npm",
+  "name": "Semantic Versioning and Release Workflow",
+  "description": "Use npm version commands to automate semantic versioning, generate git tags, and create a consistent release workflow for your packages.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "trending": true,
+  "trendingReason": "Proper versioning is essential for reliable package ecosystems and automated release pipelines",
+  "tags": ["versioning", "semver", "release", "tags", "changelog"],
+  "prerequisites": ["npm package with git initialized", "Understanding of semantic versioning"],
+  "steps": [
+    {
+      "title": "Check the current version",
+      "description": "View the current version of your package.",
+      "command": "npm version"
+    },
+    {
+      "title": "Bump a patch version",
+      "description": "Increment the patch version for backward-compatible bug fixes.",
+      "command": "npm version patch -m 'chore(release): v%s'",
+      "tip": "npm version automatically updates package.json, creates a git commit, and tags it. The %s placeholder is replaced with the new version."
+    },
+    {
+      "title": "Bump a minor version",
+      "description": "Increment the minor version for backward-compatible new features.",
+      "command": "npm version minor -m 'chore(release): v%s'"
+    },
+    {
+      "title": "Bump a major version",
+      "description": "Increment the major version for breaking changes.",
+      "command": "npm version major -m 'chore(release): v%s'",
+      "warning": "Major version bumps signal breaking changes. Document all breaking changes in your changelog before releasing."
+    },
+    {
+      "title": "Create a prerelease version",
+      "description": "Publish beta or RC versions for testing before stable release.",
+      "command": "npm version prerelease --preid=beta -m 'chore(release): v%s'",
+      "tip": "This creates versions like 1.0.1-beta.0, 1.0.1-beta.1. Publish with 'npm publish --tag beta' to avoid affecting the latest tag."
+    },
+    {
+      "title": "Publish with the correct dist-tag",
+      "description": "Release the new version with the appropriate tag.",
+      "command": "npm publish --tag latest"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# npm Version and Release Workflow\nset -euo pipefail\n\nBUMP_TYPE=${1:?\"Usage: $0 <patch|minor|major|prerelease> [--preid=beta]\"}\n\necho \"=== Current Version ===\"\nCURRENT=$(npm pkg get version | tr -d '\"')\necho \"v$CURRENT\"\n\necho \"\"\necho \"=== Pre-Release Checks ===\"\nnpm run lint 2>/dev/null && echo \"Lint: passed\" || echo \"Lint: skipped\"\nnpm test 2>/dev/null && echo \"Tests: passed\" || echo \"Tests: skipped\"\nnpm run build 2>/dev/null && echo \"Build: passed\" || echo \"Build: skipped\"\n\necho \"\"\necho \"=== Bumping Version ===\"\nif [ \"$BUMP_TYPE\" = \"prerelease\" ]; then\n  NEW_VERSION=$(npm version prerelease --preid=${2:-beta} -m \"chore(release): v%s\")\nelse\n  NEW_VERSION=$(npm version \"$BUMP_TYPE\" -m \"chore(release): v%s\")\nfi\necho \"New version: $NEW_VERSION\"\n\necho \"\"\necho \"=== Next Steps ===\"\necho \"1. Review: git log --oneline -3\"\necho \"2. Push:   git push origin main --follow-tags\"\nif [[ \"$BUMP_TYPE\" == \"prerelease\" ]]; then\n  echo \"3. Publish: npm publish --tag beta\"\nelse\n  echo \"3. Publish: npm publish\"\nfi",
+  "faq": [
+    {
+      "question": "What do the semver numbers mean?",
+      "answer": "In MAJOR.MINOR.PATCH: MAJOR changes indicate breaking API changes, MINOR changes add backward-compatible features, and PATCH changes are backward-compatible bug fixes. For example, going from 2.3.1 to 3.0.0 signals breaking changes."
+    },
+    {
+      "question": "How do I prevent npm version from creating a git tag?",
+      "answer": "Use --no-git-tag-version to only update package.json without creating a commit or tag: 'npm version patch --no-git-tag-version'. This is useful when you manage tags separately."
+    },
+    {
+      "question": "What are dist-tags and how do they work?",
+      "answer": "Dist-tags are labels like 'latest', 'beta', 'next' that point to specific versions. When users run 'npm install pkg', they get the 'latest' tag. Use 'npm publish --tag beta' to publish without affecting 'latest', letting users opt in with 'npm install pkg@beta'."
+    }
+  ],
+  "relatedRecipes": ["npm-publish-package", "npm-script-automation"],
+  "lastUpdated": "2026-03-11"
+}

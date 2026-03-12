@@ -1,0 +1,9 @@
+{
+  "id": "azure-containerapp-revisions",
+  "categoryId": "azure",
+  "subcategoryId": "azure-containerapp",
+  "title": "List App Revisions",
+  "command": "az containerapp revision list -n myapp -g rg",
+  "description": "List all revisions of a container app",
+  "tags": ["containerapp", "revisions", "versions"]
+}

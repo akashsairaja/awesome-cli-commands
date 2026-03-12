@@ -1,0 +1,8 @@
+{
+  "id": "mvn-build-6",
+  "categoryId": "maven",
+  "subcategoryId": "build",
+  "title": "Run tests",
+  "command": "mvn test",
+  "description": "Run unit tests."
+}

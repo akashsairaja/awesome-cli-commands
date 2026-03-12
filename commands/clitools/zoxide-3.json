@@ -1,0 +1,8 @@
+{
+  "id": "zoxide-3",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-zoxide",
+  "title": "Add directory",
+  "command": "zoxide add /path/to/dir",
+  "description": "Manually add directory to database."
+}

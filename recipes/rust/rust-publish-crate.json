@@ -1,0 +1,62 @@
+{
+  "id": "rust-publish-crate",
+  "stackId": "rust",
+  "name": "Publish to crates.io with Proper Metadata",
+  "description": "Prepare, validate, and publish a Rust crate to crates.io with complete metadata, documentation, and versioning.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "tags": ["crates-io", "publish", "packaging", "documentation"],
+  "prerequisites": [
+    "Rust toolchain installed",
+    "crates.io account with API token",
+    "A Cargo project ready for publishing"
+  ],
+  "steps": [
+    {
+      "title": "Login to crates.io",
+      "description": "Authenticate with crates.io using your API token from the website.",
+      "command": "cargo login",
+      "tip": "Get your token from https://crates.io/settings/tokens. The token is stored in ~/.cargo/credentials.toml."
+    },
+    {
+      "title": "Ensure required metadata is set",
+      "description": "Verify that Cargo.toml has all fields required for publishing.",
+      "command": "cargo read-manifest | jq '{name, version, description, license, repository}'",
+      "warning": "Publishing requires at minimum: name, version, description, and license. Missing fields will cause publish to fail."
+    },
+    {
+      "title": "Generate and review documentation",
+      "description": "Build documentation locally and verify it looks correct before publishing.",
+      "command": "cargo doc --no-deps --open"
+    },
+    {
+      "title": "Dry-run the publish",
+      "description": "Validate the crate package without actually uploading it.",
+      "command": "cargo publish --dry-run",
+      "tip": "This catches missing files, invalid metadata, and build errors before the real publish."
+    },
+    {
+      "title": "Publish the crate",
+      "description": "Upload the crate to crates.io for the world to use.",
+      "command": "cargo publish",
+      "warning": "Published versions cannot be deleted or overwritten. Double-check the version number before publishing."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Publish Rust Crate to crates.io\nset -euo pipefail\n\necho \"=== Pre-Publish Checklist ===\"\necho \"Checking metadata...\"\ncargo read-manifest | jq '{name, version, description, license, repository}' 2>/dev/null || cargo metadata --format-version 1 | jq '.packages[0] | {name, version, description, license, repository}'\n\necho \"\"\necho \"=== Running Tests ===\"\ncargo test\n\necho \"\"\necho \"=== Clippy Check ===\"\ncargo clippy -- -D warnings\n\necho \"\"\necho \"=== Dry Run ===\"\ncargo publish --dry-run\n\necho \"\"\necho \"=== Ready to Publish ===\"\necho \"Run 'cargo publish' to upload to crates.io\"\necho \"\"\necho \"=== Publish Commands ===\"\necho \"Login:    cargo login\"\necho \"Dry run:  cargo publish --dry-run\"\necho \"Publish:  cargo publish\"\necho \"Yank:     cargo yank --version 1.0.0\"\necho \"Unyank:   cargo yank --version 1.0.0 --undo\"",
+  "faq": [
+    {
+      "question": "Can I unpublish a crate version?",
+      "answer": "You cannot delete a published version. You can 'yank' it with 'cargo yank --version 1.0.0', which prevents new projects from depending on it but does not break existing users."
+    },
+    {
+      "question": "How do I include extra files in the published crate?",
+      "answer": "By default, Cargo includes all tracked Git files. Use the 'include' or 'exclude' fields in Cargo.toml to customize which files are packaged. Run 'cargo package --list' to see what will be included."
+    },
+    {
+      "question": "How does crates.io documentation work?",
+      "answer": "docs.rs automatically builds and hosts documentation for every published crate. It uses the latest stable Rust compiler. Add a [package.metadata.docs.rs] section in Cargo.toml to customize the build."
+    }
+  ],
+  "relatedRecipes": ["rust-dependency-audit", "rust-release-optimization"],
+  "lastUpdated": "2026-03-11"
+}

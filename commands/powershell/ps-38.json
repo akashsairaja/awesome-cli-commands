@@ -1,0 +1,8 @@
+{
+  "id": "ps-38",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-network",
+  "title": "Download file",
+  "command": "Invoke-WebRequest -Uri https://example.com/file.zip -OutFile file.zip",
+  "description": "Download file from URL."
+}

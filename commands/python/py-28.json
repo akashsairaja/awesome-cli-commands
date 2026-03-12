@@ -1,0 +1,8 @@
+{
+  "id": "py-28",
+  "categoryId": "python",
+  "subcategoryId": "python-poetry",
+  "title": "Update dependencies",
+  "command": "poetry update",
+  "description": "Update all dependencies to latest allowed versions."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "node-mod-2",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-modules",
+  "title": "Import ES module",
+  "command": "node --import ./setup.js app.js",
+  "description": "Preload ES module at startup."
+}

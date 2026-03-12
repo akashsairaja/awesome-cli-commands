@@ -1,0 +1,8 @@
+{
+  "id": "git-133",
+  "categoryId": "git",
+  "subcategoryId": "cleanup",
+  "title": "Unstage file",
+  "command": "git restore --staged <file>",
+  "description": "Unstage a file."
+}

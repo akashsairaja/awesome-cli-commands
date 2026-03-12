@@ -1,0 +1,8 @@
+{
+  "id": "react-server-2",
+  "categoryId": "react",
+  "subcategoryId": "react-server",
+  "title": "Mark Client Component",
+  "command": "'use client'",
+  "description": "Directive to mark component as Client Component (required for hooks, events)."
+}

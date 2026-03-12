@@ -1,0 +1,8 @@
+{
+  "id": "k6-options-12",
+  "categoryId": "k6",
+  "subcategoryId": "k6-options",
+  "title": "Ramping VUs scenario",
+  "command": "export const options = {\n  scenarios: {\n    ramping: {\n      executor: 'ramping-vus',\n      startVUs: 0,\n      stages: [\n        { duration: '30s', target: 50 },\n        { duration: '1m', target: 50 },\n        { duration: '30s', target: 0 },\n      ],\n    },\n  },\n};",
+  "description": "Ramp virtual users up and down."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k3s-kubectl-6",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-kubectl",
+  "title": "Get all pods",
+  "command": "k3s kubectl get pods -A",
+  "description": "List pods across all namespaces."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "composer-require-6",
+  "categoryId": "composer",
+  "subcategoryId": "composer-require",
+  "title": "Remove package",
+  "command": "composer remove vendor/package",
+  "description": "Remove a package and its deps."
+}

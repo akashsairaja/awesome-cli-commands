@@ -1,0 +1,58 @@
+{
+  "id": "go-project-setup",
+  "stackId": "go",
+  "name": "Initialize Go Module with Proper Structure",
+  "description": "Set up a new Go project with module initialization, standard directory layout, and essential boilerplate files.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "Go remains the top choice for cloud-native backends and CLI tools",
+  "tags": ["init", "modules", "project-structure", "boilerplate"],
+  "prerequisites": ["Go 1.21+ installed"],
+  "steps": [
+    {
+      "title": "Create project directory and initialize module",
+      "description": "Create a new directory and initialize a Go module with your module path.",
+      "command": "mkdir myapp && cd myapp && go mod init github.com/yourname/myapp",
+      "tip": "Use your GitHub path as the module name for easy import by others."
+    },
+    {
+      "title": "Create standard directory layout",
+      "description": "Set up the conventional Go project structure with cmd, internal, and pkg directories.",
+      "command": "mkdir -p cmd/myapp internal/config internal/handler pkg/utils",
+      "tip": "The internal/ directory prevents external packages from importing its contents."
+    },
+    {
+      "title": "Create the main entry point",
+      "description": "Write a minimal main.go file in the cmd directory as the application entry point.",
+      "command": "cat > cmd/myapp/main.go << 'EOF'\npackage main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Println(\"Hello from myapp\")\n}\nEOF"
+    },
+    {
+      "title": "Add a Makefile for common tasks",
+      "description": "Create a Makefile with build, test, and lint targets for a consistent developer workflow.",
+      "command": "cat > Makefile << 'EOF'\n.PHONY: build test lint run\n\nbuild:\n\tgo build -o bin/myapp ./cmd/myapp\n\ntest:\n\tgo test ./... -v\n\nlint:\n\tgolangci-lint run ./...\n\nrun:\n\tgo run ./cmd/myapp\nEOF"
+    },
+    {
+      "title": "Build and run the project",
+      "description": "Verify the setup by building and running the application.",
+      "command": "go build -o bin/myapp ./cmd/myapp && ./bin/myapp"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Go Project Setup\nset -euo pipefail\n\nPROJECT=${1:?\"Usage: $0 <project-name>\"}\nMODULE=${2:-\"github.com/yourname/$PROJECT\"}\n\necho \"=== Creating Go project: $PROJECT ===\"\nmkdir -p \"$PROJECT\"\ncd \"$PROJECT\"\n\ngo mod init \"$MODULE\"\n\nmkdir -p cmd/\"$PROJECT\" internal/config internal/handler pkg/utils\n\ncat > cmd/\"$PROJECT\"/main.go << 'GOEOF'\npackage main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Println(\"Hello from the project\")\n}\nGOEOF\n\ncat > Makefile << 'MKEOF'\n.PHONY: build test lint run clean\n\nbuild:\n\tgo build -o bin/app ./cmd/$(notdir $(CURDIR))\n\ntest:\n\tgo test ./... -v -race\n\nlint:\n\tgolangci-lint run ./...\n\nrun:\n\tgo run ./cmd/$(notdir $(CURDIR))\n\nclean:\n\trm -rf bin/\nMKEOF\n\necho \"\"\necho \"=== Project created ===\"\necho \"Build:  make build\"\necho \"Test:   make test\"\necho \"Run:    make run\"\necho \"Lint:   make lint\"",
+  "faq": [
+    {
+      "question": "What is the difference between internal/ and pkg/?",
+      "answer": "Code in internal/ cannot be imported by other modules outside your project. Code in pkg/ is explicitly meant to be importable by external consumers. Use internal/ by default."
+    },
+    {
+      "question": "Should I vendor my dependencies?",
+      "answer": "Vendoring (go mod vendor) is useful for reproducible builds in CI or air-gapped environments. For most projects, the module cache is sufficient."
+    },
+    {
+      "question": "What Go version should I target in go.mod?",
+      "answer": "Set the minimum Go version your project supports. Use 'go mod tidy -go=1.21' to set a specific version. Newer features will not be available if you target an older version."
+    }
+  ],
+  "relatedRecipes": ["go-dependency-management", "go-linting-pipeline"],
+  "lastUpdated": "2026-03-11"
+}

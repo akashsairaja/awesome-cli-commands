@@ -1,0 +1,8 @@
+{
+  "id": "packer-hcl-8",
+  "categoryId": "packer",
+  "subcategoryId": "packer-hcl",
+  "title": "Ansible provisioner",
+  "command": "provisioner \"ansible\" {\n  playbook_file = \"ansible/playbook.yml\"\n  extra_arguments = [\n    \"--extra-vars\", \"env=production\"\n  ]\n}",
+  "description": "Run Ansible playbook as provisioner."
+}

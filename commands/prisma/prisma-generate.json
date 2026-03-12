@@ -1,0 +1,9 @@
+{
+  "id": "prisma-generate",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-generate",
+  "title": "Generate Prisma Client",
+  "command": "npx prisma generate",
+  "description": "Generate Prisma Client from schema",
+  "tags": ["generate", "client"]
+}

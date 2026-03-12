@@ -1,0 +1,8 @@
+{
+  "id": "k3s-kubectl-11",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-kubectl",
+  "title": "Delete a resource",
+  "command": "k3s kubectl delete -f manifest.yaml",
+  "description": "Delete resources defined in a manifest."
+}

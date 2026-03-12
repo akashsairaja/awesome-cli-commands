@@ -1,0 +1,8 @@
+{
+  "id": "k3s-kubectl-4",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-kubectl",
+  "title": "Use crictl",
+  "command": "k3s crictl ps",
+  "description": "List containers using crictl."
+}

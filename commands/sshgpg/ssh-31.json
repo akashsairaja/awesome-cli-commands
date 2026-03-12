@@ -1,0 +1,8 @@
+{
+  "id": "ssh-31",
+  "categoryId": "sshgpg",
+  "subcategoryId": "keys",
+  "title": "Receive GPG key from keyserver",
+  "command": "gpg --keyserver hkps://keys.openpgp.org --recv-keys KEY_ID",
+  "description": "Download GPG key from keyserver."
+}

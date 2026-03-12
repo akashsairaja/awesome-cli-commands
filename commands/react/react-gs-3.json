@@ -1,0 +1,8 @@
+{
+  "id": "react-gs-3",
+  "title": "Check React version",
+  "command": "npm list react",
+  "description": "Display the installed React version in the current project",
+  "categoryId": "react",
+  "subcategoryId": "getting-started"
+}

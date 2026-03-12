@@ -1,0 +1,8 @@
+{
+  "id": "ts-compile-4",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-compile",
+  "title": "Compile with output directory",
+  "command": "tsc --outDir ./dist",
+  "description": "Redirect compiled output to specific directory."
+}

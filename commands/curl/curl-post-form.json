@@ -1,0 +1,9 @@
+{
+  "id": "curl-post-form",
+  "categoryId": "curl",
+  "subcategoryId": "curl-requests",
+  "title": "POST form data",
+  "command": "curl -X POST -d \"key=value&key2=value2\" https://api.example.com/resource",
+  "description": "POST request with form-encoded data",
+  "tags": ["post", "form", "urlencoded"]
+}

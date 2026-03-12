@@ -1,0 +1,8 @@
+{
+  "id": "helm-dev-5",
+  "categoryId": "helm",
+  "subcategoryId": "helm-dev",
+  "title": "Build dependencies",
+  "command": "helm dependency build ./mychart",
+  "description": "Rebuild charts/ from Chart.lock."
+}

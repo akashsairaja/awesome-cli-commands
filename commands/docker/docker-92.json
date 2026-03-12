@@ -1,0 +1,8 @@
+{
+  "id": "docker-92",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "Pause services",
+  "command": "docker compose pause",
+  "description": "Pause all services."
+}

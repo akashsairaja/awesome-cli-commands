@@ -1,0 +1,8 @@
+{
+  "id": "temporal-schedule-7",
+  "categoryId": "temporal",
+  "subcategoryId": "schedule",
+  "title": "Describe schedule",
+  "command": "temporal schedule describe --schedule-id my-schedule",
+  "description": "Show schedule configuration and execution history."
+}

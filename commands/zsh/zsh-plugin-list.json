@@ -1,0 +1,9 @@
+{
+  "id": "zsh-plugin-list",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-plugins",
+  "title": "List plugins",
+  "command": "ls ~/.oh-my-zsh/plugins",
+  "description": "List available Oh My Zsh plugins",
+  "tags": ["plugins", "list", "ohmyzsh"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "curl-cookie",
+  "categoryId": "curl",
+  "subcategoryId": "curl-auth",
+  "title": "Send cookies",
+  "command": "curl -b \"session=abc123\" https://example.com",
+  "description": "Send cookies with request",
+  "tags": ["cookie", "session"]
+}

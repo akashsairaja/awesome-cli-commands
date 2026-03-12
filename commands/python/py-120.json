@@ -1,0 +1,8 @@
+{
+  "id": "py-120",
+  "categoryId": "python",
+  "subcategoryId": "python-mypy",
+  "title": "Check file",
+  "command": "mypy script.py",
+  "description": "Type check a single file."
+}

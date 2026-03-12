@@ -1,0 +1,9 @@
+{
+  "id": "firebase-hosting-channel-deploy",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-hosting",
+  "title": "Deploy to preview channel",
+  "command": "firebase hosting:channel:deploy <channel-id>",
+  "description": "Deploy to a preview channel",
+  "tags": ["hosting", "channel", "deploy", "preview"]
+}

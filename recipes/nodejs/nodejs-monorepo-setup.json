@@ -1,0 +1,62 @@
+{
+  "id": "nodejs-monorepo-setup",
+  "stackId": "nodejs",
+  "name": "Monorepo with npm Workspaces",
+  "description": "Set up and manage a monorepo using npm workspaces for shared packages, consistent tooling, and streamlined development.",
+  "difficulty": "advanced",
+  "timeMinutes": 15,
+  "tags": ["monorepo", "workspaces", "npm", "packages", "architecture"],
+  "prerequisites": ["Node.js 16 or later", "npm 7 or later"],
+  "steps": [
+    {
+      "title": "Initialize the monorepo root",
+      "description": "Create the root package.json with workspaces configuration pointing to your package directories.",
+      "command": "npm init -y && npm pkg set workspaces='[\"packages/*\", \"apps/*\"]' && npm pkg set private=true",
+      "tip": "Always set private: true on the root package.json to prevent accidentally publishing the monorepo itself."
+    },
+    {
+      "title": "Create workspace packages",
+      "description": "Set up individual packages within the monorepo with their own package.json files.",
+      "command": "mkdir -p packages/shared apps/web apps/api\nnpm init -y -w packages/shared\nnpm init -y -w apps/web\nnpm init -y -w apps/api"
+    },
+    {
+      "title": "Add cross-workspace dependencies",
+      "description": "Reference shared packages as dependencies in other workspaces using the workspace protocol.",
+      "command": "npm pkg set dependencies.@myorg/shared=\"*\" -w apps/web\nnpm pkg set dependencies.@myorg/shared=\"*\" -w apps/api\nnpm install",
+      "tip": "npm automatically symlinks workspace packages. Changes to shared code are immediately available without publishing."
+    },
+    {
+      "title": "Run scripts across workspaces",
+      "description": "Execute npm scripts in specific workspaces or across all workspaces from the root.",
+      "command": "# Run in a specific workspace:\nnpm run build -w apps/web\n\n# Run in all workspaces that have the script:\nnpm run build --workspaces --if-present\n\n# Run tests everywhere:\nnpm test --workspaces --if-present"
+    },
+    {
+      "title": "Install dependencies to specific workspaces",
+      "description": "Add dependencies to individual workspace packages rather than the root.",
+      "command": "npm install express -w apps/api\nnpm install react react-dom -w apps/web\nnpm install typescript -w packages/shared",
+      "warning": "Install dependencies where they are used, not at the root. Root devDependencies should only be shared tooling like ESLint or TypeScript."
+    },
+    {
+      "title": "Create a shared TypeScript configuration",
+      "description": "Set up a shared tsconfig that all workspace packages extend for consistent TypeScript settings.",
+      "command": "cat <<'EOF' > packages/shared/tsconfig.base.json\n{\n  \"compilerOptions\": {\n    \"target\": \"ES2022\",\n    \"module\": \"NodeNext\",\n    \"moduleResolution\": \"NodeNext\",\n    \"declaration\": true,\n    \"strict\": true,\n    \"esModuleInterop\": true,\n    \"skipLibCheck\": true,\n    \"outDir\": \"dist\"\n  }\n}\nEOF\n\n# Extend in each workspace:\ncat <<'EOF' > apps/api/tsconfig.json\n{\n  \"extends\": \"../../packages/shared/tsconfig.base.json\",\n  \"compilerOptions\": {\n    \"outDir\": \"dist\",\n    \"rootDir\": \"src\"\n  },\n  \"include\": [\"src\"]\n}\nEOF"
+    }
+  ],
+  "fullScript": "#!/bin/bash\nset -euo pipefail\n\n# Node.js Monorepo Setup with npm Workspaces\n\nORG_NAME=\"${1:-myorg}\"\n\necho \"==> Initializing monorepo root...\"\nnpm init -y\nnpm pkg set private=true\nnpm pkg set workspaces='[\"packages/*\", \"apps/*\"]'\nnpm pkg set scripts.build=\"npm run build --workspaces --if-present\"\nnpm pkg set scripts.test=\"npm run test --workspaces --if-present\"\nnpm pkg set scripts.lint=\"npm run lint --workspaces --if-present\"\nnpm pkg set scripts.clean=\"npm run clean --workspaces --if-present\"\n\necho \"==> Creating workspace directories...\"\nmkdir -p packages/shared/src apps/web/src apps/api/src\n\necho \"==> Setting up shared package...\"\ncd packages/shared\nnpm init -y\nnpm pkg set name=\"@${ORG_NAME}/shared\"\nnpm pkg set main=\"dist/index.js\"\nnpm pkg set types=\"dist/index.d.ts\"\nnpm pkg set scripts.build=\"tsc\"\nnpm pkg set scripts.clean=\"rm -rf dist\"\n\ncat > src/index.ts <<'EOF'\nexport function formatDate(date: Date): string {\n  return date.toISOString().split('T')[0];\n}\n\nexport function slugify(text: string): string {\n  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');\n}\nEOF\ncd ../..\n\necho \"==> Setting up API app...\"\ncd apps/api\nnpm init -y\nnpm pkg set name=\"@${ORG_NAME}/api\"\nnpm pkg set scripts.build=\"tsc\"\nnpm pkg set scripts.start=\"node dist/index.js\"\nnpm pkg set scripts.dev=\"node --watch src/index.ts\"\n\ncat > src/index.ts <<'EOF'\nimport { formatDate } from '@myorg/shared';\nconsole.log('API started at', formatDate(new Date()));\nEOF\ncd ../..\n\necho \"==> Setting up Web app...\"\ncd apps/web\nnpm init -y\nnpm pkg set name=\"@${ORG_NAME}/web\"\nnpm pkg set scripts.build=\"echo 'build web'\"\nnpm pkg set scripts.dev=\"echo 'dev web'\"\ncd ../..\n\necho \"==> Installing dependencies...\"\nnpm install typescript -w packages/shared\nnpm install @${ORG_NAME}/shared -w apps/api\nnpm install @${ORG_NAME}/shared -w apps/web\nnpm install\n\necho \"\"\necho \"==> Monorepo structure:\"\nfind . -name 'package.json' -not -path '*/node_modules/*' | sort\n\necho \"\"\necho \"==> Commands:\"\necho \"  npm run build               # Build all workspaces\"\necho \"  npm run build -w apps/api   # Build specific workspace\"\necho \"  npm test --workspaces       # Test all workspaces\"\necho \"  npm install pkg -w apps/api # Add dep to specific workspace\"",
+  "faq": [
+    {
+      "question": "Should I use npm workspaces, yarn workspaces, or pnpm?",
+      "answer": "npm workspaces work well for most projects and require no extra tooling. pnpm is faster and uses less disk space with its content-addressable store. Yarn is mature with good monorepo tooling. Choose based on your team's familiarity and project needs."
+    },
+    {
+      "question": "How do I publish individual packages from a monorepo?",
+      "answer": "Run npm publish from the individual workspace directory, or use npm publish -w packages/shared from the root. For automated versioning and publishing, tools like changesets or lerna work well with npm workspaces."
+    },
+    {
+      "question": "How do I handle different Node.js versions across workspaces?",
+      "answer": "Use the engines field in each workspace package.json to declare version requirements. Use a .nvmrc or .node-version at the root. All workspaces share the same Node.js runtime, so the root should use the strictest requirement."
+    }
+  ],
+  "relatedRecipes": ["nodejs-esm-migration", "nodejs-docker-optimization"],
+  "lastUpdated": "2026-03-11"
+}

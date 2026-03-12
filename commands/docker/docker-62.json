@@ -1,0 +1,8 @@
+{
+  "id": "docker-62",
+  "categoryId": "docker",
+  "subcategoryId": "volumes",
+  "title": "Run with tmpfs mount",
+  "command": "docker run --tmpfs /tmp <image>",
+  "description": "Mount temporary filesystem in memory."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "task-run-15",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-run",
+  "title": "List all (incl. internal)",
+  "command": "task -l --list-all",
+  "description": "List all tasks including internal ones."
+}

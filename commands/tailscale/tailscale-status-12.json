@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-status-12",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-status",
+  "title": "Show DERP map",
+  "command": "tailscale debug derp-map",
+  "description": "Display the DERP relay server map."
+}

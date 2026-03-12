@@ -1,0 +1,8 @@
+{
+  "id": "java-gs-3",
+  "title": "Compile a Java file",
+  "command": "javac Main.java",
+  "description": "Compile a Java source file into bytecode",
+  "categoryId": "java",
+  "subcategoryId": "getting-started"
+}

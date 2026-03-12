@@ -1,0 +1,8 @@
+{
+  "id": "playwright-browser-1",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-browser",
+  "title": "Install browsers",
+  "command": "npx playwright install",
+  "description": "Install all browsers."
+}

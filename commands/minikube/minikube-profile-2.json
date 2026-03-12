@@ -1,0 +1,8 @@
+{
+  "id": "minikube-profile-2",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-profile",
+  "title": "List profiles",
+  "command": "minikube profile list",
+  "description": "List all profiles."
+}

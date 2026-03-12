@@ -1,0 +1,8 @@
+{
+  "id": "scoop-bucket-5",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-bucket",
+  "title": "Remove bucket",
+  "command": "scoop bucket rm extras",
+  "description": "Remove a bucket."
+}

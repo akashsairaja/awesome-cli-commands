@@ -1,0 +1,8 @@
+{
+  "id": "db-2",
+  "categoryId": "database",
+  "subcategoryId": "postgresql",
+  "title": "Backup database",
+  "command": "pg_dump -h localhost -U postgres dbname > backup.sql",
+  "description": "Export database to SQL file."
+}

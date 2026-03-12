@@ -1,0 +1,8 @@
+{
+  "id": "linux-45",
+  "categoryId": "linux",
+  "subcategoryId": "processes",
+  "title": "List open files by process",
+  "command": "lsof -p <pid>",
+  "description": "List all files opened by a specific process ID."
+}

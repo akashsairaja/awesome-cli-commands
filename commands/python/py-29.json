@@ -1,0 +1,8 @@
+{
+  "id": "py-29",
+  "categoryId": "python",
+  "subcategoryId": "python-poetry",
+  "title": "Lock dependencies",
+  "command": "poetry lock",
+  "description": "Generate/update lock file without installing."
+}

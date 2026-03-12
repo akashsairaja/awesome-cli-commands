@@ -1,0 +1,8 @@
+{
+  "id": "tofu-workspace-3",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-workspace",
+  "title": "Select workspace",
+  "command": "tofu workspace select production",
+  "description": "Switch to an existing workspace."
+}

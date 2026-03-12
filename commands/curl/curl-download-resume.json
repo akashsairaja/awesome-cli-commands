@@ -1,0 +1,9 @@
+{
+  "id": "curl-download-resume",
+  "categoryId": "curl",
+  "subcategoryId": "curl-download",
+  "title": "Resume download",
+  "command": "curl -C - -O https://example.com/largefile.zip",
+  "description": "Resume interrupted download",
+  "tags": ["download", "resume", "continue"]
+}

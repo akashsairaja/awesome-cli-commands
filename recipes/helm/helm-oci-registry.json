@@ -1,0 +1,66 @@
+{
+  "id": "helm-oci-registry",
+  "stackId": "helm",
+  "name": "Store Charts in OCI Registries",
+  "description": "Push, pull, and manage Helm charts using OCI-compatible container registries like GitHub Container Registry, Docker Hub, and ECR.",
+  "difficulty": "advanced",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "OCI registry support is now stable in Helm 3 and becoming the preferred distribution method",
+  "tags": ["oci", "registry", "distribution", "ghcr", "ecr"],
+  "prerequisites": [
+    "Helm 3.8+ installed",
+    "Access to an OCI-compatible registry",
+    "Registry authentication configured"
+  ],
+  "steps": [
+    {
+      "title": "Login to an OCI registry",
+      "description": "Authenticate with your container registry to push and pull charts.",
+      "command": "helm registry login ghcr.io --username <github-username> --password <github-pat>",
+      "tip": "Use a personal access token with read:packages and write:packages scopes for GitHub Container Registry."
+    },
+    {
+      "title": "Package the chart",
+      "description": "Create a chart archive ready for pushing to the registry.",
+      "command": "helm package myapp/ --version 1.2.0"
+    },
+    {
+      "title": "Push a chart to the OCI registry",
+      "description": "Upload the packaged chart to your registry.",
+      "command": "helm push myapp-1.2.0.tgz oci://ghcr.io/my-org/charts"
+    },
+    {
+      "title": "Pull a chart from the OCI registry",
+      "description": "Download a chart from the registry to your local machine.",
+      "command": "helm pull oci://ghcr.io/my-org/charts/myapp --version 1.2.0"
+    },
+    {
+      "title": "Install directly from OCI registry",
+      "description": "Install a chart directly from an OCI reference without pulling first.",
+      "command": "helm install my-release oci://ghcr.io/my-org/charts/myapp --version 1.2.0 --namespace production"
+    },
+    {
+      "title": "View chart metadata in the registry",
+      "description": "Inspect chart details without downloading it.",
+      "command": "helm show chart oci://ghcr.io/my-org/charts/myapp --version 1.2.0"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Helm OCI Registry Workflow\nset -euo pipefail\n\nCHART_DIR=${1:?\"Usage: $0 <chart-dir> <registry-url>\"}\nREGISTRY=${2:?\"Missing registry URL (e.g., oci://ghcr.io/my-org/charts)\"}\n\n# Extract chart name and version from Chart.yaml\nCHART_NAME=$(grep '^name:' \"$CHART_DIR/Chart.yaml\" | awk '{print $2}')\nCHART_VERSION=$(grep '^version:' \"$CHART_DIR/Chart.yaml\" | awk '{print $2}')\n\necho \"=== Chart: $CHART_NAME v$CHART_VERSION ===\"\n\necho \"\"\necho \"=== Linting ===\"\nhelm lint \"$CHART_DIR\" --strict\n\necho \"\"\necho \"=== Packaging ===\"\nhelm package \"$CHART_DIR\"\n\nPACKAGE_FILE=\"$CHART_NAME-$CHART_VERSION.tgz\"\n\necho \"\"\necho \"=== Pushing to $REGISTRY ===\"\nhelm push \"$PACKAGE_FILE\" \"$REGISTRY\"\n\necho \"\"\necho \"=== Verifying ===\"\nhelm show chart \"$REGISTRY/$CHART_NAME\" --version \"$CHART_VERSION\"\n\necho \"\"\necho \"Chart published: $REGISTRY/$CHART_NAME:$CHART_VERSION\"\necho \"Install with: helm install <release> $REGISTRY/$CHART_NAME --version $CHART_VERSION\"",
+  "faq": [
+    {
+      "question": "What is the advantage of OCI registries over traditional Helm repos?",
+      "answer": "OCI registries reuse existing container registry infrastructure, provide immutable chart references, support signature verification, and eliminate the need to maintain a separate chart repository server with an index.yaml file."
+    },
+    {
+      "question": "How do I use AWS ECR as a Helm chart registry?",
+      "answer": "Login with 'aws ecr get-login-password | helm registry login --username AWS --password-stdin <account>.dkr.ecr.<region>.amazonaws.com'. Then push with 'helm push chart.tgz oci://<account>.dkr.ecr.<region>.amazonaws.com'."
+    },
+    {
+      "question": "Do I still need helm repo add for OCI registries?",
+      "answer": "No. OCI charts are referenced directly by their full URL (oci://registry/path/chart). The 'helm repo add' command is only for traditional HTTP-based chart repositories."
+    }
+  ],
+  "relatedRecipes": ["helm-repo-management", "helm-chart-creation"],
+  "lastUpdated": "2026-03-11"
+}

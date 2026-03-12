@@ -1,0 +1,8 @@
+{
+  "id": "py-10",
+  "categoryId": "python",
+  "subcategoryId": "python-pip",
+  "title": "Show package info",
+  "command": "pip show requests",
+  "description": "Display detailed package information."
+}

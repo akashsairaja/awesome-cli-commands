@@ -1,0 +1,9 @@
+{
+  "id": "deno-info-module",
+  "categoryId": "deno",
+  "subcategoryId": "deno-info",
+  "title": "Module Info",
+  "command": "deno info script.ts",
+  "description": "Show module dependency tree",
+  "tags": ["info", "module", "dependencies"]
+}

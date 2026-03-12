@@ -1,0 +1,8 @@
+{
+  "id": "starship-config-9",
+  "categoryId": "starship",
+  "subcategoryId": "starship-config",
+  "title": "Set log level",
+  "command": "export STARSHIP_LOG=trace && starship prompt",
+  "description": "Enable trace logging for debugging."
+}

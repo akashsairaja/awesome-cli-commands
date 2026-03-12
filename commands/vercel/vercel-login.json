@@ -1,0 +1,9 @@
+{
+  "id": "vercel-login",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-projects",
+  "title": "Login to Vercel",
+  "command": "vercel login",
+  "description": "Login to your Vercel account",
+  "tags": ["login", "auth", "authenticate"]
+}

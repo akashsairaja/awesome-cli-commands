@@ -1,0 +1,8 @@
+{
+  "id": "k3s-install-10",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-install",
+  "title": "Air-gap install",
+  "command": "sudo mkdir -p /var/lib/rancher/k3s/agent/images/ && sudo cp k3s-airgap-images.tar.gz /var/lib/rancher/k3s/agent/images/ && INSTALL_K3S_SKIP_DOWNLOAD=true ./install.sh",
+  "description": "Install k3s in an air-gapped environment with pre-downloaded images."
+}

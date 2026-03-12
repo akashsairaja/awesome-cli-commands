@@ -1,0 +1,8 @@
+{
+  "id": "claude-56",
+  "categoryId": "claudecode",
+  "subcategoryId": "agents",
+  "title": "Manage agents",
+  "command": "/agents",
+  "description": "Open agent management interface."
+}

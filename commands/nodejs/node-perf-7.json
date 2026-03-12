@@ -1,0 +1,8 @@
+{
+  "id": "node-perf-7",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-perf",
+  "title": "V8 profiling",
+  "command": "node --prof app.js",
+  "description": "Generate V8 profile (isolate-*.log file)."
+}

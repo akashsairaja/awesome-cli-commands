@@ -1,0 +1,8 @@
+{
+  "id": "apt-13",
+  "categoryId": "ubuntu",
+  "subcategoryId": "systemd-services",
+  "title": "Enable service on boot",
+  "command": "sudo systemctl enable <service>",
+  "description": "Enable service to start on boot."
+}

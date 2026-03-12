@@ -1,0 +1,9 @@
+{
+  "id": "redis-xrange",
+  "categoryId": "redis",
+  "subcategoryId": "redis-streams",
+  "title": "Get stream range",
+  "command": "XRANGE stream - +",
+  "description": "Get all entries in stream",
+  "tags": ["xrange", "stream", "range"]
+}

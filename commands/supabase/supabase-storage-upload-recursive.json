@@ -1,0 +1,9 @@
+{
+  "id": "supabase-storage-upload-recursive",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-storage",
+  "title": "Upload directory recursively",
+  "command": "supabase storage cp ./assets/ supabase://images/ --recursive --local",
+  "description": "Upload directory recursively to storage",
+  "tags": ["storage", "upload", "recursive"]
+}

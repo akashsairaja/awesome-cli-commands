@@ -1,0 +1,9 @@
+{
+  "id": "netlify-switch",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-env",
+  "title": "Switch accounts",
+  "command": "netlify switch",
+  "description": "Switch between Netlify accounts",
+  "tags": ["switch", "account"]
+}

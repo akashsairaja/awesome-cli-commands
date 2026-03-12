@@ -1,0 +1,8 @@
+{
+  "id": "tsx-3",
+  "categoryId": "typescript",
+  "subcategoryId": "tsx",
+  "title": "tsx with ignore paths",
+  "command": "tsx watch --ignore ./logs --ignore ./temp src/index.ts",
+  "description": "Watch mode excluding specific directories."
+}

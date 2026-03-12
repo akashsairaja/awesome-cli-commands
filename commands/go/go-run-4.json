@@ -1,0 +1,8 @@
+{
+  "id": "go-run-4",
+  "categoryId": "go",
+  "subcategoryId": "go-run",
+  "title": "View package docs",
+  "command": "go doc fmt",
+  "description": "Show documentation for package."
+}

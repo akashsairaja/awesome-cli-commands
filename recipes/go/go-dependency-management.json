@@ -1,0 +1,57 @@
+{
+  "id": "go-dependency-management",
+  "stackId": "go",
+  "name": "Go Modules Dependency Workflow",
+  "description": "Manage Go module dependencies including adding, updating, removing packages, and handling version conflicts.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "tags": ["modules", "dependencies", "versioning", "go-mod"],
+  "prerequisites": ["Go 1.21+ installed", "An initialized Go module"],
+  "steps": [
+    {
+      "title": "Add a new dependency",
+      "description": "Install a package and add it to go.mod automatically.",
+      "command": "go get github.com/gin-gonic/gin@latest",
+      "tip": "Use @latest for the newest version, or @v1.9.0 to pin a specific version."
+    },
+    {
+      "title": "Tidy dependencies",
+      "description": "Remove unused dependencies and add missing ones based on source code imports.",
+      "command": "go mod tidy"
+    },
+    {
+      "title": "List all dependencies",
+      "description": "View the full dependency tree including indirect dependencies.",
+      "command": "go list -m all"
+    },
+    {
+      "title": "Check for available updates",
+      "description": "See which dependencies have newer versions available.",
+      "command": "go list -m -u all",
+      "tip": "Pipe through grep to filter: go list -m -u all | grep '\\[.*\\]'"
+    },
+    {
+      "title": "Update a specific dependency",
+      "description": "Upgrade a single dependency to its latest minor or patch version.",
+      "command": "go get -u github.com/gin-gonic/gin && go mod tidy",
+      "warning": "The -u flag updates to the latest minor/patch. Use -u=patch to restrict to patch-level updates only."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Go Dependency Management\nset -euo pipefail\n\necho \"=== Current Dependencies ===\"\ngo list -m all | head -20\n\necho \"\"\necho \"=== Available Updates ===\"\ngo list -m -u all 2>/dev/null | grep '\\[' || echo \"All dependencies up to date\"\n\necho \"\"\necho \"=== Tidying Modules ===\"\ngo mod tidy\n\necho \"\"\necho \"=== Dependency Graph (direct) ===\"\ngo mod graph | head -20\n\necho \"\"\necho \"=== Module Commands ===\"\necho \"Add:       go get github.com/pkg/errors@latest\"\necho \"Update:    go get -u github.com/pkg/errors\"\necho \"Patch:     go get -u=patch github.com/pkg/errors\"\necho \"Remove:    Remove import, then go mod tidy\"\necho \"Vendor:    go mod vendor\"\necho \"Verify:    go mod verify\"\necho \"Why:       go mod why github.com/pkg/errors\"",
+  "faq": [
+    {
+      "question": "How do I remove a dependency?",
+      "answer": "Remove all imports of the package from your source code, then run 'go mod tidy'. Go modules does not have an explicit remove command."
+    },
+    {
+      "question": "What does 'go mod why' do?",
+      "answer": "It shows the shortest path from your module to a dependency, explaining why it is required. Useful for understanding indirect dependencies."
+    },
+    {
+      "question": "How do I replace a dependency with a local fork?",
+      "answer": "Add a replace directive in go.mod: 'replace github.com/original/pkg => ../local-fork'. This is useful for testing changes before publishing."
+    }
+  ],
+  "relatedRecipes": ["go-project-setup", "go-linting-pipeline"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "brew-24",
+  "categoryId": "homebrew",
+  "subcategoryId": "casks",
+  "title": "Cask info",
+  "command": "brew info --cask <app>",
+  "description": "Show cask application info."
+}

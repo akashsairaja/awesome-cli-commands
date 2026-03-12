@@ -1,0 +1,51 @@
+{
+  "id": "go-cross-compile",
+  "stackId": "go",
+  "name": "Cross-Compile for Multiple OS/Arch Targets",
+  "description": "Build Go binaries for Linux, macOS, and Windows across amd64 and arm64 architectures from a single machine.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "tags": ["cross-compile", "build", "multi-platform", "binary"],
+  "prerequisites": ["Go 1.21+ installed"],
+  "steps": [
+    {
+      "title": "Build for a specific target",
+      "description": "Set GOOS and GOARCH environment variables to cross-compile for a different platform.",
+      "command": "GOOS=linux GOARCH=amd64 go build -o bin/myapp-linux-amd64 ./cmd/myapp",
+      "tip": "Run 'go tool dist list' to see all supported OS/arch combinations."
+    },
+    {
+      "title": "Build for macOS ARM (Apple Silicon)",
+      "description": "Compile a binary targeting macOS on Apple Silicon processors.",
+      "command": "GOOS=darwin GOARCH=arm64 go build -o bin/myapp-darwin-arm64 ./cmd/myapp"
+    },
+    {
+      "title": "Build for Windows",
+      "description": "Produce a Windows executable with the .exe extension.",
+      "command": "GOOS=windows GOARCH=amd64 go build -o bin/myapp-windows-amd64.exe ./cmd/myapp"
+    },
+    {
+      "title": "Build all targets with a script",
+      "description": "Automate multi-platform builds by looping over target combinations.",
+      "command": "for pair in linux/amd64 linux/arm64 darwin/amd64 darwin/arm64 windows/amd64; do GOOS=${pair%/*} GOARCH=${pair#*/} go build -o bin/myapp-${pair%/*}-${pair#*/} ./cmd/myapp; done"
+    },
+    {
+      "title": "Verify binary targets with file command",
+      "description": "Confirm that each binary was compiled for the correct platform.",
+      "command": "file bin/myapp-*"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Go Cross-Compile for Multiple Targets\nset -euo pipefail\n\nAPP=${1:?\"Usage: $0 <app-name>\"}\nCMD_PATH=${2:-\"./cmd/$APP\"}\nOUTPUT_DIR=\"bin\"\n\nTARGETS=(\n  \"linux/amd64\"\n  \"linux/arm64\"\n  \"darwin/amd64\"\n  \"darwin/arm64\"\n  \"windows/amd64\"\n)\n\nmkdir -p \"$OUTPUT_DIR\"\n\necho \"=== Cross-Compiling $APP ===\"\nfor target in \"${TARGETS[@]}\"; do\n  GOOS=${target%/*}\n  GOARCH=${target#*/}\n  OUTPUT=\"$OUTPUT_DIR/$APP-$GOOS-$GOARCH\"\n  [ \"$GOOS\" = \"windows\" ] && OUTPUT=\"$OUTPUT.exe\"\n\n  echo \"Building $GOOS/$GOARCH -> $OUTPUT\"\n  GOOS=$GOOS GOARCH=$GOARCH go build -ldflags=\"-s -w\" -o \"$OUTPUT\" \"$CMD_PATH\"\ndone\n\necho \"\"\necho \"=== Build Artifacts ===\"\nls -lh \"$OUTPUT_DIR\"/\nfile \"$OUTPUT_DIR\"/*",
+  "faq": [
+    {
+      "question": "Do cross-compiled binaries need CGO?",
+      "answer": "By default Go disables CGO for cross-compilation (CGO_ENABLED=0). If your code uses CGO, you need a cross-compiler toolchain like zig cc or musl-cross."
+    },
+    {
+      "question": "How do I embed version info into the binary?",
+      "answer": "Use ldflags: go build -ldflags \"-X main.version=1.0.0 -X main.commit=$(git rev-parse HEAD)\" to inject variables at build time."
+    }
+  ],
+  "relatedRecipes": ["go-docker-build", "go-release-automation"],
+  "lastUpdated": "2026-03-11"
+}

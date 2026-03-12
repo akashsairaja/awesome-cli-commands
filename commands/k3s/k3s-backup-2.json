@@ -1,0 +1,8 @@
+{
+  "id": "k3s-backup-2",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-backup",
+  "title": "List snapshots",
+  "command": "k3s etcd-snapshot ls",
+  "description": "List available etcd snapshots."
+}

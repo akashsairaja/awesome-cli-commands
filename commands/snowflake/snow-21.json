@@ -1,0 +1,8 @@
+{
+  "id": "snow-21",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-streamlit",
+  "title": "Deploy Streamlit app",
+  "command": "snow streamlit deploy --replace",
+  "description": "Deploy Streamlit app to Snowflake."
+}

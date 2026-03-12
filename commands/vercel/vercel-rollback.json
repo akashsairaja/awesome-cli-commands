@@ -1,0 +1,9 @@
+{
+  "id": "vercel-rollback",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-deploy",
+  "title": "Rollback deployment",
+  "command": "vercel rollback <url>",
+  "description": "Rollback to a previous deployment",
+  "tags": ["rollback", "revert", "previous"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "curl-bearer-token",
+  "categoryId": "curl",
+  "subcategoryId": "curl-auth",
+  "title": "Bearer token auth",
+  "command": "curl -H \"Authorization: Bearer TOKEN\" https://api.example.com/resource",
+  "description": "Make request with bearer token",
+  "tags": ["auth", "bearer", "token", "jwt"]
+}

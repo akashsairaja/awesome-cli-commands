@@ -1,0 +1,8 @@
+{
+  "id": "composer-require-7",
+  "categoryId": "composer",
+  "subcategoryId": "composer-require",
+  "title": "Require with prefer stable",
+  "command": "composer require vendor/package --prefer-stable",
+  "description": "Prefer stable releases when adding."
+}

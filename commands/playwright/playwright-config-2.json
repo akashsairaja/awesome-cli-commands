@@ -1,0 +1,8 @@
+{
+  "id": "playwright-config-2",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-config",
+  "title": "Run with config",
+  "command": "npx playwright test --config=custom.config.ts",
+  "description": "Use custom config file."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "temporal-workflow-24",
+  "categoryId": "temporal",
+  "subcategoryId": "workflow",
+  "title": "Start with cron schedule",
+  "command": "temporal workflow start --workflow-id recurring --type MyWorkflow --task-queue my-queue --cron '0 9 * * *'",
+  "description": "Start workflow with cron schedule (deprecated, use schedules instead)."
+}

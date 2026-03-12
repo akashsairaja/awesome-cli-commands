@@ -1,0 +1,8 @@
+{
+  "id": "volta-pin-5",
+  "categoryId": "volta",
+  "subcategoryId": "volta-pin",
+  "title": "Pin pnpm version",
+  "command": "volta pin pnpm@8",
+  "description": "Pin pnpm version in package.json."
+}

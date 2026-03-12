@@ -1,0 +1,8 @@
+{
+  "id": "apt-32",
+  "categoryId": "ubuntu",
+  "subcategoryId": "apt-packages",
+  "title": "Show upgradable packages",
+  "command": "apt list --upgradable",
+  "description": "List all packages that have newer versions available."
+}

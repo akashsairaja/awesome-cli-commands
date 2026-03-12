@@ -1,0 +1,8 @@
+{
+  "id": "helm-release-5",
+  "categoryId": "helm",
+  "subcategoryId": "helm-release",
+  "title": "Get values",
+  "command": "helm get values my-release",
+  "description": "Get user-supplied values for release."
+}

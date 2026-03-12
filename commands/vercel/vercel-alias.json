@@ -1,0 +1,9 @@
+{
+  "id": "vercel-alias",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-domains",
+  "title": "Set domain alias",
+  "command": "vercel alias <deployment-url> <domain>",
+  "description": "Assign a domain to a deployment",
+  "tags": ["alias", "domain", "assign"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gh-auth-login",
+  "categoryId": "github",
+  "subcategoryId": "gh-auth",
+  "title": "Login to GitHub",
+  "command": "gh auth login",
+  "description": "Authenticate with GitHub account interactively",
+  "tags": ["auth", "login", "authenticate"]
+}

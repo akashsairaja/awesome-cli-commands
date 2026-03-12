@@ -1,0 +1,8 @@
+{
+  "id": "hurl-options-1",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-options",
+  "title": "Pass variables",
+  "command": "hurl --variable host=api.example.com api.hurl",
+  "description": "Pass variable to Hurl file."
+}

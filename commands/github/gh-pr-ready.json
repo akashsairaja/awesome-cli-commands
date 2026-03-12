@@ -1,0 +1,9 @@
+{
+  "id": "gh-pr-ready",
+  "categoryId": "github",
+  "subcategoryId": "gh-pr",
+  "title": "Mark PR ready for review",
+  "command": "gh pr ready <number>",
+  "description": "Mark a draft PR as ready for review",
+  "tags": ["pr", "ready", "review"]
+}

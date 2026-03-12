@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-manage-3",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-manage",
+  "title": "Skip via env var",
+  "command": "LEFTHOOK=0 git commit -m 'message'",
+  "description": "Skip hooks with environment."
+}

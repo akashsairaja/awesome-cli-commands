@@ -1,0 +1,9 @@
+{
+  "id": "ansible-playbook-limit",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-playbook",
+  "title": "Limit to Hosts",
+  "command": "ansible-playbook playbook.yml --limit \"webservers\"",
+  "description": "Run playbook on specific hosts/groups",
+  "tags": ["playbook", "limit", "hosts"]
+}

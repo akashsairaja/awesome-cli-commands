@@ -1,0 +1,8 @@
+{
+  "id": "hurl-asserts-8",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-asserts",
+  "title": "Certificate assertion",
+  "command": "[Asserts]\ncertificate \"Subject\" contains \"example.com\"",
+  "description": "Assert SSL certificate fields."
+}

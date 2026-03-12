@@ -1,0 +1,8 @@
+{
+  "id": "httpie-output-14",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-output",
+  "title": "Quiet mode",
+  "command": "http --quiet POST https://api.example.com/webhook payload=data",
+  "description": "Suppress all output except errors (for fire-and-forget requests)."
+}

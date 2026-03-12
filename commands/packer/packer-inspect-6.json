@@ -1,0 +1,8 @@
+{
+  "id": "packer-inspect-6",
+  "categoryId": "packer",
+  "subcategoryId": "packer-inspect",
+  "title": "Format recursively",
+  "command": "packer fmt -recursive .",
+  "description": "Format templates in all subdirectories."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "bun-version",
+  "categoryId": "bun",
+  "subcategoryId": "bun-tools",
+  "title": "Show Version",
+  "command": "bun --version",
+  "description": "Display Bun version",
+  "tags": ["version", "info"]
+}

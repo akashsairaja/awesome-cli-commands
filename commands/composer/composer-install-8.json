@@ -1,0 +1,8 @@
+{
+  "id": "composer-install-8",
+  "categoryId": "composer",
+  "subcategoryId": "composer-install",
+  "title": "Install dry run",
+  "command": "composer install --dry-run",
+  "description": "Simulate install without changes."
+}

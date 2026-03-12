@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-install-3",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-install",
+  "title": "Check installation",
+  "command": "mkcert -help",
+  "description": "Verify mkcert is installed."
+}

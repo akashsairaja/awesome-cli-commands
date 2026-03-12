@@ -1,0 +1,8 @@
+{
+  "id": "httpie-auth-4",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-auth",
+  "title": "Digest auth",
+  "command": "http --auth-type=digest -a user:pass https://api.example.com",
+  "description": "Use Digest authentication."
+}

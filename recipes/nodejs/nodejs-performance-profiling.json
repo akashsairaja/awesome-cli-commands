@@ -1,0 +1,53 @@
+{
+  "id": "nodejs-performance-profiling",
+  "stackId": "nodejs",
+  "name": "CPU Profiling with --prof and clinic.js",
+  "description": "Profile Node.js CPU usage to find performance bottlenecks using built-in V8 profiler and clinic.js flame charts.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "tags": ["performance", "profiling", "cpu", "flame-chart", "optimization"],
+  "prerequisites": ["Node.js installed", "npm install -g clinic (for clinic.js)"],
+  "steps": [
+    {
+      "title": "Profile with the built-in V8 profiler",
+      "description": "Start Node.js with the --prof flag to generate a V8 CPU profile log file.",
+      "command": "node --prof app.js",
+      "tip": "Run your workload against the app while profiling. The log is written when the process exits."
+    },
+    {
+      "title": "Process the V8 profile log",
+      "description": "Convert the raw V8 log into a human-readable summary showing where CPU time was spent.",
+      "command": "node --prof-process isolate-*.log > profile.txt"
+    },
+    {
+      "title": "Review the profile results",
+      "description": "Examine the processed profile to identify hot functions and optimization opportunities.",
+      "command": "# Look at the 'Summary' section first:\nhead -50 profile.txt\n\n# Then check 'Bottom up (heavy) profile' for hot functions:\ngrep -A 30 'Bottom up' profile.txt | head -40",
+      "tip": "Focus on the 'ticks' column. Functions with the most ticks are consuming the most CPU time."
+    },
+    {
+      "title": "Use clinic.js flame for visual profiling",
+      "description": "Generate an interactive flame chart to visually identify CPU bottlenecks in your application.",
+      "command": "clinic flame -- node app.js",
+      "tip": "Wider bars in the flame chart mean more CPU time. Look for unexpectedly wide bars in your own code (not Node internals)."
+    },
+    {
+      "title": "Profile with Chrome DevTools Performance tab",
+      "description": "Use the DevTools Performance tab for interactive CPU profiling with timeline and call tree views.",
+      "command": "node --inspect app.js\n# In Chrome DevTools:\n# 1. Go to Performance tab\n# 2. Click Record\n# 3. Run your workload\n# 4. Stop recording and analyze"
+    }
+  ],
+  "fullScript": "#!/bin/bash\nset -euo pipefail\n\n# Node.js CPU Profiling Script\n\nAPP_FILE=\"${1:-app.js}\"\nDURATION=\"${2:-30}\"\n\necho \"==> Profiling ${APP_FILE} for ${DURATION} seconds...\"\n\n# Clean up old profiles\nrm -f isolate-*.log profile.txt\n\necho \"==> Method 1: V8 --prof profiling...\"\ntimeout ${DURATION} node --prof \"${APP_FILE}\" 2>/dev/null || true\n\nif ls isolate-*.log 1>/dev/null 2>&1; then\n  echo \"==> Processing V8 profile log...\"\n  node --prof-process isolate-*.log > profile.txt\n  echo \"\"\n  echo \"==> Profile Summary:\"\n  head -30 profile.txt\n  echo \"\"\n  echo \"Full profile saved to: profile.txt\"\nelse\n  echo \"No V8 profile log generated.\"\nfi\n\necho \"\"\necho \"==> Method 2: clinic.js (if installed)...\"\nif command -v clinic &>/dev/null; then\n  echo \"Run: clinic flame -- node ${APP_FILE}\"\n  echo \"Run: clinic doctor -- node ${APP_FILE}\"\nelse\n  echo \"clinic.js not installed. Install with: npm install -g clinic\"\nfi\n\necho \"\"\necho \"==> Method 3: Chrome DevTools profiling...\"\necho \"Run: node --inspect ${APP_FILE}\"\necho \"Open: chrome://inspect -> Performance tab -> Record\"",
+  "faq": [
+    {
+      "question": "What is the difference between --prof and --inspect profiling?",
+      "answer": "The --prof flag generates a low-overhead statistical profile suitable for production-like environments. Chrome DevTools profiling via --inspect provides more detail and interactivity but has higher overhead."
+    },
+    {
+      "question": "How do I profile a production server without downtime?",
+      "answer": "Use the --inspect flag and attach remotely, or use process._debugProcess(pid) to enable debugging on a running process. Alternatively, use 0x or clinic.js with a canary instance."
+    }
+  ],
+  "relatedRecipes": ["nodejs-memory-leak-detection", "nodejs-cluster-scaling"],
+  "lastUpdated": "2026-03-11"
+}

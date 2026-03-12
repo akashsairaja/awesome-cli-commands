@@ -1,0 +1,8 @@
+{
+  "id": "hf-41",
+  "categoryId": "huggingface",
+  "subcategoryId": "hf-api",
+  "title": "Create repo",
+  "command": "huggingface-cli repo create my-new-model --type model",
+  "description": "Create a new model repository on the Hub."
+}

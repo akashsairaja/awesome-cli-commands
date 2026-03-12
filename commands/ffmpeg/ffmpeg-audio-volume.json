@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-audio-volume",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-audio",
+  "title": "Adjust volume",
+  "command": "ffmpeg -i input.mp3 -af \"volume=1.5\" output.mp3",
+  "description": "Increase or decrease audio volume",
+  "tags": ["audio", "volume", "amplify"]
+}

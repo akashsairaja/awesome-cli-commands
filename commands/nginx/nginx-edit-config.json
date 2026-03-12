@@ -1,0 +1,9 @@
+{
+  "id": "nginx-edit-config",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-config",
+  "title": "Edit main config",
+  "command": "sudo nano /etc/nginx/nginx.conf",
+  "description": "Edit main Nginx configuration",
+  "tags": ["edit", "config", "main"]
+}

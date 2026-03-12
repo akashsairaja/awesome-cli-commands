@@ -1,0 +1,8 @@
+{
+  "id": "sops-encrypt-9",
+  "categoryId": "sops",
+  "subcategoryId": "sops-encrypt",
+  "title": "Exclude keys from encryption",
+  "command": "sops -e --unencrypted-regex '^(metadata|description)$' config.yaml",
+  "description": "Leave matching keys unencrypted."
+}

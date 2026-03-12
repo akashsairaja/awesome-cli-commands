@@ -1,0 +1,8 @@
+{
+  "id": "git-103",
+  "categoryId": "git",
+  "subcategoryId": "bisect",
+  "title": "Reset bisect",
+  "command": "git bisect reset",
+  "description": "End bisect and return to original HEAD."
+}

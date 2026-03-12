@@ -1,0 +1,8 @@
+{
+  "id": "vault-operator-3",
+  "categoryId": "vault",
+  "subcategoryId": "vault-operator",
+  "title": "Seal Vault",
+  "command": "vault operator seal",
+  "description": "Seal Vault (emergency)."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-logging-read",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-logging",
+  "title": "Read Logs",
+  "command": "gcloud logging read \"resource.type=gce_instance\" --limit=50 --format=json",
+  "description": "Read log entries with a filter expression",
+  "tags": ["logging", "read", "filter"]
+}

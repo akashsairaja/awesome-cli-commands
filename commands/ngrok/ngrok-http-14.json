@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-http-14",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-http",
+  "title": "IP restriction",
+  "command": "ngrok http --allow-cidr=192.168.1.0/24 --deny-cidr=0.0.0.0/0 3000",
+  "description": "Restrict tunnel access by IP range."
+}

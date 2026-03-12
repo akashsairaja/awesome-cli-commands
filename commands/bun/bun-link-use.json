@@ -1,0 +1,9 @@
+{
+  "id": "bun-link-use",
+  "categoryId": "bun",
+  "subcategoryId": "bun-tools",
+  "title": "Use Linked Package",
+  "command": "bun link <package>",
+  "description": "Use a linked package",
+  "tags": ["link", "use", "local"]
+}

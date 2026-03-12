@@ -1,0 +1,8 @@
+{
+  "id": "mongo-conn-4",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-connection",
+  "title": "Execute and exit",
+  "command": "mongosh --eval \"db.version()\" mydb",
+  "description": "Run command and exit."
+}

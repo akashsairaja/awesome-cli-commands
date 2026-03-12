@@ -1,0 +1,8 @@
+{
+  "id": "temporal-namespace-6",
+  "categoryId": "temporal",
+  "subcategoryId": "namespace",
+  "title": "Update namespace retention",
+  "command": "temporal operator namespace update --namespace prod --retention 336h",
+  "description": "Update retention period to 14 days."
+}

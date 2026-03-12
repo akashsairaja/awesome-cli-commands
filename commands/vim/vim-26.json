@@ -1,0 +1,8 @@
+{
+  "id": "vim-26",
+  "categoryId": "vim",
+  "subcategoryId": "buffers",
+  "title": "Next/previous buffer",
+  "command": ":bn / :bp",
+  "description": "Switch buffers."
+}

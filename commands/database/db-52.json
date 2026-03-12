@@ -1,0 +1,8 @@
+{
+  "id": "db-52",
+  "categoryId": "database",
+  "subcategoryId": "mongodb",
+  "title": "Insert document",
+  "command": "db.collection.insertOne({ name: 'value', age: 25 })",
+  "description": "Insert a single document into a collection."
+}

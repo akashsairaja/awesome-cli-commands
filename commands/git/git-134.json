@@ -1,0 +1,8 @@
+{
+  "id": "git-134",
+  "categoryId": "git",
+  "subcategoryId": "cleanup",
+  "title": "Reset to commit",
+  "command": "git reset --hard <commit>",
+  "description": "Reset HEAD, index, and working tree."
+}

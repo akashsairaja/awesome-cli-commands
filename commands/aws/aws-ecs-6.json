@@ -1,0 +1,8 @@
+{
+  "id": "aws-ecs-6",
+  "categoryId": "aws",
+  "subcategoryId": "ecs",
+  "title": "List tasks",
+  "command": "aws ecs list-tasks --cluster mycluster --service myservice",
+  "description": "List running tasks."
+}

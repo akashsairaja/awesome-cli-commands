@@ -1,0 +1,8 @@
+{
+  "id": "node-debug-4",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-debug",
+  "title": "Debug module logs",
+  "command": "NODE_DEBUG=http,net node app.js",
+  "description": "Enable debug logs for core modules."
+}

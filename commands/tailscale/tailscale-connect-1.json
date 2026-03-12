@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-connect-1",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-connect",
+  "title": "Connect to tailnet",
+  "command": "tailscale up",
+  "description": "Connect to your Tailscale network."
+}

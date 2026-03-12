@@ -1,0 +1,8 @@
+{
+  "id": "snyk-code-1",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-code",
+  "title": "Test code",
+  "command": "snyk code test",
+  "description": "Run static code analysis (SAST)."
+}

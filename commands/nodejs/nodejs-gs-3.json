@@ -1,0 +1,8 @@
+{
+  "id": "nodejs-gs-3",
+  "title": "Check npm version",
+  "command": "npm --version",
+  "description": "Display installed npm version",
+  "categoryId": "nodejs",
+  "subcategoryId": "getting-started"
+}

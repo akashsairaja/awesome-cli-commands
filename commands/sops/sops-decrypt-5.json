@@ -1,0 +1,8 @@
+{
+  "id": "sops-decrypt-5",
+  "categoryId": "sops",
+  "subcategoryId": "sops-decrypt",
+  "title": "Decrypt and run as env vars",
+  "command": "sops exec-env secrets.enc.yaml 'my-app --start'",
+  "description": "Decrypt and pass as environment to command."
+}

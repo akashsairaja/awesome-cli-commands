@@ -1,0 +1,9 @@
+{
+  "id": "gradle-dependencies-config",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-dependencies",
+  "title": "Dependencies by Configuration",
+  "command": "./gradlew dependencies --configuration compileClasspath",
+  "description": "Show dependencies for specific configuration",
+  "tags": ["dependencies", "configuration", "filter"]
+}

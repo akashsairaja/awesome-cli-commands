@@ -1,0 +1,8 @@
+{
+  "id": "tf-mod-2",
+  "categoryId": "terraform",
+  "subcategoryId": "modules",
+  "title": "Format recursive",
+  "command": "terraform fmt -recursive",
+  "description": "Format all .tf files recursively."
+}

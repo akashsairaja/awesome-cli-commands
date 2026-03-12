@@ -1,0 +1,8 @@
+{
+  "id": "ssh-16",
+  "categoryId": "sshgpg",
+  "subcategoryId": "tunnels",
+  "title": "Remote port forward",
+  "command": "ssh -R 8080:localhost:80 user@host",
+  "description": "Forward remote port to local."
+}

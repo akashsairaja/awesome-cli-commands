@@ -1,0 +1,8 @@
+{
+  "id": "brew-42",
+  "categoryId": "homebrew",
+  "subcategoryId": "cleanup",
+  "title": "Update Homebrew",
+  "command": "brew update",
+  "description": "Update Homebrew formulae database."
+}

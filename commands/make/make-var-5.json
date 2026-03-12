@@ -1,0 +1,8 @@
+{
+  "id": "make-var-5",
+  "categoryId": "make",
+  "subcategoryId": "make-variables",
+  "title": "Environment export",
+  "command": "export PATH := $(PATH):./bin",
+  "description": "Export variable to shell."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "git-97",
+  "categoryId": "git",
+  "subcategoryId": "reflog",
+  "title": "Recover deleted branch",
+  "command": "git checkout -b <branch> <reflog-entry>",
+  "description": "Restore branch from reflog entry."
+}

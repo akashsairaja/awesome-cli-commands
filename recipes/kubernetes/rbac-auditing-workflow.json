@@ -1,0 +1,53 @@
+{
+  "id": "rbac-auditing-workflow",
+  "stackId": "kubernetes",
+  "name": "RBAC Auditing Workflow",
+  "description": "Audit Role-Based Access Control (RBAC) permissions to identify overly permissive roles and verify least-privilege access.",
+  "difficulty": "advanced",
+  "timeMinutes": 15,
+  "trending": false,
+  "tags": ["rbac", "security", "audit", "permissions"],
+  "prerequisites": ["kubectl configured", "Cluster admin access"],
+  "steps": [
+    {
+      "title": "List all ClusterRoles and their rules",
+      "description": "View all cluster-level roles and what permissions they grant.",
+      "command": "kubectl get clusterroles -o custom-columns='NAME:.metadata.name,RULES:.rules[*].verbs'"
+    },
+    {
+      "title": "Check what a specific user or service account can do",
+      "description": "Test whether a subject has permission to perform specific actions.",
+      "command": "kubectl auth can-i --list --as=system:serviceaccount:default:my-sa",
+      "tip": "Use --as to impersonate any user or service account to audit their effective permissions."
+    },
+    {
+      "title": "Find all RoleBindings for a specific subject",
+      "description": "See which roles are bound to a specific user or service account.",
+      "command": "kubectl get rolebindings,clusterrolebindings --all-namespaces -o json | jq -r '.items[] | select(.subjects[]?.name==\"my-sa\") | .metadata.name + \" (\" + .metadata.namespace + \")\"'"
+    },
+    {
+      "title": "Identify cluster-admin bindings",
+      "description": "Find all subjects that have cluster-admin access, which should be minimized.",
+      "command": "kubectl get clusterrolebindings -o json | jq -r '.items[] | select(.roleRef.name==\"cluster-admin\") | .metadata.name + \": \" + (.subjects[]? | .kind + \"/\" + .name)'",
+      "warning": "Any subject with cluster-admin has full unrestricted access. Minimize these bindings."
+    },
+    {
+      "title": "Test a specific permission",
+      "description": "Check if the current user can perform a specific action.",
+      "command": "kubectl auth can-i create deployments --namespace=production"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# RBAC Auditing Workflow\nset -euo pipefail\n\necho \"=== Cluster-Admin Bindings ===\"\nkubectl get clusterrolebindings -o json | jq -r '.items[] | select(.roleRef.name==\"cluster-admin\") | .metadata.name + \": \" + (.subjects[]? | .kind + \"/\" + .name)' 2>/dev/null\n\necho \"\"\necho \"=== Service Accounts with Secrets ===\"\nkubectl get serviceaccounts --all-namespaces -o custom-columns='NAMESPACE:.metadata.namespace,NAME:.metadata.name,SECRETS:.secrets[*].name' | head -20\n\necho \"\"\necho \"=== Current User Permissions ===\"\nkubectl auth can-i --list | head -20\n\necho \"\"\necho \"=== Audit Commands ===\"\necho \"Check user:    kubectl auth can-i --list --as=<user>\"\necho \"Check SA:      kubectl auth can-i --list --as=system:serviceaccount:<ns>:<sa>\"\necho \"Find bindings: kubectl get rolebindings,clusterrolebindings --all-namespaces\"",
+  "faq": [
+    {
+      "question": "What is the principle of least privilege for RBAC?",
+      "answer": "Grant only the minimum permissions needed. Use namespace-scoped Roles instead of ClusterRoles when possible, and avoid wildcard (*) permissions on verbs or resources."
+    },
+    {
+      "question": "How do I revoke permissions?",
+      "answer": "Delete the RoleBinding or ClusterRoleBinding: 'kubectl delete rolebinding <name> -n <namespace>'. The role itself can remain for reuse."
+    }
+  ],
+  "relatedRecipes": ["secret-rotation-automation", "namespace-management"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "db-48",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Create index",
+  "command": "CREATE INDEX idx_name ON tablename (column);",
+  "description": "Create an index on a table column."
+}

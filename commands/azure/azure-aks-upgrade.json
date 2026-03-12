@@ -1,0 +1,9 @@
+{
+  "id": "azure-aks-upgrade",
+  "categoryId": "azure",
+  "subcategoryId": "azure-aks",
+  "title": "Upgrade AKS Cluster",
+  "command": "az aks upgrade --resource-group <rg> --name <cluster> --kubernetes-version <version>",
+  "description": "Upgrade Kubernetes version",
+  "tags": ["aks", "upgrade", "version"]
+}

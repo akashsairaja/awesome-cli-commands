@@ -1,0 +1,8 @@
+{
+  "id": "ts-gs-2",
+  "title": "Check TypeScript version",
+  "command": "tsc --version",
+  "description": "Verify TypeScript installation and display compiler version",
+  "categoryId": "typescript",
+  "subcategoryId": "getting-started"
+}

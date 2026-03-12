@@ -1,0 +1,8 @@
+{
+  "id": "db-38",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Show table status",
+  "command": "SHOW TABLE STATUS;",
+  "description": "Show detailed info for all tables."
+}

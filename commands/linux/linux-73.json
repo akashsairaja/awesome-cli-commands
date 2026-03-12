@@ -1,0 +1,8 @@
+{
+  "id": "linux-73",
+  "categoryId": "linux",
+  "subcategoryId": "text",
+  "title": "Show last N lines",
+  "command": "tail -n 100 /var/log/syslog",
+  "description": "Display the last 100 lines of a log file."
+}

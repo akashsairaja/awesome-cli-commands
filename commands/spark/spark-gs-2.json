@@ -1,0 +1,8 @@
+{
+  "id": "spark-gs-2",
+  "title": "Check Spark version",
+  "command": "spark-shell --version",
+  "description": "Display the installed Apache Spark version",
+  "categoryId": "spark",
+  "subcategoryId": "getting-started"
+}

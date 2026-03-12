@@ -1,0 +1,8 @@
+{
+  "id": "sops-keys-7",
+  "categoryId": "sops",
+  "subcategoryId": "sops-keys",
+  "title": "Set SOPS_AGE_KEY_FILE",
+  "command": "export SOPS_AGE_KEY_FILE=~/.config/sops/age/keys.txt",
+  "description": "Set age key file path via env var."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ps-7",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-files",
+  "title": "Write to file",
+  "command": "Set-Content -Path file.txt -Value \"content\"",
+  "description": "Write content to file."
+}

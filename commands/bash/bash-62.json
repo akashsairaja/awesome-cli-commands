@@ -1,0 +1,8 @@
+{
+  "id": "bash-62",
+  "categoryId": "bash",
+  "subcategoryId": "arrays",
+  "title": "Last element",
+  "command": "echo \"${arr[-1]}\"",
+  "description": "Get last array element (Bash 4.2+)."
+}

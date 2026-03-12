@@ -1,0 +1,9 @@
+{
+  "id": "azure-vm-delete",
+  "categoryId": "azure",
+  "subcategoryId": "azure-compute",
+  "title": "Delete VM",
+  "command": "az vm delete --resource-group <rg> --name <vm-name> --yes",
+  "description": "Delete a virtual machine",
+  "tags": ["vm", "delete", "cleanup"]
+}

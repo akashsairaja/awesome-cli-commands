@@ -1,0 +1,8 @@
+{
+  "id": "nats-gs-2",
+  "title": "Install NATS CLI",
+  "command": "brew install nats-io/nats-tools/nats",
+  "description": "Install the NATS CLI tool using Homebrew",
+  "categoryId": "nats",
+  "subcategoryId": "getting-started"
+}

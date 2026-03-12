@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-install-5",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-install",
+  "title": "View CA certificate",
+  "command": "openssl x509 -in \"$(mkcert -CAROOT)/rootCA.pem\" -text -noout",
+  "description": "Inspect the CA certificate details."
+}

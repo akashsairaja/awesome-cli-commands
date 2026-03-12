@@ -1,0 +1,8 @@
+{
+  "id": "claude-20",
+  "categoryId": "claudecode",
+  "subcategoryId": "permissions",
+  "title": "Bypass permissions mode",
+  "command": "claude --permission-mode bypassPermissions",
+  "description": "Bypass permission prompts (use with caution)."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ssh-4",
+  "categoryId": "sshgpg",
+  "subcategoryId": "keys",
+  "title": "List keys in agent",
+  "command": "ssh-add -l",
+  "description": "List keys loaded in agent."
+}

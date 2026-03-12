@@ -1,0 +1,8 @@
+{
+  "id": "nuget-gs-1",
+  "title": "Install NuGet CLI (macOS)",
+  "command": "brew install nuget",
+  "description": "Install the NuGet CLI using Homebrew on macOS",
+  "categoryId": "nuget",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "apt-12",
+  "categoryId": "ubuntu",
+  "subcategoryId": "systemd-services",
+  "title": "Check service status",
+  "command": "sudo systemctl status <service>",
+  "description": "Show service status."
+}

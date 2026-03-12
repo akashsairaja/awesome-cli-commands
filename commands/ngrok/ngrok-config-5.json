@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-config-5",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-config",
+  "title": "Start all tunnels",
+  "command": "ngrok start --all",
+  "description": "Start all tunnels from config."
+}

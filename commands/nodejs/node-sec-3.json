@@ -1,0 +1,8 @@
+{
+  "id": "node-sec-3",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-security",
+  "title": "Allow file writes",
+  "command": "node --permission --allow-fs-write=/tmp app.js",
+  "description": "Allow writing to /tmp only."
+}

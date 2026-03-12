@@ -1,0 +1,8 @@
+{
+  "id": "ps-29",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-system",
+  "title": "Get environment variable",
+  "command": "$env:PATH",
+  "description": "Get environment variable value."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ollama-7",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-models",
+  "title": "List running models",
+  "command": "ollama ps",
+  "description": "Show models currently loaded in memory."
+}

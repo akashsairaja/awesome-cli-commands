@@ -1,0 +1,63 @@
+{
+  "id": "nodejs-docker-optimization",
+  "stackId": "nodejs",
+  "name": "Optimize Node.js Docker Images",
+  "description": "Build minimal, secure, and fast Node.js Docker images for production using multi-stage builds and best practices.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "tags": ["docker", "optimization", "production", "multi-stage", "container"],
+  "prerequisites": ["Docker installed", "Existing Node.js project with package.json"],
+  "steps": [
+    {
+      "title": "Create an optimized multi-stage Dockerfile",
+      "description": "Use multi-stage builds to separate the build environment from the production runtime, reducing final image size.",
+      "command": "cat <<'EOF' > Dockerfile\n# Stage 1: Install dependencies\nFROM node:20-alpine AS deps\nWORKDIR /app\nCOPY package.json package-lock.json ./\nRUN npm ci --only=production\n\n# Stage 2: Build (if needed)\nFROM node:20-alpine AS builder\nWORKDIR /app\nCOPY package.json package-lock.json ./\nRUN npm ci\nCOPY . .\nRUN npm run build\n\n# Stage 3: Production\nFROM node:20-alpine AS runner\nWORKDIR /app\nENV NODE_ENV=production\nRUN addgroup -g 1001 -S nodejs && adduser -S nodejs -u 1001\nCOPY --from=deps /app/node_modules ./node_modules\nCOPY --from=builder /app/dist ./dist\nCOPY package.json ./\nUSER nodejs\nEXPOSE 3000\nCMD [\"node\", \"dist/index.js\"]\nEOF",
+      "tip": "Use alpine images for smaller size. The multi-stage build ensures dev dependencies and source code are not in the final image."
+    },
+    {
+      "title": "Create .dockerignore to exclude unnecessary files",
+      "description": "Prevent unnecessary files from being copied into the Docker build context, improving build speed and security.",
+      "command": "cat <<'EOF' > .dockerignore\nnode_modules\nnpm-debug.log\n.git\n.gitignore\n.env\n.env.*\nDockerfile\ndocker-compose*.yml\n*.md\ntests/\ncoverage/\n.vscode/\n.idea/\nEOF"
+    },
+    {
+      "title": "Use npm ci instead of npm install",
+      "description": "npm ci provides faster, reproducible installs by using the exact versions from package-lock.json.",
+      "command": "# In Dockerfile:\nRUN npm ci --only=production\n\n# Not:\n# RUN npm install",
+      "tip": "npm ci deletes node_modules before installing, ensuring a clean state. It also fails if package-lock.json is out of sync."
+    },
+    {
+      "title": "Run as non-root user",
+      "description": "Create and switch to a non-root user for security. Never run your application as root in a container.",
+      "command": "# In Dockerfile:\nRUN addgroup -g 1001 -S nodejs && adduser -S nodejs -u 1001\nUSER nodejs",
+      "warning": "If your app writes to the filesystem, ensure the nodejs user has write permissions to those directories."
+    },
+    {
+      "title": "Build and verify image size",
+      "description": "Build the image and check that the final size is reasonable (typically 100-200MB for alpine Node.js apps).",
+      "command": "docker build -t my-app:latest . && docker images my-app"
+    },
+    {
+      "title": "Add a health check",
+      "description": "Add a HEALTHCHECK instruction so orchestrators can monitor container health.",
+      "command": "# Add to Dockerfile before CMD:\nHEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \\\n  CMD wget --no-verbose --tries=1 --spider http://localhost:3000/health || exit 1",
+      "tip": "Use wget instead of curl in alpine images since wget is included by default but curl is not."
+    }
+  ],
+  "fullScript": "#!/bin/bash\nset -euo pipefail\n\n# Node.js Docker Optimization Script\n\necho \"==> Creating optimized Dockerfile...\"\ncat > Dockerfile <<'DOCKERFILE'\n# Stage 1: Dependencies\nFROM node:20-alpine AS deps\nWORKDIR /app\nCOPY package.json package-lock.json ./\nRUN npm ci --only=production && npm cache clean --force\n\n# Stage 2: Build\nFROM node:20-alpine AS builder\nWORKDIR /app\nCOPY package.json package-lock.json ./\nRUN npm ci\nCOPY . .\nRUN npm run build\n\n# Stage 3: Production\nFROM node:20-alpine AS runner\nWORKDIR /app\nENV NODE_ENV=production\n\nRUN addgroup -g 1001 -S nodejs && adduser -S nodejs -u 1001\n\nCOPY --from=deps --chown=nodejs:nodejs /app/node_modules ./node_modules\nCOPY --from=builder --chown=nodejs:nodejs /app/dist ./dist\nCOPY --chown=nodejs:nodejs package.json ./\n\nUSER nodejs\nEXPOSE 3000\n\nHEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3   CMD wget --no-verbose --tries=1 --spider http://localhost:3000/health || exit 1\n\nCMD [\"node\", \"dist/index.js\"]\nDOCKERFILE\n\necho \"==> Creating .dockerignore...\"\ncat > .dockerignore <<'EOF'\nnode_modules\nnpm-debug.log\n.git\n.gitignore\n.env\n.env.*\nDockerfile\ndocker-compose*.yml\n*.md\ntests/\ncoverage/\n.vscode/\n.idea/\nEOF\n\necho \"==> Building image...\"\ndocker build -t my-app:latest .\n\necho \"\"\necho \"==> Image size:\"\ndocker images my-app:latest --format \"table {{.Repository}}\\t{{.Tag}}\\t{{.Size}}\"\n\necho \"\"\necho \"==> Image layers:\"\ndocker history my-app:latest --format \"table {{.CreatedBy}}\\t{{.Size}}\" | head -10",
+  "faq": [
+    {
+      "question": "Why use alpine instead of the default Node image?",
+      "answer": "Alpine images are about 50MB vs 350MB for Debian-based images. They have a smaller attack surface with fewer pre-installed packages. The tradeoff is that some native npm packages may need additional build tools."
+    },
+    {
+      "question": "Should I use distroless images instead of alpine?",
+      "answer": "Distroless images (gcr.io/distroless/nodejs) are even smaller and have no shell, which improves security. However, they make debugging harder since you cannot exec into the container. Alpine is a good middle ground."
+    },
+    {
+      "question": "How do I handle native npm packages in alpine?",
+      "answer": "Add build dependencies in the deps stage: RUN apk add --no-cache python3 make g++ before npm ci. These tools are only in the build stage, not the final image."
+    }
+  ],
+  "relatedRecipes": ["nodejs-cluster-scaling", "nodejs-env-management"],
+  "lastUpdated": "2026-03-11"
+}

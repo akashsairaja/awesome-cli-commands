@@ -1,0 +1,8 @@
+{
+  "id": "docker-59",
+  "categoryId": "docker",
+  "subcategoryId": "volumes",
+  "title": "Run with volume mount",
+  "command": "docker run -v <volume>:/app/data <image>",
+  "description": "Mount named volume to container."
+}

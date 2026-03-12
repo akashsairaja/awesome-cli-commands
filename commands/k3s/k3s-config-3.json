@@ -1,0 +1,8 @@
+{
+  "id": "k3s-config-3",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-config",
+  "title": "Enable secrets encryption",
+  "command": "curl -sfL https://get.k3s.io | sh -s - --secrets-encryption",
+  "description": "Install with secrets encryption enabled."
+}

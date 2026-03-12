@@ -1,0 +1,8 @@
+{
+  "id": "db-46",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Check tables",
+  "command": "mysqlcheck -u root -p --all-databases",
+  "description": "Check all tables in all databases for errors."
+}

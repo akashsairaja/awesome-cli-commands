@@ -1,0 +1,8 @@
+{
+  "id": "docker-115",
+  "categoryId": "docker",
+  "subcategoryId": "system",
+  "title": "Logout from registry",
+  "command": "docker logout <registry>",
+  "description": "Log out from Docker registry."
+}

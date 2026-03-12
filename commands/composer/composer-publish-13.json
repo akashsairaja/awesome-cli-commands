@@ -1,0 +1,8 @@
+{
+  "id": "composer-publish-13",
+  "categoryId": "composer",
+  "subcategoryId": "composer-publish",
+  "title": "Self update",
+  "command": "composer self-update",
+  "description": "Update Composer itself to latest."
+}

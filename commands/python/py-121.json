@@ -1,0 +1,8 @@
+{
+  "id": "py-121",
+  "categoryId": "python",
+  "subcategoryId": "python-mypy",
+  "title": "Check directory",
+  "command": "mypy src/",
+  "description": "Type check all files in a directory."
+}

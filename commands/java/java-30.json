@@ -1,0 +1,8 @@
+{
+  "id": "java-30",
+  "categoryId": "java",
+  "subcategoryId": "java-tools",
+  "title": "Create runtime image (jlink)",
+  "command": "jlink --module-path $JAVA_HOME/jmods:mods --add-modules com.myapp --output runtime",
+  "description": "Create custom minimal JRE with only required modules."
+}

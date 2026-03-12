@@ -1,0 +1,8 @@
+{
+  "id": "starship-presets-10",
+  "categoryId": "starship",
+  "subcategoryId": "starship-presets",
+  "title": "No Nerd Font preset",
+  "command": "starship preset no-nerd-font -o ~/.config/starship.toml",
+  "description": "Apply preset without Nerd Font dependency."
+}

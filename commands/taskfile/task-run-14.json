@@ -1,0 +1,8 @@
+{
+  "id": "task-run-14",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-run",
+  "title": "Pass CLI args",
+  "command": "task test -- -v --run TestFoo",
+  "description": "Pass arguments to the task via CLI_ARGS."
+}

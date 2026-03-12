@@ -1,0 +1,8 @@
+{
+  "id": "podman-pod-4",
+  "categoryId": "podman",
+  "subcategoryId": "podman-pod",
+  "title": "Generate Kubernetes YAML",
+  "command": "podman generate kube mypod > mypod.yaml",
+  "description": "Export pod as Kubernetes manifest."
+}

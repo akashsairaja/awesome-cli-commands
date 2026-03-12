@@ -1,0 +1,8 @@
+{
+  "id": "ps-81",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-remoting",
+  "title": "Exit remote session",
+  "command": "Exit-PSSession",
+  "description": "End interactive remote session."
+}

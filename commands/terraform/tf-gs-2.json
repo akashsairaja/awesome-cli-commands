@@ -1,0 +1,8 @@
+{
+  "id": "tf-gs-2",
+  "title": "Install Terraform (Windows)",
+  "command": "choco install terraform",
+  "description": "Install Terraform using Chocolatey on Windows",
+  "categoryId": "terraform",
+  "subcategoryId": "getting-started"
+}

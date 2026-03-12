@@ -1,0 +1,8 @@
+{
+  "id": "snyk-test-2",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-test",
+  "title": "Test with severity threshold",
+  "command": "snyk test --severity-threshold=high",
+  "description": "Only report high+ severity issues."
+}

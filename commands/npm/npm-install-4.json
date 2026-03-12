@@ -1,0 +1,8 @@
+{
+  "id": "npm-install-4",
+  "categoryId": "npm",
+  "subcategoryId": "npm-install",
+  "title": "Install exact version",
+  "command": "npm install <package>@1.2.3 --save-exact",
+  "description": "Install specific version without range prefix."
+}

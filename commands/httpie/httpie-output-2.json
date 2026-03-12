@@ -1,0 +1,8 @@
+{
+  "id": "httpie-output-2",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-output",
+  "title": "Body only",
+  "command": "http --body GET https://api.example.com",
+  "description": "Show only response body."
+}

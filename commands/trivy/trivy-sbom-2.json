@@ -1,0 +1,8 @@
+{
+  "id": "trivy-sbom-2",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-sbom",
+  "title": "Generate SPDX",
+  "command": "trivy image --format spdx-json -o sbom.spdx.json nginx:latest",
+  "description": "Generate SPDX SBOM."
+}

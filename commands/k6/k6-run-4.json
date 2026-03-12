@@ -1,0 +1,8 @@
+{
+  "id": "k6-run-4",
+  "categoryId": "k6",
+  "subcategoryId": "k6-run",
+  "title": "Run with environment",
+  "command": "k6 run -e BASE_URL=https://api.example.com script.js",
+  "description": "Run with environment variable."
+}

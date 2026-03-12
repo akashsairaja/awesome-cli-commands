@@ -1,0 +1,57 @@
+{
+  "id": "npm-publish-package",
+  "stackId": "npm",
+  "name": "Publish Packages to npm Registry",
+  "description": "Prepare, version, and publish npm packages to the public registry with proper metadata, access controls, and automated release workflows.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "tags": ["publish", "registry", "package", "release", "open-source"],
+  "prerequisites": ["npm account created at npmjs.com", "npm CLI authenticated with 'npm login'"],
+  "steps": [
+    {
+      "title": "Prepare package.json metadata",
+      "description": "Ensure your package has the required fields for publishing.",
+      "command": "npm pkg set name='@myorg/utils' description='Shared utility functions' main='dist/index.js' types='dist/index.d.ts' files='[\"dist\"]' license='MIT'",
+      "tip": "The 'files' field acts as a whitelist for published files. Only include dist/ to keep the package size small."
+    },
+    {
+      "title": "Preview what will be published",
+      "description": "Check exactly which files will be included in the package tarball.",
+      "command": "npm pack --dry-run"
+    },
+    {
+      "title": "Build and verify the package",
+      "description": "Compile the package and run tests before publishing.",
+      "command": "npm run build && npm test && npm pack",
+      "warning": "Always run your full test suite before publishing. A broken published version cannot be easily unpublished after 72 hours."
+    },
+    {
+      "title": "Publish the package",
+      "description": "Push the package to the npm registry.",
+      "command": "npm publish --access public",
+      "tip": "Scoped packages (@org/pkg) are private by default. Use --access public for open-source packages."
+    },
+    {
+      "title": "Verify the published package",
+      "description": "Confirm the package is live on the registry.",
+      "command": "npm view @myorg/utils versions --json && npm info @myorg/utils"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# npm Package Publish Workflow\nset -euo pipefail\n\necho \"=== Pre-Publish Checks ===\"\n\n# Verify npm auth\nnpm whoami || { echo \"Not logged in. Run 'npm login' first.\"; exit 1; }\n\n# Check for required fields\nfor field in name version description main license; do\n  value=$(npm pkg get \"$field\" 2>/dev/null | tr -d '\"')\n  if [ -z \"$value\" ] || [ \"$value\" = \"{}\" ]; then\n    echo \"Missing required field: $field\"\n    exit 1\n  fi\n  echo \"$field: $value\"\ndone\n\necho \"\"\necho \"=== Building ===\"\nnpm run build\n\necho \"\"\necho \"=== Running Tests ===\"\nnpm test\n\necho \"\"\necho \"=== Package Contents ===\"\nnpm pack --dry-run\n\necho \"\"\nread -p \"Publish this package? (y/n) \" -n 1 -r\necho\nif [[ $REPLY =~ ^[Yy]$ ]]; then\n  npm publish --access public\n  echo \"\"\n  PACKAGE_NAME=$(npm pkg get name | tr -d '\"')\n  echo \"Published! View at: https://www.npmjs.com/package/$PACKAGE_NAME\"\nfi",
+  "faq": [
+    {
+      "question": "How do I unpublish a package?",
+      "answer": "Use 'npm unpublish <package>@<version>' within 72 hours of publishing. After 72 hours, you can only deprecate versions with 'npm deprecate <package>@<version> \"message\"'. This policy prevents breaking downstream dependents."
+    },
+    {
+      "question": "What is the difference between files and .npmignore?",
+      "answer": "The 'files' field in package.json is a whitelist of files to include. .npmignore is a blacklist of files to exclude. Using 'files' is preferred because it is explicit and less error-prone than maintaining an ignore file."
+    },
+    {
+      "question": "How do I publish a scoped package for free?",
+      "answer": "Scoped packages (@org/name) default to restricted (private). Add --access public to 'npm publish' to make them public and free. You can also set 'publishConfig.access' to 'public' in package.json."
+    }
+  ],
+  "relatedRecipes": ["npm-version-management", "npm-workspace-setup"],
+  "lastUpdated": "2026-03-11"
+}

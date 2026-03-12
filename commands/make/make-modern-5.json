@@ -1,0 +1,8 @@
+{
+  "id": "make-modern-5",
+  "categoryId": "make",
+  "subcategoryId": "make-modern",
+  "title": "Colored output",
+  "command": "@echo \"\\033[32mBuild complete\\033[0m\"",
+  "description": "Print colored status messages."
+}

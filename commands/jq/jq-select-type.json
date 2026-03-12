@@ -1,0 +1,9 @@
+{
+  "id": "jq-select-type",
+  "categoryId": "jq",
+  "subcategoryId": "jq-filters",
+  "title": "Filter by type",
+  "command": "cat file.json | jq '.[] | select(type == \"string\")'",
+  "description": "Filter elements by type",
+  "tags": ["select", "type", "filter"]
+}

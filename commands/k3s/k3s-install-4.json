@@ -1,0 +1,8 @@
+{
+  "id": "k3s-install-4",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-install",
+  "title": "Uninstall k3s",
+  "command": "/usr/local/bin/k3s-uninstall.sh",
+  "description": "Completely remove k3s server."
+}

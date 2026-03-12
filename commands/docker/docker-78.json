@@ -1,0 +1,8 @@
+{
+  "id": "docker-78",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "Stop and remove volumes",
+  "command": "docker compose down -v",
+  "description": "Stop services and remove volumes."
+}

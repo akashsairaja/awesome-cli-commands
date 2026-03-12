@@ -1,0 +1,8 @@
+{
+  "id": "vim-53",
+  "categoryId": "vim",
+  "subcategoryId": "text-objects",
+  "title": "Yank inside paragraph",
+  "command": "yip",
+  "description": "Copy paragraph without surrounding blanks."
+}

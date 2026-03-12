@@ -1,0 +1,8 @@
+{
+  "id": "tf-gs-4",
+  "title": "Initialize Terraform project",
+  "command": "terraform init",
+  "description": "Initialize a working directory containing Terraform configuration files",
+  "categoryId": "terraform",
+  "subcategoryId": "getting-started"
+}

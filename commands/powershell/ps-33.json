@@ -1,0 +1,8 @@
+{
+  "id": "ps-33",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-network",
+  "title": "Test connection",
+  "command": "Test-NetConnection google.com -Port 443",
+  "description": "Test network connection to host:port."
+}

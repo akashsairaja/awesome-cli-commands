@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-certs-6",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-certs",
+  "title": "Multiple domains",
+  "command": "mkcert localhost 127.0.0.1 myapp.local api.local",
+  "description": "Certificate for multiple domains."
+}

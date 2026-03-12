@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-certs-15",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-certs",
+  "title": "Verify cert chain",
+  "command": "openssl verify -CAfile \"$(mkcert -CAROOT)/rootCA.pem\" localhost.pem",
+  "description": "Verify the cert was signed by local CA."
+}

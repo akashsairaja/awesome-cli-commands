@@ -1,0 +1,8 @@
+{
+  "id": "temporal-workflow-14",
+  "categoryId": "temporal",
+  "subcategoryId": "workflow",
+  "title": "Signal workflow",
+  "command": "temporal workflow signal --workflow-id my-workflow --name UpdateStatus --input '{\"status\":\"paused\"}'",
+  "description": "Send asynchronous signal to running workflow."
+}

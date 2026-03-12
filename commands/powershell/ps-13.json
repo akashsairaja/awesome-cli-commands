@@ -1,0 +1,8 @@
+{
+  "id": "ps-13",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-processes",
+  "title": "List processes",
+  "command": "Get-Process",
+  "description": "List all running processes."
+}

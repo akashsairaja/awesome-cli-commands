@@ -1,0 +1,8 @@
+{
+  "id": "bun-gs-1",
+  "title": "Install Bun (macOS/Linux)",
+  "command": "curl -fsSL https://bun.sh/install | bash",
+  "description": "Install Bun using the official installer script",
+  "categoryId": "bun",
+  "subcategoryId": "getting-started"
+}

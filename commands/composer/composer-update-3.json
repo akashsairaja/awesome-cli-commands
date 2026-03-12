@@ -1,0 +1,8 @@
+{
+  "id": "composer-update-3",
+  "categoryId": "composer",
+  "subcategoryId": "composer-update",
+  "title": "Show outdated",
+  "command": "composer outdated",
+  "description": "List outdated packages."
+}

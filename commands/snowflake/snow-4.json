@@ -1,0 +1,8 @@
+{
+  "id": "snow-4",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-connections",
+  "title": "Set default connection",
+  "command": "snow connection set-default <name>",
+  "description": "Set the default connection for commands."
+}

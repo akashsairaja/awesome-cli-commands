@@ -1,0 +1,9 @@
+{
+  "id": "redis-search-create",
+  "categoryId": "redis",
+  "subcategoryId": "redis-search",
+  "title": "Create search index",
+  "command": "FT.CREATE idx ON HASH PREFIX 1 doc: SCHEMA title TEXT",
+  "description": "Create full-text search index on hash with schema definition",
+  "tags": ["search", "index", "create", "redisearch"]
+}

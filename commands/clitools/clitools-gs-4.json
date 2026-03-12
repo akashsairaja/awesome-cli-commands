@@ -1,0 +1,8 @@
+{
+  "id": "clitools-gs-4",
+  "title": "Install fd (macOS)",
+  "command": "brew install fd",
+  "description": "Install fd modern find alternative using Homebrew on macOS",
+  "categoryId": "clitools",
+  "subcategoryId": "getting-started"
+}

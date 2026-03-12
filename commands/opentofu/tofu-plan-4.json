@@ -1,0 +1,8 @@
+{
+  "id": "tofu-plan-4",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-plan",
+  "title": "Destroy plan",
+  "command": "tofu plan -destroy",
+  "description": "Plan resource destruction."
+}

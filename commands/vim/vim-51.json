@@ -1,0 +1,8 @@
+{
+  "id": "vim-51",
+  "categoryId": "vim",
+  "subcategoryId": "text-objects",
+  "title": "Delete around word",
+  "command": "daw",
+  "description": "Delete word including surrounding space."
+}

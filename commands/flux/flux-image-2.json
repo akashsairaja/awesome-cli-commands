@@ -1,0 +1,8 @@
+{
+  "id": "flux-image-2",
+  "categoryId": "flux",
+  "subcategoryId": "flux-image",
+  "title": "Create image policy",
+  "command": "flux create image policy podinfo --image-ref=podinfo --select-semver='>=1.0.0'",
+  "description": "Create ImagePolicy for version selection."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "react-rn-4",
+  "categoryId": "react",
+  "subcategoryId": "react-native",
+  "title": "Run on iOS",
+  "command": "npx react-native run-ios",
+  "description": "Build and run on iOS simulator."
+}

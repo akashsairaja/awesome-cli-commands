@@ -1,0 +1,8 @@
+{
+  "id": "az-gs-2",
+  "title": "Install Azure CLI (Linux)",
+  "command": "curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash",
+  "description": "Install the Azure CLI on Debian/Ubuntu Linux using the install script",
+  "categoryId": "azure",
+  "subcategoryId": "getting-started"
+}

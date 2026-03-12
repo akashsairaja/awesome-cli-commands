@@ -1,0 +1,8 @@
+{
+  "id": "react-rn-7",
+  "categoryId": "react",
+  "subcategoryId": "react-native",
+  "title": "Doctor check",
+  "command": "npx react-native doctor",
+  "description": "Diagnose and fix common issues."
+}

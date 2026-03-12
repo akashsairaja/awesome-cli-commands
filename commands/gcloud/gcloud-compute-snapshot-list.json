@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-compute-snapshot-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-compute",
+  "title": "List Snapshots",
+  "command": "gcloud compute snapshots list",
+  "description": "List all disk snapshots in the project",
+  "tags": ["snapshot", "list", "backup"]
+}

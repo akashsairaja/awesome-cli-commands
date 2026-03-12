@@ -1,0 +1,8 @@
+{
+  "id": "ps-77",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-modules",
+  "title": "Get module commands",
+  "command": "Get-Command -Module ModuleName",
+  "description": "List commands in module."
+}

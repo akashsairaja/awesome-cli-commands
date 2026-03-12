@@ -1,0 +1,8 @@
+{
+  "id": "db-45",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Check server status",
+  "command": "mysqladmin -u root -p status",
+  "description": "Show server uptime, threads, and queries."
+}

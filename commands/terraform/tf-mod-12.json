@@ -1,0 +1,8 @@
+{
+  "id": "tf-mod-12",
+  "categoryId": "terraform",
+  "subcategoryId": "modules",
+  "title": "Pass variables",
+  "command": "terraform apply -var=\"instance_type=t3.micro\"",
+  "description": "Pass variable on command line."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "netlify-functions-build",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-functions",
+  "title": "Build functions",
+  "command": "netlify functions:build",
+  "description": "Build functions for deployment",
+  "tags": ["functions", "build"]
+}

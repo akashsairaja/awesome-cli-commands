@@ -1,0 +1,8 @@
+{
+  "id": "task-run-4",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-run",
+  "title": "List tasks",
+  "command": "task -l",
+  "description": "List all available tasks."
+}

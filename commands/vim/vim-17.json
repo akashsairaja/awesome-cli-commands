@@ -1,0 +1,8 @@
+{
+  "id": "vim-17",
+  "categoryId": "vim",
+  "subcategoryId": "search",
+  "title": "Search backward",
+  "command": "?pattern",
+  "description": "Search backward for pattern."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gh-release-view",
+  "categoryId": "github",
+  "subcategoryId": "gh-release",
+  "title": "View release",
+  "command": "gh release view <tag>",
+  "description": "View release details",
+  "tags": ["release", "view", "info"]
+}

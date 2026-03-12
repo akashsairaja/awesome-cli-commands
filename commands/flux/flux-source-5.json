@@ -1,0 +1,8 @@
+{
+  "id": "flux-source-5",
+  "categoryId": "flux",
+  "subcategoryId": "flux-source",
+  "title": "Create OCI source",
+  "command": "flux create source oci podinfo --url=oci://ghcr.io/stefanprodan/manifests/podinfo --tag=latest",
+  "description": "Create an OCI artifact source."
+}

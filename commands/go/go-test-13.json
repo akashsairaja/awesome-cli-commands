@@ -1,0 +1,8 @@
+{
+  "id": "go-test-13",
+  "categoryId": "go",
+  "subcategoryId": "go-test",
+  "title": "CPU profiling",
+  "command": "go test -cpuprofile=cpu.out -bench=.",
+  "description": "Generate CPU profile during benchmarks."
+}

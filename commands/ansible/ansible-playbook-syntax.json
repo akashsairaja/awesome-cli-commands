@@ -1,0 +1,9 @@
+{
+  "id": "ansible-playbook-syntax",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-playbook",
+  "title": "Syntax Check",
+  "command": "ansible-playbook playbook.yml --syntax-check",
+  "description": "Validate playbook syntax",
+  "tags": ["playbook", "syntax", "validate"]
+}

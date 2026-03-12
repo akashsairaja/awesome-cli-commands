@@ -1,0 +1,8 @@
+{
+  "id": "tmux-gs-1",
+  "title": "Install tmux (macOS)",
+  "command": "brew install tmux",
+  "description": "Install tmux terminal multiplexer using Homebrew on macOS",
+  "categoryId": "tmux",
+  "subcategoryId": "getting-started"
+}

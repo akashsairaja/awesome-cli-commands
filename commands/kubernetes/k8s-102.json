@@ -1,0 +1,8 @@
+{
+  "id": "k8s-102",
+  "categoryId": "kubernetes",
+  "subcategoryId": "storage",
+  "title": "List storage classes",
+  "command": "kubectl get storageclasses",
+  "description": "List available storage classes."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "docker-138",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "Copy files from service",
+  "command": "docker compose cp <service>:/path ./local",
+  "description": "Copy files between service container and local filesystem."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "prisma-db-push-accept-data-loss",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-db",
+  "title": "Push with data loss acceptance",
+  "command": "npx prisma db push --accept-data-loss",
+  "description": "Push schema changes that may result in data loss",
+  "tags": ["db", "push", "data-loss"]
+}

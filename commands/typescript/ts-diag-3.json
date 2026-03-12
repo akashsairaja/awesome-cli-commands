@@ -1,0 +1,8 @@
+{
+  "id": "ts-diag-3",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-diagnostics",
+  "title": "Generate performance trace",
+  "command": "tsc --generateTrace ./trace",
+  "description": "Create performance trace directory for analyzing slow compilation."
+}

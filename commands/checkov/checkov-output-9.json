@@ -1,0 +1,8 @@
+{
+  "id": "checkov-output-9",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-output",
+  "title": "Prisma Cloud integration",
+  "command": "checkov -d . --bc-api-key PRISMA_API_KEY::PRISMA_API_SECRET --repo-id org/repo",
+  "description": "Send results to Prisma Cloud."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "httpie-output-11",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-output",
+  "title": "Save output to file",
+  "command": "http -o response.json GET https://api.example.com/data",
+  "description": "Save response body to a specific file with -o/--output."
+}

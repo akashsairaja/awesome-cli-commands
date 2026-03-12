@@ -1,0 +1,8 @@
+{
+  "id": "snyk-fix-7",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-fix",
+  "title": "Get config value",
+  "command": "snyk config get api",
+  "description": "Read a Snyk CLI configuration value."
+}

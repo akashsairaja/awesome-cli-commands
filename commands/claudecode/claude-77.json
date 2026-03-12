@@ -1,0 +1,8 @@
+{
+  "id": "claude-77",
+  "categoryId": "claudecode",
+  "subcategoryId": "utilities",
+  "title": "Disable slash commands",
+  "command": "claude --disable-slash-commands",
+  "description": "Run without slash command support."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "vercel-blob-list",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-storage",
+  "title": "List blob files",
+  "command": "vercel blob list",
+  "description": "List all files in Blob storage",
+  "tags": ["blob", "storage", "list"]
+}

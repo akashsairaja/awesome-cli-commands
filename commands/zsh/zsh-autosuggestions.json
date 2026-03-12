@@ -1,0 +1,9 @@
+{
+  "id": "zsh-autosuggestions",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-plugins",
+  "title": "Install autosuggestions",
+  "command": "git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions",
+  "description": "Install zsh-autosuggestions plugin",
+  "tags": ["autosuggestions", "plugin", "install"]
+}

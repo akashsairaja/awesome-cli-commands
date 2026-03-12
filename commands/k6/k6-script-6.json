@@ -1,0 +1,8 @@
+{
+  "id": "k6-script-6",
+  "categoryId": "k6",
+  "subcategoryId": "k6-script",
+  "title": "Setup and teardown",
+  "command": "export function setup() {\n  const res = http.post(url + '/auth', JSON.stringify({ user: 'admin', pass: 'secret' }));\n  return { token: res.json('token') };\n}\n\nexport default function(data) {\n  http.get(url + '/api', { headers: { Authorization: `Bearer ${data.token}` } });\n}\n\nexport function teardown(data) {\n  // cleanup logic\n}",
+  "description": "Use setup/teardown for test lifecycle."
+}

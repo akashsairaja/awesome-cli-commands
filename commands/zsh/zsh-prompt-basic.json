@@ -1,0 +1,9 @@
+{
+  "id": "zsh-prompt-basic",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-prompt",
+  "title": "Basic prompt",
+  "command": "PROMPT='%n@%m:%~%# '",
+  "description": "Set basic prompt (user@host:dir)",
+  "tags": ["prompt", "basic", "PS1"]
+}

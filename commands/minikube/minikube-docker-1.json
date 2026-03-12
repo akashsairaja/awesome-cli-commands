@@ -1,0 +1,8 @@
+{
+  "id": "minikube-docker-1",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-docker",
+  "title": "Use minikube Docker",
+  "command": "eval $(minikube docker-env)",
+  "description": "Configure shell to use minikube Docker."
+}

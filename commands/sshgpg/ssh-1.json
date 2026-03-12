@@ -1,0 +1,8 @@
+{
+  "id": "ssh-1",
+  "categoryId": "sshgpg",
+  "subcategoryId": "keys",
+  "title": "Generate SSH key (ED25519)",
+  "command": "ssh-keygen -t ed25519 -C \"email@example.com\"",
+  "description": "Generate modern SSH key."
+}

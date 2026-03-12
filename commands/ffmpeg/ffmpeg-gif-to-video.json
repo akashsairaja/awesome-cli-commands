@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-gif-to-video",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-convert",
+  "title": "GIF to video",
+  "command": "ffmpeg -i input.gif -movflags faststart -pix_fmt yuv420p output.mp4",
+  "description": "Convert GIF to video",
+  "tags": ["convert", "gif", "mp4"]
+}

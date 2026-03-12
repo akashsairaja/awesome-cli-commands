@@ -1,0 +1,8 @@
+{
+  "id": "minikube-43",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-config",
+  "title": "Set default CPUs",
+  "command": "minikube config set cpus 4",
+  "description": "Set default CPU allocation."
+}

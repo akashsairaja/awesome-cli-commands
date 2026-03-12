@@ -1,0 +1,8 @@
+{
+  "id": "checkov-checks-3",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-checks",
+  "title": "Run specific checks",
+  "command": "checkov -d . --check CKV_AWS_1,CKV_AWS_2",
+  "description": "Run only specific checks."
+}

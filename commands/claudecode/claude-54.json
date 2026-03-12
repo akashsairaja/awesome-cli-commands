@@ -1,0 +1,8 @@
+{
+  "id": "claude-54",
+  "categoryId": "claudecode",
+  "subcategoryId": "mcp",
+  "title": "Reset MCP project choices",
+  "command": "claude mcp reset-project-choices",
+  "description": "Reset all project-specific MCP choices."
+}

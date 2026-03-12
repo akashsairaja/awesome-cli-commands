@@ -1,0 +1,8 @@
+{
+  "id": "redis-gs-1",
+  "title": "Run Redis with Docker",
+  "command": "docker run -d -p 6379:6379 --name redis redis:alpine",
+  "description": "Start Redis server in a Docker container on port 6379",
+  "categoryId": "redis",
+  "subcategoryId": "getting-started"
+}

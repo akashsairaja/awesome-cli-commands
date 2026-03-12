@@ -1,0 +1,9 @@
+{
+  "id": "bun-test",
+  "categoryId": "bun",
+  "subcategoryId": "bun-test",
+  "title": "Run Tests",
+  "command": "bun test",
+  "description": "Run all tests in project",
+  "tags": ["test", "run", "all"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "py-50",
+  "categoryId": "python",
+  "subcategoryId": "python-uv",
+  "title": "Install tool",
+  "command": "uv tool install ruff",
+  "description": "Install a CLI tool globally (like pipx)."
+}

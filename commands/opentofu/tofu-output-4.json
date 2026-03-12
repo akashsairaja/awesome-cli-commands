@@ -1,0 +1,8 @@
+{
+  "id": "tofu-output-4",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-output",
+  "title": "Raw output value",
+  "command": "tofu output -raw instance_ip",
+  "description": "Show raw value without quotes or formatting."
+}

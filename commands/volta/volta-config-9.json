@@ -1,0 +1,8 @@
+{
+  "id": "volta-config-9",
+  "categoryId": "volta",
+  "subcategoryId": "volta-config",
+  "title": "Verbose output",
+  "command": "volta --verbose install node@20",
+  "description": "Run Volta command with verbose logging."
+}

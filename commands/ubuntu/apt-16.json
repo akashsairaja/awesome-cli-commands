@@ -1,0 +1,8 @@
+{
+  "id": "apt-16",
+  "categoryId": "ubuntu",
+  "subcategoryId": "users",
+  "title": "Add user to group",
+  "command": "sudo usermod -aG <group> <user>",
+  "description": "Add user to a supplementary group without removing other groups."
+}

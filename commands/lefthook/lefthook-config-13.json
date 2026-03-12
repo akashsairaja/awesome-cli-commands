@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-config-13",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-config",
+  "title": "Post-merge hook",
+  "command": "post-merge:\n  commands:\n    deps:\n      run: npm install\n      glob: 'package-lock.json'",
+  "description": "Auto-install deps after merge if lockfile changed."
+}

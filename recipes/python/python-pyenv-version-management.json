@@ -1,0 +1,63 @@
+{
+  "id": "python-pyenv-version-management",
+  "stackId": "python",
+  "name": "Manage Multiple Python Versions with pyenv",
+  "description": "Install and switch between multiple Python versions on the same machine using pyenv, with per-project version pinning.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "trending": false,
+  "tags": ["pyenv", "python-versions", "version-management"],
+  "prerequisites": ["macOS, Linux, or WSL (pyenv does not run natively on Windows)"],
+  "steps": [
+    {
+      "title": "Install pyenv",
+      "command": "curl https://pyenv.run | bash",
+      "description": "Install pyenv and its plugins (pyenv-virtualenv, pyenv-update). The installer adds pyenv to your home directory at ~/.pyenv.",
+      "warning": "After installation, you must add pyenv to your shell PATH. Follow the instructions printed by the installer to update your .bashrc or .zshrc."
+    },
+    {
+      "title": "List available Python versions",
+      "command": "pyenv install --list | grep '^ *3\\.'",
+      "description": "Show all available CPython 3.x versions that can be installed. The list includes stable releases and pre-release versions.",
+      "tip": "Look for the latest stable version (e.g., 3.12.x or 3.13.x) without a, b, or rc suffixes."
+    },
+    {
+      "title": "Install a specific Python version",
+      "command": "pyenv install 3.12.7",
+      "description": "Download and compile the specified Python version. It is installed to ~/.pyenv/versions/ and does not affect your system Python."
+    },
+    {
+      "title": "Set the global default Python version",
+      "command": "pyenv global 3.12.7",
+      "description": "Set the default Python version used in all shells. This writes to ~/.pyenv/version."
+    },
+    {
+      "title": "Set a per-project Python version",
+      "command": "pyenv local 3.11.9",
+      "description": "Pin a specific Python version for the current directory by creating a .python-version file. pyenv automatically switches versions when you enter this directory.",
+      "tip": "Commit .python-version to your repository so all team members use the same Python version."
+    },
+    {
+      "title": "Verify the active Python version",
+      "command": "pyenv version && python --version",
+      "description": "Display which Python version pyenv has selected and confirm that the python command resolves to it."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# pyenv setup and Python version management\nset -e\n\n# Install pyenv if not present\nif ! command -v pyenv &> /dev/null; then\n  curl https://pyenv.run | bash\n  export PATH=\"$HOME/.pyenv/bin:$PATH\"\n  eval \"$(pyenv init -)\"\nfi\n\nPYTHON_VERSION=${1:-3.12.7}\n\necho \"Installing Python $PYTHON_VERSION...\"\npyenv install -s \"$PYTHON_VERSION\"\npyenv global \"$PYTHON_VERSION\"\n\necho \"Active Python:\"\npyenv version\npython --version\npip --version\n\necho \"pyenv setup complete with Python $PYTHON_VERSION.\"",
+  "faq": [
+    {
+      "question": "Does pyenv work on Windows?",
+      "answer": "pyenv does not run natively on Windows. Use pyenv-win (a separate port) or run pyenv inside WSL. Alternatively, use uv which manages Python versions cross-platform."
+    },
+    {
+      "question": "What is the difference between pyenv global, local, and shell?",
+      "answer": "global sets the default version for your user (~/.pyenv/version). local pins a version to a directory (.python-version file). shell sets the version for the current terminal session only via the PYENV_VERSION environment variable."
+    },
+    {
+      "question": "Can I use pyenv with virtual environments?",
+      "answer": "Yes. Install your desired Python version with pyenv, then create a venv with 'python -m venv .venv'. The venv will use whichever Python version pyenv has active. The pyenv-virtualenv plugin also provides direct integration."
+    }
+  ],
+  "relatedRecipes": ["python-venv-project-setup", "python-uv-fast-deps", "python-poetry-workflow"],
+  "lastUpdated": "2026-03-11"
+}

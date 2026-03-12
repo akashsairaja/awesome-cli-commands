@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-stack-4",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-stack",
+  "title": "Stack output",
+  "command": "pulumi stack output",
+  "description": "Show stack outputs."
+}

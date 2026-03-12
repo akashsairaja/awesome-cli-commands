@@ -1,0 +1,9 @@
+{
+  "id": "deno-upgrade",
+  "categoryId": "deno",
+  "subcategoryId": "deno-info",
+  "title": "Upgrade Deno",
+  "command": "deno upgrade",
+  "description": "Upgrade to latest Deno version",
+  "tags": ["upgrade", "update", "version"]
+}

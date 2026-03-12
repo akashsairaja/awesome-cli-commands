@@ -1,0 +1,8 @@
+{
+  "id": "grafana-api-2",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-api",
+  "title": "Create datasource",
+  "command": "curl -X POST http://localhost:3000/api/datasources -H 'Content-Type: application/json' -H 'Authorization: Bearer TOKEN' -d @datasource.json",
+  "description": "Create a datasource via API."
+}

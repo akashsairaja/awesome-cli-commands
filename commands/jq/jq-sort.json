@@ -1,0 +1,9 @@
+{
+  "id": "jq-sort",
+  "categoryId": "jq",
+  "subcategoryId": "jq-filters",
+  "title": "Sort array",
+  "command": "cat file.json | jq 'sort'",
+  "description": "Sort array elements",
+  "tags": ["sort", "order"]
+}

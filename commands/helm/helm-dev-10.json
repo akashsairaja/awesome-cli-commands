@@ -1,0 +1,8 @@
+{
+  "id": "helm-dev-10",
+  "categoryId": "helm",
+  "subcategoryId": "helm-dev",
+  "title": "Test with logs",
+  "command": "helm test my-release --logs",
+  "description": "Run chart tests and display pod logs."
+}

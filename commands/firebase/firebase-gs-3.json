@@ -1,0 +1,8 @@
+{
+  "id": "firebase-gs-3",
+  "title": "Login to Firebase",
+  "command": "firebase login",
+  "description": "Authenticate the Firebase CLI with your Google account",
+  "categoryId": "firebase",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ps-74",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-modules",
+  "title": "Uninstall module",
+  "command": "Uninstall-Module -Name ModuleName",
+  "description": "Remove installed module."
+}

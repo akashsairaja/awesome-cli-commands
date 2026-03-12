@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-gke-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-gke",
+  "title": "List GKE Clusters",
+  "command": "gcloud container clusters list",
+  "description": "List all GKE clusters",
+  "tags": ["gke", "list", "clusters"]
+}

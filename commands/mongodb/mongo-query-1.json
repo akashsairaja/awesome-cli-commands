@@ -1,0 +1,8 @@
+{
+  "id": "mongo-query-1",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-query",
+  "title": "Comparison operators",
+  "command": "db.users.find({ age: { $gte: 18, $lte: 65 } })",
+  "description": "Use $gt, $gte, $lt, $lte, $eq, $ne."
+}

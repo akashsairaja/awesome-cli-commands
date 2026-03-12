@@ -1,0 +1,8 @@
+{
+  "id": "git-46",
+  "categoryId": "git",
+  "subcategoryId": "branches",
+  "title": "Set upstream",
+  "command": "git branch -u origin/<branch>",
+  "description": "Set upstream for current branch."
+}

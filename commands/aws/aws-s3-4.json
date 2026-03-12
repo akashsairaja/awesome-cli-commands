@@ -1,0 +1,8 @@
+{
+  "id": "aws-s3-4",
+  "categoryId": "aws",
+  "subcategoryId": "s3",
+  "title": "Copy from S3",
+  "command": "aws s3 cp s3://bucket/file.txt ./",
+  "description": "Download file from S3."
+}

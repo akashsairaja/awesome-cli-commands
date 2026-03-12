@@ -1,0 +1,9 @@
+{
+  "id": "nginx-proxy-pass",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-reverse-proxy",
+  "title": "Reverse proxy to port 3000",
+  "command": "proxy_pass http://localhost:3000;",
+  "description": "Forward requests to backend app",
+  "tags": ["proxy", "reverse", "backend", "forward"]
+}

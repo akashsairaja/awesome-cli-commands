@@ -1,0 +1,8 @@
+{
+  "id": "starship-presets-8",
+  "categoryId": "starship",
+  "subcategoryId": "starship-presets",
+  "title": "No Empty Icons preset",
+  "command": "starship preset no-empty-icons -o ~/.config/starship.toml",
+  "description": "Hide icons for inactive modules."
+}

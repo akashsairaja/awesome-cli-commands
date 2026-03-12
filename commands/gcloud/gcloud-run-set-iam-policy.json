@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-run-set-iam-policy",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-run",
+  "title": "Set IAM Policy",
+  "command": "gcloud run services set-iam-policy <service> policy.yaml --region=us-central1",
+  "description": "Set IAM policy for Cloud Run service from file",
+  "tags": ["run", "iam", "policy", "security"]
+}

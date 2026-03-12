@@ -1,0 +1,8 @@
+{
+  "id": "bash-9",
+  "categoryId": "bash",
+  "subcategoryId": "scripting",
+  "title": "Syntax check only",
+  "command": "bash -n script.sh",
+  "description": "Check syntax without executing."
+}

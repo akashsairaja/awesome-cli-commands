@@ -1,0 +1,9 @@
+{
+  "id": "ansible-navigator-doc",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-navigator",
+  "title": "View Module Documentation",
+  "command": "ansible-navigator doc ansible.builtin.copy",
+  "description": "Browse module docs in TUI interface",
+  "tags": ["navigator", "doc", "module", "help"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "jq-nested-key",
+  "categoryId": "jq",
+  "subcategoryId": "jq-basics",
+  "title": "Get nested value",
+  "command": "cat file.json | jq '.parent.child'",
+  "description": "Extract nested value",
+  "tags": ["nested", "key", "path"]
+}

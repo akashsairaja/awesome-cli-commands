@@ -1,0 +1,8 @@
+{
+  "id": "tldr-3",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-tldr",
+  "title": "List all pages",
+  "command": "tldr --list",
+  "description": "List all available tldr pages."
+}

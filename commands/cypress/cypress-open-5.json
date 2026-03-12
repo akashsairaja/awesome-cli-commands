@@ -1,0 +1,8 @@
+{
+  "id": "cypress-open-5",
+  "categoryId": "cypress",
+  "subcategoryId": "cypress-open",
+  "title": "Open with config",
+  "command": "npx cypress open --config-file cypress.dev.config.js",
+  "description": "Open with custom config."
+}

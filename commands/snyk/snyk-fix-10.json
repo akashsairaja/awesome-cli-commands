@@ -1,0 +1,8 @@
+{
+  "id": "snyk-fix-10",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-fix",
+  "title": "Generate project SBOM",
+  "command": "snyk sbom --format=cyclonedx1.4+json",
+  "description": "Generate a software bill of materials for the project."
+}

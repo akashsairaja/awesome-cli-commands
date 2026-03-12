@@ -1,0 +1,8 @@
+{
+  "id": "ps-2",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-files",
+  "title": "Copy files",
+  "command": "Copy-Item -Path src -Destination dest -Recurse",
+  "description": "Copy files or directories."
+}

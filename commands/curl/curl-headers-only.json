@@ -1,0 +1,9 @@
+{
+  "id": "curl-headers-only",
+  "categoryId": "curl",
+  "subcategoryId": "curl-headers",
+  "title": "Show only headers",
+  "command": "curl -s -o /dev/null -D - https://example.com",
+  "description": "Show only response headers, no body",
+  "tags": ["headers", "only", "dump"]
+}

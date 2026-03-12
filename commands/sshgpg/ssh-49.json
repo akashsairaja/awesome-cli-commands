@@ -1,0 +1,8 @@
+{
+  "id": "ssh-49",
+  "categoryId": "sshgpg",
+  "subcategoryId": "config",
+  "title": "IdentityFile per host",
+  "command": "Host github.com\n  IdentityFile ~/.ssh/github_ed25519",
+  "description": "Use specific key for a host."
+}

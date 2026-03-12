@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-tcp-5",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-tcp",
+  "title": "TCP tunnel for Redis",
+  "command": "ngrok tcp 6379",
+  "description": "Expose Redis for remote access."
+}

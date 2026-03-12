@@ -1,0 +1,9 @@
+{
+  "id": "azure-aks-scale",
+  "categoryId": "azure",
+  "subcategoryId": "azure-aks",
+  "title": "Scale Node Pool",
+  "command": "az aks scale --resource-group <rg> --name <cluster> --node-count 5",
+  "description": "Scale the default node pool",
+  "tags": ["aks", "scale", "nodes"]
+}

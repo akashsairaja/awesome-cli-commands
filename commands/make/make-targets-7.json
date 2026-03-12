@@ -1,0 +1,8 @@
+{
+  "id": "make-targets-7",
+  "categoryId": "make",
+  "subcategoryId": "make-targets",
+  "title": "Distribution",
+  "command": "make dist",
+  "description": "Create distributable archive."
+}

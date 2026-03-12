@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-gke-nodepool-create",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-gke",
+  "title": "Create Node Pool",
+  "command": "gcloud container node-pools create <pool-name> --cluster=<cluster> --zone=<zone> --num-nodes=3 --machine-type=e2-standard-4",
+  "description": "Create a new node pool in an existing cluster",
+  "tags": ["gke", "node-pool", "create"]
+}

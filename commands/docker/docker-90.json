@@ -1,0 +1,8 @@
+{
+  "id": "docker-90",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "Use multiple files",
+  "command": "docker compose -f docker-compose.yml -f docker-compose.override.yml up -d",
+  "description": "Combine multiple compose files."
+}

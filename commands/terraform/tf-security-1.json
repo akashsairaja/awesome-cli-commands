@@ -1,0 +1,8 @@
+{
+  "id": "tf-security-1",
+  "categoryId": "terraform",
+  "subcategoryId": "terraform-security",
+  "title": "Enable state encryption",
+  "command": "terraform init -backend-config=\"encrypt=true\"",
+  "description": "Initialize backend with encryption enabled (S3)."
+}

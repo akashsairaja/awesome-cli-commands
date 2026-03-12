@@ -1,0 +1,8 @@
+{
+  "id": "sops-config-2",
+  "categoryId": "sops",
+  "subcategoryId": "sops-config",
+  "title": "List key groups",
+  "command": "sops groups secrets.enc.yaml",
+  "description": "Show key groups for encrypted file."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "snyk-container-6",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-container",
+  "title": "Scan nested JARs",
+  "command": "snyk container test myapp:latest --nested-jars-depth=3",
+  "description": "Scan nested JAR files inside the image."
+}

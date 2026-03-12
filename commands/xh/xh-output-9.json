@@ -1,0 +1,8 @@
+{
+  "id": "xh-output-9",
+  "categoryId": "xh",
+  "subcategoryId": "xh-output",
+  "title": "Monokai theme",
+  "command": "xh --style=monokai GET https://api.example.com",
+  "description": "Use monokai color theme for output."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "node-perf-9",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-perf",
+  "title": "Trace garbage collection",
+  "command": "node --trace-gc app.js",
+  "description": "Print GC events to stderr (memory debugging)."
+}

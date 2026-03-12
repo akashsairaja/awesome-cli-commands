@@ -1,0 +1,9 @@
+{
+  "id": "netlify-functions-serve",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-functions",
+  "title": "Serve functions locally",
+  "command": "netlify functions:serve",
+  "description": "Serve functions locally for development",
+  "tags": ["functions", "serve", "local"]
+}

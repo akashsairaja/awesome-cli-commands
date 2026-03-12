@@ -1,0 +1,8 @@
+{
+  "id": "ssh-33",
+  "categoryId": "sshgpg",
+  "subcategoryId": "connections",
+  "title": "SSH with X11 forwarding",
+  "command": "ssh -X user@host",
+  "description": "Forward X11 display from remote."
+}

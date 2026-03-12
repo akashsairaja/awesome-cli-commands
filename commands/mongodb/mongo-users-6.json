@@ -1,0 +1,8 @@
+{
+  "id": "mongo-users-6",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-users",
+  "title": "Create cluster admin",
+  "command": "db.getSiblingDB(\"admin\").createUser({ user: \"clusteradmin\", pwd: \"password\", roles: [\"clusterAdmin\"] })",
+  "description": "Create a user with cluster management privileges (replica sets, sharding)."
+}

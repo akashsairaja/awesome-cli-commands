@@ -1,0 +1,8 @@
+{
+  "id": "docker-17",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Remove all stopped containers",
+  "command": "docker container prune",
+  "description": "Remove all stopped containers."
+}

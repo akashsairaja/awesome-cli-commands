@@ -1,0 +1,8 @@
+{
+  "id": "playwright-test-8",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-test",
+  "title": "Parallel workers",
+  "command": "npx playwright test --workers=4",
+  "description": "Run tests with specific workers."
+}

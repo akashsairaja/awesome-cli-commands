@@ -1,0 +1,8 @@
+{
+  "id": "ollama-5",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-models",
+  "title": "Show model info",
+  "command": "ollama show llama2",
+  "description": "Display model details including parameters and license."
+}

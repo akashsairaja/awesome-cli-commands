@@ -1,0 +1,8 @@
+{
+  "id": "mongo-db-6",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-database",
+  "title": "Drop collection",
+  "command": "db.users.drop()",
+  "description": "Delete a collection."
+}

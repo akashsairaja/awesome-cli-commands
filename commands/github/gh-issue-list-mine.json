@@ -1,0 +1,9 @@
+{
+  "id": "gh-issue-list-mine",
+  "categoryId": "github",
+  "subcategoryId": "gh-issue",
+  "title": "List my issues",
+  "command": "gh issue list --assignee @me",
+  "description": "List issues assigned to you",
+  "tags": ["issue", "list", "assignee", "mine"]
+}

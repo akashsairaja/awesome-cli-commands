@@ -1,0 +1,9 @@
+{
+  "id": "rg-replace",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-search",
+  "title": "Replace in output",
+  "command": "rg \"pattern\" -r \"replacement\"",
+  "description": "Replace matches in output (preview)",
+  "tags": ["replace", "substitute", "preview"]
+}

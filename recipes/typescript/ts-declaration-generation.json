@@ -1,0 +1,60 @@
+{
+  "id": "ts-declaration-generation",
+  "stackId": "typescript",
+  "name": "Generate Declaration Files for TypeScript Libraries",
+  "description": "Configure TypeScript to generate .d.ts declaration files and declaration maps for publishable libraries with proper package.json exports.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "trending": false,
+  "tags": ["declarations", "d.ts", "library", "npm-publish", "types"],
+  "prerequisites": [
+    "TypeScript project structured as a library",
+    "Understanding of package.json exports"
+  ],
+  "steps": [
+    {
+      "title": "Configure tsconfig for declaration output",
+      "description": "Enable declaration and declarationMap in compilerOptions.",
+      "command": "cat > tsconfig.build.json << 'EOF'\n{\n  \"extends\": \"./tsconfig.json\",\n  \"compilerOptions\": {\n    \"declaration\": true,\n    \"declarationMap\": true,\n    \"declarationDir\": \"./dist/types\",\n    \"outDir\": \"./dist\",\n    \"noEmit\": false,\n    \"emitDeclarationOnly\": true\n  },\n  \"include\": [\"src\"],\n  \"exclude\": [\"src/**/*.test.ts\", \"src/**/*.spec.ts\"]\n}\nEOF",
+      "tip": "Use emitDeclarationOnly: true when a bundler handles the JavaScript output. TypeScript only generates .d.ts files."
+    },
+    {
+      "title": "Generate declaration files",
+      "description": "Run the TypeScript compiler with the build config to produce .d.ts files.",
+      "command": "npx tsc --project tsconfig.build.json"
+    },
+    {
+      "title": "Configure package.json exports and types",
+      "description": "Set the types, main, and exports fields so consumers find your type declarations.",
+      "command": "npm pkg set types='./dist/types/index.d.ts' main='./dist/index.js' module='./dist/index.mjs'",
+      "tip": "Use the exports field for conditional exports: types for .d.ts, import for ESM, require for CJS."
+    },
+    {
+      "title": "Verify declarations are correct",
+      "description": "Check that the generated .d.ts files export the expected types.",
+      "command": "ls -la dist/types/ && head -20 dist/types/index.d.ts"
+    },
+    {
+      "title": "Test the package locally before publishing",
+      "description": "Use npm pack to create a tarball and install it in a test project.",
+      "command": "npm pack --dry-run && npm pack && echo 'Install in another project: npm install ./your-package-1.0.0.tgz'"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Generate TypeScript Declaration Files\nset -euo pipefail\n\necho \"=== Generating declarations ===\"\nnpx tsc --project tsconfig.build.json\n\necho \"\"\necho \"=== Generated files ===\"\nfind dist/types -name '*.d.ts' | head -20\n\necho \"\"\necho \"=== Package.json exports example ===\"\ncat << 'EOF'\n{\n  \"name\": \"my-library\",\n  \"types\": \"./dist/types/index.d.ts\",\n  \"main\": \"./dist/index.js\",\n  \"module\": \"./dist/index.mjs\",\n  \"exports\": {\n    \".\": {\n      \"types\": \"./dist/types/index.d.ts\",\n      \"import\": \"./dist/index.mjs\",\n      \"require\": \"./dist/index.js\"\n    }\n  },\n  \"files\": [\"dist\"]\n}\nEOF\n\necho \"\"\necho \"=== Verify with npm pack ===\"\nnpm pack --dry-run",
+  "faq": [
+    {
+      "question": "What is the difference between declaration and declarationMap?",
+      "answer": "declaration: true generates .d.ts type definition files. declarationMap: true generates .d.ts.map files that map declarations back to source .ts files, enabling Go to Definition to jump to the original TypeScript source instead of the .d.ts file."
+    },
+    {
+      "question": "Should I commit generated .d.ts files to git?",
+      "answer": "No. Add dist/ to .gitignore and generate declarations during your build/publish pipeline. Committing generated files creates merge conflicts and stale types."
+    },
+    {
+      "question": "Why use emitDeclarationOnly instead of regular emit?",
+      "answer": "When using a bundler like tsup, esbuild, or Rollup for JavaScript output, you only need TypeScript to generate .d.ts files. The bundler produces faster, smaller JavaScript than tsc."
+    }
+  ],
+  "relatedRecipes": ["ts-build-pipeline", "ts-project-references"],
+  "lastUpdated": "2026-03-11"
+}

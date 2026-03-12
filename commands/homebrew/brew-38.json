@@ -1,0 +1,8 @@
+{
+  "id": "brew-38",
+  "categoryId": "homebrew",
+  "subcategoryId": "cleanup",
+  "title": "Cleanup specific package",
+  "command": "brew cleanup <package>",
+  "description": "Cleanup old versions of one package."
+}

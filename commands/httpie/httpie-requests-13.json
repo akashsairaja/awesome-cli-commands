@@ -1,0 +1,8 @@
+{
+  "id": "httpie-requests-13",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-requests",
+  "title": "Nested JSON values",
+  "command": "http POST https://api.example.com/users address[city]=NYC address[zip]=10001",
+  "description": "Send nested JSON using bracket notation."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "httpie-requests-6",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-requests",
+  "title": "DELETE request",
+  "command": "http DELETE https://api.example.com/users/1",
+  "description": "Make a DELETE request."
+}

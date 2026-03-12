@@ -1,0 +1,8 @@
+{
+  "id": "ps-3",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-files",
+  "title": "Move files",
+  "command": "Move-Item -Path src -Destination dest",
+  "description": "Move files or directories."
+}

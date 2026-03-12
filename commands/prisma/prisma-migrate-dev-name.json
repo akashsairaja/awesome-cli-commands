@@ -1,0 +1,9 @@
+{
+  "id": "prisma-migrate-dev-name",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-migrate",
+  "title": "Migration with name",
+  "command": "npx prisma migrate dev --name <name>",
+  "description": "Create named migration from schema changes",
+  "tags": ["migrate", "dev", "name"]
+}

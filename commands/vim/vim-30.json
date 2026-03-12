@@ -1,0 +1,8 @@
+{
+  "id": "vim-30",
+  "categoryId": "vim",
+  "subcategoryId": "visual-mode",
+  "title": "Block visual mode",
+  "command": "Ctrl+v",
+  "description": "Select rectangular columns across lines."
+}

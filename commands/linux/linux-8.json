@@ -1,0 +1,8 @@
+{
+  "id": "linux-8",
+  "categoryId": "linux",
+  "subcategoryId": "processes",
+  "title": "Watch command output",
+  "command": "watch -n 2 'kubectl get pods'",
+  "description": "Re-run a command every 2 seconds."
+}

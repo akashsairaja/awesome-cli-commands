@@ -1,0 +1,8 @@
+{
+  "id": "node-test-4",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-test",
+  "title": "TAP reporter",
+  "command": "node --test --test-reporter=tap",
+  "description": "Output in TAP format (spec, dot, json, junit)."
+}

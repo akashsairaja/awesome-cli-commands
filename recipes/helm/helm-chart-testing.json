@@ -1,0 +1,57 @@
+{
+  "id": "helm-chart-testing",
+  "stackId": "helm",
+  "name": "Test and Lint Helm Charts",
+  "description": "Validate chart structure, lint templates, run test pods, and catch errors before deploying charts to production clusters.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "tags": ["testing", "lint", "validation", "ci"],
+  "prerequisites": ["Helm 3 installed", "A Helm chart to test"],
+  "steps": [
+    {
+      "title": "Lint the chart for errors",
+      "description": "Check the chart for common issues and best-practice violations.",
+      "command": "helm lint myapp/ --strict",
+      "tip": "The --strict flag treats warnings as errors, useful for CI pipelines."
+    },
+    {
+      "title": "Render templates without installing",
+      "description": "Generate the Kubernetes manifests to verify template rendering.",
+      "command": "helm template test-release myapp/ -f values-production.yaml --validate",
+      "warning": "The --validate flag requires a connection to a Kubernetes cluster to validate resource schemas."
+    },
+    {
+      "title": "Dry-run against the cluster API",
+      "description": "Simulate an install to catch server-side validation errors.",
+      "command": "helm install test-release myapp/ --dry-run --debug --namespace test"
+    },
+    {
+      "title": "Run chart tests",
+      "description": "Execute test pods defined in the chart's templates/tests/ directory.",
+      "command": "helm test my-release --namespace production --timeout 5m",
+      "tip": "Chart tests are Pods with the 'helm.sh/hook: test' annotation. They run to completion and report pass/fail."
+    },
+    {
+      "title": "Validate with kubeconform",
+      "description": "Check rendered manifests against Kubernetes JSON schemas.",
+      "command": "helm template myapp/ | kubeconform -strict -summary -output json"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Helm Chart Testing Pipeline\nset -euo pipefail\n\nCHART_DIR=${1:?\"Usage: $0 <chart-directory>\"}\n\necho \"=== Step 1: Lint ===\"\nhelm lint \"$CHART_DIR\" --strict\necho \"Lint passed\"\n\necho \"\"\necho \"=== Step 2: Template Rendering ===\"\nhelm template test-release \"$CHART_DIR\" > /tmp/rendered-manifests.yaml\necho \"Rendered $(grep -c '^kind:' /tmp/rendered-manifests.yaml) resources\"\n\necho \"\"\necho \"=== Step 3: Schema Validation ===\"\nif command -v kubeconform &> /dev/null; then\n  helm template test-release \"$CHART_DIR\" | kubeconform -strict -summary\n  echo \"Schema validation passed\"\nelse\n  echo \"kubeconform not installed, skipping schema validation\"\nfi\n\necho \"\"\necho \"=== Step 4: Dry Run ===\"\nhelm install test-release \"$CHART_DIR\" --dry-run --debug 2>&1 | tail -5\necho \"Dry run passed\"\n\necho \"\"\necho \"All tests passed for $CHART_DIR\"",
+  "faq": [
+    {
+      "question": "What is the difference between helm template and helm install --dry-run?",
+      "answer": "helm template renders manifests entirely client-side without cluster access. helm install --dry-run sends the rendered manifests to the cluster API for server-side validation but does not create any resources."
+    },
+    {
+      "question": "How do I write a chart test?",
+      "answer": "Create a Pod manifest in templates/tests/ with the annotation 'helm.sh/hook: test'. The test passes if the Pod exits with code 0. Common patterns include curl checks against services or database connectivity tests."
+    },
+    {
+      "question": "Can I run chart tests in CI without a real cluster?",
+      "answer": "Use 'helm template' with kubeconform for static validation. For full integration tests, use kind or k3d to spin up an ephemeral cluster, install the chart, and run 'helm test'."
+    }
+  ],
+  "relatedRecipes": ["helm-chart-creation", "helm-hooks-workflow"],
+  "lastUpdated": "2026-03-11"
+}

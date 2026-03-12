@@ -1,0 +1,58 @@
+{
+  "id": "react-docker-deploy",
+  "stackId": "react",
+  "name": "Dockerize and Deploy a React/Next.js App",
+  "description": "Create a production-optimized Docker image for a Next.js application with multi-stage builds and minimal image size.",
+  "difficulty": "advanced",
+  "timeMinutes": 20,
+  "trending": false,
+  "tags": ["docker", "deployment", "nextjs", "production", "containerization"],
+  "prerequisites": ["Docker installed", "Next.js project with working build"],
+  "steps": [
+    {
+      "title": "Create a multi-stage Dockerfile",
+      "description": "Write a Dockerfile that uses separate stages for dependencies, building, and the final runtime image.",
+      "command": "cat > Dockerfile << 'EOF'\nFROM node:20-alpine AS base\n\nFROM base AS deps\nWORKDIR /app\nCOPY package.json pnpm-lock.yaml ./\nRUN corepack enable pnpm && pnpm install --frozen-lockfile\n\nFROM base AS builder\nWORKDIR /app\nCOPY --from=deps /app/node_modules ./node_modules\nCOPY . .\nRUN corepack enable pnpm && pnpm build\n\nFROM base AS runner\nWORKDIR /app\nENV NODE_ENV=production\nRUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 nextjs\nCOPY --from=builder /app/public ./public\nCOPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./\nCOPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static\nUSER nextjs\nEXPOSE 3000\nCMD [\"node\", \"server.js\"]\nEOF",
+      "tip": "Enable standalone output in next.config.ts: output: 'standalone' for a minimal production server."
+    },
+    {
+      "title": "Add a .dockerignore file",
+      "description": "Exclude unnecessary files from the Docker build context to speed up builds.",
+      "command": "printf 'node_modules\\n.next\\n.git\\n*.md\\nDockerfile\\n.dockerignore\\n.env*.local\\n' > .dockerignore"
+    },
+    {
+      "title": "Enable standalone output in Next.js config",
+      "description": "Configure Next.js to produce a self-contained output that does not need node_modules.",
+      "command": "echo \"// next.config.ts\\nexport default { output: 'standalone' };\"",
+      "warning": "Without standalone output, the final Docker image will include all of node_modules and be significantly larger."
+    },
+    {
+      "title": "Build the Docker image",
+      "description": "Build the production image with a descriptive tag.",
+      "command": "docker build -t my-nextjs-app:latest ."
+    },
+    {
+      "title": "Run the container",
+      "description": "Start the container and map port 3000.",
+      "command": "docker run -p 3000:3000 --env-file .env.production my-nextjs-app:latest",
+      "tip": "The standalone image is typically 100-150MB compared to 1GB+ without multi-stage builds."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Dockerize and Deploy Next.js App\nset -euo pipefail\n\nAPP_NAME=${1:-my-nextjs-app}\nTAG=${2:-latest}\n\necho \"=== Building Docker image ===\"\ndocker build -t \"$APP_NAME:$TAG\" .\n\necho \"\"\necho \"=== Image size ===\"\ndocker images \"$APP_NAME:$TAG\" --format \"{{.Repository}}:{{.Tag}} - {{.Size}}\"\n\necho \"\"\necho \"=== Running container ===\"\ndocker run -d -p 3000:3000 --name \"$APP_NAME\" \"$APP_NAME:$TAG\"\n\necho \"\"\necho \"=== Container status ===\"\ndocker ps --filter \"name=$APP_NAME\" --format \"table {{.Names}}\t{{.Status}}\t{{.Ports}}\"\n\necho \"\"\necho \"App running at http://localhost:3000\"",
+  "faq": [
+    {
+      "question": "Why use multi-stage Docker builds?",
+      "answer": "Multi-stage builds separate the build environment from the runtime environment. The final image only contains the built output and runtime dependencies, reducing image size from 1GB+ to ~150MB."
+    },
+    {
+      "question": "How do I pass environment variables to the container?",
+      "answer": "Use --env-file .env.production at runtime for secrets, or set build-time variables with ARG in the Dockerfile. Never bake secrets into the Docker image."
+    },
+    {
+      "question": "Can I deploy this to cloud platforms?",
+      "answer": "Yes. Push the image to a registry (Docker Hub, ECR, GCR) and deploy to AWS ECS, Google Cloud Run, Azure Container Apps, or any Kubernetes cluster."
+    }
+  ],
+  "relatedRecipes": ["react-nextjs-app-scaffold", "react-bundle-analysis"],
+  "lastUpdated": "2026-03-11"
+}

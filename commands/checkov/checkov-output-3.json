@@ -1,0 +1,8 @@
+{
+  "id": "checkov-output-3",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-output",
+  "title": "JUnit XML",
+  "command": "checkov -d . -o junitxml > results.xml",
+  "description": "Output as JUnit XML."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "aws-lambda-2",
+  "categoryId": "aws",
+  "subcategoryId": "lambda",
+  "title": "Invoke function",
+  "command": "aws lambda invoke --function-name myfunction --payload '{}' output.json",
+  "description": "Invoke Lambda with payload."
+}

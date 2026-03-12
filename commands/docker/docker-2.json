@@ -1,0 +1,8 @@
+{
+  "id": "docker-2",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Run with auto-remove",
+  "command": "docker run --rm -it <image> /bin/sh",
+  "description": "Start container that auto-deletes on exit."
+}

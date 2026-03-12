@@ -1,0 +1,9 @@
+{
+  "id": "jq-get-key",
+  "categoryId": "jq",
+  "subcategoryId": "jq-basics",
+  "title": "Get value by key",
+  "command": "cat file.json | jq '.key'",
+  "description": "Extract value of a specific key",
+  "tags": ["get", "key", "value"]
+}

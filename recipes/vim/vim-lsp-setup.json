@@ -1,0 +1,57 @@
+{
+  "id": "vim-lsp-setup",
+  "stackId": "vim",
+  "name": "Language Server Setup for Code Intelligence",
+  "description": "Configure Neovim's built-in LSP client with mason.nvim for automatic server installation, autocompletion, and diagnostics.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "Neovim's native LSP has made it a serious IDE alternative",
+  "tags": ["lsp", "autocompletion", "diagnostics", "mason", "code-intelligence"],
+  "prerequisites": [
+    "Neovim 0.9+ installed",
+    "lazy.nvim configured",
+    "Node.js installed (for many language servers)"
+  ],
+  "steps": [
+    {
+      "title": "Add LSP plugin specs",
+      "description": "Create a plugin file that installs mason, mason-lspconfig, nvim-lspconfig, and nvim-cmp for completions.",
+      "command": "cat > ~/.config/nvim/lua/plugins/lsp.lua << 'EOF'\nreturn {\n  { \"williamboman/mason.nvim\", config = true },\n  { \"williamboman/mason-lspconfig.nvim\",\n    dependencies = { \"williamboman/mason.nvim\", \"neovim/nvim-lspconfig\" },\n    config = function()\n      require(\"mason-lspconfig\").setup({\n        ensure_installed = { \"lua_ls\", \"ts_ls\", \"rust_analyzer\", \"gopls\", \"pyright\" },\n        automatic_installation = true,\n      })\n    end,\n  },\n  { \"neovim/nvim-lspconfig\",\n    config = function()\n      local lspconfig = require(\"lspconfig\")\n      local servers = { \"lua_ls\", \"ts_ls\", \"rust_analyzer\", \"gopls\", \"pyright\" }\n      for _, server in ipairs(servers) do\n        lspconfig[server].setup({})\n      end\n    end,\n  },\n  { \"hrsh7th/nvim-cmp\",\n    dependencies = {\n      \"hrsh7th/cmp-nvim-lsp\",\n      \"hrsh7th/cmp-buffer\",\n      \"L3MON4D3/LuaSnip\",\n    },\n    config = function()\n      local cmp = require(\"cmp\")\n      cmp.setup({\n        snippet = { expand = function(args) require(\"luasnip\").lsp_expand(args.body) end },\n        mapping = cmp.mapping.preset.insert({\n          [\"<C-Space>\"] = cmp.mapping.complete(),\n          [\"<CR>\"] = cmp.mapping.confirm({ select = true }),\n        }),\n        sources = cmp.config.sources({\n          { name = \"nvim_lsp\" },\n          { name = \"buffer\" },\n        }),\n      })\n    end,\n  },\n}\nEOF"
+    },
+    {
+      "title": "Install language servers",
+      "description": "Open Neovim and let mason-lspconfig install the configured servers automatically.",
+      "command": "nvim --headless '+Lazy sync' +qa && nvim --headless '+MasonInstall lua-language-server typescript-language-server' +qa",
+      "tip": "Run :Mason inside Neovim to see installed servers and install new ones interactively."
+    },
+    {
+      "title": "Add LSP keybindings",
+      "description": "Set up keybindings for common LSP actions like go-to-definition and rename.",
+      "command": "cat > ~/.config/nvim/lua/plugins/lsp-keys.lua << 'EOF'\nreturn {\n  { \"neovim/nvim-lspconfig\",\n    keys = {\n      { \"gd\", vim.lsp.buf.definition, desc = \"Go to definition\" },\n      { \"gr\", vim.lsp.buf.references, desc = \"Find references\" },\n      { \"K\", vim.lsp.buf.hover, desc = \"Hover documentation\" },\n      { \"<leader>rn\", vim.lsp.buf.rename, desc = \"Rename symbol\" },\n      { \"<leader>ca\", vim.lsp.buf.code_action, desc = \"Code action\" },\n      { \"[d\", vim.diagnostic.goto_prev, desc = \"Previous diagnostic\" },\n      { \"]d\", vim.diagnostic.goto_next, desc = \"Next diagnostic\" },\n    },\n  },\n}\nEOF"
+    },
+    {
+      "title": "Verify LSP is active",
+      "description": "Open a source file and check that the language server is attached.",
+      "command": ":LspInfo",
+      "tip": "If no server attaches, check :Mason to ensure the server is installed and :checkhealth lsp for diagnostics."
+    }
+  ],
+  "fullScript": "# Neovim LSP Quick Reference\n# (Run these commands inside Neovim)\n\n# Check LSP status\n:LspInfo\n\n# Open Mason package manager\n:Mason\n\n# Install a language server via Mason\n:MasonInstall typescript-language-server\n\n# LSP Keybindings (with the config above)\n# gd          Go to definition\n# gr          Find references\n# K           Hover documentation\n# <leader>rn  Rename symbol\n# <leader>ca  Code action\n# [d          Previous diagnostic\n# ]d          Next diagnostic\n\n# Diagnostics\n:lua vim.diagnostic.setloclist()\n\n# Restart LSP\n:LspRestart\n\n# Format buffer\n:lua vim.lsp.buf.format()",
+  "faq": [
+    {
+      "question": "What is the difference between mason.nvim and manual server installation?",
+      "answer": "mason.nvim downloads and manages language server binaries for you, isolated from your system. Without mason, you must install each server manually (npm install, pip install, etc.) and ensure they are on your PATH."
+    },
+    {
+      "question": "How do I add a new language server?",
+      "answer": "Add it to the ensure_installed list in mason-lspconfig setup, then add lspconfig[server].setup({}) in the lspconfig config function. Run :Lazy sync to apply changes."
+    },
+    {
+      "question": "Why is the LSP slow or not working?",
+      "answer": "Check :LspLog for errors. Common issues include the server not being installed (:Mason), the project missing a config file (tsconfig.json, Cargo.toml), or the server crashing on large files. Run :checkhealth lsp for diagnostics."
+    }
+  ],
+  "relatedRecipes": ["vim-config-setup", "vim-plugin-management"],
+  "lastUpdated": "2026-03-11"
+}

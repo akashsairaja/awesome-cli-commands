@@ -1,0 +1,8 @@
+{
+  "id": "docker-11",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "List running containers",
+  "command": "docker ps",
+  "description": "Show all running containers."
+}

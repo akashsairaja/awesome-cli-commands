@@ -1,0 +1,9 @@
+{
+  "id": "prisma-db-push",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-db",
+  "title": "Push schema to database",
+  "command": "npx prisma db push",
+  "description": "Push schema changes directly to database (no migration)",
+  "tags": ["db", "push", "sync"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-gs-4",
+  "title": "Create new Pulumi project",
+  "command": "pulumi new typescript",
+  "description": "Initialize a new Pulumi project using the TypeScript template",
+  "categoryId": "pulumi",
+  "subcategoryId": "getting-started"
+}

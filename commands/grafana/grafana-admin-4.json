@@ -1,0 +1,8 @@
+{
+  "id": "grafana-admin-4",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-admin",
+  "title": "Check Grafana version",
+  "command": "grafana-cli --version",
+  "description": "Show Grafana CLI version."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "bash-64",
+  "categoryId": "bash",
+  "subcategoryId": "strings",
+  "title": "Substring",
+  "command": "echo \"${str:0:5}\"",
+  "description": "Extract substring (offset:length)."
+}

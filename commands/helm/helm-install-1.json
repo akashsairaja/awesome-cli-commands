@@ -1,0 +1,8 @@
+{
+  "id": "helm-install-1",
+  "categoryId": "helm",
+  "subcategoryId": "helm-install",
+  "title": "Install chart",
+  "command": "helm install my-release bitnami/nginx",
+  "description": "Install a chart with release name."
+}

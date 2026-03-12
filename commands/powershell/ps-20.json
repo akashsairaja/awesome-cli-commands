@@ -1,0 +1,8 @@
+{
+  "id": "ps-20",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-processes",
+  "title": "Wait for process",
+  "command": "Wait-Process -Name notepad",
+  "description": "Wait for process to exit."
+}

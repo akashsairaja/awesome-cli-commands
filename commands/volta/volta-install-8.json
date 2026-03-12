@@ -1,0 +1,8 @@
+{
+  "id": "volta-install-8",
+  "categoryId": "volta",
+  "subcategoryId": "volta-install",
+  "title": "Install exact version",
+  "command": "volta install node@20.11.0",
+  "description": "Install exact Node.js patch version."
+}

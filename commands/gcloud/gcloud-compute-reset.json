@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-compute-reset",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-compute",
+  "title": "Reset VM Instance",
+  "command": "gcloud compute instances reset <name> --zone=<zone>",
+  "description": "Hard reset a VM instance (like pressing reset button)",
+  "tags": ["vm", "reset", "restart"]
+}

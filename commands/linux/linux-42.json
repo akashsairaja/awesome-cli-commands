@@ -1,0 +1,8 @@
+{
+  "id": "linux-42",
+  "categoryId": "linux",
+  "subcategoryId": "processes",
+  "title": "Run with lower priority",
+  "command": "nice -n 10 ./heavy-task.sh",
+  "description": "Start a process with reduced CPU priority (higher nice = lower priority)."
+}

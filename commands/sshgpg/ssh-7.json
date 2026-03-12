@@ -1,0 +1,8 @@
+{
+  "id": "ssh-7",
+  "categoryId": "sshgpg",
+  "subcategoryId": "keys",
+  "title": "Generate GPG key",
+  "command": "gpg --gen-key",
+  "description": "Generate new GPG key pair."
+}

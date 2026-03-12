@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-config-activate",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-auth",
+  "title": "Switch Configuration",
+  "command": "gcloud config configurations activate <name>",
+  "description": "Switch to a named configuration",
+  "tags": ["config", "switch", "activate"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-crop",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-video",
+  "title": "Crop video",
+  "command": "ffmpeg -i input.mp4 -vf \"crop=640:480:100:50\" output.mp4",
+  "description": "Crop video (width:height:x:y)",
+  "tags": ["crop", "cut", "region"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ps-45",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-objects",
+  "title": "Splatting",
+  "command": "$params = @{ Path = 'C:\\'; Recurse = $true }; Get-ChildItem @params",
+  "description": "Pass parameters via hashtable."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gradle-test",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-testing",
+  "title": "Run Tests",
+  "command": "./gradlew test",
+  "description": "Execute all unit tests",
+  "tags": ["test", "unit", "run"]
+}

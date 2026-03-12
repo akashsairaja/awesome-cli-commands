@@ -1,0 +1,8 @@
+{
+  "id": "dbricks-gs-3",
+  "title": "Check Databricks CLI version",
+  "command": "databricks --version",
+  "description": "Display the installed Databricks CLI version",
+  "categoryId": "databricks",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ansible-galaxy-collection-publish",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-galaxy",
+  "title": "Publish Collection",
+  "command": "ansible-galaxy collection publish <tarball> --token=<token>",
+  "description": "Publish collection to Ansible Galaxy",
+  "tags": ["galaxy", "collection", "publish"]
+}

@@ -1,0 +1,28 @@
+name: Notify App Repo
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "commands/**"
+      - "recipes/**"
+      - "agents/**"
+      - "skills/**"
+      - "rules/**"
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    name: Trigger App Sync
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send repository_dispatch to pocketcmds
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.APP_REPO_PAT }}
+          repository: akashsairaja/pocketcmds
+          event-type: data-sync
+          client-payload: '{"ref": "${{ github.sha }}", "repo": "awesome-cli-commands"}'

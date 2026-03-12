@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-config-project",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-auth",
+  "title": "Set Default Project",
+  "command": "gcloud config set project <project-id>",
+  "description": "Set the default project for commands",
+  "tags": ["config", "project", "default"]
+}

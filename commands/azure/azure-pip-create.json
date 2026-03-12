@@ -1,0 +1,9 @@
+{
+  "id": "azure-pip-create",
+  "categoryId": "azure",
+  "subcategoryId": "azure-network",
+  "title": "Create Public IP",
+  "command": "az network public-ip create --resource-group <rg> --name <pip-name> --sku Standard",
+  "description": "Create a public IP address",
+  "tags": ["public-ip", "create", "network"]
+}

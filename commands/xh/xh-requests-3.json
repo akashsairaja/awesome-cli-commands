@@ -1,0 +1,8 @@
+{
+  "id": "xh-requests-3",
+  "categoryId": "xh",
+  "subcategoryId": "xh-requests",
+  "title": "POST raw JSON",
+  "command": "xh POST https://api.example.com/users count:=5 active:=true",
+  "description": "POST with raw JSON values."
+}

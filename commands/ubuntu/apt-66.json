@@ -1,0 +1,8 @@
+{
+  "id": "apt-66",
+  "categoryId": "ubuntu",
+  "subcategoryId": "ubuntu-network",
+  "title": "Enable UFW firewall",
+  "command": "sudo ufw enable",
+  "description": "Enable the Uncomplicated Firewall."
+}

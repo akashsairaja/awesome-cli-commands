@@ -1,0 +1,8 @@
+{
+  "id": "grafana-api-6",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-api",
+  "title": "Get datasource by name",
+  "command": "curl -s http://localhost:3000/api/datasources/name/Prometheus -H 'Authorization: Bearer TOKEN'",
+  "description": "Get datasource details by name."
+}

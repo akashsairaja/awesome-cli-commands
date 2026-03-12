@@ -1,0 +1,8 @@
+{
+  "id": "apt-64",
+  "categoryId": "ubuntu",
+  "subcategoryId": "ubuntu-network",
+  "title": "Apply netplan config",
+  "command": "sudo netplan apply",
+  "description": "Apply network configuration from /etc/netplan/*.yaml files."
+}

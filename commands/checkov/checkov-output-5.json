@@ -1,0 +1,8 @@
+{
+  "id": "checkov-output-5",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-output",
+  "title": "Soft fail",
+  "command": "checkov -d . --soft-fail",
+  "description": "Exit 0 even with failures."
+}

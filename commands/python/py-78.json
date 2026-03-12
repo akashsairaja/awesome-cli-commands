@@ -1,0 +1,8 @@
+{
+  "id": "py-78",
+  "categoryId": "python",
+  "subcategoryId": "python-pyenv",
+  "title": "Rehash shims",
+  "command": "pyenv rehash",
+  "description": "Rebuild shims after installing packages with executables."
+}

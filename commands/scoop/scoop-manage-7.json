@@ -1,0 +1,8 @@
+{
+  "id": "scoop-manage-7",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-manage",
+  "title": "Show app dependencies",
+  "command": "scoop depends git",
+  "description": "List dependencies for an app."
+}

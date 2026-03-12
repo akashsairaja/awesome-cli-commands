@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-artifacts-tags-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-artifacts",
+  "title": "List Image Tags",
+  "command": "gcloud artifacts docker tags list <location>-docker.pkg.dev/<project>/<repo>/<image>",
+  "description": "List all tags for a specific Docker image",
+  "tags": ["artifacts", "docker", "tags", "list"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "httpie-output-10",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-output",
+  "title": "Check status code",
+  "command": "http --check-status GET https://api.example.com/health",
+  "description": "Exit with error code for 3xx/4xx/5xx responses (useful in scripts)."
+}

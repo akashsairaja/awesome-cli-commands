@@ -1,0 +1,8 @@
+{
+  "id": "k6-options-5",
+  "categoryId": "k6",
+  "subcategoryId": "k6-options",
+  "title": "Batch settings",
+  "command": "export const options = {\n  batch: 10,\n  batchPerHost: 5,\n};",
+  "description": "Set max parallel batch requests."
+}

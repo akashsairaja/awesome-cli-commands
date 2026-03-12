@@ -1,0 +1,8 @@
+{
+  "id": "rust-pub-5",
+  "categoryId": "rust",
+  "subcategoryId": "rust-publish",
+  "title": "Publish dry run",
+  "command": "cargo publish --dry-run",
+  "description": "Test publish without uploading."
+}

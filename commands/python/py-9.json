@@ -1,0 +1,8 @@
+{
+  "id": "py-9",
+  "categoryId": "python",
+  "subcategoryId": "python-pip",
+  "title": "Show outdated packages",
+  "command": "pip list --outdated",
+  "description": "List packages with available updates."
+}

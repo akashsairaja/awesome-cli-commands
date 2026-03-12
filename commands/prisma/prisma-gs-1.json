@@ -1,0 +1,8 @@
+{
+  "id": "prisma-gs-1",
+  "title": "Install Prisma",
+  "command": "npm install prisma --save-dev",
+  "description": "Install Prisma as a dev dependency in your project",
+  "categoryId": "prisma",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "pg-replication-2",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-replication",
+  "title": "Check if replica",
+  "command": "SELECT pg_is_in_recovery();",
+  "description": "Check if server is in recovery (replica) mode."
+}

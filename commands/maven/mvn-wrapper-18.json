@@ -1,0 +1,8 @@
+{
+  "id": "mvn-wrapper-18",
+  "categoryId": "maven",
+  "subcategoryId": "mvn-wrapper",
+  "title": "Parallel build with wrapper",
+  "command": "./mvnw -T 4 clean install",
+  "description": "Run a multi-threaded build with 4 threads using the wrapper."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "vercel-cache-invalidate-img",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-cache",
+  "title": "Invalidate image cache",
+  "command": "vercel cache invalidate --srcimg /api/avatar/1",
+  "description": "Invalidate all cached image transformations",
+  "tags": ["cache", "image", "invalidate"]
+}

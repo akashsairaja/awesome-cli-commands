@@ -1,0 +1,8 @@
+{
+  "id": "git-153",
+  "categoryId": "git",
+  "subcategoryId": "maintenance",
+  "title": "Unregister from maintenance",
+  "command": "git maintenance unregister",
+  "description": "Unregister repo from background maintenance."
+}

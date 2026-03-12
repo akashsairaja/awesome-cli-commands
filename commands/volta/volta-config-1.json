@@ -1,0 +1,8 @@
+{
+  "id": "volta-config-1",
+  "categoryId": "volta",
+  "subcategoryId": "volta-config",
+  "title": "Setup shell",
+  "command": "volta setup",
+  "description": "Configure shell for Volta."
+}

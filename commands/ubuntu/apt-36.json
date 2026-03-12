@@ -1,0 +1,8 @@
+{
+  "id": "apt-36",
+  "categoryId": "ubuntu",
+  "subcategoryId": "systemd-services",
+  "title": "Disable service on boot",
+  "command": "sudo systemctl disable <service>",
+  "description": "Prevent a service from starting at boot."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "docker-42",
+  "categoryId": "docker",
+  "subcategoryId": "images",
+  "title": "Build from custom Dockerfile",
+  "command": "docker build -f Dockerfile.prod -t <name>:<tag> .",
+  "description": "Use specific Dockerfile."
+}

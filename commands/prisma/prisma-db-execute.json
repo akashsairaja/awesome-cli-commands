@@ -1,0 +1,9 @@
+{
+  "id": "prisma-db-execute",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-db",
+  "title": "Execute SQL file",
+  "command": "npx prisma db execute --file script.sql",
+  "description": "Execute raw SQL file against database",
+  "tags": ["db", "execute", "sql"]
+}

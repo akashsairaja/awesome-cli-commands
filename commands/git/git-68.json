@@ -1,0 +1,8 @@
+{
+  "id": "git-68",
+  "categoryId": "git",
+  "subcategoryId": "remote",
+  "title": "Add remote",
+  "command": "git remote add <name> <url>",
+  "description": "Add a new remote repository."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "firebase-firestore-rules",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-firestore",
+  "title": "Deploy Firestore rules",
+  "command": "firebase deploy --only firestore:rules",
+  "description": "Deploy only Firestore security rules",
+  "tags": ["firestore", "rules", "deploy"]
+}

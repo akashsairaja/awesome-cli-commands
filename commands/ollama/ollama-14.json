@@ -1,0 +1,8 @@
+{
+  "id": "ollama-14",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-run",
+  "title": "Run code model",
+  "command": "ollama run codellama \"Write a Python function to sort a list\"",
+  "description": "Use code-specialized model for programming tasks."
+}

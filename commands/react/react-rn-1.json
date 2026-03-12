@@ -1,0 +1,8 @@
+{
+  "id": "react-rn-1",
+  "categoryId": "react",
+  "subcategoryId": "react-native",
+  "title": "Create React Native app",
+  "command": "npx @react-native-community/cli@latest init MyApp",
+  "description": "Initialize new React Native project."
+}

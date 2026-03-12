@@ -1,0 +1,8 @@
+{
+  "id": "temporal-env-4",
+  "categoryId": "temporal",
+  "subcategoryId": "env",
+  "title": "Set environment property",
+  "command": "temporal env set --env prod --key address --value temporal.example.com:7233",
+  "description": "Store server address in environment."
+}

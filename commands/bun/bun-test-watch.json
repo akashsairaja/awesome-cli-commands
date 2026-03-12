@@ -1,0 +1,9 @@
+{
+  "id": "bun-test-watch",
+  "categoryId": "bun",
+  "subcategoryId": "bun-test",
+  "title": "Watch Tests",
+  "command": "bun test --watch",
+  "description": "Re-run tests on file changes",
+  "tags": ["test", "watch", "auto"]
+}

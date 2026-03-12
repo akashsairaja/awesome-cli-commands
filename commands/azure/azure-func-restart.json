@@ -1,0 +1,9 @@
+{
+  "id": "azure-func-restart",
+  "categoryId": "azure",
+  "subcategoryId": "azure-functions",
+  "title": "Restart Function App",
+  "command": "az functionapp restart --resource-group <rg> --name <name>",
+  "description": "Restart the function app",
+  "tags": ["functions", "restart"]
+}

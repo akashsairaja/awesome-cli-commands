@@ -1,0 +1,9 @@
+{
+  "id": "redis-sinter",
+  "categoryId": "redis",
+  "subcategoryId": "redis-sets",
+  "title": "Intersection of sets",
+  "command": "SINTER key1 key2",
+  "description": "Get intersection of multiple sets",
+  "tags": ["sinter", "set", "intersection"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "deno-compile-include",
+  "categoryId": "deno",
+  "subcategoryId": "deno-compile",
+  "title": "Compile with Assets",
+  "command": "deno compile --include assets/ script.ts",
+  "description": "Embed files into binary",
+  "tags": ["compile", "include", "assets"]
+}

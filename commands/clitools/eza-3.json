@@ -1,0 +1,8 @@
+{
+  "id": "eza-3",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-eza",
+  "title": "Tree view",
+  "command": "eza --tree --level=2",
+  "description": "Show directory tree (2 levels)."
+}

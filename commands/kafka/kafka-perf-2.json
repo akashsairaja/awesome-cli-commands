@@ -1,0 +1,8 @@
+{
+  "id": "kafka-perf-2",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-perf",
+  "title": "Consumer perf test",
+  "command": "kafka-consumer-perf-test.sh --topic my-topic --messages 100000 --bootstrap-server localhost:9092",
+  "description": "Benchmark consumer throughput."
+}

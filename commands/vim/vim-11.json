@@ -1,0 +1,8 @@
+{
+  "id": "vim-11",
+  "categoryId": "vim",
+  "subcategoryId": "editing",
+  "title": "Yank (copy) line",
+  "command": "yy",
+  "description": "Copy current line."
+}

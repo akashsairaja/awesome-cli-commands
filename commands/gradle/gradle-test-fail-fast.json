@@ -1,0 +1,9 @@
+{
+  "id": "gradle-test-fail-fast",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-testing",
+  "title": "Fail Fast Tests",
+  "command": "./gradlew test --fail-fast",
+  "description": "Stop on first test failure",
+  "tags": ["test", "fail-fast", "quick"]
+}

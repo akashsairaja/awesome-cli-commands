@@ -1,0 +1,8 @@
+{
+  "id": "tf-mod-9",
+  "categoryId": "terraform",
+  "subcategoryId": "modules",
+  "title": "Generate graph",
+  "command": "terraform graph | dot -Tpng > graph.png",
+  "description": "Create dependency graph image."
+}

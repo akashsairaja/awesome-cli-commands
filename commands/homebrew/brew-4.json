@@ -1,0 +1,8 @@
+{
+  "id": "brew-4",
+  "categoryId": "homebrew",
+  "subcategoryId": "packages",
+  "title": "Upgrade specific package",
+  "command": "brew upgrade <package>",
+  "description": "Upgrade specific package."
+}

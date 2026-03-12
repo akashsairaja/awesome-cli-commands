@@ -1,0 +1,8 @@
+{
+  "id": "go-run-5",
+  "categoryId": "go",
+  "subcategoryId": "go-run",
+  "title": "View function docs",
+  "command": "go doc fmt.Println",
+  "description": "Show documentation for specific symbol."
+}

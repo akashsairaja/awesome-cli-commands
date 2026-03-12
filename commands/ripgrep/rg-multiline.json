@@ -1,0 +1,9 @@
+{
+  "id": "rg-multiline",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-search",
+  "title": "Multiline search",
+  "command": "rg -U \"pattern.*\\n.*pattern2\"",
+  "description": "Search patterns spanning multiple lines",
+  "tags": ["search", "multiline", "span"]
+}

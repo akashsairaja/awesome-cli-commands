@@ -1,0 +1,8 @@
+{
+  "id": "sops-keys-5",
+  "categoryId": "sops",
+  "subcategoryId": "sops-keys",
+  "title": "Add KMS key to file",
+  "command": "sops updatekeys --add-kms arn:aws:kms:us-east-1:123:key/xxx secrets.enc.yaml",
+  "description": "Add an AWS KMS key to encrypted file."
+}

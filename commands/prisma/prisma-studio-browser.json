@@ -1,0 +1,9 @@
+{
+  "id": "prisma-studio-browser",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-studio",
+  "title": "Studio without auto-open browser",
+  "command": "npx prisma studio --browser none",
+  "description": "Launch Prisma Studio without opening a browser window",
+  "tags": ["studio", "browser", "headless"]
+}

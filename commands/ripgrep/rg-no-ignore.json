@@ -1,0 +1,9 @@
+{
+  "id": "rg-no-ignore",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-files",
+  "title": "Ignore gitignore",
+  "command": "rg --no-ignore \"pattern\"",
+  "description": "Don't respect .gitignore files",
+  "tags": ["gitignore", "ignore", "all"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "mvn-dep-5",
+  "categoryId": "maven",
+  "subcategoryId": "dependencies",
+  "title": "Check updates",
+  "command": "mvn versions:display-dependency-updates",
+  "description": "Show available updates."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "hurl-gs-1",
+  "title": "Install Hurl (macOS)",
+  "command": "brew install hurl",
+  "description": "Install Hurl HTTP testing tool using Homebrew on macOS",
+  "categoryId": "hurl",
+  "subcategoryId": "getting-started"
+}

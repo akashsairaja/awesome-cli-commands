@@ -1,0 +1,9 @@
+{
+  "id": "deno-fmt",
+  "categoryId": "deno",
+  "subcategoryId": "deno-fmt",
+  "title": "Format Code",
+  "command": "deno fmt",
+  "description": "Format all files in project",
+  "tags": ["fmt", "format", "style"]
+}

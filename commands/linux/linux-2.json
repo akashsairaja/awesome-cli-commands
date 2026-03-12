@@ -1,0 +1,8 @@
+{
+  "id": "linux-2",
+  "categoryId": "linux",
+  "subcategoryId": "files",
+  "title": "Create tar.gz archive",
+  "command": "tar -czvf archive.tar.gz /path/to/directory",
+  "description": "Compress directory into gzipped tar archive."
+}

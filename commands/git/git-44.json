@@ -1,0 +1,8 @@
+{
+  "id": "git-44",
+  "categoryId": "git",
+  "subcategoryId": "branches",
+  "title": "Show unmerged branches",
+  "command": "git branch --no-merged",
+  "description": "List branches not merged into current."
+}

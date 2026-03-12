@@ -1,0 +1,8 @@
+{
+  "id": "tsx-7",
+  "categoryId": "typescript",
+  "subcategoryId": "tsx",
+  "title": "Development workflow",
+  "command": "tsc --noEmit --watch & tsx watch src/index.ts",
+  "description": "Parallel type checking and execution (recommended)."
+}

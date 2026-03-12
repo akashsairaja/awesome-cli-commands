@@ -1,0 +1,8 @@
+{
+  "id": "ps-72",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-modules",
+  "title": "Install module",
+  "command": "Install-Module -Name ModuleName -Scope CurrentUser",
+  "description": "Install module from Gallery."
+}

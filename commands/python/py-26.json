@@ -1,0 +1,8 @@
+{
+  "id": "py-26",
+  "categoryId": "python",
+  "subcategoryId": "python-poetry",
+  "title": "Install dependencies",
+  "command": "poetry install",
+  "description": "Install project dependencies from lock file."
+}

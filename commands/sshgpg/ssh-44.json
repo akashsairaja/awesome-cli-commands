@@ -1,0 +1,8 @@
+{
+  "id": "ssh-44",
+  "categoryId": "sshgpg",
+  "subcategoryId": "tunnels",
+  "title": "Persistent tunnel with autossh",
+  "command": "autossh -M 20000 -N -f -L 8080:localhost:80 user@host",
+  "description": "Auto-reconnecting tunnel via autossh."
+}

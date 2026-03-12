@@ -1,0 +1,8 @@
+{
+  "id": "pg-performance-13",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-performance",
+  "title": "Lock monitoring",
+  "command": "SELECT blocked_locks.pid AS blocked_pid, blocked_activity.query AS blocked_query, blocking_locks.pid AS blocking_pid, blocking_activity.query AS blocking_query FROM pg_catalog.pg_locks blocked_locks JOIN pg_catalog.pg_stat_activity blocked_activity ON blocked_activity.pid = blocked_locks.pid JOIN pg_catalog.pg_locks blocking_locks ON blocking_locks.locktype = blocked_locks.locktype AND blocking_locks.relation = blocked_locks.relation AND blocking_locks.pid != blocked_locks.pid JOIN pg_catalog.pg_stat_activity blocking_activity ON blocking_activity.pid = blocking_locks.pid WHERE NOT blocked_locks.granted;",
+  "description": "Show blocking and blocked queries to diagnose lock contention."
+}

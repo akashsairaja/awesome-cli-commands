@@ -1,0 +1,9 @@
+{
+  "id": "supabase-functions-deploy",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-functions",
+  "title": "Deploy all functions",
+  "command": "supabase functions deploy",
+  "description": "Deploy all Edge Functions to remote",
+  "tags": ["functions", "deploy", "all"]
+}

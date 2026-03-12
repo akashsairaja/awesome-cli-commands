@@ -1,0 +1,9 @@
+{
+  "id": "nginx-top-ips",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-logs",
+  "title": "Top requesting IPs",
+  "command": "sudo awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -rn | head -20",
+  "description": "Show top 20 IPs by request count",
+  "tags": ["log", "ips", "analytics"]
+}

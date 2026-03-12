@@ -1,0 +1,8 @@
+{
+  "id": "npm-install-2",
+  "categoryId": "npm",
+  "subcategoryId": "npm-install",
+  "title": "Add package",
+  "command": "npm install <package>",
+  "description": "Install and add package to dependencies."
+}

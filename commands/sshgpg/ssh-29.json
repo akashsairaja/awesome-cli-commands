@@ -1,0 +1,8 @@
+{
+  "id": "ssh-29",
+  "categoryId": "sshgpg",
+  "subcategoryId": "keys",
+  "title": "Remove known host entry",
+  "command": "ssh-keygen -R hostname",
+  "description": "Remove host from known_hosts file."
+}

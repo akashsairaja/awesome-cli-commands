@@ -1,0 +1,58 @@
+{
+  "id": "vim-search-replace",
+  "stackId": "vim",
+  "name": "Advanced Search and Replace Across Files",
+  "description": "Master Vim's search and replace with regex, multi-file substitution, and confirmation workflows for safe bulk edits.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "tags": ["search", "replace", "regex", "substitution", "multi-file"],
+  "prerequisites": ["Neovim or Vim installed"],
+  "steps": [
+    {
+      "title": "Basic search and replace in current file",
+      "description": "Replace all occurrences of a pattern in the entire file.",
+      "command": ":%s/oldText/newText/g",
+      "tip": "Add 'c' flag (:%s/old/new/gc) to confirm each replacement individually."
+    },
+    {
+      "title": "Replace with regex capture groups",
+      "description": "Use capture groups to restructure text during replacement.",
+      "command": ":%s/\\(\\w\\+\\)_\\(\\w\\+\\)/\\2_\\1/g",
+      "tip": "This example swaps two words separated by an underscore: foo_bar becomes bar_foo."
+    },
+    {
+      "title": "Replace only in a visual selection",
+      "description": "Select a range of lines visually, then substitute only within that range.",
+      "command": ":'<,'>s/pattern/replacement/g"
+    },
+    {
+      "title": "Search and replace across multiple files with argdo",
+      "description": "Open files matching a pattern and run substitution across all of them.",
+      "command": ":args **/*.ts | argdo %s/oldFunc/newFunc/ge | update",
+      "warning": "Always use the 'e' flag with argdo to suppress errors on files that do not contain the pattern."
+    },
+    {
+      "title": "Use cfdo for quickfix-list-based replacement",
+      "description": "Populate the quickfix list with grep results, then replace across those matches.",
+      "command": ":grep -r 'oldName' src/ | cfdo %s/oldName/newName/g | update",
+      "tip": "This is more targeted than argdo because it only edits files that contain the match."
+    }
+  ],
+  "fullScript": "# Vim Search and Replace Quick Reference\n# (Run these commands inside Vim/Neovim command mode with :)\n\n# Current file - replace all\n:%s/old/new/g\n\n# Current file - replace with confirmation\n:%s/old/new/gc\n\n# Current file - case insensitive\n:%s/old/new/gi\n\n# Lines 10-50 only\n:10,50s/old/new/g\n\n# Visual selection\n:'<,'>s/old/new/g\n\n# With regex groups (swap words)\n:%s/\\(\\w\\+\\)_\\(\\w\\+\\)/\\2_\\1/g\n\n# Multi-file with argdo\n:args **/*.ts | argdo %s/old/new/ge | update\n\n# Multi-file with cfdo (quickfix)\n:vimgrep /pattern/ **/*.ts | cfdo %s/pattern/replacement/g | update\n\n# Delete lines matching pattern\n:g/pattern/d\n\n# Delete lines NOT matching pattern\n:v/pattern/d",
+  "faq": [
+    {
+      "question": "What is the difference between argdo and cfdo?",
+      "answer": "argdo runs a command on every file in the argument list. cfdo runs a command on every file in the quickfix list. cfdo is more targeted because you can populate the quickfix list with grep results first."
+    },
+    {
+      "question": "How do I use very-magic mode for cleaner regex?",
+      "answer": "Prefix the pattern with \\v to enable very-magic mode: :%s/\\v(\\w+)_(\\w+)/\\2_\\1/g. This makes parentheses, pipes, and quantifiers work without escaping."
+    },
+    {
+      "question": "Can I undo a multi-file replace?",
+      "answer": "Each file's changes can be undone individually with :undo. If you used 'update' to save, use ':earlier 1f' to revert to the last saved state. Always work in a Git repo so you can 'git checkout .' as a safety net."
+    }
+  ],
+  "relatedRecipes": ["vim-macro-automation", "vim-split-workflow"],
+  "lastUpdated": "2026-03-11"
+}

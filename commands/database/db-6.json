@@ -1,0 +1,8 @@
+{
+  "id": "db-6",
+  "categoryId": "database",
+  "subcategoryId": "postgresql",
+  "title": "Describe table",
+  "command": "\\d tablename",
+  "description": "Show table structure."
+}

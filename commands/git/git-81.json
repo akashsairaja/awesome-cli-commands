@@ -1,0 +1,8 @@
+{
+  "id": "git-81",
+  "categoryId": "git",
+  "subcategoryId": "history",
+  "title": "Log with graph",
+  "command": "git log --oneline --graph --all",
+  "description": "Visualize branch history with graph."
+}

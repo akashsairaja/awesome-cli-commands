@@ -1,0 +1,9 @@
+{
+  "id": "nginx-reload",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-control",
+  "title": "Reload config",
+  "command": "sudo nginx -s reload",
+  "description": "Reload configuration without stopping",
+  "tags": ["reload", "config", "refresh"]
+}

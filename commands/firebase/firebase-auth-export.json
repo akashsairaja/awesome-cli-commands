@@ -1,0 +1,9 @@
+{
+  "id": "firebase-auth-export",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-auth",
+  "title": "Export users",
+  "command": "firebase auth:export users.json",
+  "description": "Export users to JSON file",
+  "tags": ["auth", "export", "users"]
+}

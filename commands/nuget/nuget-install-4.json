@@ -1,0 +1,8 @@
+{
+  "id": "nuget-install-4",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-install",
+  "title": "Install (nuget.exe)",
+  "command": "nuget install Newtonsoft.Json -OutputDirectory packages",
+  "description": "Install using nuget.exe."
+}

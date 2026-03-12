@@ -1,0 +1,8 @@
+{
+  "id": "httpie-output-17",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-output",
+  "title": "HTTP/2 request",
+  "command": "http --http2 GET https://api.example.com/data",
+  "description": "Make a request using HTTP/2 protocol."
+}

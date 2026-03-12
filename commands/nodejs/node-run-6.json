@@ -1,0 +1,8 @@
+{
+  "id": "node-run-6",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-run",
+  "title": "Preserve output on restart",
+  "command": "node --watch --watch-preserve-output app.js",
+  "description": "Keep console output between restarts."
+}

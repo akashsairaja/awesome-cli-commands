@@ -1,0 +1,8 @@
+{
+  "id": "k6-run-5",
+  "categoryId": "k6",
+  "subcategoryId": "k6-run",
+  "title": "Run with tags",
+  "command": "k6 run --tag testid=123 script.js",
+  "description": "Run with custom tags."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "bash-75",
+  "categoryId": "bash",
+  "subcategoryId": "strings",
+  "title": "Replace at start",
+  "command": "echo \"${str/#old/new}\"",
+  "description": "Replace if at beginning."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "checkov-checks-1",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-checks",
+  "title": "List checks",
+  "command": "checkov --list",
+  "description": "List all available checks."
+}

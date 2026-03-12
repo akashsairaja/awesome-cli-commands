@@ -1,0 +1,8 @@
+{
+  "id": "grafana-gs-2",
+  "title": "Start Grafana server",
+  "command": "brew services start grafana",
+  "description": "Start Grafana as a background service on macOS",
+  "categoryId": "grafana",
+  "subcategoryId": "getting-started"
+}

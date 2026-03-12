@@ -1,0 +1,8 @@
+{
+  "id": "mvn-profile-13",
+  "categoryId": "maven",
+  "subcategoryId": "profiles",
+  "title": "Set version",
+  "command": "mvn versions:set -DnewVersion=1.2.0",
+  "description": "Update project version."
+}

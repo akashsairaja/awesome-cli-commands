@@ -1,0 +1,8 @@
+{
+  "id": "node-run-4",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-run",
+  "title": "Watch mode",
+  "command": "node --watch app.js",
+  "description": "Auto-restart on file changes (Node.js 22+)."
+}

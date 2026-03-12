@@ -1,0 +1,8 @@
+{
+  "id": "checkov-checks-5",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-checks",
+  "title": "Filter by severity",
+  "command": "checkov -d . --check MEDIUM --check HIGH --check CRITICAL",
+  "description": "Run checks at specific severity levels."
+}

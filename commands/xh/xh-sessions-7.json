@@ -1,0 +1,8 @@
+{
+  "id": "xh-sessions-7",
+  "categoryId": "xh",
+  "subcategoryId": "xh-sessions",
+  "title": "Client certificate",
+  "command": "xh --cert=client.pem --cert-key=key.pem GET https://api.example.com",
+  "description": "Use a client TLS certificate for mutual TLS."
+}

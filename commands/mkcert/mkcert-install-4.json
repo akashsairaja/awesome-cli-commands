@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-install-4",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-install",
+  "title": "Set custom CA root",
+  "command": "CAROOT=/path/to/ca mkcert -install",
+  "description": "Install CA using a custom root directory."
+}

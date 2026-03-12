@@ -1,0 +1,49 @@
+{
+  "id": "dockerfile-linting-security",
+  "stackId": "docker",
+  "name": "Dockerfile Linting and Security",
+  "description": "Lint Dockerfiles for best practice violations and security issues using Hadolint to catch problems before building.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": false,
+  "tags": ["linting", "security", "dockerfile", "best-practices"],
+  "prerequisites": ["Docker installed"],
+  "steps": [
+    {
+      "title": "Lint a Dockerfile with Hadolint",
+      "description": "Run Hadolint to check for Dockerfile best practice violations.",
+      "command": "docker run --rm -i hadolint/hadolint < Dockerfile",
+      "tip": "Hadolint checks shell commands with ShellCheck and validates Dockerfile instructions against best practices."
+    },
+    {
+      "title": "Lint with specific rules ignored",
+      "description": "Suppress specific rules that do not apply to your use case.",
+      "command": "docker run --rm -i hadolint/hadolint hadolint --ignore DL3008 --ignore DL3009 - < Dockerfile",
+      "tip": "DL3008 warns about pinning apt package versions. DL3009 warns about deleting apt lists."
+    },
+    {
+      "title": "Check for USER instruction",
+      "description": "Verify the Dockerfile does not run as root in production.",
+      "command": "grep -n 'USER' Dockerfile || echo 'WARNING: No USER instruction found. Container will run as root.'",
+      "warning": "Running containers as root is a security risk. Always add a USER instruction for production images."
+    },
+    {
+      "title": "Verify no secrets in build args",
+      "description": "Check that no sensitive values are passed as build arguments, which are visible in image history.",
+      "command": "docker history myapp:latest --no-trunc | grep -i 'ARG\\|ENV' | grep -i 'password\\|secret\\|key\\|token' || echo 'No obvious secrets found'"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Dockerfile Linting and Security Check\nset -euo pipefail\n\nDOCKERFILE=${1:-\"Dockerfile\"}\n\necho \"=== Linting $DOCKERFILE ===\"\ndocker run --rm -i hadolint/hadolint < \"$DOCKERFILE\" || true\n\necho \"\"\necho \"=== Security Checks ===\"\necho \"--- USER instruction ---\"\ngrep -n 'USER' \"$DOCKERFILE\" || echo \"WARNING: No USER instruction found\"\n\necho \"\"\necho \"--- HEALTHCHECK instruction ---\"\ngrep -n 'HEALTHCHECK' \"$DOCKERFILE\" || echo \"INFO: No HEALTHCHECK instruction found\"\n\necho \"\"\necho \"--- Exposed ports ---\"\ngrep -n 'EXPOSE' \"$DOCKERFILE\" || echo \"No EXPOSE instruction found\"\n\necho \"\"\necho \"--- COPY vs ADD ---\"\ngrep -n 'ADD' \"$DOCKERFILE\" && echo \"Consider using COPY instead of ADD unless you need tar extraction\" || echo \"Good: No ADD instructions found\"",
+  "faq": [
+    {
+      "question": "What are the most important Hadolint rules?",
+      "answer": "DL3000 (use WORKDIR), DL3002 (do not switch to root), DL3007 (pin base image tag), and DL3025 (use JSON form for CMD) are critical for security and reliability."
+    },
+    {
+      "question": "Can I use Hadolint in CI/CD?",
+      "answer": "Yes. Run the Hadolint Docker container in your CI pipeline or install the binary directly. It returns a non-zero exit code on warnings/errors."
+    }
+  ],
+  "relatedRecipes": ["image-vulnerability-scanning", "multi-stage-build-optimizer"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "minikube-cluster-6",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-cluster",
+  "title": "Status",
+  "command": "minikube status",
+  "description": "Check cluster status."
+}

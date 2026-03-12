@@ -1,0 +1,8 @@
+{
+  "id": "docker-94",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "Show service ports",
+  "command": "docker compose port <service> <port>",
+  "description": "Print public port for a port binding."
+}

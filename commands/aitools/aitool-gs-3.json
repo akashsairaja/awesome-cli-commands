@@ -1,0 +1,8 @@
+{
+  "id": "aitool-gs-3",
+  "title": "Install LangChain",
+  "command": "pip install langchain",
+  "description": "Install the LangChain framework for building LLM applications",
+  "categoryId": "aitools",
+  "subcategoryId": "getting-started"
+}

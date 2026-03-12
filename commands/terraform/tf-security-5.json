@@ -1,0 +1,8 @@
+{
+  "id": "tf-security-5",
+  "categoryId": "terraform",
+  "subcategoryId": "terraform-security",
+  "title": "Custom lock timeout",
+  "command": "terraform apply -lock-timeout=10m",
+  "description": "Set custom timeout for state lock acquisition."
+}

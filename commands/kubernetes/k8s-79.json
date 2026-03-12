@@ -1,0 +1,8 @@
+{
+  "id": "k8s-79",
+  "categoryId": "kubernetes",
+  "subcategoryId": "nodes",
+  "title": "Remove taint from node",
+  "command": "kubectl taint nodes <node-name> key:NoSchedule-",
+  "description": "Remove taint from a node."
+}

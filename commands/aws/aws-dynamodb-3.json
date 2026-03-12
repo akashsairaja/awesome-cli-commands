@@ -1,0 +1,8 @@
+{
+  "id": "aws-dynamodb-3",
+  "categoryId": "aws",
+  "subcategoryId": "dynamodb",
+  "title": "Query with conditions",
+  "command": "aws dynamodb query --table-name Users --key-condition-expression \"PK = :pk AND SK BEGINS_WITH :sk\" --expression-attribute-values '{\":pk\":{\"S\":\"USER#123\"},\":sk\":{\"S\":\"ORDER#\"}}' --projection-expression \"OrderId,Amount\"",
+  "description": "Query with partition key and sort key conditions."
+}

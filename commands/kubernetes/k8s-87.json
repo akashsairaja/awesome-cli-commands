@@ -1,0 +1,8 @@
+{
+  "id": "k8s-87",
+  "categoryId": "kubernetes",
+  "subcategoryId": "jobs",
+  "title": "Get job logs",
+  "command": "kubectl logs job/<name>",
+  "description": "View logs from a job."
+}

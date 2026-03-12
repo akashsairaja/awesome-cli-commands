@@ -1,0 +1,9 @@
+{
+  "id": "azure-aks-nodepool-add",
+  "categoryId": "azure",
+  "subcategoryId": "azure-aks",
+  "title": "Add Node Pool",
+  "command": "az aks nodepool add --resource-group <rg> --cluster-name <cluster> --name <pool-name> --node-count 3",
+  "description": "Add a new node pool to cluster",
+  "tags": ["aks", "nodepool", "add"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "composer-publish-7",
+  "categoryId": "composer",
+  "subcategoryId": "composer-publish",
+  "title": "Diagnose issues",
+  "command": "composer diagnose",
+  "description": "Check for common setup issues."
+}

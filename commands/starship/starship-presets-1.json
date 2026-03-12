@@ -1,0 +1,8 @@
+{
+  "id": "starship-presets-1",
+  "categoryId": "starship",
+  "subcategoryId": "starship-presets",
+  "title": "Apply Nerd Font preset",
+  "command": "starship preset nerd-font-symbols -o ~/.config/starship.toml",
+  "description": "Apply Nerd Font Symbols preset."
+}

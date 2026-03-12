@@ -1,0 +1,8 @@
+{
+  "id": "apt-31",
+  "categoryId": "ubuntu",
+  "subcategoryId": "apt-packages",
+  "title": "Find which package owns a file",
+  "command": "dpkg -S /path/to/file",
+  "description": "Determine which package installed a given file."
+}

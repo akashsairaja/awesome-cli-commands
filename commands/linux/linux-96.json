@@ -1,0 +1,8 @@
+{
+  "id": "linux-96",
+  "categoryId": "linux",
+  "subcategoryId": "journald",
+  "title": "Show errors from current boot",
+  "command": "journalctl -p err -b",
+  "description": "Display all error-level messages since the last system boot."
+}

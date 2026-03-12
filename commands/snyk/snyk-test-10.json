@@ -1,0 +1,8 @@
+{
+  "id": "snyk-test-10",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-test",
+  "title": "Set detection depth",
+  "command": "snyk test --detection-depth=3",
+  "description": "Limit how deep to search for manifest files."
+}

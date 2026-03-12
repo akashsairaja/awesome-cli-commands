@@ -1,0 +1,8 @@
+{
+  "id": "playwright-screenshots-1",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-screenshots",
+  "title": "Full page screenshot",
+  "command": "await page.screenshot({ path: 'screenshot.png', fullPage: true });",
+  "description": "Capture full page screenshot."
+}

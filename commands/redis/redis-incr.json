@@ -1,0 +1,9 @@
+{
+  "id": "redis-incr",
+  "categoryId": "redis",
+  "subcategoryId": "redis-strings",
+  "title": "Increment value",
+  "command": "INCR key",
+  "description": "Increment integer value by 1",
+  "tags": ["incr", "increment", "counter"]
+}

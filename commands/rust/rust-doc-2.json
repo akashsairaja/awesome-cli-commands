@@ -1,0 +1,8 @@
+{
+  "id": "rust-doc-2",
+  "categoryId": "rust",
+  "subcategoryId": "rust-doc",
+  "title": "Open docs in browser",
+  "command": "cargo doc --open",
+  "description": "Build and open docs in browser."
+}

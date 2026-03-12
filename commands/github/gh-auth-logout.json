@@ -1,0 +1,9 @@
+{
+  "id": "gh-auth-logout",
+  "categoryId": "github",
+  "subcategoryId": "gh-auth",
+  "title": "Logout from GitHub",
+  "command": "gh auth logout",
+  "description": "Remove authentication credentials",
+  "tags": ["auth", "logout", "remove"]
+}

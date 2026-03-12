@@ -1,0 +1,8 @@
+{
+  "id": "ollama-32",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-api",
+  "title": "Generate embeddings",
+  "command": "curl http://localhost:11434/api/embeddings -d '{\"model\": \"llama2\", \"prompt\": \"text to embed\"}'",
+  "description": "Create vector embeddings for text."
+}

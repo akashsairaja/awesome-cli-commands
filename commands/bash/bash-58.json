@@ -1,0 +1,8 @@
+{
+  "id": "bash-58",
+  "categoryId": "bash",
+  "subcategoryId": "arrays",
+  "title": "Associative keys",
+  "command": "echo \"${!hash[@]}\"",
+  "description": "Get all keys of associative array."
+}

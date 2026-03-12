@@ -1,0 +1,8 @@
+{
+  "id": "tofu-plan-9",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-plan",
+  "title": "Generate import config",
+  "command": "tofu plan -generate-config-out=generated.tf",
+  "description": "Generate config for imported resources."
+}

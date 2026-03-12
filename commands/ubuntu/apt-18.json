@@ -1,0 +1,8 @@
+{
+  "id": "apt-18",
+  "categoryId": "ubuntu",
+  "subcategoryId": "users",
+  "title": "Show user groups",
+  "command": "groups <username>",
+  "description": "List groups user belongs to."
+}

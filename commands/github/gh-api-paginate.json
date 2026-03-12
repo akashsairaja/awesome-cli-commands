@@ -1,0 +1,9 @@
+{
+  "id": "gh-api-paginate",
+  "categoryId": "github",
+  "subcategoryId": "gh-api",
+  "title": "Paginate API results",
+  "command": "gh api <endpoint> --paginate",
+  "description": "Automatically paginate through all results",
+  "tags": ["api", "paginate", "all"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "pg-performance-4",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-performance",
+  "title": "Detailed query analysis",
+  "command": "EXPLAIN (ANALYZE, BUFFERS, FORMAT TEXT) SELECT * FROM users WHERE id = 1;",
+  "description": "Analyze query execution plan with actual timing, buffer usage, and I/O statistics."
+}

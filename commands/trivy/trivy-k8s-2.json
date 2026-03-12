@@ -1,0 +1,8 @@
+{
+  "id": "trivy-k8s-2",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-k8s",
+  "title": "Scan namespace",
+  "command": "trivy k8s --namespace default all",
+  "description": "Scan specific namespace."
+}

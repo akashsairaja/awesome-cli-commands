@@ -1,0 +1,8 @@
+{
+  "id": "nuget-install-1",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-install",
+  "title": "Add package (dotnet)",
+  "command": "dotnet add package Newtonsoft.Json",
+  "description": "Add NuGet package to project."
+}

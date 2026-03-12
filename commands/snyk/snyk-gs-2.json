@@ -1,0 +1,8 @@
+{
+  "id": "snyk-gs-2",
+  "title": "Authenticate Snyk CLI",
+  "command": "snyk auth",
+  "description": "Authenticate the Snyk CLI with your account via the browser",
+  "categoryId": "snyk",
+  "subcategoryId": "getting-started"
+}

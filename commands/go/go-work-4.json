@@ -1,0 +1,8 @@
+{
+  "id": "go-work-4",
+  "categoryId": "go",
+  "subcategoryId": "go-work",
+  "title": "Sync workspace",
+  "command": "go work sync",
+  "description": "Sync workspace dependencies to all modules."
+}

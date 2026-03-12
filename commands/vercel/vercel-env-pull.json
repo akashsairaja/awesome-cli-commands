@@ -1,0 +1,9 @@
+{
+  "id": "vercel-env-pull",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-env",
+  "title": "Pull env to .env",
+  "command": "vercel env pull",
+  "description": "Pull environment variables to .env.local file",
+  "tags": ["env", "pull", "download", "local"]
+}

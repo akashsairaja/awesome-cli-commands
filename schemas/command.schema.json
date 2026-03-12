@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Command",
+  "description": "A CLI command reference entry",
+  "type": "object",
+  "required": ["id", "categoryId", "title", "command", "description"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier (e.g. git-1)"
+    },
+    "categoryId": {
+      "type": "string",
+      "description": "Stack ID (e.g. git)"
+    },
+    "subcategoryId": {
+      "type": "string",
+      "description": "Subcategory grouping"
+    },
+    "title": {
+      "type": "string",
+      "description": "Display name"
+    },
+    "command": {
+      "type": "string",
+      "description": "The CLI command"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief explanation"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Search/filter tags"
+    },
+    "example": {
+      "type": "string",
+      "description": "Usage example"
+    },
+    "output": {
+      "type": "string",
+      "description": "Expected output"
+    }
+  },
+  "additionalProperties": false
+}

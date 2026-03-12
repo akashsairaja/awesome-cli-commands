@@ -1,0 +1,8 @@
+{
+  "id": "pg-users-12",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-users",
+  "title": "Grant on specific table",
+  "command": "GRANT SELECT, INSERT ON TABLE users TO appuser;",
+  "description": "Grant specific privileges on a single table."
+}

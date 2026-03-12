@@ -1,0 +1,8 @@
+{
+  "id": "mongo-users-12",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-users",
+  "title": "Drop user",
+  "command": "db.dropUser(\"appuser\")",
+  "description": "Delete a user account from the current database."
+}

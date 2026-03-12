@@ -1,0 +1,8 @@
+{
+  "id": "docker-54",
+  "categoryId": "docker",
+  "subcategoryId": "volumes",
+  "title": "List volumes",
+  "command": "docker volume ls",
+  "description": "Show all Docker volumes."
+}

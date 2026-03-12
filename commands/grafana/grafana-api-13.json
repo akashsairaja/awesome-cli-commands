@@ -1,0 +1,8 @@
+{
+  "id": "grafana-api-13",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-api",
+  "title": "Snapshot dashboard",
+  "command": "curl -X POST http://localhost:3000/api/snapshots -H 'Content-Type: application/json' -H 'Authorization: Bearer TOKEN' -d @snapshot.json",
+  "description": "Create a dashboard snapshot."
+}

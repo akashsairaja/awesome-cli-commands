@@ -1,0 +1,8 @@
+{
+  "id": "git-161",
+  "categoryId": "git",
+  "subcategoryId": "sparse-checkout",
+  "title": "Disable sparse checkout",
+  "command": "git sparse-checkout disable",
+  "description": "Disable sparse checkout and populate all files."
+}

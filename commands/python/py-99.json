@@ -1,0 +1,8 @@
+{
+  "id": "py-99",
+  "categoryId": "python",
+  "subcategoryId": "python-pytest",
+  "title": "Debug on failure",
+  "command": "pytest --pdb",
+  "description": "Drop into debugger on test failure."
+}

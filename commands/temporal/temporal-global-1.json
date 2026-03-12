@@ -1,0 +1,8 @@
+{
+  "id": "temporal-global-1",
+  "categoryId": "temporal",
+  "subcategoryId": "workflow",
+  "title": "Use specific namespace",
+  "command": "temporal workflow list --namespace production",
+  "description": "Target non-default namespace for any command."
+}

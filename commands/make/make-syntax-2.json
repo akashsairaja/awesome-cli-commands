@@ -1,0 +1,8 @@
+{
+  "id": "make-syntax-2",
+  "categoryId": "make",
+  "subcategoryId": "make-syntax",
+  "title": "Phony target",
+  "command": ".PHONY: clean test build",
+  "description": "Declare non-file targets."
+}

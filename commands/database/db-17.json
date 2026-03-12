@@ -1,0 +1,8 @@
+{
+  "id": "db-17",
+  "categoryId": "database",
+  "subcategoryId": "mongodb",
+  "title": "Show collections",
+  "command": "show collections",
+  "description": "List all collections in current database."
+}

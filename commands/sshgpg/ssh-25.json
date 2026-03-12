@@ -1,0 +1,8 @@
+{
+  "id": "ssh-25",
+  "categoryId": "sshgpg",
+  "subcategoryId": "keys",
+  "title": "Import GPG key",
+  "command": "gpg --import pubkey.asc",
+  "description": "Import a GPG public key file."
+}

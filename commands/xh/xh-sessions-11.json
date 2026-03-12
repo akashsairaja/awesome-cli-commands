@@ -1,0 +1,8 @@
+{
+  "id": "xh-sessions-11",
+  "categoryId": "xh",
+  "subcategoryId": "xh-sessions",
+  "title": "Default scheme shorthand",
+  "command": "xh :3000/api/health",
+  "description": "Shorthand for http://localhost:3000."
+}

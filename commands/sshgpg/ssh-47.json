@@ -1,0 +1,8 @@
+{
+  "id": "ssh-47",
+  "categoryId": "sshgpg",
+  "subcategoryId": "config",
+  "title": "Wildcard host pattern",
+  "command": "Host *.example.com\n  User deploy\n  IdentityFile ~/.ssh/deploy_key",
+  "description": "Apply config to matching hostnames."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "nuget-install-6",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-install",
+  "title": "Add prerelease package",
+  "command": "dotnet add package Newtonsoft.Json --prerelease",
+  "description": "Add latest prerelease version."
+}

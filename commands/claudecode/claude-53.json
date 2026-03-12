@@ -1,0 +1,8 @@
+{
+  "id": "claude-53",
+  "categoryId": "claudecode",
+  "subcategoryId": "mcp",
+  "title": "Remove MCP server",
+  "command": "claude mcp remove <server-name>",
+  "description": "Remove an MCP server."
+}

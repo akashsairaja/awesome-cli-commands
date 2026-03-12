@@ -1,0 +1,8 @@
+{
+  "id": "spark-34",
+  "categoryId": "spark",
+  "subcategoryId": "spark-config",
+  "title": "Enable speculation",
+  "command": "spark-submit --conf spark.speculation=true app.py",
+  "description": "Enable speculative execution for straggler mitigation."
+}

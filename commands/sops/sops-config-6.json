@@ -1,0 +1,8 @@
+{
+  "id": "sops-config-6",
+  "categoryId": "sops",
+  "subcategoryId": "sops-config",
+  "title": "Encrypted regex in config",
+  "command": "creation_rules:\n  - path_regex: config/.*\\.yaml$\n    encrypted_regex: '^(password|token|secret)$'\n    age: age1xxx",
+  "description": "Encrypt only secret keys via config rule."
+}

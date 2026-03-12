@@ -1,0 +1,8 @@
+{
+  "id": "mvn-plugin-6",
+  "categoryId": "maven",
+  "subcategoryId": "plugins",
+  "title": "Generate site",
+  "command": "mvn site",
+  "description": "Generate project documentation."
+}

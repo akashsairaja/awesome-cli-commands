@@ -1,0 +1,62 @@
+{
+  "id": "gcloud-gke-cluster",
+  "stackId": "gcloud",
+  "name": "GKE Cluster Provisioning and Management",
+  "description": "Create a Google Kubernetes Engine cluster, connect kubectl, deploy workloads, and configure autoscaling.",
+  "difficulty": "advanced",
+  "timeMinutes": 20,
+  "tags": ["gke", "kubernetes", "cluster", "containers", "orchestration"],
+  "prerequisites": [
+    "gcloud CLI installed",
+    "kubectl installed",
+    "GCP project with billing enabled",
+    "Basic Kubernetes knowledge"
+  ],
+  "steps": [
+    {
+      "title": "Enable the GKE API",
+      "command": "gcloud services enable container.googleapis.com",
+      "description": "Activates the Kubernetes Engine API for the project."
+    },
+    {
+      "title": "Create a GKE Autopilot cluster",
+      "command": "gcloud container clusters create-auto mycluster --region us-central1",
+      "description": "Autopilot manages nodes automatically. You only define pods and GKE handles the infrastructure.",
+      "tip": "Use Autopilot for most workloads. Use Standard mode only when you need node-level control.",
+      "warning": "Cluster creation takes 5-10 minutes."
+    },
+    {
+      "title": "Get cluster credentials",
+      "command": "gcloud container clusters get-credentials mycluster --region us-central1",
+      "description": "Configures kubectl to communicate with the new GKE cluster."
+    },
+    {
+      "title": "Deploy a workload",
+      "command": "kubectl create deployment hello-app --image=us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0 && kubectl expose deployment hello-app --type=LoadBalancer --port=80 --target-port=8080",
+      "description": "Deploys a sample app and exposes it through a Google Cloud Load Balancer."
+    },
+    {
+      "title": "Check the external IP",
+      "command": "kubectl get service hello-app --watch",
+      "description": "Waits for the LoadBalancer to provision an external IP address."
+    },
+    {
+      "title": "Scale the deployment",
+      "command": "kubectl scale deployment hello-app --replicas=3",
+      "description": "Scales the deployment to three replicas for higher availability."
+    }
+  ],
+  "fullScript": "# GKE cluster provisioning and management\ngcloud services enable container.googleapis.com\ngcloud container clusters create-auto mycluster --region us-central1\ngcloud container clusters get-credentials mycluster --region us-central1\nkubectl create deployment hello-app --image=us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0\nkubectl expose deployment hello-app --type=LoadBalancer --port=80 --target-port=8080\nkubectl get service hello-app\nkubectl scale deployment hello-app --replicas=3",
+  "faq": [
+    {
+      "question": "What is the difference between GKE Autopilot and Standard?",
+      "answer": "Autopilot manages nodes, security, and scaling automatically -- you pay per pod resource request. Standard gives you full control over nodes but requires manual management of node pools and upgrades."
+    },
+    {
+      "question": "How do I delete a GKE cluster?",
+      "answer": "Run 'gcloud container clusters delete mycluster --region us-central1'. This removes the cluster and all workloads. LoadBalancer IPs and persistent disks may need separate cleanup."
+    }
+  ],
+  "relatedRecipes": ["gcloud-cloud-run-deploy", "gcloud-iam-management"],
+  "lastUpdated": "2026-03-11"
+}

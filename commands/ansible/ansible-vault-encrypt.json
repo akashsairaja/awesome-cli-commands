@@ -1,0 +1,9 @@
+{
+  "id": "ansible-vault-encrypt",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-vault",
+  "title": "Encrypt Existing File",
+  "command": "ansible-vault encrypt vars.yml",
+  "description": "Encrypt an existing file",
+  "tags": ["vault", "encrypt", "file"]
+}

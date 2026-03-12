@@ -1,0 +1,8 @@
+{
+  "id": "ollama-22",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-server",
+  "title": "Custom models directory",
+  "command": "OLLAMA_MODELS=/path/to/models ollama serve",
+  "description": "Store models in a custom location."
+}

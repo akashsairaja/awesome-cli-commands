@@ -1,0 +1,9 @@
+{
+  "id": "redis-xreadgroup",
+  "categoryId": "redis",
+  "subcategoryId": "redis-streams",
+  "title": "Read as consumer",
+  "command": "XREADGROUP GROUP group consumer STREAMS stream >",
+  "description": "Read stream entries as consumer group member",
+  "tags": ["xreadgroup", "stream", "consumer"]
+}

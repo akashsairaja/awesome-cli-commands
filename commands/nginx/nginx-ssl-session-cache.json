@@ -1,0 +1,9 @@
+{
+  "id": "nginx-ssl-session-cache",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-ssl",
+  "title": "SSL session cache",
+  "command": "ssl_session_cache shared:SSL:10m; ssl_session_timeout 10m;",
+  "description": "Cache SSL sessions for performance",
+  "tags": ["ssl", "session", "cache", "performance"]
+}

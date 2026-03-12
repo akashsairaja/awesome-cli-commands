@@ -1,0 +1,8 @@
+{
+  "id": "linux-27",
+  "categoryId": "linux",
+  "subcategoryId": "files",
+  "title": "Move or rename files",
+  "command": "mv oldname.txt newname.txt",
+  "description": "Move or rename a file or directory."
+}

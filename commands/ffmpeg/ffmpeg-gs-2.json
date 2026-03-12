@@ -1,0 +1,8 @@
+{
+  "id": "ffmpeg-gs-2",
+  "title": "Install FFmpeg (Linux)",
+  "command": "sudo apt install ffmpeg -y",
+  "description": "Install FFmpeg using APT on Debian/Ubuntu Linux",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "getting-started"
+}

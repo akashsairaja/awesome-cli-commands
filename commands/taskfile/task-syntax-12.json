@@ -1,0 +1,8 @@
+{
+  "id": "task-syntax-12",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-syntax",
+  "title": "Ignore errors",
+  "command": "tasks:\n  clean:\n    cmds:\n      - cmd: rm -rf dist/\n        ignore_error: true",
+  "description": "Continue even if command fails."
+}

@@ -1,0 +1,56 @@
+{
+  "id": "pg-full-text-search",
+  "stackId": "postgresql",
+  "name": "Full-Text Search with tsvector and tsquery",
+  "description": "Build a powerful full-text search engine using PostgreSQL native tsvector columns, GIN indexes, and ranked query results.",
+  "difficulty": "advanced",
+  "timeMinutes": 18,
+  "tags": ["full-text-search", "tsvector", "tsquery", "gin-index"],
+  "prerequisites": ["PostgreSQL 14+", "A table with text content to search"],
+  "steps": [
+    {
+      "title": "Add a tsvector column to your table",
+      "description": "Create a generated tsvector column that automatically stays in sync with the source text.",
+      "command": "psql -U postgres -d mydb -c \"ALTER TABLE articles ADD COLUMN search_vector tsvector GENERATED ALWAYS AS (to_tsvector('english', coalesce(title, '') || ' ' || coalesce(body, ''))) STORED;\"",
+      "tip": "GENERATED ALWAYS AS creates a stored computed column that updates automatically when title or body change."
+    },
+    {
+      "title": "Create a GIN index for fast search",
+      "description": "Add a GIN index on the tsvector column for efficient full-text queries.",
+      "command": "psql -U postgres -d mydb -c \"CREATE INDEX idx_articles_search ON articles USING GIN (search_vector);\""
+    },
+    {
+      "title": "Run a basic full-text search",
+      "description": "Search for articles matching a text query with automatic stemming.",
+      "command": "psql -U postgres -d mydb -c \"SELECT id, title, ts_rank(search_vector, to_tsquery('english', 'database & performance')) AS rank FROM articles WHERE search_vector @@ to_tsquery('english', 'database & performance') ORDER BY rank DESC LIMIT 10;\""
+    },
+    {
+      "title": "Use websearch_to_tsquery for user-friendly input",
+      "description": "Convert natural language search input into a tsquery without manual operators.",
+      "command": "psql -U postgres -d mydb -c \"SELECT id, title FROM articles WHERE search_vector @@ websearch_to_tsquery('english', 'how to optimize database queries') ORDER BY ts_rank(search_vector, websearch_to_tsquery('english', 'how to optimize database queries')) DESC LIMIT 10;\"",
+      "tip": "websearch_to_tsquery handles quoted phrases, OR, and - (NOT) operators like a web search engine."
+    },
+    {
+      "title": "Generate search result snippets",
+      "description": "Highlight matching terms in search results with ts_headline.",
+      "command": "psql -U postgres -d mydb -c \"SELECT id, title, ts_headline('english', body, to_tsquery('english', 'performance'), 'StartSel=<b>, StopSel=</b>, MaxWords=35, MinWords=15') AS snippet FROM articles WHERE search_vector @@ to_tsquery('english', 'performance') LIMIT 5;\""
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# PostgreSQL Full-Text Search Setup\nset -euo pipefail\n\nDB=\"mydb\"\nUSER=\"postgres\"\n\necho \"=== Setting up full-text search ===\"\npsql -U \"$USER\" -d \"$DB\" -c \"\n-- Add tsvector column (if table exists)\nALTER TABLE articles ADD COLUMN IF NOT EXISTS search_vector tsvector\n  GENERATED ALWAYS AS (\n    setweight(to_tsvector('english', coalesce(title, '')), 'A') ||\n    setweight(to_tsvector('english', coalesce(body, '')), 'B')\n  ) STORED;\n\n-- Create GIN index\nCREATE INDEX IF NOT EXISTS idx_articles_search ON articles USING GIN (search_vector);\n\"\n\necho \"\"\necho \"=== Testing search ===\"\npsql -U \"$USER\" -d \"$DB\" -c \"\nSELECT id, title,\n       ts_rank(search_vector, q) AS rank,\n       ts_headline('english', body, q, 'StartSel=**, StopSel=**, MaxWords=30') AS snippet\nFROM articles, websearch_to_tsquery('english', 'database optimization') AS q\nWHERE search_vector @@ q\nORDER BY rank DESC\nLIMIT 5;\n\"\n\necho \"\"\necho \"=== Search index stats ===\"\npsql -U \"$USER\" -d \"$DB\" -c \"\nSELECT pg_size_pretty(pg_relation_size('idx_articles_search')) AS index_size,\n       (SELECT count(*) FROM articles) AS total_articles;\n\"\n\necho \"\"\necho \"=== Available text search configurations ===\"\npsql -U \"$USER\" -d \"$DB\" -c \"\\dF+\"",
+  "faq": [
+    {
+      "question": "What is the difference between GIN and GiST indexes for full-text search?",
+      "answer": "GIN indexes are faster for lookups and better for static data. GiST indexes are faster to build and update, better for frequently changing data. For most full-text search use cases, GIN is preferred."
+    },
+    {
+      "question": "How do I search across multiple languages?",
+      "answer": "Use different text search configurations per language (e.g., 'english', 'french', 'german'). You can store a language column and use it to select the right configuration, or create multiple tsvector columns for multilingual content."
+    },
+    {
+      "question": "How does tsvector weighting work?",
+      "answer": "setweight assigns importance levels A through D to tsvector entries. Weight A (title) ranks higher than B (body) in ts_rank calculations. This makes title matches more relevant than body matches in search results."
+    }
+  ],
+  "relatedRecipes": ["pg-performance-tuning", "pg-migration-workflow"],
+  "lastUpdated": "2026-03-11"
+}

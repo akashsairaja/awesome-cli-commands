@@ -1,0 +1,8 @@
+{
+  "id": "vim-64",
+  "categoryId": "vim",
+  "subcategoryId": "advanced-editing",
+  "title": "Auto-indent file",
+  "command": "gg=G",
+  "description": "Reindent entire file."
+}

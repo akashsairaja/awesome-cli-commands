@@ -1,0 +1,8 @@
+{
+  "id": "bash-82",
+  "categoryId": "bash",
+  "subcategoryId": "conditionals",
+  "title": "Arithmetic test",
+  "command": "if (( a > b )); then echo \"greater\"; fi",
+  "description": "Use (( )) for numeric comparisons."
+}

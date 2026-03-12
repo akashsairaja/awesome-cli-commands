@@ -1,0 +1,9 @@
+{
+  "id": "nginx-restart-systemd",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-control",
+  "title": "Restart (systemd)",
+  "command": "sudo systemctl restart nginx",
+  "description": "Restart Nginx service",
+  "tags": ["restart", "systemd", "service"]
+}

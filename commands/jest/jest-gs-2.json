@@ -1,0 +1,8 @@
+{
+  "id": "jest-gs-2",
+  "title": "Install Jest with TypeScript",
+  "command": "npm install --save-dev jest ts-jest @types/jest",
+  "description": "Install Jest with TypeScript support via ts-jest",
+  "categoryId": "jest",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "node-mod-1",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-modules",
+  "title": "Preload module",
+  "command": "node -r dotenv/config app.js",
+  "description": "Preload CommonJS module before main."
+}

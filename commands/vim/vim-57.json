@@ -1,0 +1,8 @@
+{
+  "id": "vim-57",
+  "categoryId": "vim",
+  "subcategoryId": "macros",
+  "title": "Repeat last macro",
+  "command": "@@",
+  "description": "Run the most recently played macro again."
+}

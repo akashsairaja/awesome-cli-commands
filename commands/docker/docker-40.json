@@ -1,0 +1,8 @@
+{
+  "id": "docker-40",
+  "categoryId": "docker",
+  "subcategoryId": "images",
+  "title": "Build with no cache",
+  "command": "docker build --no-cache -t <name>:<tag> .",
+  "description": "Force rebuild all layers."
+}

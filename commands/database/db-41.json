@@ -1,0 +1,8 @@
+{
+  "id": "db-41",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Optimize table",
+  "command": "OPTIMIZE TABLE tablename;",
+  "description": "Reclaim unused space and defragment table."
+}

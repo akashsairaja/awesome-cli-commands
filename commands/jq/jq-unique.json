@@ -1,0 +1,9 @@
+{
+  "id": "jq-unique",
+  "categoryId": "jq",
+  "subcategoryId": "jq-filters",
+  "title": "Get unique values",
+  "command": "cat file.json | jq 'unique'",
+  "description": "Remove duplicate values from array",
+  "tags": ["unique", "distinct", "dedupe"]
+}

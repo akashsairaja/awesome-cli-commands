@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-gs-3",
+  "title": "Create localhost certificate",
+  "command": "mkcert localhost",
+  "description": "Generate a trusted TLS certificate for localhost development",
+  "categoryId": "mkcert",
+  "subcategoryId": "getting-started"
+}

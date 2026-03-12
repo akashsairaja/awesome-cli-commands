@@ -1,0 +1,9 @@
+{
+  "id": "ansible-vault-rekey",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-vault",
+  "title": "Change Vault Password",
+  "command": "ansible-vault rekey secrets.yml",
+  "description": "Change the encryption password",
+  "tags": ["vault", "rekey", "password"]
+}

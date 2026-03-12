@@ -1,0 +1,8 @@
+{
+  "id": "docker-107",
+  "categoryId": "docker",
+  "subcategoryId": "system",
+  "title": "Show disk usage",
+  "command": "docker system df",
+  "description": "Show Docker disk space usage."
+}

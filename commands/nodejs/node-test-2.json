@@ -1,0 +1,8 @@
+{
+  "id": "node-test-2",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-test",
+  "title": "Filter tests by name",
+  "command": "node --test --test-name-pattern='user'",
+  "description": "Run only tests matching pattern."
+}

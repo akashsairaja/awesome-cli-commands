@@ -1,0 +1,8 @@
+{
+  "id": "playwright-visual-1",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-visual",
+  "title": "Visual comparison",
+  "command": "await expect(page).toHaveScreenshot();",
+  "description": "Compare against baseline image."
+}

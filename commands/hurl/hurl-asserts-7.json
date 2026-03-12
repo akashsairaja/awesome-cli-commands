@@ -1,0 +1,8 @@
+{
+  "id": "hurl-asserts-7",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-asserts",
+  "title": "Regex assertion",
+  "command": "[Asserts]\nregex \"id=(\\d+)\" == \"123\"",
+  "description": "Assert body matches regex pattern."
+}

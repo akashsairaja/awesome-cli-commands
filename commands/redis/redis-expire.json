@@ -1,0 +1,9 @@
+{
+  "id": "redis-expire",
+  "categoryId": "redis",
+  "subcategoryId": "redis-server",
+  "title": "Set key expiry",
+  "command": "EXPIRE key seconds",
+  "description": "Set expiration time on key",
+  "tags": ["expire", "ttl", "timeout"]
+}

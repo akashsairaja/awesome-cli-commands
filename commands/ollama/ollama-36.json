@@ -1,0 +1,8 @@
+{
+  "id": "ollama-36",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-api",
+  "title": "Set generation parameters",
+  "command": "curl http://localhost:11434/api/generate -d '{\"model\": \"llama2\", \"prompt\": \"Hi\", \"options\": {\"temperature\": 0.7, \"top_p\": 0.9}}'",
+  "description": "Configure sampling parameters in API call."
+}

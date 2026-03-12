@@ -1,0 +1,8 @@
+{
+  "id": "packer-hcl-3",
+  "categoryId": "packer",
+  "subcategoryId": "packer-hcl",
+  "title": "Variable definition",
+  "command": "variable \"region\" {\n  type = string\n  default = \"us-east-1\"\n}",
+  "description": "HCL2 variable definition."
+}

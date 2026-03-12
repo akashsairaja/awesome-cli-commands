@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-compute-serial-port",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-compute",
+  "title": "View Serial Port Output",
+  "command": "gcloud compute instances get-serial-port-output <name> --zone=<zone>",
+  "description": "View VM boot logs and serial console output for debugging",
+  "tags": ["vm", "serial", "debug", "logs"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gradle-integration-test",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-testing",
+  "title": "Integration Tests",
+  "command": "./gradlew integrationTest",
+  "description": "Run integration tests (if configured)",
+  "tags": ["test", "integration", "e2e"]
+}

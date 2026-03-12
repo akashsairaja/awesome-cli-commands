@@ -1,0 +1,9 @@
+{
+  "id": "prisma-migrate-reset-skip-seed",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-migrate",
+  "title": "Reset without seeding",
+  "command": "npx prisma migrate reset --skip-seed",
+  "description": "Reset database and apply migrations without running the seed script",
+  "tags": ["migrate", "reset", "skip-seed"]
+}

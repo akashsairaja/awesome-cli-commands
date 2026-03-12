@@ -1,0 +1,9 @@
+{
+  "id": "redis-flushall",
+  "categoryId": "redis",
+  "subcategoryId": "redis-server",
+  "title": "Flush all databases",
+  "command": "FLUSHALL",
+  "description": "Delete all keys in all databases",
+  "tags": ["flushall", "delete", "clear"]
+}

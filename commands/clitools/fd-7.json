@@ -1,0 +1,8 @@
+{
+  "id": "fd-7",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-fd",
+  "title": "Type filter",
+  "command": "fd -t d pattern",
+  "description": "Find directories only (-t f for files)."
+}

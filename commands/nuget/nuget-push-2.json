@@ -1,0 +1,8 @@
+{
+  "id": "nuget-push-2",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-push",
+  "title": "Push with skip duplicates",
+  "command": "dotnet nuget push MyPackage.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k API_KEY --skip-duplicate",
+  "description": "Push and skip if version already exists."
+}

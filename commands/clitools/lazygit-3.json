@@ -1,0 +1,8 @@
+{
+  "id": "lazygit-3",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-lazygit",
+  "title": "Filter path",
+  "command": "lazygit -f src/",
+  "description": "Filter commits to specific path."
+}

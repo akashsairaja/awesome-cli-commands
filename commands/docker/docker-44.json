@@ -1,0 +1,8 @@
+{
+  "id": "docker-44",
+  "categoryId": "docker",
+  "subcategoryId": "images",
+  "title": "Push image",
+  "command": "docker push <registry>/<name>:<tag>",
+  "description": "Push image to registry."
+}

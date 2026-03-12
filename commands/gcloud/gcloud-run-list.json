@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-run-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-run",
+  "title": "List Cloud Run Services",
+  "command": "gcloud run services list",
+  "description": "List all Cloud Run services",
+  "tags": ["run", "list", "services"]
+}

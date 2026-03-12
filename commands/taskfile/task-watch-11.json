@@ -1,0 +1,8 @@
+{
+  "id": "task-watch-11",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-watch",
+  "title": "Output interleaved",
+  "command": "output: interleaved",
+  "description": "Interleave output from parallel tasks."
+}

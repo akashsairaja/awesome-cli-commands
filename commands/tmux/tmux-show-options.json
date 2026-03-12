@@ -1,0 +1,9 @@
+{
+  "id": "tmux-show-options",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-config",
+  "title": "Show options",
+  "command": "tmux show-options -g",
+  "description": "Show all global options",
+  "tags": ["config", "options", "show"]
+}

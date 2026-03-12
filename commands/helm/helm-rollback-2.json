@@ -1,0 +1,8 @@
+{
+  "id": "helm-rollback-2",
+  "categoryId": "helm",
+  "subcategoryId": "helm-rollback",
+  "title": "Rollback with wait",
+  "command": "helm rollback my-release 1 --wait",
+  "description": "Rollback and wait for resources to be ready."
+}

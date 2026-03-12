@@ -1,0 +1,9 @@
+{
+  "id": "azure-login",
+  "categoryId": "azure",
+  "subcategoryId": "azure-auth",
+  "title": "Interactive Login",
+  "command": "az login",
+  "description": "Sign in to Azure with browser authentication",
+  "tags": ["login", "auth", "interactive"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "playwright-debug-3",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-debug",
+  "title": "Debug console",
+  "command": "PWDEBUG=console npx playwright test",
+  "description": "Debug with console output."
+}

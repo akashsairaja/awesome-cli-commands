@@ -1,0 +1,8 @@
+{
+  "id": "trivy-config-3",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-config",
+  "title": "Compliance check",
+  "command": "trivy config --compliance docker-cis ./",
+  "description": "Run compliance benchmark checks."
+}

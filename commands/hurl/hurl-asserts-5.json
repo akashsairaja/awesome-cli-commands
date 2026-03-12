@@ -1,0 +1,8 @@
+{
+  "id": "hurl-asserts-5",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-asserts",
+  "title": "Body contains",
+  "command": "[Asserts]\nbody contains \"success\"",
+  "description": "Assert body contains string."
+}

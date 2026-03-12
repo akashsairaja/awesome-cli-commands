@@ -1,0 +1,8 @@
+{
+  "id": "brew-37",
+  "categoryId": "homebrew",
+  "subcategoryId": "cleanup",
+  "title": "Cleanup dry run",
+  "command": "brew cleanup -n",
+  "description": "Preview what would be cleaned up."
+}

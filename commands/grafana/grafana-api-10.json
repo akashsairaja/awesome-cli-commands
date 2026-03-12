@@ -1,0 +1,8 @@
+{
+  "id": "grafana-api-10",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-api",
+  "title": "List alert rules",
+  "command": "curl -s http://localhost:3000/api/v1/provisioning/alert-rules -H 'Authorization: Bearer TOKEN'",
+  "description": "List all alert rules via API."
+}

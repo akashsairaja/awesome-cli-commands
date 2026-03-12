@@ -1,0 +1,8 @@
+{
+  "id": "git-40",
+  "categoryId": "git",
+  "subcategoryId": "branches",
+  "title": "Merge branch",
+  "command": "git merge <branch>",
+  "description": "Merge branch into current."
+}

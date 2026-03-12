@@ -1,0 +1,8 @@
+{
+  "id": "pg-meta-2",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-meta",
+  "title": "Connect to database",
+  "command": "\\c dbname",
+  "description": "Switch to another database."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "packer-build-10",
+  "categoryId": "packer",
+  "subcategoryId": "packer-build",
+  "title": "On error ask",
+  "command": "packer build -on-error=ask .",
+  "description": "Prompt for action on build error."
+}

@@ -1,0 +1,59 @@
+{
+  "id": "react-nextjs-app-scaffold",
+  "stackId": "react",
+  "name": "Create a Next.js App Router Project from Scratch",
+  "description": "Scaffold a new Next.js project with App Router, TypeScript, Tailwind CSS, and ESLint fully configured and ready for development.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "Next.js App Router is the recommended architecture for new React projects in 2026",
+  "tags": ["nextjs", "app-router", "scaffold", "tailwind", "typescript"],
+  "prerequisites": ["Node.js 18+ installed", "npm, pnpm, or yarn"],
+  "steps": [
+    {
+      "title": "Create the Next.js project",
+      "description": "Run create-next-app with App Router, TypeScript, Tailwind, and ESLint enabled.",
+      "command": "npx create-next-app@latest my-app --typescript --tailwind --eslint --app --src-dir --use-pnpm",
+      "tip": "Replace --use-pnpm with --use-npm or --use-yarn based on your package manager preference."
+    },
+    {
+      "title": "Navigate into the project and start the dev server",
+      "description": "Move into the project directory and verify everything works.",
+      "command": "cd my-app && pnpm dev"
+    },
+    {
+      "title": "Review the project structure",
+      "description": "Inspect the App Router file structure with the src/app directory layout.",
+      "command": "ls -la src/app/",
+      "tip": "layout.tsx is the root layout, page.tsx is the home page, and globals.css contains Tailwind directives."
+    },
+    {
+      "title": "Add a new route",
+      "description": "Create a new page by adding a directory and page.tsx inside the app folder.",
+      "command": "mkdir -p src/app/about && echo 'export default function AboutPage() { return <h1>About</h1>; }' > src/app/about/page.tsx"
+    },
+    {
+      "title": "Build for production",
+      "description": "Run a production build to verify there are no TypeScript or build errors.",
+      "command": "pnpm build",
+      "tip": "Next.js will report any type errors, missing metadata, or page generation issues during build."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Next.js App Router Project Scaffold\nset -euo pipefail\n\nPROJECT_NAME=${1:-my-app}\n\necho \"=== Creating Next.js App Router project: $PROJECT_NAME ===\"\nnpx create-next-app@latest \"$PROJECT_NAME\" \\\n  --typescript --tailwind --eslint --app --src-dir --use-pnpm\n\ncd \"$PROJECT_NAME\"\n\necho \"\"\necho \"=== Installing additional dev dependencies ===\"\npnpm add -D prettier prettier-plugin-tailwindcss\n\necho \"\"\necho \"=== Creating Prettier config ===\"\ncat > .prettierrc.json << 'PRETTIEREOF'\n{\n  \"semi\": true,\n  \"singleQuote\": false,\n  \"tabWidth\": 2,\n  \"trailingComma\": \"es5\",\n  \"plugins\": [\"prettier-plugin-tailwindcss\"]\n}\nPRETTIEREOF\n\necho \"\"\necho \"=== Project created successfully ===\"\necho \"cd $PROJECT_NAME && pnpm dev\"",
+  "faq": [
+    {
+      "question": "Should I use App Router or Pages Router?",
+      "answer": "App Router is recommended for all new Next.js projects. It supports React Server Components, streaming, and parallel routes. Pages Router is stable but in maintenance mode."
+    },
+    {
+      "question": "Do I need the src/ directory?",
+      "answer": "The src/ directory is optional but keeps your root clean by separating application code from config files like next.config.ts and tsconfig.json."
+    },
+    {
+      "question": "Can I add other UI libraries like shadcn/ui later?",
+      "answer": "Yes. Run 'npx shadcn@latest init' after project creation. It auto-detects your Tailwind and TypeScript setup."
+    }
+  ],
+  "relatedRecipes": ["react-env-configuration", "react-docker-deploy"],
+  "lastUpdated": "2026-03-11"
+}

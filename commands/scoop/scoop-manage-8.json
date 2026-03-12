@@ -1,0 +1,8 @@
+{
+  "id": "scoop-manage-8",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-manage",
+  "title": "Export installed apps",
+  "command": "scoop export > scoopfile.json",
+  "description": "Export installed apps to JSON file."
+}

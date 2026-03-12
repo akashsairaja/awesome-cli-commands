@@ -1,0 +1,8 @@
+{
+  "id": "bruno-collection-8",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-collection",
+  "title": "Query parameters",
+  "command": "get {\n  url: {{baseUrl}}/users\n}\n\nparams:query {\n  page: 1\n  limit: 20\n  sort: created_at\n}",
+  "description": "Set URL query parameters on a request."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "rust-build-2",
+  "categoryId": "rust",
+  "subcategoryId": "rust-build",
+  "title": "Build release",
+  "command": "cargo build --release",
+  "description": "Build optimized release binary."
+}

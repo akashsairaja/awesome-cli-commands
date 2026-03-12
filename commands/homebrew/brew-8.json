@@ -1,0 +1,8 @@
+{
+  "id": "brew-8",
+  "categoryId": "homebrew",
+  "subcategoryId": "packages",
+  "title": "Show package info",
+  "command": "brew info <package>",
+  "description": "Display package information."
+}

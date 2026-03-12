@@ -1,0 +1,8 @@
+{
+  "id": "composer-require-3",
+  "categoryId": "composer",
+  "subcategoryId": "composer-require",
+  "title": "Require with version",
+  "command": "composer require vendor/package:^2.0",
+  "description": "Require with version constraint."
+}

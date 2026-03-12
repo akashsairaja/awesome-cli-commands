@@ -1,0 +1,8 @@
+{
+  "id": "httpie-requests-1",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-requests",
+  "title": "GET request",
+  "command": "http GET https://api.example.com/users",
+  "description": "Make a GET request."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "rust-deps-6",
+  "categoryId": "rust",
+  "subcategoryId": "rust-deps",
+  "title": "Vendor dependencies",
+  "command": "cargo vendor",
+  "description": "Copy dependencies to vendor directory."
+}

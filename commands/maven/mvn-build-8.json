@@ -1,0 +1,8 @@
+{
+  "id": "mvn-build-8",
+  "categoryId": "maven",
+  "subcategoryId": "build",
+  "title": "Integration tests",
+  "command": "mvn verify",
+  "description": "Run integration tests."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "bun-run-script",
+  "categoryId": "bun",
+  "subcategoryId": "bun-run",
+  "title": "Run Package Script",
+  "command": "bun run <script-name>",
+  "description": "Run script from package.json",
+  "tags": ["run", "script", "package"]
+}

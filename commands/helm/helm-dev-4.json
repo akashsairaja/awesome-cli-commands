@@ -1,0 +1,8 @@
+{
+  "id": "helm-dev-4",
+  "categoryId": "helm",
+  "subcategoryId": "helm-dev",
+  "title": "Update dependencies",
+  "command": "helm dependency update ./mychart",
+  "description": "Download chart dependencies to charts/ folder."
+}

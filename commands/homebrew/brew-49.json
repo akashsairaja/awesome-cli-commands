@@ -1,0 +1,8 @@
+{
+  "id": "brew-49",
+  "categoryId": "homebrew",
+  "subcategoryId": "taps",
+  "title": "Remove tap",
+  "command": "brew untap user/repo",
+  "description": "Remove a tap."
+}

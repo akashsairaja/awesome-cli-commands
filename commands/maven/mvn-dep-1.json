@@ -1,0 +1,8 @@
+{
+  "id": "mvn-dep-1",
+  "categoryId": "maven",
+  "subcategoryId": "dependencies",
+  "title": "Dependency tree",
+  "command": "mvn dependency:tree",
+  "description": "Display dependency tree."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "podman-compose-4",
+  "categoryId": "podman",
+  "subcategoryId": "podman-compose",
+  "title": "Compose ps",
+  "command": "podman compose ps",
+  "description": "List compose containers."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "playwright-component-2",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-component",
+  "title": "Run tests by tag",
+  "command": "npx playwright test --grep @smoke",
+  "description": "Run tests matching specific tag."
+}

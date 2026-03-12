@@ -1,0 +1,8 @@
+{
+  "id": "nuget-config-4",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-config",
+  "title": "Restore with locked mode",
+  "command": "dotnet restore --locked-mode",
+  "description": "Restore packages using lock file for reproducibility."
+}

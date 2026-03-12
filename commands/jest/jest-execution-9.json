@@ -1,0 +1,8 @@
+{
+  "id": "jest-execution-9",
+  "categoryId": "jest",
+  "subcategoryId": "jest-execution",
+  "title": "Only changed tests",
+  "command": "jest --onlyChanged",
+  "description": "Run tests related to changed files."
+}

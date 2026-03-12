@@ -1,0 +1,8 @@
+{
+  "id": "node-repl-3",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-repl",
+  "title": "REPL help",
+  "command": ".help",
+  "description": "Show REPL commands (.break, .clear, .exit, etc.)."
+}

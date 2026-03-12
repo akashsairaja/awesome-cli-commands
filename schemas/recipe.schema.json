@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Recipe",
+  "description": "A multi-step CLI automation workflow",
+  "type": "object",
+  "required": [
+    "id",
+    "stackId",
+    "name",
+    "description",
+    "difficulty",
+    "tags",
+    "prerequisites",
+    "steps",
+    "faq",
+    "lastUpdated"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "stackId": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["beginner", "intermediate", "advanced"]
+    },
+    "timeMinutes": {
+      "type": "number"
+    },
+    "trending": {
+      "type": "boolean"
+    },
+    "trendingReason": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/RecipeStep"
+      }
+    },
+    "fullScript": {
+      "type": "string"
+    },
+    "faq": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/RecipeFAQ"
+      }
+    },
+    "relatedRecipes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "$defs": {
+    "RecipeStep": {
+      "type": "object",
+      "required": ["title", "command", "description"],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "command": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "tip": {
+          "type": "string"
+        },
+        "warning": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "RecipeFAQ": {
+      "type": "object",
+      "required": ["question", "answer"],
+      "properties": {
+        "question": {
+          "type": "string"
+        },
+        "answer": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

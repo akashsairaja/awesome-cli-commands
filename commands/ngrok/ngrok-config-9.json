@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-config-9",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-config",
+  "title": "Start multiple named tunnels",
+  "command": "ngrok start webapp api worker",
+  "description": "Start multiple named tunnels from config."
+}

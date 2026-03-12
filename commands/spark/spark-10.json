@@ -1,0 +1,8 @@
+{
+  "id": "spark-10",
+  "categoryId": "spark",
+  "subcategoryId": "spark-shell",
+  "title": "Start Scala shell",
+  "command": "spark-shell",
+  "description": "Launch interactive Scala REPL with Spark context."
+}

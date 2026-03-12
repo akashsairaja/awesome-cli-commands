@@ -1,0 +1,9 @@
+{
+  "id": "deno-compile-output",
+  "categoryId": "deno",
+  "subcategoryId": "deno-compile",
+  "title": "Compile with Output Name",
+  "command": "deno compile -o myapp script.ts",
+  "description": "Compile with custom output name",
+  "tags": ["compile", "output", "name"]
+}

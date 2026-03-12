@@ -1,0 +1,9 @@
+{
+  "id": "gh-auth-login-token",
+  "categoryId": "github",
+  "subcategoryId": "gh-auth",
+  "title": "Login with token",
+  "command": "gh auth login --with-token < token.txt",
+  "description": "Authenticate using a personal access token from file",
+  "tags": ["auth", "login", "token", "pat"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "xh-output-7",
+  "categoryId": "xh",
+  "subcategoryId": "xh-output",
+  "title": "JSON output mode",
+  "command": "xh --json POST https://api.example.com/data key=value",
+  "description": "Force JSON content type for the request."
+}

@@ -1,0 +1,54 @@
+{
+  "id": "actions-debug-workflow",
+  "stackId": "github",
+  "name": "Actions Debug Workflow",
+  "description": "Debug failing GitHub Actions workflows by viewing logs, re-running with debug logging, and testing locally.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "GitHub Actions is the dominant CI/CD platform for open source",
+  "tags": ["actions", "ci-cd", "debugging", "workflows"],
+  "prerequisites": ["GitHub CLI (gh) installed and authenticated"],
+  "steps": [
+    {
+      "title": "List recent workflow runs",
+      "description": "View the status of recent workflow runs.",
+      "command": "gh run list --limit 10"
+    },
+    {
+      "title": "View logs for a failed run",
+      "description": "Download and view the full logs from a specific workflow run.",
+      "command": "gh run view <run-id> --log-failed",
+      "tip": "Use --log-failed to see only the logs from failed steps, which is usually all you need."
+    },
+    {
+      "title": "Re-run failed jobs with debug logging",
+      "description": "Re-run only the failed jobs with debug logging enabled for more verbose output.",
+      "command": "gh run rerun <run-id> --failed --debug"
+    },
+    {
+      "title": "Watch a running workflow in real time",
+      "description": "Stream the output of a currently running workflow.",
+      "command": "gh run watch",
+      "tip": "This is great for watching a run you just triggered without switching to the browser."
+    },
+    {
+      "title": "Trigger a workflow manually",
+      "description": "Start a workflow_dispatch workflow from the command line.",
+      "command": "gh workflow run deploy.yml --ref main -f environment=staging"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Actions Debug Workflow\nset -euo pipefail\n\necho \"=== Recent Workflow Runs ===\"\ngh run list --limit 10\n\necho \"\"\necho \"=== Failed Runs ===\"\ngh run list --status failure --limit 5\n\necho \"\"\necho \"=== Debug Commands ===\"\necho \"View logs:     gh run view <run-id> --log-failed\"\necho \"Full logs:     gh run view <run-id> --log\"\necho \"Re-run:        gh run rerun <run-id> --failed\"\necho \"Debug re-run:  gh run rerun <run-id> --failed --debug\"\necho \"Watch live:    gh run watch\"\necho \"Trigger:       gh workflow run <workflow.yml> --ref main\"\necho \"Cancel:        gh run cancel <run-id>\"",
+  "faq": [
+    {
+      "question": "How do I enable debug logging for all runs?",
+      "answer": "Add a repository secret named ACTIONS_RUNNER_DEBUG with value 'true'. This enables verbose debug logging for all workflow runs."
+    },
+    {
+      "question": "Can I test GitHub Actions locally?",
+      "answer": "Use the 'act' tool (https://github.com/nektos/act) to run GitHub Actions locally using Docker. It supports most action features."
+    }
+  ],
+  "relatedRecipes": ["release-management", "enterprise-secrets-audit"],
+  "lastUpdated": "2026-03-11"
+}

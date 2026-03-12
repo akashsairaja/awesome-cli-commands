@@ -1,0 +1,8 @@
+{
+  "id": "go-test-6",
+  "categoryId": "go",
+  "subcategoryId": "go-test",
+  "title": "View coverage in browser",
+  "command": "go tool cover -html=coverage.out",
+  "description": "Open coverage report in browser."
+}

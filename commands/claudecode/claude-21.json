@@ -1,0 +1,8 @@
+{
+  "id": "claude-21",
+  "categoryId": "claudecode",
+  "subcategoryId": "permissions",
+  "title": "Restrict allowed tools",
+  "command": "claude --allowed-tools Read,Grep,Glob",
+  "description": "Only allow specific tools to run."
+}

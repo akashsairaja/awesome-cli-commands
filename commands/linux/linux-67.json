@@ -1,0 +1,8 @@
+{
+  "id": "linux-67",
+  "categoryId": "linux",
+  "subcategoryId": "text",
+  "title": "Count words, lines, chars",
+  "command": "wc -lwc file.txt",
+  "description": "Count lines, words, and characters in a file."
+}

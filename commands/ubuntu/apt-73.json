@@ -1,0 +1,8 @@
+{
+  "id": "apt-73",
+  "categoryId": "ubuntu",
+  "subcategoryId": "ubuntu-network",
+  "title": "Restart networking",
+  "command": "sudo systemctl restart NetworkManager",
+  "description": "Restart the NetworkManager service to apply network changes."
+}

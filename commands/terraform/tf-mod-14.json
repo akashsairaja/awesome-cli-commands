@@ -1,0 +1,8 @@
+{
+  "id": "tf-mod-14",
+  "categoryId": "terraform",
+  "subcategoryId": "modules",
+  "title": "Version",
+  "command": "terraform version",
+  "description": "Show Terraform and provider versions."
+}

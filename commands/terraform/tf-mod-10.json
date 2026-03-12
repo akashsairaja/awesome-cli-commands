@@ -1,0 +1,8 @@
+{
+  "id": "tf-mod-10",
+  "categoryId": "terraform",
+  "subcategoryId": "modules",
+  "title": "Interactive console",
+  "command": "terraform console",
+  "description": "Open interactive expression console."
+}

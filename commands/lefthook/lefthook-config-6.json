@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-config-6",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-config",
+  "title": "Scripts block",
+  "command": "pre-commit:\n  scripts:\n    'lint.sh':\n      runner: bash\n    'check-format.sh':\n      runner: bash",
+  "description": "Run scripts from .lefthook/ directory."
+}

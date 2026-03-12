@@ -1,0 +1,8 @@
+{
+  "id": "podman-gs-2",
+  "title": "Check Podman version",
+  "command": "podman --version",
+  "description": "Verify Podman installation and display version info",
+  "categoryId": "podman",
+  "subcategoryId": "getting-started"
+}

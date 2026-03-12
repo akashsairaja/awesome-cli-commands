@@ -1,0 +1,8 @@
+{
+  "id": "pg-meta-9",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-meta",
+  "title": "List roles",
+  "command": "\\du",
+  "description": "List users/roles."
+}

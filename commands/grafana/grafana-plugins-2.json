@@ -1,0 +1,8 @@
+{
+  "id": "grafana-plugins-2",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-plugins",
+  "title": "List installed plugins",
+  "command": "grafana-cli plugins ls",
+  "description": "List installed plugins."
+}

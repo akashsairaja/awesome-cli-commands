@@ -1,0 +1,8 @@
+{
+  "id": "nuget-push-3",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-push",
+  "title": "Sign package",
+  "command": "dotnet nuget sign MyPackage.1.0.0.nupkg --certificate-path cert.pfx --timestamper http://timestamp.digicert.com",
+  "description": "Sign a NuGet package with a certificate."
+}

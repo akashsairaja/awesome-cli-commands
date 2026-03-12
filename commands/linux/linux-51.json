@@ -1,0 +1,8 @@
+{
+  "id": "linux-51",
+  "categoryId": "linux",
+  "subcategoryId": "network",
+  "title": "Reverse DNS lookup",
+  "command": "nslookup <ip-address>",
+  "description": "Perform reverse DNS lookup to find hostname from IP."
+}

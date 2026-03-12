@@ -1,0 +1,9 @@
+{
+  "id": "supabase-branches-get",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-branches",
+  "title": "Get branch details",
+  "command": "supabase branches get <name>",
+  "description": "Get details about a preview branch",
+  "tags": ["branches", "get", "info"]
+}

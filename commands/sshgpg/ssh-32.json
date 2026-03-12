@@ -1,0 +1,8 @@
+{
+  "id": "ssh-32",
+  "categoryId": "sshgpg",
+  "subcategoryId": "connections",
+  "title": "Rsync over SSH",
+  "command": "rsync -avz -e ssh ./local/ user@host:/remote/",
+  "description": "Sync files over SSH with rsync."
+}

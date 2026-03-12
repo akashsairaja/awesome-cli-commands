@@ -1,0 +1,8 @@
+{
+  "id": "npm-pkg-11",
+  "categoryId": "npm",
+  "subcategoryId": "npm-packages",
+  "title": "pnpm store prune",
+  "command": "pnpm store prune",
+  "description": "Remove orphaned packages from pnpm store."
+}

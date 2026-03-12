@@ -1,0 +1,8 @@
+{
+  "id": "xh-sessions-8",
+  "categoryId": "xh",
+  "subcategoryId": "xh-sessions",
+  "title": "Use proxy",
+  "command": "xh --proxy=https:http://proxy.example.com:8080 GET https://api.example.com",
+  "description": "Route requests through an HTTP proxy."
+}

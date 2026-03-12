@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-convert-audio",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-convert",
+  "title": "Convert audio format",
+  "command": "ffmpeg -i input.mp3 output.wav",
+  "description": "Convert audio from one format to another",
+  "tags": ["convert", "format", "audio"]
+}

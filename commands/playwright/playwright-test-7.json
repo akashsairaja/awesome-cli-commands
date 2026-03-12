@@ -1,0 +1,8 @@
+{
+  "id": "playwright-test-7",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-test",
+  "title": "Specific browser",
+  "command": "npx playwright test --project=chromium",
+  "description": "Run tests in specific browser."
+}

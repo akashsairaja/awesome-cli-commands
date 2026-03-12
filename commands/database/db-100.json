@@ -1,0 +1,8 @@
+{
+  "id": "db-100",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Dump specific tables",
+  "command": "mysqldump -u root -p mydb table1 table2 > tables.sql",
+  "description": "Export specific tables from a database."
+}

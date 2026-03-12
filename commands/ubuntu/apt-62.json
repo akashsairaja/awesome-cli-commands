@@ -1,0 +1,8 @@
+{
+  "id": "apt-62",
+  "categoryId": "ubuntu",
+  "subcategoryId": "system",
+  "title": "Set timezone",
+  "command": "sudo timedatectl set-timezone America/New_York",
+  "description": "Change the system timezone."
+}

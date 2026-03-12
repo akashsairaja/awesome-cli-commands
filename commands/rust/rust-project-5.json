@@ -1,0 +1,8 @@
+{
+  "id": "rust-project-5",
+  "categoryId": "rust",
+  "subcategoryId": "rust-project",
+  "title": "Add with features",
+  "command": "cargo add serde -F derive",
+  "description": "Add crate with specific features."
+}

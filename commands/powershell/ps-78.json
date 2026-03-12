@@ -1,0 +1,8 @@
+{
+  "id": "ps-78",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-modules",
+  "title": "Install PSResourceGet",
+  "command": "Install-Module Microsoft.PowerShell.PSResourceGet",
+  "description": "Install new package manager."
+}

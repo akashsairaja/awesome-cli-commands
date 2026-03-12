@@ -1,0 +1,9 @@
+{
+  "id": "firebase-hosting-channel-create",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-hosting",
+  "title": "Create preview channel",
+  "command": "firebase hosting:channel:create <channel-id>",
+  "description": "Create a new preview channel",
+  "tags": ["hosting", "channel", "preview"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "bun-upgrade-canary",
+  "categoryId": "bun",
+  "subcategoryId": "bun-tools",
+  "title": "Upgrade to Canary",
+  "command": "bun upgrade --canary",
+  "description": "Update to latest canary release",
+  "tags": ["upgrade", "canary", "bleeding-edge"]
+}

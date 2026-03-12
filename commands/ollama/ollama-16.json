@@ -1,0 +1,8 @@
+{
+  "id": "ollama-16",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-run",
+  "title": "Run vision model",
+  "command": "ollama run llava \"Describe this image\" ./photo.jpg",
+  "description": "Analyze images with multimodal models."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "docker-33",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Create container without starting",
+  "command": "docker create --name <name> <image>",
+  "description": "Create container but don't start it."
+}

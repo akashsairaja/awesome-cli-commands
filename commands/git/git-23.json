@@ -1,0 +1,8 @@
+{
+  "id": "git-23",
+  "categoryId": "git",
+  "subcategoryId": "commits",
+  "title": "Cherry-pick range",
+  "command": "git cherry-pick <start>^..<end>",
+  "description": "Apply a range of commits."
+}

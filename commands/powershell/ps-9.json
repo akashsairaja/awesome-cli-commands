@@ -1,0 +1,8 @@
+{
+  "id": "ps-9",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-files",
+  "title": "Check path exists",
+  "command": "Test-Path -Path file.txt",
+  "description": "Check if file or folder exists."
+}

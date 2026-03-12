@@ -1,0 +1,8 @@
+{
+  "id": "checkov-scan-1",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-scan",
+  "title": "Scan directory",
+  "command": "checkov -d .",
+  "description": "Scan current directory."
+}

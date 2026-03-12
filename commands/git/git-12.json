@@ -1,0 +1,8 @@
+{
+  "id": "git-12",
+  "categoryId": "git",
+  "subcategoryId": "basics",
+  "title": "Pull",
+  "command": "git pull",
+  "description": "Fetch and merge from remote."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "gcloud-gs-3",
+  "title": "Login to Google Cloud",
+  "command": "gcloud auth login",
+  "description": "Authenticate with Google Cloud using interactive browser login",
+  "categoryId": "gcloud",
+  "subcategoryId": "getting-started"
+}

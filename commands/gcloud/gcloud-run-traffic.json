@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-run-traffic",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-run",
+  "title": "Manage Traffic",
+  "command": "gcloud run services update-traffic <service> --to-revisions=<rev>=100 --region=<region>",
+  "description": "Split traffic between revisions",
+  "tags": ["run", "traffic", "revision"]
+}

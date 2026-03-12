@@ -1,0 +1,8 @@
+{
+  "id": "task-run-1",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-run",
+  "title": "Run default task",
+  "command": "task",
+  "description": "Run the default task."
+}

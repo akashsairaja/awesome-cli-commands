@@ -1,0 +1,8 @@
+{
+  "id": "ai-4",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-codex",
+  "title": "Full auto mode",
+  "command": "codex --full-auto",
+  "description": "Enable full autonomous mode for multi-step tasks."
+}

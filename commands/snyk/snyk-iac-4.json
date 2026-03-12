@@ -1,0 +1,8 @@
+{
+  "id": "snyk-iac-4",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-iac",
+  "title": "SARIF output",
+  "command": "snyk iac test --sarif > results.sarif",
+  "description": "Output in SARIF format."
+}

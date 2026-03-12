@@ -1,0 +1,8 @@
+{
+  "id": "docker-89",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "Use specific file",
+  "command": "docker compose -f docker-compose.prod.yml up -d",
+  "description": "Use alternate compose file."
+}

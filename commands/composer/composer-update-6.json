@@ -1,0 +1,8 @@
+{
+  "id": "composer-update-6",
+  "categoryId": "composer",
+  "subcategoryId": "composer-update",
+  "title": "Update lock file only",
+  "command": "composer update --lock",
+  "description": "Re-resolve and update only composer.lock."
+}

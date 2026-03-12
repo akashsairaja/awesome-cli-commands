@@ -1,0 +1,8 @@
+{
+  "id": "snow-32",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-cortex",
+  "title": "Sentiment analysis (SQL)",
+  "command": "snow sql -q \"SELECT SNOWFLAKE.CORTEX.SENTIMENT(review_text) FROM reviews\"",
+  "description": "Analyze sentiment of text data."
+}

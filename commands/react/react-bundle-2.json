@@ -1,0 +1,8 @@
+{
+  "id": "react-bundle-2",
+  "categoryId": "react",
+  "subcategoryId": "react-bundle",
+  "title": "CRA bundle analyzer",
+  "command": "npx cra-bundle-analyzer",
+  "description": "Analyze Create React App bundle."
+}

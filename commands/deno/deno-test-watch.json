@@ -1,0 +1,9 @@
+{
+  "id": "deno-test-watch",
+  "categoryId": "deno",
+  "subcategoryId": "deno-test",
+  "title": "Watch Tests",
+  "command": "deno test --watch",
+  "description": "Re-run tests on file changes",
+  "tags": ["test", "watch", "auto"]
+}

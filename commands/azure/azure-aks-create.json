@@ -1,0 +1,9 @@
+{
+  "id": "azure-aks-create",
+  "categoryId": "azure",
+  "subcategoryId": "azure-aks",
+  "title": "Create AKS Cluster",
+  "command": "az aks create --resource-group <rg> --name <cluster> --node-count 3 --enable-addons monitoring --generate-ssh-keys",
+  "description": "Create a new managed Kubernetes cluster",
+  "tags": ["aks", "create", "kubernetes"]
+}

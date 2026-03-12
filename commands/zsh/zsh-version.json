@@ -1,0 +1,9 @@
+{
+  "id": "zsh-version",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-config",
+  "title": "Show zsh version",
+  "command": "zsh --version",
+  "description": "Display zsh version",
+  "tags": ["version", "info"]
+}

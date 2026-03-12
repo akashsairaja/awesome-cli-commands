@@ -1,0 +1,8 @@
+{
+  "id": "ssh-35",
+  "categoryId": "sshgpg",
+  "subcategoryId": "connections",
+  "title": "Debug SSH connection",
+  "command": "ssh -v user@host",
+  "description": "Verbose mode for debugging connections."
+}

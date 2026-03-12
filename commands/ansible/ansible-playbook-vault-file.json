@@ -1,0 +1,9 @@
+{
+  "id": "ansible-playbook-vault-file",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-vault",
+  "title": "Run with Vault Password File",
+  "command": "ansible-playbook playbook.yml --vault-password-file=.vault_pass",
+  "description": "Run playbook with vault password from file",
+  "tags": ["vault", "playbook", "file"]
+}

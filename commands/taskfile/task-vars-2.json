@@ -1,0 +1,8 @@
+{
+  "id": "task-vars-2",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-vars",
+  "title": "Dynamic variables",
+  "command": "vars:\n  GIT_SHA:\n    sh: git rev-parse --short HEAD",
+  "description": "Variable from shell command."
+}

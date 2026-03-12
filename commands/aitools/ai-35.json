@@ -1,0 +1,8 @@
+{
+  "id": "ai-35",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-copilot",
+  "title": "Configure Copilot CLI",
+  "command": "gh copilot config",
+  "description": "Configure Copilot CLI settings."
+}

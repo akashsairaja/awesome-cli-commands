@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-api-3",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-api",
+  "title": "Stop tunnel (API)",
+  "command": "curl -X DELETE http://localhost:4040/api/tunnels/command_line",
+  "description": "Stop a tunnel via API."
+}

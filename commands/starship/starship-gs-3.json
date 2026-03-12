@@ -1,0 +1,8 @@
+{
+  "id": "starship-gs-3",
+  "title": "Add Starship to Bash",
+  "command": "eval \"$(starship init bash)\"",
+  "description": "Add Starship init to your Bash shell configuration",
+  "categoryId": "starship",
+  "subcategoryId": "getting-started"
+}

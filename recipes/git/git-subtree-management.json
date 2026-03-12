@@ -1,0 +1,67 @@
+{
+  "id": "git-subtree-management",
+  "stackId": "git",
+  "name": "Managing Shared Code Across Repositories with Subtree",
+  "description": "Use git subtree to embed and synchronize shared libraries or components across multiple repositories without submodule complexity.",
+  "difficulty": "advanced",
+  "timeMinutes": 20,
+  "trending": false,
+  "tags": ["subtree", "monorepo", "shared-code", "libraries", "repositories"],
+  "prerequisites": [
+    "Git installed",
+    "Two or more repositories (a main project and a shared library)",
+    "Push access to both repositories"
+  ],
+  "steps": [
+    {
+      "title": "Add a remote for the shared library",
+      "command": "git remote add shared-ui https://github.com/org/shared-ui.git",
+      "description": "Add the shared library repository as a named remote so you can reference it in subtree commands."
+    },
+    {
+      "title": "Add the subtree to your project",
+      "command": "git subtree add --prefix=lib/shared-ui shared-ui main --squash",
+      "description": "Pull the shared library into the lib/shared-ui directory. The --squash flag collapses the library's history into a single merge commit.",
+      "tip": "Use --squash to keep your project history clean. Without it, the entire library history is merged into your project.",
+      "warning": "The prefix directory must not already exist. Git will create it and populate it with the library contents."
+    },
+    {
+      "title": "Pull updates from the shared library",
+      "command": "git subtree pull --prefix=lib/shared-ui shared-ui main --squash",
+      "description": "Fetch and merge the latest changes from the shared library into your project's subtree directory."
+    },
+    {
+      "title": "Make local changes to the subtree",
+      "command": "# Edit files in lib/shared-ui/ as normal\ngit add lib/shared-ui/\ngit commit -m \"fix: correct button hover state in shared-ui\"",
+      "description": "You can modify subtree files directly in your project and commit them normally. These changes live in your project's history."
+    },
+    {
+      "title": "Push local changes back to the shared library",
+      "command": "git subtree push --prefix=lib/shared-ui shared-ui feature/button-fix",
+      "description": "Extract commits that touched the subtree directory and push them to the shared library repository on a new branch.",
+      "tip": "Push to a feature branch on the shared library and create a pull request, rather than pushing directly to main."
+    },
+    {
+      "title": "Split subtree into a standalone branch",
+      "command": "git subtree split --prefix=lib/shared-ui -b shared-ui-standalone",
+      "description": "Extract the subtree history into a standalone branch. This is useful for initially creating a shared library from code that started in a monorepo."
+    }
+  ],
+  "fullScript": "#!/usr/bin/env bash\n# git-subtree-manage.sh — Subtree operations helper\nset -euo pipefail\n\nACTION=\"${1:?Usage: $0 {add|pull|push|split} <prefix> <remote> [branch]}\"\nPREFIX=\"${2:?Prefix directory required}\"\nREMOTE=\"${3:-}\"\nBRANCH=\"${4:-main}\"\n\ncase \"$ACTION\" in\n  add)\n    if [ -z \"$REMOTE\" ]; then\n      echo \"Usage: $0 add <prefix> <remote-url> [branch]\"\n      exit 1\n    fi\n    REMOTE_NAME=$(basename \"$REMOTE\" .git)\n    echo \"Adding remote '$REMOTE_NAME'...\"\n    git remote add \"$REMOTE_NAME\" \"$REMOTE\" 2>/dev/null || echo \"Remote already exists.\"\n    git fetch \"$REMOTE_NAME\"\n    echo \"Adding subtree at $PREFIX from $REMOTE_NAME/$BRANCH...\"\n    git subtree add --prefix=\"$PREFIX\" \"$REMOTE_NAME\" \"$BRANCH\" --squash\n    echo \"Done. Shared code is at $PREFIX/\"\n    ;;\n  pull)\n    REMOTE_NAME=\"${REMOTE:?Remote name required}\"\n    echo \"Pulling updates into $PREFIX from $REMOTE_NAME/$BRANCH...\"\n    git subtree pull --prefix=\"$PREFIX\" \"$REMOTE_NAME\" \"$BRANCH\" --squash\n    echo \"Updated.\"\n    ;;\n  push)\n    REMOTE_NAME=\"${REMOTE:?Remote name required}\"\n    echo \"Pushing subtree changes from $PREFIX to $REMOTE_NAME/$BRANCH...\"\n    git subtree push --prefix=\"$PREFIX\" \"$REMOTE_NAME\" \"$BRANCH\"\n    echo \"Pushed.\"\n    ;;\n  split)\n    SPLIT_BRANCH=\"${REMOTE:-${PREFIX//\\//-}-standalone}\"\n    echo \"Splitting $PREFIX into branch '$SPLIT_BRANCH'...\"\n    git subtree split --prefix=\"$PREFIX\" -b \"$SPLIT_BRANCH\"\n    echo \"Branch '$SPLIT_BRANCH' created with subtree history.\"\n    ;;\n  *)\n    echo \"Usage: $0 {add|pull|push|split} <prefix> <remote> [branch]\"\n    exit 1\n    ;;\nesac",
+  "faq": [
+    {
+      "question": "What is the difference between git subtree and git submodule?",
+      "answer": "Subtree embeds the library code directly in your repository, so cloning is simple and the code is always present. Submodule creates a pointer to another repository that must be separately initialized and updated. Subtree is simpler for consumers but can make history more complex."
+    },
+    {
+      "question": "Does the --squash flag affect pushing changes back?",
+      "answer": "Yes. When you use --squash during add and pull, you must consistently use --squash for all operations. Mixing squashed and non-squashed operations on the same subtree can cause merge conflicts and history issues."
+    },
+    {
+      "question": "Can I use subtree with repositories I do not own?",
+      "answer": "Yes, you can pull from any public repository. However, you can only push back if you have write access. For third-party libraries, subtree works well as a vendoring mechanism where you pull updates but do not push back."
+    }
+  ],
+  "relatedRecipes": ["git-worktree-parallel", "cherry-pick-workflow", "branch-cleanup-automation"],
+  "lastUpdated": "2026-03-11"
+}

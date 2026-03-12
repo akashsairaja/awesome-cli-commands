@@ -1,0 +1,9 @@
+{
+  "id": "gh-issue-comment",
+  "categoryId": "github",
+  "subcategoryId": "gh-issue",
+  "title": "Comment on issue",
+  "command": "gh issue comment <number> --body \"<comment>\"",
+  "description": "Add a comment to an issue",
+  "tags": ["issue", "comment", "reply"]
+}

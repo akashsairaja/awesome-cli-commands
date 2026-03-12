@@ -1,0 +1,8 @@
+{
+  "id": "ps-84",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-remoting",
+  "title": "Create persistent session",
+  "command": "$session = New-PSSession -ComputerName Server01",
+  "description": "Create reusable remote session."
+}

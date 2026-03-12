@@ -1,0 +1,8 @@
+{
+  "id": "task-syntax-2",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-syntax",
+  "title": "Task with dependencies",
+  "command": "tasks:\n  deploy:\n    deps: [build, test]\n    cmds:\n      - ./deploy.sh",
+  "description": "Task with dependencies."
+}

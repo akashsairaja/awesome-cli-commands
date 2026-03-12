@@ -1,0 +1,8 @@
+{
+  "id": "sops-gs-2",
+  "title": "Check SOPS version",
+  "command": "sops --version",
+  "description": "Verify SOPS installation and display version info",
+  "categoryId": "sops",
+  "subcategoryId": "getting-started"
+}

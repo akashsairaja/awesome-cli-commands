@@ -1,0 +1,8 @@
+{
+  "id": "composer-update-9",
+  "categoryId": "composer",
+  "subcategoryId": "composer-update",
+  "title": "Show all installed",
+  "command": "composer show --installed",
+  "description": "List all installed packages."
+}

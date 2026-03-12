@@ -1,0 +1,8 @@
+{
+  "id": "vim-24",
+  "categoryId": "vim",
+  "subcategoryId": "buffers",
+  "title": "Quit",
+  "command": ":q / :q!",
+  "description": "Quit / force quit."
+}

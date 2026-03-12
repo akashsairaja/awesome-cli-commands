@@ -1,0 +1,8 @@
+{
+  "id": "brew-59",
+  "categoryId": "homebrew",
+  "subcategoryId": "bundle",
+  "title": "Dump to Brewfile",
+  "command": "brew bundle dump",
+  "description": "Save installed packages to Brewfile."
+}

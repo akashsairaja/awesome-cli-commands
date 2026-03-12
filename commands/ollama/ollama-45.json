@@ -1,0 +1,8 @@
+{
+  "id": "ollama-45",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-modelfile",
+  "title": "From quantized base",
+  "command": "FROM llama2:7b-q4_0\nSYSTEM You are a coding assistant.",
+  "description": "Create model from quantized variant for efficiency."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "supabase-test-db",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-test",
+  "title": "Run database tests",
+  "command": "supabase test db",
+  "description": "Run all pgTAP database tests",
+  "tags": ["test", "pgtap", "database"]
+}

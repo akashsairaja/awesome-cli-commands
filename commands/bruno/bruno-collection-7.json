@@ -1,0 +1,8 @@
+{
+  "id": "bruno-collection-7",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-collection",
+  "title": "Set request headers",
+  "command": "get {\n  url: {{baseUrl}}/users\n}\n\nheaders {\n  Authorization: Bearer {{authToken}}\n  Content-Type: application/json\n  X-Request-Id: {{$guid}}\n}",
+  "description": "Add custom headers to a request."
+}

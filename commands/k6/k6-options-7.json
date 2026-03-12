@@ -1,0 +1,8 @@
+{
+  "id": "k6-options-7",
+  "categoryId": "k6",
+  "subcategoryId": "k6-options",
+  "title": "TLS configuration",
+  "command": "export const options = {\n  tlsVersion: { min: 'tls1.2', max: 'tls1.3' },\n  insecureSkipTLSVerify: true,\n};",
+  "description": "Configure TLS version and verification."
+}

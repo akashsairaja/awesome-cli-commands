@@ -1,0 +1,8 @@
+{
+  "id": "py-127",
+  "categoryId": "python",
+  "subcategoryId": "python-mypy",
+  "title": "Check specific version",
+  "command": "mypy --python-version 3.10 src/",
+  "description": "Type check against specific Python version."
+}

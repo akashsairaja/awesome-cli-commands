@@ -1,0 +1,9 @@
+{
+  "id": "vercel-teams",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-projects",
+  "title": "List teams",
+  "command": "vercel teams ls",
+  "description": "List all teams you belong to",
+  "tags": ["teams", "list", "organization"]
+}

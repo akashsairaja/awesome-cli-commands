@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-net-subnet-create",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-networking",
+  "title": "Create Subnet",
+  "command": "gcloud compute networks subnets create <name> --network=<vpc> --region=<region> --range=10.0.0.0/24",
+  "description": "Create a subnet in a VPC network",
+  "tags": ["subnet", "create", "network"]
+}

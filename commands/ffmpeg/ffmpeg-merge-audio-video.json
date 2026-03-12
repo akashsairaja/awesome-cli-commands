@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-merge-audio-video",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-audio",
+  "title": "Merge audio and video",
+  "command": "ffmpeg -i video.mp4 -i audio.mp3 -c:v copy -c:a aac output.mp4",
+  "description": "Combine separate audio and video files",
+  "tags": ["merge", "audio", "video"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "composer-autoload-5",
+  "categoryId": "composer",
+  "subcategoryId": "composer-autoload",
+  "title": "APCu autoload cache",
+  "command": "composer dump-autoload --apcu",
+  "description": "Use APCu to cache found/not-found classes."
+}

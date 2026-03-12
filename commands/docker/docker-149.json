@@ -1,0 +1,8 @@
+{
+  "id": "docker-149",
+  "categoryId": "docker",
+  "subcategoryId": "system",
+  "title": "List Docker contexts",
+  "command": "docker context ls",
+  "description": "List all available Docker contexts and active context."
+}

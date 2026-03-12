@@ -1,0 +1,8 @@
+{
+  "id": "docker-71",
+  "categoryId": "docker",
+  "subcategoryId": "networks",
+  "title": "Run with network",
+  "command": "docker run --network=<network> <image>",
+  "description": "Run container on specific network."
+}

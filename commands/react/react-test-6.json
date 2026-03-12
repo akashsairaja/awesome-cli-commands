@@ -1,0 +1,8 @@
+{
+  "id": "react-test-6",
+  "categoryId": "react",
+  "subcategoryId": "react-testing",
+  "title": "Vitest run once",
+  "command": "vitest run",
+  "description": "Run Vitest tests once."
+}

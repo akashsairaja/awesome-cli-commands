@@ -1,0 +1,8 @@
+{
+  "id": "apt-23",
+  "categoryId": "ubuntu",
+  "subcategoryId": "apt-packages",
+  "title": "Remove unused dependencies",
+  "command": "sudo apt autoremove",
+  "description": "Remove packages that were installed as dependencies and are no longer needed."
+}

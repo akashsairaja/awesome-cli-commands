@@ -1,0 +1,8 @@
+{
+  "id": "playwright-debug-2",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-debug",
+  "title": "Debug environment",
+  "command": "PWDEBUG=1 npx playwright test",
+  "description": "Enable debug mode via env var."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "bruno-scripts-1",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-scripts",
+  "title": "Pre-request script",
+  "command": "script:pre-request {\n  bru.setVar('timestamp', Date.now());\n}",
+  "description": "Script that runs before request."
+}

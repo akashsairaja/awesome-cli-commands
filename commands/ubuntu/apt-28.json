@@ -1,0 +1,8 @@
+{
+  "id": "apt-28",
+  "categoryId": "ubuntu",
+  "subcategoryId": "apt-packages",
+  "title": "List installed deb packages",
+  "command": "dpkg -l | grep <pattern>",
+  "description": "List installed packages matching a pattern with version info."
+}

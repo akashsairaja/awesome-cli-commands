@@ -1,0 +1,50 @@
+{
+  "id": "playwright-api-testing",
+  "stackId": "playwright",
+  "name": "API Testing with Playwright",
+  "description": "Use Playwright's built-in request context to test REST APIs directly, validate responses, and combine API calls with browser tests.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "tags": ["api", "rest", "testing", "requests", "validation"],
+  "prerequisites": ["Playwright installed", "A REST API to test"],
+  "steps": [
+    {
+      "title": "Create an API test file",
+      "description": "Write tests using Playwright's APIRequestContext without a browser.",
+      "command": "cat > tests/api.spec.ts << 'EOF'\nimport { test, expect } from '@playwright/test';\n\ntest.describe('API Tests', () => {\n  test('GET /api/users returns user list', async ({ request }) => {\n    const response = await request.get('/api/users');\n    expect(response.ok()).toBeTruthy();\n    expect(response.status()).toBe(200);\n\n    const data = await response.json();\n    expect(data).toHaveProperty('users');\n    expect(data.users.length).toBeGreaterThan(0);\n  });\n\n  test('POST /api/users creates a user', async ({ request }) => {\n    const response = await request.post('/api/users', {\n      data: {\n        name: 'Test User',\n        email: 'test@example.com',\n      },\n    });\n    expect(response.status()).toBe(201);\n\n    const user = await response.json();\n    expect(user.name).toBe('Test User');\n  });\n});\nEOF"
+    },
+    {
+      "title": "Add authentication to API tests",
+      "description": "Set up a test fixture that includes an auth token for all requests.",
+      "command": "cat > tests/fixtures.ts << 'EOF'\nimport { test as base } from '@playwright/test';\n\nexport const test = base.extend({\n  request: async ({ playwright }, use) => {\n    const context = await playwright.request.newContext({\n      baseURL: 'http://localhost:3000',\n      extraHTTPHeaders: {\n        'Authorization': 'Bearer ' + process.env.API_TOKEN,\n        'Content-Type': 'application/json',\n      },\n    });\n    await use(context);\n    await context.dispose();\n  },\n});\n\nexport { expect } from '@playwright/test';\nEOF",
+      "tip": "Use custom fixtures to avoid repeating auth setup in every test file."
+    },
+    {
+      "title": "Test API response schema",
+      "description": "Validate that API responses match the expected structure.",
+      "command": "cat >> tests/api.spec.ts << 'EOF'\n\ntest('response matches expected schema', async ({ request }) => {\n  const response = await request.get('/api/users/1');\n  const user = await response.json();\n\n  expect(user).toMatchObject({\n    id: expect.any(Number),\n    name: expect.any(String),\n    email: expect.stringContaining('@'),\n    createdAt: expect.any(String),\n  });\n});\nEOF"
+    },
+    {
+      "title": "Combine API and browser tests",
+      "description": "Use API calls to set up state before browser tests.",
+      "command": "cat > tests/e2e-with-api.spec.ts << 'EOF'\nimport { test, expect } from '@playwright/test';\n\ntest('create item via API, verify in UI', async ({ page, request }) => {\n  // Create data via API\n  const response = await request.post('/api/items', {\n    data: { title: 'E2E Test Item', status: 'active' },\n  });\n  const item = await response.json();\n\n  // Verify in browser\n  await page.goto('/items');\n  await expect(page.getByText('E2E Test Item')).toBeVisible();\n\n  // Cleanup via API\n  await request.delete('/api/items/' + item.id);\n});\nEOF"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Playwright API Testing Setup\nset -euo pipefail\n\necho \"=== Setting Up API Tests ===\"\n\nmkdir -p tests\n\ncat > tests/api.spec.ts << 'APITEST'\nimport { test, expect } from '@playwright/test';\n\ntest.describe('API Health & CRUD', () => {\n  test('health check', async ({ request }) => {\n    const response = await request.get('/api/health');\n    expect(response.ok()).toBeTruthy();\n    const data = await response.json();\n    expect(data.status).toBe('healthy');\n  });\n\n  test('CRUD workflow', async ({ request }) => {\n    // Create\n    const createRes = await request.post('/api/items', {\n      data: { title: 'Test Item', description: 'Created by Playwright' },\n    });\n    expect(createRes.status()).toBe(201);\n    const created = await createRes.json();\n    const id = created.id;\n\n    // Read\n    const getRes = await request.get(`/api/items/${id}`);\n    expect(getRes.ok()).toBeTruthy();\n\n    // Update\n    const updateRes = await request.put(`/api/items/${id}`, {\n      data: { title: 'Updated Item' },\n    });\n    expect(updateRes.ok()).toBeTruthy();\n\n    // Delete\n    const deleteRes = await request.delete(`/api/items/${id}`);\n    expect(deleteRes.ok()).toBeTruthy();\n  });\n});\nAPITEST\n\necho \"Created tests/api.spec.ts\"\necho \"\"\necho \"=== Run API Tests ===\"\necho \"npx playwright test tests/api.spec.ts\"",
+  "faq": [
+    {
+      "question": "How is Playwright API testing different from tools like Postman or Supertest?",
+      "answer": "Playwright's API testing integrates with the same test runner, fixtures, and reporting as your browser tests. You can mix API calls with browser interactions in a single test, share authentication state, and use the same assertions. No additional dependencies needed."
+    },
+    {
+      "question": "Can I test GraphQL APIs with Playwright?",
+      "answer": "Yes. Use request.post with the GraphQL endpoint and send the query in the body: 'request.post('/graphql', { data: { query: '{ users { id name } }' } })'. Parse the response JSON and assert on the data field."
+    },
+    {
+      "question": "How do I test file upload APIs?",
+      "answer": "Use request.post with multipart form data: 'request.post('/api/upload', { multipart: { file: { name: 'test.pdf', mimeType: 'application/pdf', buffer: Buffer.from('...') } } })'."
+    }
+  ],
+  "relatedRecipes": ["playwright-test-setup", "playwright-ci-setup"],
+  "lastUpdated": "2026-03-11"
+}

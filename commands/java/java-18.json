@@ -1,0 +1,8 @@
+{
+  "id": "java-18",
+  "categoryId": "java",
+  "subcategoryId": "java-runtime",
+  "title": "Use ZGC collector",
+  "command": "java -XX:+UseZGC -Xmx16g MyApp",
+  "description": "Use ZGC for low-latency large heap applications."
+}

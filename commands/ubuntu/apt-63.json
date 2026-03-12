@@ -1,0 +1,8 @@
+{
+  "id": "apt-63",
+  "categoryId": "ubuntu",
+  "subcategoryId": "system",
+  "title": "View boot logs",
+  "command": "journalctl -b",
+  "description": "Show all log messages from the current boot."
+}

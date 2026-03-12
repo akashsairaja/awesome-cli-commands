@@ -1,0 +1,8 @@
+{
+  "id": "docker-133",
+  "categoryId": "docker",
+  "subcategoryId": "swarm",
+  "title": "Deploy stack",
+  "command": "docker stack deploy -c docker-compose.yml <stack>",
+  "description": "Deploy stack from compose file."
+}

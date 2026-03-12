@@ -1,0 +1,8 @@
+{
+  "id": "aws-ecs-1",
+  "categoryId": "aws",
+  "subcategoryId": "ecs",
+  "title": "List clusters",
+  "command": "aws ecs list-clusters",
+  "description": "List all ECS clusters."
+}

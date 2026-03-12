@@ -1,0 +1,8 @@
+{
+  "id": "xh-gs-1",
+  "title": "Install xh (macOS)",
+  "command": "brew install xh",
+  "description": "Install xh HTTP client using Homebrew on macOS",
+  "categoryId": "xh",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "hf-44",
+  "categoryId": "huggingface",
+  "subcategoryId": "hf-api",
+  "title": "Search models",
+  "command": "python -c \"from huggingface_hub import HfApi; api=HfApi(); print([m.id for m in api.list_models(filter='llama', limit=5)])\"",
+  "description": "Search for models by name or filter."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ollama-25",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-server",
+  "title": "Set max loaded models",
+  "command": "OLLAMA_MAX_LOADED_MODELS=2 ollama serve",
+  "description": "Limit concurrent models in memory."
+}

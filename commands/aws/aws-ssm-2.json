@@ -1,0 +1,8 @@
+{
+  "id": "aws-ssm-2",
+  "categoryId": "aws",
+  "subcategoryId": "ssm",
+  "title": "Put secure parameter",
+  "command": "aws ssm put-parameter --name /app/api/key --value \"secret-value\" --type SecureString --key-id alias/aws/ssm --overwrite",
+  "description": "Store encrypted parameter with KMS."
+}

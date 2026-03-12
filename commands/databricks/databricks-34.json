@@ -1,0 +1,8 @@
+{
+  "id": "databricks-34",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-unity-catalog",
+  "title": "Grant permissions",
+  "command": "databricks unity-catalog permissions update --securable-type TABLE --securable-full-name <name> --json-file grants.json",
+  "description": "Grant permissions on a securable object."
+}

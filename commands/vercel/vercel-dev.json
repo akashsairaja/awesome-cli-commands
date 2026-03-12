@@ -1,0 +1,9 @@
+{
+  "id": "vercel-dev",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-deploy",
+  "title": "Run dev server",
+  "command": "vercel dev",
+  "description": "Run local development server with Vercel features",
+  "tags": ["dev", "local", "development"]
+}

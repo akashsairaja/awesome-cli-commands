@@ -1,0 +1,8 @@
+{
+  "id": "tofu-init-6",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-init",
+  "title": "Backend config variable",
+  "command": "tofu init -backend-config='bucket=my-state-bucket'",
+  "description": "Pass individual backend config key-value pair."
+}

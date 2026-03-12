@@ -1,0 +1,8 @@
+{
+  "id": "mvn-profile-9",
+  "categoryId": "maven",
+  "subcategoryId": "profiles",
+  "title": "Resume from",
+  "command": "mvn install -rf :module-name",
+  "description": "Resume build from module."
+}

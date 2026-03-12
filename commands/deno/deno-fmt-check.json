@@ -1,0 +1,9 @@
+{
+  "id": "deno-fmt-check",
+  "categoryId": "deno",
+  "subcategoryId": "deno-fmt",
+  "title": "Check Formatting",
+  "command": "deno fmt --check",
+  "description": "Check if files are formatted",
+  "tags": ["fmt", "check", "verify"]
+}

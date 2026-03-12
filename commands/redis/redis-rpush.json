@@ -1,0 +1,9 @@
+{
+  "id": "redis-rpush",
+  "categoryId": "redis",
+  "subcategoryId": "redis-lists",
+  "title": "Push to list tail",
+  "command": "RPUSH key value",
+  "description": "Insert value at end of list",
+  "tags": ["rpush", "list", "tail"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "nginx-sec-whitelist",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-security",
+  "title": "Whitelist IPs only",
+  "command": "allow 192.168.1.0/24; deny all;",
+  "description": "Restrict access to specific IP range",
+  "tags": ["security", "whitelist", "allow", "ip"]
+}

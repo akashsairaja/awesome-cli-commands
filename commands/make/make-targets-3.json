@@ -1,0 +1,8 @@
+{
+  "id": "make-targets-3",
+  "categoryId": "make",
+  "subcategoryId": "make-targets",
+  "title": "Install",
+  "command": "make install",
+  "description": "Install to system directories."
+}

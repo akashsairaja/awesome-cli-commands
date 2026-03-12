@@ -1,0 +1,42 @@
+{
+  "id": "container-performance-monitoring",
+  "stackId": "docker",
+  "name": "Container Performance Monitoring",
+  "description": "Monitor CPU, memory, network, and I/O usage of running containers to identify performance bottlenecks.",
+  "difficulty": "beginner",
+  "timeMinutes": 5,
+  "trending": false,
+  "tags": ["monitoring", "performance", "stats", "resources"],
+  "prerequisites": ["Docker installed", "Running containers"],
+  "steps": [
+    {
+      "title": "View real-time stats for all containers",
+      "description": "Monitor resource usage across all running containers.",
+      "command": "docker stats"
+    },
+    {
+      "title": "Get a single snapshot of stats",
+      "description": "Capture a one-time snapshot without streaming for scripts and logging.",
+      "command": "docker stats --no-stream --format 'table {{.Name}}\\t{{.CPUPerc}}\\t{{.MemUsage}}\\t{{.MemPerc}}\\t{{.NetIO}}\\t{{.BlockIO}}'"
+    },
+    {
+      "title": "Inspect container resource limits",
+      "description": "Check what resource limits are set for a container.",
+      "command": "docker inspect <container-name> --format '{{.HostConfig.Memory}} {{.HostConfig.CpuQuota}}'",
+      "tip": "Memory is in bytes. Divide by 1048576 to get MB. CpuQuota of 100000 = 1 CPU core."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Container Performance Monitoring\nset -euo pipefail\n\necho \"=== Container Resource Usage ===\"\ndocker stats --no-stream --format 'table {{.Name}}\\t{{.CPUPerc}}\\t{{.MemUsage}}\\t{{.MemPerc}}\\t{{.NetIO}}\\t{{.BlockIO}}'\n\necho \"\"\necho \"=== Container Uptime ===\"\ndocker ps --format 'table {{.Names}}\\t{{.Status}}\\t{{.RunningFor}}'",
+  "faq": [
+    {
+      "question": "How do I set memory limits on a container?",
+      "answer": "Use the -m or --memory flag: 'docker run -m 512m myapp'. In Compose, set 'deploy.resources.limits.memory: 512M'."
+    },
+    {
+      "question": "What does high memory percentage mean?",
+      "answer": "If a container is consistently above 80% of its memory limit, it risks being OOM-killed. Increase the limit or optimize the application's memory usage."
+    }
+  ],
+  "relatedRecipes": ["container-debug-ephemeral", "health-check-setup"],
+  "lastUpdated": "2026-03-11"
+}

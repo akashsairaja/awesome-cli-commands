@@ -1,0 +1,9 @@
+{
+  "id": "curl-get",
+  "categoryId": "curl",
+  "subcategoryId": "curl-requests",
+  "title": "GET request",
+  "command": "curl https://api.example.com/resource",
+  "description": "Make a simple GET request",
+  "tags": ["get", "request", "fetch"]
+}

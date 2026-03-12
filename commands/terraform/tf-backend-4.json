@@ -1,0 +1,8 @@
+{
+  "id": "tf-backend-4",
+  "categoryId": "terraform",
+  "subcategoryId": "terraform-backend",
+  "title": "Push state manually",
+  "command": "terraform state push terraform.tfstate",
+  "description": "Manually upload local state file to remote backend."
+}

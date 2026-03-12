@@ -1,0 +1,9 @@
+{
+  "id": "ansible-inventory-host",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-inventory",
+  "title": "Show Host Variables",
+  "command": "ansible-inventory --host <hostname>",
+  "description": "Display variables for a specific host",
+  "tags": ["inventory", "host", "variables"]
+}

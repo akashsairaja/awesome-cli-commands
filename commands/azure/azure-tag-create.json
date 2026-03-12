@@ -1,0 +1,9 @@
+{
+  "id": "azure-tag-create",
+  "categoryId": "azure",
+  "subcategoryId": "azure-resources",
+  "title": "Tag Resource Group",
+  "command": "az group update --name <name> --tags Environment=Dev Team=Backend",
+  "description": "Add tags to a resource group for organization",
+  "tags": ["tag", "resource-group", "organize"]
+}

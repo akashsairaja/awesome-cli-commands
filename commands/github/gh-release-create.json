@@ -1,0 +1,9 @@
+{
+  "id": "gh-release-create",
+  "categoryId": "github",
+  "subcategoryId": "gh-release",
+  "title": "Create release",
+  "command": "gh release create <tag> --title \"<title>\" --notes \"<notes>\"",
+  "description": "Create a new release with tag",
+  "tags": ["release", "create", "tag"]
+}

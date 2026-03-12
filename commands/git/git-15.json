@@ -1,0 +1,8 @@
+{
+  "id": "git-15",
+  "categoryId": "git",
+  "subcategoryId": "basics",
+  "title": "Fetch all",
+  "command": "git fetch --all",
+  "description": "Fetch from all remotes."
+}

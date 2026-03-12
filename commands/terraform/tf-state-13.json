@@ -1,0 +1,8 @@
+{
+  "id": "tf-state-13",
+  "categoryId": "terraform",
+  "subcategoryId": "state",
+  "title": "Force unlock",
+  "command": "terraform force-unlock LOCK_ID",
+  "description": "Manually unlock state (use with caution)."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "apt-50",
+  "categoryId": "ubuntu",
+  "subcategoryId": "users",
+  "title": "Show current user info",
+  "command": "id",
+  "description": "Display UID, GID, and groups for the current user."
+}

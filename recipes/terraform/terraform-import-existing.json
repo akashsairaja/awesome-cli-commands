@@ -1,0 +1,64 @@
+{
+  "id": "terraform-import-existing",
+  "stackId": "terraform",
+  "name": "Import Existing Cloud Resources",
+  "description": "Bring existing cloud resources under Terraform management without recreating or disrupting them.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "Organizations adopting IaC need to import manually-created cloud resources into Terraform rather than rebuilding from scratch.",
+  "tags": ["import", "existing", "infrastructure", "migration", "adoption"],
+  "prerequisites": [
+    "Terraform installed",
+    "Existing cloud resources to import",
+    "Cloud provider credentials configured"
+  ],
+  "steps": [
+    {
+      "title": "Write the resource block for the existing resource",
+      "description": "Define a resource block in your configuration that matches the existing cloud resource's type and settings.",
+      "command": "cat <<'EOF' > imported.tf\nresource \"aws_s3_bucket\" \"existing\" {\n  bucket = \"my-existing-bucket\"\n}\nEOF",
+      "tip": "Check the provider documentation for all required and optional arguments for the resource type."
+    },
+    {
+      "title": "Import the resource into state",
+      "description": "Run terraform import to associate the existing resource with your new resource block in state.",
+      "command": "terraform import aws_s3_bucket.existing my-existing-bucket",
+      "warning": "Import only updates state. If your configuration does not match the real resource, the next apply will modify it."
+    },
+    {
+      "title": "Generate a plan to find config drift",
+      "description": "Run plan to see what differences exist between your written config and the actual resource attributes.",
+      "command": "terraform plan"
+    },
+    {
+      "title": "Adjust configuration until plan is clean",
+      "description": "Update your .tf file to match the real resource attributes until terraform plan shows no changes.",
+      "command": "terraform plan -detailed-exitcode",
+      "tip": "Exit code 0 means no changes. Exit code 2 means there are still differences to resolve."
+    },
+    {
+      "title": "Use import blocks for bulk import (Terraform 1.5+)",
+      "description": "For Terraform 1.5 and later, use declarative import blocks to import multiple resources in one apply.",
+      "command": "cat <<'EOF' >> imported.tf\nimport {\n  to = aws_s3_bucket.existing\n  id = \"my-existing-bucket\"\n}\nEOF\nterraform plan -generate-config-out=generated.tf",
+      "tip": "The -generate-config-out flag auto-generates the resource config for you, saving manual work."
+    }
+  ],
+  "fullScript": "#!/bin/bash\nset -euo pipefail\n\n# Terraform Import Script\n# Imports an existing AWS resource into Terraform state\n\nRESOURCE_TYPE=\"${1:?Usage: $0 <resource_type> <resource_name> <resource_id>}\"\nRESOURCE_NAME=\"${2:?Usage: $0 <resource_type> <resource_name> <resource_id>}\"\nRESOURCE_ID=\"${3:?Usage: $0 <resource_type> <resource_name> <resource_id>}\"\n\nADDR=\"${RESOURCE_TYPE}.${RESOURCE_NAME}\"\n\necho \"==> Importing ${ADDR} (id: ${RESOURCE_ID})...\"\nterraform import \"${ADDR}\" \"${RESOURCE_ID}\"\n\necho \"==> Checking for configuration drift...\"\nterraform plan -detailed-exitcode 2>&1 | tee /tmp/tf-import-plan.txt || {\n  EXIT_CODE=$?\n  if [ \"$EXIT_CODE\" -eq 2 ]; then\n    echo \"\"\n    echo \"WARNING: Configuration does not match imported resource.\"\n    echo \"Review the plan output above and update your .tf files.\"\n    echo \"Run 'terraform plan' again after making changes.\"\n  fi\n}\n\necho \"\"\necho \"==> Current state for imported resource:\"\nterraform state show \"${ADDR}\"",
+  "faq": [
+    {
+      "question": "Does terraform import change the actual resource?",
+      "answer": "No. Import only updates Terraform state. No changes are made to the actual infrastructure until you run terraform apply."
+    },
+    {
+      "question": "Can I import resources into a module?",
+      "answer": "Yes. Use the full module path: terraform import module.mymodule.aws_s3_bucket.existing my-bucket-id."
+    },
+    {
+      "question": "What if I do not know all the resource attributes?",
+      "answer": "With Terraform 1.5+, use 'terraform plan -generate-config-out=generated.tf' after adding an import block. Terraform generates the config automatically from the imported state."
+    }
+  ],
+  "relatedRecipes": ["terraform-plan-review", "terraform-drift-detection"],
+  "lastUpdated": "2026-03-11"
+}

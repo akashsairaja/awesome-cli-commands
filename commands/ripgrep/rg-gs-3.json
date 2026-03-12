@@ -1,0 +1,8 @@
+{
+  "id": "rg-gs-3",
+  "title": "Check ripgrep version",
+  "command": "rg --version",
+  "description": "Verify ripgrep is installed and display version",
+  "categoryId": "ripgrep",
+  "subcategoryId": "getting-started"
+}

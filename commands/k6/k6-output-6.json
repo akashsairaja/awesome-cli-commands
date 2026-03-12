@@ -1,0 +1,8 @@
+{
+  "id": "k6-output-6",
+  "categoryId": "k6",
+  "subcategoryId": "k6-output",
+  "title": "StatsD output",
+  "command": "k6 run --out statsd script.js",
+  "description": "Stream metrics to StatsD."
+}

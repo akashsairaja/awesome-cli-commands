@@ -1,0 +1,8 @@
+{
+  "id": "vim-56",
+  "categoryId": "vim",
+  "subcategoryId": "macros",
+  "title": "Play macro",
+  "command": "@a",
+  "description": "Execute macro stored in register a."
+}

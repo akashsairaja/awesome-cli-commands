@@ -1,0 +1,8 @@
+{
+  "id": "temporal-workflow-13",
+  "categoryId": "temporal",
+  "subcategoryId": "workflow",
+  "title": "Terminate workflow",
+  "command": "temporal workflow terminate --workflow-id my-workflow --reason 'Force stop'",
+  "description": "Force terminate workflow immediately without cleanup."
+}

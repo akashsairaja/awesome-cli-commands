@@ -1,0 +1,8 @@
+{
+  "id": "java-23",
+  "categoryId": "java",
+  "subcategoryId": "java-jar",
+  "title": "Extract JAR contents",
+  "command": "jar --extract --file app.jar",
+  "description": "Extract all contents from a JAR file."
+}

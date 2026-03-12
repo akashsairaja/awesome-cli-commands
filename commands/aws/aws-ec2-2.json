@@ -1,0 +1,8 @@
+{
+  "id": "aws-ec2-2",
+  "categoryId": "aws",
+  "subcategoryId": "ec2",
+  "title": "Start instance",
+  "command": "aws ec2 start-instances --instance-ids i-xxx",
+  "description": "Start a stopped EC2 instance."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "make-gs-3",
+  "title": "Install Make (Linux)",
+  "command": "sudo apt install build-essential -y",
+  "description": "Install Make and essential build tools on Debian/Ubuntu Linux",
+  "categoryId": "make",
+  "subcategoryId": "getting-started"
+}

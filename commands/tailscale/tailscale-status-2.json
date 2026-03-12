@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-status-2",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-status",
+  "title": "Get IP address",
+  "command": "tailscale ip",
+  "description": "Show Tailscale IP addresses."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "snyk-iac-5",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-iac",
+  "title": "Scan Terraform plan",
+  "command": "terraform plan -out=tfplan && terraform show -json tfplan | snyk iac test --scan=planned-values",
+  "description": "Scan planned Terraform values for issues."
+}

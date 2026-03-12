@@ -1,0 +1,8 @@
+{
+  "id": "linux-81",
+  "categoryId": "linux",
+  "subcategoryId": "systemd",
+  "title": "Show boot time breakdown",
+  "command": "systemd-analyze",
+  "description": "Display total boot time and time spent in kernel vs userspace."
+}

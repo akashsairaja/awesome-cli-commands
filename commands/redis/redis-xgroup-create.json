@@ -1,0 +1,9 @@
+{
+  "id": "redis-xgroup-create",
+  "categoryId": "redis",
+  "subcategoryId": "redis-streams",
+  "title": "Create consumer group",
+  "command": "XGROUP CREATE stream group $ MKSTREAM",
+  "description": "Create consumer group for stream",
+  "tags": ["xgroup", "stream", "consumer"]
+}

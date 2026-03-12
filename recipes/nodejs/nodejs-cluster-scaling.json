@@ -1,0 +1,58 @@
+{
+  "id": "nodejs-cluster-scaling",
+  "stackId": "nodejs",
+  "name": "Scale Node.js with Cluster and PM2",
+  "description": "Use the cluster module and PM2 process manager to run multiple Node.js workers across all CPU cores for production scaling.",
+  "difficulty": "advanced",
+  "timeMinutes": 15,
+  "tags": ["cluster", "scaling", "pm2", "workers", "production"],
+  "prerequisites": ["Node.js installed", "npm install -g pm2 (for PM2 usage)"],
+  "steps": [
+    {
+      "title": "Create a basic cluster setup",
+      "description": "Use the cluster module to fork worker processes that share the same server port.",
+      "command": "cat <<'EOF' > cluster.js\nconst cluster = require('cluster');\nconst os = require('os');\n\nif (cluster.isPrimary) {\n  const cpuCount = os.cpus().length;\n  console.log(`Primary ${process.pid} starting ${cpuCount} workers`);\n\n  for (let i = 0; i < cpuCount; i++) {\n    cluster.fork();\n  }\n\n  cluster.on('exit', (worker, code) => {\n    console.log(`Worker ${worker.process.pid} exited (code: ${code})`);\n    console.log('Starting replacement worker...');\n    cluster.fork();\n  });\n} else {\n  require('./app.js');\n  console.log(`Worker ${process.pid} started`);\n}\nEOF\nnode cluster.js",
+      "tip": "Workers share the server port via the OS kernel. Incoming connections are distributed across workers automatically."
+    },
+    {
+      "title": "Use PM2 for production process management",
+      "description": "Start your application with PM2 in cluster mode for automatic worker management, logging, and restarts.",
+      "command": "pm2 start app.js -i max --name my-app",
+      "tip": "The -i max flag creates one worker per CPU core. Use -i 0 for the same effect."
+    },
+    {
+      "title": "Create a PM2 ecosystem configuration",
+      "description": "Define a persistent PM2 configuration file for consistent deployments across environments.",
+      "command": "cat <<'EOF' > ecosystem.config.js\nmodule.exports = {\n  apps: [{\n    name: 'my-app',\n    script: 'app.js',\n    instances: 'max',\n    exec_mode: 'cluster',\n    max_memory_restart: '500M',\n    env: {\n      NODE_ENV: 'production',\n      PORT: 3000\n    },\n    error_file: './logs/err.log',\n    out_file: './logs/out.log',\n    merge_logs: true\n  }]\n};\nEOF\npm2 start ecosystem.config.js"
+    },
+    {
+      "title": "Monitor workers with PM2",
+      "description": "View real-time status, resource usage, and logs for all running workers.",
+      "command": "pm2 monit"
+    },
+    {
+      "title": "Perform zero-downtime reload",
+      "description": "Gracefully reload all workers one at a time to deploy new code without dropping connections.",
+      "command": "pm2 reload my-app",
+      "tip": "reload restarts workers sequentially (zero-downtime). restart kills all workers at once (has downtime).",
+      "warning": "Ensure your app handles SIGINT gracefully to close connections and flush data before the worker exits."
+    }
+  ],
+  "fullScript": "#!/bin/bash\nset -euo pipefail\n\n# Node.js Cluster Scaling with PM2\n\nAPP_FILE=\"${1:-app.js}\"\nAPP_NAME=\"${2:-my-app}\"\n\necho \"==> Checking prerequisites...\"\nnode --version\npm2 --version 2>/dev/null || { echo \"Installing PM2...\"; npm install -g pm2; }\n\necho \"==> CPU cores available: $(nproc)\"\n\necho \"==> Creating PM2 ecosystem config...\"\ncat > ecosystem.config.js <<EOF\nmodule.exports = {\n  apps: [{\n    name: '${APP_NAME}',\n    script: '${APP_FILE}',\n    instances: 'max',\n    exec_mode: 'cluster',\n    max_memory_restart: '500M',\n    watch: false,\n    env: {\n      NODE_ENV: 'production',\n      PORT: 3000\n    },\n    error_file: './logs/err.log',\n    out_file: './logs/out.log',\n    merge_logs: true,\n    autorestart: true,\n    max_restarts: 10,\n    restart_delay: 1000\n  }]\n};\nEOF\n\nmkdir -p logs\n\necho \"==> Starting cluster...\"\npm2 start ecosystem.config.js\n\necho \"\"\necho \"==> Cluster status:\"\npm2 status\n\necho \"\"\necho \"Useful commands:\"\necho \"  pm2 monit         # Real-time monitoring\"\necho \"  pm2 reload ${APP_NAME}  # Zero-downtime reload\"\necho \"  pm2 logs           # View logs\"\necho \"  pm2 stop ${APP_NAME}    # Stop all workers\"\necho \"  pm2 save           # Save process list for startup\"\necho \"  pm2 startup        # Generate OS startup script\"",
+  "faq": [
+    {
+      "question": "How does the cluster module distribute connections?",
+      "answer": "On most platforms, the primary process accepts connections and distributes them to workers using a round-robin algorithm. On Windows, the OS kernel handles distribution directly."
+    },
+    {
+      "question": "Should I use cluster module directly or PM2?",
+      "answer": "Use PM2 for production. It handles worker management, automatic restarts, log rotation, zero-downtime reloads, and startup scripts. The raw cluster module is useful for understanding internals or custom setups."
+    },
+    {
+      "question": "How do I share state between cluster workers?",
+      "answer": "Workers are separate processes with isolated memory. Use Redis, a database, or IPC messages (process.send/cluster.on) to share state. Never rely on in-memory state being shared between workers."
+    }
+  ],
+  "relatedRecipes": ["nodejs-docker-optimization", "nodejs-performance-profiling"],
+  "lastUpdated": "2026-03-11"
+}

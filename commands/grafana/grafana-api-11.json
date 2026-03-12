@@ -1,0 +1,8 @@
+{
+  "id": "grafana-api-11",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-api",
+  "title": "List contact points",
+  "command": "curl -s http://localhost:3000/api/v1/provisioning/contact-points -H 'Authorization: Bearer TOKEN'",
+  "description": "List alert notification contact points."
+}

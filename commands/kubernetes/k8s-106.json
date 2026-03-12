@@ -1,0 +1,8 @@
+{
+  "id": "k8s-106",
+  "categoryId": "kubernetes",
+  "subcategoryId": "rbac",
+  "title": "Create role",
+  "command": "kubectl create role <name> --verb=get,list --resource=pods",
+  "description": "Create a role with specific permissions."
+}

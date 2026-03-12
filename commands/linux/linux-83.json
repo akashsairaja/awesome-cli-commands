@@ -1,0 +1,8 @@
+{
+  "id": "linux-83",
+  "categoryId": "linux",
+  "subcategoryId": "systemd",
+  "title": "Show critical startup path",
+  "command": "systemd-analyze critical-chain",
+  "description": "Display the critical chain of units that delayed boot the most."
+}

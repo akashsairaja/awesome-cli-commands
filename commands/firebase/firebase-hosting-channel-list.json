@@ -1,0 +1,9 @@
+{
+  "id": "firebase-hosting-channel-list",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-hosting",
+  "title": "List preview channels",
+  "command": "firebase hosting:channel:list",
+  "description": "List all preview channels",
+  "tags": ["hosting", "channel", "list"]
+}

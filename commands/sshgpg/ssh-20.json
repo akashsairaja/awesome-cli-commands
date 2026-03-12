@@ -1,0 +1,8 @@
+{
+  "id": "ssh-20",
+  "categoryId": "sshgpg",
+  "subcategoryId": "config",
+  "title": "SSH config entry",
+  "command": "Host alias\n  HostName host\n  User user",
+  "description": "Example SSH config entry."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "curl-download-limit",
+  "categoryId": "curl",
+  "subcategoryId": "curl-download",
+  "title": "Limit download speed",
+  "command": "curl --limit-rate 1M -O https://example.com/file.zip",
+  "description": "Limit download speed to 1 MB/s",
+  "tags": ["download", "limit", "speed"]
+}

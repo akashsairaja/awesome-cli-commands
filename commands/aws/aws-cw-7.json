@@ -1,0 +1,8 @@
+{
+  "id": "aws-cw-7",
+  "categoryId": "aws",
+  "subcategoryId": "cloudwatch",
+  "title": "Get query results",
+  "command": "aws logs get-query-results --query-id <query-id>",
+  "description": "Retrieve Insights query results by ID."
+}

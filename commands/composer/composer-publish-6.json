@@ -1,0 +1,8 @@
+{
+  "id": "composer-publish-6",
+  "categoryId": "composer",
+  "subcategoryId": "composer-publish",
+  "title": "Search packages",
+  "command": "composer search monolog",
+  "description": "Search Packagist for packages."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "docker-76",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "Start specific service",
+  "command": "docker compose up -d <service>",
+  "description": "Start only specified service."
+}

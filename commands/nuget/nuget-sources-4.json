@@ -1,0 +1,8 @@
+{
+  "id": "nuget-sources-4",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-sources",
+  "title": "Remove source",
+  "command": "dotnet nuget remove source MyFeed",
+  "description": "Remove a package source."
+}

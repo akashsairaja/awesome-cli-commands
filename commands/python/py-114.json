@@ -1,0 +1,8 @@
+{
+  "id": "py-114",
+  "categoryId": "python",
+  "subcategoryId": "python-ruff",
+  "title": "Check formatting",
+  "command": "ruff format --check .",
+  "description": "Check if files are formatted without changing."
+}

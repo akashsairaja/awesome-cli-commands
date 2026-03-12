@@ -1,0 +1,9 @@
+{
+  "id": "tmux-move-window",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-windows",
+  "title": "Move window",
+  "command": "Ctrl+b .",
+  "description": "Move window to different index",
+  "tags": ["window", "move", "reorder"]
+}

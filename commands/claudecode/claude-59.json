@@ -1,0 +1,8 @@
+{
+  "id": "claude-59",
+  "categoryId": "claudecode",
+  "subcategoryId": "agents",
+  "title": "Delete agent",
+  "command": "/agents delete <agent-name>",
+  "description": "Remove a custom agent."
+}

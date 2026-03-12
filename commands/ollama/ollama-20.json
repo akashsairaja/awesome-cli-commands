@@ -1,0 +1,8 @@
+{
+  "id": "ollama-20",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-server",
+  "title": "Start server",
+  "command": "ollama serve",
+  "description": "Start Ollama API server on default port 11434."
+}

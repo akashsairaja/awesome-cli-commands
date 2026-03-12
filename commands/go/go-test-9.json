@@ -1,0 +1,8 @@
+{
+  "id": "go-test-9",
+  "categoryId": "go",
+  "subcategoryId": "go-test",
+  "title": "Set test timeout",
+  "command": "go test -timeout=30s ./...",
+  "description": "Set maximum test duration."
+}

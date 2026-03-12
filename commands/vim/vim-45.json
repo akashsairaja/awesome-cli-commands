@@ -1,0 +1,8 @@
+{
+  "id": "vim-45",
+  "categoryId": "vim",
+  "subcategoryId": "windows-tabs",
+  "title": "Next/previous tab",
+  "command": "gt / gT",
+  "description": "Switch between tabs."
+}

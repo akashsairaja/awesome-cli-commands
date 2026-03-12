@@ -1,0 +1,8 @@
+{
+  "id": "packer-inspect-5",
+  "categoryId": "packer",
+  "subcategoryId": "packer-inspect",
+  "title": "Format with diff",
+  "command": "packer fmt -diff .",
+  "description": "Format and show diff of changes made."
+}

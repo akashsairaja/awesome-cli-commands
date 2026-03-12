@@ -1,0 +1,8 @@
+{
+  "id": "nats-admin-4",
+  "categoryId": "nats",
+  "subcategoryId": "nats-admin",
+  "title": "JetStream report",
+  "command": "nats server report jetstream",
+  "description": "JetStream usage across cluster."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "make-var-8",
+  "categoryId": "make",
+  "subcategoryId": "make-variables",
+  "title": "Automatic $^",
+  "command": "$(CC) -o $@ $^",
+  "description": "$^ = all prerequisites."
+}

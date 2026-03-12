@@ -1,0 +1,8 @@
+{
+  "id": "py-1",
+  "categoryId": "python",
+  "subcategoryId": "python-pip",
+  "title": "Install package",
+  "command": "pip install requests",
+  "description": "Install a package from PyPI."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "brew-40",
+  "categoryId": "homebrew",
+  "subcategoryId": "cleanup",
+  "title": "Diagnose issues",
+  "command": "brew doctor",
+  "description": "Check for potential problems."
+}

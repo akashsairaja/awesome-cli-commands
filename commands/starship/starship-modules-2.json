@@ -1,0 +1,8 @@
+{
+  "id": "starship-modules-2",
+  "categoryId": "starship",
+  "subcategoryId": "starship-modules",
+  "title": "Disable Git module",
+  "command": "[git_status]\ndisabled = true",
+  "description": "Disable git_status in config."
+}

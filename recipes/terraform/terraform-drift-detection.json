@@ -1,0 +1,59 @@
+{
+  "id": "terraform-drift-detection",
+  "stackId": "terraform",
+  "name": "Detect and Fix Infrastructure Drift",
+  "description": "Identify when real infrastructure has drifted from Terraform state and resolve discrepancies systematically.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "Manual console changes and auto-scaling events cause frequent drift, making automated detection critical for compliance.",
+  "tags": ["drift", "detection", "compliance", "refresh", "reconciliation"],
+  "prerequisites": ["Terraform installed", "Existing managed infrastructure"],
+  "steps": [
+    {
+      "title": "Refresh state to detect drift",
+      "description": "Update the state file with the real-world status of all managed resources without making any changes.",
+      "command": "terraform plan -refresh-only",
+      "tip": "The -refresh-only flag updates state without proposing any resource changes. Perfect for drift detection."
+    },
+    {
+      "title": "Apply the refresh to update state",
+      "description": "Accept the refreshed state so Terraform knows the current real-world status of resources.",
+      "command": "terraform apply -refresh-only",
+      "warning": "Review the refresh output carefully. This updates what Terraform considers the current state of your infrastructure."
+    },
+    {
+      "title": "Run a full plan to see pending changes",
+      "description": "After refreshing, run a standard plan to see what changes Terraform would make to reconcile config with reality.",
+      "command": "terraform plan -out=drift-fix.tfplan"
+    },
+    {
+      "title": "Review specific resource state",
+      "description": "Inspect the state of a specific resource to understand its current attributes as Terraform sees them.",
+      "command": "terraform state show aws_instance.web"
+    },
+    {
+      "title": "Decide: reconcile config or re-apply",
+      "description": "Either update your .tf files to match the drifted state (accept drift) or apply the plan to enforce your config.",
+      "command": "terraform apply drift-fix.tfplan",
+      "tip": "If the drift was intentional (e.g., emergency hotfix), update your config to match. If accidental, apply to enforce the desired state."
+    }
+  ],
+  "fullScript": "#!/bin/bash\nset -euo pipefail\n\n# Terraform Drift Detection Script\n# Detects and reports infrastructure drift\n\necho \"==> Refreshing state to detect drift...\"\nterraform plan -refresh-only -detailed-exitcode -no-color 2>&1 | tee /tmp/tf-drift.txt\nREFRESH_EXIT=${PIPESTATUS[0]}\n\nif [ \"$REFRESH_EXIT\" -eq 0 ]; then\n  echo \"No drift detected in state refresh.\"\nelif [ \"$REFRESH_EXIT\" -eq 2 ]; then\n  echo \"WARNING: State drift detected during refresh.\"\n  echo \"Review the output above for details.\"\nfi\n\necho \"\"\necho \"==> Checking for configuration drift...\"\nterraform plan -detailed-exitcode -no-color 2>&1 | tee /tmp/tf-config-drift.txt\nPLAN_EXIT=${PIPESTATUS[0]}\n\nif [ \"$PLAN_EXIT\" -eq 0 ]; then\n  echo \"Infrastructure matches configuration. No drift.\"\nelif [ \"$PLAN_EXIT\" -eq 2 ]; then\n  echo \"\"\n  echo \"DRIFT DETECTED. Resources that would change:\"\n  grep -E \"^  # \" /tmp/tf-config-drift.txt || true\n  echo \"\"\n  echo \"Review /tmp/tf-config-drift.txt for full details.\"\n  echo \"To fix: terraform apply or update your .tf files.\"\nfi",
+  "faq": [
+    {
+      "question": "What causes infrastructure drift?",
+      "answer": "Drift occurs when resources are modified outside Terraform: manual console changes, auto-scaling events, other automation tools, or someone running ad-hoc CLI commands against your cloud provider."
+    },
+    {
+      "question": "How can I prevent drift from happening?",
+      "answer": "Enforce that all changes go through Terraform by restricting console write access, using CI/CD pipelines for all infrastructure changes, and running scheduled drift detection scans."
+    },
+    {
+      "question": "Does terraform refresh modify my infrastructure?",
+      "answer": "No. Refresh only reads the current state of resources from the provider and updates the local state file. It never creates, modifies, or deletes actual infrastructure."
+    }
+  ],
+  "relatedRecipes": ["terraform-plan-review", "terraform-import-existing"],
+  "lastUpdated": "2026-03-11"
+}

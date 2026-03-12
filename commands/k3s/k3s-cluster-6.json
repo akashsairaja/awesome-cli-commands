@@ -1,0 +1,8 @@
+{
+  "id": "k3s-cluster-6",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-cluster",
+  "title": "Label a node",
+  "command": "k3s kubectl label node <node-name> role=worker",
+  "description": "Add a label to a cluster node."
+}

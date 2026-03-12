@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-config-3",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-config",
+  "title": "Show config path",
+  "command": "ngrok config check",
+  "description": "Verify config file location and syntax."
+}

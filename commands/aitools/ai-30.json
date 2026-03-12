@@ -1,0 +1,8 @@
+{
+  "id": "ai-30",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-copilot",
+  "title": "Suggest command",
+  "command": "gh copilot suggest \"find large files in git history\"",
+  "description": "Get shell command suggestions from Copilot."
+}

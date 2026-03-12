@@ -1,0 +1,9 @@
+{
+  "id": "nginx-enable-site",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-config",
+  "title": "Enable site",
+  "command": "sudo ln -s /etc/nginx/sites-available/<site> /etc/nginx/sites-enabled/",
+  "description": "Enable a site configuration",
+  "tags": ["enable", "site", "symlink"]
+}

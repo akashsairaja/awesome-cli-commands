@@ -1,0 +1,9 @@
+{
+  "id": "supabase-inspect-outliers",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-inspect",
+  "title": "Show query outliers",
+  "command": "supabase inspect db outliers --local",
+  "description": "Show statements by total execution time",
+  "tags": ["inspect", "queries", "performance"]
+}

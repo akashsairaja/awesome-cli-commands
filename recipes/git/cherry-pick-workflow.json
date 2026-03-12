@@ -1,0 +1,71 @@
+{
+  "id": "cherry-pick-workflow",
+  "stackId": "git",
+  "name": "Selective Commit Migration with Cherry-Pick",
+  "description": "Use git cherry-pick to selectively apply specific commits from one branch to another without merging the entire branch history.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": false,
+  "tags": ["cherry-pick", "commits", "branches", "migration", "hotfix"],
+  "prerequisites": [
+    "Git installed",
+    "Multiple branches with divergent histories",
+    "Knowledge of commit hashes to cherry-pick"
+  ],
+  "steps": [
+    {
+      "title": "Identify commits to cherry-pick",
+      "command": "git log --oneline feature/payments -10",
+      "description": "Review the commit history of the source branch to find the specific commit hashes you want to apply to your current branch.",
+      "tip": "Use 'git log --oneline --grep=\"fix\"' to filter commits by message content."
+    },
+    {
+      "title": "Cherry-pick a single commit",
+      "command": "git cherry-pick abc1234",
+      "description": "Apply the specified commit to your current branch. Git creates a new commit with the same changes but a different hash."
+    },
+    {
+      "title": "Cherry-pick a range of commits",
+      "command": "git cherry-pick abc1234..def5678",
+      "description": "Apply all commits in the range, excluding abc1234 and including def5678. Use three dots (abc1234...def5678) to include both endpoints.",
+      "warning": "Range cherry-pick applies commits in order. If any commit conflicts, the entire operation pauses until you resolve it."
+    },
+    {
+      "title": "Resolve cherry-pick conflicts",
+      "command": "git status\n# Fix conflicts in listed files\ngit add .\ngit cherry-pick --continue",
+      "description": "If a cherry-pick causes conflicts, resolve them, stage the changes, and continue. Use --abort to cancel the entire cherry-pick operation."
+    },
+    {
+      "title": "Cherry-pick without committing",
+      "command": "git cherry-pick --no-commit abc1234 def5678",
+      "description": "Stage the changes from multiple commits without creating individual commits. This lets you combine them into a single commit with your own message.",
+      "tip": "This is useful when you want to cherry-pick several small fixes and bundle them into one clean commit."
+    },
+    {
+      "title": "Track cherry-pick origin with -x",
+      "command": "git cherry-pick -x abc1234",
+      "description": "The -x flag appends '(cherry picked from commit abc1234)' to the commit message, making it easy to trace the original source."
+    }
+  ],
+  "fullScript": "#!/usr/bin/env bash\n# cherry-pick-workflow.sh — Cherry-pick commits between branches\nset -euo pipefail\n\nSOURCE_BRANCH=\"${1:?Usage: $0 <source-branch> [commit-hash...]}\"\nshift\nCOMMITS=(\"$@\")\n\nCURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)\necho \"Current branch: $CURRENT_BRANCH\"\necho \"Source branch:  $SOURCE_BRANCH\"\n\nif [ ${#COMMITS[@]} -eq 0 ]; then\n  echo \"\"\n  echo \"=== Recent commits on $SOURCE_BRANCH ===\"\n  git log --oneline \"$SOURCE_BRANCH\" -15\n  echo \"\"\n  echo \"No commit hashes provided. Re-run with specific hashes:\"\n  echo \"  $0 $SOURCE_BRANCH <hash1> <hash2> ...\"\n  exit 0\nfi\n\necho \"\"\necho \"Commits to cherry-pick:\"\nfor HASH in \"${COMMITS[@]}\"; do\n  echo \"  $(git log --oneline -1 \"$HASH\")\"\ndone\n\necho \"\"\nread -rp \"Cherry-pick these commits with -x flag? (y/N) \" confirm\nif [[ \"$confirm\" =~ ^[Yy]$ ]]; then\n  for HASH in \"${COMMITS[@]}\"; do\n    echo \"Cherry-picking $HASH...\"\n    git cherry-pick -x \"$HASH\" || {\n      echo \"Conflict detected. Resolve and run: git cherry-pick --continue\"\n      exit 1\n    }\n  done\n  echo \"\"\n  echo \"All commits cherry-picked successfully.\"\n  git log --oneline -${#COMMITS[@]}\nfi",
+  "faq": [
+    {
+      "question": "Does cherry-pick create a duplicate commit?",
+      "answer": "Yes. Cherry-pick creates a new commit with the same diff but a different SHA hash. The original commit remains on its source branch. Use the -x flag to record the origin in the commit message."
+    },
+    {
+      "question": "When should I cherry-pick vs merge or rebase?",
+      "answer": "Cherry-pick when you need only specific commits from another branch. Use merge when you want all changes from a branch. Use rebase when you want to move your entire branch to a new base. Cherry-pick is ideal for hotfixes and selective backports."
+    },
+    {
+      "question": "Can I cherry-pick a merge commit?",
+      "answer": "Yes, but you must specify the parent with -m. For example, 'git cherry-pick -m 1 <merge-hash>' applies the changes as seen from the first parent. This is usually what you want for standard merge commits."
+    }
+  ],
+  "relatedRecipes": [
+    "interactive-rebase-workflow",
+    "git-stash-mastery",
+    "branch-cleanup-automation"
+  ],
+  "lastUpdated": "2026-03-11"
+}

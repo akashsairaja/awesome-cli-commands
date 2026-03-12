@@ -1,0 +1,8 @@
+{
+  "id": "playwright-visual-3",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-visual",
+  "title": "Named snapshot",
+  "command": "await expect(page).toHaveScreenshot('homepage.png');",
+  "description": "Visual test with custom name."
+}

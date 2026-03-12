@@ -1,0 +1,8 @@
+{
+  "id": "go-run-2",
+  "categoryId": "go",
+  "subcategoryId": "go-run",
+  "title": "Run package",
+  "command": "go run .",
+  "description": "Compile and run current package."
+}

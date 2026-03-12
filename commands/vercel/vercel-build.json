@@ -1,0 +1,9 @@
+{
+  "id": "vercel-build",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-deploy",
+  "title": "Build locally",
+  "command": "vercel build",
+  "description": "Build the project locally using Vercel's build process",
+  "tags": ["build", "local"]
+}

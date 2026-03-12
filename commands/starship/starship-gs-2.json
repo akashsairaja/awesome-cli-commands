@@ -1,0 +1,8 @@
+{
+  "id": "starship-gs-2",
+  "title": "Install Starship via script",
+  "command": "curl -sS https://starship.rs/install.sh | sh",
+  "description": "Install Starship using the official install script on Linux",
+  "categoryId": "starship",
+  "subcategoryId": "getting-started"
+}

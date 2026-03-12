@@ -1,0 +1,53 @@
+{
+  "id": "helm-release-management",
+  "stackId": "helm",
+  "name": "Manage Helm Releases",
+  "description": "Upgrade, rollback, and manage the lifecycle of Helm releases with revision history, atomic upgrades, and cleanup strategies.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "tags": ["upgrade", "rollback", "releases", "lifecycle"],
+  "prerequisites": ["Helm 3 installed", "An existing Helm release in a cluster"],
+  "steps": [
+    {
+      "title": "Check current release status",
+      "description": "View the current state and revision of a release.",
+      "command": "helm status my-release --namespace production"
+    },
+    {
+      "title": "Upgrade a release with new values",
+      "description": "Apply new configuration to an existing release.",
+      "command": "helm upgrade my-release bitnami/nginx --namespace production --set replicaCount=3 --atomic --timeout 5m",
+      "tip": "The --atomic flag automatically rolls back the upgrade if it fails, preventing broken deployments."
+    },
+    {
+      "title": "View release history",
+      "description": "List all revisions of a release for auditing and rollback reference.",
+      "command": "helm history my-release --namespace production"
+    },
+    {
+      "title": "Rollback to a previous revision",
+      "description": "Revert a release to a known-good state.",
+      "command": "helm rollback my-release 2 --namespace production --wait",
+      "warning": "Rollback creates a new revision, it does not delete history. Verify the target revision number with 'helm history' first."
+    },
+    {
+      "title": "Uninstall a release",
+      "description": "Remove a release and its associated resources from the cluster.",
+      "command": "helm uninstall my-release --namespace production --keep-history",
+      "tip": "Use --keep-history to preserve release records for auditing. Without it, all history is deleted."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Helm Release Management Workflow\nset -euo pipefail\n\nRELEASE=${1:?\"Usage: $0 <release-name> <namespace>\"}\nNAMESPACE=${2:-\"default\"}\n\necho \"=== Current Release Status ===\"\nhelm status \"$RELEASE\" -n \"$NAMESPACE\" 2>/dev/null || echo \"Release not found\"\n\necho \"\"\necho \"=== Release History ===\"\nhelm history \"$RELEASE\" -n \"$NAMESPACE\" --max 10 2>/dev/null || echo \"No history available\"\n\necho \"\"\necho \"=== Current Values ===\"\nhelm get values \"$RELEASE\" -n \"$NAMESPACE\" 2>/dev/null || echo \"No values found\"\n\necho \"\"\necho \"=== Manifests Diff (if upgrading) ===\"\necho \"Run: helm diff upgrade $RELEASE <chart> -n $NAMESPACE -f values.yaml\"\n\necho \"\"\necho \"=== Quick Commands ===\"\necho \"Upgrade:  helm upgrade $RELEASE <chart> -n $NAMESPACE --atomic --timeout 5m\"\necho \"Rollback: helm rollback $RELEASE <revision> -n $NAMESPACE --wait\"\necho \"Delete:   helm uninstall $RELEASE -n $NAMESPACE --keep-history\"",
+  "faq": [
+    {
+      "question": "What does --atomic do during an upgrade?",
+      "answer": "The --atomic flag rolls back the upgrade automatically if any resource fails to become ready within the timeout period. It combines --wait with automatic rollback on failure."
+    },
+    {
+      "question": "How many revisions does Helm keep by default?",
+      "answer": "Helm keeps a maximum of 10 revisions by default. You can change this with --history-max on install or upgrade. Old revisions are automatically pruned when the limit is exceeded."
+    }
+  ],
+  "relatedRecipes": ["helm-chart-install", "helm-values-override"],
+  "lastUpdated": "2026-03-11"
+}

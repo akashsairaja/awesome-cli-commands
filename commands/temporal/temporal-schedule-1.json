@@ -1,0 +1,8 @@
+{
+  "id": "temporal-schedule-1",
+  "categoryId": "temporal",
+  "subcategoryId": "schedule",
+  "title": "Create schedule with interval",
+  "command": "temporal schedule create --schedule-id my-schedule --interval 1h --workflow-id scheduled-wf --type MyWorkflow --task-queue my-queue",
+  "description": "Create schedule that runs workflow every hour."
+}

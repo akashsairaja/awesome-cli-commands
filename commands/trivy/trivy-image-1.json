@@ -1,0 +1,8 @@
+{
+  "id": "trivy-image-1",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-image",
+  "title": "Scan image",
+  "command": "trivy image nginx:latest",
+  "description": "Scan a container image for vulnerabilities."
+}

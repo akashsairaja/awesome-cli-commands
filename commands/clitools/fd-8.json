@@ -1,0 +1,8 @@
+{
+  "id": "fd-8",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-fd",
+  "title": "Max depth",
+  "command": "fd -d 2 pattern",
+  "description": "Limit search depth."
+}

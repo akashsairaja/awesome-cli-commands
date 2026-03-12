@@ -1,0 +1,8 @@
+{
+  "id": "git-154",
+  "categoryId": "git",
+  "subcategoryId": "maintenance",
+  "title": "Optimize repository pack",
+  "command": "git repack -a -d --depth=250 --window=250",
+  "description": "Aggressive repository optimization and compression."
+}

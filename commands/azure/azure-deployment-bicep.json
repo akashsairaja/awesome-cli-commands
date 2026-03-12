@@ -1,0 +1,9 @@
+{
+  "id": "azure-deployment-bicep",
+  "categoryId": "azure",
+  "subcategoryId": "azure-deployment",
+  "title": "Deploy Bicep Template",
+  "command": "az deployment group create -g rg --template-file main.bicep",
+  "description": "Deploy infrastructure using Bicep template",
+  "tags": ["deployment", "bicep", "iac"]
+}

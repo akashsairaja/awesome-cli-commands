@@ -1,0 +1,8 @@
+{
+  "id": "k8s-150",
+  "categoryId": "kubernetes",
+  "subcategoryId": "debugging",
+  "title": "Filter warning events",
+  "command": "kubectl get events --field-selector type=Warning",
+  "description": "Show only warning-level events for troubleshooting."
+}

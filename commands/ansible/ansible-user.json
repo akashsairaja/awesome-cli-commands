@@ -1,0 +1,9 @@
+{
+  "id": "ansible-user",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-adhoc",
+  "title": "Create User",
+  "command": "ansible all -m user -a \"name=deploy state=present\" -b",
+  "description": "Create a user on remote hosts",
+  "tags": ["user", "create", "account"]
+}

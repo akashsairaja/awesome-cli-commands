@@ -1,0 +1,8 @@
+{
+  "id": "packer-hcl-7",
+  "categoryId": "packer",
+  "subcategoryId": "packer-hcl",
+  "title": "Shell provisioner",
+  "command": "provisioner \"shell\" {\n  scripts = [\n    \"scripts/setup.sh\",\n    \"scripts/install-deps.sh\"\n  ]\n  environment_vars = [\n    \"APP_ENV=production\"\n  ]\n}",
+  "description": "Run multiple shell scripts as provisioner."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "netlify-gs-3",
+  "title": "Login to Netlify",
+  "command": "netlify login",
+  "description": "Authenticate the Netlify CLI with your account",
+  "categoryId": "netlify",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "docker-105",
+  "categoryId": "docker",
+  "subcategoryId": "buildx",
+  "title": "Remove builder",
+  "command": "docker buildx rm <builder>",
+  "description": "Remove a builder instance."
+}

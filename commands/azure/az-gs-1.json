@@ -1,0 +1,8 @@
+{
+  "id": "az-gs-1",
+  "title": "Install Azure CLI (macOS)",
+  "command": "brew install azure-cli",
+  "description": "Install the Azure CLI using Homebrew on macOS",
+  "categoryId": "azure",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "npm-scripts-5",
+  "categoryId": "npm",
+  "subcategoryId": "npm-scripts",
+  "title": "Execute package",
+  "command": "npx <command>",
+  "description": "Execute command from local or remote package."
+}

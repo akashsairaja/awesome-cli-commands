@@ -1,0 +1,9 @@
+{
+  "id": "nginx-disable-site",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-config",
+  "title": "Disable site",
+  "command": "sudo rm /etc/nginx/sites-enabled/<site>",
+  "description": "Disable a site configuration",
+  "tags": ["disable", "site", "remove"]
+}

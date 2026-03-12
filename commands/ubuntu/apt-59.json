@@ -1,0 +1,8 @@
+{
+  "id": "apt-59",
+  "categoryId": "ubuntu",
+  "subcategoryId": "system",
+  "title": "View kernel ring buffer",
+  "command": "dmesg --human --level=err,warn | tail -30",
+  "description": "Show recent kernel errors and warnings in readable format."
+}

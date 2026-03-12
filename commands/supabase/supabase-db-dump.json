@@ -1,0 +1,9 @@
+{
+  "id": "supabase-db-dump",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-db",
+  "title": "Dump database",
+  "command": "supabase db dump -f dump.sql",
+  "description": "Dump database schema to SQL file",
+  "tags": ["db", "dump", "backup", "export"]
+}

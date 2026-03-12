@@ -1,0 +1,8 @@
+{
+  "id": "databricks-41",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-mlflow",
+  "title": "Create experiment",
+  "command": "databricks experiments create --name /Users/user@email.com/my-experiment",
+  "description": "Create a new MLflow experiment."
+}

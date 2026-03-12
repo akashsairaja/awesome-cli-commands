@@ -1,0 +1,8 @@
+{
+  "id": "ps-75",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-modules",
+  "title": "Import module",
+  "command": "Import-Module -Name ModuleName",
+  "description": "Load module into session."
+}

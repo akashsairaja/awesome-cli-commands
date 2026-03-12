@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-storage-rm",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-storage",
+  "title": "Delete Objects",
+  "command": "gsutil rm gs://<bucket>/<object>",
+  "description": "Delete objects from bucket",
+  "tags": ["storage", "delete", "remove"]
+}

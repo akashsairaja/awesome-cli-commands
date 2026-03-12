@@ -1,0 +1,8 @@
+{
+  "id": "tofu-apply-4",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-apply",
+  "title": "Destroy resources",
+  "command": "tofu destroy",
+  "description": "Destroy all resources."
+}

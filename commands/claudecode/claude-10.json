@@ -1,0 +1,8 @@
+{
+  "id": "claude-10",
+  "categoryId": "claudecode",
+  "subcategoryId": "general",
+  "title": "Debug mode",
+  "command": "claude --debug",
+  "description": "Enable debug logging for troubleshooting."
+}

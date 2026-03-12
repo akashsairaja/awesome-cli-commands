@@ -1,0 +1,8 @@
+{
+  "id": "rust-pub-6",
+  "categoryId": "rust",
+  "subcategoryId": "rust-publish",
+  "title": "Yank version",
+  "command": "cargo yank --vers 1.0.1",
+  "description": "Remove version from new dependency resolution."
+}

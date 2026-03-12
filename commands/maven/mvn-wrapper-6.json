@@ -1,0 +1,8 @@
+{
+  "id": "mvn-wrapper-6",
+  "categoryId": "maven",
+  "subcategoryId": "mvn-wrapper",
+  "title": "Make wrapper executable (Unix)",
+  "command": "chmod +x mvnw",
+  "description": "Fix execute permission on the wrapper script after cloning on macOS/Linux."
+}

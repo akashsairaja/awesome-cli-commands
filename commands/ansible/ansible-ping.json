@@ -1,0 +1,9 @@
+{
+  "id": "ansible-ping",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-adhoc",
+  "title": "Ping All Hosts",
+  "command": "ansible all -m ping",
+  "description": "Test connectivity to all inventory hosts",
+  "tags": ["ping", "test", "connectivity"]
+}

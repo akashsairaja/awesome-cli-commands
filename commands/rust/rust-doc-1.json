@@ -1,0 +1,8 @@
+{
+  "id": "rust-doc-1",
+  "categoryId": "rust",
+  "subcategoryId": "rust-doc",
+  "title": "Generate docs",
+  "command": "cargo doc",
+  "description": "Build documentation for project."
+}

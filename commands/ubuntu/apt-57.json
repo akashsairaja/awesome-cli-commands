@@ -1,0 +1,8 @@
+{
+  "id": "apt-57",
+  "categoryId": "ubuntu",
+  "subcategoryId": "system",
+  "title": "Set default alternative",
+  "command": "sudo update-alternatives --config editor",
+  "description": "Choose the default application for a command like editor or java."
+}

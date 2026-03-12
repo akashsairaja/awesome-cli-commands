@@ -1,0 +1,8 @@
+{
+  "id": "spark-15",
+  "categoryId": "spark",
+  "subcategoryId": "spark-shell",
+  "title": "Shell with memory config",
+  "command": "spark-shell --driver-memory 4g --executor-memory 8g",
+  "description": "Start shell with custom memory settings."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "npm-pkg-6",
+  "categoryId": "npm",
+  "subcategoryId": "npm-packages",
+  "title": "Why is package installed",
+  "command": "npm explain <package>",
+  "description": "Show dependency chain for a package."
+}

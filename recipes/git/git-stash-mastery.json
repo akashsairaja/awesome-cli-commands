@@ -1,0 +1,68 @@
+{
+  "id": "git-stash-mastery",
+  "stackId": "git",
+  "name": "Advanced Stash Operations for Context Switching",
+  "description": "Master git stash to save, organize, and restore uncommitted work when switching between tasks or branches.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "trending": false,
+  "tags": ["stash", "context-switching", "workflow", "productivity"],
+  "prerequisites": ["Git installed", "Uncommitted changes to practice with"],
+  "steps": [
+    {
+      "title": "Stash current changes with a descriptive message",
+      "command": "git stash push -m \"WIP: user profile validation logic\"",
+      "description": "Save all tracked modifications and staged changes to the stash with a message for easy identification later.",
+      "tip": "Always add a message with -m. The default 'WIP on branch' message is not helpful when you have multiple stashes."
+    },
+    {
+      "title": "Stash including untracked files",
+      "command": "git stash push -u -m \"WIP: new config files\"",
+      "description": "The -u flag includes untracked files in the stash. Without it, only modified tracked files are stashed.",
+      "tip": "Use -a instead of -u to also include ignored files, though this is rarely needed."
+    },
+    {
+      "title": "List all stashes",
+      "command": "git stash list",
+      "description": "View all stashed entries with their index, branch, and message. Stashes are numbered starting at 0 for the most recent."
+    },
+    {
+      "title": "Inspect a stash without applying it",
+      "command": "git stash show -p stash@{0}",
+      "description": "View the full diff of a specific stash entry. The -p flag shows the patch; without it you only see a file summary."
+    },
+    {
+      "title": "Apply a specific stash and keep it in the list",
+      "command": "git stash apply stash@{2}",
+      "description": "Apply the changes from stash@{2} to your working tree. The stash entry remains in the list for future use.",
+      "tip": "Use 'git stash pop' instead of 'apply' to apply and immediately remove the stash entry."
+    },
+    {
+      "title": "Drop a stash or clear all stashes",
+      "command": "git stash drop stash@{1}\n# Or remove all stashes:\ngit stash clear",
+      "description": "Remove a specific stash entry with drop, or remove all entries with clear.",
+      "warning": "Dropped stashes cannot be easily recovered. The reflog may help for a short time, but do not rely on it."
+    }
+  ],
+  "fullScript": "#!/usr/bin/env bash\n# git-stash-helper.sh — Interactive stash management\nset -euo pipefail\n\nACTION=\"${1:-list}\"\n\ncase \"$ACTION\" in\n  save)\n    MSG=\"${2:-WIP: $(date +%Y-%m-%d_%H:%M)}\"\n    echo \"Stashing changes with message: $MSG\"\n    git stash push -u -m \"$MSG\"\n    echo \"Done.\"\n    ;;\n  list)\n    echo \"=== Stash entries ===\"\n    STASHES=$(git stash list)\n    if [ -z \"$STASHES\" ]; then\n      echo \"No stashes found.\"\n    else\n      echo \"$STASHES\"\n      echo \"\"\n      echo \"Use '$0 show <index>' to inspect a stash.\"\n    fi\n    ;;\n  show)\n    INDEX=\"${2:-0}\"\n    echo \"=== stash@{$INDEX} ===\"\n    git stash show -p \"stash@{$INDEX}\"\n    ;;\n  apply)\n    INDEX=\"${2:-0}\"\n    echo \"Applying stash@{$INDEX}...\"\n    git stash apply \"stash@{$INDEX}\"\n    echo \"Applied. Stash entry preserved.\"\n    ;;\n  pop)\n    INDEX=\"${2:-0}\"\n    echo \"Popping stash@{$INDEX}...\"\n    git stash pop \"stash@{$INDEX}\"\n    echo \"Applied and removed from stash list.\"\n    ;;\n  drop)\n    INDEX=\"${2:?Usage: $0 drop <index>}\"\n    echo \"Dropping stash@{$INDEX}...\"\n    git stash drop \"stash@{$INDEX}\"\n    echo \"Dropped.\"\n    ;;\n  *)\n    echo \"Usage: $0 {save|list|show|apply|pop|drop} [args]\"\n    ;;\nesac",
+  "faq": [
+    {
+      "question": "Does git stash save staged changes separately?",
+      "answer": "By default, stash saves both staged and unstaged changes and resets the working tree. Use 'git stash push --keep-index' to stash only unstaged changes while keeping staged changes in the index."
+    },
+    {
+      "question": "Can I create a branch from a stash?",
+      "answer": "Yes. Use 'git stash branch <new-branch> stash@{0}' to create a new branch from the commit where the stash was created, apply the stash, and drop it. This is useful if the stash conflicts with current changes."
+    },
+    {
+      "question": "What happens if applying a stash causes conflicts?",
+      "answer": "Git will apply what it can and mark conflicts in the affected files, just like a merge conflict. Resolve the conflicts manually, then stage the files. The stash entry is not dropped automatically when conflicts occur."
+    }
+  ],
+  "relatedRecipes": [
+    "git-worktree-parallel",
+    "cherry-pick-workflow",
+    "interactive-rebase-workflow"
+  ],
+  "lastUpdated": "2026-03-11"
+}

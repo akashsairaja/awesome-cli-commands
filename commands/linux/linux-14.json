@@ -1,0 +1,8 @@
+{
+  "id": "linux-14",
+  "categoryId": "linux",
+  "subcategoryId": "network",
+  "title": "Check DNS resolution",
+  "command": "dig +short <domain>",
+  "description": "Get IP address for domain name."
+}

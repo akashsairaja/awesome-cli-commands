@@ -1,0 +1,8 @@
+{
+  "id": "vault-operator-5",
+  "categoryId": "vault",
+  "subcategoryId": "vault-operator",
+  "title": "Raft snapshot",
+  "command": "vault operator raft snapshot save backup.snap",
+  "description": "Create a Raft storage snapshot."
+}

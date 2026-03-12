@@ -1,0 +1,8 @@
+{
+  "id": "k8s-52",
+  "categoryId": "kubernetes",
+  "subcategoryId": "services",
+  "title": "Port forward to service",
+  "command": "kubectl port-forward svc/<service> 8080:80",
+  "description": "Forward local port to service port."
+}

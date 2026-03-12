@@ -1,0 +1,9 @@
+{
+  "id": "prisma-init-url",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-generate",
+  "title": "Initialize with connection URL",
+  "command": "npx prisma init --url postgresql://user:pass@localhost:5432/mydb",
+  "description": "Initialize Prisma and set the database connection URL directly",
+  "tags": ["init", "url", "connection"]
+}

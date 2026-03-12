@@ -1,0 +1,8 @@
+{
+  "id": "hurl-options-7",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-options",
+  "title": "Color output",
+  "command": "hurl --color api.hurl",
+  "description": "Force colored terminal output."
+}

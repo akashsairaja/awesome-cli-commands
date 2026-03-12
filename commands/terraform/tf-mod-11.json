@@ -1,0 +1,8 @@
+{
+  "id": "tf-mod-11",
+  "categoryId": "terraform",
+  "subcategoryId": "modules",
+  "title": "Get modules",
+  "command": "terraform get",
+  "description": "Download and update modules."
+}

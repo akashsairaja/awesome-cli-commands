@@ -1,0 +1,8 @@
+{
+  "id": "k6-run-9",
+  "categoryId": "k6",
+  "subcategoryId": "k6-run",
+  "title": "Run paused",
+  "command": "k6 run --paused script.js",
+  "description": "Start test paused, resume via API."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "hurl-options-8",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-options",
+  "title": "Max redirects",
+  "command": "hurl --max-redirs 5 api.hurl",
+  "description": "Set maximum redirect follows."
+}

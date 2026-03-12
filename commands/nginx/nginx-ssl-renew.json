@@ -1,0 +1,9 @@
+{
+  "id": "nginx-ssl-renew",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-ssl",
+  "title": "Renew certificates",
+  "command": "sudo certbot renew",
+  "description": "Renew all Let's Encrypt certificates",
+  "tags": ["ssl", "certbot", "renew", "letsencrypt"]
+}

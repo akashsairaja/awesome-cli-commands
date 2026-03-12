@@ -1,0 +1,9 @@
+{
+  "id": "netlify-watch",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-deploy",
+  "title": "Watch build status",
+  "command": "netlify watch",
+  "description": "Watch the current build's status",
+  "tags": ["watch", "build", "status"]
+}

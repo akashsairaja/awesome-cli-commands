@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-manage-8",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-manage",
+  "title": "Validate config",
+  "command": "lefthook dump",
+  "description": "Dump resolved config to verify correctness."
+}

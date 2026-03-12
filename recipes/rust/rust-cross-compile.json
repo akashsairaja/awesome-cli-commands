@@ -1,0 +1,56 @@
+{
+  "id": "rust-cross-compile",
+  "stackId": "rust",
+  "name": "Cross-Compilation with Cargo and cross",
+  "description": "Cross-compile Rust binaries for different operating systems and architectures using cargo and the cross tool.",
+  "difficulty": "advanced",
+  "timeMinutes": 15,
+  "tags": ["cross-compile", "multi-platform", "binary", "targets"],
+  "prerequisites": ["Rust toolchain installed via rustup", "Docker installed (for cross tool)"],
+  "steps": [
+    {
+      "title": "List available targets",
+      "description": "View all compilation targets supported by the Rust toolchain.",
+      "command": "rustup target list | grep -E '(linux|darwin|windows|wasm)'"
+    },
+    {
+      "title": "Add a target and compile natively",
+      "description": "Install a target and cross-compile using cargo build directly.",
+      "command": "rustup target add x86_64-unknown-linux-musl && cargo build --release --target x86_64-unknown-linux-musl",
+      "tip": "The musl target produces a fully static binary that works on any Linux distribution."
+    },
+    {
+      "title": "Install the cross tool",
+      "description": "Install cross, which uses Docker containers with pre-configured toolchains for hassle-free cross-compilation.",
+      "command": "cargo install cross --git https://github.com/cross-rs/cross"
+    },
+    {
+      "title": "Cross-compile for Linux ARM64",
+      "description": "Build for aarch64 Linux using cross, which handles the toolchain automatically.",
+      "command": "cross build --release --target aarch64-unknown-linux-gnu"
+    },
+    {
+      "title": "Build for multiple targets with a script",
+      "description": "Automate cross-compilation for all desired platforms.",
+      "command": "for target in x86_64-unknown-linux-musl aarch64-unknown-linux-gnu x86_64-apple-darwin aarch64-apple-darwin x86_64-pc-windows-gnu; do echo \"Building $target\" && cross build --release --target $target; done",
+      "warning": "macOS targets may not work with cross unless you have the appropriate linker. Use native compilation on macOS for darwin targets."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Rust Cross-Compilation\nset -euo pipefail\n\nAPP=${1:?\"Usage: $0 <crate-name>\"}\n\nTARGETS=(\n  \"x86_64-unknown-linux-musl\"\n  \"aarch64-unknown-linux-gnu\"\n  \"x86_64-pc-windows-gnu\"\n)\n\necho \"=== Cross-Compiling $APP ===\"\nfor target in \"${TARGETS[@]}\"; do\n  echo \"\"\n  echo \"--- Building for $target ---\"\n  cross build --release --target \"$target\" 2>&1 | tail -3\ndone\n\necho \"\"\necho \"=== Build Artifacts ===\"\nfor target in \"${TARGETS[@]}\"; do\n  ls -lh \"target/$target/release/$APP\"* 2>/dev/null || true\ndone\n\necho \"\"\necho \"=== Cross-Compile Commands ===\"\necho \"Add target:   rustup target add <target>\"\necho \"Native:       cargo build --release --target <target>\"\necho \"Cross:        cross build --release --target <target>\"\necho \"List targets: rustup target list --installed\"",
+  "faq": [
+    {
+      "question": "When should I use cross vs native cargo build?",
+      "answer": "Use native cargo build when you have the target toolchain installed (like musl on Linux). Use cross when you need a full cross-compilation environment with C libraries, as it handles everything via Docker."
+    },
+    {
+      "question": "How do I produce a static binary on Linux?",
+      "answer": "Target x86_64-unknown-linux-musl to link against musl libc instead of glibc. This produces a fully static binary. Add the target with 'rustup target add x86_64-unknown-linux-musl'."
+    },
+    {
+      "question": "Can I cross-compile crates that use OpenSSL?",
+      "answer": "Yes, but it requires the target's OpenSSL headers. The cross tool includes these. Alternatively, use the rustls feature flag instead of native OpenSSL to avoid the C dependency entirely."
+    }
+  ],
+  "relatedRecipes": ["rust-release-optimization", "rust-wasm-build"],
+  "lastUpdated": "2026-03-11"
+}

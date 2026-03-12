@@ -1,0 +1,8 @@
+{
+  "id": "hf-11",
+  "categoryId": "huggingface",
+  "subcategoryId": "hf-download",
+  "title": "Download to directory",
+  "command": "huggingface-cli download meta-llama/Llama-2-7b-hf --local-dir ./models",
+  "description": "Download model to a specific local directory."
+}

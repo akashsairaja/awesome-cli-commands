@@ -1,0 +1,8 @@
+{
+  "id": "starship-install-6",
+  "categoryId": "starship",
+  "subcategoryId": "starship-install",
+  "title": "Init Nushell",
+  "command": "mkdir ~/.cache/starship\nstarship init nu | save -f ~/.cache/starship/init.nu",
+  "description": "Initialize Starship in Nushell."
+}

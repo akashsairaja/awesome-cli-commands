@@ -1,0 +1,8 @@
+{
+  "id": "nuget-install-3",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-install",
+  "title": "Restore packages",
+  "command": "dotnet restore",
+  "description": "Restore all NuGet packages."
+}

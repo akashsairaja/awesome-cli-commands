@@ -1,0 +1,8 @@
+{
+  "id": "mvn-plugin-1",
+  "categoryId": "maven",
+  "subcategoryId": "plugins",
+  "title": "Effective POM",
+  "command": "mvn help:effective-pom",
+  "description": "Display resolved POM."
+}

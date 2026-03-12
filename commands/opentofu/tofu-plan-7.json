@@ -1,0 +1,8 @@
+{
+  "id": "tofu-plan-7",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-plan",
+  "title": "Replace resource",
+  "command": "tofu plan -replace=aws_instance.web",
+  "description": "Plan to force-replace a specific resource."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tf-ws-5",
+  "categoryId": "terraform",
+  "subcategoryId": "workspace",
+  "title": "Delete workspace",
+  "command": "terraform workspace delete dev",
+  "description": "Delete an empty workspace."
+}

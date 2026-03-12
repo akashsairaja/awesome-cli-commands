@@ -1,0 +1,8 @@
+{
+  "id": "linux-12",
+  "categoryId": "linux",
+  "subcategoryId": "network",
+  "title": "Test port connectivity",
+  "command": "nc -zv <host> <port>",
+  "description": "Test if a port is open on a remote host."
+}

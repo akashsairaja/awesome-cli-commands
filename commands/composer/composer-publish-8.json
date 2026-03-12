@@ -1,0 +1,8 @@
+{
+  "id": "composer-publish-8",
+  "categoryId": "composer",
+  "subcategoryId": "composer-publish",
+  "title": "Show licenses",
+  "command": "composer licenses",
+  "description": "List licenses of installed packages."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "temporal-schedule-3",
+  "categoryId": "temporal",
+  "subcategoryId": "schedule",
+  "title": "Create with calendar",
+  "command": "temporal schedule create --schedule-id weekly --calendar '{\"dayOfWeek\":\"Fri\",\"hour\":\"17\",\"minute\":\"0\"}' --workflow-id weekly-wf --type WeeklyWorkflow --task-queue my-queue",
+  "description": "Create schedule with calendar specification (every Friday at 5 PM)."
+}

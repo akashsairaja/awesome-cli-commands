@@ -1,0 +1,8 @@
+{
+  "id": "mongo-backup-6",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-backup",
+  "title": "Export to JSON",
+  "command": "mongoexport --db mydb --collection users --out users.json",
+  "description": "Export collection to JSON file."
+}

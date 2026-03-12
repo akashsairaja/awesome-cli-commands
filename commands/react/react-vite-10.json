@@ -1,0 +1,8 @@
+{
+  "id": "react-vite-10",
+  "categoryId": "react",
+  "subcategoryId": "react-vite",
+  "title": "Production build with sourcemaps",
+  "command": "vite build --mode production --sourcemap",
+  "description": "Build for production with source maps for debugging."
+}

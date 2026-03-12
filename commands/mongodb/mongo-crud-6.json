@@ -1,0 +1,8 @@
+{
+  "id": "mongo-crud-6",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-crud",
+  "title": "Update one",
+  "command": "db.users.updateOne({ name: \"John\" }, { $set: { age: 31 } })",
+  "description": "Update first matching document."
+}

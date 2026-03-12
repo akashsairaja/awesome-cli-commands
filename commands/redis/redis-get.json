@@ -1,0 +1,9 @@
+{
+  "id": "redis-get",
+  "categoryId": "redis",
+  "subcategoryId": "redis-strings",
+  "title": "Get key value",
+  "command": "GET key",
+  "description": "Get string value of a key",
+  "tags": ["get", "string", "read"]
+}

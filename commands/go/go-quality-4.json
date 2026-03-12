@@ -1,0 +1,8 @@
+{
+  "id": "go-quality-4",
+  "categoryId": "go",
+  "subcategoryId": "go-quality",
+  "title": "Run go fix",
+  "command": "go fix ./...",
+  "description": "Update code to use new APIs after Go upgrade."
+}

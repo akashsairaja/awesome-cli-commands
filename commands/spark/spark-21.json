@@ -1,0 +1,8 @@
+{
+  "id": "spark-21",
+  "categoryId": "spark",
+  "subcategoryId": "spark-sql",
+  "title": "Execute SQL file",
+  "command": "spark-sql -f query.sql",
+  "description": "Execute SQL statements from a file."
+}

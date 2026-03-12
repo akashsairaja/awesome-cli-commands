@@ -1,0 +1,71 @@
+{
+  "id": "aws-assume-role-workflow",
+  "stackId": "aws",
+  "name": "Cross-Account IAM Role Assumption with MFA",
+  "description": "Securely assume IAM roles across AWS accounts using MFA-protected temporary credentials for least-privilege access.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "Cross-account access patterns are central to AWS Organizations and multi-account security strategies adopted by most teams.",
+  "tags": ["iam", "sts", "cross-account", "mfa", "security"],
+  "prerequisites": [
+    "AWS CLI v2 installed and configured",
+    "IAM role with trust policy allowing your account",
+    "MFA device registered on your IAM user"
+  ],
+  "steps": [
+    {
+      "title": "Get your MFA device ARN",
+      "description": "List the virtual MFA devices associated with your IAM user to retrieve the ARN needed for authentication.",
+      "command": "aws iam list-mfa-devices --user-name your-username",
+      "tip": "You can also find your MFA ARN in the IAM console under your user's Security credentials tab."
+    },
+    {
+      "title": "Get a session token with MFA",
+      "description": "Request temporary session credentials by providing your MFA device ARN and a current TOTP code from your authenticator app.",
+      "command": "aws sts get-session-token --serial-number arn:aws:iam::111111111111:mfa/your-username --token-code 123456 --duration-seconds 3600",
+      "warning": "The TOTP code expires every 30 seconds. Enter the command quickly after generating a fresh code."
+    },
+    {
+      "title": "Assume the cross-account role",
+      "description": "Use the MFA-authenticated session to assume a role in the target account. This returns a new set of temporary credentials scoped to that role.",
+      "command": "aws sts assume-role --role-arn arn:aws:iam::222222222222:role/CrossAccountAdmin --role-session-name cross-acct-session --serial-number arn:aws:iam::111111111111:mfa/your-username --token-code 654321",
+      "tip": "Add --duration-seconds to extend the session up to the role's MaxSessionDuration (default 1 hour, max 12 hours)."
+    },
+    {
+      "title": "Export the temporary credentials",
+      "description": "Set the returned temporary credentials as environment variables so subsequent AWS CLI commands use the assumed role.",
+      "command": "CREDS=$(aws sts assume-role --role-arn arn:aws:iam::222222222222:role/CrossAccountAdmin --role-session-name mysession --output json)\nexport AWS_ACCESS_KEY_ID=$(echo $CREDS | jq -r .Credentials.AccessKeyId)\nexport AWS_SECRET_ACCESS_KEY=$(echo $CREDS | jq -r .Credentials.SecretAccessKey)\nexport AWS_SESSION_TOKEN=$(echo $CREDS | jq -r .Credentials.SessionToken)",
+      "tip": "Use jq to parse the JSON output cleanly. Install it with your package manager if not available."
+    },
+    {
+      "title": "Verify the assumed identity",
+      "description": "Confirm that your CLI session is now operating under the assumed role in the target account.",
+      "command": "aws sts get-caller-identity",
+      "tip": "The output should show the target account ID and the assumed role ARN, not your original user."
+    },
+    {
+      "title": "Unset credentials when done",
+      "description": "Clear the temporary credentials from your environment to return to your default AWS profile.",
+      "command": "unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN",
+      "warning": "Always unset assumed role credentials when finished to avoid accidentally running commands in the wrong account."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Cross-Account IAM Role Assumption with MFA\n# Usage: ./assume-role.sh <target-role-arn> <mfa-arn> <mfa-code>\n\nset -euo pipefail\n\nTARGET_ROLE_ARN=\"${1:?Usage: $0 <target-role-arn> <mfa-arn> <mfa-code>}\"\nMFA_ARN=\"${2:?Provide your MFA device ARN}\"\nMFA_CODE=\"${3:?Provide your current MFA code}\"\nSESSION_NAME=\"cross-acct-$(date +%s)\"\n\necho \"Assuming role: $TARGET_ROLE_ARN\"\n\nCREDS=$(aws sts assume-role \\\n  --role-arn \"$TARGET_ROLE_ARN\" \\\n  --role-session-name \"$SESSION_NAME\" \\\n  --serial-number \"$MFA_ARN\" \\\n  --token-code \"$MFA_CODE\" \\\n  --duration-seconds 3600 \\\n  --output json)\n\nexport AWS_ACCESS_KEY_ID=$(echo \"$CREDS\" | jq -r '.Credentials.AccessKeyId')\nexport AWS_SECRET_ACCESS_KEY=$(echo \"$CREDS\" | jq -r '.Credentials.SecretAccessKey')\nexport AWS_SESSION_TOKEN=$(echo \"$CREDS\" | jq -r '.Credentials.SessionToken')\n\necho \"Assumed role successfully:\"\naws sts get-caller-identity\n\necho \"\"\necho \"Credentials expire at: $(echo \"$CREDS\" | jq -r '.Credentials.Expiration')\"\necho \"Run 'unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN' to revert.\"",
+  "faq": [
+    {
+      "question": "How long do assumed role credentials last?",
+      "answer": "By default 1 hour. You can specify --duration-seconds up to the role's MaxSessionDuration setting, which can be configured up to 12 hours in the role's configuration."
+    },
+    {
+      "question": "Can I use named profiles instead of exporting environment variables?",
+      "answer": "Yes. Add a profile in ~/.aws/config with role_arn, source_profile, and mfa_serial. The CLI will prompt for MFA and cache credentials automatically when you use --profile."
+    },
+    {
+      "question": "What permissions does the trust policy need?",
+      "answer": "The target role's trust policy must include an sts:AssumeRole statement allowing your source account or specific IAM user/role ARN as the Principal, optionally with an MFA condition key (aws:MultiFactorAuthPresent)."
+    }
+  ],
+  "relatedRecipes": ["aws-secrets-rotation", "aws-ssm-session-management"],
+  "lastUpdated": "2026-03-11"
+}

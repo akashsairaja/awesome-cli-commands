@@ -1,0 +1,8 @@
+{
+  "id": "make-debug-4",
+  "categoryId": "make",
+  "subcategoryId": "make-debug",
+  "title": "Print why",
+  "command": "make --debug=why target",
+  "description": "Show why target is being remade."
+}

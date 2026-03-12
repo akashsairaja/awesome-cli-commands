@@ -1,0 +1,8 @@
+{
+  "id": "docker-15",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Kill container",
+  "command": "docker kill <container>",
+  "description": "Forcefully terminate container."
+}

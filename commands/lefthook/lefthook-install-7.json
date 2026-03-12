@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-install-7",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-install",
+  "title": "Add pre-push hook",
+  "command": "lefthook add -d pre-push",
+  "description": "Add pre-push hook with template."
+}

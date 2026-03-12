@@ -1,0 +1,8 @@
+{
+  "id": "make-syntax-9",
+  "categoryId": "make",
+  "subcategoryId": "make-syntax",
+  "title": "Wildcard function",
+  "command": "SRCS := $(wildcard src/*.c)",
+  "description": "Expand wildcard pattern."
+}

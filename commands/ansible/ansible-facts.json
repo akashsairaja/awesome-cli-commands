@@ -1,0 +1,9 @@
+{
+  "id": "ansible-facts",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-adhoc",
+  "title": "Gather Facts",
+  "command": "ansible all -m setup",
+  "description": "Collect system facts from hosts",
+  "tags": ["facts", "setup", "info"]
+}

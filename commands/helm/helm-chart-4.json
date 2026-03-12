@@ -1,0 +1,8 @@
+{
+  "id": "helm-chart-4",
+  "categoryId": "helm",
+  "subcategoryId": "helm-chart",
+  "title": "Pull chart",
+  "command": "helm pull bitnami/nginx --untar",
+  "description": "Download chart and extract to directory."
+}

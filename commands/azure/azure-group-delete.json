@@ -1,0 +1,9 @@
+{
+  "id": "azure-group-delete",
+  "categoryId": "azure",
+  "subcategoryId": "azure-resources",
+  "title": "Delete Resource Group",
+  "command": "az group delete --name <name> --yes --no-wait",
+  "description": "Delete a resource group and all its resources",
+  "tags": ["resource-group", "delete", "cleanup"]
+}

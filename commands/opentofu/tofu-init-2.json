@@ -1,0 +1,8 @@
+{
+  "id": "tofu-init-2",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-init",
+  "title": "Upgrade providers",
+  "command": "tofu init -upgrade",
+  "description": "Upgrade providers and modules."
+}

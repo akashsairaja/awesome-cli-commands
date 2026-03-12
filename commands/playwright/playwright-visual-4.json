@@ -1,0 +1,8 @@
+{
+  "id": "playwright-visual-4",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-visual",
+  "title": "Element visual test",
+  "command": "await expect(page.locator('.card')).toHaveScreenshot();",
+  "description": "Visual test for element."
+}

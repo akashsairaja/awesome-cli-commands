@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-config-10",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-config",
+  "title": "Diagnose connectivity",
+  "command": "ngrok diagnose",
+  "description": "Run connectivity diagnostics to troubleshoot issues."
+}

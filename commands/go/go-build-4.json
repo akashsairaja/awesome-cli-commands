@@ -1,0 +1,8 @@
+{
+  "id": "go-build-4",
+  "categoryId": "go",
+  "subcategoryId": "go-build",
+  "title": "Build for Linux",
+  "command": "GOOS=linux GOARCH=amd64 go build -o myapp-linux",
+  "description": "Cross-compile for Linux AMD64."
+}

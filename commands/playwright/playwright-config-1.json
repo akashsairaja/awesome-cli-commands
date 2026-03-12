@@ -1,0 +1,8 @@
+{
+  "id": "playwright-config-1",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-config",
+  "title": "Initialize config",
+  "command": "npm init playwright@latest",
+  "description": "Create new Playwright project."
+}

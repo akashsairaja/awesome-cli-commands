@@ -1,0 +1,9 @@
+{
+  "id": "netlify-sites-list",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-sites",
+  "title": "List sites",
+  "command": "netlify sites:list",
+  "description": "List all sites in your account",
+  "tags": ["sites", "list", "show"]
+}

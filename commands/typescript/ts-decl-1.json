@@ -1,0 +1,8 @@
+{
+  "id": "ts-decl-1",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-declarations",
+  "title": "Generate declaration files",
+  "command": "tsc --declaration",
+  "description": "Generate .d.ts files alongside JavaScript output."
+}

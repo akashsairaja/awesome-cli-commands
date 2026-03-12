@@ -1,0 +1,8 @@
+{
+  "id": "claude-30",
+  "categoryId": "claudecode",
+  "subcategoryId": "context",
+  "title": "Show cost",
+  "command": "/cost",
+  "description": "Display token usage and estimated costs."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "grafana-plugins-4",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-plugins",
+  "title": "Remove plugin",
+  "command": "grafana-cli plugins remove grafana-piechart-panel",
+  "description": "Remove a plugin."
+}

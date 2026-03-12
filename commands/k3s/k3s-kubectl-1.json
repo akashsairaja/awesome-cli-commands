@@ -1,0 +1,8 @@
+{
+  "id": "k3s-kubectl-1",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-kubectl",
+  "title": "Use k3s kubectl",
+  "command": "k3s kubectl get nodes",
+  "description": "Use built-in kubectl."
+}

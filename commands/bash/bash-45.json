@@ -1,0 +1,8 @@
+{
+  "id": "bash-45",
+  "categoryId": "bash",
+  "subcategoryId": "functions",
+  "title": "Return value",
+  "command": "func() { return 0; }",
+  "description": "Return exit status from function."
+}

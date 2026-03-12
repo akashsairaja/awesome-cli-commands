@@ -1,0 +1,8 @@
+{
+  "id": "k3s-backup-1",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-backup",
+  "title": "Create etcd snapshot",
+  "command": "k3s etcd-snapshot save --name backup-$(date +%Y%m%d)",
+  "description": "Create manual etcd snapshot."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "playwright-debug-6",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-debug",
+  "title": "Set global timeout",
+  "command": "npx playwright test --timeout=60000",
+  "description": "Set timeout for all tests (60s)."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "docker-119",
+  "categoryId": "docker",
+  "subcategoryId": "security",
+  "title": "Get recommendations",
+  "command": "docker scout recommendations <image>",
+  "description": "Get security recommendations."
+}

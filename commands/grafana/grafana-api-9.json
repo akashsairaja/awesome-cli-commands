@@ -1,0 +1,8 @@
+{
+  "id": "grafana-api-9",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-api",
+  "title": "Create service account",
+  "command": "curl -X POST http://localhost:3000/api/serviceaccounts -H 'Content-Type: application/json' -H 'Authorization: Bearer TOKEN' -d '{\"name\":\"ci-bot\",\"role\":\"Editor\"}'",
+  "description": "Create a service account for automation."
+}

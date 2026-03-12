@@ -1,0 +1,8 @@
+{
+  "id": "tf-gs-3",
+  "title": "Verify installation",
+  "command": "terraform --version",
+  "description": "Check Terraform version to verify installation",
+  "categoryId": "terraform",
+  "subcategoryId": "getting-started"
+}

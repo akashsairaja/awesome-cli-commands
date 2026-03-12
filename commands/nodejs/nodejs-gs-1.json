@@ -1,0 +1,8 @@
+{
+  "id": "nodejs-gs-1",
+  "title": "Install Node.js (macOS)",
+  "command": "brew install node",
+  "description": "Install Node.js and npm using Homebrew on macOS",
+  "categoryId": "nodejs",
+  "subcategoryId": "getting-started"
+}

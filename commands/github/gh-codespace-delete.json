@@ -1,0 +1,9 @@
+{
+  "id": "gh-codespace-delete",
+  "categoryId": "github",
+  "subcategoryId": "gh-codespace",
+  "title": "Delete codespace",
+  "command": "gh codespace delete",
+  "description": "Delete a codespace",
+  "tags": ["codespace", "delete", "remove"]
+}

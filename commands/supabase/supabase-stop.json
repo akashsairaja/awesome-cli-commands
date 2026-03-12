@@ -1,0 +1,9 @@
+{
+  "id": "supabase-stop",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-db",
+  "title": "Stop local Supabase",
+  "command": "supabase stop",
+  "description": "Stop local Supabase development stack",
+  "tags": ["stop", "local"]
+}

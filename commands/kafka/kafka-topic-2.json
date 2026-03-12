@@ -1,0 +1,8 @@
+{
+  "id": "kafka-topic-2",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-topics",
+  "title": "List topics",
+  "command": "kafka-topics.sh --list --bootstrap-server localhost:9092",
+  "description": "List all topics."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ssh-18",
+  "categoryId": "sshgpg",
+  "subcategoryId": "tunnels",
+  "title": "Background tunnel",
+  "command": "ssh -N -f -L 3306:localhost:3306 user@host",
+  "description": "Create background tunnel."
+}

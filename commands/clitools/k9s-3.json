@@ -1,0 +1,8 @@
+{
+  "id": "k9s-3",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-k9s",
+  "title": "All namespaces",
+  "command": "k9s -A",
+  "description": "Show resources across all namespaces."
+}

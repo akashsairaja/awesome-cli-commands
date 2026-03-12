@@ -1,0 +1,8 @@
+{
+  "id": "volta-config-3",
+  "categoryId": "volta",
+  "subcategoryId": "volta-config",
+  "title": "Fetch tool",
+  "command": "volta fetch node@20",
+  "description": "Download tool without installing."
+}

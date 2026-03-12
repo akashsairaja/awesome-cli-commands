@@ -1,0 +1,8 @@
+{
+  "id": "db-39",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Show processlist",
+  "command": "SHOW PROCESSLIST;",
+  "description": "List currently running queries and connections."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "git-70",
+  "categoryId": "git",
+  "subcategoryId": "remote",
+  "title": "Rename remote",
+  "command": "git remote rename <old> <new>",
+  "description": "Rename a remote."
+}

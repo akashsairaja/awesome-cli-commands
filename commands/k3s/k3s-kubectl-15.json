@@ -1,0 +1,8 @@
+{
+  "id": "k3s-kubectl-15",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-kubectl",
+  "title": "Get services",
+  "command": "k3s kubectl get svc -A",
+  "description": "List all services across all namespaces."
+}

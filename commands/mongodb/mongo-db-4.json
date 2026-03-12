@@ -1,0 +1,8 @@
+{
+  "id": "mongo-db-4",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-database",
+  "title": "Show collections",
+  "command": "show collections",
+  "description": "List collections in current database."
+}

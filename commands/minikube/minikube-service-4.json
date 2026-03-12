@@ -1,0 +1,8 @@
+{
+  "id": "minikube-service-4",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-service",
+  "title": "Start tunnel",
+  "command": "minikube tunnel",
+  "description": "Create route for LoadBalancer services."
+}

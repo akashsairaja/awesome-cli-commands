@@ -1,0 +1,8 @@
+{
+  "id": "k6-options-10",
+  "categoryId": "k6",
+  "subcategoryId": "k6-options",
+  "title": "Custom metric threshold",
+  "command": "import { Trend } from 'k6/metrics';\nconst apiDuration = new Trend('api_duration');\n\nexport const options = {\n  thresholds: {\n    api_duration: ['p(95)<400'],\n  },\n};",
+  "description": "Set threshold on custom metric."
+}

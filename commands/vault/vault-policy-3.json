@@ -1,0 +1,8 @@
+{
+  "id": "vault-policy-3",
+  "categoryId": "vault",
+  "subcategoryId": "vault-policy",
+  "title": "Read policy",
+  "command": "vault policy read myapp-policy",
+  "description": "Read a policy definition."
+}

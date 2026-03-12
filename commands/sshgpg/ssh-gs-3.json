@@ -1,0 +1,8 @@
+{
+  "id": "ssh-gs-3",
+  "title": "Check GPG version",
+  "command": "gpg --version",
+  "description": "Verify GPG is installed and display version information",
+  "categoryId": "sshgpg",
+  "subcategoryId": "getting-started"
+}

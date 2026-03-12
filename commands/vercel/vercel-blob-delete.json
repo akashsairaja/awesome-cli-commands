@@ -1,0 +1,9 @@
+{
+  "id": "vercel-blob-delete",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-storage",
+  "title": "Delete blob file",
+  "command": "vercel blob del <url>",
+  "description": "Delete file from Blob storage",
+  "tags": ["blob", "delete", "remove"]
+}

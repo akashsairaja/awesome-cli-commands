@@ -1,0 +1,9 @@
+{
+  "id": "bun-init",
+  "categoryId": "bun",
+  "subcategoryId": "bun-init",
+  "title": "Initialize Project",
+  "command": "bun init",
+  "description": "Create a new Bun project",
+  "tags": ["init", "create", "new"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "nats-pub-1",
+  "categoryId": "nats",
+  "subcategoryId": "nats-pubsub",
+  "title": "Publish message",
+  "command": "nats pub subject 'Hello World'",
+  "description": "Publish a message to a subject."
+}

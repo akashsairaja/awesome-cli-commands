@@ -1,0 +1,8 @@
+{
+  "id": "mongo-changestream-4",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-changestreams",
+  "title": "Close change stream",
+  "command": "changeStream.close()",
+  "description": "Close active change stream connection."
+}

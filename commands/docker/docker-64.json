@@ -1,0 +1,8 @@
+{
+  "id": "docker-64",
+  "categoryId": "docker",
+  "subcategoryId": "networks",
+  "title": "Create network",
+  "command": "docker network create <network-name>",
+  "description": "Create a bridge network."
+}

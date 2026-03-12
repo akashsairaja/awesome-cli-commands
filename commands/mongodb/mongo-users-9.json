@@ -1,0 +1,8 @@
+{
+  "id": "mongo-users-9",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-users",
+  "title": "Change user password",
+  "command": "db.changeUserPassword(\"appuser\", \"newpassword\")",
+  "description": "Update the password for an existing user."
+}

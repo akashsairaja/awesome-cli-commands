@@ -1,0 +1,8 @@
+{
+  "id": "go-env-3",
+  "categoryId": "go",
+  "subcategoryId": "go-env",
+  "title": "Set env var persistently",
+  "command": "go env -w GOPROXY=https://proxy.golang.org,direct",
+  "description": "Set Go environment variable permanently."
+}

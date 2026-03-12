@@ -1,0 +1,8 @@
+{
+  "id": "k8s-128",
+  "categoryId": "kubernetes",
+  "subcategoryId": "manifests",
+  "title": "Dry run (server)",
+  "command": "kubectl apply -f manifest.yaml --dry-run=server",
+  "description": "Server-side validation without applying."
+}

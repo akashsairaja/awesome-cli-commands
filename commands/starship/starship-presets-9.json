@@ -1,0 +1,8 @@
+{
+  "id": "starship-presets-9",
+  "categoryId": "starship",
+  "subcategoryId": "starship-presets",
+  "title": "Preview preset",
+  "command": "starship preset nerd-font-symbols",
+  "description": "Print preset TOML to stdout without writing."
+}

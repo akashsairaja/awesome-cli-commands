@@ -1,0 +1,8 @@
+{
+  "id": "tofu-apply-8",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-apply",
+  "title": "Refresh-only apply",
+  "command": "tofu apply -refresh-only -auto-approve",
+  "description": "Update state to match real resources."
+}

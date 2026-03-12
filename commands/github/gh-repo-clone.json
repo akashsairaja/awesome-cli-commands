@@ -1,0 +1,9 @@
+{
+  "id": "gh-repo-clone",
+  "categoryId": "github",
+  "subcategoryId": "gh-repo",
+  "title": "Clone repository",
+  "command": "gh repo clone <owner>/<repo>",
+  "description": "Clone a GitHub repository to local machine",
+  "tags": ["repo", "clone", "download"]
+}

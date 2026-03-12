@@ -1,0 +1,8 @@
+{
+  "id": "k8s-29",
+  "categoryId": "kubernetes",
+  "subcategoryId": "pods",
+  "title": "Force delete stuck pod",
+  "command": "kubectl delete pod <name> --force --grace-period=0",
+  "description": "Force delete a stuck/terminating pod."
+}

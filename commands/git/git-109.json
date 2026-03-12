@@ -1,0 +1,8 @@
+{
+  "id": "git-109",
+  "categoryId": "git",
+  "subcategoryId": "worktree",
+  "title": "Remove worktree",
+  "command": "git worktree remove <path>",
+  "description": "Remove a linked working tree."
+}

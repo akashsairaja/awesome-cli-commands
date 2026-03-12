@@ -1,0 +1,8 @@
+{
+  "id": "bash-47",
+  "categoryId": "bash",
+  "subcategoryId": "functions",
+  "title": "All function args",
+  "command": "func() { for arg in \"$@\"; do echo \"$arg\"; done; }",
+  "description": "Iterate over all function arguments."
+}

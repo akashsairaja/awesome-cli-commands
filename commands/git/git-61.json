@@ -1,0 +1,8 @@
+{
+  "id": "git-61",
+  "categoryId": "git",
+  "subcategoryId": "rebase",
+  "title": "Interactive rebase from root",
+  "command": "git rebase -i --root",
+  "description": "Rebase entire history from first commit."
+}

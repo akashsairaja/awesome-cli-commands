@@ -1,0 +1,8 @@
+{
+  "id": "bash-8",
+  "categoryId": "bash",
+  "subcategoryId": "scripting",
+  "title": "Debug with line numbers",
+  "command": "PS4='+${BASH_SOURCE}:${LINENO}: ' bash -x script.sh",
+  "description": "Debug with source file and line info."
+}

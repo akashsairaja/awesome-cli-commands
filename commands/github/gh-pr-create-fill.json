@@ -1,0 +1,9 @@
+{
+  "id": "gh-pr-create-fill",
+  "categoryId": "github",
+  "subcategoryId": "gh-pr",
+  "title": "Create PR with auto-fill",
+  "command": "gh pr create --fill",
+  "description": "Create PR using commit info for title and body",
+  "tags": ["pr", "create", "fill", "auto"]
+}

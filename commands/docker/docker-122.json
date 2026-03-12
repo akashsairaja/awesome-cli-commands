@@ -1,0 +1,8 @@
+{
+  "id": "docker-122",
+  "categoryId": "docker",
+  "subcategoryId": "swarm",
+  "title": "Get worker join token",
+  "command": "docker swarm join-token worker",
+  "description": "Show token to add workers."
+}

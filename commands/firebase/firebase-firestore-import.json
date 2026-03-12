@@ -1,0 +1,9 @@
+{
+  "id": "firebase-firestore-import",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-firestore",
+  "title": "Import Firestore data",
+  "command": "gcloud firestore import gs://<bucket>/<path>",
+  "description": "Import Firestore data from Cloud Storage",
+  "tags": ["firestore", "import", "restore"]
+}

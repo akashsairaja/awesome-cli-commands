@@ -1,0 +1,8 @@
+{
+  "id": "ps-6",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-files",
+  "title": "Read file content",
+  "command": "Get-Content file.txt",
+  "description": "Read file contents."
+}

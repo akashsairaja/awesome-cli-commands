@@ -1,0 +1,8 @@
+{
+  "id": "py-123",
+  "categoryId": "python",
+  "subcategoryId": "python-mypy",
+  "title": "Ignore missing imports",
+  "command": "mypy --ignore-missing-imports src/",
+  "description": "Suppress errors for untyped dependencies."
+}

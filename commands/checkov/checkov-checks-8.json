@@ -1,0 +1,8 @@
+{
+  "id": "checkov-checks-8",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-checks",
+  "title": "Run external checks",
+  "command": "checkov -d . --run-all-external-checks",
+  "description": "Run all external and custom checks."
+}

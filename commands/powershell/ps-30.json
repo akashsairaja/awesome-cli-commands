@@ -1,0 +1,8 @@
+{
+  "id": "ps-30",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-system",
+  "title": "Set environment variable",
+  "command": "$env:MY_VAR = \"value\"",
+  "description": "Set environment variable."
+}

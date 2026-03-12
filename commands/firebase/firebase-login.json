@@ -1,0 +1,9 @@
+{
+  "id": "firebase-login",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-deploy",
+  "title": "Login to Firebase",
+  "command": "firebase login",
+  "description": "Login to Firebase account",
+  "tags": ["login", "auth", "authenticate"]
+}

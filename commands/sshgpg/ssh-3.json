@@ -1,0 +1,8 @@
+{
+  "id": "ssh-3",
+  "categoryId": "sshgpg",
+  "subcategoryId": "keys",
+  "title": "Add key to agent",
+  "command": "ssh-add ~/.ssh/id_ed25519",
+  "description": "Add private key to SSH agent."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ollama-35",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-api",
+  "title": "OpenAI-compatible endpoint",
+  "command": "curl http://localhost:11434/v1/chat/completions -d '{\"model\": \"llama2\", \"messages\": [{\"role\": \"user\", \"content\": \"Hi\"}]}'",
+  "description": "Use OpenAI-compatible API format."
+}

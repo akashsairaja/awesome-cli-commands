@@ -1,0 +1,8 @@
+{
+  "id": "composer-gs-3",
+  "title": "Initialize a new project",
+  "command": "composer init",
+  "description": "Interactively create a new composer.json for your project",
+  "categoryId": "composer",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "prisma-migrate-dev",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-migrate",
+  "title": "Create and apply migration",
+  "command": "npx prisma migrate dev",
+  "description": "Create migration from schema changes and apply to dev database",
+  "tags": ["migrate", "dev", "create"]
+}

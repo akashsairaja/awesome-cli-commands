@@ -1,0 +1,8 @@
+{
+  "id": "scoop-bucket-7",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-bucket",
+  "title": "Add Java bucket",
+  "command": "scoop bucket add java",
+  "description": "Add bucket for Java JDK distributions."
+}

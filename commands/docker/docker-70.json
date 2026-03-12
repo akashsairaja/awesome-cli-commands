@@ -1,0 +1,8 @@
+{
+  "id": "docker-70",
+  "categoryId": "docker",
+  "subcategoryId": "networks",
+  "title": "Remove unused networks",
+  "command": "docker network prune",
+  "description": "Remove all unused networks."
+}

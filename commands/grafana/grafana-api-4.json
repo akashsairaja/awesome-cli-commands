@@ -1,0 +1,8 @@
+{
+  "id": "grafana-api-4",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-api",
+  "title": "Create folder",
+  "command": "curl -X POST http://localhost:3000/api/folders -H 'Content-Type: application/json' -H 'Authorization: Bearer TOKEN' -d '{\"title\":\"My Folder\"}'",
+  "description": "Create dashboard folder."
+}

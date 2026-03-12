@@ -1,0 +1,8 @@
+{
+  "id": "pg-backup-7",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-backup",
+  "title": "Restore SQL",
+  "command": "psql -U postgres mydb < backup.sql",
+  "description": "Restore from SQL file."
+}

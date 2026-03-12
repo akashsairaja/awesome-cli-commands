@@ -1,0 +1,9 @@
+{
+  "id": "tmux-attach-last",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-sessions",
+  "title": "Attach to last session",
+  "command": "tmux attach",
+  "description": "Attach to most recent session",
+  "tags": ["session", "attach", "last"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "spark-42",
+  "categoryId": "spark",
+  "subcategoryId": "spark-cluster",
+  "title": "Start all workers",
+  "command": "$SPARK_HOME/sbin/start-workers.sh",
+  "description": "Start workers on all machines in conf/workers file."
+}

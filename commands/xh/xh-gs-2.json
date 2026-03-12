@@ -1,0 +1,8 @@
+{
+  "id": "xh-gs-2",
+  "title": "Install xh (Linux)",
+  "command": "sudo apt install xh -y",
+  "description": "Install xh HTTP client using apt on Debian/Ubuntu",
+  "categoryId": "xh",
+  "subcategoryId": "getting-started"
+}

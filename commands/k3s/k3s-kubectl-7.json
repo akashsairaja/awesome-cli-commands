@@ -1,0 +1,8 @@
+{
+  "id": "k3s-kubectl-7",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-kubectl",
+  "title": "Describe a pod",
+  "command": "k3s kubectl describe pod <pod-name> -n <namespace>",
+  "description": "Show detailed information about a specific pod."
+}

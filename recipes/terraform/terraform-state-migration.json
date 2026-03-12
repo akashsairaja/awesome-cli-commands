@@ -1,0 +1,70 @@
+{
+  "id": "terraform-state-migration",
+  "stackId": "terraform",
+  "name": "Migrate State Between Backends",
+  "description": "Move Terraform state from local to remote backend (S3, GCS, Azure) safely for team collaboration and disaster recovery.",
+  "difficulty": "advanced",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "Teams migrating from local state to remote backends as infrastructure scales beyond single-developer workflows.",
+  "tags": ["state", "migration", "backend", "s3", "remote"],
+  "prerequisites": [
+    "Terraform installed",
+    "Remote backend bucket/container created",
+    "Cloud provider credentials configured"
+  ],
+  "steps": [
+    {
+      "title": "Back up the current state file",
+      "description": "Create a local backup of your state file before making any changes to the backend configuration.",
+      "command": "cp terraform.tfstate terraform.tfstate.backup",
+      "tip": "Always keep a backup. If the migration fails, you can restore from this copy."
+    },
+    {
+      "title": "Add the remote backend configuration",
+      "description": "Define the new backend block in your Terraform configuration pointing to the remote storage location.",
+      "command": "cat <<'EOF' > backend.tf\nterraform {\n  backend \"s3\" {\n    bucket         = \"my-tf-state\"\n    key            = \"prod/terraform.tfstate\"\n    region         = \"us-east-1\"\n    dynamodb_table = \"tf-lock\"\n    encrypt        = true\n  }\n}\nEOF",
+      "tip": "Use a DynamoDB table for state locking to prevent concurrent modifications."
+    },
+    {
+      "title": "Initialize with migration flag",
+      "description": "Run terraform init with the -migrate-state flag. Terraform detects the backend change and prompts to copy existing state.",
+      "command": "terraform init -migrate-state",
+      "warning": "Answer 'yes' when prompted. If you answer 'no', your state will not be migrated and you may lose track of managed resources."
+    },
+    {
+      "title": "Verify state in remote backend",
+      "description": "List all resources to confirm the state was migrated correctly and all resources are accounted for.",
+      "command": "terraform state list"
+    },
+    {
+      "title": "Run a plan to confirm no changes",
+      "description": "Execute a plan to ensure Terraform sees no differences between state and infrastructure after migration.",
+      "command": "terraform plan",
+      "tip": "A clean plan with 0 changes confirms the migration was successful."
+    },
+    {
+      "title": "Remove the local state file",
+      "description": "Delete the local terraform.tfstate now that state lives in the remote backend. Keep the backup for a few days.",
+      "command": "rm terraform.tfstate terraform.tfstate.backup",
+      "warning": "Only delete local state after you have confirmed the remote backend is working correctly."
+    }
+  ],
+  "fullScript": "#!/bin/bash\nset -euo pipefail\n\n# Terraform State Migration Script\n# Migrates local state to an S3 remote backend\n\nSTATE_BUCKET=\"${1:?Usage: $0 <bucket-name> <dynamodb-table> <region>}\"\nLOCK_TABLE=\"${2:?Usage: $0 <bucket-name> <dynamodb-table> <region>}\"\nREGION=\"${3:-us-east-1}\"\n\necho \"==> Backing up current state...\"\ncp terraform.tfstate terraform.tfstate.backup 2>/dev/null || echo \"No local state file found\"\n\necho \"==> Writing backend configuration...\"\ncat > backend.tf <<EOF\nterraform {\n  backend \"s3\" {\n    bucket         = \"$STATE_BUCKET\"\n    key            = \"prod/terraform.tfstate\"\n    region         = \"$REGION\"\n    dynamodb_table = \"$LOCK_TABLE\"\n    encrypt        = true\n  }\n}\nEOF\n\necho \"==> Initializing with migration...\"\nterraform init -migrate-state -input=false\n\necho \"==> Verifying state...\"\nterraform state list\n\necho \"==> Running plan to confirm no drift...\"\nterraform plan -detailed-exitcode || {\n  if [ $? -eq 2 ]; then\n    echo \"WARNING: Plan shows changes. Review before proceeding.\"\n    exit 1\n  fi\n}\n\necho \"==> Migration complete. Remote backend is active.\"\necho \"    Backup saved at terraform.tfstate.backup\"",
+  "faq": [
+    {
+      "question": "Can I migrate state back to local?",
+      "answer": "Yes. Remove the backend block from your configuration and run 'terraform init -migrate-state'. Terraform will prompt to copy state back to a local file."
+    },
+    {
+      "question": "What happens if the migration is interrupted midway?",
+      "answer": "Terraform writes state atomically. If interrupted, the state remains in the original backend. Restore your backup and try again."
+    },
+    {
+      "question": "Do I need a DynamoDB table for S3 backend?",
+      "answer": "It is strongly recommended. The DynamoDB table provides state locking which prevents two people from applying changes at the same time, avoiding state corruption."
+    }
+  ],
+  "relatedRecipes": ["terraform-remote-backend-setup", "terraform-drift-detection"],
+  "lastUpdated": "2026-03-11"
+}

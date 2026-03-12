@@ -1,0 +1,8 @@
+{
+  "id": "tofu-workspace-2",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-workspace",
+  "title": "Create workspace",
+  "command": "tofu workspace new staging",
+  "description": "Create a new workspace."
+}

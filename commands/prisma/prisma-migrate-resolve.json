@@ -1,0 +1,9 @@
+{
+  "id": "prisma-migrate-resolve",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-migrate",
+  "title": "Resolve migration",
+  "command": "npx prisma migrate resolve --applied <migration>",
+  "description": "Mark a migration as applied (fix failed migration)",
+  "tags": ["migrate", "resolve", "fix"]
+}

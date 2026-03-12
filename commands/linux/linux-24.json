@@ -1,0 +1,8 @@
+{
+  "id": "linux-24",
+  "categoryId": "linux",
+  "subcategoryId": "ssh",
+  "title": "Copy SSH key to server",
+  "command": "ssh-copy-id user@host",
+  "description": "Install your public key on a remote server."
+}

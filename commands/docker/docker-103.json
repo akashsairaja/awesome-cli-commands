@@ -1,0 +1,8 @@
+{
+  "id": "docker-103",
+  "categoryId": "docker",
+  "subcategoryId": "buildx",
+  "title": "Build with cache import",
+  "command": "docker buildx build --cache-from type=local,src=./cache -t <image> .",
+  "description": "Import build cache from directory."
+}

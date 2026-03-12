@@ -1,0 +1,9 @@
+{
+  "id": "prisma-db-push-skip-generate",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-db",
+  "title": "Push without generating client",
+  "command": "npx prisma db push --skip-generate",
+  "description": "Push schema changes without triggering prisma generate",
+  "tags": ["db", "push", "skip-generate"]
+}

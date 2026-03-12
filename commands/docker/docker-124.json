@@ -1,0 +1,8 @@
+{
+  "id": "docker-124",
+  "categoryId": "docker",
+  "subcategoryId": "swarm",
+  "title": "Join swarm",
+  "command": "docker swarm join --token <token> <ip>:2377",
+  "description": "Join a swarm as worker/manager."
+}

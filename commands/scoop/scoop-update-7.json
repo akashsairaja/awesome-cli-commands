@@ -1,0 +1,8 @@
+{
+  "id": "scoop-update-7",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-update",
+  "title": "Remove app from cache",
+  "command": "scoop cache rm git",
+  "description": "Remove specific app from download cache."
+}

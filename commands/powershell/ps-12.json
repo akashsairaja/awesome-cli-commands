@@ -1,0 +1,8 @@
+{
+  "id": "ps-12",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-files",
+  "title": "Rename file",
+  "command": "Rename-Item -Path old.txt -NewName new.txt",
+  "description": "Rename a file or folder."
+}

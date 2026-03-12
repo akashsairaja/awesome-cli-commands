@@ -1,0 +1,8 @@
+{
+  "id": "httpie-requests-8",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-requests",
+  "title": "PATCH request",
+  "command": "http PATCH https://api.example.com/users/1 name=Updated",
+  "description": "Make a PATCH request to partially update a resource."
+}

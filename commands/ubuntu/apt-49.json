@@ -1,0 +1,8 @@
+{
+  "id": "apt-49",
+  "categoryId": "ubuntu",
+  "subcategoryId": "users",
+  "title": "List all system users",
+  "command": "cut -d: -f1 /etc/passwd | sort",
+  "description": "List all user accounts defined on the system."
+}

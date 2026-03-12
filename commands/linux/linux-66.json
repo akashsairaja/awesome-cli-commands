@@ -1,0 +1,8 @@
+{
+  "id": "linux-66",
+  "categoryId": "linux",
+  "subcategoryId": "text",
+  "title": "Sort and deduplicate",
+  "command": "sort file.txt | uniq -c | sort -rn | head -20",
+  "description": "Count occurrences of each line, sorted by frequency."
+}

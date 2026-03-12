@@ -1,0 +1,8 @@
+{
+  "id": "docker-96",
+  "categoryId": "docker",
+  "subcategoryId": "buildx",
+  "title": "Create multi-platform builder",
+  "command": "docker buildx create --name multiarch --platform linux/amd64,linux/arm64 --use",
+  "description": "Create builder with platform support."
+}

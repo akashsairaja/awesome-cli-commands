@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-share-8",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-share",
+  "title": "Reset serve config",
+  "command": "tailscale serve reset",
+  "description": "Remove all serve and funnel configurations."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "git-157",
+  "categoryId": "git",
+  "subcategoryId": "sparse-checkout",
+  "title": "Set sparse checkout paths",
+  "command": "git sparse-checkout set <paths>",
+  "description": "Define which paths to include in checkout."
+}

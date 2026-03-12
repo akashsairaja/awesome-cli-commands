@@ -1,0 +1,8 @@
+{
+  "id": "brew-62",
+  "categoryId": "homebrew",
+  "subcategoryId": "bundle",
+  "title": "Check verbose",
+  "command": "brew bundle check --verbose",
+  "description": "Show what's missing from Brewfile."
+}

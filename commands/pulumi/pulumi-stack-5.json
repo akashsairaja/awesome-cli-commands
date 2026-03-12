@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-stack-5",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-stack",
+  "title": "Delete stack",
+  "command": "pulumi stack rm dev",
+  "description": "Remove a stack."
+}

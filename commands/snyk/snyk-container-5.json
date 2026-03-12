@@ -1,0 +1,8 @@
+{
+  "id": "snyk-container-5",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-container",
+  "title": "Include app vulns",
+  "command": "snyk container test myapp:latest --app-vulns",
+  "description": "Scan application dependencies inside the image."
+}

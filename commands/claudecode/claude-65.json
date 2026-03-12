@@ -1,0 +1,8 @@
+{
+  "id": "claude-65",
+  "categoryId": "claudecode",
+  "subcategoryId": "workflows",
+  "title": "Create pull request",
+  "command": "claude \"create a PR for these changes\"",
+  "description": "Generate and create a pull request."
+}

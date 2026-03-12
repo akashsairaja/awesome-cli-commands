@@ -1,0 +1,9 @@
+{
+  "id": "jq-with-entries",
+  "categoryId": "jq",
+  "subcategoryId": "jq-objects",
+  "title": "Transform object keys",
+  "command": "cat file.json | jq 'with_entries(.key |= \"prefix_\" + .)'",
+  "description": "Transform all object keys",
+  "tags": ["object", "transform", "keys"]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "mongo-backup-restore",
+  "stackId": "mongodb",
+  "name": "mongodump and mongorestore Workflow",
+  "description": "Create full and partial MongoDB backups with mongodump and restore them with mongorestore for disaster recovery and data migration.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "Backup and restore is a fundamental skill required for every production MongoDB deployment",
+  "tags": ["backup", "restore", "mongodump", "disaster-recovery"],
+  "prerequisites": [
+    "MongoDB installed and running",
+    "mongodump and mongorestore in PATH (included with MongoDB Database Tools)"
+  ],
+  "steps": [
+    {
+      "title": "Backup an entire database",
+      "description": "Create a full binary backup of a database with compressed output.",
+      "command": "mongodump --db=mydb --gzip --out=/backups/mongodb/$(date +%Y%m%d-%H%M%S)",
+      "tip": "The --gzip flag compresses individual BSON files, reducing backup size by 50-70%."
+    },
+    {
+      "title": "Backup a single collection",
+      "description": "Dump only a specific collection for targeted backup or migration.",
+      "command": "mongodump --db=mydb --collection=users --gzip --out=/backups/mongodb/users-$(date +%Y%m%d)"
+    },
+    {
+      "title": "Backup with a query filter",
+      "description": "Export only documents matching a query for selective backup.",
+      "command": "mongodump --db=mydb --collection=orders --query='{\"status\":\"completed\",\"createdAt\":{\"$gte\":{\"$date\":\"2026-01-01T00:00:00Z\"}}}' --out=/backups/mongodb/orders-2026"
+    },
+    {
+      "title": "Restore a full database backup",
+      "description": "Restore all collections from a backup directory into the target database.",
+      "command": "mongorestore --db=mydb_restored --gzip /backups/mongodb/20260311-120000/mydb/",
+      "warning": "By default mongorestore inserts documents alongside existing data. Use --drop to replace existing collections."
+    },
+    {
+      "title": "Restore with --drop to replace existing data",
+      "description": "Drop each collection before restoring to get an exact replica of the backup.",
+      "command": "mongorestore --db=mydb --drop --gzip /backups/mongodb/20260311-120000/mydb/",
+      "warning": "The --drop flag deletes all current data in each collection before restoring. Double-check the target database name."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# MongoDB Backup Script\nset -euo pipefail\n\nDB_NAME=\"mydb\"\nBACKUP_DIR=\"/backups/mongodb\"\nTIMESTAMP=$(date +%Y%m%d-%H%M%S)\nBACKUP_PATH=\"$BACKUP_DIR/$TIMESTAMP\"\nmkdir -p \"$BACKUP_DIR\"\n\necho \"=== Starting backup of $DB_NAME ===\"\nmongodump --db=\"$DB_NAME\" --gzip --out=\"$BACKUP_PATH\"\n\necho \"\"\necho \"=== Backup contents ===\"\nls -lhR \"$BACKUP_PATH/$DB_NAME/\"\n\necho \"\"\necho \"=== Backup size ===\"\ndu -sh \"$BACKUP_PATH\"\n\necho \"\"\necho \"=== Verifying backup integrity ===\"\nmongorestore --db=\"${DB_NAME}_verify\" --gzip --dryRun \"$BACKUP_PATH/$DB_NAME/\" 2>&1 | tail -5\n\necho \"\"\necho \"=== Cleaning up old backups (30+ days) ===\"\nfind \"$BACKUP_DIR\" -maxdepth 1 -type d -mtime +30 -exec rm -rf {} \\; -print\n\necho \"\"\necho \"=== To restore, run: ===\"\necho \"mongorestore --db=$DB_NAME --drop --gzip $BACKUP_PATH/$DB_NAME/\"",
+  "faq": [
+    {
+      "question": "mongodump vs filesystem snapshots: which is better?",
+      "answer": "For large databases (100GB+), filesystem snapshots (LVM, EBS) are faster because they are nearly instant. mongodump is better for smaller databases, selective backups, and cross-version migrations since it produces portable BSON files."
+    },
+    {
+      "question": "Can I backup a running production database?",
+      "answer": "Yes, mongodump creates a consistent snapshot using an oplog if connected to a replica set (use --oplog flag). For standalone servers, mongodump still works but consistency during heavy writes is not guaranteed."
+    },
+    {
+      "question": "How do I backup a database with authentication?",
+      "answer": "Add --username, --password, and --authenticationDatabase flags: 'mongodump --db=mydb --username=admin --password=pass --authenticationDatabase=admin --gzip --out=/backups/'."
+    }
+  ],
+  "relatedRecipes": ["mongo-replica-set", "mongo-user-auth"],
+  "lastUpdated": "2026-03-11"
+}

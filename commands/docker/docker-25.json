@@ -1,0 +1,8 @@
+{
+  "id": "docker-25",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Get container IP",
+  "command": "docker inspect --format='{{.NetworkSettings.IPAddress}}' <container>",
+  "description": "Extract container IP address."
+}

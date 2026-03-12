@@ -1,0 +1,8 @@
+{
+  "id": "kafka-connect-4",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-connect",
+  "title": "Delete connector",
+  "command": "curl -X DELETE localhost:8083/connectors/my-connector",
+  "description": "Delete a connector."
+}

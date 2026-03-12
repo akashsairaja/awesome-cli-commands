@@ -1,0 +1,8 @@
+{
+  "id": "mongo-query-7",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-query",
+  "title": "Projection",
+  "command": "db.users.find({}, { name: 1, email: 1, _id: 0 })",
+  "description": "Select specific fields to return."
+}

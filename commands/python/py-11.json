@@ -1,0 +1,8 @@
+{
+  "id": "py-11",
+  "categoryId": "python",
+  "subcategoryId": "python-pip",
+  "title": "Check dependencies",
+  "command": "pip check",
+  "description": "Verify installed packages have compatible dependencies."
+}

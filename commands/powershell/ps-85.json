@@ -1,0 +1,8 @@
+{
+  "id": "ps-85",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-remoting",
+  "title": "Use persistent session",
+  "command": "Invoke-Command -Session $session -ScriptBlock { Get-Service }",
+  "description": "Run command in existing session."
+}

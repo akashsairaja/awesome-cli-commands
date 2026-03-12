@@ -1,0 +1,8 @@
+{
+  "id": "k6-gs-2",
+  "title": "Install k6 (Linux)",
+  "command": "sudo apt install k6 -y",
+  "description": "Install k6 load testing tool on Debian/Ubuntu Linux",
+  "categoryId": "k6",
+  "subcategoryId": "getting-started"
+}

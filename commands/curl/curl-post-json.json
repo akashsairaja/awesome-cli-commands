@@ -1,0 +1,9 @@
+{
+  "id": "curl-post-json",
+  "categoryId": "curl",
+  "subcategoryId": "curl-requests",
+  "title": "POST JSON data",
+  "command": "curl -X POST -H \"Content-Type: application/json\" -d '{\"key\":\"value\"}' https://api.example.com/resource",
+  "description": "POST request with JSON body",
+  "tags": ["post", "json", "data"]
+}

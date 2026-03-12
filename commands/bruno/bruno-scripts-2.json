@@ -1,0 +1,8 @@
+{
+  "id": "bruno-scripts-2",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-scripts",
+  "title": "Post-response script",
+  "command": "script:post-response {\n  bru.setVar('token', res.body.token);\n}",
+  "description": "Script that runs after response."
+}

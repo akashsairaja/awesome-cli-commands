@@ -1,0 +1,9 @@
+{
+  "id": "azure-resource-list",
+  "categoryId": "azure",
+  "subcategoryId": "azure-resources",
+  "title": "List Resources in Group",
+  "command": "az resource list --resource-group <name> --output table",
+  "description": "Show all resources in a resource group",
+  "tags": ["resource", "list", "inventory"]
+}

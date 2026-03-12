@@ -1,0 +1,8 @@
+{
+  "id": "trivy-gs-1",
+  "title": "Install Trivy (macOS)",
+  "command": "brew install trivy",
+  "description": "Install Trivy security scanner using Homebrew on macOS",
+  "categoryId": "trivy",
+  "subcategoryId": "getting-started"
+}

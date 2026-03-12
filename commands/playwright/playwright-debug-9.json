@@ -1,0 +1,8 @@
+{
+  "id": "playwright-debug-9",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-debug",
+  "title": "Stop on failures",
+  "command": "npx playwright test --max-failures=5",
+  "description": "Stop after specified number of failures."
+}

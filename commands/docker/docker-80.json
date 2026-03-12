@@ -1,0 +1,8 @@
+{
+  "id": "docker-80",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "List services",
+  "command": "docker compose ps",
+  "description": "Show status of services."
+}

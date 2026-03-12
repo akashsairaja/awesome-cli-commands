@@ -1,0 +1,9 @@
+{
+  "id": "netlify-unlink",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-sites",
+  "title": "Unlink site",
+  "command": "netlify unlink",
+  "description": "Unlink local project from Netlify site",
+  "tags": ["unlink", "disconnect"]
+}

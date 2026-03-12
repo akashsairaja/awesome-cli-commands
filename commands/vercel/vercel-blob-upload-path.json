@@ -1,0 +1,9 @@
+{
+  "id": "vercel-blob-upload-path",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-storage",
+  "title": "Upload with custom path",
+  "command": "vercel blob put <file> --pathname assets/hero.jpg",
+  "description": "Upload with custom destination path",
+  "tags": ["blob", "upload", "pathname"]
+}

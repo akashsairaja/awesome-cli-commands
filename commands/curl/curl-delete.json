@@ -1,0 +1,9 @@
+{
+  "id": "curl-delete",
+  "categoryId": "curl",
+  "subcategoryId": "curl-requests",
+  "title": "DELETE request",
+  "command": "curl -X DELETE https://api.example.com/resource/123",
+  "description": "Make a DELETE request",
+  "tags": ["delete", "remove", "request"]
+}

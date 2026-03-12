@@ -1,0 +1,8 @@
+{
+  "id": "rust-project-6",
+  "categoryId": "rust",
+  "subcategoryId": "rust-project",
+  "title": "Add dev dependency",
+  "command": "cargo add --dev trybuild",
+  "description": "Add development dependency."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "sops-edit-4",
+  "categoryId": "sops",
+  "subcategoryId": "sops-edit",
+  "title": "Edit and rotate keys",
+  "command": "sops --rotate secrets.enc.yaml",
+  "description": "Rotate data key while editing."
+}

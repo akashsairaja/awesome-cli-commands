@@ -1,0 +1,8 @@
+{
+  "id": "volta-run-2",
+  "categoryId": "volta",
+  "subcategoryId": "volta-run",
+  "title": "List installed tools",
+  "command": "volta list all",
+  "description": "List all installed tools."
+}

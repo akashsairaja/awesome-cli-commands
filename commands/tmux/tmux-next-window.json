@@ -1,0 +1,9 @@
+{
+  "id": "tmux-next-window",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-windows",
+  "title": "Next window",
+  "command": "Ctrl+b n",
+  "description": "Switch to next window",
+  "tags": ["window", "next", "switch"]
+}

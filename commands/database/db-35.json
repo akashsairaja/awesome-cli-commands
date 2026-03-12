@@ -1,0 +1,8 @@
+{
+  "id": "db-35",
+  "categoryId": "database",
+  "subcategoryId": "postgresql",
+  "title": "List roles",
+  "command": "\\du",
+  "description": "List all roles and their attributes."
+}

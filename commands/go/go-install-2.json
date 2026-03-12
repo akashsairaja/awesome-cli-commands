@@ -1,0 +1,8 @@
+{
+  "id": "go-install-2",
+  "categoryId": "go",
+  "subcategoryId": "go-install",
+  "title": "Install specific version",
+  "command": "go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.55.2",
+  "description": "Install tool at specific version."
+}

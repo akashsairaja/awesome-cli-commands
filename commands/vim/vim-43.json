@@ -1,0 +1,8 @@
+{
+  "id": "vim-43",
+  "categoryId": "vim",
+  "subcategoryId": "windows-tabs",
+  "title": "Close window",
+  "command": "Ctrl+w q",
+  "description": "Close current split."
+}

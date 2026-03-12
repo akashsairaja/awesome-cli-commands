@@ -1,0 +1,9 @@
+{
+  "id": "redis-hmset",
+  "categoryId": "redis",
+  "subcategoryId": "redis-hashes",
+  "title": "Set multiple hash fields",
+  "command": "HMSET key field1 value1 field2 value2",
+  "description": "Set multiple fields in hash",
+  "tags": ["hmset", "hash", "multiple"]
+}

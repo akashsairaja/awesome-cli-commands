@@ -1,0 +1,8 @@
+{
+  "id": "volta-run-5",
+  "categoryId": "volta",
+  "subcategoryId": "volta-run",
+  "title": "Run with bundled npm",
+  "command": "volta run --bundled-npm npm test",
+  "description": "Run using npm bundled with Node.js."
+}

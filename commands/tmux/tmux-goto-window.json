@@ -1,0 +1,9 @@
+{
+  "id": "tmux-goto-window",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-windows",
+  "title": "Go to window N",
+  "command": "Ctrl+b [0-9]",
+  "description": "Switch to window by number",
+  "tags": ["window", "goto", "number"]
+}

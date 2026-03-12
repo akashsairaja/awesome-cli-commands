@@ -1,0 +1,8 @@
+{
+  "id": "jest-execution-2",
+  "categoryId": "jest",
+  "subcategoryId": "jest-execution",
+  "title": "Watch mode",
+  "command": "jest --watch",
+  "description": "Watch files for changes and rerun tests."
+}

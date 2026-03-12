@@ -1,0 +1,9 @@
+{
+  "id": "curl-custom-header",
+  "categoryId": "curl",
+  "subcategoryId": "curl-headers",
+  "title": "Add custom header",
+  "command": "curl -H \"X-Custom-Header: value\" https://api.example.com",
+  "description": "Add custom header to request",
+  "tags": ["header", "custom"]
+}

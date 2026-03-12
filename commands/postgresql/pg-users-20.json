@@ -1,0 +1,8 @@
+{
+  "id": "pg-users-20",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-users",
+  "title": "Show user permissions on table",
+  "command": "\\dp tablename",
+  "description": "Display access privileges (ACL) for a specific table."
+}

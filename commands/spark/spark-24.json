@@ -1,0 +1,8 @@
+{
+  "id": "spark-24",
+  "categoryId": "spark",
+  "subcategoryId": "spark-sql",
+  "title": "Set database",
+  "command": "spark-sql --database mydb",
+  "description": "Start CLI with specific database selected."
+}

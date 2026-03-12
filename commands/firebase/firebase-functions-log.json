@@ -1,0 +1,9 @@
+{
+  "id": "firebase-functions-log",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-functions",
+  "title": "View function logs",
+  "command": "firebase functions:log",
+  "description": "View Cloud Functions logs",
+  "tags": ["functions", "log", "logs"]
+}

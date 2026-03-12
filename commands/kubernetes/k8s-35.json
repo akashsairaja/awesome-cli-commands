@@ -1,0 +1,8 @@
+{
+  "id": "k8s-35",
+  "categoryId": "kubernetes",
+  "subcategoryId": "deployments",
+  "title": "Scale deployment",
+  "command": "kubectl scale deployment <name> --replicas=3",
+  "description": "Scale deployment to specified replicas."
+}

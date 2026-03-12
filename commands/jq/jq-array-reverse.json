@@ -1,0 +1,9 @@
+{
+  "id": "jq-array-reverse",
+  "categoryId": "jq",
+  "subcategoryId": "jq-arrays",
+  "title": "Reverse array",
+  "command": "cat file.json | jq 'reverse'",
+  "description": "Reverse array order",
+  "tags": ["array", "reverse", "order"]
+}

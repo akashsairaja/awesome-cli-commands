@@ -1,0 +1,8 @@
+{
+  "id": "node-debug-7",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-debug",
+  "title": "Remote debugging",
+  "command": "node --inspect=0.0.0.0:9229 app.js",
+  "description": "Enable inspector on all interfaces (remote access)."
+}

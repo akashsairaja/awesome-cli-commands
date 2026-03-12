@@ -1,0 +1,8 @@
+{
+  "id": "bash-5",
+  "categoryId": "bash",
+  "subcategoryId": "scripting",
+  "title": "Error on undefined vars",
+  "command": "set -u",
+  "description": "Error on undefined variables."
+}

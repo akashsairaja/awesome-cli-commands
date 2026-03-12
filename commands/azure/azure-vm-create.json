@@ -1,0 +1,9 @@
+{
+  "id": "azure-vm-create",
+  "categoryId": "azure",
+  "subcategoryId": "azure-compute",
+  "title": "Create Virtual Machine",
+  "command": "az vm create --resource-group <rg> --name <vm-name> --image Ubuntu2204 --admin-username azureuser --generate-ssh-keys",
+  "description": "Create a new Linux VM with SSH keys",
+  "tags": ["vm", "create", "linux"]
+}

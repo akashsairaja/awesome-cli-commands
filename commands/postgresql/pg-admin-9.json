@@ -1,0 +1,8 @@
+{
+  "id": "pg-admin-9",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-admin",
+  "title": "Reindex table",
+  "command": "REINDEX TABLE tablename;",
+  "description": "Rebuild table indexes."
+}

@@ -1,0 +1,66 @@
+{
+  "id": "nodejs-memory-leak-detection",
+  "stackId": "nodejs",
+  "name": "Find and Fix Memory Leaks",
+  "description": "Detect memory leaks in Node.js applications using heap snapshots, process.memoryUsage(), and diagnostic tools.",
+  "difficulty": "advanced",
+  "timeMinutes": 20,
+  "trending": true,
+  "trendingReason": "Long-running Node.js services in production frequently suffer from subtle memory leaks that degrade performance over hours or days.",
+  "tags": ["memory", "leak", "heap", "profiling", "diagnostics"],
+  "prerequisites": ["Node.js installed", "Chrome browser for heap analysis"],
+  "steps": [
+    {
+      "title": "Monitor memory usage over time",
+      "description": "Log heap usage at intervals to identify a growing memory trend that indicates a leak.",
+      "command": "node -e \"\nsetInterval(() => {\n  const mem = process.memoryUsage();\n  console.log(JSON.stringify({\n    heapUsed: Math.round(mem.heapUsed / 1024 / 1024) + 'MB',\n    heapTotal: Math.round(mem.heapTotal / 1024 / 1024) + 'MB',\n    rss: Math.round(mem.rss / 1024 / 1024) + 'MB',\n    external: Math.round(mem.external / 1024 / 1024) + 'MB'\n  }));\n}, 5000);\n\"",
+      "tip": "A steadily growing heapUsed value over time is the clearest indicator of a memory leak."
+    },
+    {
+      "title": "Take heap snapshots with --inspect",
+      "description": "Start the app with inspect and use Chrome DevTools Memory tab to take snapshots at different points.",
+      "command": "node --inspect --max-old-space-size=512 app.js",
+      "tip": "Take a snapshot after startup, then again after load. Compare the two to find objects that should have been garbage collected."
+    },
+    {
+      "title": "Generate heap snapshots programmatically",
+      "description": "Use v8.writeHeapSnapshot() to create heap dumps from code or signal handlers for automated analysis.",
+      "command": "node -e \"\nconst v8 = require('v8');\nconst path = require('path');\n\n// Write snapshot on SIGUSR2\nprocess.on('SIGUSR2', () => {\n  const file = v8.writeHeapSnapshot();\n  console.log('Heap snapshot written to:', file);\n});\n\nconsole.log('PID:', process.pid, '- Send SIGUSR2 to take snapshot');\nsetInterval(() => {}, 1000);\n\"",
+      "warning": "Heap snapshots pause the event loop and can be large (hundreds of MB). Do not take them frequently in production."
+    },
+    {
+      "title": "Compare snapshots in Chrome DevTools",
+      "description": "Load two snapshots in the DevTools Memory panel and use the Comparison view to find leaked objects.",
+      "command": "# In Chrome DevTools Memory tab:\n# 1. Load first snapshot (baseline)\n# 2. Load second snapshot (after suspected leak)\n# 3. Select 'Comparison' view in the second snapshot\n# 4. Sort by 'Alloc. Size' descending to find growing objects"
+    },
+    {
+      "title": "Use clinic.js for automated analysis",
+      "description": "Install and run clinic.js to automatically detect memory issues with visual flame charts.",
+      "command": "npm install -g clinic\nclinic heapprofile -- node app.js",
+      "tip": "clinic heapprofile generates an interactive HTML report showing allocation patterns and potential leak sources."
+    },
+    {
+      "title": "Check for common leak patterns",
+      "description": "Review code for the most frequent causes of Node.js memory leaks.",
+      "command": "# Common leak patterns to search for:\ngrep -rn 'addEventListener\\|setInterval\\|global\\.' src/ --include='*.ts' --include='*.js' | head -20",
+      "tip": "The top causes are: unremoved event listeners, growing global caches without eviction, uncleared intervals, and closures retaining large objects."
+    }
+  ],
+  "fullScript": "#!/bin/bash\nset -euo pipefail\n\n# Node.js Memory Leak Detection Script\n\nAPP_FILE=\"${1:-app.js}\"\nINTERVAL=\"${2:-30}\"\n\necho \"==> Starting memory monitoring for ${APP_FILE}...\"\necho \"    Sampling every ${INTERVAL} seconds\"\necho \"\"\n\n# Create monitoring wrapper\ncat > /tmp/mem-monitor.js <<'MONITOR'\nconst v8 = require('v8');\nconst path = require('path');\n\n// Memory logging\nconst baseline = process.memoryUsage().heapUsed;\nlet samples = [];\n\nsetInterval(() => {\n  const mem = process.memoryUsage();\n  const heapMB = Math.round(mem.heapUsed / 1024 / 1024);\n  const rssMB = Math.round(mem.rss / 1024 / 1024);\n  const growthMB = Math.round((mem.heapUsed - baseline) / 1024 / 1024);\n\n  samples.push(heapMB);\n\n  const trend = samples.length > 5\n    ? (samples[samples.length - 1] > samples[0] ? 'GROWING' : 'STABLE')\n    : 'SAMPLING';\n\n  console.log(`[MEM] heap=${heapMB}MB rss=${rssMB}MB growth=${growthMB >= 0 ? '+' : ''}${growthMB}MB trend=${trend}`);\n\n  if (trend === 'GROWING' && samples.length > 10) {\n    console.log('[MEM] WARNING: Memory appears to be leaking. Consider taking a heap snapshot.');\n  }\n}, parseInt(process.env.MONITOR_INTERVAL || '30') * 1000);\n\n// Snapshot on SIGUSR2\nprocess.on('SIGUSR2', () => {\n  const file = v8.writeHeapSnapshot();\n  console.log('[MEM] Heap snapshot written to:', file);\n});\n\nconsole.log('[MEM] Memory monitor active. PID:', process.pid);\nconsole.log('[MEM] Send SIGUSR2 to take heap snapshot');\nMONITOR\n\necho \"==> Running with memory monitor...\"\nMONITOR_INTERVAL=${INTERVAL} node --inspect --max-old-space-size=512 -r /tmp/mem-monitor.js \"${APP_FILE}\"",
+  "faq": [
+    {
+      "question": "What causes most Node.js memory leaks?",
+      "answer": "The most common causes are: global variables that accumulate data, event listeners added but never removed, growing arrays or maps used as caches without eviction, uncleared setInterval/setTimeout references, and closures that retain references to large objects."
+    },
+    {
+      "question": "How large should the heap be before I suspect a leak?",
+      "answer": "There is no fixed threshold. A leak is indicated by a steadily growing heap over time, not absolute size. If heapUsed grows by 10+ MB per hour under steady load with no plateau, investigate further."
+    },
+    {
+      "question": "Can I detect leaks in production without DevTools?",
+      "answer": "Yes. Use process.memoryUsage() to log heap metrics to your monitoring system. Tools like clinic.js can profile with low overhead. For heap snapshots, v8.writeHeapSnapshot() works without Chrome."
+    }
+  ],
+  "relatedRecipes": ["nodejs-debug-inspect", "nodejs-performance-profiling"],
+  "lastUpdated": "2026-03-11"
+}

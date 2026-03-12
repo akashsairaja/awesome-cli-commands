@@ -1,0 +1,8 @@
+{
+  "id": "ollama-gs-2",
+  "title": "Install Ollama (Linux)",
+  "command": "curl -fsSL https://ollama.com/install.sh | sh",
+  "description": "Install Ollama on Linux using the official installer",
+  "categoryId": "ollama",
+  "subcategoryId": "getting-started"
+}

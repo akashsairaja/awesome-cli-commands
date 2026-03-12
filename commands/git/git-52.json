@@ -1,0 +1,8 @@
+{
+  "id": "git-52",
+  "categoryId": "git",
+  "subcategoryId": "stash",
+  "title": "Show stash contents",
+  "command": "git stash show -p stash@{0}",
+  "description": "Show diff of stash contents."
+}

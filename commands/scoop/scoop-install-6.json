@@ -1,0 +1,8 @@
+{
+  "id": "scoop-install-6",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-install",
+  "title": "Which command",
+  "command": "scoop which python",
+  "description": "Show path to shim executable."
+}

@@ -1,0 +1,56 @@
+{
+  "id": "pg-user-management",
+  "stackId": "postgresql",
+  "name": "Role and Permission Management",
+  "description": "Create and manage PostgreSQL roles with granular permissions for secure multi-user database access control.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "tags": ["users", "roles", "permissions", "security"],
+  "prerequisites": ["PostgreSQL installed", "Superuser or admin access to the database"],
+  "steps": [
+    {
+      "title": "Create a new role with login",
+      "description": "Create a database user role with a password and login capability.",
+      "command": "psql -U postgres -c \"CREATE ROLE app_user WITH LOGIN PASSWORD 'secure_password' VALID UNTIL '2027-01-01';\"",
+      "tip": "Always set VALID UNTIL for service accounts to enforce credential rotation."
+    },
+    {
+      "title": "Grant database-level permissions",
+      "description": "Allow the role to connect to a specific database.",
+      "command": "psql -U postgres -c \"GRANT CONNECT ON DATABASE mydb TO app_user;\""
+    },
+    {
+      "title": "Grant schema and table permissions",
+      "description": "Give the role read/write access to tables in a schema.",
+      "command": "psql -U postgres -d mydb -c \"GRANT USAGE ON SCHEMA public TO app_user; GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO app_user;\""
+    },
+    {
+      "title": "Set default privileges for future tables",
+      "description": "Ensure the role automatically gets permissions on tables created in the future.",
+      "command": "psql -U postgres -d mydb -c \"ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO app_user;\""
+    },
+    {
+      "title": "Create a read-only role",
+      "description": "Create a restricted role that can only read data.",
+      "command": "psql -U postgres -d mydb -c \"CREATE ROLE readonly_user WITH LOGIN PASSWORD 'readonly_pass'; GRANT CONNECT ON DATABASE mydb TO readonly_user; GRANT USAGE ON SCHEMA public TO readonly_user; GRANT SELECT ON ALL TABLES IN SCHEMA public TO readonly_user;\""
+    },
+    {
+      "title": "List all roles and their attributes",
+      "description": "View existing roles with their permissions and settings.",
+      "command": "psql -U postgres -c \"\\du+\""
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# PostgreSQL User and Role Management\nset -euo pipefail\n\nDB=\"mydb\"\nUSER=\"postgres\"\n\necho \"=== Creating application roles ===\"\npsql -U \"$USER\" -c \"\n-- Read-write application role\nCREATE ROLE app_readwrite WITH LOGIN PASSWORD 'rw_secure_pass';\n-- Read-only reporting role\nCREATE ROLE app_readonly WITH LOGIN PASSWORD 'ro_secure_pass';\n-- Admin role (no login, used as group)\nCREATE ROLE app_admin NOLOGIN;\n\"\n\necho \"\"\necho \"=== Granting database access ===\"\npsql -U \"$USER\" -c \"\nGRANT CONNECT ON DATABASE $DB TO app_readwrite;\nGRANT CONNECT ON DATABASE $DB TO app_readonly;\nGRANT CONNECT ON DATABASE $DB TO app_admin;\n\"\n\necho \"\"\necho \"=== Granting schema permissions ===\"\npsql -U \"$USER\" -d \"$DB\" -c \"\n-- Read-write: full CRUD\nGRANT USAGE ON SCHEMA public TO app_readwrite;\nGRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO app_readwrite;\nGRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO app_readwrite;\nALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO app_readwrite;\nALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT USAGE, SELECT ON SEQUENCES TO app_readwrite;\n\n-- Read-only: SELECT only\nGRANT USAGE ON SCHEMA public TO app_readonly;\nGRANT SELECT ON ALL TABLES IN SCHEMA public TO app_readonly;\nALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO app_readonly;\n\n-- Admin inherits readwrite + can create/drop\nGRANT app_readwrite TO app_admin;\n\"\n\necho \"\"\necho \"=== Current roles ===\"\npsql -U \"$USER\" -c \"\\du+\"\n\necho \"\"\necho \"=== Table permissions ===\"\npsql -U \"$USER\" -d \"$DB\" -c \"\nSELECT grantee, table_name, privilege_type\nFROM information_schema.table_privileges\nWHERE table_schema = 'public'\nORDER BY grantee, table_name;\n\"",
+  "faq": [
+    {
+      "question": "What is the difference between a role and a user?",
+      "answer": "In PostgreSQL, there is no difference. A role with LOGIN capability is effectively a user. Roles without LOGIN are used as groups that other roles can inherit from via GRANT."
+    },
+    {
+      "question": "How do I revoke all privileges from a role?",
+      "answer": "Use REVOKE ALL PRIVILEGES ON ALL TABLES IN SCHEMA public FROM role_name, then REVOKE CONNECT ON DATABASE dbname FROM role_name. Finally, DROP ROLE role_name if you want to remove it entirely."
+    }
+  ],
+  "relatedRecipes": ["pg-backup-restore", "pg-migration-workflow"],
+  "lastUpdated": "2026-03-11"
+}

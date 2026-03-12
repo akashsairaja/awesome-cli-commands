@@ -1,0 +1,8 @@
+{
+  "id": "podman-compose-2",
+  "categoryId": "podman",
+  "subcategoryId": "podman-compose",
+  "title": "Compose down",
+  "command": "podman compose down",
+  "description": "Stop and remove compose services."
+}

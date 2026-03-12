@@ -1,0 +1,8 @@
+{
+  "id": "brew-25",
+  "categoryId": "homebrew",
+  "subcategoryId": "casks",
+  "title": "Outdated casks",
+  "command": "brew outdated --cask",
+  "description": "List casks with updates."
+}

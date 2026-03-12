@@ -1,0 +1,8 @@
+{
+  "id": "k3s-cluster-10",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-cluster",
+  "title": "Reset cluster",
+  "command": "k3s server --cluster-reset",
+  "description": "Reset the cluster to a single-member etcd cluster."
+}

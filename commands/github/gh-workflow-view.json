@@ -1,0 +1,9 @@
+{
+  "id": "gh-workflow-view",
+  "categoryId": "github",
+  "subcategoryId": "gh-workflow",
+  "title": "View workflow",
+  "command": "gh workflow view <workflow>",
+  "description": "View workflow details and recent runs",
+  "tags": ["workflow", "view", "info"]
+}

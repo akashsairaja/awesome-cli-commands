@@ -1,0 +1,8 @@
+{
+  "id": "py-113",
+  "categoryId": "python",
+  "subcategoryId": "python-ruff",
+  "title": "Format code",
+  "command": "ruff format .",
+  "description": "Format all files (like Black)."
+}

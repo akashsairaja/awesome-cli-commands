@@ -1,0 +1,8 @@
+{
+  "id": "checkov-scan-5",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-scan",
+  "title": "Scan Dockerfile",
+  "command": "checkov --dockerfile-path ./Dockerfile",
+  "description": "Scan Dockerfile."
+}

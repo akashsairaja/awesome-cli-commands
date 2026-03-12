@@ -1,0 +1,8 @@
+{
+  "id": "scoop-update-5",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-update",
+  "title": "Run checkup",
+  "command": "scoop checkup",
+  "description": "Check system for potential problems."
+}

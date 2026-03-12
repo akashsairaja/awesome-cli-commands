@@ -1,0 +1,8 @@
+{
+  "id": "snyk-container-4",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-container",
+  "title": "Exclude base image",
+  "command": "snyk container test myapp:latest --exclude-base-image-vulns",
+  "description": "Only show app-level vulnerabilities."
+}

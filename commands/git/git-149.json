@@ -1,0 +1,8 @@
+{
+  "id": "git-149",
+  "categoryId": "git",
+  "subcategoryId": "maintenance",
+  "title": "Start background maintenance",
+  "command": "git maintenance start",
+  "description": "Enable automatic background maintenance."
+}

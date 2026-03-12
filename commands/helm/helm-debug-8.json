@@ -1,0 +1,8 @@
+{
+  "id": "helm-debug-8",
+  "categoryId": "helm",
+  "subcategoryId": "helm-debug",
+  "title": "Limited history",
+  "command": "helm history my-release --max 10",
+  "description": "Show last 10 revisions of release history."
+}

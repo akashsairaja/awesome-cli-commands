@@ -1,0 +1,8 @@
+{
+  "id": "pg-users-18",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-users",
+  "title": "Revoke role membership",
+  "command": "REVOKE readonly FROM appuser;",
+  "description": "Remove user from a group role."
+}

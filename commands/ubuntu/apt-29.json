@@ -1,0 +1,8 @@
+{
+  "id": "apt-29",
+  "categoryId": "ubuntu",
+  "subcategoryId": "apt-packages",
+  "title": "Add PPA repository",
+  "command": "sudo add-apt-repository ppa:<user>/<ppa-name> && sudo apt update",
+  "description": "Add a Personal Package Archive and refresh package lists."
+}

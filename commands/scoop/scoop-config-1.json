@@ -1,0 +1,8 @@
+{
+  "id": "scoop-config-1",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-config",
+  "title": "Set proxy",
+  "command": "scoop config proxy 127.0.0.1:8080",
+  "description": "Configure HTTP proxy for downloads."
+}

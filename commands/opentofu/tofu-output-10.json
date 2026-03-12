@@ -1,0 +1,8 @@
+{
+  "id": "tofu-output-10",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-output",
+  "title": "List providers",
+  "command": "tofu providers",
+  "description": "Show providers required by configuration."
+}

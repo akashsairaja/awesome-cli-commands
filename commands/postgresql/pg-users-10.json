@@ -1,0 +1,8 @@
+{
+  "id": "pg-users-10",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-users",
+  "title": "Grant read-write on all tables",
+  "command": "GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO appuser;",
+  "description": "Grant full CRUD access to all existing tables in the public schema."
+}

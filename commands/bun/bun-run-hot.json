@@ -1,0 +1,9 @@
+{
+  "id": "bun-run-hot",
+  "categoryId": "bun",
+  "subcategoryId": "bun-run",
+  "title": "Hot Reload",
+  "command": "bun --hot run script.ts",
+  "description": "Hot module reloading",
+  "tags": ["run", "hot", "reload"]
+}

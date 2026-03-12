@@ -1,0 +1,8 @@
+{
+  "id": "ts-check-4",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-check",
+  "title": "Check null/undefined",
+  "command": "tsc --noEmit --strictNullChecks",
+  "description": "Treat null and undefined as distinct types."
+}

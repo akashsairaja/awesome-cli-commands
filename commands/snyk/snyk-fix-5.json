@@ -1,0 +1,8 @@
+{
+  "id": "snyk-fix-5",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-fix",
+  "title": "Auth with token",
+  "command": "snyk auth YOUR_API_TOKEN",
+  "description": "Authenticate with an API token for CI/CD."
+}

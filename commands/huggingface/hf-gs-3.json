@@ -1,0 +1,8 @@
+{
+  "id": "hf-gs-3",
+  "title": "Install Transformers library",
+  "command": "pip install transformers",
+  "description": "Install the Hugging Face Transformers library for ML models",
+  "categoryId": "huggingface",
+  "subcategoryId": "getting-started"
+}

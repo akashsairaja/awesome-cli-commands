@@ -1,0 +1,9 @@
+{
+  "id": "vercel-ls",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-projects",
+  "title": "List deployments",
+  "command": "vercel ls",
+  "description": "List all deployments for current project",
+  "tags": ["list", "deployments", "show"]
+}

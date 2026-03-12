@@ -1,0 +1,9 @@
+{
+  "id": "ansible-config-dump",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-config",
+  "title": "Dump Current Config",
+  "command": "ansible-config dump",
+  "description": "Show current configuration values",
+  "tags": ["config", "dump", "current"]
+}

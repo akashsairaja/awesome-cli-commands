@@ -1,0 +1,8 @@
+{
+  "id": "docker-66",
+  "categoryId": "docker",
+  "subcategoryId": "networks",
+  "title": "Inspect network",
+  "command": "docker network inspect <network>",
+  "description": "Show network details and connected containers."
+}

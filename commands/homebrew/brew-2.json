@@ -1,0 +1,8 @@
+{
+  "id": "brew-2",
+  "categoryId": "homebrew",
+  "subcategoryId": "packages",
+  "title": "Uninstall package",
+  "command": "brew uninstall <package>",
+  "description": "Remove a package."
+}

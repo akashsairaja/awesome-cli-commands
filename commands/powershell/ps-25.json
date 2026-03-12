@@ -1,0 +1,8 @@
+{
+  "id": "ps-25",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-system",
+  "title": "Get services",
+  "command": "Get-Service",
+  "description": "List all Windows services."
+}

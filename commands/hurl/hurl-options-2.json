@@ -1,0 +1,8 @@
+{
+  "id": "hurl-options-2",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-options",
+  "title": "Variables file",
+  "command": "hurl --variables-file vars.env api.hurl",
+  "description": "Load variables from file."
+}

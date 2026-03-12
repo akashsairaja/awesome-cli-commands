@@ -1,0 +1,9 @@
+{
+  "id": "vercel-integration-open",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-integrations",
+  "title": "Open integration dashboard",
+  "command": "vercel integration open <name>",
+  "description": "Open integration provider dashboard",
+  "tags": ["integration", "open", "dashboard"]
+}

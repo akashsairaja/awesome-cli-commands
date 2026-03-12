@@ -1,0 +1,9 @@
+{
+  "id": "jq-compact",
+  "categoryId": "jq",
+  "subcategoryId": "jq-basics",
+  "title": "Compact JSON",
+  "command": "cat file.json | jq -c '.'",
+  "description": "Output compact single-line JSON",
+  "tags": ["compact", "minify"]
+}

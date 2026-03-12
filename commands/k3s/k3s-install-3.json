@@ -1,0 +1,8 @@
+{
+  "id": "k3s-install-3",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-install",
+  "title": "Install with kubeconfig mode",
+  "command": "curl -sfL https://get.k3s.io | sh -s - --write-kubeconfig-mode 644",
+  "description": "Install with readable kubeconfig."
+}

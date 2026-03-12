@@ -1,0 +1,8 @@
+{
+  "id": "checkov-scan-11",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-scan",
+  "title": "Scan with repo ID",
+  "command": "checkov -d . --repo-id myorg/myrepo",
+  "description": "Tag results with repository ID."
+}

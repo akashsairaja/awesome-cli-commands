@@ -1,0 +1,8 @@
+{
+  "id": "claude-75",
+  "categoryId": "claudecode",
+  "subcategoryId": "utilities",
+  "title": "Get help",
+  "command": "/help",
+  "description": "Show available commands and help."
+}

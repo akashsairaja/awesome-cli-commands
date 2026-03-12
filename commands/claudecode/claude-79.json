@@ -1,0 +1,8 @@
+{
+  "id": "claude-79",
+  "categoryId": "claudecode",
+  "subcategoryId": "environment",
+  "title": "Use AWS Bedrock",
+  "command": "export CLAUDE_CODE_USE_BEDROCK=1",
+  "description": "Use Claude via AWS Bedrock."
+}

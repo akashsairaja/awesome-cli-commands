@@ -1,0 +1,9 @@
+{
+  "id": "zsh-transient-prompt",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-prompt",
+  "title": "Transient prompt setup",
+  "command": "# In p10k, set POWERLEVEL9K_TRANSIENT_PROMPT=same-dir",
+  "description": "Simplify prompt after command execution",
+  "tags": ["prompt", "transient", "minimal"]
+}

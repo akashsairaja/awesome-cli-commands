@@ -1,0 +1,8 @@
+{
+  "id": "task-run-7",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-run",
+  "title": "Dry run",
+  "command": "task --dry build",
+  "description": "Print commands without executing."
+}

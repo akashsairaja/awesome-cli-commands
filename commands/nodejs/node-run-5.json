@@ -1,0 +1,8 @@
+{
+  "id": "node-run-5",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-run",
+  "title": "Watch specific paths",
+  "command": "node --watch-path=./src app.js",
+  "description": "Watch specific directories for changes."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "bun-run-smol",
+  "categoryId": "bun",
+  "subcategoryId": "bun-run",
+  "title": "Run in Smol Mode",
+  "command": "bun --smol run script.ts",
+  "description": "Use less memory (for constrained environments)",
+  "tags": ["run", "memory", "smol"]
+}

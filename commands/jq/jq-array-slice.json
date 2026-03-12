@@ -1,0 +1,9 @@
+{
+  "id": "jq-array-slice",
+  "categoryId": "jq",
+  "subcategoryId": "jq-arrays",
+  "title": "Slice array",
+  "command": "cat file.json | jq '.[2:5]'",
+  "description": "Get array elements from index 2 to 4",
+  "tags": ["array", "slice", "range"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-iam-policy",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-iam",
+  "title": "Get IAM Policy",
+  "command": "gcloud projects get-iam-policy <project>",
+  "description": "Show IAM policy for project",
+  "tags": ["iam", "policy", "show"]
+}

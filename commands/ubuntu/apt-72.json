@@ -1,0 +1,8 @@
+{
+  "id": "apt-72",
+  "categoryId": "ubuntu",
+  "subcategoryId": "ubuntu-network",
+  "title": "Show hostname info",
+  "command": "hostnamectl",
+  "description": "Display the current hostname, OS, and architecture details."
+}

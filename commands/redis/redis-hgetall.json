@@ -1,0 +1,9 @@
+{
+  "id": "redis-hgetall",
+  "categoryId": "redis",
+  "subcategoryId": "redis-hashes",
+  "title": "Get all hash fields",
+  "command": "HGETALL key",
+  "description": "Get all fields and values in hash",
+  "tags": ["hgetall", "hash", "all"]
+}

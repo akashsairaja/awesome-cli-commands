@@ -1,0 +1,8 @@
+{
+  "id": "vim-29",
+  "categoryId": "vim",
+  "subcategoryId": "visual-mode",
+  "title": "Line visual mode",
+  "command": "V",
+  "description": "Select entire lines at once."
+}

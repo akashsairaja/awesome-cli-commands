@@ -1,0 +1,8 @@
+{
+  "id": "helm-install-7",
+  "categoryId": "helm",
+  "subcategoryId": "helm-install",
+  "title": "Dry run",
+  "command": "helm install my-release bitnami/nginx --dry-run",
+  "description": "Simulate installation without applying."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "fzf-7",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-fzf",
+  "title": "Kill process",
+  "command": "kill -9 $(ps aux | fzf | awk '{print $2}')",
+  "description": "Find and kill process interactively."
+}

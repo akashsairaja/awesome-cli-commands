@@ -1,0 +1,9 @@
+{
+  "id": "rg-after",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-search",
+  "title": "Show lines after",
+  "command": "rg -A 3 \"pattern\"",
+  "description": "Show 3 lines after each match",
+  "tags": ["search", "after", "context"]
+}

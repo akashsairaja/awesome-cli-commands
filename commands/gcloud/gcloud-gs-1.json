@@ -1,0 +1,8 @@
+{
+  "id": "gcloud-gs-1",
+  "title": "Install Google Cloud SDK (macOS)",
+  "command": "brew install google-cloud-sdk",
+  "description": "Install the Google Cloud SDK using Homebrew on macOS",
+  "categoryId": "gcloud",
+  "subcategoryId": "getting-started"
+}

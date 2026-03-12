@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-gs-2",
+  "title": "Add auth token",
+  "command": "ngrok config add-authtoken <token>",
+  "description": "Configure ngrok with your authentication token from dashboard",
+  "categoryId": "ngrok",
+  "subcategoryId": "getting-started"
+}

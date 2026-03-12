@@ -1,0 +1,8 @@
+{
+  "id": "db-104",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Show index from table",
+  "command": "SHOW INDEX FROM tablename;",
+  "description": "Display all indexes on a table with cardinality and type."
+}

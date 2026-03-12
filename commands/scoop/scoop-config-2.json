@@ -1,0 +1,8 @@
+{
+  "id": "scoop-config-2",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-config",
+  "title": "Enable aria2",
+  "command": "scoop install aria2 && scoop config aria2-enabled true",
+  "description": "Enable aria2 for faster multi-connection downloads."
+}

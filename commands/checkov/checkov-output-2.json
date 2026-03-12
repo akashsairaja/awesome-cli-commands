@@ -1,0 +1,8 @@
+{
+  "id": "checkov-output-2",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-output",
+  "title": "SARIF output",
+  "command": "checkov -d . -o sarif > results.sarif",
+  "description": "Output in SARIF format."
+}

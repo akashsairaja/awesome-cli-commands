@@ -1,0 +1,8 @@
+{
+  "id": "mongo-idx-1",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-index",
+  "title": "Create index",
+  "command": "db.users.createIndex({ email: 1 })",
+  "description": "Create ascending index on field."
+}

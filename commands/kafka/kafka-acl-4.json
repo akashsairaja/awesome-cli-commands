@@ -1,0 +1,8 @@
+{
+  "id": "kafka-acl-4",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-acl",
+  "title": "Remove ACL",
+  "command": "kafka-acls.sh --remove --allow-principal User:producer --producer --topic my-topic --bootstrap-server localhost:9092",
+  "description": "Remove access control."
+}

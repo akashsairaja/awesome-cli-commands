@@ -1,0 +1,8 @@
+{
+  "id": "bash-68",
+  "categoryId": "bash",
+  "subcategoryId": "strings",
+  "title": "Remove prefix",
+  "command": "echo \"${str#prefix}\"",
+  "description": "Remove shortest prefix match."
+}

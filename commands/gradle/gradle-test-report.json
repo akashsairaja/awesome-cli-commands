@@ -1,0 +1,9 @@
+{
+  "id": "gradle-test-report",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-testing",
+  "title": "Open Test Report",
+  "command": "open build/reports/tests/test/index.html",
+  "description": "View HTML test report",
+  "tags": ["test", "report", "html"]
+}

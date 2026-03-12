@@ -1,0 +1,8 @@
+{
+  "id": "vault-operator-1",
+  "categoryId": "vault",
+  "subcategoryId": "vault-operator",
+  "title": "Initialize Vault",
+  "command": "vault operator init -key-shares=5 -key-threshold=3",
+  "description": "Initialize a new Vault cluster."
+}

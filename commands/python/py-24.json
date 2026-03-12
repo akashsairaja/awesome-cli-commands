@@ -1,0 +1,8 @@
+{
+  "id": "py-24",
+  "categoryId": "python",
+  "subcategoryId": "python-poetry",
+  "title": "Add to group",
+  "command": "poetry add -G docs sphinx",
+  "description": "Add packages to a specific dependency group."
+}

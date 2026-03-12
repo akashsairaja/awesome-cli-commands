@@ -1,0 +1,8 @@
+{
+  "id": "bash-34",
+  "categoryId": "bash",
+  "subcategoryId": "loops",
+  "title": "Infinite loop",
+  "command": "while true; do sleep 1; done",
+  "description": "Run infinite loop."
+}

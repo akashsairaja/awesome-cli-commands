@@ -1,0 +1,8 @@
+{
+  "id": "git-79",
+  "categoryId": "git",
+  "subcategoryId": "history",
+  "title": "View log",
+  "command": "git log",
+  "description": "Show commit history."
+}

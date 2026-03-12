@@ -1,0 +1,8 @@
+{
+  "id": "tf-state-16",
+  "categoryId": "terraform",
+  "subcategoryId": "state",
+  "title": "Refresh only",
+  "command": "terraform apply -refresh-only",
+  "description": "Update state without making changes."
+}

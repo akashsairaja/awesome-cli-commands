@@ -1,0 +1,59 @@
+{
+  "id": "pg-performance-tuning",
+  "stackId": "postgresql",
+  "name": "EXPLAIN ANALYZE and Index Optimization",
+  "description": "Diagnose slow queries with EXPLAIN ANALYZE and create targeted indexes to dramatically improve PostgreSQL query performance.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "Query performance tuning is the highest-impact skill for production database optimization",
+  "tags": ["performance", "explain", "indexes", "optimization", "tuning"],
+  "prerequisites": ["PostgreSQL database with tables and data", "psql or database client"],
+  "steps": [
+    {
+      "title": "Analyze a query execution plan",
+      "description": "Run EXPLAIN ANALYZE to see the actual execution plan with real timings.",
+      "command": "psql -U postgres -d mydb -c \"EXPLAIN (ANALYZE, BUFFERS, FORMAT TEXT) SELECT * FROM orders WHERE customer_id = 1001 AND status = 'pending';\"",
+      "tip": "BUFFERS shows I/O statistics. Look for Seq Scan on large tables as the primary indicator of missing indexes."
+    },
+    {
+      "title": "Find missing indexes with pg_stat_user_tables",
+      "description": "Identify tables with high sequential scan counts that could benefit from indexes.",
+      "command": "psql -U postgres -d mydb -c \"SELECT relname, seq_scan, seq_tup_read, idx_scan, n_live_tup FROM pg_stat_user_tables WHERE seq_scan > 100 ORDER BY seq_tup_read DESC LIMIT 10;\""
+    },
+    {
+      "title": "Create an index for a common query pattern",
+      "description": "Add a composite index to support filtered queries efficiently.",
+      "command": "psql -U postgres -d mydb -c \"CREATE INDEX CONCURRENTLY idx_orders_customer_status ON orders (customer_id, status);\"",
+      "tip": "CONCURRENTLY builds the index without locking the table for writes. Always use it in production.",
+      "warning": "CREATE INDEX CONCURRENTLY cannot run inside a transaction block."
+    },
+    {
+      "title": "Check index usage statistics",
+      "description": "Verify that your indexes are actually being used by queries.",
+      "command": "psql -U postgres -d mydb -c \"SELECT indexrelname, idx_scan, idx_tup_read, idx_tup_fetch FROM pg_stat_user_indexes WHERE schemaname = 'public' ORDER BY idx_scan DESC LIMIT 10;\""
+    },
+    {
+      "title": "Find unused indexes wasting space",
+      "description": "Identify indexes that consume disk space but are never used by the query planner.",
+      "command": "psql -U postgres -d mydb -c \"SELECT indexrelname, pg_size_pretty(pg_relation_size(indexrelid)) AS size, idx_scan FROM pg_stat_user_indexes WHERE idx_scan = 0 AND indexrelname NOT LIKE '%pkey%' ORDER BY pg_relation_size(indexrelid) DESC;\""
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# PostgreSQL Performance Tuning\nset -euo pipefail\n\nDB=\"mydb\"\nUSER=\"postgres\"\n\necho \"=== Tables with high sequential scans ===\"\npsql -U \"$USER\" -d \"$DB\" -c \"\nSELECT relname AS table,\n       seq_scan AS seq_scans,\n       seq_tup_read AS rows_seq_read,\n       idx_scan AS idx_scans,\n       n_live_tup AS live_rows\nFROM pg_stat_user_tables\nWHERE seq_scan > 50\nORDER BY seq_tup_read DESC\nLIMIT 10;\n\"\n\necho \"\"\necho \"=== Unused indexes ===\"\npsql -U \"$USER\" -d \"$DB\" -c \"\nSELECT indexrelname AS index_name,\n       pg_size_pretty(pg_relation_size(indexrelid)) AS size,\n       idx_scan AS times_used\nFROM pg_stat_user_indexes\nWHERE idx_scan = 0\n  AND indexrelname NOT LIKE '%pkey%'\nORDER BY pg_relation_size(indexrelid) DESC\nLIMIT 10;\n\"\n\necho \"\"\necho \"=== Most used indexes ===\"\npsql -U \"$USER\" -d \"$DB\" -c \"\nSELECT indexrelname AS index_name,\n       idx_scan AS times_used,\n       pg_size_pretty(pg_relation_size(indexrelid)) AS size\nFROM pg_stat_user_indexes\nORDER BY idx_scan DESC\nLIMIT 10;\n\"\n\necho \"\"\necho \"=== Cache hit ratio ===\"\npsql -U \"$USER\" -d \"$DB\" -c \"\nSELECT round(100.0 * sum(blks_hit) / nullif(sum(blks_hit) + sum(blks_read), 0), 2) AS cache_hit_ratio\nFROM pg_stat_database\nWHERE datname = '$DB';\n\"",
+  "faq": [
+    {
+      "question": "What is a good cache hit ratio?",
+      "answer": "Aim for 99%+ cache hit ratio in production. Below 95% suggests your shared_buffers or effective_cache_size settings are too low, or your working set exceeds available memory."
+    },
+    {
+      "question": "Should I index every column used in WHERE clauses?",
+      "answer": "No. Indexes speed up reads but slow down writes and consume disk space. Focus on columns used in frequently executed queries with high selectivity. Use composite indexes for multi-column WHERE clauses."
+    },
+    {
+      "question": "What does CONCURRENTLY do in CREATE INDEX?",
+      "answer": "It builds the index without holding a write lock on the table, allowing INSERT/UPDATE/DELETE to continue during index creation. It takes longer but avoids blocking production traffic."
+    }
+  ],
+  "relatedRecipes": ["pg-vacuum-maintenance", "pg-connection-pooling"],
+  "lastUpdated": "2026-03-11"
+}

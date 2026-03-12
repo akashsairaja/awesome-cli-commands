@@ -1,0 +1,8 @@
+{
+  "id": "node-sec-6",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-security",
+  "title": "JIT-less mode",
+  "command": "node --jitless app.js",
+  "description": "Disable JIT compilation (security-focused)."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "hf-gs-1",
+  "title": "Install Hugging Face CLI",
+  "command": "pip install huggingface_hub",
+  "description": "Install the Hugging Face Hub CLI and Python client via pip",
+  "categoryId": "huggingface",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-normalize-audio",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-audio",
+  "title": "Normalize audio",
+  "command": "ffmpeg -i input.mp3 -af loudnorm output.mp3",
+  "description": "Normalize audio levels",
+  "tags": ["audio", "normalize", "loudness"]
+}

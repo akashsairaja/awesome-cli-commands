@@ -1,0 +1,8 @@
+{
+  "id": "git-9",
+  "categoryId": "git",
+  "subcategoryId": "basics",
+  "title": "Add interactively",
+  "command": "git add -p",
+  "description": "Interactively stage hunks of changes."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tofu-output-2",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-output",
+  "title": "Get specific output",
+  "command": "tofu output instance_ip",
+  "description": "Show a single output value."
+}

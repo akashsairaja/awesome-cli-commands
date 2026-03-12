@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-config-unset",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-auth",
+  "title": "Unset Configuration Property",
+  "command": "gcloud config unset compute/region",
+  "description": "Remove a property from the current configuration",
+  "tags": ["config", "unset", "remove"]
+}

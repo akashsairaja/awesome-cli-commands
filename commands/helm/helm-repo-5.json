@@ -1,0 +1,8 @@
+{
+  "id": "helm-repo-5",
+  "categoryId": "helm",
+  "subcategoryId": "helm-repo",
+  "title": "Search charts",
+  "command": "helm search repo nginx",
+  "description": "Search for charts in repositories."
+}

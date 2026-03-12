@@ -1,0 +1,53 @@
+{
+  "id": "compose-networking-debug",
+  "stackId": "docker",
+  "name": "Compose Networking Debug",
+  "description": "Diagnose and fix networking issues between Docker Compose services including DNS resolution, port conflicts, and connectivity problems.",
+  "difficulty": "advanced",
+  "timeMinutes": 15,
+  "trending": false,
+  "tags": ["compose", "networking", "debug", "dns"],
+  "prerequisites": ["Docker Compose installed", "A running Compose stack"],
+  "steps": [
+    {
+      "title": "List Compose networks",
+      "description": "See which networks the Compose stack created.",
+      "command": "docker network ls --filter 'label=com.docker.compose.project'"
+    },
+    {
+      "title": "Inspect a network to see connected containers",
+      "description": "View detailed info about a network including which containers are attached and their IP addresses.",
+      "command": "docker network inspect <network-name> --format '{{range .Containers}}{{.Name}}: {{.IPv4Address}}{{println}}{{end}}'"
+    },
+    {
+      "title": "Test DNS resolution between services",
+      "description": "Verify that service discovery works by resolving a service name from within another container.",
+      "command": "docker compose exec api nslookup db",
+      "tip": "In Compose, services can reach each other by service name. If DNS fails, check that both services are on the same network."
+    },
+    {
+      "title": "Test connectivity between services",
+      "description": "Verify that one service can actually reach another on the expected port.",
+      "command": "docker compose exec api sh -c 'nc -zv db 5432 || echo Connection failed'",
+      "warning": "If nc is not available, try: wget -qO- --spider http://db:5432 or install it with apk add netcat-openbsd."
+    },
+    {
+      "title": "Debug with netshoot on the Compose network",
+      "description": "Attach a full networking toolkit to the Compose network for advanced debugging.",
+      "command": "docker run -it --rm --network <compose-network-name> nicolaka/netshoot"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Compose Networking Debug\nset -euo pipefail\n\necho \"=== Compose Networks ===\"\ndocker network ls --filter 'label=com.docker.compose.project'\n\necho \"\"\necho \"=== Service Connectivity ===\"\nfor network in $(docker network ls --filter 'label=com.docker.compose.project' -q); do\n  echo \"Network: $(docker network inspect \"$network\" --format '{{.Name}}')\"\n  docker network inspect \"$network\" --format '{{range .Containers}}  {{.Name}}: {{.IPv4Address}}{{println}}{{end}}'\ndone\n\necho \"\"\necho \"=== Debug Commands ===\"\necho \"DNS lookup:   docker compose exec <service> nslookup <target-service>\"\necho \"Port check:   docker compose exec <service> nc -zv <target-service> <port>\"\necho \"Netshoot:     docker run -it --rm --network <network-name> nicolaka/netshoot\"\necho \"Ping:         docker compose exec <service> ping -c 3 <target-service>\"",
+  "faq": [
+    {
+      "question": "Why can't my service reach another service?",
+      "answer": "The most common causes are: services on different networks, target service not running, wrong port number, or firewall rules. Check 'docker compose ps' first to ensure all services are up."
+    },
+    {
+      "question": "How do I expose a service to the host but not other services?",
+      "answer": "Use 'ports' to expose to the host and 'expose' for inter-service communication. Services on the same network can always reach each other on their internal ports."
+    }
+  ],
+  "relatedRecipes": ["container-debug-ephemeral", "compose-log-aggregation"],
+  "lastUpdated": "2026-03-11"
+}

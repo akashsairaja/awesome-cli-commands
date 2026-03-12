@@ -1,0 +1,8 @@
+{
+  "id": "kafka-connect-7",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-connect",
+  "title": "Run standalone connector",
+  "command": "kafka-connect/bin/connect-standalone.sh config/connect-standalone.properties connector.properties",
+  "description": "Start Kafka Connect in standalone mode."
+}

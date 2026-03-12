@@ -1,0 +1,61 @@
+{
+  "id": "redis-cluster-setup",
+  "stackId": "redis",
+  "name": "Redis Cluster for Horizontal Scaling",
+  "description": "Deploy a Redis Cluster with automatic data sharding and high availability across multiple nodes for production workloads.",
+  "difficulty": "advanced",
+  "timeMinutes": 20,
+  "tags": ["cluster", "sharding", "high-availability", "scaling"],
+  "prerequisites": [
+    "Redis 7+ installed",
+    "At least 6 Redis instances (3 masters, 3 replicas)",
+    "Network connectivity between all nodes"
+  ],
+  "steps": [
+    {
+      "title": "Prepare cluster configuration",
+      "description": "Enable cluster mode in each Redis instance configuration.",
+      "command": "redis-cli -p 7001 CONFIG SET cluster-enabled yes && redis-cli -p 7001 CONFIG SET cluster-config-file nodes-7001.conf && redis-cli -p 7001 CONFIG SET cluster-node-timeout 5000",
+      "tip": "Repeat for ports 7002-7006. Each node needs a unique cluster-config-file."
+    },
+    {
+      "title": "Create the cluster",
+      "description": "Initialize the cluster with 3 masters and 3 replicas using redis-cli.",
+      "command": "redis-cli --cluster create 127.0.0.1:7001 127.0.0.1:7002 127.0.0.1:7003 127.0.0.1:7004 127.0.0.1:7005 127.0.0.1:7006 --cluster-replicas 1",
+      "warning": "This redistributes all hash slots. Run on a fresh cluster or expect data to be reshuffled."
+    },
+    {
+      "title": "Verify cluster status",
+      "description": "Check that all nodes joined the cluster and slots are assigned.",
+      "command": "redis-cli -p 7001 CLUSTER INFO"
+    },
+    {
+      "title": "Check cluster node roles",
+      "description": "List all nodes with their roles, slot ranges, and replication status.",
+      "command": "redis-cli -p 7001 CLUSTER NODES"
+    },
+    {
+      "title": "Test cluster operations",
+      "description": "Write and read data using cluster-aware mode in redis-cli.",
+      "command": "redis-cli -c -p 7001 SET mykey 'hello' && redis-cli -c -p 7001 GET mykey",
+      "tip": "The -c flag enables cluster mode in redis-cli, automatically following MOVED redirections."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Redis Cluster Setup (local development)\nset -euo pipefail\n\nPORTS=(7001 7002 7003 7004 7005 7006)\nBASE_DIR=\"/tmp/redis-cluster\"\n\necho \"=== Preparing node directories ===\"\nfor PORT in \"${PORTS[@]}\"; do\n  mkdir -p \"$BASE_DIR/$PORT\"\n  cat > \"$BASE_DIR/$PORT/redis.conf\" <<CONF\nport $PORT\ncluster-enabled yes\ncluster-config-file nodes-$PORT.conf\ncluster-node-timeout 5000\nappendonly yes\ndir $BASE_DIR/$PORT\nCONF\ndone\n\necho \"\"\necho \"=== Starting Redis nodes ===\"\nfor PORT in \"${PORTS[@]}\"; do\n  redis-server \"$BASE_DIR/$PORT/redis.conf\" --daemonize yes\n  echo \"Started node on port $PORT\"\ndone\n\nsleep 2\n\necho \"\"\necho \"=== Creating cluster ===\"\nredis-cli --cluster create \\\n  127.0.0.1:7001 127.0.0.1:7002 127.0.0.1:7003 \\\n  127.0.0.1:7004 127.0.0.1:7005 127.0.0.1:7006 \\\n  --cluster-replicas 1 --cluster-yes\n\necho \"\"\necho \"=== Cluster info ===\"\nredis-cli -p 7001 CLUSTER INFO\n\necho \"\"\necho \"=== Cluster nodes ===\"\nredis-cli -p 7001 CLUSTER NODES\n\necho \"\"\necho \"=== Testing read/write ===\"\nredis-cli -c -p 7001 SET test:key \"cluster-works\"\nredis-cli -c -p 7001 GET test:key",
+  "faq": [
+    {
+      "question": "How many nodes do I need for a Redis Cluster?",
+      "answer": "A minimum of 3 master nodes is required. For high availability, add one replica per master (6 nodes total). This ensures the cluster survives one node failure per shard."
+    },
+    {
+      "question": "Can I add nodes to a running cluster?",
+      "answer": "Yes. Use 'redis-cli --cluster add-node' to add a new node and 'redis-cli --cluster reshard' to rebalance hash slots to the new node without downtime."
+    },
+    {
+      "question": "What are hash slots?",
+      "answer": "Redis Cluster divides the keyspace into 16384 hash slots. Each key is mapped to a slot via CRC16(key) mod 16384. Each master node owns a subset of slots, which determines where each key is stored."
+    }
+  ],
+  "relatedRecipes": ["redis-data-backup", "redis-monitoring"],
+  "lastUpdated": "2026-03-11"
+}

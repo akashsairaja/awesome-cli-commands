@@ -1,0 +1,8 @@
+{
+  "id": "k3s-kubectl-2",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-kubectl",
+  "title": "Export kubeconfig",
+  "command": "export KUBECONFIG=/etc/rancher/k3s/k3s.yaml",
+  "description": "Set kubeconfig environment variable."
+}

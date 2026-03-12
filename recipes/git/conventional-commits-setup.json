@@ -1,0 +1,72 @@
+{
+  "id": "conventional-commits-setup",
+  "stackId": "git",
+  "name": "Standardized Commit Messages with Conventional Commits",
+  "description": "Set up and enforce the Conventional Commits specification with commitlint and commitizen for consistent, parseable commit messages.",
+  "difficulty": "beginner",
+  "timeMinutes": 12,
+  "trending": true,
+  "trendingReason": "Conventional Commits are now a prerequisite for automated semantic versioning and changelog generation in modern CI/CD pipelines.",
+  "tags": ["commits", "conventions", "commitlint", "standards", "changelog"],
+  "prerequisites": [
+    "Node.js and npm installed",
+    "A Git repository",
+    "Basic understanding of commit message conventions"
+  ],
+  "steps": [
+    {
+      "title": "Install commitlint and the conventional config",
+      "command": "npm install --save-dev @commitlint/cli @commitlint/config-conventional",
+      "description": "Install commitlint, which validates commit messages, along with the conventional commits preset that defines the rules."
+    },
+    {
+      "title": "Create the commitlint configuration file",
+      "command": "echo \"export default { extends: ['@commitlint/config-conventional'] };\" > commitlint.config.mjs",
+      "description": "Create a config file that tells commitlint to use the conventional commits ruleset. Types include feat, fix, docs, style, refactor, test, chore, and more.",
+      "tip": "You can customize rules by adding a 'rules' object to the config. For example, set max header length or allow custom types."
+    },
+    {
+      "title": "Install husky for Git hooks",
+      "command": "npm install --save-dev husky && npx husky init",
+      "description": "Install husky and initialize it. This creates a .husky directory with a pre-commit hook template."
+    },
+    {
+      "title": "Add a commit-msg hook for commitlint",
+      "command": "echo 'npx --no -- commitlint --edit \"$1\"' > .husky/commit-msg",
+      "description": "Create a commit-msg hook that runs commitlint against every commit message. Invalid messages will be rejected.",
+      "warning": "Make sure the hook file is executable. On Unix systems, run 'chmod +x .husky/commit-msg'."
+    },
+    {
+      "title": "Test with a valid conventional commit",
+      "command": "git commit --allow-empty -m \"feat: add user authentication module\"",
+      "description": "Create a test commit using the conventional format: type(optional-scope): description. The hook should pass.",
+      "tip": "Common types: feat (new feature), fix (bug fix), docs (documentation), refactor (code restructuring), test (adding tests), chore (maintenance)."
+    },
+    {
+      "title": "Test with an invalid commit message",
+      "command": "git commit --allow-empty -m \"added stuff\"",
+      "description": "Try committing with a non-conventional message. Commitlint should reject it with an error explaining the required format."
+    }
+  ],
+  "fullScript": "#!/usr/bin/env bash\n# conventional-commits-setup.sh — Set up commitlint + husky\nset -euo pipefail\n\necho \"Installing commitlint...\"\nnpm install --save-dev @commitlint/cli @commitlint/config-conventional\n\necho \"\"\necho \"Creating commitlint config...\"\ncat > commitlint.config.mjs << 'CONFIGEOF'\nexport default {\n  extends: ['@commitlint/config-conventional'],\n  rules: {\n    'header-max-length': [2, 'always', 100],\n    'type-enum': [\n      2,\n      'always',\n      [\n        'feat', 'fix', 'docs', 'style', 'refactor',\n        'perf', 'test', 'build', 'ci', 'chore', 'revert',\n      ],\n    ],\n  },\n};\nCONFIGEOF\n\necho \"\"\necho \"Installing and initializing husky...\"\nnpm install --save-dev husky\nnpx husky init\n\necho \"\"\necho \"Creating commit-msg hook...\"\necho 'npx --no -- commitlint --edit \"$1\"' > .husky/commit-msg\nchmod +x .husky/commit-msg 2>/dev/null || true\n\necho \"\"\necho \"Setup complete. Conventional commit format:\"\necho \"  type(scope): description\"\necho \"\"\necho \"Examples:\"\necho \"  feat(auth): add OAuth2 login flow\"\necho \"  fix(api): handle null response from payment gateway\"\necho \"  docs: update API reference for v3 endpoints\"",
+  "faq": [
+    {
+      "question": "What are the standard Conventional Commit types?",
+      "answer": "The most common types are: feat (new feature), fix (bug fix), docs (documentation), style (formatting), refactor (code restructuring without behavior change), perf (performance), test (adding/fixing tests), build (build system changes), ci (CI config), chore (maintenance), and revert (reverting a commit)."
+    },
+    {
+      "question": "How do Conventional Commits enable automated versioning?",
+      "answer": "Tools like semantic-release parse commit types to determine version bumps: feat triggers a minor version bump, fix triggers a patch bump, and a BREAKING CHANGE footer triggers a major bump. This enables fully automated semver releases."
+    },
+    {
+      "question": "Can I add a custom commit type like 'wip'?",
+      "answer": "Yes. Add a 'type-enum' rule to your commitlint config that includes your custom type in the allowed list. However, keep in mind that non-standard types will not be recognized by tools like semantic-release unless you configure them separately."
+    }
+  ],
+  "relatedRecipes": [
+    "git-hooks-automation",
+    "interactive-rebase-workflow",
+    "branch-cleanup-automation"
+  ],
+  "lastUpdated": "2026-03-11"
+}

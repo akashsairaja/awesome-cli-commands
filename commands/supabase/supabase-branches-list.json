@@ -1,0 +1,9 @@
+{
+  "id": "supabase-branches-list",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-branches",
+  "title": "List preview branches",
+  "command": "supabase branches list",
+  "description": "List all preview branches",
+  "tags": ["branches", "list", "preview"]
+}

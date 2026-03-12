@@ -1,0 +1,8 @@
+{
+  "id": "git-88",
+  "categoryId": "git",
+  "subcategoryId": "history",
+  "title": "Log by date range",
+  "command": "git log --since=\"2024-01-01\" --until=\"2024-12-31\"",
+  "description": "Show commits in date range."
+}

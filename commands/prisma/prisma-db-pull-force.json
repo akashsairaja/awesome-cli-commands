@@ -1,0 +1,9 @@
+{
+  "id": "prisma-db-pull-force",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-db",
+  "title": "Force pull (overwrite schema)",
+  "command": "npx prisma db pull --force",
+  "description": "Introspect database and overwrite existing schema models",
+  "tags": ["db", "pull", "force", "overwrite"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "sops-keys-2",
+  "categoryId": "sops",
+  "subcategoryId": "sops-keys",
+  "title": "Add new key",
+  "command": "sops updatekeys --add-age age1newkey secrets.enc.yaml",
+  "description": "Add a new age key to file."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "docker-3",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Run detached",
+  "command": "docker run -d --name <name> <image>",
+  "description": "Run container in background with a name."
+}

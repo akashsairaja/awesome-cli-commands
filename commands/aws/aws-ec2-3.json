@@ -1,0 +1,8 @@
+{
+  "id": "aws-ec2-3",
+  "categoryId": "aws",
+  "subcategoryId": "ec2",
+  "title": "Stop instance",
+  "command": "aws ec2 stop-instances --instance-ids i-xxx",
+  "description": "Stop a running EC2 instance."
+}

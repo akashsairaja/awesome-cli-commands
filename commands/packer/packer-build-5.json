@@ -1,0 +1,8 @@
+{
+  "id": "packer-build-5",
+  "categoryId": "packer",
+  "subcategoryId": "packer-build",
+  "title": "Build with var file",
+  "command": "packer build -var-file=prod.pkrvars.hcl .",
+  "description": "Build using variables file."
+}

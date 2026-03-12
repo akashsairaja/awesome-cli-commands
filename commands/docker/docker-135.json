@@ -1,0 +1,8 @@
+{
+  "id": "docker-135",
+  "categoryId": "docker",
+  "subcategoryId": "swarm",
+  "title": "Remove stack",
+  "command": "docker stack rm <stack>",
+  "description": "Remove a stack."
+}

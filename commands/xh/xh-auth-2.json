@@ -1,0 +1,8 @@
+{
+  "id": "xh-auth-2",
+  "categoryId": "xh",
+  "subcategoryId": "xh-auth",
+  "title": "Bearer token",
+  "command": "xh -A bearer -a token123 GET https://api.example.com/users",
+  "description": "Use Bearer token."
+}

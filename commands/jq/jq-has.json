@@ -1,0 +1,9 @@
+{
+  "id": "jq-has",
+  "categoryId": "jq",
+  "subcategoryId": "jq-filters",
+  "title": "Check key exists",
+  "command": "cat file.json | jq '.[] | select(has(\"key\"))'",
+  "description": "Filter objects that have a key",
+  "tags": ["has", "exists", "filter"]
+}

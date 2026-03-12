@@ -1,0 +1,8 @@
+{
+  "id": "jest-debugging-9",
+  "categoryId": "jest",
+  "subcategoryId": "jest-debugging",
+  "title": "Expand diff output",
+  "command": "jest --expand",
+  "description": "Show full diff output for failures."
+}

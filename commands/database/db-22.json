@@ -1,0 +1,8 @@
+{
+  "id": "db-22",
+  "categoryId": "database",
+  "subcategoryId": "postgresql",
+  "title": "Backup in custom format",
+  "command": "pg_dump -Fc -h localhost -U postgres dbname > backup.dump",
+  "description": "Export database in custom compressed format."
+}

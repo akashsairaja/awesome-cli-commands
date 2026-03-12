@@ -1,0 +1,8 @@
+{
+  "id": "task-syntax-6",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-syntax",
+  "title": "Task aliases",
+  "command": "tasks:\n  generate:\n    aliases: [gen, g]\n    cmds:\n      - go generate ./...",
+  "description": "Run task with shorter alias names."
+}

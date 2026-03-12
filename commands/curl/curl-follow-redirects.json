@@ -1,0 +1,9 @@
+{
+  "id": "curl-follow-redirects",
+  "categoryId": "curl",
+  "subcategoryId": "curl-requests",
+  "title": "Follow redirects",
+  "command": "curl -L https://example.com",
+  "description": "Follow HTTP redirects automatically",
+  "tags": ["redirect", "follow", "location"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "docker-26",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Copy from container",
+  "command": "docker cp <container>:/path/to/file ./local/",
+  "description": "Copy files from container to local."
+}

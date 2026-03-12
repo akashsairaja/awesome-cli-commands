@@ -1,0 +1,9 @@
+{
+  "id": "curl-download",
+  "categoryId": "curl",
+  "subcategoryId": "curl-download",
+  "title": "Download file",
+  "command": "curl -O https://example.com/file.zip",
+  "description": "Download file keeping original name",
+  "tags": ["download", "file", "save"]
+}

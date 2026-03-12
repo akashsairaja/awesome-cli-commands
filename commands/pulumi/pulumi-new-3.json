@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-new-3",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-new",
+  "title": "New Go project",
+  "command": "pulumi new gcp-go",
+  "description": "Create new Go GCP project."
+}

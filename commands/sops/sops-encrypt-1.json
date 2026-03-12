@@ -1,0 +1,8 @@
+{
+  "id": "sops-encrypt-1",
+  "categoryId": "sops",
+  "subcategoryId": "sops-encrypt",
+  "title": "Encrypt file with age",
+  "command": "sops -e --age age1xxx secrets.yaml > secrets.enc.yaml",
+  "description": "Encrypt YAML file using age key."
+}

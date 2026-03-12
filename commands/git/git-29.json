@@ -1,0 +1,8 @@
+{
+  "id": "git-29",
+  "categoryId": "git",
+  "subcategoryId": "branches",
+  "title": "List local branches",
+  "command": "git branch",
+  "description": "List all local branches."
+}

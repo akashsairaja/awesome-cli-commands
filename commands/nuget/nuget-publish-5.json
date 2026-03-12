@@ -1,0 +1,8 @@
+{
+  "id": "nuget-publish-5",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-publish",
+  "title": "Pack with version",
+  "command": "dotnet pack -c Release /p:Version=2.0.0",
+  "description": "Create package with explicit version."
+}

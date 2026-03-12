@@ -1,0 +1,67 @@
+{
+  "id": "mongo-sharding-setup",
+  "stackId": "mongodb",
+  "name": "Horizontal Scaling with Sharding",
+  "description": "Distribute data across multiple shards for horizontal scaling using MongoDB sharded clusters with config servers and mongos routers.",
+  "difficulty": "advanced",
+  "timeMinutes": 20,
+  "trending": true,
+  "trendingReason": "Sharding is critical for scaling MongoDB beyond single-server limits in high-growth applications",
+  "tags": ["sharding", "scaling", "distributed", "horizontal-scaling"],
+  "prerequisites": [
+    "MongoDB 6+ installed",
+    "Config server replica set running",
+    "At least 2 shard replica sets"
+  ],
+  "steps": [
+    {
+      "title": "Start the config server replica set",
+      "description": "Launch config server instances that store cluster metadata and routing information.",
+      "command": "mongod --configsvr --replSet configRS --port 27019 --dbpath /data/configsvr --bind_ip localhost --fork --logpath /var/log/mongodb/configsvr.log",
+      "tip": "In production, run 3 config server members for redundancy. A single member works for testing."
+    },
+    {
+      "title": "Initialize config server replica set",
+      "description": "Connect to the config server and initiate the replica set.",
+      "command": "mongosh --port 27019 --eval 'rs.initiate({_id: \"configRS\", configsvr: true, members: [{_id: 0, host: \"localhost:27019\"}]})'"
+    },
+    {
+      "title": "Start a mongos router",
+      "description": "Launch the query router that applications connect to for routing queries to the correct shards.",
+      "command": "mongos --configdb configRS/localhost:27019 --port 27017 --bind_ip localhost --fork --logpath /var/log/mongodb/mongos.log"
+    },
+    {
+      "title": "Add shards to the cluster",
+      "description": "Register shard replica sets with the cluster through the mongos router.",
+      "command": "mongosh --port 27017 --eval 'sh.addShard(\"shard0RS/localhost:27020\"); sh.addShard(\"shard1RS/localhost:27021\");'"
+    },
+    {
+      "title": "Enable sharding on a database and shard a collection",
+      "description": "Choose a shard key and enable sharding for a specific collection.",
+      "command": "mongosh --port 27017 --eval 'sh.enableSharding(\"mydb\"); sh.shardCollection(\"mydb.orders\", {customerId: \"hashed\"});'",
+      "warning": "The shard key cannot be changed after sharding. Choose carefully based on your query patterns and data distribution."
+    },
+    {
+      "title": "Check sharding status",
+      "description": "View the overall sharding topology, chunk distribution, and balancer status.",
+      "command": "mongosh --port 27017 --eval 'sh.status()'"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# MongoDB Sharding Status and Health Check\nset -euo pipefail\n\nMONGOS_PORT=27017\n\necho \"=== Sharding Status ===\"\nmongosh --port \"$MONGOS_PORT\" --quiet --eval \"sh.status()\"\n\necho \"\"\necho \"=== Shard Distribution ===\"\nmongosh --port \"$MONGOS_PORT\" --quiet --eval \"\nconst dbs = db.adminCommand({listDatabases: 1}).databases;\ndbs.forEach(d => {\n  if (d.name !== 'admin' && d.name !== 'config' && d.name !== 'local') {\n    print('--- ' + d.name + ' (' + Math.round(d.sizeOnDisk / 1024 / 1024) + 'MB) ---');\n    const colls = db.getSiblingDB(d.name).getCollectionNames();\n    colls.forEach(c => {\n      const stats = db.getSiblingDB(d.name)[c].stats();\n      if (stats.sharded) {\n        print('  ' + c + ' (sharded): ' + stats.count + ' docs');\n        Object.keys(stats.shards || {}).forEach(s => {\n          print('    ' + s + ': ' + stats.shards[s].count + ' docs, ' +\n            Math.round(stats.shards[s].size / 1024 / 1024) + 'MB');\n        });\n      }\n    });\n  }\n});\n\"\n\necho \"\"\necho \"=== Chunk Distribution ===\"\nmongosh --port \"$MONGOS_PORT\" --quiet --eval \"\ndb.getSiblingDB('config').chunks.aggregate([\n  {$group: {_id: {ns: '$ns', shard: '$shard'}, chunks: {$sum: 1}}},\n  {$sort: {'_id.ns': 1, '_id.shard': 1}}\n]).forEach(doc => {\n  print(doc._id.ns + ' -> ' + doc._id.shard + ': ' + doc.chunks + ' chunks');\n});\n\"\n\necho \"\"\necho \"=== Balancer Status ===\"\nmongosh --port \"$MONGOS_PORT\" --quiet --eval \"\nconst status = sh.getBalancerState();\nprint('Balancer enabled: ' + status);\nconst running = sh.isBalancerRunning();\nprint('Balancer running: ' + running);\n\"",
+  "faq": [
+    {
+      "question": "How do I choose a good shard key?",
+      "answer": "A good shard key has high cardinality (many unique values), even distribution, and matches your most common query patterns. Hashed shard keys distribute evenly but do not support range queries. Compound shard keys can balance distribution with query efficiency."
+    },
+    {
+      "question": "Can I change the shard key after sharding?",
+      "answer": "MongoDB 5.0+ supports resharding with sh.reshardCollection(), but it is a heavy operation that copies all data. In earlier versions, you must dump the collection, drop it, recreate it with a new shard key, and reimport."
+    },
+    {
+      "question": "What is the balancer and should it always run?",
+      "answer": "The balancer automatically migrates chunks between shards to maintain even distribution. It should generally be enabled, but you can schedule it to run during off-peak hours with sh.setBalancerState() and balancer windows to avoid performance impact during peak traffic."
+    }
+  ],
+  "relatedRecipes": ["mongo-replica-set", "mongo-index-optimization"],
+  "lastUpdated": "2026-03-11"
+}

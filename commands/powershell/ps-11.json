@@ -1,0 +1,8 @@
+{
+  "id": "ps-11",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-files",
+  "title": "Get file hash",
+  "command": "Get-FileHash -Path file.txt -Algorithm SHA256",
+  "description": "Calculate file checksum."
+}

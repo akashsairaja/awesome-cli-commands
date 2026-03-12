@@ -1,0 +1,8 @@
+{
+  "id": "nuget-config-5",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-config",
+  "title": "Generate packages lock",
+  "command": "dotnet restore --use-lock-file",
+  "description": "Generate packages.lock.json for deterministic restores."
+}

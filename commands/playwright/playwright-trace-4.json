@@ -1,0 +1,8 @@
+{
+  "id": "playwright-trace-4",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-trace",
+  "title": "Trace retain on failure",
+  "command": "npx playwright test --trace=retain-on-failure",
+  "description": "Keep traces only for failures."
+}

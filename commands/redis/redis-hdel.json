@@ -1,0 +1,9 @@
+{
+  "id": "redis-hdel",
+  "categoryId": "redis",
+  "subcategoryId": "redis-hashes",
+  "title": "Delete hash field",
+  "command": "HDEL key field",
+  "description": "Delete field from hash",
+  "tags": ["hdel", "hash", "delete"]
+}

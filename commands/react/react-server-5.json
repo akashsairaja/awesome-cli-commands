@@ -1,0 +1,8 @@
+{
+  "id": "react-server-5",
+  "categoryId": "react",
+  "subcategoryId": "react-server",
+  "title": "Set cookies in Server Component",
+  "command": "cookies().set('name', 'value')",
+  "description": "Set HTTP cookies in Server Components or Server Actions."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "node-perf-8",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-perf",
+  "title": "Process V8 profile",
+  "command": "node --prof-process isolate-*.log > processed.txt",
+  "description": "Convert V8 profile to readable format."
+}

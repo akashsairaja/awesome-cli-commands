@@ -1,0 +1,8 @@
+{
+  "id": "docker-128",
+  "categoryId": "docker",
+  "subcategoryId": "swarm",
+  "title": "List services",
+  "command": "docker service ls",
+  "description": "List swarm services."
+}

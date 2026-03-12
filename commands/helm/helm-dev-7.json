@@ -1,0 +1,8 @@
+{
+  "id": "helm-dev-7",
+  "categoryId": "helm",
+  "subcategoryId": "helm-dev",
+  "title": "Generate index",
+  "command": "helm repo index ./charts --url https://example.com/charts",
+  "description": "Generate repository index.yaml."
+}

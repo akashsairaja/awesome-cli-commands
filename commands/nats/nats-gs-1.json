@@ -1,0 +1,8 @@
+{
+  "id": "nats-gs-1",
+  "title": "Install NATS server (macOS)",
+  "command": "brew install nats-server",
+  "description": "Install NATS server using Homebrew on macOS",
+  "categoryId": "nats",
+  "subcategoryId": "getting-started"
+}

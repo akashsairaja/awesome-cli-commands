@@ -1,0 +1,8 @@
+{
+  "id": "react-next-11",
+  "categoryId": "react",
+  "subcategoryId": "react-nextjs",
+  "title": "HTTPS dev server",
+  "command": "next dev --experimental-https",
+  "description": "Start dev server with HTTPS enabled for local development."
+}

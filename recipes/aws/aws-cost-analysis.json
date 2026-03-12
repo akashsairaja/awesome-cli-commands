@@ -1,0 +1,62 @@
+{
+  "id": "aws-cost-analysis",
+  "stackId": "aws",
+  "name": "CLI-Based Cost Explorer and Budget Alerts",
+  "description": "Analyze AWS spending from the command line using Cost Explorer APIs and configure budget alerts to catch unexpected cost spikes early.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "trending": true,
+  "trendingReason": "FinOps and cloud cost optimization are top priorities as organizations look to reduce AWS spending in 2026.",
+  "tags": ["cost-explorer", "budgets", "finops", "billing"],
+  "prerequisites": [
+    "AWS CLI v2 installed and configured",
+    "Cost Explorer enabled in the billing console"
+  ],
+  "steps": [
+    {
+      "title": "Get current month's total cost",
+      "description": "Query Cost Explorer for the total unblended cost in the current billing period, broken down by service.",
+      "command": "aws ce get-cost-and-usage --time-period Start=$(date +%Y-%m-01),End=$(date +%Y-%m-%d) --granularity MONTHLY --metrics UnblendedCost --group-by Type=DIMENSION,Key=SERVICE --query 'ResultsByTime[0].Groups[*].{Service:Keys[0],Cost:Metrics.UnblendedCost.Amount}' --output table",
+      "tip": "UnblendedCost shows actual charges. Use AmortizedCost if you have Reserved Instances or Savings Plans to see their distributed cost."
+    },
+    {
+      "title": "Compare costs with previous month",
+      "description": "Pull last month's cost data to compare spending trends and identify services with significant cost changes.",
+      "command": "aws ce get-cost-and-usage --time-period Start=$(date -d 'first day of last month' +%Y-%m-%d),End=$(date -d 'first day of this month' +%Y-%m-%d) --granularity MONTHLY --metrics UnblendedCost --group-by Type=DIMENSION,Key=SERVICE --query 'ResultsByTime[0].Groups | sort_by(@, &to_number(Metrics.UnblendedCost.Amount)) | reverse(@) | [0:10].{Service:Keys[0],Cost:Metrics.UnblendedCost.Amount}' --output table"
+    },
+    {
+      "title": "Get daily cost breakdown",
+      "description": "View day-by-day spending for the current month to spot sudden cost spikes.",
+      "command": "aws ce get-cost-and-usage --time-period Start=$(date +%Y-%m-01),End=$(date +%Y-%m-%d) --granularity DAILY --metrics UnblendedCost --query 'ResultsByTime[*].{Date:TimePeriod.Start,Cost:Total.UnblendedCost.Amount}' --output table",
+      "tip": "Look for days where cost is significantly higher than average. These often indicate runaway resources or unexpected data transfer charges."
+    },
+    {
+      "title": "Create a monthly budget with alerts",
+      "description": "Set up a budget that sends email notifications when spending reaches 80% and 100% of your defined threshold.",
+      "command": "aws budgets create-budget --account-id $(aws sts get-caller-identity --query Account --output text) --budget '{\"BudgetName\":\"monthly-total\",\"BudgetLimit\":{\"Amount\":\"500\",\"Unit\":\"USD\"},\"TimeUnit\":\"MONTHLY\",\"BudgetType\":\"COST\"}' --notifications-with-subscribers '[{\"Notification\":{\"NotificationType\":\"ACTUAL\",\"ComparisonOperator\":\"GREATER_THAN\",\"Threshold\":80,\"ThresholdType\":\"PERCENTAGE\"},\"Subscribers\":[{\"SubscriptionType\":\"EMAIL\",\"Address\":\"team@example.com\"}]},{\"Notification\":{\"NotificationType\":\"ACTUAL\",\"ComparisonOperator\":\"GREATER_THAN\",\"Threshold\":100,\"ThresholdType\":\"PERCENTAGE\"},\"Subscribers\":[{\"SubscriptionType\":\"EMAIL\",\"Address\":\"team@example.com\"}]}]'",
+      "warning": "Budget alerts are not real-time. AWS evaluates budgets a few times per day, so there may be a delay before you receive a notification."
+    },
+    {
+      "title": "List existing budgets",
+      "description": "View all configured budgets and their current spend versus limit to get a quick overview of your cost guardrails.",
+      "command": "aws budgets describe-budgets --account-id $(aws sts get-caller-identity --query Account --output text) --query 'Budgets[*].{Name:BudgetName,Limit:BudgetLimit.Amount,Actual:CalculatedSpend.ActualSpend.Amount,Forecast:CalculatedSpend.ForecastedSpend.Amount}' --output table"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# AWS Cost Analysis Report\n# Usage: ./cost-report.sh [month-offset]\n# month-offset: 0 = current month (default), 1 = last month, etc.\n\nset -euo pipefail\n\nOFFSET=\"${1:-0}\"\n\nif [ \"$OFFSET\" -eq 0 ]; then\n  START=$(date +%Y-%m-01)\n  END=$(date +%Y-%m-%d)\n  LABEL=\"Current month (through today)\"\nelse\n  START=$(date -d \"$OFFSET months ago\" +%Y-%m-01)\n  END=$(date -d \"$((OFFSET - 1)) months ago\" +%Y-%m-01)\n  LABEL=\"$(date -d \"$OFFSET months ago\" +%B %Y)\"\nfi\n\necho \"=========================================\"\necho \" AWS Cost Report: $LABEL\"\necho \" Period: $START to $END\"\necho \"=========================================\"\n\necho \"\"\necho \"=== Top 10 Services by Cost ===\"\naws ce get-cost-and-usage \\\n  --time-period \"Start=$START,End=$END\" \\\n  --granularity MONTHLY \\\n  --metrics UnblendedCost \\\n  --group-by Type=DIMENSION,Key=SERVICE \\\n  --query 'ResultsByTime[0].Groups | sort_by(@, &to_number(Metrics.UnblendedCost.Amount)) | reverse(@) | [0:10].{Service:Keys[0],Cost:Metrics.UnblendedCost.Amount}' \\\n  --output table\n\necho \"\"\necho \"=== Total Cost ===\"\naws ce get-cost-and-usage \\\n  --time-period \"Start=$START,End=$END\" \\\n  --granularity MONTHLY \\\n  --metrics UnblendedCost \\\n  --query 'ResultsByTime[0].Total.UnblendedCost.{Amount:Amount,Unit:Unit}' \\\n  --output table\n\nif [ \"$OFFSET\" -eq 0 ]; then\n  echo \"\"\n  echo \"=== Daily Breakdown (Current Month) ===\"\n  aws ce get-cost-and-usage \\\n    --time-period \"Start=$START,End=$END\" \\\n    --granularity DAILY \\\n    --metrics UnblendedCost \\\n    --query 'ResultsByTime[*].{Date:TimePeriod.Start,Cost:Total.UnblendedCost.Amount}' \\\n    --output table\n\n  echo \"\"\n  echo \"=== Budget Status ===\"\n  ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)\n  aws budgets describe-budgets --account-id \"$ACCOUNT_ID\" \\\n    --query 'Budgets[*].{Name:BudgetName,Limit:BudgetLimit.Amount,Actual:CalculatedSpend.ActualSpend.Amount}' \\\n    --output table 2>/dev/null || echo \"No budgets configured.\"\nfi",
+  "faq": [
+    {
+      "question": "Why does Cost Explorer show no data?",
+      "answer": "Cost Explorer must be enabled in the AWS Billing console before it collects data. After enabling, it takes up to 24 hours for data to appear. Historical data for the previous 12 months will be backfilled automatically."
+    },
+    {
+      "question": "How can I get cost alerts faster than AWS Budgets?",
+      "answer": "Create a CloudWatch billing alarm on the EstimatedCharges metric in the us-east-1 region. Billing metrics update approximately every 6 hours and can trigger SNS notifications via CloudWatch Alarms more quickly than budget evaluations."
+    },
+    {
+      "question": "What is the difference between UnblendedCost and AmortizedCost?",
+      "answer": "UnblendedCost shows the actual charges as they appear on your bill. AmortizedCost distributes upfront payments from Reserved Instances and Savings Plans evenly across their term, giving a more accurate picture of effective daily/monthly cost per service."
+    }
+  ],
+  "relatedRecipes": ["aws-ec2-instance-management", "aws-s3-sync-deploy"],
+  "lastUpdated": "2026-03-11"
+}

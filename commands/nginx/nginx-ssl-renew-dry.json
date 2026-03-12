@@ -1,0 +1,9 @@
+{
+  "id": "nginx-ssl-renew-dry",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-ssl",
+  "title": "Test certificate renewal",
+  "command": "sudo certbot renew --dry-run",
+  "description": "Test renewal process without renewing",
+  "tags": ["ssl", "certbot", "dry-run", "test"]
+}

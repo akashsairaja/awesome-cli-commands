@@ -1,0 +1,8 @@
+{
+  "id": "grafana-api-1",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-api",
+  "title": "Create API key",
+  "command": "curl -X POST http://localhost:3000/api/auth/keys -H 'Content-Type: application/json' -d '{\"name\":\"mykey\",\"role\":\"Admin\"}' -u admin:admin",
+  "description": "Create an API key."
+}

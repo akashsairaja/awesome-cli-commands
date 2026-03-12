@@ -1,0 +1,8 @@
+{
+  "id": "tf-state-6",
+  "categoryId": "terraform",
+  "subcategoryId": "state",
+  "title": "Show resource",
+  "command": "terraform state show aws_instance.example",
+  "description": "Display attributes of a resource."
+}

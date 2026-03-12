@@ -1,0 +1,8 @@
+{
+  "id": "linux-77",
+  "categoryId": "linux",
+  "subcategoryId": "ssh",
+  "title": "SOCKS proxy via SSH",
+  "command": "ssh -D 1080 user@remote",
+  "description": "Create a SOCKS5 proxy tunnel through the remote server."
+}

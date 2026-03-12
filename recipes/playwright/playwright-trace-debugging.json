@@ -1,0 +1,58 @@
+{
+  "id": "playwright-trace-debugging",
+  "stackId": "playwright",
+  "name": "Debug with Trace Viewer",
+  "description": "Record and analyze test execution traces to debug failures with DOM snapshots, network logs, console output, and step-by-step action replay.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "Trace viewer is Playwright's killer feature for debugging CI failures that cannot be reproduced locally",
+  "tags": ["debugging", "traces", "devtools", "troubleshooting"],
+  "prerequisites": ["Playwright test project set up", "Failing or flaky tests to debug"],
+  "steps": [
+    {
+      "title": "Enable tracing in config",
+      "description": "Configure Playwright to record traces automatically on test failures.",
+      "command": "cat << 'EOF'\n// playwright.config.ts\nuse: {\n  trace: 'on-first-retry',   // Record trace on first retry\n  screenshot: 'only-on-failure',\n  video: 'on-first-retry',\n},\nretries: 2,\nEOF",
+      "tip": "Use 'on-first-retry' in CI to capture traces only for failures, keeping artifacts small. Use 'on' during local debugging to always record."
+    },
+    {
+      "title": "Run tests with tracing enabled",
+      "description": "Execute tests and generate trace files for failed tests.",
+      "command": "npx playwright test --trace on"
+    },
+    {
+      "title": "Open the trace viewer",
+      "description": "Analyze a recorded trace with the interactive viewer.",
+      "command": "npx playwright show-trace test-results/my-test-chromium/trace.zip",
+      "tip": "The trace viewer shows actions, DOM snapshots, network requests, console logs, and source code for each step. Use the timeline to scrub through the test execution."
+    },
+    {
+      "title": "Record a trace programmatically",
+      "description": "Control trace recording within a specific test for targeted debugging.",
+      "command": "cat > tests/debug.spec.ts << 'EOF'\nimport { test, expect } from '@playwright/test';\n\ntest('debug this test', async ({ page, context }) => {\n  await context.tracing.start({ screenshots: true, snapshots: true, sources: true });\n\n  await page.goto('/');\n  await page.getByRole('button', { name: 'Submit' }).click();\n  await expect(page.getByText('Success')).toBeVisible();\n\n  await context.tracing.stop({ path: 'debug-trace.zip' });\n});\nEOF"
+    },
+    {
+      "title": "View traces in the online viewer",
+      "description": "Open traces in the browser-based viewer without installing anything.",
+      "command": "echo 'Upload your trace.zip to: https://trace.playwright.dev'"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Playwright Trace Debugging Workflow\nset -euo pipefail\n\necho \"=== Trace Debugging ===\"\n\n# Check for existing trace files\nTRACES=$(find test-results -name 'trace.zip' 2>/dev/null)\n\nif [ -n \"$TRACES\" ]; then\n  echo \"Found trace files:\"\n  echo \"$TRACES\"\n  echo \"\"\n\n  # Open the first trace found\n  FIRST_TRACE=$(echo \"$TRACES\" | head -1)\n  echo \"Opening: $FIRST_TRACE\"\n  npx playwright show-trace \"$FIRST_TRACE\"\nelse\n  echo \"No trace files found. Running tests with tracing enabled...\"\n  echo \"\"\n\n  npx playwright test --trace on 2>&1 || true\n\n  echo \"\"\n  TRACES=$(find test-results -name 'trace.zip' 2>/dev/null)\n  if [ -n \"$TRACES\" ]; then\n    echo \"Traces recorded:\"\n    echo \"$TRACES\"\n    echo \"\"\n    echo \"View with: npx playwright show-trace <path>\"\n  else\n    echo \"All tests passed. No traces to debug.\"\n  fi\nfi\n\necho \"\"\necho \"=== Trace Options ===\"\necho \"Always record: npx playwright test --trace on\"\necho \"On failure:    npx playwright test --trace on-first-retry\"\necho \"View trace:    npx playwright show-trace <trace.zip>\"\necho \"Online viewer: https://trace.playwright.dev\"",
+  "faq": [
+    {
+      "question": "What information does a trace file contain?",
+      "answer": "A trace includes: action log with timing, DOM snapshots before and after each action, screenshots, network request/response details, console log messages, source code of the test, and video recording if enabled. All packed into a single .zip file."
+    },
+    {
+      "question": "How large are trace files?",
+      "answer": "Trace files typically range from 2-20 MB depending on test length and page complexity. Use 'on-first-retry' instead of 'on' in CI to only record traces for failing tests and keep artifact sizes manageable."
+    },
+    {
+      "question": "Can I share trace files with my team?",
+      "answer": "Yes. Upload the trace.zip to https://trace.playwright.dev for a browser-based viewer anyone can access. Alternatively, attach traces as CI artifacts and team members can open them locally with 'npx playwright show-trace'."
+    }
+  ],
+  "relatedRecipes": ["playwright-codegen", "playwright-ci-setup"],
+  "lastUpdated": "2026-03-11"
+}

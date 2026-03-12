@@ -1,0 +1,9 @@
+{
+  "id": "redis-subscribe",
+  "categoryId": "redis",
+  "subcategoryId": "redis-pubsub",
+  "title": "Subscribe to channel",
+  "command": "SUBSCRIBE channel",
+  "description": "Subscribe to channel for messages",
+  "tags": ["subscribe", "pubsub", "listen"]
+}

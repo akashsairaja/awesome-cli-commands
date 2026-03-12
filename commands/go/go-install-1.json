@@ -1,0 +1,8 @@
+{
+  "id": "go-install-1",
+  "categoryId": "go",
+  "subcategoryId": "go-install",
+  "title": "Install tool (latest)",
+  "command": "go install golang.org/x/tools/cmd/goimports@latest",
+  "description": "Install Go tool at latest version."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "git-38",
+  "categoryId": "git",
+  "subcategoryId": "branches",
+  "title": "Delete branch (safe)",
+  "command": "git branch -d <name>",
+  "description": "Delete merged branch."
+}

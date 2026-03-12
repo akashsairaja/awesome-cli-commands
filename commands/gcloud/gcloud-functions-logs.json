@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-functions-logs",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-functions",
+  "title": "View Function Logs",
+  "command": "gcloud functions logs read <name> --region=<region>",
+  "description": "Read logs from a Cloud Function",
+  "tags": ["functions", "logs", "debug"]
+}

@@ -1,0 +1,54 @@
+{
+  "id": "network-diagnostics-toolkit",
+  "stackId": "linux",
+  "name": "Network Diagnostics Toolkit",
+  "description": "Diagnose network connectivity, DNS resolution, port availability, and routing issues using standard Linux networking tools.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": false,
+  "tags": ["network", "diagnostics", "dns", "connectivity"],
+  "prerequisites": ["Linux shell access"],
+  "steps": [
+    {
+      "title": "Check network interfaces and IP addresses",
+      "description": "View all network interfaces and their assigned IP addresses.",
+      "command": "ip -brief addr"
+    },
+    {
+      "title": "Test DNS resolution",
+      "description": "Verify that DNS is resolving domain names correctly.",
+      "command": "dig google.com +short",
+      "tip": "Use 'dig @8.8.8.8 domain.com' to test against a specific DNS server."
+    },
+    {
+      "title": "Check if a remote port is reachable",
+      "description": "Test TCP connectivity to a specific host and port.",
+      "command": "nc -zv example.com 443 -w 5",
+      "tip": "The -w flag sets a timeout. Use -u for UDP ports."
+    },
+    {
+      "title": "Trace the network path to a destination",
+      "description": "See each network hop between you and the destination to identify where packets are being dropped.",
+      "command": "traceroute -n example.com"
+    },
+    {
+      "title": "Check listening ports",
+      "description": "View all ports that are currently listening for connections.",
+      "command": "ss -tlnp",
+      "tip": "-t for TCP, -l for listening, -n for numeric ports, -p for process names."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Network Diagnostics Toolkit\nset -euo pipefail\n\necho \"=== Network Interfaces ===\"\nip -brief addr\n\necho \"\"\necho \"=== Default Route ===\"\nip route | grep default\n\necho \"\"\necho \"=== DNS Configuration ===\"\ncat /etc/resolv.conf | grep -v '^#'\n\necho \"\"\necho \"=== DNS Resolution Test ===\"\ndig google.com +short 2>/dev/null || nslookup google.com 2>/dev/null | grep Address\n\necho \"\"\necho \"=== Listening Ports ===\"\nss -tlnp | head -20\n\necho \"\"\necho \"=== Active Connections ===\"\nss -tn state established | head -10\n\necho \"\"\necho \"=== Diagnostic Commands ===\"\necho \"Ping:         ping -c 4 <host>\"\necho \"DNS:          dig <domain> +short\"\necho \"Port check:   nc -zv <host> <port>\"\necho \"Traceroute:   traceroute -n <host>\"\necho \"Listening:    ss -tlnp\"\necho \"Connections:  ss -tn state established\"",
+  "faq": [
+    {
+      "question": "What is the difference between ss and netstat?",
+      "answer": "ss is the modern replacement for netstat. It is faster, provides more information, and is included in all modern Linux distributions. netstat is deprecated."
+    },
+    {
+      "question": "How do I check if a firewall is blocking traffic?",
+      "answer": "Use 'sudo iptables -L -n' or 'sudo nft list ruleset' to view firewall rules. Test connectivity with nc or telnet to confirm whether traffic is reaching the host."
+    }
+  ],
+  "relatedRecipes": ["firewall-nftables-config", "system-monitoring-dashboard"],
+  "lastUpdated": "2026-03-11"
+}

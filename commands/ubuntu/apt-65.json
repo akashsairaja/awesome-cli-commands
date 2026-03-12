@@ -1,0 +1,8 @@
+{
+  "id": "apt-65",
+  "categoryId": "ubuntu",
+  "subcategoryId": "ubuntu-network",
+  "title": "Show IP addresses",
+  "command": "ip addr show",
+  "description": "Display all network interfaces and their IP addresses."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "brew-47",
+  "categoryId": "homebrew",
+  "subcategoryId": "taps",
+  "title": "List taps",
+  "command": "brew tap",
+  "description": "List all current taps."
+}

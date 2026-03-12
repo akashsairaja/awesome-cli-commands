@@ -1,0 +1,8 @@
+{
+  "id": "tofu-output-3",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-output",
+  "title": "Output as JSON",
+  "command": "tofu output -json",
+  "description": "Show all outputs in JSON format."
+}

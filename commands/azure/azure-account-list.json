@@ -1,0 +1,9 @@
+{
+  "id": "azure-account-list",
+  "categoryId": "azure",
+  "subcategoryId": "azure-auth",
+  "title": "List Subscriptions",
+  "command": "az account list --output table",
+  "description": "Show all Azure subscriptions for the logged-in account",
+  "tags": ["subscription", "account", "list"]
+}

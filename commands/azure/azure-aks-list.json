@@ -1,0 +1,9 @@
+{
+  "id": "azure-aks-list",
+  "categoryId": "azure",
+  "subcategoryId": "azure-aks",
+  "title": "List AKS Clusters",
+  "command": "az aks list --output table",
+  "description": "List all AKS clusters in subscription",
+  "tags": ["aks", "list"]
+}

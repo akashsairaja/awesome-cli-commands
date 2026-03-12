@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-api-4",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-api",
+  "title": "Check version",
+  "command": "ngrok version",
+  "description": "Show ngrok version."
+}

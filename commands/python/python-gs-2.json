@@ -1,0 +1,8 @@
+{
+  "id": "python-gs-2",
+  "title": "Check Python version",
+  "command": "python3 --version",
+  "description": "Display installed Python version",
+  "categoryId": "python",
+  "subcategoryId": "getting-started"
+}

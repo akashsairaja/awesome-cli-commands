@@ -1,0 +1,8 @@
+{
+  "id": "docker-5",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Run with environment file",
+  "command": "docker run --env-file .env <image>",
+  "description": "Pass environment variables from .env file."
+}

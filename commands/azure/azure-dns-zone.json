@@ -1,0 +1,9 @@
+{
+  "id": "azure-dns-zone",
+  "categoryId": "azure",
+  "subcategoryId": "azure-network",
+  "title": "Create DNS Zone",
+  "command": "az network dns zone create --resource-group <rg> --name <domain.com>",
+  "description": "Create an Azure DNS zone",
+  "tags": ["dns", "zone", "network"]
+}

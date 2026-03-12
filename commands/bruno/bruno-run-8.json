@@ -1,0 +1,8 @@
+{
+  "id": "bruno-run-8",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-run",
+  "title": "Stop on first failure",
+  "command": "bru run --bail",
+  "description": "Abort collection run on first error."
+}

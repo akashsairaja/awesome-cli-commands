@@ -1,0 +1,8 @@
+{
+  "id": "tf-backend-1",
+  "categoryId": "terraform",
+  "subcategoryId": "terraform-backend",
+  "title": "Configure S3 backend",
+  "command": "terraform init -backend-config=\"bucket=mybucket\"",
+  "description": "Initialize with S3 backend bucket configuration."
+}

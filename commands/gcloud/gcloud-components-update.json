@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-components-update",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-auth",
+  "title": "Update All Components",
+  "command": "gcloud components update",
+  "description": "Update all installed gcloud CLI components to latest version",
+  "tags": ["components", "update", "upgrade"]
+}

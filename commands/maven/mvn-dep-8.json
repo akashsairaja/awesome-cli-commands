@@ -1,0 +1,8 @@
+{
+  "id": "mvn-dep-8",
+  "categoryId": "maven",
+  "subcategoryId": "dependencies",
+  "title": "Purge local repo",
+  "command": "mvn dependency:purge-local-repository",
+  "description": "Remove cached dependencies."
+}

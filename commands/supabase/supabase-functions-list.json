@@ -1,0 +1,9 @@
+{
+  "id": "supabase-functions-list",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-functions",
+  "title": "List functions",
+  "command": "supabase functions list",
+  "description": "List all deployed Edge Functions",
+  "tags": ["functions", "list", "show"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "pg-query-4",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-query",
+  "title": "Table stats",
+  "command": "SELECT relname, n_live_tup, n_dead_tup, last_vacuum, last_autovacuum FROM pg_stat_user_tables;",
+  "description": "View table statistics."
+}

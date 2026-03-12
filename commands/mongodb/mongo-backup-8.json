@@ -1,0 +1,8 @@
+{
+  "id": "mongo-backup-8",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-backup",
+  "title": "Import CSV",
+  "command": "mongoimport --db mydb --collection users --type csv --headerline --file users.csv",
+  "description": "Import from CSV with headers."
+}

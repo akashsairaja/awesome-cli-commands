@@ -1,0 +1,9 @@
+{
+  "id": "jq-select-contains",
+  "categoryId": "jq",
+  "subcategoryId": "jq-filters",
+  "title": "Filter by string contains",
+  "command": "cat file.json | jq '.[] | select(.name | contains(\"search\"))'",
+  "description": "Filter where string contains value",
+  "tags": ["select", "contains", "string"]
+}

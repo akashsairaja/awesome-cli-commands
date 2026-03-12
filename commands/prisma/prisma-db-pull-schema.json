@@ -1,0 +1,9 @@
+{
+  "id": "prisma-db-pull-schema",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-db",
+  "title": "Pull with custom schema path",
+  "command": "npx prisma db pull --schema ./custom/schema.prisma",
+  "description": "Introspect database using a schema file at a custom path",
+  "tags": ["db", "pull", "schema", "path"]
+}

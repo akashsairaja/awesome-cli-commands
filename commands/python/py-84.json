@@ -1,0 +1,8 @@
+{
+  "id": "py-84",
+  "categoryId": "python",
+  "subcategoryId": "python-pipx",
+  "title": "Upgrade all tools",
+  "command": "pipx upgrade-all",
+  "description": "Upgrade all pipx-installed tools."
+}

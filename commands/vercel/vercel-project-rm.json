@@ -1,0 +1,9 @@
+{
+  "id": "vercel-project-rm",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-projects",
+  "title": "Remove project",
+  "command": "vercel project rm <name>",
+  "description": "Remove a project",
+  "tags": ["project", "remove", "delete"]
+}

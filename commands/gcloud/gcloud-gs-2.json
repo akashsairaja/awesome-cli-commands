@@ -1,0 +1,8 @@
+{
+  "id": "gcloud-gs-2",
+  "title": "Check gcloud version",
+  "command": "gcloud version",
+  "description": "Display the installed Google Cloud SDK version",
+  "categoryId": "gcloud",
+  "subcategoryId": "getting-started"
+}

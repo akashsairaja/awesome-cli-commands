@@ -1,0 +1,9 @@
+{
+  "id": "bun-run-watch",
+  "categoryId": "bun",
+  "subcategoryId": "bun-run",
+  "title": "Watch Mode",
+  "command": "bun --watch run script.ts",
+  "description": "Auto-restart on file changes",
+  "tags": ["run", "watch", "dev"]
+}

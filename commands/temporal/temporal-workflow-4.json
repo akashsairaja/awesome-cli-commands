@@ -1,0 +1,8 @@
+{
+  "id": "temporal-workflow-4",
+  "categoryId": "temporal",
+  "subcategoryId": "workflow",
+  "title": "List all workflows",
+  "command": "temporal workflow list",
+  "description": "List workflow executions in default namespace."
+}

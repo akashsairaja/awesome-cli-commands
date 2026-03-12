@@ -1,0 +1,8 @@
+{
+  "id": "task-watch-12",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-watch",
+  "title": "Remote taskfile",
+  "command": "includes:\n  remote: https://raw.githubusercontent.com/org/repo/main/Taskfile.yml",
+  "description": "Include a Taskfile from a remote URL."
+}

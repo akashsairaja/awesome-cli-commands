@@ -1,0 +1,9 @@
+{
+  "id": "gh-codespace-code",
+  "categoryId": "github",
+  "subcategoryId": "gh-codespace",
+  "title": "Open in VS Code",
+  "command": "gh codespace code",
+  "description": "Open codespace in VS Code",
+  "tags": ["codespace", "vscode", "editor"]
+}

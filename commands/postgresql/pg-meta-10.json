@@ -1,0 +1,8 @@
+{
+  "id": "pg-meta-10",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-meta",
+  "title": "Show search path",
+  "command": "SHOW search_path;",
+  "description": "Display current schema search path."
+}

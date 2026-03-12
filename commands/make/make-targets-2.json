@@ -1,0 +1,8 @@
+{
+  "id": "make-targets-2",
+  "categoryId": "make",
+  "subcategoryId": "make-targets",
+  "title": "Clean build",
+  "command": "make clean",
+  "description": "Remove build artifacts."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "packer-hcl-12",
+  "categoryId": "packer",
+  "subcategoryId": "packer-hcl",
+  "title": "PowerShell provisioner",
+  "command": "provisioner \"powershell\" {\n  inline = [\n    \"Install-WindowsFeature -Name Web-Server\",\n    \"Set-Service -Name W3SVC -StartupType Automatic\"\n  ]\n}",
+  "description": "Run PowerShell commands on Windows builds."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "minikube-37",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-cache",
+  "title": "Cache image",
+  "command": "minikube cache add <image>",
+  "description": "Cache image for faster startup."
+}

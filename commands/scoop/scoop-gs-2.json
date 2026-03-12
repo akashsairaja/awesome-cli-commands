@@ -1,0 +1,8 @@
+{
+  "id": "scoop-gs-2",
+  "title": "Check Scoop version",
+  "command": "scoop --version",
+  "description": "Display the installed Scoop version",
+  "categoryId": "scoop",
+  "subcategoryId": "getting-started"
+}

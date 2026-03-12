@@ -1,0 +1,8 @@
+{
+  "id": "docker-114",
+  "categoryId": "docker",
+  "subcategoryId": "system",
+  "title": "Login to registry",
+  "command": "docker login <registry>",
+  "description": "Authenticate to Docker registry."
+}

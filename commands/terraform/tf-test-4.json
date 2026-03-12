@@ -1,0 +1,8 @@
+{
+  "id": "tf-test-4",
+  "categoryId": "terraform",
+  "subcategoryId": "terraform-test",
+  "title": "Test with variables",
+  "command": "terraform test -var=\"key=value\"",
+  "description": "Run tests with custom variable values."
+}

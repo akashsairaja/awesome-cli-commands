@@ -1,0 +1,9 @@
+{
+  "id": "vercel-domains-add",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-domains",
+  "title": "Add domain",
+  "command": "vercel domains add <domain>",
+  "description": "Add a domain to your account",
+  "tags": ["domains", "add", "new"]
+}

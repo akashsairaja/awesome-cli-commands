@@ -1,0 +1,8 @@
+{
+  "id": "checkov-custom-1",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-custom",
+  "title": "External checks",
+  "command": "checkov -d . --external-checks-dir ./custom-policies",
+  "description": "Use custom policy directory."
+}

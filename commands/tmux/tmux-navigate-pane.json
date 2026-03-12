@@ -1,0 +1,9 @@
+{
+  "id": "tmux-navigate-pane",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-panes",
+  "title": "Navigate to pane",
+  "command": "Ctrl+b [arrow]",
+  "description": "Navigate to pane in direction",
+  "tags": ["pane", "navigate", "arrow"]
+}

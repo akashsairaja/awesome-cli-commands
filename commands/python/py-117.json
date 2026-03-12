@@ -1,0 +1,8 @@
+{
+  "id": "py-117",
+  "categoryId": "python",
+  "subcategoryId": "python-ruff",
+  "title": "Ignore rules",
+  "command": "ruff check . --ignore E501",
+  "description": "Ignore specific rules during check."
+}

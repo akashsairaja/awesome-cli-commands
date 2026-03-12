@@ -1,0 +1,8 @@
+{
+  "id": "rust-util-3",
+  "categoryId": "rust",
+  "subcategoryId": "rust-util",
+  "title": "Clean build",
+  "command": "cargo clean",
+  "description": "Remove target directory."
+}

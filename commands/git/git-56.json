@@ -1,0 +1,8 @@
+{
+  "id": "git-56",
+  "categoryId": "git",
+  "subcategoryId": "stash",
+  "title": "Drop stash",
+  "command": "git stash drop stash@{0}",
+  "description": "Remove specific stash."
+}

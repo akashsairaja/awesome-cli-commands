@@ -1,0 +1,8 @@
+{
+  "id": "ps-51",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-objects",
+  "title": "JSON to object",
+  "command": "$obj = Get-Content data.json | ConvertFrom-Json",
+  "description": "Parse JSON to PowerShell object."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "pg-conn-3",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-connection",
+  "title": "Connect with SSL",
+  "command": "psql \"sslmode=require host=db.example.com dbname=mydb user=app\"",
+  "description": "Connect with SSL required."
+}

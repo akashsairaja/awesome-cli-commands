@@ -1,0 +1,8 @@
+{
+  "id": "ubuntu-gs-3",
+  "title": "Check system information",
+  "command": "uname -a",
+  "description": "Display kernel version, architecture, and system details",
+  "categoryId": "ubuntu",
+  "subcategoryId": "getting-started"
+}

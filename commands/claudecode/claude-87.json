@@ -1,0 +1,8 @@
+{
+  "id": "claude-87",
+  "categoryId": "claudecode",
+  "subcategoryId": "installation",
+  "title": "Install (macOS/Linux)",
+  "command": "curl -fsSL https://claude.ai/install.sh | bash",
+  "description": "Install Claude Code on macOS or Linux."
+}

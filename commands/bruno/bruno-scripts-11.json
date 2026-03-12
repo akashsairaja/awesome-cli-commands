@@ -1,0 +1,8 @@
+{
+  "id": "bruno-scripts-11",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-scripts",
+  "title": "Assert response headers",
+  "command": "assert {\n  res.headers.content-type: contains application/json\n  res.headers.x-request-id: isDefined\n}",
+  "description": "Assert values in response headers."
+}

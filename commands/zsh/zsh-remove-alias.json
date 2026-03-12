@@ -1,0 +1,9 @@
+{
+  "id": "zsh-remove-alias",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-aliases",
+  "title": "Remove alias",
+  "command": "unalias ll",
+  "description": "Remove an alias",
+  "tags": ["alias", "remove", "unalias"]
+}

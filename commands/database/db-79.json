@@ -1,0 +1,8 @@
+{
+  "id": "db-79",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Drop user",
+  "command": "DROP USER 'appuser'@'localhost';",
+  "description": "Delete a MySQL user account and all its privileges."
+}

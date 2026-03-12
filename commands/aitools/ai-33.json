@@ -1,0 +1,8 @@
+{
+  "id": "ai-33",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-copilot",
+  "title": "Suggest Git command",
+  "command": "gh copilot suggest -t git \"undo last commit\"",
+  "description": "Get Git-specific command suggestions."
+}

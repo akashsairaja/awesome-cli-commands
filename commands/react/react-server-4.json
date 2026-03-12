@@ -1,0 +1,8 @@
+{
+  "id": "react-server-4",
+  "categoryId": "react",
+  "subcategoryId": "react-server",
+  "title": "ISR revalidation interval",
+  "command": "export const revalidate = 60",
+  "description": "Set Incremental Static Regeneration interval in seconds (ISR)."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-storage-mb",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-storage",
+  "title": "Create Bucket",
+  "command": "gsutil mb -l <region> gs://<bucket-name>",
+  "description": "Create a new Cloud Storage bucket",
+  "tags": ["storage", "bucket", "create"]
+}

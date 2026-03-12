@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-net-ip-reserve",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-networking",
+  "title": "Reserve Static IP",
+  "command": "gcloud compute addresses create <name> --region=<region>",
+  "description": "Reserve an external static IP address",
+  "tags": ["ip", "static", "reserve"]
+}

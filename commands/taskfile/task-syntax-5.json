@@ -1,0 +1,8 @@
+{
+  "id": "task-syntax-5",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-syntax",
+  "title": "Internal task",
+  "command": "tasks:\n  _compile:\n    internal: true\n    cmds:\n      - gcc -o out main.c",
+  "description": "Hidden task not shown in list."
+}

@@ -1,0 +1,57 @@
+{
+  "id": "azure-cost-management",
+  "stackId": "azure",
+  "name": "Monitor and Optimize Azure Spending",
+  "description": "Query current costs, set budgets with alerts, and identify cost-saving opportunities using Azure CLI cost management commands.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "trending": true,
+  "trendingReason": "Cloud cost optimization is a top priority as organizations scale their Azure footprint.",
+  "tags": ["cost", "budget", "optimization", "finops"],
+  "prerequisites": ["Azure CLI installed", "Cost Management Reader role or higher"],
+  "steps": [
+    {
+      "title": "View current month costs by resource group",
+      "command": "az consumption usage list --start-date 2026-03-01 --end-date 2026-03-11 --query \"[].{Name:instanceName, Cost:pretaxCost, Currency:currency}\" --output table",
+      "description": "Shows a breakdown of costs by resource for the current billing period."
+    },
+    {
+      "title": "Create a monthly budget",
+      "command": "az consumption budget create --budget-name monthly-limit --amount 500 --time-grain Monthly --start-date 2026-03-01 --end-date 2026-12-31 --resource-group myapp-rg",
+      "description": "Sets a $500 monthly budget scoped to a specific resource group."
+    },
+    {
+      "title": "List active budgets",
+      "command": "az consumption budget list --output table",
+      "description": "Displays all configured budgets and their current spend."
+    },
+    {
+      "title": "Get cost optimization recommendations",
+      "command": "az advisor recommendation list --category cost --output table",
+      "description": "Azure Advisor surfaces actionable cost-saving recommendations such as resizing or shutting down underutilized resources.",
+      "tip": "Review advisor recommendations weekly for the biggest savings opportunities."
+    },
+    {
+      "title": "Check reservation recommendations",
+      "command": "az consumption reservation recommendation list --scope Shared --output table",
+      "description": "Shows recommended reserved instance purchases based on your usage patterns."
+    }
+  ],
+  "fullScript": "# Monitor and optimize Azure costs\naz consumption usage list --start-date 2026-03-01 --end-date 2026-03-11 --query \"[].{Name:instanceName, Cost:pretaxCost, Currency:currency}\" --output table\naz consumption budget create --budget-name monthly-limit --amount 500 --time-grain Monthly --start-date 2026-03-01 --end-date 2026-12-31 --resource-group myapp-rg\naz consumption budget list --output table\naz advisor recommendation list --category cost --output table\naz consumption reservation recommendation list --scope Shared --output table",
+  "faq": [
+    {
+      "question": "How do I set up email alerts when spending exceeds a threshold?",
+      "answer": "Use Azure Portal to add notification thresholds to a budget (e.g., at 50%, 80%, 100%), or use 'az consumption budget create' with --notifications flag to configure alert recipients."
+    },
+    {
+      "question": "What is the easiest way to reduce Azure costs?",
+      "answer": "Start with Azure Advisor recommendations, then right-size VMs, use auto-shutdown for dev resources, purchase reserved instances for steady workloads, and delete unused resources."
+    },
+    {
+      "question": "Can I export cost data for external analysis?",
+      "answer": "Yes. Use 'az costmanagement export create' to schedule daily or monthly cost exports to a storage account in CSV format."
+    }
+  ],
+  "relatedRecipes": ["azure-resource-group-management", "azure-identity-setup"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "scoop-manage-5",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-manage",
+  "title": "Unhold version",
+  "command": "scoop unhold git",
+  "description": "Allow app to update again."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "linux-35",
+  "categoryId": "linux",
+  "subcategoryId": "files",
+  "title": "Change file ownership",
+  "command": "chown user:group filename",
+  "description": "Change the owner and group of a file."
+}

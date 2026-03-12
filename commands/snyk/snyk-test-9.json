@@ -1,0 +1,8 @@
+{
+  "id": "snyk-test-9",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-test",
+  "title": "Custom policy path",
+  "command": "snyk test --policy-path=.snyk",
+  "description": "Use a custom .snyk policy file path."
+}

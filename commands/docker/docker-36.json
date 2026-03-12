@@ -1,0 +1,8 @@
+{
+  "id": "docker-36",
+  "categoryId": "docker",
+  "subcategoryId": "images",
+  "title": "List images",
+  "command": "docker images",
+  "description": "List all local images."
+}

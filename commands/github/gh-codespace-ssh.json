@@ -1,0 +1,9 @@
+{
+  "id": "gh-codespace-ssh",
+  "categoryId": "github",
+  "subcategoryId": "gh-codespace",
+  "title": "SSH to codespace",
+  "command": "gh codespace ssh",
+  "description": "SSH into a codespace",
+  "tags": ["codespace", "ssh", "connect"]
+}

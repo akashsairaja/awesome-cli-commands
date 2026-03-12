@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-install-2",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-install",
+  "title": "Get CA root location",
+  "command": "mkcert -CAROOT",
+  "description": "Print CA root directory path."
+}

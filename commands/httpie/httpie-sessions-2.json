@@ -1,0 +1,8 @@
+{
+  "id": "httpie-sessions-2",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-sessions",
+  "title": "Use session",
+  "command": "http --session=api GET https://api.example.com/protected",
+  "description": "Use an existing session."
+}

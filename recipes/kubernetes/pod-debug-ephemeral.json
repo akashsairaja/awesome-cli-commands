@@ -1,0 +1,58 @@
+{
+  "id": "pod-debug-ephemeral",
+  "stackId": "kubernetes",
+  "name": "Pod Debug with Ephemeral Containers",
+  "description": "Debug running pods using ephemeral debug containers, especially useful for distroless images that lack debugging tools.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "Ephemeral containers are now GA and essential for debugging minimal images",
+  "tags": ["debug", "pods", "ephemeral", "troubleshooting"],
+  "prerequisites": ["kubectl configured", "Kubernetes 1.25+ cluster"],
+  "steps": [
+    {
+      "title": "Attach an ephemeral debug container to a running pod",
+      "description": "Add a temporary debug container with a full toolkit to an existing pod without restarting it.",
+      "command": "kubectl debug -it <pod-name> --image=busybox --target=<container-name>",
+      "tip": "The --target flag shares the process namespace with the specified container so you can see its processes."
+    },
+    {
+      "title": "Debug with a copy of the pod",
+      "description": "Create a copy of the pod with a debug container added, useful when you cannot modify the running pod.",
+      "command": "kubectl debug <pod-name> -it --image=nicolaka/netshoot --copy-to=debug-pod --share-processes"
+    },
+    {
+      "title": "Debug a node directly",
+      "description": "Create a privileged pod on a specific node for host-level debugging.",
+      "command": "kubectl debug node/<node-name> -it --image=ubuntu",
+      "warning": "This creates a privileged pod with host filesystem access at /host. Use with caution."
+    },
+    {
+      "title": "Inspect pod events and conditions",
+      "description": "View events and conditions to understand why a pod is failing.",
+      "command": "kubectl describe pod <pod-name> | tail -30"
+    },
+    {
+      "title": "Clean up debug pods",
+      "description": "Remove any debug pod copies you created.",
+      "command": "kubectl delete pod debug-pod"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Pod Debug Workflow\nset -euo pipefail\n\nPOD=${1:?\"Usage: $0 <pod-name> [namespace]\"}\nNS=${2:-\"default\"}\n\necho \"=== Pod Status ===\"\nkubectl get pod \"$POD\" -n \"$NS\" -o wide\n\necho \"\"\necho \"=== Pod Events ===\"\nkubectl get events -n \"$NS\" --field-selector \"involvedObject.name=$POD\" --sort-by='.lastTimestamp' | tail -10\n\necho \"\"\necho \"=== Container Statuses ===\"\nkubectl get pod \"$POD\" -n \"$NS\" -o jsonpath='{range .status.containerStatuses[*]}{.name}: {.state}{\"\n\"}{end}'\n\necho \"\"\necho \"=== Debug Commands ===\"\necho \"Ephemeral:  kubectl debug -it $POD -n $NS --image=busybox --target=<container>\"\necho \"Pod copy:   kubectl debug $POD -n $NS -it --image=nicolaka/netshoot --copy-to=debug-pod --share-processes\"\necho \"Logs:       kubectl logs $POD -n $NS --all-containers\"",
+  "faq": [
+    {
+      "question": "What is the difference between debug and exec?",
+      "answer": "exec runs a command in an existing container that must have the binary. debug creates a new ephemeral container with its own image, so you can use any tools regardless of the original image."
+    },
+    {
+      "question": "Do ephemeral containers persist after the pod restarts?",
+      "answer": "No. Ephemeral containers are temporary and cannot be restarted. If the pod restarts, you need to create a new debug container."
+    },
+    {
+      "question": "Can I use ephemeral containers in production?",
+      "answer": "Yes, they are designed for production debugging. They do not affect the running containers and are removed when the session ends or the pod is deleted."
+    }
+  ],
+  "relatedRecipes": ["pod-status-analyzer", "log-aggregation-streaming"],
+  "lastUpdated": "2026-03-11"
+}

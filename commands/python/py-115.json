@@ -1,0 +1,8 @@
+{
+  "id": "py-115",
+  "categoryId": "python",
+  "subcategoryId": "python-ruff",
+  "title": "Watch mode",
+  "command": "ruff check . --watch",
+  "description": "Re-lint on file changes."
+}

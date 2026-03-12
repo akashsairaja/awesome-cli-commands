@@ -1,0 +1,8 @@
+{
+  "id": "hurl-syntax-12",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-syntax",
+  "title": "Bearer token",
+  "command": "GET https://api.example.com/me\nAuthorization: Bearer {{token}}\nHTTP 200",
+  "description": "Send request with bearer token."
+}

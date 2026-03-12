@@ -1,0 +1,8 @@
+{
+  "id": "ai-34",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-copilot",
+  "title": "Suggest GitHub CLI command",
+  "command": "gh copilot suggest -t gh \"create PR from current branch\"",
+  "description": "Get GitHub CLI-specific suggestions."
+}

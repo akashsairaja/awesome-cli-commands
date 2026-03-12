@@ -1,0 +1,8 @@
+{
+  "id": "git-110",
+  "categoryId": "git",
+  "subcategoryId": "worktree",
+  "title": "Prune worktrees",
+  "command": "git worktree prune",
+  "description": "Clean up stale worktree information."
+}

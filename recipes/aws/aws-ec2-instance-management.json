@@ -1,0 +1,68 @@
+{
+  "id": "aws-ec2-instance-management",
+  "stackId": "aws",
+  "name": "Launch, Connect, and Manage EC2 Instances",
+  "description": "Provision EC2 instances from the CLI, configure security groups, connect via SSH, and manage instance lifecycle operations.",
+  "difficulty": "beginner",
+  "timeMinutes": 12,
+  "trending": false,
+  "tags": ["ec2", "compute", "ssh", "security-groups"],
+  "prerequisites": [
+    "AWS CLI v2 installed and configured",
+    "SSH key pair created in your AWS region"
+  ],
+  "steps": [
+    {
+      "title": "Find the latest Amazon Linux AMI",
+      "description": "Query the SSM Parameter Store to find the latest Amazon Linux 2023 AMI ID for your region instead of hardcoding AMI IDs.",
+      "command": "aws ssm get-parameters --names /aws/service/ami-amazon-linux-latest/al2023-ami-kernel-6.1-x86_64 --query 'Parameters[0].Value' --output text",
+      "tip": "Using SSM parameters for AMI lookup ensures you always get the latest patched image for your region."
+    },
+    {
+      "title": "Create a security group",
+      "description": "Create a security group that allows SSH access from your current IP address only.",
+      "command": "aws ec2 create-security-group --group-name my-dev-sg --description \"Dev instance SSH access\" --vpc-id vpc-0example && aws ec2 authorize-security-group-ingress --group-name my-dev-sg --protocol tcp --port 22 --cidr $(curl -s https://checkip.amazonaws.com)/32",
+      "warning": "Never use 0.0.0.0/0 for SSH access in production. Always restrict to known IP ranges."
+    },
+    {
+      "title": "Launch the EC2 instance",
+      "description": "Run an EC2 instance with the selected AMI, instance type, key pair, and security group.",
+      "command": "aws ec2 run-instances --image-id ami-0example --instance-type t3.micro --key-name my-keypair --security-group-ids sg-0example --count 1 --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=dev-server}]'",
+      "tip": "t3.micro is free tier eligible. Always add Name tags to make instances easy to identify."
+    },
+    {
+      "title": "Wait for the instance to be running",
+      "description": "Use the AWS CLI waiter to block until the instance reaches the running state before attempting to connect.",
+      "command": "aws ec2 wait instance-running --instance-ids i-0example && aws ec2 describe-instances --instance-ids i-0example --query 'Reservations[0].Instances[0].PublicIpAddress' --output text"
+    },
+    {
+      "title": "Connect via SSH",
+      "description": "SSH into the running instance using your key pair and the public IP address.",
+      "command": "ssh -i ~/.ssh/my-keypair.pem ec2-user@<public-ip>",
+      "tip": "If connection is refused, wait a minute for the instance to finish booting. Check that your security group allows your IP."
+    },
+    {
+      "title": "Stop or terminate the instance",
+      "description": "Stop the instance to save costs while preserving data, or terminate it to delete it permanently.",
+      "command": "aws ec2 stop-instances --instance-ids i-0example\n# Or permanently delete:\n# aws ec2 terminate-instances --instance-ids i-0example",
+      "warning": "Terminated instances are permanently deleted and cannot be recovered. Use stop-instances to pause billing while keeping the instance."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# EC2 Instance Launch and Management\n# Usage: ./launch-ec2.sh <key-pair-name> <vpc-id> [instance-type]\n\nset -euo pipefail\n\nKEY_NAME=\"${1:?Usage: $0 <key-pair-name> <vpc-id> [instance-type]}\"\nVPC_ID=\"${2:?Provide your VPC ID}\"\nINSTANCE_TYPE=\"${3:-t3.micro}\"\n\necho \"=== Finding latest Amazon Linux 2023 AMI ===\"\nAMI_ID=$(aws ssm get-parameters \\\n  --names /aws/service/ami-amazon-linux-latest/al2023-ami-kernel-6.1-x86_64 \\\n  --query 'Parameters[0].Value' --output text)\necho \"AMI: $AMI_ID\"\n\necho \"=== Creating security group ===\"\nSG_ID=$(aws ec2 create-security-group \\\n  --group-name \"dev-sg-$(date +%s)\" \\\n  --description \"Dev instance SSH access\" \\\n  --vpc-id \"$VPC_ID\" \\\n  --output text --query 'GroupId')\necho \"Security Group: $SG_ID\"\n\nMY_IP=$(curl -s https://checkip.amazonaws.com)\naws ec2 authorize-security-group-ingress \\\n  --group-id \"$SG_ID\" \\\n  --protocol tcp --port 22 --cidr \"$MY_IP/32\"\necho \"Authorized SSH from $MY_IP\"\n\necho \"=== Launching instance ===\"\nINSTANCE_ID=$(aws ec2 run-instances \\\n  --image-id \"$AMI_ID\" \\\n  --instance-type \"$INSTANCE_TYPE\" \\\n  --key-name \"$KEY_NAME\" \\\n  --security-group-ids \"$SG_ID\" \\\n  --count 1 \\\n  --tag-specifications \"ResourceType=instance,Tags=[{Key=Name,Value=dev-server}]\" \\\n  --output text --query 'Instances[0].InstanceId')\necho \"Instance: $INSTANCE_ID\"\n\necho \"=== Waiting for instance to be running ===\"\naws ec2 wait instance-running --instance-ids \"$INSTANCE_ID\"\n\nPUBLIC_IP=$(aws ec2 describe-instances \\\n  --instance-ids \"$INSTANCE_ID\" \\\n  --query 'Reservations[0].Instances[0].PublicIpAddress' --output text)\n\necho \"\"\necho \"Instance is running!\"\necho \"Connect with: ssh -i ~/.ssh/$KEY_NAME.pem ec2-user@$PUBLIC_IP\"\necho \"Stop with:    aws ec2 stop-instances --instance-ids $INSTANCE_ID\"\necho \"Terminate:    aws ec2 terminate-instances --instance-ids $INSTANCE_ID\"",
+  "faq": [
+    {
+      "question": "What is the difference between stopping and terminating?",
+      "answer": "Stopping an instance pauses it and stops hourly charges (EBS storage charges continue). The instance can be restarted later. Terminating permanently deletes the instance and its root EBS volume (unless DeleteOnTermination is set to false)."
+    },
+    {
+      "question": "How do I connect without a key pair?",
+      "answer": "Use AWS Systems Manager Session Manager (SSM) which requires no SSH keys or open inbound ports. Install the SSM agent on the instance and use 'aws ssm start-session' to connect."
+    },
+    {
+      "question": "Why does my instance not have a public IP?",
+      "answer": "Instances launched in subnets without auto-assign public IP enabled will not get a public IP. Either enable the subnet setting, allocate an Elastic IP, or use SSM Session Manager to connect via private networking."
+    }
+  ],
+  "relatedRecipes": ["aws-ssm-session-management", "aws-cost-analysis"],
+  "lastUpdated": "2026-03-11"
+}

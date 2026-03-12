@@ -1,0 +1,9 @@
+{
+  "id": "supabase-functions-serve",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-functions",
+  "title": "Serve functions locally",
+  "command": "supabase functions serve",
+  "description": "Serve Edge Functions locally for development",
+  "tags": ["functions", "serve", "local"]
+}

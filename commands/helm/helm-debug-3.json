@@ -1,0 +1,8 @@
+{
+  "id": "helm-debug-3",
+  "categoryId": "helm",
+  "subcategoryId": "helm-debug",
+  "title": "Get notes",
+  "command": "helm get notes my-release",
+  "description": "Get release notes (NOTES.txt output)."
+}

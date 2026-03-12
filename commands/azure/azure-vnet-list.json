@@ -1,0 +1,9 @@
+{
+  "id": "azure-vnet-list",
+  "categoryId": "azure",
+  "subcategoryId": "azure-network",
+  "title": "List Virtual Networks",
+  "command": "az network vnet list --output table",
+  "description": "List all VNets in subscription",
+  "tags": ["vnet", "list"]
+}

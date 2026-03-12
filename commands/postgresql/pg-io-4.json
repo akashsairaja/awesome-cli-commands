@@ -1,0 +1,8 @@
+{
+  "id": "pg-io-4",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-import",
+  "title": "Query to file",
+  "command": "\\o output.txt",
+  "description": "Send query results to file."
+}

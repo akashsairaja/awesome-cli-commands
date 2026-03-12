@@ -1,0 +1,9 @@
+{
+  "id": "supabase-migration-new",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-migrations",
+  "title": "Create migration",
+  "command": "supabase migration new <name>",
+  "description": "Create a new migration file",
+  "tags": ["migration", "new", "create"]
+}

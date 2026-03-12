@@ -1,0 +1,8 @@
+{
+  "id": "composer-update-4",
+  "categoryId": "composer",
+  "subcategoryId": "composer-update",
+  "title": "Update with dry run",
+  "command": "composer update --dry-run",
+  "description": "Preview updates without applying."
+}

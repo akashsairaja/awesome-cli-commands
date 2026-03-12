@@ -1,0 +1,8 @@
+{
+  "id": "aws-cw-3",
+  "categoryId": "aws",
+  "subcategoryId": "cloudwatch",
+  "title": "Filter logs",
+  "command": "aws logs filter-log-events --log-group-name /my/log/group --filter-pattern 'ERROR'",
+  "description": "Search logs for pattern."
+}

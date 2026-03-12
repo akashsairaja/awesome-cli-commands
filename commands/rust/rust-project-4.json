@@ -1,0 +1,8 @@
+{
+  "id": "rust-project-4",
+  "categoryId": "rust",
+  "subcategoryId": "rust-project",
+  "title": "Add dependency",
+  "command": "cargo add serde",
+  "description": "Add crate to dependencies."
+}

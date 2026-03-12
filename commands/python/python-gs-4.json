@@ -1,0 +1,8 @@
+{
+  "id": "python-gs-4",
+  "title": "Activate virtual environment",
+  "command": "source venv/bin/activate",
+  "description": "Activate the virtual environment (Unix/macOS)",
+  "categoryId": "python",
+  "subcategoryId": "getting-started"
+}

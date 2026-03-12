@@ -1,0 +1,8 @@
+{
+  "id": "minikube-40",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-node",
+  "title": "Add worker node",
+  "command": "minikube node add",
+  "description": "Add worker node to cluster."
+}

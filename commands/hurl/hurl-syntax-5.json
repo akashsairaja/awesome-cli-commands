@@ -1,0 +1,8 @@
+{
+  "id": "hurl-syntax-5",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-syntax",
+  "title": "PUT request",
+  "command": "PUT https://api.example.com/users/1\nContent-Type: application/json\n{\n  \"name\": \"Jane\"\n}\nHTTP 200",
+  "description": "PUT request to update resource."
+}

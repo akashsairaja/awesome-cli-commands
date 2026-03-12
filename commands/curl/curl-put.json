@@ -1,0 +1,9 @@
+{
+  "id": "curl-put",
+  "categoryId": "curl",
+  "subcategoryId": "curl-requests",
+  "title": "PUT request",
+  "command": "curl -X PUT -H \"Content-Type: application/json\" -d '{\"key\":\"value\"}' https://api.example.com/resource",
+  "description": "Make a PUT request with JSON body",
+  "tags": ["put", "update", "request"]
+}

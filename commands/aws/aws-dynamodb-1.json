@@ -1,0 +1,8 @@
+{
+  "id": "aws-dynamodb-1",
+  "categoryId": "aws",
+  "subcategoryId": "dynamodb",
+  "title": "Batch get items",
+  "command": "aws dynamodb batch-get-item --request-items file://items.json --return-consumed-capacity TOTAL",
+  "description": "Read multiple items across tables efficiently."
+}

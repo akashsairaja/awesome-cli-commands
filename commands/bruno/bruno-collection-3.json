@@ -1,0 +1,8 @@
+{
+  "id": "bruno-collection-3",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-collection",
+  "title": "Import from Postman",
+  "command": "bru import postman collection.json",
+  "description": "Import Postman collection."
+}

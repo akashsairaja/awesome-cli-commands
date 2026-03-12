@@ -1,0 +1,8 @@
+{
+  "id": "mvn-wrapper-9",
+  "categoryId": "maven",
+  "subcategoryId": "mvn-wrapper",
+  "title": "Skip tests with wrapper",
+  "command": "./mvnw clean install -DskipTests",
+  "description": "Build without running tests using the wrapper."
+}

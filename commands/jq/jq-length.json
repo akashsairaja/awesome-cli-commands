@@ -1,0 +1,9 @@
+{
+  "id": "jq-length",
+  "categoryId": "jq",
+  "subcategoryId": "jq-basics",
+  "title": "Get length",
+  "command": "cat file.json | jq '.array | length'",
+  "description": "Get length of array or object",
+  "tags": ["length", "count", "size"]
+}

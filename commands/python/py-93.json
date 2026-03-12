@@ -1,0 +1,8 @@
+{
+  "id": "py-93",
+  "categoryId": "python",
+  "subcategoryId": "python-pytest",
+  "title": "Run specific test",
+  "command": "pytest tests/test_api.py::test_login",
+  "description": "Run a specific test function."
+}

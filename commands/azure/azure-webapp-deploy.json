@@ -1,0 +1,9 @@
+{
+  "id": "azure-webapp-deploy",
+  "categoryId": "azure",
+  "subcategoryId": "azure-webapp",
+  "title": "Deploy to Web App",
+  "command": "az webapp deploy --resource-group <rg> --name <app-name> --src-path <zip-file>",
+  "description": "Deploy a ZIP package to web app",
+  "tags": ["webapp", "deploy", "zip"]
+}

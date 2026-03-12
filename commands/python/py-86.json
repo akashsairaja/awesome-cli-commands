@@ -1,0 +1,8 @@
+{
+  "id": "py-86",
+  "categoryId": "python",
+  "subcategoryId": "python-pipx",
+  "title": "Inject package",
+  "command": "pipx inject black click",
+  "description": "Add a package to an existing pipx environment."
+}

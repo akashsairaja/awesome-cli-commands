@@ -1,0 +1,8 @@
+{
+  "id": "rust-rustup-2",
+  "categoryId": "rust",
+  "subcategoryId": "rust-rustup",
+  "title": "Install nightly",
+  "command": "rustup toolchain install nightly",
+  "description": "Install nightly toolchain."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "flux-source-4",
+  "categoryId": "flux",
+  "subcategoryId": "flux-source",
+  "title": "Reconcile source",
+  "command": "flux reconcile source git flux-system",
+  "description": "Trigger immediate reconciliation of a source."
+}

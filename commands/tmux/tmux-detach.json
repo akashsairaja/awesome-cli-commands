@@ -1,0 +1,9 @@
+{
+  "id": "tmux-detach",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-sessions",
+  "title": "Detach from session",
+  "command": "Ctrl+b d",
+  "description": "Detach from current session",
+  "tags": ["session", "detach", "leave"]
+}

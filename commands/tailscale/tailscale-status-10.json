@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-status-10",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-status",
+  "title": "Get IPv4 only",
+  "command": "tailscale ip -4",
+  "description": "Show only IPv4 Tailscale address."
+}

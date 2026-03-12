@@ -1,0 +1,8 @@
+{
+  "id": "docker-111",
+  "categoryId": "docker",
+  "subcategoryId": "system",
+  "title": "Docker info",
+  "command": "docker info",
+  "description": "Display system-wide information."
+}

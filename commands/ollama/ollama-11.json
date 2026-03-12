@@ -1,0 +1,8 @@
+{
+  "id": "ollama-11",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-run",
+  "title": "One-shot prompt",
+  "command": "ollama run llama2 \"Explain quantum computing in simple terms\"",
+  "description": "Run a single prompt and exit."
+}

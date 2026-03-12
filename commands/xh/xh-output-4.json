@@ -1,0 +1,8 @@
+{
+  "id": "xh-output-4",
+  "categoryId": "xh",
+  "subcategoryId": "xh-output",
+  "title": "Download file",
+  "command": "xh --download GET https://example.com/file.zip",
+  "description": "Download a file."
+}

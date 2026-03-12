@@ -1,0 +1,8 @@
+{
+  "id": "claude-44",
+  "categoryId": "claudecode",
+  "subcategoryId": "config",
+  "title": "View hooks configuration",
+  "command": "/hooks",
+  "description": "View configured hooks."
+}

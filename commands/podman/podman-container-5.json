@@ -1,0 +1,8 @@
+{
+  "id": "podman-container-5",
+  "categoryId": "podman",
+  "subcategoryId": "podman-container",
+  "title": "Remove container",
+  "command": "podman rm myapp",
+  "description": "Remove a container."
+}

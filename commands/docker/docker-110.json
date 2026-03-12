@@ -1,0 +1,8 @@
+{
+  "id": "docker-110",
+  "categoryId": "docker",
+  "subcategoryId": "system",
+  "title": "Prune with filter",
+  "command": "docker system prune --filter 'until=24h'",
+  "description": "Remove data older than 24 hours."
+}

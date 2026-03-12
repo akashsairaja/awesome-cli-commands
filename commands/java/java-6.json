@@ -1,0 +1,8 @@
+{
+  "id": "java-6",
+  "categoryId": "java",
+  "subcategoryId": "java-compiler",
+  "title": "Compile with debugging info",
+  "command": "javac -g MyClass.java",
+  "description": "Include debugging information in class files."
+}

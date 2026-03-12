@@ -1,0 +1,8 @@
+{
+  "id": "apt-45",
+  "categoryId": "ubuntu",
+  "subcategoryId": "users",
+  "title": "Switch to another user",
+  "command": "su - <username>",
+  "description": "Switch to another user with their full login environment."
+}

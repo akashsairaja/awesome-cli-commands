@@ -1,0 +1,9 @@
+{
+  "id": "tmux-close-pane",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-panes",
+  "title": "Close pane",
+  "command": "Ctrl+b x",
+  "description": "Close current pane",
+  "tags": ["pane", "close", "kill"]
+}

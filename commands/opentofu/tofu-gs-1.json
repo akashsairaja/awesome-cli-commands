@@ -1,0 +1,8 @@
+{
+  "id": "tofu-gs-1",
+  "title": "Install OpenTofu (macOS)",
+  "command": "brew install opentofu",
+  "description": "Install OpenTofu using Homebrew on macOS",
+  "categoryId": "opentofu",
+  "subcategoryId": "getting-started"
+}

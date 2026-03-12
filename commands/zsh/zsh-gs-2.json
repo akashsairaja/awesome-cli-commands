@@ -1,0 +1,8 @@
+{
+  "id": "zsh-gs-2",
+  "title": "Install Zsh (macOS)",
+  "command": "brew install zsh",
+  "description": "Install Zsh shell using Homebrew on macOS",
+  "categoryId": "zsh",
+  "subcategoryId": "getting-started"
+}

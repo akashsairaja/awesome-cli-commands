@@ -1,0 +1,8 @@
+{
+  "id": "db-36",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Show tables",
+  "command": "SHOW TABLES;",
+  "description": "List all tables in current database."
+}

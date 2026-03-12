@@ -1,0 +1,8 @@
+{
+  "id": "nuget-sources-3",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-sources",
+  "title": "Add private source",
+  "command": "dotnet nuget add source https://pkgs.dev.azure.com/org/_packaging/feed/nuget/v3/index.json -n Azure -u user -p PAT",
+  "description": "Add authenticated private feed."
+}

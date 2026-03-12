@@ -1,0 +1,8 @@
+{
+  "id": "helm-debug-6",
+  "categoryId": "helm",
+  "subcategoryId": "helm-debug",
+  "title": "Environment info",
+  "command": "helm env",
+  "description": "Show Helm environment variables."
+}

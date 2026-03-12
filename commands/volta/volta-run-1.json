@@ -1,0 +1,8 @@
+{
+  "id": "volta-run-1",
+  "categoryId": "volta",
+  "subcategoryId": "volta-run",
+  "title": "Run with version",
+  "command": "volta run --node 16 node app.js",
+  "description": "Run with specific Node.js version."
+}

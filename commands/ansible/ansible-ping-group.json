@@ -1,0 +1,9 @@
+{
+  "id": "ansible-ping-group",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-adhoc",
+  "title": "Ping Host Group",
+  "command": "ansible <group> -m ping",
+  "description": "Test connectivity to a specific host group",
+  "tags": ["ping", "group", "test"]
+}

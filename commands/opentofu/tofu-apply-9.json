@@ -1,0 +1,8 @@
+{
+  "id": "tofu-apply-9",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-apply",
+  "title": "Destroy auto-approve",
+  "command": "tofu destroy -auto-approve",
+  "description": "Destroy all resources without confirmation."
+}

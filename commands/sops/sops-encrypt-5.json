@@ -1,0 +1,8 @@
+{
+  "id": "sops-encrypt-5",
+  "categoryId": "sops",
+  "subcategoryId": "sops-encrypt",
+  "title": "Encrypt JSON",
+  "command": "sops -e secrets.json > secrets.enc.json",
+  "description": "Encrypt JSON file."
+}

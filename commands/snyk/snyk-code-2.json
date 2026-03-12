@@ -1,0 +1,8 @@
+{
+  "id": "snyk-code-2",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-code",
+  "title": "Test specific path",
+  "command": "snyk code test ./src",
+  "description": "Scan specific directory."
+}

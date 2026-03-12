@@ -1,0 +1,8 @@
+{
+  "id": "ollama-46",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-modelfile",
+  "title": "Set stop tokens",
+  "command": "FROM llama2\nPARAMETER stop \"User:\"\nPARAMETER stop \"Assistant:\"",
+  "description": "Define tokens that stop generation."
+}

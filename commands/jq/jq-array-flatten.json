@@ -1,0 +1,9 @@
+{
+  "id": "jq-array-flatten",
+  "categoryId": "jq",
+  "subcategoryId": "jq-arrays",
+  "title": "Flatten nested arrays",
+  "command": "cat file.json | jq 'flatten'",
+  "description": "Flatten nested arrays into single array",
+  "tags": ["array", "flatten", "nested"]
+}

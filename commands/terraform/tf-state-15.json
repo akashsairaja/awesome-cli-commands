@@ -1,0 +1,8 @@
+{
+  "id": "tf-state-15",
+  "categoryId": "terraform",
+  "subcategoryId": "state",
+  "title": "Refresh state",
+  "command": "terraform refresh",
+  "description": "Update state with real infrastructure (deprecated, use apply -refresh-only)."
+}

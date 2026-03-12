@@ -1,0 +1,8 @@
+{
+  "id": "podman-machine-1",
+  "categoryId": "podman",
+  "subcategoryId": "podman-machine",
+  "title": "Init machine",
+  "command": "podman machine init",
+  "description": "Initialize Podman machine."
+}

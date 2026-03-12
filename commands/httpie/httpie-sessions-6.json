@@ -1,0 +1,8 @@
+{
+  "id": "httpie-sessions-6",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-sessions",
+  "title": "Session with headers",
+  "command": "http --session=prod GET https://api.example.com/data X-Api-Key:secret123",
+  "description": "Store custom headers in a session for repeated use."
+}

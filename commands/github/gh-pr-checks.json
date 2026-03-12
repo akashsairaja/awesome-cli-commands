@@ -1,0 +1,9 @@
+{
+  "id": "gh-pr-checks",
+  "categoryId": "github",
+  "subcategoryId": "gh-pr",
+  "title": "View PR checks",
+  "command": "gh pr checks <number>",
+  "description": "View status checks for a pull request",
+  "tags": ["pr", "checks", "status", "ci"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "cypress-fixtures-4",
+  "categoryId": "cypress",
+  "subcategoryId": "cypress-fixtures",
+  "title": "Intercept with fixture",
+  "command": "cy.intercept('GET', '/api/users', { fixture: 'users.json' });",
+  "description": "Mock API with fixture data."
+}

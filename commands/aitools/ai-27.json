@@ -1,0 +1,8 @@
+{
+  "id": "ai-27",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-aider",
+  "title": "Undo last change",
+  "command": "/undo",
+  "description": "Undo the last AI-made change."
+}

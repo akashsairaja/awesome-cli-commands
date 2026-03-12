@@ -1,0 +1,58 @@
+{
+  "id": "azure-webapp-deploy",
+  "stackId": "azure",
+  "name": "Deploy a Web App from the CLI",
+  "description": "Create and deploy a web application to Azure App Service directly from the command line using az webapp.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "Azure App Service remains the fastest path to production for web apps on Azure.",
+  "tags": ["app-service", "deploy", "webapp", "cli"],
+  "prerequisites": ["Azure CLI installed", "Active Azure subscription", "az login completed"],
+  "steps": [
+    {
+      "title": "Create a resource group",
+      "command": "az group create --name myapp-rg --location eastus",
+      "description": "Resource groups act as logical containers for all related Azure resources.",
+      "tip": "Pick a region closest to your users for lower latency."
+    },
+    {
+      "title": "Create an App Service plan",
+      "command": "az appservice plan create --name myapp-plan --resource-group myapp-rg --sku B1 --is-linux",
+      "description": "The plan defines the compute resources. B1 is a basic tier suitable for development."
+    },
+    {
+      "title": "Create the web app",
+      "command": "az webapp create --name myapp-unique --resource-group myapp-rg --plan myapp-plan --runtime \"NODE:20-lts\"",
+      "description": "Creates the App Service instance with the specified runtime stack.",
+      "tip": "The app name must be globally unique across all of Azure."
+    },
+    {
+      "title": "Deploy your code",
+      "command": "az webapp deploy --resource-group myapp-rg --name myapp-unique --src-path ./app.zip --type zip",
+      "description": "Deploys a zip package of your application to the web app."
+    },
+    {
+      "title": "Verify the deployment",
+      "command": "az webapp browse --name myapp-unique --resource-group myapp-rg",
+      "description": "Opens the deployed web app in your default browser."
+    }
+  ],
+  "fullScript": "# Deploy a web app to Azure App Service\naz group create --name myapp-rg --location eastus\naz appservice plan create --name myapp-plan --resource-group myapp-rg --sku B1 --is-linux\naz webapp create --name myapp-unique --resource-group myapp-rg --plan myapp-plan --runtime \"NODE:20-lts\"\naz webapp deploy --resource-group myapp-rg --name myapp-unique --src-path ./app.zip --type zip\naz webapp browse --name myapp-unique --resource-group myapp-rg",
+  "faq": [
+    {
+      "question": "What runtimes does App Service support?",
+      "answer": "App Service supports Node.js, Python, .NET, Java, PHP, Ruby, and custom containers. Run 'az webapp list-runtimes' to see all available stacks."
+    },
+    {
+      "question": "How do I set environment variables for my web app?",
+      "answer": "Use 'az webapp config appsettings set --name myapp --resource-group myapp-rg --settings KEY=VALUE'. These are injected as environment variables at runtime."
+    },
+    {
+      "question": "Can I deploy from a GitHub repository instead of a zip?",
+      "answer": "Yes. Use 'az webapp deployment source config --repo-url <github-url> --branch main --manual-integration' to set up deployment from a repository."
+    }
+  ],
+  "relatedRecipes": ["azure-function-deploy", "azure-resource-group-management"],
+  "lastUpdated": "2026-03-11"
+}

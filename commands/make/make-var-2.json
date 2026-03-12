@@ -1,0 +1,8 @@
+{
+  "id": "make-var-2",
+  "categoryId": "make",
+  "subcategoryId": "make-variables",
+  "title": "Recursive variable",
+  "command": "CFLAGS = $(OPTS) -Wall",
+  "description": "Deferred assignment (expanded each use)."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-functions-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-functions",
+  "title": "List Functions",
+  "command": "gcloud functions list",
+  "description": "List all Cloud Functions",
+  "tags": ["functions", "list"]
+}

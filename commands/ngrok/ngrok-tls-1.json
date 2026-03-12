@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-tls-1",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-tls",
+  "title": "TLS tunnel",
+  "command": "ngrok tls 443",
+  "description": "Create a TLS tunnel with automatic certs."
+}

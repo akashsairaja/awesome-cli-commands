@@ -1,0 +1,8 @@
+{
+  "id": "apt-53",
+  "categoryId": "ubuntu",
+  "subcategoryId": "system",
+  "title": "Install snap package",
+  "command": "sudo snap install <package>",
+  "description": "Install a snap package from the Snap Store."
+}

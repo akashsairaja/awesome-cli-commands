@@ -1,0 +1,8 @@
+{
+  "id": "cypress-debug-5",
+  "categoryId": "cypress",
+  "subcategoryId": "cypress-debug",
+  "title": "Screenshots on failure",
+  "command": "// cypress.config.js\nscreenshotOnRunFailure: true",
+  "description": "Auto screenshot on failure."
+}

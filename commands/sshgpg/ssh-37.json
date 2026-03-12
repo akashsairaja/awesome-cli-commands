@@ -1,0 +1,8 @@
+{
+  "id": "ssh-37",
+  "categoryId": "sshgpg",
+  "subcategoryId": "connections",
+  "title": "GPG encrypt file",
+  "command": "gpg --encrypt --recipient user@example.com file.txt",
+  "description": "Encrypt file for a specific recipient."
+}

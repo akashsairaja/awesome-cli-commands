@@ -1,0 +1,8 @@
+{
+  "id": "vim-67",
+  "categoryId": "vim",
+  "subcategoryId": "advanced-editing",
+  "title": "Lowercase word",
+  "command": "guw",
+  "description": "Convert word to lowercase."
+}

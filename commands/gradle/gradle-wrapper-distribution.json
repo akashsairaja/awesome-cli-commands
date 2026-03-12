@@ -1,0 +1,9 @@
+{
+  "id": "gradle-wrapper-distribution",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-wrapper",
+  "title": "Set Distribution Type",
+  "command": "./gradlew wrapper --distribution-type all",
+  "description": "Include sources and docs in wrapper",
+  "tags": ["wrapper", "distribution", "sources"]
+}

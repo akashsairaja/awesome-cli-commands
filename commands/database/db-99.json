@@ -1,0 +1,8 @@
+{
+  "id": "db-99",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Show create table",
+  "command": "SHOW CREATE TABLE tablename\\G",
+  "description": "Display the full CREATE TABLE statement with engine, charset, and indexes."
+}

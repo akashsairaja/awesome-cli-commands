@@ -1,0 +1,9 @@
+{
+  "id": "gh-repo-view",
+  "categoryId": "github",
+  "subcategoryId": "gh-repo",
+  "title": "View repository",
+  "command": "gh repo view",
+  "description": "View repository details in terminal",
+  "tags": ["repo", "view", "info"]
+}

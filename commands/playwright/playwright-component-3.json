@@ -1,0 +1,8 @@
+{
+  "id": "playwright-component-3",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-component",
+  "title": "Exclude tests by tag",
+  "command": "npx playwright test --grep-invert @slow",
+  "description": "Skip tests matching tag pattern."
+}

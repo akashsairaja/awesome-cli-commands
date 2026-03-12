@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-gs-2",
+  "title": "Install Lefthook (npm)",
+  "command": "npm install lefthook --save-dev",
+  "description": "Install Lefthook as a dev dependency via npm",
+  "categoryId": "lefthook",
+  "subcategoryId": "getting-started"
+}

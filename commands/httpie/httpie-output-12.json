@@ -1,0 +1,8 @@
+{
+  "id": "httpie-output-12",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-output",
+  "title": "Download with filename",
+  "command": "http --download -o report.pdf GET https://example.com/report",
+  "description": "Download a file and save with a custom filename."
+}

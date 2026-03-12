@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-config-16",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-config",
+  "title": "Min version requirement",
+  "command": "min_version: 1.5.0\n\npre-commit:\n  commands:\n    lint:\n      run: npm run lint",
+  "description": "Enforce minimum Lefthook version."
+}

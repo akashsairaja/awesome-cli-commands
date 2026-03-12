@@ -1,0 +1,9 @@
+{
+  "id": "zsh-bypass-alias",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-aliases",
+  "title": "Bypass alias",
+  "command": "\\ls",
+  "description": "Run original command, bypass alias",
+  "tags": ["alias", "bypass", "escape"]
+}

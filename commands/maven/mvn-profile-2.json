@@ -1,0 +1,8 @@
+{
+  "id": "mvn-profile-2",
+  "categoryId": "maven",
+  "subcategoryId": "profiles",
+  "title": "Multiple profiles",
+  "command": "mvn install -Pprod,security",
+  "description": "Activate multiple profiles."
+}

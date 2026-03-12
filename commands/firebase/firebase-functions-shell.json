@@ -1,0 +1,9 @@
+{
+  "id": "firebase-functions-shell",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-functions",
+  "title": "Functions shell",
+  "command": "firebase functions:shell",
+  "description": "Start interactive functions shell for testing",
+  "tags": ["functions", "shell", "test"]
+}

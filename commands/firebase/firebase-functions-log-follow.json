@@ -1,0 +1,9 @@
+{
+  "id": "firebase-functions-log-follow",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-functions",
+  "title": "Stream function logs",
+  "command": "firebase functions:log --follow",
+  "description": "Stream Cloud Functions logs in real-time",
+  "tags": ["functions", "log", "stream", "follow"]
+}

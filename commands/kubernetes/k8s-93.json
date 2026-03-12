@@ -1,0 +1,8 @@
+{
+  "id": "k8s-93",
+  "categoryId": "kubernetes",
+  "subcategoryId": "statefulsets",
+  "title": "Scale statefulset",
+  "command": "kubectl scale statefulset/<name> --replicas=3",
+  "description": "Scale statefulset to specified replicas."
+}

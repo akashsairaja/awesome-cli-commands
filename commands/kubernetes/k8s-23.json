@@ -1,0 +1,8 @@
+{
+  "id": "k8s-23",
+  "categoryId": "kubernetes",
+  "subcategoryId": "pods",
+  "title": "Logs from specific container",
+  "command": "kubectl logs <pod> -c <container>",
+  "description": "View logs from specific container in pod."
+}

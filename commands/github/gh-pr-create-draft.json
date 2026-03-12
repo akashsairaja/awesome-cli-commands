@@ -1,0 +1,9 @@
+{
+  "id": "gh-pr-create-draft",
+  "categoryId": "github",
+  "subcategoryId": "gh-pr",
+  "title": "Create draft PR",
+  "command": "gh pr create --draft",
+  "description": "Create a draft pull request",
+  "tags": ["pr", "create", "draft"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-gs-3",
+  "title": "Check Pulumi version",
+  "command": "pulumi version",
+  "description": "Verify Pulumi is installed and display the current version",
+  "categoryId": "pulumi",
+  "subcategoryId": "getting-started"
+}

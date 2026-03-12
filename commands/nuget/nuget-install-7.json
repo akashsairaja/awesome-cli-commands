@@ -1,0 +1,8 @@
+{
+  "id": "nuget-install-7",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-install",
+  "title": "List project packages",
+  "command": "dotnet list package",
+  "description": "List all packages in project."
+}

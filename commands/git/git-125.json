@@ -1,0 +1,8 @@
+{
+  "id": "git-125",
+  "categoryId": "git",
+  "subcategoryId": "tags",
+  "title": "Delete remote tag",
+  "command": "git push origin :refs/tags/<tagname>",
+  "description": "Remove tag from remote."
+}

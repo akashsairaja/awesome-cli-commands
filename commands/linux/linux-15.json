@@ -1,0 +1,8 @@
+{
+  "id": "linux-15",
+  "categoryId": "linux",
+  "subcategoryId": "network",
+  "title": "Show network interfaces",
+  "command": "ip addr show",
+  "description": "Display all network interfaces and their IPs."
+}

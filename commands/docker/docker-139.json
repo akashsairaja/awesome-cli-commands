@@ -1,0 +1,8 @@
+{
+  "id": "docker-139",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "View service events",
+  "command": "docker compose events",
+  "description": "Stream real-time events from services."
+}

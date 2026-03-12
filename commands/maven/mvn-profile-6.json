@@ -1,0 +1,8 @@
+{
+  "id": "mvn-profile-6",
+  "categoryId": "maven",
+  "subcategoryId": "profiles",
+  "title": "Build module",
+  "command": "mvn -pl module-name install",
+  "description": "Build specific module only."
+}

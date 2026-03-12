@@ -1,0 +1,8 @@
+{
+  "id": "spark-6",
+  "categoryId": "spark",
+  "subcategoryId": "spark-submit",
+  "title": "Add dependencies",
+  "command": "spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0 app.py",
+  "description": "Include Maven packages as dependencies."
+}

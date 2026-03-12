@@ -1,0 +1,8 @@
+{
+  "id": "temporal-workflow-18",
+  "categoryId": "temporal",
+  "subcategoryId": "workflow",
+  "title": "Reset workflow",
+  "command": "temporal workflow reset --workflow-id my-workflow --event-id 10",
+  "description": "Reset workflow to a specific event and continue from there."
+}

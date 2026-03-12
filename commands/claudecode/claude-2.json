@@ -1,0 +1,8 @@
+{
+  "id": "claude-2",
+  "categoryId": "claudecode",
+  "subcategoryId": "general",
+  "title": "One-shot query",
+  "command": "claude \"your prompt here\"",
+  "description": "Run a single query and get response."
+}

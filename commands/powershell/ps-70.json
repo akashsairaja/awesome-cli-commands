@@ -1,0 +1,8 @@
+{
+  "id": "ps-70",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-modules",
+  "title": "Get loaded modules",
+  "command": "Get-Module",
+  "description": "Show currently loaded modules."
+}

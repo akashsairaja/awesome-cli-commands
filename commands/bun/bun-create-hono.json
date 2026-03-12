@@ -1,0 +1,9 @@
+{
+  "id": "bun-create-hono",
+  "categoryId": "bun",
+  "subcategoryId": "bun-init",
+  "title": "Create Hono App",
+  "command": "bun create hono my-api",
+  "description": "Create a Hono API project",
+  "tags": ["create", "hono", "api"]
+}

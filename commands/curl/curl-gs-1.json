@@ -1,0 +1,8 @@
+{
+  "id": "curl-gs-1",
+  "title": "Check curl version",
+  "command": "curl --version",
+  "description": "Display curl version, protocols, and feature info",
+  "categoryId": "curl",
+  "subcategoryId": "getting-started"
+}

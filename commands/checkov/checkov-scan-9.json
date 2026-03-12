@@ -1,0 +1,8 @@
+{
+  "id": "checkov-scan-9",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-scan",
+  "title": "Scan GitHub Actions",
+  "command": "checkov -d .github/workflows --framework github_actions",
+  "description": "Scan GitHub Actions workflows."
+}

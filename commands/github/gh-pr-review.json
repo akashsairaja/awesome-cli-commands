@@ -1,0 +1,9 @@
+{
+  "id": "gh-pr-review",
+  "categoryId": "github",
+  "subcategoryId": "gh-pr",
+  "title": "Review pull request",
+  "command": "gh pr review <number> --approve",
+  "description": "Approve a pull request",
+  "tags": ["pr", "review", "approve"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "rg-json",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-output",
+  "title": "JSON output",
+  "command": "rg --json \"pattern\"",
+  "description": "Output results as JSON",
+  "tags": ["output", "json", "format"]
+}

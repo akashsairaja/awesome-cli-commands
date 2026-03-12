@@ -1,0 +1,9 @@
+{
+  "id": "ansible-config-view",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-config",
+  "title": "View Config File",
+  "command": "ansible-config view",
+  "description": "Display the current config file",
+  "tags": ["config", "view", "file"]
+}

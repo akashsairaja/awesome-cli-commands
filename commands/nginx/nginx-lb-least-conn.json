@@ -1,0 +1,9 @@
+{
+  "id": "nginx-lb-least-conn",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-reverse-proxy",
+  "title": "Least connections balancing",
+  "command": "upstream backend { least_conn; server 127.0.0.1:3001; server 127.0.0.1:3002; }",
+  "description": "Route to server with fewest active connections",
+  "tags": ["proxy", "load-balance", "least-conn", "upstream"]
+}

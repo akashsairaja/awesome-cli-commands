@@ -1,0 +1,8 @@
+{
+  "id": "netlify-gs-1",
+  "title": "Install Netlify CLI",
+  "command": "npm i -g netlify-cli",
+  "description": "Install the Netlify CLI globally via npm",
+  "categoryId": "netlify",
+  "subcategoryId": "getting-started"
+}

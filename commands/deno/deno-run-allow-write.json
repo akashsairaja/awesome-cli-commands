@@ -1,0 +1,9 @@
+{
+  "id": "deno-run-allow-write",
+  "categoryId": "deno",
+  "subcategoryId": "deno-run",
+  "title": "Allow File Write",
+  "command": "deno run --allow-write script.ts",
+  "description": "Run with file write permission",
+  "tags": ["run", "permissions", "write"]
+}

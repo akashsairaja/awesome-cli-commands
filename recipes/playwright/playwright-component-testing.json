@@ -1,0 +1,59 @@
+{
+  "id": "playwright-component-testing",
+  "stackId": "playwright",
+  "name": "Test React/Vue Components in Isolation",
+  "description": "Use Playwright Component Testing to mount and test individual React, Vue, or Svelte components in a real browser without running the full application.",
+  "difficulty": "advanced",
+  "timeMinutes": 18,
+  "tags": ["components", "react", "vue", "unit-testing", "isolation"],
+  "prerequisites": [
+    "Playwright installed",
+    "React, Vue, or Svelte project",
+    "Vite or Webpack build setup"
+  ],
+  "steps": [
+    {
+      "title": "Install component testing dependencies",
+      "description": "Add the Playwright component testing package for your framework.",
+      "command": "npm install -D @playwright/experimental-ct-react",
+      "tip": "Replace 'react' with 'vue' or 'svelte' for other frameworks: @playwright/experimental-ct-vue, @playwright/experimental-ct-svelte."
+    },
+    {
+      "title": "Create the component test config",
+      "description": "Set up a dedicated config for component tests.",
+      "command": "cat > playwright-ct.config.ts << 'EOF'\nimport { defineConfig, devices } from '@playwright/experimental-ct-react';\n\nexport default defineConfig({\n  testDir: './tests/components',\n  use: {\n    ctPort: 3100,\n    ctTemplateDir: './playwright',\n  },\n  projects: [\n    {\n      name: 'chromium',\n      use: { ...devices['Desktop Chrome'] },\n    },\n  ],\n});\nEOF"
+    },
+    {
+      "title": "Write a component test",
+      "description": "Mount a component and test its behavior in a real browser.",
+      "command": "mkdir -p tests/components && cat > tests/components/Button.spec.tsx << 'EOF'\nimport { test, expect } from '@playwright/experimental-ct-react';\nimport { Button } from '../../src/components/Button';\n\ntest('renders with label', async ({ mount }) => {\n  const component = await mount(<Button label=\"Click me\" />);\n  await expect(component).toContainText('Click me');\n});\n\ntest('handles click events', async ({ mount }) => {\n  let clicked = false;\n  const component = await mount(\n    <Button label=\"Submit\" onClick={() => { clicked = true; }} />\n  );\n  await component.click();\n  expect(clicked).toBe(true);\n});\n\ntest('applies disabled state', async ({ mount }) => {\n  const component = await mount(<Button label=\"Disabled\" disabled />);\n  await expect(component).toBeDisabled();\n});\nEOF"
+    },
+    {
+      "title": "Run component tests",
+      "description": "Execute the component tests in a real browser environment.",
+      "command": "npx playwright test -c playwright-ct.config.ts"
+    },
+    {
+      "title": "Test with props and slots",
+      "description": "Test components with different prop combinations and children.",
+      "command": "cat > tests/components/Card.spec.tsx << 'EOF'\nimport { test, expect } from '@playwright/experimental-ct-react';\nimport { Card } from '../../src/components/Card';\n\ntest('renders with children', async ({ mount }) => {\n  const component = await mount(\n    <Card title=\"Test Card\">\n      <p>Card content goes here</p>\n    </Card>\n  );\n  await expect(component.getByText('Test Card')).toBeVisible();\n  await expect(component.getByText('Card content goes here')).toBeVisible();\n});\n\ntest('matches screenshot', async ({ mount }) => {\n  const component = await mount(<Card title=\"Visual Test\" />);\n  await expect(component).toHaveScreenshot();\n});\nEOF"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Playwright Component Testing Setup\nset -euo pipefail\n\necho \"=== Setting Up Component Testing ===\"\n\n# Detect framework\nif grep -q '\"react\"' package.json 2>/dev/null; then\n  FRAMEWORK=\"react\"\nelif grep -q '\"vue\"' package.json 2>/dev/null; then\n  FRAMEWORK=\"vue\"\nelif grep -q '\"svelte\"' package.json 2>/dev/null; then\n  FRAMEWORK=\"svelte\"\nelse\n  FRAMEWORK=\"react\"\n  echo \"Framework not detected, defaulting to React\"\nfi\n\necho \"Framework: $FRAMEWORK\"\n\n# Install\necho \"\"\necho \"=== Installing Dependencies ===\"\nnpm install -D \"@playwright/experimental-ct-$FRAMEWORK\"\n\n# Create config\necho \"\"\necho \"=== Creating Config ===\"\ncat > playwright-ct.config.ts << CONFIG\nimport { defineConfig, devices } from '@playwright/experimental-ct-$FRAMEWORK';\n\nexport default defineConfig({\n  testDir: './tests/components',\n  use: {\n    ctPort: 3100,\n  },\n  projects: [\n    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },\n  ],\n});\nCONFIG\n\n# Create test directory\nmkdir -p tests/components\n\necho \"\"\necho \"=== Setup Complete ===\"\necho \"Config: playwright-ct.config.ts\"\necho \"Tests:  tests/components/\"\necho \"\"\necho \"=== Commands ===\"\necho \"Run tests: npx playwright test -c playwright-ct.config.ts\"\necho \"UI mode:   npx playwright test -c playwright-ct.config.ts --ui\"",
+  "faq": [
+    {
+      "question": "How does component testing differ from E2E testing?",
+      "answer": "Component testing mounts individual components in isolation without running your full application. It is faster, more focused, and tests component behavior with real browser APIs. E2E tests navigate the full application and test user workflows across multiple pages."
+    },
+    {
+      "question": "Can I use component testing with Next.js?",
+      "answer": "Playwright component testing works best with Vite-based setups. For Next.js, you may need additional configuration. Consider using React Testing Library for unit-level component tests and Playwright for E2E tests in Next.js projects."
+    },
+    {
+      "question": "How do I provide context and providers to mounted components?",
+      "answer": "Create a playwright/index.tsx file that wraps mounted components with your providers (ThemeProvider, QueryClientProvider, etc.). Playwright's CT setup automatically uses this wrapper for all mounted components."
+    }
+  ],
+  "relatedRecipes": ["playwright-visual-regression", "playwright-test-setup"],
+  "lastUpdated": "2026-03-11"
+}

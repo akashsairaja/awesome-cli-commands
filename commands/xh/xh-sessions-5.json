@@ -1,0 +1,8 @@
+{
+  "id": "xh-sessions-5",
+  "categoryId": "xh",
+  "subcategoryId": "xh-sessions",
+  "title": "Session with auth",
+  "command": "xh --session=myapi -a user:pass GET https://api.example.com/data",
+  "description": "Store credentials in a named session."
+}

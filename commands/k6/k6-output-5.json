@@ -1,0 +1,8 @@
+{
+  "id": "k6-output-5",
+  "categoryId": "k6",
+  "subcategoryId": "k6-output",
+  "title": "Prometheus output",
+  "command": "k6 run --out experimental-prometheus-rw script.js",
+  "description": "Send metrics to Prometheus."
+}

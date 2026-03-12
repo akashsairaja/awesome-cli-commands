@@ -1,0 +1,9 @@
+{
+  "id": "rg-fixed-string",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-search",
+  "title": "Literal string search",
+  "command": "rg -F \"literal.string\"",
+  "description": "Search for literal string (no regex)",
+  "tags": ["search", "literal", "fixed"]
+}

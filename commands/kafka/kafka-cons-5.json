@@ -1,0 +1,8 @@
+{
+  "id": "kafka-cons-5",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-consumer",
+  "title": "Specific partition",
+  "command": "kafka-console-consumer.sh --topic my-topic --bootstrap-server localhost:9092 --partition 0 --offset earliest",
+  "description": "Consume from specific partition."
+}

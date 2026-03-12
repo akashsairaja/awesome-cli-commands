@@ -1,0 +1,8 @@
+{
+  "id": "apt-20",
+  "categoryId": "ubuntu",
+  "subcategoryId": "system",
+  "title": "Show Ubuntu version",
+  "command": "lsb_release -a",
+  "description": "Display Ubuntu version."
+}

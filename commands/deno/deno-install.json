@@ -1,0 +1,9 @@
+{
+  "id": "deno-install",
+  "categoryId": "deno",
+  "subcategoryId": "deno-package",
+  "title": "Install Dependencies",
+  "command": "deno install",
+  "description": "Install all dependencies from deno.json",
+  "tags": ["install", "dependencies", "lock"]
+}

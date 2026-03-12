@@ -1,0 +1,9 @@
+{
+  "id": "bun-test-bail",
+  "categoryId": "bun",
+  "subcategoryId": "bun-test",
+  "title": "Bail on Failure",
+  "command": "bun test --bail",
+  "description": "Stop on first test failure",
+  "tags": ["test", "bail", "fail-fast"]
+}

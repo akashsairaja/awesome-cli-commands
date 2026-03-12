@@ -1,0 +1,9 @@
+{
+  "id": "bun-init-yes",
+  "categoryId": "bun",
+  "subcategoryId": "bun-init",
+  "title": "Init with Defaults",
+  "command": "bun init -y",
+  "description": "Create project with default settings",
+  "tags": ["init", "default", "quick"]
+}

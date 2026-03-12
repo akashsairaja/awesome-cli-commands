@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-functions-deploy-python",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-functions",
+  "title": "Deploy Python Gen2 Function",
+  "command": "gcloud functions deploy <name> --gen2 --runtime=python311 --trigger-http",
+  "description": "Deploy Cloud Function Gen2 with Python 3.11 runtime",
+  "tags": ["functions", "deploy", "python", "gen2"]
+}

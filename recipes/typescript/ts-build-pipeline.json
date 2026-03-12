@@ -1,0 +1,56 @@
+{
+  "id": "ts-build-pipeline",
+  "stackId": "typescript",
+  "name": "Build Pipeline with tsup for TypeScript Libraries",
+  "description": "Set up a fast build pipeline using tsup to produce ESM, CJS, and declaration files for publishable TypeScript packages.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": false,
+  "tags": ["build", "tsup", "bundling", "esm", "cjs"],
+  "prerequisites": ["TypeScript project", "Node.js 18+"],
+  "steps": [
+    {
+      "title": "Install tsup",
+      "description": "Add tsup as a dev dependency for fast, zero-config TypeScript bundling.",
+      "command": "pnpm add -D tsup"
+    },
+    {
+      "title": "Create tsup configuration",
+      "description": "Define the build config for dual ESM and CJS output with declarations.",
+      "command": "cat > tsup.config.ts << 'EOF'\nimport { defineConfig } from 'tsup';\n\nexport default defineConfig({\n  entry: ['src/index.ts'],\n  format: ['esm', 'cjs'],\n  dts: true,\n  splitting: true,\n  sourcemap: true,\n  clean: true,\n  minify: false,\n  treeshake: true,\n});\nEOF",
+      "tip": "Set minify: true for production libraries distributed via CDN."
+    },
+    {
+      "title": "Configure package.json for dual output",
+      "description": "Set exports, main, module, and types fields for both ESM and CJS consumers.",
+      "command": "npm pkg set main='./dist/index.cjs' module='./dist/index.js' types='./dist/index.d.ts' && npm pkg set exports['.'].import='./dist/index.js' exports['.'].require='./dist/index.cjs' exports['.'].types='./dist/index.d.ts'"
+    },
+    {
+      "title": "Add build scripts",
+      "description": "Add build and dev scripts to package.json.",
+      "command": "npm pkg set scripts.build='tsup' scripts.dev='tsup --watch'"
+    },
+    {
+      "title": "Run the build",
+      "description": "Execute the build and verify the output files.",
+      "command": "pnpm build && ls -la dist/"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# TypeScript Build Pipeline with tsup\nset -euo pipefail\n\necho \"=== Installing tsup ===\"\npnpm add -D tsup\n\necho \"=== Creating tsup.config.ts ===\"\ncat > tsup.config.ts << 'EOF'\nimport { defineConfig } from 'tsup';\n\nexport default defineConfig({\n  entry: ['src/index.ts'],\n  format: ['esm', 'cjs'],\n  dts: true,\n  splitting: true,\n  sourcemap: true,\n  clean: true,\n  minify: false,\n  treeshake: true,\n  outDir: 'dist',\n});\nEOF\n\necho \"=== Adding scripts ===\"\nnpm pkg set scripts.build=\"tsup\"\nnpm pkg set scripts.dev=\"tsup --watch\"\n\necho \"=== Building ===\"\npnpm build\n\necho \"\"\necho \"=== Output ===\"\nls -la dist/",
+  "faq": [
+    {
+      "question": "Why tsup over tsc for building?",
+      "answer": "tsup uses esbuild under the hood, which is 10-100x faster than tsc. It handles ESM/CJS dual output, tree-shaking, and bundling in a single tool. tsc is still used for type checking (tsc --noEmit) but not for building."
+    },
+    {
+      "question": "What is the difference between ESM and CJS output?",
+      "answer": "ESM (ES Modules) uses import/export syntax and is the modern standard. CJS (CommonJS) uses require/module.exports and is needed for older Node.js code. Publishing both ensures your library works everywhere."
+    },
+    {
+      "question": "How do I handle CSS or assets in tsup?",
+      "answer": "tsup does not process CSS by default. For libraries with CSS, use the css: true option to extract CSS files, or use a separate tool like postcss for CSS processing."
+    }
+  ],
+  "relatedRecipes": ["ts-declaration-generation", "ts-project-references"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "vim-5",
+  "categoryId": "vim",
+  "subcategoryId": "navigation",
+  "title": "Half page scroll",
+  "command": "Ctrl+d / Ctrl+u",
+  "description": "Scroll half page down/up."
+}

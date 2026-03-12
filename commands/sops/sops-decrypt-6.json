@@ -1,0 +1,8 @@
+{
+  "id": "sops-decrypt-6",
+  "categoryId": "sops",
+  "subcategoryId": "sops-decrypt",
+  "title": "Decrypt and run with temp file",
+  "command": "sops exec-file secrets.enc.yaml 'my-app --config {}'",
+  "description": "Decrypt to temp file and pass to command."
+}

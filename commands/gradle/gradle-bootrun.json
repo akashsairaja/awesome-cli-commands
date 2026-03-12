@@ -1,0 +1,9 @@
+{
+  "id": "gradle-bootrun",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-tasks",
+  "title": "Run Spring Boot",
+  "command": "./gradlew bootRun",
+  "description": "Run Spring Boot application",
+  "tags": ["spring", "boot", "run"]
+}

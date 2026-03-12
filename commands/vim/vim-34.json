@@ -1,0 +1,8 @@
+{
+  "id": "vim-34",
+  "categoryId": "vim",
+  "subcategoryId": "visual-mode",
+  "title": "Lowercase selection",
+  "command": "u",
+  "description": "Convert selection to lowercase (visual mode)."
+}

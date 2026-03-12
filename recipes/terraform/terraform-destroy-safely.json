@@ -1,0 +1,54 @@
+{
+  "id": "terraform-destroy-safely",
+  "stackId": "terraform",
+  "name": "Controlled Resource Teardown",
+  "description": "Safely destroy Terraform-managed resources with targeted destroys, plan previews, and protection mechanisms.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "tags": ["destroy", "teardown", "safety", "lifecycle", "protection"],
+  "prerequisites": ["Terraform installed"],
+  "steps": [
+    {
+      "title": "Preview what will be destroyed",
+      "description": "Generate a destroy plan to see exactly which resources will be removed before executing anything.",
+      "command": "terraform plan -destroy",
+      "tip": "Always review the destroy plan. Terraform shows every resource that will be deleted."
+    },
+    {
+      "title": "Save the destroy plan to a file",
+      "description": "Save the destroy plan so the exact reviewed changes are applied, nothing more or less.",
+      "command": "terraform plan -destroy -out=destroy.tfplan"
+    },
+    {
+      "title": "Destroy a specific resource only",
+      "description": "Target a single resource for destruction instead of tearing down everything.",
+      "command": "terraform destroy -target=aws_instance.temp_server",
+      "warning": "Targeted destroys can leave orphaned dependent resources. Always check for dependencies first."
+    },
+    {
+      "title": "Protect critical resources with lifecycle rules",
+      "description": "Add prevent_destroy to resources that should never be accidentally deleted.",
+      "command": "cat <<'EOF' >> main.tf\nresource \"aws_rds_instance\" \"production\" {\n  # ... config ...\n  lifecycle {\n    prevent_destroy = true\n  }\n}\nEOF",
+      "tip": "With prevent_destroy = true, Terraform will error if any plan attempts to delete this resource."
+    },
+    {
+      "title": "Execute the destroy plan",
+      "description": "Apply the saved destroy plan after thorough review and team confirmation.",
+      "command": "terraform apply destroy.tfplan",
+      "warning": "This is irreversible for most resources. Ensure backups exist for databases and persistent storage before proceeding."
+    }
+  ],
+  "fullScript": "#!/bin/bash\nset -euo pipefail\n\n# Safe Terraform Destroy Workflow\n\nTARGET=\"${1:-}\"\n\necho \"==> Current resources in state:\"\nterraform state list\n\nif [ -n \"$TARGET\" ]; then\n  echo \"\"\n  echo \"==> Planning targeted destroy: ${TARGET}\"\n  terraform plan -destroy -target=\"$TARGET\" -out=destroy.tfplan\nelse\n  echo \"\"\n  echo \"==> Planning FULL destroy...\"\n  terraform plan -destroy -out=destroy.tfplan\nfi\n\necho \"\"\nRESOURCE_COUNT=$(terraform show -no-color destroy.tfplan | grep -c \"will be destroyed\" || echo \"0\")\necho \"Resources to destroy: ${RESOURCE_COUNT}\"\n\necho \"\"\nread -p \"Type 'destroy' to confirm: \" CONFIRM\nif [ \"$CONFIRM\" = \"destroy\" ]; then\n  echo \"==> Executing destroy...\"\n  terraform apply destroy.tfplan\n  echo \"==> Destroy complete.\"\nelse\n  echo \"==> Destroy cancelled.\"\n  rm -f destroy.tfplan\nfi",
+  "faq": [
+    {
+      "question": "Can I undo a terraform destroy?",
+      "answer": "No. Destroyed resources are deleted from both the cloud provider and Terraform state. You would need to recreate them with terraform apply or restore from backups."
+    },
+    {
+      "question": "How do I remove a resource from Terraform without destroying it?",
+      "answer": "Use 'terraform state rm <resource_address>' to remove it from state without deleting the actual cloud resource. The resource continues to exist but is no longer managed by Terraform."
+    }
+  ],
+  "relatedRecipes": ["terraform-plan-review", "terraform-drift-detection"],
+  "lastUpdated": "2026-03-11"
+}

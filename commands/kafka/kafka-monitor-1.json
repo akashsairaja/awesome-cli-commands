@@ -1,0 +1,8 @@
+{
+  "id": "kafka-monitor-1",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-monitoring",
+  "title": "Show consumer lag",
+  "command": "kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group <group>",
+  "description": "Display consumer group lag and offsets."
+}

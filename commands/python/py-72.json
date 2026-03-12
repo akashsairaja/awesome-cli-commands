@@ -1,0 +1,8 @@
+{
+  "id": "py-72",
+  "categoryId": "python",
+  "subcategoryId": "python-pyenv",
+  "title": "List installed versions",
+  "command": "pyenv versions",
+  "description": "Show all installed Python versions."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k6-output-3",
+  "categoryId": "k6",
+  "subcategoryId": "k6-output",
+  "title": "InfluxDB output",
+  "command": "k6 run --out influxdb=http://localhost:8086/k6 script.js",
+  "description": "Stream results to InfluxDB."
+}

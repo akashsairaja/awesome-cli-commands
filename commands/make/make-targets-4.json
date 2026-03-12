@@ -1,0 +1,8 @@
+{
+  "id": "make-targets-4",
+  "categoryId": "make",
+  "subcategoryId": "make-targets",
+  "title": "Uninstall",
+  "command": "make uninstall",
+  "description": "Remove installed files."
+}

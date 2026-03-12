@@ -1,0 +1,8 @@
+{
+  "id": "git-128",
+  "categoryId": "git",
+  "subcategoryId": "cleanup",
+  "title": "Clean dry run",
+  "command": "git clean -n -d",
+  "description": "Preview files to be removed."
+}

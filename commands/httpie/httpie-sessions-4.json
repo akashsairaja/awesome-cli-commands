@@ -1,0 +1,8 @@
+{
+  "id": "httpie-sessions-4",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-sessions",
+  "title": "Anonymous session",
+  "command": "http --session=./session.json POST https://api.example.com/login",
+  "description": "Save session to specific file."
+}

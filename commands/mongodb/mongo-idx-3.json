@@ -1,0 +1,8 @@
+{
+  "id": "mongo-idx-3",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-index",
+  "title": "Compound index",
+  "command": "db.users.createIndex({ lastName: 1, firstName: 1 })",
+  "description": "Create index on multiple fields."
+}

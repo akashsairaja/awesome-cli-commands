@@ -1,0 +1,8 @@
+{
+  "id": "checkov-custom-7",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-custom",
+  "title": "Pre-commit hook config",
+  "command": "repos:\n  - repo: https://github.com/bridgecrewio/checkov\n    rev: ''\n    hooks:\n      - id: checkov\n        args: ['--soft-fail']",
+  "description": "Add Checkov as pre-commit hook."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "task-watch-9",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-watch",
+  "title": "Run namespaced task",
+  "command": "task api:build",
+  "description": "Run a task from an included namespace."
+}

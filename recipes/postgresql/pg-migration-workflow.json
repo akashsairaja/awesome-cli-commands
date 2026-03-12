@@ -1,0 +1,56 @@
+{
+  "id": "pg-migration-workflow",
+  "stackId": "postgresql",
+  "name": "Schema Migration with psql and Version Control",
+  "description": "Manage database schema changes safely using numbered migration files, psql, and version control for reproducible deployments.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "tags": ["migration", "schema", "version-control", "deployment"],
+  "prerequisites": [
+    "PostgreSQL database access",
+    "psql available",
+    "Git repository for migration files"
+  ],
+  "steps": [
+    {
+      "title": "Create a migrations tracking table",
+      "description": "Set up a table to track which migrations have been applied.",
+      "command": "psql -U postgres -d mydb -c \"CREATE TABLE IF NOT EXISTS schema_migrations (version VARCHAR(14) PRIMARY KEY, applied_at TIMESTAMPTZ DEFAULT NOW(), description TEXT);\""
+    },
+    {
+      "title": "Create a numbered migration file",
+      "description": "Write a SQL migration file with a timestamp-based version number.",
+      "command": "cat > migrations/$(date +%Y%m%d%H%M%S)_create_users.sql << 'SQL'\n-- Up migration\nCREATE TABLE users (\n  id BIGSERIAL PRIMARY KEY,\n  email VARCHAR(255) UNIQUE NOT NULL,\n  name VARCHAR(100) NOT NULL,\n  created_at TIMESTAMPTZ DEFAULT NOW()\n);\nCREATE INDEX idx_users_email ON users (email);\nSQL",
+      "tip": "Always use timestamps (YYYYMMDDHHMMSS) as version prefixes to avoid ordering conflicts between team members."
+    },
+    {
+      "title": "Apply a migration within a transaction",
+      "description": "Execute the migration inside a transaction so it rolls back entirely on failure.",
+      "command": "psql -U postgres -d mydb -v ON_ERROR_STOP=1 --single-transaction -f migrations/20260311120000_create_users.sql",
+      "warning": "Some DDL statements (like CREATE INDEX CONCURRENTLY) cannot run inside a transaction. Handle those separately."
+    },
+    {
+      "title": "Record the migration as applied",
+      "description": "Insert a row into the tracking table after a successful migration.",
+      "command": "psql -U postgres -d mydb -c \"INSERT INTO schema_migrations (version, description) VALUES ('20260311120000', 'create_users');\""
+    },
+    {
+      "title": "Check migration status",
+      "description": "List all applied migrations and compare with migration files on disk.",
+      "command": "psql -U postgres -d mydb -c \"SELECT version, description, applied_at FROM schema_migrations ORDER BY version;\""
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# PostgreSQL Migration Runner\nset -euo pipefail\n\nDB=\"mydb\"\nUSER=\"postgres\"\nMIGRATION_DIR=\"./migrations\"\n\necho \"=== Ensuring migrations table exists ===\"\npsql -U \"$USER\" -d \"$DB\" -c \"\nCREATE TABLE IF NOT EXISTS schema_migrations (\n  version VARCHAR(14) PRIMARY KEY,\n  applied_at TIMESTAMPTZ DEFAULT NOW(),\n  description TEXT\n);\n\"\n\necho \"\"\necho \"=== Checking pending migrations ===\"\nfor FILE in \"$MIGRATION_DIR\"/*.sql; do\n  [ -f \"$FILE\" ] || continue\n  VERSION=$(basename \"$FILE\" | cut -d_ -f1)\n  DESCRIPTION=$(basename \"$FILE\" .sql | sed 's/^[0-9]*_//')\n\n  APPLIED=$(psql -U \"$USER\" -d \"$DB\" -tAc \"SELECT COUNT(*) FROM schema_migrations WHERE version = '$VERSION';\")\n\n  if [ \"$APPLIED\" = \"0\" ]; then\n    echo \"Applying: $FILE\"\n    psql -U \"$USER\" -d \"$DB\" -v ON_ERROR_STOP=1 --single-transaction -f \"$FILE\"\n    psql -U \"$USER\" -d \"$DB\" -c \"INSERT INTO schema_migrations (version, description) VALUES ('$VERSION', '$DESCRIPTION');\"\n    echo \"Applied: $VERSION ($DESCRIPTION)\"\n  else\n    echo \"Skipping (already applied): $VERSION\"\n  fi\ndone\n\necho \"\"\necho \"=== Migration history ===\"\npsql -U \"$USER\" -d \"$DB\" -c \"SELECT version, description, applied_at FROM schema_migrations ORDER BY version;\"",
+  "faq": [
+    {
+      "question": "Should I use a migration tool instead of raw SQL?",
+      "answer": "For larger teams, tools like Flyway, Liquibase, or golang-migrate add safety features like checksums and rollback tracking. For small projects or learning, raw SQL migrations with a tracking table work well."
+    },
+    {
+      "question": "How do I handle rollbacks?",
+      "answer": "Create a corresponding down migration file for each up migration (e.g., 20260311_create_users_down.sql with DROP TABLE users). Apply the down file to revert. Always test rollbacks in staging first."
+    }
+  ],
+  "relatedRecipes": ["pg-user-management", "pg-performance-tuning"],
+  "lastUpdated": "2026-03-11"
+}

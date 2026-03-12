@@ -1,0 +1,8 @@
+{
+  "id": "git-8",
+  "categoryId": "git",
+  "subcategoryId": "basics",
+  "title": "Add specific file",
+  "command": "git add <file>",
+  "description": "Stage specific file for commit."
+}

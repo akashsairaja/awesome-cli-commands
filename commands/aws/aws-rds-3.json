@@ -1,0 +1,8 @@
+{
+  "id": "aws-rds-3",
+  "categoryId": "aws",
+  "subcategoryId": "rds",
+  "title": "Stop instance",
+  "command": "aws rds stop-db-instance --db-instance-identifier mydb",
+  "description": "Stop RDS instance."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ansible-navigator-config",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-navigator",
+  "title": "View Configuration",
+  "command": "ansible-navigator config",
+  "description": "Browse Ansible configuration interactively",
+  "tags": ["navigator", "config", "view"]
+}

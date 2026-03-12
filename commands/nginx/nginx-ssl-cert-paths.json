@@ -1,0 +1,9 @@
+{
+  "id": "nginx-ssl-cert-paths",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-ssl",
+  "title": "SSL certificate paths",
+  "command": "ssl_certificate /etc/ssl/certs/example.com.crt; ssl_certificate_key /etc/ssl/private/example.com.key;",
+  "description": "Configure certificate and key file locations",
+  "tags": ["ssl", "certificate", "key", "path"]
+}

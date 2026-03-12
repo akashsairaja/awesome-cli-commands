@@ -1,0 +1,8 @@
+{
+  "id": "bruno-scripts-6",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-scripts",
+  "title": "Get environment variable",
+  "command": "const baseUrl = bru.getEnvVar('baseUrl');",
+  "description": "Read an environment variable in script."
+}

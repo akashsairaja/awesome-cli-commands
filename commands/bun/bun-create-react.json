@@ -1,0 +1,9 @@
+{
+  "id": "bun-create-react",
+  "categoryId": "bun",
+  "subcategoryId": "bun-init",
+  "title": "Create React App",
+  "command": "bun create react my-app",
+  "description": "Create a new React application",
+  "tags": ["create", "react", "app"]
+}

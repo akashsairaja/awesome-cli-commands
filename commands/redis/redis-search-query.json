@@ -1,0 +1,9 @@
+{
+  "id": "redis-search-query",
+  "categoryId": "redis",
+  "subcategoryId": "redis-search",
+  "title": "Full-text search",
+  "command": "FT.SEARCH idx \"query string\" LIMIT 0 10",
+  "description": "Execute full-text search with pagination support",
+  "tags": ["search", "query", "fulltext", "redisearch"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "minikube-cluster-5",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-cluster",
+  "title": "Delete cluster",
+  "command": "minikube delete",
+  "description": "Delete the cluster."
+}

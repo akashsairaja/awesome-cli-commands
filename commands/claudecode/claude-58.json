@@ -1,0 +1,8 @@
+{
+  "id": "claude-58",
+  "categoryId": "claudecode",
+  "subcategoryId": "agents",
+  "title": "Edit agent",
+  "command": "/agents edit <agent-name>",
+  "description": "Modify an existing agent."
+}

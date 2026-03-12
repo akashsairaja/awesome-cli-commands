@@ -1,0 +1,8 @@
+{
+  "id": "volta-gs-1",
+  "title": "Install Volta",
+  "command": "curl https://get.volta.sh | bash",
+  "description": "Install Volta JavaScript tool manager using the official install script",
+  "categoryId": "volta",
+  "subcategoryId": "getting-started"
+}

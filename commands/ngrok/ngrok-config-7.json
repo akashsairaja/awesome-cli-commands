@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-config-7",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-config",
+  "title": "Set log level",
+  "command": "ngrok http --log=stdout --log-level=debug 3000",
+  "description": "Enable debug logging to stdout."
+}

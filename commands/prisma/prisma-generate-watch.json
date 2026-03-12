@@ -1,0 +1,9 @@
+{
+  "id": "prisma-generate-watch",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-generate",
+  "title": "Generate with watch",
+  "command": "npx prisma generate --watch",
+  "description": "Watch schema changes and regenerate client",
+  "tags": ["generate", "watch", "auto"]
+}

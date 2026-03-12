@@ -1,0 +1,8 @@
+{
+  "id": "claude-52",
+  "categoryId": "claudecode",
+  "subcategoryId": "mcp",
+  "title": "Add stdio MCP server",
+  "command": "claude mcp add --transport stdio <name> -- <command>",
+  "description": "Add MCP server via stdio transport."
+}

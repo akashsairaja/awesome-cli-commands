@@ -1,0 +1,8 @@
+{
+  "id": "brew-39",
+  "categoryId": "homebrew",
+  "subcategoryId": "cleanup",
+  "title": "Autoremove unused deps",
+  "command": "brew autoremove",
+  "description": "Remove unused dependencies."
+}

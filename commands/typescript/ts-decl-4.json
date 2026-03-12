@@ -1,0 +1,8 @@
+{
+  "id": "ts-decl-4",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-declarations",
+  "title": "Library build setup",
+  "command": "tsc --declaration --declarationMap --sourceMap --outDir dist",
+  "description": "Full library build with JS, types, and source maps."
+}

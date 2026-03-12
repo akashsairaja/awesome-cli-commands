@@ -1,0 +1,8 @@
+{
+  "id": "jest-execution-6",
+  "categoryId": "jest",
+  "subcategoryId": "jest-execution",
+  "title": "Generate coverage",
+  "command": "jest --coverage",
+  "description": "Run tests with coverage report."
+}

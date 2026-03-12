@@ -1,0 +1,9 @@
+{
+  "id": "gradle-help-task",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-tasks",
+  "title": "Task Help",
+  "command": "./gradlew help --task <taskName>",
+  "description": "Show help for a specific task",
+  "tags": ["help", "task", "info"]
+}

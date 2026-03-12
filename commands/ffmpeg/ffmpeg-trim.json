@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-trim",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-video",
+  "title": "Trim video",
+  "command": "ffmpeg -i input.mp4 -ss 00:00:30 -to 00:01:30 -c copy output.mp4",
+  "description": "Cut video from start to end time",
+  "tags": ["trim", "cut", "clip"]
+}

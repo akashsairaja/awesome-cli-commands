@@ -1,0 +1,8 @@
+{
+  "id": "httpie-output-9",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-output",
+  "title": "Change color style",
+  "command": "http --style=monokai GET https://api.example.com/data",
+  "description": "Use a different syntax highlighting style (monokai, fruity, native, etc.)."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "netlify-build",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-deploy",
+  "title": "Build locally",
+  "command": "netlify build",
+  "description": "Build the site using Netlify's build process",
+  "tags": ["build", "local"]
+}

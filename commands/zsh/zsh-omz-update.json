@@ -1,0 +1,9 @@
+{
+  "id": "zsh-omz-update",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-plugins",
+  "title": "Update Oh My Zsh",
+  "command": "omz update",
+  "description": "Update Oh My Zsh to latest version",
+  "tags": ["ohmyzsh", "update", "upgrade"]
+}

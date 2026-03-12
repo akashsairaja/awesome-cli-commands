@@ -1,0 +1,8 @@
+{
+  "id": "k3s-kubectl-16",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-kubectl",
+  "title": "Import image to containerd",
+  "command": "k3s ctr images import myimage.tar",
+  "description": "Import a local container image into k3s containerd."
+}

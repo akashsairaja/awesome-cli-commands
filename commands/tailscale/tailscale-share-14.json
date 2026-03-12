@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-share-14",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-share",
+  "title": "Sign a node key",
+  "command": "tailscale lock sign nodekey:xxxxx",
+  "description": "Sign a node key to authorize a device."
+}

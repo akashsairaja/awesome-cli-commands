@@ -1,0 +1,8 @@
+{
+  "id": "mvn-profile-12",
+  "categoryId": "maven",
+  "subcategoryId": "profiles",
+  "title": "Release perform",
+  "command": "mvn release:perform",
+  "description": "Perform the release."
+}

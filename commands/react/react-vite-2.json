@@ -1,0 +1,8 @@
+{
+  "id": "react-vite-2",
+  "categoryId": "react",
+  "subcategoryId": "react-vite",
+  "title": "Create with SWC",
+  "command": "npm create vite@latest my-app -- --template react-swc-ts",
+  "description": "Create Vite project with SWC compiler (faster)."
+}

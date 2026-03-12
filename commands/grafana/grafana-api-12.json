@@ -1,0 +1,8 @@
+{
+  "id": "grafana-api-12",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-api",
+  "title": "Test datasource connection",
+  "command": "curl -X POST http://localhost:3000/api/datasources/proxy/1/api/v1/query -H 'Authorization: Bearer TOKEN' -d 'query=up'",
+  "description": "Test a datasource connection via proxy."
+}

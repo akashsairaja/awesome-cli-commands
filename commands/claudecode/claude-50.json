@@ -1,0 +1,8 @@
+{
+  "id": "claude-50",
+  "categoryId": "claudecode",
+  "subcategoryId": "mcp",
+  "title": "Get MCP server details",
+  "command": "claude mcp get <server-name>",
+  "description": "Show details for a specific MCP server."
+}

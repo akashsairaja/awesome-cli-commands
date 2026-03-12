@@ -1,0 +1,8 @@
+{
+  "id": "ps-43",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-objects",
+  "title": "Add to hashtable",
+  "command": "$hash['NewKey'] = 'NewValue'",
+  "description": "Add key-value to hashtable."
+}

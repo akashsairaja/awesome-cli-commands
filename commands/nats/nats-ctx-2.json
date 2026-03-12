@@ -1,0 +1,8 @@
+{
+  "id": "nats-ctx-2",
+  "categoryId": "nats",
+  "subcategoryId": "nats-context",
+  "title": "List contexts",
+  "command": "nats context ls",
+  "description": "Display all saved contexts."
+}

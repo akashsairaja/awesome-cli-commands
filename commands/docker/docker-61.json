@@ -1,0 +1,8 @@
+{
+  "id": "docker-61",
+  "categoryId": "docker",
+  "subcategoryId": "volumes",
+  "title": "Run with read-only mount",
+  "command": "docker run -v /host/path:/container/path:ro <image>",
+  "description": "Mount volume as read-only."
+}

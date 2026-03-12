@@ -1,0 +1,9 @@
+{
+  "id": "netlify-deploy-dir",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-deploy",
+  "title": "Deploy specific directory",
+  "command": "netlify deploy --dir=<path>",
+  "description": "Deploy from a specific directory",
+  "tags": ["deploy", "directory", "path"]
+}

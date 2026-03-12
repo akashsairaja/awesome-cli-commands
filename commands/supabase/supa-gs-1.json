@@ -1,0 +1,8 @@
+{
+  "id": "supa-gs-1",
+  "title": "Install Supabase CLI (macOS)",
+  "command": "brew install supabase/tap/supabase",
+  "description": "Install the Supabase CLI using Homebrew on macOS",
+  "categoryId": "supabase",
+  "subcategoryId": "getting-started"
+}

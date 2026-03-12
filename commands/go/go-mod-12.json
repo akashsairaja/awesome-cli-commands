@@ -1,0 +1,8 @@
+{
+  "id": "go-mod-12",
+  "categoryId": "go",
+  "subcategoryId": "go-mod",
+  "title": "List all modules",
+  "command": "go list -m all",
+  "description": "List all module dependencies."
+}

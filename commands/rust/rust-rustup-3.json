@@ -1,0 +1,8 @@
+{
+  "id": "rust-rustup-3",
+  "categoryId": "rust",
+  "subcategoryId": "rust-rustup",
+  "title": "Set default",
+  "command": "rustup default stable",
+  "description": "Set default toolchain."
+}

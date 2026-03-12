@@ -1,0 +1,8 @@
+{
+  "id": "claude-5",
+  "categoryId": "claudecode",
+  "subcategoryId": "general",
+  "title": "Resume specific session",
+  "command": "claude --resume <session-id>",
+  "description": "Resume a specific session by its ID."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "go-run-3",
+  "categoryId": "go",
+  "subcategoryId": "go-run",
+  "title": "Run with race detector",
+  "command": "go run -race main.go",
+  "description": "Run with data race detection enabled."
+}

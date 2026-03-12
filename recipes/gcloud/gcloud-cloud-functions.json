@@ -1,0 +1,59 @@
+{
+  "id": "gcloud-cloud-functions",
+  "stackId": "gcloud",
+  "name": "Deploy Cloud Functions from the CLI",
+  "description": "Create and deploy serverless functions on Google Cloud Functions with HTTP and event-based triggers.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "tags": ["cloud-functions", "serverless", "faas", "event-driven"],
+  "prerequisites": [
+    "gcloud CLI installed",
+    "GCP project with billing enabled",
+    "Cloud Functions API enabled"
+  ],
+  "steps": [
+    {
+      "title": "Enable the Cloud Functions API",
+      "command": "gcloud services enable cloudfunctions.googleapis.com cloudbuild.googleapis.com",
+      "description": "Enables Cloud Functions and Cloud Build APIs."
+    },
+    {
+      "title": "Create a function source file",
+      "command": "mkdir my-function && echo 'exports.helloWorld = (req, res) => { res.send(\"Hello from Cloud Functions!\"); };' > my-function/index.js",
+      "description": "Creates a minimal HTTP-triggered function."
+    },
+    {
+      "title": "Deploy the function",
+      "command": "gcloud functions deploy helloWorld --runtime nodejs20 --trigger-http --allow-unauthenticated --source ./my-function --region us-central1 --gen2",
+      "description": "Deploys a 2nd-gen Cloud Function with an HTTP trigger accessible without authentication.",
+      "tip": "Always use --gen2 for new functions. Gen 2 runs on Cloud Run infrastructure with better performance."
+    },
+    {
+      "title": "Test the function",
+      "command": "gcloud functions call helloWorld --region us-central1 --gen2",
+      "description": "Invokes the function and prints the response."
+    },
+    {
+      "title": "View function logs",
+      "command": "gcloud functions logs read helloWorld --region us-central1 --gen2 --limit 20",
+      "description": "Displays the most recent 20 log entries for the function."
+    }
+  ],
+  "fullScript": "# Deploy Cloud Functions\ngcloud services enable cloudfunctions.googleapis.com cloudbuild.googleapis.com\nmkdir -p my-function\necho 'exports.helloWorld = (req, res) => { res.send(\"Hello from Cloud Functions!\"); };' > my-function/index.js\ngcloud functions deploy helloWorld --runtime nodejs20 --trigger-http --allow-unauthenticated --source ./my-function --region us-central1 --gen2\ngcloud functions call helloWorld --region us-central1 --gen2\ngcloud functions logs read helloWorld --region us-central1 --gen2 --limit 20",
+  "faq": [
+    {
+      "question": "What event triggers are supported?",
+      "answer": "Cloud Functions supports HTTP triggers, Pub/Sub messages, Cloud Storage events, Firestore changes, Firebase Auth events, and Eventarc triggers for 90+ Google Cloud event sources."
+    },
+    {
+      "question": "What is the maximum execution time for a Cloud Function?",
+      "answer": "Gen 2 functions can run up to 60 minutes. Gen 1 functions are limited to 9 minutes. Configure with --timeout flag."
+    },
+    {
+      "question": "How do I set environment variables?",
+      "answer": "Use '--set-env-vars KEY1=val1,KEY2=val2' during deploy, or '--update-env-vars' to change them without redeploying code."
+    }
+  ],
+  "relatedRecipes": ["gcloud-cloud-run-deploy", "gcloud-storage-workflow"],
+  "lastUpdated": "2026-03-11"
+}

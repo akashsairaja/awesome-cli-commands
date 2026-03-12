@@ -1,0 +1,8 @@
+{
+  "id": "bash-67",
+  "categoryId": "bash",
+  "subcategoryId": "strings",
+  "title": "Replace all",
+  "command": "echo \"${str//find/replace}\"",
+  "description": "Replace all occurrences."
+}

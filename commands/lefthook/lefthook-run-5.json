@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-run-5",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-run",
+  "title": "Run with no TTY",
+  "command": "lefthook run pre-commit --no-tty",
+  "description": "Run without interactive terminal for CI."
+}

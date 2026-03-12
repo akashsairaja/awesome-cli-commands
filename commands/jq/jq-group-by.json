@@ -1,0 +1,9 @@
+{
+  "id": "jq-group-by",
+  "categoryId": "jq",
+  "subcategoryId": "jq-filters",
+  "title": "Group by key",
+  "command": "cat file.json | jq 'group_by(.category)'",
+  "description": "Group array elements by key",
+  "tags": ["group", "by", "aggregate"]
+}

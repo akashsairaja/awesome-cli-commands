@@ -1,0 +1,9 @@
+{
+  "id": "supabase-functions-deploy-one",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-functions",
+  "title": "Deploy specific function",
+  "command": "supabase functions deploy <name>",
+  "description": "Deploy a specific Edge Function",
+  "tags": ["functions", "deploy", "specific"]
+}

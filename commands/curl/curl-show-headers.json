@@ -1,0 +1,9 @@
+{
+  "id": "curl-show-headers",
+  "categoryId": "curl",
+  "subcategoryId": "curl-headers",
+  "title": "Show response headers",
+  "command": "curl -i https://api.example.com/resource",
+  "description": "Include response headers in output",
+  "tags": ["headers", "response", "show"]
+}

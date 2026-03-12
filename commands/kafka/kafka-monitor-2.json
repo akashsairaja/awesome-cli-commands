@@ -1,0 +1,8 @@
+{
+  "id": "kafka-monitor-2",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-monitoring",
+  "title": "Reset offsets to earliest",
+  "command": "kafka-consumer-groups.sh --bootstrap-server localhost:9092 --reset-offsets --group <group> --topic <topic> --to-earliest --execute",
+  "description": "Reset consumer group offsets to beginning."
+}

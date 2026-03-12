@@ -1,0 +1,8 @@
+{
+  "id": "composer-publish-12",
+  "categoryId": "composer",
+  "subcategoryId": "composer-publish",
+  "title": "Clear cache",
+  "command": "composer clear-cache",
+  "description": "Clear the internal package cache."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "docker-69",
+  "categoryId": "docker",
+  "subcategoryId": "networks",
+  "title": "Remove network",
+  "command": "docker network rm <network>",
+  "description": "Remove a network."
+}

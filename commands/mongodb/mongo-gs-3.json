@@ -1,0 +1,8 @@
+{
+  "id": "mongo-gs-3",
+  "title": "Show databases",
+  "command": "mongosh --eval 'show dbs'",
+  "description": "List all databases in MongoDB",
+  "categoryId": "mongodb",
+  "subcategoryId": "getting-started"
+}

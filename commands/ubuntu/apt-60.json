@@ -1,0 +1,8 @@
+{
+  "id": "apt-60",
+  "categoryId": "ubuntu",
+  "subcategoryId": "system",
+  "title": "Schedule cron job",
+  "command": "crontab -e",
+  "description": "Edit the current user's crontab to schedule recurring tasks."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ai-46",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-api",
+  "title": "Set API key (bash)",
+  "command": "export OPENAI_API_KEY='sk-...'",
+  "description": "Set OpenAI API key as environment variable."
+}

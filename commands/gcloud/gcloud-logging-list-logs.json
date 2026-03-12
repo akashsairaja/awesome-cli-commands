@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-logging-list-logs",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-logging",
+  "title": "List Available Logs",
+  "command": "gcloud logging logs list",
+  "description": "List all log names in the project",
+  "tags": ["logging", "list", "logs"]
+}

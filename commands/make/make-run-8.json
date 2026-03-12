@@ -1,0 +1,8 @@
+{
+  "id": "make-run-8",
+  "categoryId": "make",
+  "subcategoryId": "make-run",
+  "title": "Keep going on error",
+  "command": "make -k",
+  "description": "Continue as much as possible after error."
+}

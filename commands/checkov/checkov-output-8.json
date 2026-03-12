@@ -1,0 +1,8 @@
+{
+  "id": "checkov-output-8",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-output",
+  "title": "Multiple outputs",
+  "command": "checkov -d . -o cli -o json --output-file-path console,results.json",
+  "description": "Output to console and JSON file."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-gs-3",
+  "title": "Initialize Lefthook",
+  "command": "lefthook install",
+  "description": "Set up Lefthook git hooks in the current repository",
+  "categoryId": "lefthook",
+  "subcategoryId": "getting-started"
+}

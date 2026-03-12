@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-components-install",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-auth",
+  "title": "Install Component",
+  "command": "gcloud components install <component-id>",
+  "description": "Install a gcloud CLI component (e.g., kubectl, gke-gcloud-auth-plugin)",
+  "tags": ["components", "install", "plugin"]
+}

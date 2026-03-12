@@ -1,0 +1,8 @@
+{
+  "id": "ssh-17",
+  "categoryId": "sshgpg",
+  "subcategoryId": "tunnels",
+  "title": "SOCKS proxy",
+  "command": "ssh -D 1080 user@host",
+  "description": "Create SOCKS proxy tunnel."
+}

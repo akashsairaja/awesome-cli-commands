@@ -1,0 +1,8 @@
+{
+  "id": "ssh-52",
+  "categoryId": "sshgpg",
+  "subcategoryId": "config",
+  "title": "ServerAliveInterval config",
+  "command": "Host *\n  ServerAliveInterval 60\n  ServerAliveCountMax 3",
+  "description": "Keep connections alive with heartbeat."
+}

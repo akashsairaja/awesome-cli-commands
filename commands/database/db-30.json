@@ -1,0 +1,8 @@
+{
+  "id": "db-30",
+  "categoryId": "database",
+  "subcategoryId": "postgresql",
+  "title": "Grant privileges",
+  "command": "GRANT ALL PRIVILEGES ON DATABASE dbname TO username;",
+  "description": "Grant all privileges on a database to a role."
+}

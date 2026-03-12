@@ -1,0 +1,8 @@
+{
+  "id": "bash-46",
+  "categoryId": "bash",
+  "subcategoryId": "functions",
+  "title": "Capture function output",
+  "command": "result=$(function_name arg1 arg2)",
+  "description": "Capture function output to variable."
+}

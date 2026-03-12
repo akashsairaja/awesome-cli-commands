@@ -1,0 +1,9 @@
+{
+  "id": "ansible-galaxy-collection-install-community",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-galaxy",
+  "title": "Install Community Collection",
+  "command": "ansible-galaxy collection install community.general",
+  "description": "Install community.general collection",
+  "tags": ["galaxy", "collection", "install", "community"]
+}

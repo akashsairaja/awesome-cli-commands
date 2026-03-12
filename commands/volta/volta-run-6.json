@@ -1,0 +1,8 @@
+{
+  "id": "volta-run-6",
+  "categoryId": "volta",
+  "subcategoryId": "volta-run",
+  "title": "Run with env vars",
+  "command": "volta run --node 20 --env NODE_ENV=production node server.js",
+  "description": "Run with specific Node version and env vars."
+}

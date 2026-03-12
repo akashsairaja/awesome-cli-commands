@@ -1,0 +1,8 @@
+{
+  "id": "vim-55",
+  "categoryId": "vim",
+  "subcategoryId": "macros",
+  "title": "Stop recording",
+  "command": "q",
+  "description": "Stop recording the current macro."
+}

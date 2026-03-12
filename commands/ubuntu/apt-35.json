@@ -1,0 +1,8 @@
+{
+  "id": "apt-35",
+  "categoryId": "ubuntu",
+  "subcategoryId": "apt-packages",
+  "title": "Download package without installing",
+  "command": "apt download <package>",
+  "description": "Download a .deb file without installing it."
+}

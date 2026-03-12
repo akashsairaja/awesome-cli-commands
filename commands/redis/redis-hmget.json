@@ -1,0 +1,9 @@
+{
+  "id": "redis-hmget",
+  "categoryId": "redis",
+  "subcategoryId": "redis-hashes",
+  "title": "Get multiple hash fields",
+  "command": "HMGET key field1 field2",
+  "description": "Get values of multiple hash fields",
+  "tags": ["hmget", "hash", "multiple"]
+}

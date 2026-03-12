@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-ssh-4",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-ssh",
+  "title": "SSH check status",
+  "command": "tailscale status | grep -i ssh",
+  "description": "Check which peers have SSH enabled."
+}

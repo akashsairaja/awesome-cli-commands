@@ -1,0 +1,51 @@
+{
+  "id": "azure-storage-management",
+  "stackId": "azure",
+  "name": "Blob Storage Operations from the CLI",
+  "description": "Create storage accounts, manage blob containers, upload and download files, and set access tiers using the Azure CLI.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "tags": ["storage", "blob", "upload", "download"],
+  "prerequisites": ["Azure CLI installed", "Active Azure subscription"],
+  "steps": [
+    {
+      "title": "Create a storage account",
+      "command": "az storage account create --name mystorageacct --resource-group myapp-rg --location eastus --sku Standard_LRS",
+      "description": "Creates a general-purpose v2 storage account with locally redundant storage.",
+      "tip": "Storage account names must be globally unique, 3-24 characters, and lowercase alphanumeric only."
+    },
+    {
+      "title": "Create a blob container",
+      "command": "az storage container create --name uploads --account-name mystorageacct --auth-mode login",
+      "description": "Creates a private blob container. The --auth-mode login uses your Azure AD credentials."
+    },
+    {
+      "title": "Upload a file",
+      "command": "az storage blob upload --account-name mystorageacct --container-name uploads --file ./report.pdf --name reports/2026/report.pdf --auth-mode login",
+      "description": "Uploads a local file to a specific blob path in the container."
+    },
+    {
+      "title": "List blobs in a container",
+      "command": "az storage blob list --account-name mystorageacct --container-name uploads --auth-mode login --output table",
+      "description": "Shows all blobs in the container with size and last modified date."
+    },
+    {
+      "title": "Download a blob",
+      "command": "az storage blob download --account-name mystorageacct --container-name uploads --name reports/2026/report.pdf --file ./downloaded-report.pdf --auth-mode login",
+      "description": "Downloads a blob to a local file path."
+    }
+  ],
+  "fullScript": "# Azure Blob Storage operations\naz storage account create --name mystorageacct --resource-group myapp-rg --location eastus --sku Standard_LRS\naz storage container create --name uploads --account-name mystorageacct --auth-mode login\naz storage blob upload --account-name mystorageacct --container-name uploads --file ./report.pdf --name reports/2026/report.pdf --auth-mode login\naz storage blob list --account-name mystorageacct --container-name uploads --auth-mode login --output table\naz storage blob download --account-name mystorageacct --container-name uploads --name reports/2026/report.pdf --file ./downloaded-report.pdf --auth-mode login",
+  "faq": [
+    {
+      "question": "What is the difference between Hot, Cool, and Archive tiers?",
+      "answer": "Hot is for frequently accessed data (lowest access cost, higher storage cost). Cool is for data accessed less than once a month. Archive is for rarely accessed data with the lowest storage cost but hours-long retrieval times."
+    },
+    {
+      "question": "How do I generate a SAS token for temporary access?",
+      "answer": "Use 'az storage blob generate-sas --account-name mystorageacct --container-name uploads --name myfile --permissions r --expiry 2026-03-12T00:00Z'. This creates a time-limited read-only URL."
+    }
+  ],
+  "relatedRecipes": ["azure-resource-group-management", "azure-function-deploy"],
+  "lastUpdated": "2026-03-11"
+}

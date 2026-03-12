@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-projects-create",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-projects",
+  "title": "Create Project",
+  "command": "gcloud projects create <project-id> --name=\"<Project Name>\"",
+  "description": "Create a new Google Cloud project",
+  "tags": ["projects", "create"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "git-10",
+  "categoryId": "git",
+  "subcategoryId": "basics",
+  "title": "Commit",
+  "command": "git commit -m \"message\"",
+  "description": "Commit staged changes with message."
+}

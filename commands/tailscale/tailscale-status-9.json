@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-status-9",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-status",
+  "title": "Generate bug report",
+  "command": "tailscale bugreport",
+  "description": "Generate a shareable diagnostic report."
+}

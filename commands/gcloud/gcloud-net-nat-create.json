@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-net-nat-create",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-networking",
+  "title": "Create Cloud NAT",
+  "command": "gcloud compute routers nats create <name> --router=<router> --region=<region> --auto-allocate-nat-external-ips --nat-all-subnet-ip-ranges",
+  "description": "Create Cloud NAT for outbound internet access from private VMs",
+  "tags": ["nat", "router", "egress"]
+}

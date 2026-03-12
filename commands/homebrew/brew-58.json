@@ -1,0 +1,8 @@
+{
+  "id": "brew-58",
+  "categoryId": "homebrew",
+  "subcategoryId": "bundle",
+  "title": "Global Brewfile",
+  "command": "brew bundle --global",
+  "description": "Install from ~/.Brewfile."
+}

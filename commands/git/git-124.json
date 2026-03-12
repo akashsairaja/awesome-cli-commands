@@ -1,0 +1,8 @@
+{
+  "id": "git-124",
+  "categoryId": "git",
+  "subcategoryId": "tags",
+  "title": "Delete local tag",
+  "command": "git tag -d <tagname>",
+  "description": "Remove a local tag."
+}

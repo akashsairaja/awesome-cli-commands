@@ -1,0 +1,9 @@
+{
+  "id": "redis-xadd",
+  "categoryId": "redis",
+  "subcategoryId": "redis-streams",
+  "title": "Add to stream",
+  "command": "XADD stream * field value",
+  "description": "Add entry to stream with auto-generated ID",
+  "tags": ["xadd", "stream", "add"]
+}

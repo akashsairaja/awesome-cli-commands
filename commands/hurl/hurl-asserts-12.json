@@ -1,0 +1,8 @@
+{
+  "id": "hurl-asserts-12",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-asserts",
+  "title": "Cookie assertion",
+  "command": "[Asserts]\ncookie \"session\" exists\ncookie \"session[HttpOnly]\" exists",
+  "description": "Assert cookie and attributes."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-auth-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-auth",
+  "title": "List Authenticated Accounts",
+  "command": "gcloud auth list",
+  "description": "List all credentialed accounts and show the active account",
+  "tags": ["auth", "list", "accounts"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "hurl-options-9",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-options",
+  "title": "Retry with interval",
+  "command": "hurl --retry 5 --retry-interval 2000 api.hurl",
+  "description": "Retry with 2 second intervals."
+}

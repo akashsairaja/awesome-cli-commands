@@ -1,0 +1,8 @@
+{
+  "id": "databricks-13",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-jobs",
+  "title": "Create job from JSON",
+  "command": "databricks jobs create --json-file job-config.json",
+  "description": "Create a new job from a JSON configuration."
+}

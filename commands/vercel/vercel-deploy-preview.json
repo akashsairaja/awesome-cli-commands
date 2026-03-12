@@ -1,0 +1,9 @@
+{
+  "id": "vercel-deploy-preview",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-deploy",
+  "title": "Create preview deployment",
+  "command": "vercel deploy",
+  "description": "Create a preview deployment",
+  "tags": ["deploy", "preview", "staging"]
+}

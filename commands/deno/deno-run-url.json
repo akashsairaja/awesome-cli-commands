@@ -1,0 +1,9 @@
+{
+  "id": "deno-run-url",
+  "categoryId": "deno",
+  "subcategoryId": "deno-run",
+  "title": "Run from URL",
+  "command": "deno run https://deno.land/std/examples/welcome.ts",
+  "description": "Execute script directly from URL",
+  "tags": ["run", "url", "remote"]
+}

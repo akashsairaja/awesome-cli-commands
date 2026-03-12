@@ -1,0 +1,9 @@
+{
+  "id": "ansible-doc-module",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-config",
+  "title": "Module Documentation",
+  "command": "ansible-doc <module>",
+  "description": "Show documentation for a module",
+  "tags": ["doc", "module", "help"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "react-test-3",
+  "categoryId": "react",
+  "subcategoryId": "react-testing",
+  "title": "Jest with coverage",
+  "command": "jest --coverage",
+  "description": "Run tests with coverage report."
+}

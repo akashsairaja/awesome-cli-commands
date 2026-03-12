@@ -1,0 +1,8 @@
+{
+  "id": "checkov-gs-2",
+  "title": "Check Checkov version",
+  "command": "checkov --version",
+  "description": "Verify Checkov is installed and display the current version",
+  "categoryId": "checkov",
+  "subcategoryId": "getting-started"
+}

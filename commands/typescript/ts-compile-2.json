@@ -1,0 +1,8 @@
+{
+  "id": "ts-compile-2",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-compile",
+  "title": "Compile specific file",
+  "command": "tsc file.ts",
+  "description": "Compile a single TypeScript file to JavaScript."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "podman-image-5",
+  "categoryId": "podman",
+  "subcategoryId": "podman-image",
+  "title": "Remove image",
+  "command": "podman rmi nginx",
+  "description": "Remove a local image."
+}

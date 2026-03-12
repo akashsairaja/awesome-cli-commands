@@ -1,0 +1,8 @@
+{
+  "id": "k8s-43",
+  "categoryId": "kubernetes",
+  "subcategoryId": "deployments",
+  "title": "Resume rollout",
+  "command": "kubectl rollout resume deployment/<name>",
+  "description": "Resume a paused deployment rollout."
+}

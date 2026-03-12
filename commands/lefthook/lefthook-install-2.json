@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-install-2",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-install",
+  "title": "Add to project",
+  "command": "lefthook add -d pre-commit",
+  "description": "Add pre-commit hook with template."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-gke-create",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-gke",
+  "title": "Create GKE Cluster",
+  "command": "gcloud container clusters create <name> --zone=<zone> --num-nodes=3",
+  "description": "Create a new GKE cluster",
+  "tags": ["gke", "create", "kubernetes"]
+}

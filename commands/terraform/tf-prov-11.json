@@ -1,0 +1,8 @@
+{
+  "id": "tf-prov-11",
+  "categoryId": "terraform",
+  "subcategoryId": "providers",
+  "title": "Lock providers",
+  "command": "terraform providers lock -platform=linux_amd64 -platform=darwin_amd64",
+  "description": "Generate dependency lock file for platforms."
+}

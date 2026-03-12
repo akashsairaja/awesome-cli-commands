@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-artifacts-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-artifacts",
+  "title": "List Artifact Repositories",
+  "command": "gcloud artifacts repositories list --location=us",
+  "description": "List all Artifact Registry repositories in location",
+  "tags": ["artifacts", "repository", "list"]
+}

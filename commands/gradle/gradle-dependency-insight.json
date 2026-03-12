@@ -1,0 +1,9 @@
+{
+  "id": "gradle-dependency-insight",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-dependencies",
+  "title": "Dependency Insight",
+  "command": "./gradlew dependencyInsight --dependency <name>",
+  "description": "Show why a dependency version was selected",
+  "tags": ["dependencies", "insight", "version"]
+}

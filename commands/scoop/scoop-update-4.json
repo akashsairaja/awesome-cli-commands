@@ -1,0 +1,8 @@
+{
+  "id": "scoop-update-4",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-update",
+  "title": "Check outdated",
+  "command": "scoop status",
+  "description": "Show outdated apps."
+}

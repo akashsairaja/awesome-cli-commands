@@ -1,0 +1,9 @@
+{
+  "id": "vercel-integration-remove",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-integrations",
+  "title": "Remove integration",
+  "command": "vercel integration remove <name>",
+  "description": "Uninstall integration",
+  "tags": ["integration", "remove", "delete"]
+}

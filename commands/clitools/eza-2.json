@@ -1,0 +1,8 @@
+{
+  "id": "eza-2",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-eza",
+  "title": "Show all files",
+  "command": "eza -la",
+  "description": "Include hidden files."
+}

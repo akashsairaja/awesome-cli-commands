@@ -1,0 +1,8 @@
+{
+  "id": "docker-60",
+  "categoryId": "docker",
+  "subcategoryId": "volumes",
+  "title": "Run with bind mount",
+  "command": "docker run -v $(pwd):/app -w /app <image>",
+  "description": "Mount current directory into container."
+}

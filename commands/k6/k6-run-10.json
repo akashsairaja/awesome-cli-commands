@@ -1,0 +1,8 @@
+{
+  "id": "k6-run-10",
+  "categoryId": "k6",
+  "subcategoryId": "k6-run",
+  "title": "Custom log output",
+  "command": "k6 run --log-output=file=k6.log script.js",
+  "description": "Write k6 logs to a file."
+}

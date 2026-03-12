@@ -1,0 +1,9 @@
+{
+  "id": "ansible-automation-syntax-check",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-automation",
+  "title": "Validate Playbook Syntax",
+  "command": "ansible-playbook playbook.yml --syntax-check",
+  "description": "Check playbook syntax for CI/CD pipelines",
+  "tags": ["automation", "syntax", "validate", "ci-cd"]
+}

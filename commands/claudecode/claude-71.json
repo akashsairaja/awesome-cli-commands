@@ -1,0 +1,8 @@
+{
+  "id": "claude-71",
+  "categoryId": "claudecode",
+  "subcategoryId": "workflows",
+  "title": "Add documentation",
+  "command": "claude \"add JSDoc comments to this file\"",
+  "description": "Generate documentation for code."
+}

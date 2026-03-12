@@ -1,0 +1,8 @@
+{
+  "id": "clitools-gs-1",
+  "title": "Install fzf (macOS)",
+  "command": "brew install fzf",
+  "description": "Install fzf fuzzy finder using Homebrew on macOS",
+  "categoryId": "clitools",
+  "subcategoryId": "getting-started"
+}

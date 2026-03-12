@@ -1,0 +1,62 @@
+{
+  "id": "react-performance-audit",
+  "stackId": "react",
+  "name": "Profile and Audit React Performance",
+  "description": "Use Lighthouse, React DevTools Profiler, and Chrome Performance tab to identify and fix rendering bottlenecks.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "Core Web Vitals directly impact SEO ranking, making performance audits critical",
+  "tags": ["performance", "lighthouse", "profiling", "devtools", "core-web-vitals"],
+  "prerequisites": [
+    "React application running locally",
+    "Chrome browser",
+    "React DevTools extension"
+  ],
+  "steps": [
+    {
+      "title": "Run a Lighthouse audit from the CLI",
+      "description": "Generate a full Lighthouse report including performance, accessibility, and SEO scores.",
+      "command": "npx lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html --chrome-flags='--headless=new'",
+      "tip": "Run against a production build (pnpm build && pnpm start) for accurate scores."
+    },
+    {
+      "title": "Analyze Core Web Vitals",
+      "description": "Check Largest Contentful Paint, Interaction to Next Paint, and Cumulative Layout Shift.",
+      "command": "npx lighthouse http://localhost:3000 --only-categories=performance --output=json | npx -y jq '.audits | {\"LCP\": .[\"largest-contentful-paint\"].displayValue, \"INP\": .[\"experimental-interaction-to-next-paint\"].displayValue, \"CLS\": .[\"cumulative-layout-shift\"].displayValue}'"
+    },
+    {
+      "title": "Profile React renders with why-did-you-render",
+      "description": "Install why-did-you-render to log unnecessary re-renders to the console.",
+      "command": "pnpm add -D @welldone-software/why-did-you-render",
+      "tip": "Only enable in development. Import it before React in your entry file."
+    },
+    {
+      "title": "Measure component render time with React Profiler",
+      "description": "Wrap components in React.Profiler to log render durations programmatically.",
+      "command": "echo '<Profiler id=\"MyComponent\" onRender={(id, phase, duration) => console.log(id, phase, duration)}>...</ Profiler>'"
+    },
+    {
+      "title": "Run multiple Lighthouse audits for stable results",
+      "description": "Use lighthouse-ci to run multiple audits and get median scores.",
+      "command": "npx @lhci/cli@latest autorun --collect.numberOfRuns=3 --collect.url=http://localhost:3000"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# React Performance Audit\nset -euo pipefail\n\nURL=${1:-http://localhost:3000}\n\necho \"=== Running Lighthouse Performance Audit ===\"\nnpx lighthouse \"$URL\" \\\n  --output=html \\\n  --output-path=./lighthouse-report.html \\\n  --chrome-flags='--headless=new' \\\n  --only-categories=performance,accessibility\n\necho \"\"\necho \"=== Report saved to lighthouse-report.html ===\"\n\necho \"\"\necho \"=== Quick Performance Tips ===\"\necho \"1. Use React.lazy() for code splitting\"\necho \"2. Memoize expensive computations with useMemo\"\necho \"3. Virtualize long lists with @tanstack/react-virtual\"\necho \"4. Optimize images with next/image or sharp\"\necho \"5. Preload critical assets with <link rel='preload'>\"",
+  "faq": [
+    {
+      "question": "Why is my Lighthouse score different every time?",
+      "answer": "Lighthouse scores vary due to CPU load, network conditions, and browser state. Always test against a production build, close other tabs, and run 3-5 times to get a median score."
+    },
+    {
+      "question": "How do I reduce unnecessary re-renders in React?",
+      "answer": "Use React.memo for pure components, useMemo/useCallback for expensive values and stable references, and avoid creating new objects or arrays in render. The React DevTools Profiler highlights which components re-render and why."
+    },
+    {
+      "question": "What is a good Lighthouse performance score?",
+      "answer": "Aim for 90+ on desktop and 70+ on mobile. Scores above 90 are considered good, 50-89 need improvement, and below 50 are poor."
+    }
+  ],
+  "relatedRecipes": ["react-bundle-analysis", "react-a11y-audit"],
+  "lastUpdated": "2026-03-11"
+}

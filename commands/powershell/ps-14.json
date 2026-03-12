@@ -1,0 +1,8 @@
+{
+  "id": "ps-14",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-processes",
+  "title": "Kill process by name",
+  "command": "Stop-Process -Name notepad",
+  "description": "Stop process by name."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-install-1",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-install",
+  "title": "Install CA",
+  "command": "mkcert -install",
+  "description": "Install local CA to system trust store."
+}

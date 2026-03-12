@@ -1,0 +1,9 @@
+{
+  "id": "zsh-omz-install",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-plugins",
+  "title": "Install Oh My Zsh",
+  "command": "sh -c \"$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"",
+  "description": "Install Oh My Zsh framework",
+  "tags": ["ohmyzsh", "install", "framework"]
+}

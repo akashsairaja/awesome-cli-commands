@@ -1,0 +1,9 @@
+{
+  "id": "bun-run-list",
+  "categoryId": "bun",
+  "subcategoryId": "bun-run",
+  "title": "List Scripts",
+  "command": "bun run",
+  "description": "Show all available scripts",
+  "tags": ["run", "list", "scripts"]
+}

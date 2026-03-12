@@ -1,0 +1,8 @@
+{
+  "id": "linux-43",
+  "categoryId": "linux",
+  "subcategoryId": "processes",
+  "title": "Resume background job",
+  "command": "bg %1",
+  "description": "Resume a stopped job in the background. Use fg %1 for foreground."
+}

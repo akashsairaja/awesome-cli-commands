@@ -1,0 +1,8 @@
+{
+  "id": "claude-23",
+  "categoryId": "claudecode",
+  "subcategoryId": "permissions",
+  "title": "View/manage permissions",
+  "command": "/permissions",
+  "description": "Manage permission settings interactively."
+}

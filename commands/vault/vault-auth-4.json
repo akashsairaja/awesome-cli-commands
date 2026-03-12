@@ -1,0 +1,8 @@
+{
+  "id": "vault-auth-4",
+  "categoryId": "vault",
+  "subcategoryId": "vault-auth",
+  "title": "List auth methods",
+  "command": "vault auth list",
+  "description": "List enabled authentication methods."
+}

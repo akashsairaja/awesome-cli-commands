@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-gke-versions",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-gke",
+  "title": "List Available Versions",
+  "command": "gcloud container get-server-config --zone=<zone>",
+  "description": "Show available Kubernetes versions and default version for GKE",
+  "tags": ["gke", "versions", "server-config"]
+}

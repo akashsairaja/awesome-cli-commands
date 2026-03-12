@@ -1,0 +1,8 @@
+{
+  "id": "claude-64",
+  "categoryId": "claudecode",
+  "subcategoryId": "workflows",
+  "title": "Generate commit message",
+  "command": "/commit",
+  "description": "Generate and create a git commit."
+}

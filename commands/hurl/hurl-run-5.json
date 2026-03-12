@@ -1,0 +1,8 @@
+{
+  "id": "hurl-run-5",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-run",
+  "title": "Run multiple files",
+  "command": "hurl *.hurl",
+  "description": "Execute multiple Hurl files."
+}

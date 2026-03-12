@@ -1,0 +1,8 @@
+{
+  "id": "claude-72",
+  "categoryId": "claudecode",
+  "subcategoryId": "utilities",
+  "title": "Health check",
+  "command": "/doctor",
+  "description": "Run diagnostics and health checks."
+}

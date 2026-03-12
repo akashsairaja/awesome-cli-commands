@@ -1,0 +1,52 @@
+{
+  "id": "terraform-workspace-management",
+  "stackId": "terraform",
+  "name": "Multi-Environment Workspace Management",
+  "description": "Use Terraform workspaces to manage multiple environments like dev, staging, and production from a single configuration.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "tags": ["workspace", "environments", "multi-env", "dev", "production"],
+  "prerequisites": ["Terraform installed", "Remote backend configured"],
+  "steps": [
+    {
+      "title": "List existing workspaces",
+      "description": "View all available workspaces. The asterisk marks the currently selected workspace.",
+      "command": "terraform workspace list"
+    },
+    {
+      "title": "Create workspaces for each environment",
+      "description": "Create separate workspaces for dev, staging, and production environments.",
+      "command": "terraform workspace new dev && terraform workspace new staging && terraform workspace new prod",
+      "tip": "Each workspace maintains its own independent state file, so resources are fully isolated."
+    },
+    {
+      "title": "Switch between workspaces",
+      "description": "Select the workspace you want to operate in before running plan or apply.",
+      "command": "terraform workspace select staging"
+    },
+    {
+      "title": "Use workspace name in configuration",
+      "description": "Reference terraform.workspace to parameterize resources per environment.",
+      "command": "cat <<'EOF' > main.tf\nlocals {\n  env = terraform.workspace\n}\n\nresource \"aws_instance\" \"app\" {\n  instance_type = local.env == \"prod\" ? \"t3.large\" : \"t3.micro\"\n  tags = {\n    Environment = local.env\n  }\n}\nEOF"
+    },
+    {
+      "title": "Use workspace-specific variable files",
+      "description": "Load environment-specific variables automatically based on the active workspace.",
+      "command": "terraform plan -var-file=\"envs/${terraform.workspace}.tfvars\"",
+      "tip": "Create envs/dev.tfvars, envs/staging.tfvars, and envs/prod.tfvars with environment-specific values."
+    }
+  ],
+  "fullScript": "#!/bin/bash\nset -euo pipefail\n\n# Terraform Workspace Setup Script\n# Creates and configures workspaces for multi-environment management\n\nENVIRONMENTS=(\"dev\" \"staging\" \"prod\")\n\necho \"==> Current workspaces:\"\nterraform workspace list\n\nfor ENV in \"${ENVIRONMENTS[@]}\"; do\n  if terraform workspace list | grep -q \"\\b${ENV}\\b\"; then\n    echo \"==> Workspace '${ENV}' already exists, skipping.\"\n  else\n    echo \"==> Creating workspace '${ENV}'...\"\n    terraform workspace new \"${ENV}\"\n  fi\ndone\n\necho \"\"\necho \"==> All workspaces:\"\nterraform workspace list\n\necho \"\"\necho \"==> Switching to dev workspace...\"\nterraform workspace select dev\n\necho \"==> Initializing in dev workspace...\"\nterraform init\n\necho \"\"\necho \"Done. Use 'terraform workspace select <env>' to switch environments.\"",
+  "faq": [
+    {
+      "question": "Are workspaces suitable for large-scale environment isolation?",
+      "answer": "Workspaces work well for small to medium setups. For large teams, separate root modules per environment or tools like Terragrunt offer stronger isolation and independent state management."
+    },
+    {
+      "question": "Where does each workspace store its state?",
+      "answer": "With S3 backend, each workspace creates a separate state file under the env:/ prefix in the same bucket, like env:/staging/terraform.tfstate."
+    }
+  ],
+  "relatedRecipes": ["terraform-remote-backend-setup", "terraform-ci-automation"],
+  "lastUpdated": "2026-03-11"
+}

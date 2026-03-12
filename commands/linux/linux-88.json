@@ -1,0 +1,8 @@
+{
+  "id": "linux-88",
+  "categoryId": "linux",
+  "subcategoryId": "network",
+  "title": "Show TCP connections with process",
+  "command": "ss -tpn",
+  "description": "List TCP connections with associated process information."
+}

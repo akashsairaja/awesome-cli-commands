@@ -1,0 +1,9 @@
+{
+  "id": "nginx-check-syntax",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-config",
+  "title": "Check specific config",
+  "command": "sudo nginx -c /path/to/nginx.conf -t",
+  "description": "Test a specific configuration file",
+  "tags": ["test", "config", "specific"]
+}

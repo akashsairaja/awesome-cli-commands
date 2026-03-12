@@ -1,0 +1,8 @@
+{
+  "id": "tofu-encryption-3",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-encryption",
+  "title": "GCP KMS encryption",
+  "command": "key_provider \"gcp_kms\" \"my_gcp\" {\n  kms_encryption_key = \"projects/my-proj/locations/global/keyRings/my-ring/cryptoKeys/my-key\"\n}",
+  "description": "Use Google Cloud KMS for state encryption."
+}

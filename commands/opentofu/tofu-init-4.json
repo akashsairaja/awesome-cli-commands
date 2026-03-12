@@ -1,0 +1,8 @@
+{
+  "id": "tofu-init-4",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-init",
+  "title": "Migrate state",
+  "command": "tofu init -migrate-state",
+  "description": "Migrate state to new backend."
+}

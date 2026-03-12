@@ -1,0 +1,9 @@
+{
+  "id": "gh-repo-fork",
+  "categoryId": "github",
+  "subcategoryId": "gh-repo",
+  "title": "Fork repository",
+  "command": "gh repo fork <owner>/<repo> --clone",
+  "description": "Fork a repository and clone it locally",
+  "tags": ["repo", "fork", "clone"]
+}

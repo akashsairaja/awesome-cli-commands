@@ -1,0 +1,9 @@
+{
+  "id": "gh-issue-create",
+  "categoryId": "github",
+  "subcategoryId": "gh-issue",
+  "title": "Create issue",
+  "command": "gh issue create",
+  "description": "Create a new issue interactively",
+  "tags": ["issue", "create", "new"]
+}

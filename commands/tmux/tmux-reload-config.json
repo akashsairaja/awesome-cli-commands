@@ -1,0 +1,9 @@
+{
+  "id": "tmux-reload-config",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-config",
+  "title": "Reload config",
+  "command": "tmux source-file ~/.tmux.conf",
+  "description": "Reload tmux configuration",
+  "tags": ["config", "reload", "refresh"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-http-13",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-http",
+  "title": "Webhook verification",
+  "command": "ngrok http --verify-webhook=github --verify-webhook-secret=SECRET 3000",
+  "description": "Verify webhook signatures from a provider."
+}

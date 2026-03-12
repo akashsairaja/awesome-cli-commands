@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-certs-8",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-certs",
+  "title": "Generate for email SAN",
+  "command": "mkcert localhost admin@localhost",
+  "description": "Create cert with email Subject Alternative Name."
+}

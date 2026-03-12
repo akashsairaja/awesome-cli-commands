@@ -1,0 +1,8 @@
+{
+  "id": "claude-89",
+  "categoryId": "claudecode",
+  "subcategoryId": "installation",
+  "title": "Install (Windows)",
+  "command": "irm https://claude.ai/install.ps1 | iex",
+  "description": "Install Claude Code on Windows PowerShell."
+}

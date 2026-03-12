@@ -1,0 +1,8 @@
+{
+  "id": "starship-install-8",
+  "categoryId": "starship",
+  "subcategoryId": "starship-install",
+  "title": "Init Elvish",
+  "command": "eval (starship init elvish)",
+  "description": "Initialize Starship in Elvish shell."
+}

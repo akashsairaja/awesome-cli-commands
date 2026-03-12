@@ -1,0 +1,9 @@
+{
+  "id": "redis-search-aggregate",
+  "categoryId": "redis",
+  "subcategoryId": "redis-search",
+  "title": "Aggregation query",
+  "command": "FT.AGGREGATE idx * GROUPBY 1 @category",
+  "description": "Run aggregation queries with grouping and transformations",
+  "tags": ["search", "aggregate", "groupby", "redisearch"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "zsh-fzf-install",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-plugins",
+  "title": "Install fzf integration",
+  "command": "git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install",
+  "description": "Install fzf fuzzy finder with zsh integration",
+  "tags": ["fzf", "fuzzy", "install"]
+}

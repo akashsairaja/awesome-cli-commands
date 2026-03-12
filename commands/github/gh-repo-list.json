@@ -1,0 +1,9 @@
+{
+  "id": "gh-repo-list",
+  "categoryId": "github",
+  "subcategoryId": "gh-repo",
+  "title": "List repositories",
+  "command": "gh repo list",
+  "description": "List repositories for authenticated user",
+  "tags": ["repo", "list", "show"]
+}

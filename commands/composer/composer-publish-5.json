@@ -1,0 +1,8 @@
+{
+  "id": "composer-publish-5",
+  "categoryId": "composer",
+  "subcategoryId": "composer-publish",
+  "title": "Config repository",
+  "command": "composer config repositories.private vcs https://github.com/org/repo",
+  "description": "Add a private VCS repository."
+}

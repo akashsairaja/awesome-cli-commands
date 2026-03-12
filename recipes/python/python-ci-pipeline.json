@@ -1,0 +1,61 @@
+{
+  "id": "python-ci-pipeline",
+  "stackId": "python",
+  "name": "GitHub Actions CI for Python with Matrix Testing",
+  "description": "Set up a complete GitHub Actions CI pipeline for Python projects with matrix testing across multiple Python versions, linting, type checking, and coverage.",
+  "difficulty": "advanced",
+  "timeMinutes": 20,
+  "trending": false,
+  "tags": ["ci", "github-actions", "matrix", "automation", "pipeline"],
+  "prerequisites": [
+    "A Python project in a GitHub repository",
+    "pytest and ruff installed as dev dependencies"
+  ],
+  "steps": [
+    {
+      "title": "Create the CI workflow directory",
+      "command": "mkdir -p .github/workflows",
+      "description": "Create the directory structure that GitHub Actions requires for workflow files."
+    },
+    {
+      "title": "Create the CI workflow file",
+      "command": "cat > .github/workflows/ci.yml << 'EOF'\nname: CI\non:\n  push:\n    branches: [main]\n  pull_request:\n    branches: [main]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        python-version: ['3.11', '3.12', '3.13']\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-python@v5\n        with:\n          python-version: ${{ matrix.python-version }}\n      - run: pip install -r requirements.txt\n      - run: pip install pytest pytest-cov ruff mypy\n      - run: ruff check .\n      - run: ruff format --check .\n      - run: mypy src/ --ignore-missing-imports\n      - run: pytest --cov=src --cov-report=xml tests/\nEOF",
+      "description": "Create a CI workflow that tests against Python 3.11, 3.12, and 3.13. It runs linting, formatting checks, type checking, and tests with coverage.",
+      "tip": "The matrix strategy runs all Python versions in parallel, so the total CI time equals the slowest single version, not the sum."
+    },
+    {
+      "title": "Validate the workflow syntax locally",
+      "command": "python -c \"import yaml; yaml.safe_load(open('.github/workflows/ci.yml'))\" && echo 'Valid YAML'",
+      "description": "Verify that the workflow file is valid YAML before committing. Syntax errors in workflow files are only caught after pushing to GitHub.",
+      "warning": "This checks YAML syntax only, not GitHub Actions schema. For full validation, use 'actionlint' if installed."
+    },
+    {
+      "title": "Commit and push the workflow",
+      "command": "git add .github/workflows/ci.yml && git commit -m 'ci: add Python CI pipeline' && git push",
+      "description": "Commit the workflow file and push to GitHub. The CI pipeline will trigger automatically on the next push or pull request to main."
+    },
+    {
+      "title": "Check the workflow run status",
+      "command": "gh run list --limit 5",
+      "description": "Use the GitHub CLI to check the status of recent workflow runs. This shows whether your CI pipeline passed or failed.",
+      "tip": "Use 'gh run view <run-id> --log-failed' to see the logs for a failed run without opening a browser."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# GitHub Actions CI setup for Python\nset -e\n\nmkdir -p .github/workflows\n\ncat > .github/workflows/ci.yml << 'WORKFLOW'\nname: CI\n\non:\n  push:\n    branches: [main]\n  pull_request:\n    branches: [main]\n\njobs:\n  lint:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-python@v5\n        with:\n          python-version: '3.12'\n      - run: pip install ruff\n      - run: ruff check .\n      - run: ruff format --check .\n\n  typecheck:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-python@v5\n        with:\n          python-version: '3.12'\n      - run: pip install -r requirements.txt\n      - run: pip install mypy\n      - run: mypy src/ --ignore-missing-imports\n\n  test:\n    runs-on: ubuntu-latest\n    strategy:\n      fail-fast: false\n      matrix:\n        python-version: ['3.11', '3.12', '3.13']\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-python@v5\n        with:\n          python-version: ${{ matrix.python-version }}\n          cache: pip\n      - run: pip install -r requirements.txt\n      - run: pip install pytest pytest-cov\n      - run: pytest --cov=src --cov-report=xml --cov-fail-under=80 tests/\n      - uses: actions/upload-artifact@v4\n        if: matrix.python-version == '3.12'\n        with:\n          name: coverage-report\n          path: coverage.xml\nWORKFLOW\n\necho \"CI workflow created at .github/workflows/ci.yml\"\necho \"Commit and push to activate the pipeline.\"",
+  "faq": [
+    {
+      "question": "How do I cache pip dependencies in GitHub Actions?",
+      "answer": "Use the 'cache: pip' option in actions/setup-python@v5. It automatically caches the pip download cache based on your requirements.txt hash, reducing install times on subsequent runs."
+    },
+    {
+      "question": "What does fail-fast: false do in the matrix strategy?",
+      "answer": "By default, if one matrix job fails, GitHub cancels all other running jobs. Setting fail-fast: false lets all versions complete, so you can see the full picture of which Python versions pass and which fail."
+    },
+    {
+      "question": "How do I add a status badge to my README?",
+      "answer": "Add this markdown to your README: ![CI](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg). Replace OWNER and REPO with your GitHub username and repository name."
+    }
+  ],
+  "relatedRecipes": ["python-pytest-testing", "python-ruff-linting", "python-docker-packaging"],
+  "lastUpdated": "2026-03-11"
+}

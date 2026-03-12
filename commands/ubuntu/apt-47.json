@@ -1,0 +1,8 @@
+{
+  "id": "apt-47",
+  "categoryId": "ubuntu",
+  "subcategoryId": "users",
+  "title": "Unlock user account",
+  "command": "sudo usermod -U <username>",
+  "description": "Unlock a previously locked user account."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "kafka-admin-2",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-admin",
+  "title": "Broker configs",
+  "command": "kafka-configs.sh --describe --entity-type brokers --entity-name 0 --bootstrap-server localhost:9092",
+  "description": "Show broker configuration."
+}

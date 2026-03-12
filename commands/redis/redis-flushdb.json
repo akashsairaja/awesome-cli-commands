@@ -1,0 +1,9 @@
+{
+  "id": "redis-flushdb",
+  "categoryId": "redis",
+  "subcategoryId": "redis-server",
+  "title": "Flush current database",
+  "command": "FLUSHDB",
+  "description": "Delete all keys in current database",
+  "tags": ["flushdb", "delete", "clear"]
+}

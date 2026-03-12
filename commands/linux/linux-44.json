@@ -1,0 +1,8 @@
+{
+  "id": "linux-44",
+  "categoryId": "linux",
+  "subcategoryId": "processes",
+  "title": "List background jobs",
+  "command": "jobs -l",
+  "description": "Show all background and stopped jobs with PIDs."
+}

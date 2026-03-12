@@ -1,0 +1,9 @@
+{
+  "id": "ansible-galaxy-install",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-galaxy",
+  "title": "Install Role",
+  "command": "ansible-galaxy install <namespace.role>",
+  "description": "Install a role from Galaxy",
+  "tags": ["galaxy", "install", "role"]
+}

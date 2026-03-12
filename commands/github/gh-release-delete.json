@@ -1,0 +1,9 @@
+{
+  "id": "gh-release-delete",
+  "categoryId": "github",
+  "subcategoryId": "gh-release",
+  "title": "Delete release",
+  "command": "gh release delete <tag> --yes",
+  "description": "Delete a release",
+  "tags": ["release", "delete", "remove"]
+}

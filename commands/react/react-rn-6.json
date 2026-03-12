@@ -1,0 +1,8 @@
+{
+  "id": "react-rn-6",
+  "categoryId": "react",
+  "subcategoryId": "react-native",
+  "title": "Run on Android",
+  "command": "npx react-native run-android",
+  "description": "Build and run on Android emulator/device."
+}

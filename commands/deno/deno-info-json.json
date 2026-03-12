@@ -1,0 +1,9 @@
+{
+  "id": "deno-info-json",
+  "categoryId": "deno",
+  "subcategoryId": "deno-info",
+  "title": "Module Info JSON",
+  "command": "deno info --json script.ts",
+  "description": "Get module info as JSON",
+  "tags": ["info", "json", "machine"]
+}

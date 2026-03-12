@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-sql-delete",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-sql",
+  "title": "Delete SQL Instance",
+  "command": "gcloud sql instances delete <name>",
+  "description": "Delete a Cloud SQL instance permanently",
+  "tags": ["sql", "delete", "cleanup"]
+}

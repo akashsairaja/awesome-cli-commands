@@ -1,0 +1,8 @@
+{
+  "id": "tf-state-2",
+  "categoryId": "terraform",
+  "subcategoryId": "state",
+  "title": "Initialize with upgrade",
+  "command": "terraform init -upgrade",
+  "description": "Initialize and upgrade providers to latest."
+}

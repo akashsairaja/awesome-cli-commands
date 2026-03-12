@@ -1,0 +1,8 @@
+{
+  "id": "k8s-126",
+  "categoryId": "kubernetes",
+  "subcategoryId": "manifests",
+  "title": "Apply from URL",
+  "command": "kubectl apply -f https://example.com/manifest.yaml",
+  "description": "Apply manifest directly from URL."
+}

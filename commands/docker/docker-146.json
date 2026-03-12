@@ -1,0 +1,8 @@
+{
+  "id": "docker-146",
+  "categoryId": "docker",
+  "subcategoryId": "security",
+  "title": "View software bill of materials",
+  "command": "docker scout sbom <image>",
+  "description": "Display detailed software bill of materials (SBOM) for image."
+}

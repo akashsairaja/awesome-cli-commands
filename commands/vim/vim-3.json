@@ -1,0 +1,8 @@
+{
+  "id": "vim-3",
+  "categoryId": "vim",
+  "subcategoryId": "navigation",
+  "title": "Go to start/end of line",
+  "command": "0 / $",
+  "description": "Jump to line start/end."
+}

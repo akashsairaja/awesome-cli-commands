@@ -1,0 +1,70 @@
+{
+  "id": "aws-s3-sync-deploy",
+  "stackId": "aws",
+  "name": "Static Site Deployment with S3 Sync and CloudFront Invalidation",
+  "description": "Deploy a static website to S3 with optimized cache headers and trigger a CloudFront invalidation for instant global propagation.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "trending": true,
+  "trendingReason": "Static site deployment to S3 plus CloudFront remains the most cost-effective hosting pattern on AWS.",
+  "tags": ["s3", "cloudfront", "deploy", "static-site", "hosting"],
+  "prerequisites": [
+    "AWS CLI v2 installed and configured",
+    "S3 bucket with static website hosting enabled"
+  ],
+  "steps": [
+    {
+      "title": "Build your static site",
+      "description": "Generate the production build output that will be uploaded to S3.",
+      "command": "npm run build",
+      "tip": "Most frameworks output to a dist/ or build/ directory. Check your framework docs for the exact output path."
+    },
+    {
+      "title": "Sync build output to S3",
+      "description": "Upload new and changed files to the S3 bucket and remove files that no longer exist in the local build directory.",
+      "command": "aws s3 sync ./dist s3://my-website-bucket --delete",
+      "warning": "The --delete flag removes files from S3 that are not in your local directory. Make sure you are syncing the correct folder."
+    },
+    {
+      "title": "Set cache headers for hashed assets",
+      "description": "Apply long-lived cache-control headers to fingerprinted assets like JS, CSS, and images so browsers cache them aggressively.",
+      "command": "aws s3 cp s3://my-website-bucket/assets/ s3://my-website-bucket/assets/ --recursive --cache-control \"max-age=31536000,immutable\" --metadata-directive REPLACE",
+      "tip": "Only apply immutable caching to files with content hashes in their filenames. HTML files should have short or no cache TTL."
+    },
+    {
+      "title": "Set short cache on HTML files",
+      "description": "Ensure HTML entry points are revalidated frequently so users always get the latest version that references the correct hashed assets.",
+      "command": "aws s3 cp s3://my-website-bucket/ s3://my-website-bucket/ --recursive --exclude \"*\" --include \"*.html\" --cache-control \"max-age=60,s-maxage=300\" --metadata-directive REPLACE",
+      "tip": "s-maxage controls the CDN cache TTL separately from the browser cache TTL set by max-age."
+    },
+    {
+      "title": "Invalidate CloudFront cache",
+      "description": "Create a CloudFront invalidation to purge cached content at edge locations worldwide so visitors see the latest deployment.",
+      "command": "aws cloudfront create-invalidation --distribution-id E1EXAMPLE --paths \"/*\"",
+      "warning": "Wildcard invalidations count as a single invalidation path but still take 5-15 minutes to propagate across all edge locations."
+    },
+    {
+      "title": "Verify the deployment",
+      "description": "Check the invalidation status and confirm the deployment went through successfully.",
+      "command": "aws cloudfront get-invalidation --distribution-id E1EXAMPLE --id INVALIDATION_ID",
+      "tip": "You can also run 'curl -I https://your-domain.com' to inspect the response headers and verify cache-control values."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Static Site S3 Deployment with CloudFront Invalidation\n# Usage: ./deploy-s3.sh <bucket-name> <distribution-id> [build-dir]\n\nset -euo pipefail\n\nBUCKET=\"${1:?Usage: $0 <bucket-name> <distribution-id> [build-dir]}\"\nDIST_ID=\"${2:?Provide your CloudFront distribution ID}\"\nBUILD_DIR=\"${3:-./dist}\"\n\nif [ ! -d \"$BUILD_DIR\" ]; then\n  echo \"Build directory $BUILD_DIR not found. Run your build command first.\"\n  exit 1\nfi\n\necho \"Syncing $BUILD_DIR to s3://$BUCKET ...\"\naws s3 sync \"$BUILD_DIR\" \"s3://$BUCKET\" --delete\n\necho \"Setting cache headers for hashed assets...\"\naws s3 cp \"s3://$BUCKET/assets/\" \"s3://$BUCKET/assets/\" \\\n  --recursive \\\n  --cache-control \"max-age=31536000,immutable\" \\\n  --metadata-directive REPLACE 2>/dev/null || true\n\necho \"Setting short cache on HTML files...\"\naws s3 cp \"s3://$BUCKET/\" \"s3://$BUCKET/\" \\\n  --recursive \\\n  --exclude \"*\" --include \"*.html\" \\\n  --cache-control \"max-age=60,s-maxage=300\" \\\n  --metadata-directive REPLACE\n\necho \"Invalidating CloudFront distribution $DIST_ID ...\"\nINVALIDATION=$(aws cloudfront create-invalidation \\\n  --distribution-id \"$DIST_ID\" \\\n  --paths \"/*\" \\\n  --output json)\n\nINV_ID=$(echo \"$INVALIDATION\" | jq -r '.Invalidation.Id')\necho \"Invalidation created: $INV_ID\"\necho \"Deployment complete. Invalidation may take a few minutes to propagate.\"",
+  "faq": [
+    {
+      "question": "Should I use --delete with s3 sync?",
+      "answer": "Yes for deployments. The --delete flag removes old files from S3 that no longer exist in your build output, keeping the bucket clean and preventing stale assets from being served."
+    },
+    {
+      "question": "How much does a CloudFront invalidation cost?",
+      "answer": "The first 1,000 invalidation paths per month are free. After that, each path costs $0.005. A wildcard path like /* counts as one path."
+    },
+    {
+      "question": "Can I skip the CloudFront invalidation if I use hashed filenames?",
+      "answer": "Hashed assets do not need invalidation since new deploys produce new filenames. However, your index.html still references the new hashes, so invalidating HTML files or using short cache TTLs on them is still necessary."
+    }
+  ],
+  "relatedRecipes": ["aws-cost-analysis", "aws-cloudwatch-log-analysis"],
+  "lastUpdated": "2026-03-11"
+}

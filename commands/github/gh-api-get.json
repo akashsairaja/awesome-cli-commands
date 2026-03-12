@@ -1,0 +1,9 @@
+{
+  "id": "gh-api-get",
+  "categoryId": "github",
+  "subcategoryId": "gh-api",
+  "title": "API GET request",
+  "command": "gh api <endpoint>",
+  "description": "Make GET request to GitHub API",
+  "tags": ["api", "get", "request"]
+}

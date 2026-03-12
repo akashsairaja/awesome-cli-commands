@@ -1,0 +1,8 @@
+{
+  "id": "docker-143",
+  "categoryId": "docker",
+  "subcategoryId": "buildx",
+  "title": "Build with registry cache",
+  "command": "docker buildx build --cache-from type=registry,ref=<image> -t <image> .",
+  "description": "Use remote registry as build cache source for faster builds."
+}

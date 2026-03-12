@@ -1,0 +1,8 @@
+{
+  "id": "snyk-test-5",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-test",
+  "title": "Test all projects",
+  "command": "snyk test --all-projects",
+  "description": "Test all projects in directory."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "nats-obj-5",
+  "categoryId": "nats",
+  "subcategoryId": "nats-object",
+  "title": "Delete object",
+  "command": "nats obj rm files myfile.pdf --force",
+  "description": "Delete file from bucket."
+}

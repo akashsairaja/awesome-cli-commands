@@ -1,0 +1,9 @@
+{
+  "id": "tmux-next-session",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-sessions",
+  "title": "Next session",
+  "command": "Ctrl+b )",
+  "description": "Switch to next session",
+  "tags": ["session", "next", "switch"]
+}

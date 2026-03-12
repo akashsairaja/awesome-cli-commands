@@ -1,0 +1,8 @@
+{
+  "id": "tofu-plan-8",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-plan",
+  "title": "Refresh-only plan",
+  "command": "tofu plan -refresh-only",
+  "description": "Plan to update state without changing resources."
+}

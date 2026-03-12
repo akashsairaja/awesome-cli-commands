@@ -1,0 +1,57 @@
+{
+  "id": "playwright-ci-setup",
+  "stackId": "playwright",
+  "name": "Run Playwright Tests in GitHub Actions",
+  "description": "Configure Playwright to run E2E tests in GitHub Actions CI with browser caching, parallel execution, artifact uploads, and failure reporting.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "CI integration is essential as teams adopt Playwright for production test suites",
+  "tags": ["ci", "github-actions", "automation", "pipeline"],
+  "prerequisites": [
+    "Playwright project set up",
+    "GitHub repository",
+    "Basic GitHub Actions knowledge"
+  ],
+  "steps": [
+    {
+      "title": "Create the GitHub Actions workflow",
+      "description": "Set up a workflow file for running Playwright tests on push and PR.",
+      "command": "mkdir -p .github/workflows && cat > .github/workflows/playwright.yml << 'EOF'\nname: Playwright Tests\non:\n  push:\n    branches: [main]\n  pull_request:\n    branches: [main]\njobs:\n  test:\n    timeout-minutes: 30\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 20\n          cache: npm\n      - run: npm ci\n      - run: npx playwright install --with-deps chromium\n      - run: npx playwright test --project=chromium\n      - uses: actions/upload-artifact@v4\n        if: ${{ !cancelled() }}\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 14\nEOF"
+    },
+    {
+      "title": "Configure CI-specific settings",
+      "description": "Update playwright.config.ts with CI-optimized options.",
+      "command": "cat << 'EOF'\n// Add to playwright.config.ts\nexport default defineConfig({\n  forbidOnly: !!process.env.CI,\n  retries: process.env.CI ? 2 : 0,\n  workers: process.env.CI ? 1 : undefined,\n  reporter: process.env.CI ? 'github' : 'html',\n});\nEOF",
+      "tip": "The 'github' reporter annotates failed tests directly in the PR checks tab. Use 'forbidOnly' to fail CI if .only() is accidentally committed."
+    },
+    {
+      "title": "Add browser caching",
+      "description": "Cache Playwright browsers to speed up CI runs.",
+      "command": "echo 'Add this step before playwright install in the workflow:\n\n- uses: actions/cache@v4\n  with:\n    path: ~/.cache/ms-playwright\n    key: playwright-${{ hashFiles(\"package-lock.json\") }}'"
+    },
+    {
+      "title": "Run the workflow locally for testing",
+      "description": "Test the CI pipeline locally before pushing.",
+      "command": "CI=true npx playwright test --project=chromium --reporter=github",
+      "tip": "Setting CI=true locally simulates the CI environment including retries and reporter settings."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Playwright CI Setup\nset -euo pipefail\n\necho \"=== Creating GitHub Actions Workflow ===\"\nmkdir -p .github/workflows\n\ncat > .github/workflows/playwright.yml << 'WORKFLOW'\nname: Playwright Tests\non:\n  push:\n    branches: [main]\n  pull_request:\n    branches: [main]\n\njobs:\n  test:\n    timeout-minutes: 30\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 20\n          cache: npm\n\n      - name: Install dependencies\n        run: npm ci\n\n      - name: Cache Playwright browsers\n        uses: actions/cache@v4\n        with:\n          path: ~/.cache/ms-playwright\n          key: playwright-${{ hashFiles('package-lock.json') }}\n\n      - name: Install Playwright browsers\n        run: npx playwright install --with-deps chromium\n\n      - name: Run Playwright tests\n        run: npx playwright test --project=chromium\n\n      - name: Upload test report\n        uses: actions/upload-artifact@v4\n        if: ${{ !cancelled() }}\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 14\nWORKFLOW\n\necho \"\"\necho \"=== Workflow created at .github/workflows/playwright.yml ===\"\necho \"\"\necho \"=== Local CI Simulation ===\"\necho \"Run: CI=true npx playwright test --project=chromium\"",
+  "faq": [
+    {
+      "question": "How do I run tests against a deployed preview URL?",
+      "answer": "Pass the URL via environment variable: 'PLAYWRIGHT_BASE_URL=https://preview-123.example.com npx playwright test'. In GitHub Actions, use the deployment_status event or extract the preview URL from your deploy step output."
+    },
+    {
+      "question": "Why should I install only one browser in CI?",
+      "answer": "Installing all three browsers adds 500+ MB to each CI run. Most bugs are caught with a single browser. Run Chromium in CI and test Firefox/WebKit periodically or in a separate job to save time and cost."
+    },
+    {
+      "question": "How do I debug a test that only fails in CI?",
+      "answer": "Enable trace recording with 'trace: on-first-retry' in your config. Download the trace artifact from the CI run and open it with 'npx playwright show-trace trace.zip'. The trace includes screenshots, DOM snapshots, network logs, and console output."
+    }
+  ],
+  "relatedRecipes": ["playwright-trace-debugging", "playwright-parallel-sharding"],
+  "lastUpdated": "2026-03-11"
+}

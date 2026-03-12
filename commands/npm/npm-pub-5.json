@@ -1,0 +1,8 @@
+{
+  "id": "npm-pub-5",
+  "categoryId": "npm",
+  "subcategoryId": "npm-publish",
+  "title": "Bump version",
+  "command": "npm version patch",
+  "description": "Bump patch version (1.0.0 -> 1.0.1)."
+}

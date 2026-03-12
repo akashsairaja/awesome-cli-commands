@@ -1,0 +1,8 @@
+{
+  "id": "db-gs-3",
+  "title": "Start MySQL server (macOS)",
+  "command": "brew services start mysql",
+  "description": "Start MySQL server as a background service using Homebrew",
+  "categoryId": "database",
+  "subcategoryId": "getting-started"
+}

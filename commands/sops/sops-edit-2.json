@@ -1,0 +1,8 @@
+{
+  "id": "sops-edit-2",
+  "categoryId": "sops",
+  "subcategoryId": "sops-edit",
+  "title": "Edit with specific editor",
+  "command": "EDITOR=vim sops secrets.enc.yaml",
+  "description": "Edit using specific editor."
+}

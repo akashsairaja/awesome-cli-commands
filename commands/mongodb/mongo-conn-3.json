@@ -1,0 +1,8 @@
+{
+  "id": "mongo-conn-3",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-connection",
+  "title": "Connect to Atlas",
+  "command": "mongosh \"mongodb+srv://cluster.mongodb.net/mydb\" --apiVersion 1 --username admin",
+  "description": "Connect to MongoDB Atlas cluster."
+}

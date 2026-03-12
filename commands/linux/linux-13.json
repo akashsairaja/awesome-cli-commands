@@ -1,0 +1,8 @@
+{
+  "id": "linux-13",
+  "categoryId": "linux",
+  "subcategoryId": "network",
+  "title": "Download with curl",
+  "command": "curl -LO <url>",
+  "description": "Download file following redirects, keep original name."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tf-test-1",
+  "categoryId": "terraform",
+  "subcategoryId": "terraform-test",
+  "title": "Run tests",
+  "command": "terraform test",
+  "description": "Run Terraform tests (requires Terraform 1.6+)."
+}

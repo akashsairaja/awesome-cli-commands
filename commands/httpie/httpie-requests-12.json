@@ -1,0 +1,8 @@
+{
+  "id": "httpie-requests-12",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-requests",
+  "title": "Shorthand URL with colon",
+  "command": "http :/api/users",
+  "description": "Shorthand for http://localhost/api/users (default port 80)."
+}

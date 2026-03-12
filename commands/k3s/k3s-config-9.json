@@ -1,0 +1,8 @@
+{
+  "id": "k3s-config-9",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-config",
+  "title": "Set cluster CIDR",
+  "command": "curl -sfL https://get.k3s.io | sh -s - --cluster-cidr 10.42.0.0/16 --service-cidr 10.43.0.0/16",
+  "description": "Configure custom pod and service CIDR ranges."
+}

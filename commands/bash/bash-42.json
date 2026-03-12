@@ -1,0 +1,8 @@
+{
+  "id": "bash-42",
+  "categoryId": "bash",
+  "subcategoryId": "functions",
+  "title": "Function shorthand",
+  "command": "name() { echo \"Hello\"; }",
+  "description": "Define function without keyword."
+}

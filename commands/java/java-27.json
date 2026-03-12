@@ -1,0 +1,8 @@
+{
+  "id": "java-27",
+  "categoryId": "java",
+  "subcategoryId": "java-jar",
+  "title": "Describe module JAR",
+  "command": "jar --describe-module --file module.jar",
+  "description": "Show module descriptor information for a modular JAR."
+}

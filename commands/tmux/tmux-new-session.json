@@ -1,0 +1,9 @@
+{
+  "id": "tmux-new-session",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-sessions",
+  "title": "New session",
+  "command": "tmux new -s mysession",
+  "description": "Create new named session",
+  "tags": ["session", "new", "create"]
+}

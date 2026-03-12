@@ -1,0 +1,8 @@
+{
+  "id": "docker-32",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Export container filesystem",
+  "command": "docker export <container> > container.tar",
+  "description": "Save container's filesystem as tar archive."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ollama-40",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-modelfile",
+  "title": "Create custom model",
+  "command": "ollama create my-assistant -f Modelfile",
+  "description": "Build a custom model from a Modelfile."
+}

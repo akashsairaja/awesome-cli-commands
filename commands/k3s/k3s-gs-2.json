@@ -1,0 +1,8 @@
+{
+  "id": "k3s-gs-2",
+  "title": "Check node status",
+  "command": "sudo k3s kubectl get nodes",
+  "description": "List cluster nodes using k3s kubectl",
+  "categoryId": "k3s",
+  "subcategoryId": "getting-started"
+}

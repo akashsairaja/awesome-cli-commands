@@ -1,0 +1,8 @@
+{
+  "id": "db-93",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Show global status",
+  "command": "SHOW GLOBAL STATUS LIKE '%connections%';",
+  "description": "View server status variables (connections, queries, threads)."
+}

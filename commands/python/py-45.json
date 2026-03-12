@@ -1,0 +1,8 @@
+{
+  "id": "py-45",
+  "categoryId": "python",
+  "subcategoryId": "python-uv",
+  "title": "Run command",
+  "command": "uv run python script.py",
+  "description": "Execute command in the project environment."
+}

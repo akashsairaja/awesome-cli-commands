@@ -1,0 +1,9 @@
+{
+  "id": "tmux-next-pane",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-panes",
+  "title": "Next pane",
+  "command": "Ctrl+b o",
+  "description": "Switch to next pane",
+  "tags": ["pane", "next", "switch"]
+}

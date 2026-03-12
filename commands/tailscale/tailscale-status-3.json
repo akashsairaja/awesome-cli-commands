@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-status-3",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-status",
+  "title": "Network check",
+  "command": "tailscale netcheck",
+  "description": "Diagnose network connectivity."
+}

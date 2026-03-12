@@ -1,0 +1,70 @@
+{
+  "id": "aws-ecs-service-update",
+  "stackId": "aws",
+  "name": "ECS Service Rolling Deployment and Troubleshooting",
+  "description": "Perform zero-downtime rolling deployments of ECS Fargate services, monitor task health, and troubleshoot failed deployments with circuit breaker rollbacks.",
+  "difficulty": "advanced",
+  "timeMinutes": 20,
+  "trending": false,
+  "tags": ["ecs", "fargate", "deploy", "containers", "rolling-update"],
+  "prerequisites": [
+    "AWS CLI v2 installed and configured",
+    "Existing ECS cluster and service",
+    "Container image pushed to ECR"
+  ],
+  "steps": [
+    {
+      "title": "Register a new task definition revision",
+      "description": "Create a new task definition revision with the updated container image tag to prepare for deployment.",
+      "command": "aws ecs describe-task-definition --task-definition my-app --query taskDefinition > task-def.json && jq '.containerDefinitions[0].image = \"111111111111.dkr.ecr.us-east-1.amazonaws.com/my-app:v2.1.0\"' task-def.json > updated-task-def.json && aws ecs register-task-definition --cli-input-json file://updated-task-def.json",
+      "tip": "Only update the image tag, not the entire task definition. This preserves CPU, memory, environment variables, and other settings.",
+      "warning": "Remove taskDefinitionArn, revision, status, registeredAt, registeredBy, and requiresAttributes from the JSON before re-registering, or the API will reject the request."
+    },
+    {
+      "title": "Update the service to trigger deployment",
+      "description": "Update the ECS service to use the new task definition revision, triggering a rolling deployment.",
+      "command": "aws ecs update-service --cluster my-cluster --service my-app-service --task-definition my-app:5 --force-new-deployment",
+      "tip": "The --force-new-deployment flag ensures tasks are replaced even if the task definition revision has not changed, useful for pulling the latest image with a mutable tag."
+    },
+    {
+      "title": "Monitor the deployment progress",
+      "description": "Watch the service deployments to track the rollout of new tasks and draining of old tasks.",
+      "command": "aws ecs describe-services --cluster my-cluster --services my-app-service --query 'services[0].deployments[*].{Status:status,Running:runningCount,Desired:desiredCount,Pending:pendingCount,Revision:taskDefinition}' --output table"
+    },
+    {
+      "title": "Check task health and stopped reasons",
+      "description": "List recently stopped tasks and inspect their stop reasons to identify why tasks might be failing during deployment.",
+      "command": "aws ecs list-tasks --cluster my-cluster --service-name my-app-service --desired-status STOPPED --query 'taskArns[0:5]' --output text | xargs -I {} aws ecs describe-tasks --cluster my-cluster --tasks {} --query 'tasks[*].{TaskId:taskArn,StopCode:stopCode,Reason:stoppedReason,Container:containers[0].reason}' --output table",
+      "warning": "ECS only retains stopped task information for about 1 hour. Check stopped tasks promptly during troubleshooting."
+    },
+    {
+      "title": "View container logs for failed tasks",
+      "description": "Inspect CloudWatch logs for containers that failed health checks or crashed during startup.",
+      "command": "aws logs tail /ecs/my-app --since 10m --format short | head -100",
+      "tip": "If the container crashes immediately, check for missing environment variables, invalid entrypoint commands, or insufficient memory allocation in the task definition."
+    },
+    {
+      "title": "Roll back if deployment fails",
+      "description": "If the circuit breaker has not auto-rolled back, manually revert to the previous task definition revision.",
+      "command": "aws ecs update-service --cluster my-cluster --service my-app-service --task-definition my-app:4 --force-new-deployment && aws ecs wait services-stable --cluster my-cluster --services my-app-service",
+      "tip": "Enable the deployment circuit breaker with rollback in your service configuration to automatically revert failed deployments."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# ECS Service Rolling Deployment\n# Usage: ./deploy-ecs.sh <cluster> <service> <image-uri>\n\nset -euo pipefail\n\nCLUSTER=\"${1:?Usage: $0 <cluster> <service> <image-uri>}\"\nSERVICE=\"${2:?Provide service name}\"\nIMAGE_URI=\"${3:?Provide full image URI with tag}\"\n\necho \"=== Getting current task definition ===\"\nTASK_DEF_ARN=$(aws ecs describe-services --cluster \"$CLUSTER\" --services \"$SERVICE\" \\\n  --query 'services[0].taskDefinition' --output text)\nTASK_DEF_FAMILY=$(echo \"$TASK_DEF_ARN\" | awk -F'/' '{print $NF}' | awk -F':' '{print $1}')\n\necho \"Current task definition: $TASK_DEF_ARN\"\n\necho \"=== Creating new task definition revision ===\"\nTASK_DEF=$(aws ecs describe-task-definition --task-definition \"$TASK_DEF_ARN\" --query taskDefinition)\n\nNEW_TASK_DEF=$(echo \"$TASK_DEF\" | jq \\\n  --arg image \"$IMAGE_URI\" \\\n  'del(.taskDefinitionArn, .revision, .status, .registeredAt, .registeredBy, .requiresAttributes, .compatibilities) |\n   .containerDefinitions[0].image = $image')\n\nNEW_REVISION=$(echo \"$NEW_TASK_DEF\" | aws ecs register-task-definition --cli-input-json file:///dev/stdin \\\n  --query 'taskDefinition.taskDefinitionArn' --output text)\n\necho \"New revision: $NEW_REVISION\"\n\necho \"=== Updating service ===\"\naws ecs update-service \\\n  --cluster \"$CLUSTER\" \\\n  --service \"$SERVICE\" \\\n  --task-definition \"$NEW_REVISION\" \\\n  --force-new-deployment \\\n  --query 'service.deployments[*].{Status:status,Running:runningCount,Desired:desiredCount}' \\\n  --output table\n\necho \"=== Waiting for service to stabilize ===\"\necho \"This may take several minutes...\"\nif aws ecs wait services-stable --cluster \"$CLUSTER\" --services \"$SERVICE\"; then\n  echo \"Deployment successful!\"\n  aws ecs describe-services --cluster \"$CLUSTER\" --services \"$SERVICE\" \\\n    --query 'services[0].deployments[*].{Status:status,Running:runningCount,TaskDef:taskDefinition}' \\\n    --output table\nelse\n  echo \"Deployment did not stabilize. Checking stopped tasks...\"\n  aws ecs list-tasks --cluster \"$CLUSTER\" --service-name \"$SERVICE\" --desired-status STOPPED \\\n    --query 'taskArns[0:3]' --output text | tr '\\t' '\\n' | while read -r TASK; do\n      echo \"---\"\n      aws ecs describe-tasks --cluster \"$CLUSTER\" --tasks \"$TASK\" \\\n        --query 'tasks[0].{StopCode:stopCode,Reason:stoppedReason}' --output table\n    done\n  exit 1\nfi",
+  "faq": [
+    {
+      "question": "How does the ECS deployment circuit breaker work?",
+      "answer": "The circuit breaker monitors task health during deployment. If tasks repeatedly fail to reach a healthy state, it automatically stops the deployment and rolls back to the last stable task definition revision, preventing a bad deploy from taking down the service."
+    },
+    {
+      "question": "What causes tasks to be stuck in PENDING during deployment?",
+      "answer": "Common causes include insufficient cluster capacity (CPU/memory), no available Fargate capacity in the selected subnets, security group or VPC networking issues preventing image pulls from ECR, or IAM role issues preventing task execution."
+    },
+    {
+      "question": "How do I enable zero-downtime deployments?",
+      "answer": "Configure minimumHealthyPercent to at least 100 and maximumPercent to 200 in your deployment configuration. This ensures ECS starts new tasks before draining old ones. Also configure health check grace periods to give new tasks time to pass load balancer health checks."
+    }
+  ],
+  "relatedRecipes": ["aws-cloudwatch-log-analysis", "aws-lambda-deploy-cli"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "docker-6",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Run with environment variable",
+  "command": "docker run -e MY_VAR=value <image>",
+  "description": "Set environment variable in container."
+}

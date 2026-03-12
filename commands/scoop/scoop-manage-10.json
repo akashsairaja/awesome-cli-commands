@@ -1,0 +1,8 @@
+{
+  "id": "scoop-manage-10",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-manage",
+  "title": "Show app install prefix",
+  "command": "scoop prefix git",
+  "description": "Show install path for an app."
+}

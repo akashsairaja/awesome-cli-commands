@@ -1,0 +1,8 @@
+{
+  "id": "mvn-wrapper-7",
+  "categoryId": "maven",
+  "subcategoryId": "mvn-wrapper",
+  "title": "Build with wrapper (Unix)",
+  "command": "./mvnw clean install",
+  "description": "Run clean install using the Maven wrapper on macOS/Linux. Downloads Maven automatically if not cached."
+}

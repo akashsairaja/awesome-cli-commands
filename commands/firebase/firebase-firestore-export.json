@@ -1,0 +1,9 @@
+{
+  "id": "firebase-firestore-export",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-firestore",
+  "title": "Export Firestore data",
+  "command": "gcloud firestore export gs://<bucket>",
+  "description": "Export Firestore data to Cloud Storage",
+  "tags": ["firestore", "export", "backup"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "kafka-admin-5",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-admin",
+  "title": "Get offsets",
+  "command": "kafka-run-class.sh kafka.tools.GetOffsetShell --topic my-topic --bootstrap-server localhost:9092",
+  "description": "Get partition offsets."
+}

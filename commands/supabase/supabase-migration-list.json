@@ -1,0 +1,9 @@
+{
+  "id": "supabase-migration-list",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-migrations",
+  "title": "List migrations",
+  "command": "supabase migration list",
+  "description": "List all migrations and their status",
+  "tags": ["migration", "list", "show"]
+}

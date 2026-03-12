@@ -1,0 +1,8 @@
+{
+  "id": "cypress-cloud-4",
+  "categoryId": "cypress",
+  "subcategoryId": "cypress-cloud",
+  "title": "Specify CI build",
+  "command": "npx cypress run --record --ci-build-id $CI_BUILD_ID",
+  "description": "Link to CI build ID."
+}

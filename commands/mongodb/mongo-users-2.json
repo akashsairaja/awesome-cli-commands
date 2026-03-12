@@ -1,0 +1,8 @@
+{
+  "id": "mongo-users-2",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-users",
+  "title": "Create read-only user",
+  "command": "db.createUser({ user: \"reader\", pwd: \"password\", roles: [{ role: \"read\", db: \"mydb\" }] })",
+  "description": "Create a user with read-only access to a specific database."
+}

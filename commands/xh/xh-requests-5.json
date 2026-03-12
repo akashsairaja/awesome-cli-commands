@@ -1,0 +1,8 @@
+{
+  "id": "xh-requests-5",
+  "categoryId": "xh",
+  "subcategoryId": "xh-requests",
+  "title": "PUT request",
+  "command": "xh PUT https://api.example.com/users/1 name=Updated",
+  "description": "Make a PUT request."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-sql-patch",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-sql",
+  "title": "Update SQL Instance",
+  "command": "gcloud sql instances patch <name> --tier=db-n1-standard-2 --storage-size=50GB",
+  "description": "Update Cloud SQL instance settings (tier, storage, flags)",
+  "tags": ["sql", "update", "patch"]
+}

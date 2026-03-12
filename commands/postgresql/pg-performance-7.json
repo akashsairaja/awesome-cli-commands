@@ -1,0 +1,8 @@
+{
+  "id": "pg-performance-7",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-performance",
+  "title": "Index hit ratio",
+  "command": "SELECT relname, round(100.0 * idx_scan / nullif(seq_scan + idx_scan, 0), 2) AS idx_hit_ratio FROM pg_stat_user_tables WHERE seq_scan + idx_scan > 0 ORDER BY idx_hit_ratio ASC;",
+  "description": "Find tables with low index usage. Low ratios suggest missing or unused indexes."
+}

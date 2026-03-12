@@ -1,0 +1,8 @@
+{
+  "id": "scoop-search-3",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-search",
+  "title": "View manifest",
+  "command": "scoop cat git",
+  "description": "Show raw JSON manifest for an app."
+}

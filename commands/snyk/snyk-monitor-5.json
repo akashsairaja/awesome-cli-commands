@@ -1,0 +1,8 @@
+{
+  "id": "snyk-monitor-5",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-monitor",
+  "title": "Monitor with remote repo URL",
+  "command": "snyk monitor --remote-repo-url=https://github.com/org/repo",
+  "description": "Associate snapshot with a remote repository."
+}

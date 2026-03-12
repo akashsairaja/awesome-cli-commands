@@ -1,0 +1,8 @@
+{
+  "id": "go-gs-2",
+  "title": "Check Go version",
+  "command": "go version",
+  "description": "Display installed Go version",
+  "categoryId": "go",
+  "subcategoryId": "getting-started"
+}

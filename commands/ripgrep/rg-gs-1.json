@@ -1,0 +1,8 @@
+{
+  "id": "rg-gs-1",
+  "title": "Install ripgrep (macOS)",
+  "command": "brew install ripgrep",
+  "description": "Install ripgrep using Homebrew on macOS",
+  "categoryId": "ripgrep",
+  "subcategoryId": "getting-started"
+}

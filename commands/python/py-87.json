@@ -1,0 +1,8 @@
+{
+  "id": "py-87",
+  "categoryId": "python",
+  "subcategoryId": "python-pipx",
+  "title": "Ensure PATH",
+  "command": "pipx ensurepath",
+  "description": "Add pipx binary location to PATH."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tf-mod-6",
+  "categoryId": "terraform",
+  "subcategoryId": "modules",
+  "title": "Get specific output",
+  "command": "terraform output -raw instance_ip",
+  "description": "Get single output without quotes."
+}

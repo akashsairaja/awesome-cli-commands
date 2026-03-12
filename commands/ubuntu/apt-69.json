@@ -1,0 +1,8 @@
+{
+  "id": "apt-69",
+  "categoryId": "ubuntu",
+  "subcategoryId": "ubuntu-network",
+  "title": "Show UFW status",
+  "command": "sudo ufw status verbose",
+  "description": "Display firewall rules and current status with details."
+}

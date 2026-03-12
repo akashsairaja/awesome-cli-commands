@@ -1,0 +1,8 @@
+{
+  "id": "checkov-custom-8",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-custom",
+  "title": "GitHub Actions integration",
+  "command": "- name: Run Checkov\n  uses: bridgecrewio/checkov-action@master\n  with:\n    directory: .\n    soft_fail: true\n    framework: terraform",
+  "description": "Run Checkov in GitHub Actions."
+}

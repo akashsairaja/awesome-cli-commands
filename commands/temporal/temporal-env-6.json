@@ -1,0 +1,8 @@
+{
+  "id": "temporal-env-6",
+  "categoryId": "temporal",
+  "subcategoryId": "env",
+  "title": "Delete environment property",
+  "command": "temporal env delete --env prod --key tls-key-path",
+  "description": "Remove specific key from environment."
+}

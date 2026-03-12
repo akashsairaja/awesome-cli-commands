@@ -1,0 +1,8 @@
+{
+  "id": "react-sb-6",
+  "categoryId": "react",
+  "subcategoryId": "react-storybook",
+  "title": "Upgrade Storybook",
+  "command": "npx storybook@latest upgrade",
+  "description": "Upgrade to latest Storybook version."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "rust-gs-2",
+  "title": "Check Rust version",
+  "command": "rustc --version",
+  "description": "Display installed Rust compiler version",
+  "categoryId": "rust",
+  "subcategoryId": "getting-started"
+}

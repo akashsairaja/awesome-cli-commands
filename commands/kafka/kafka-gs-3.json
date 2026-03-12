@@ -1,0 +1,8 @@
+{
+  "id": "kafka-gs-3",
+  "title": "List topics",
+  "command": "kafka-topics.sh --list --bootstrap-server localhost:9092",
+  "description": "List all Kafka topics on the cluster",
+  "categoryId": "kafka",
+  "subcategoryId": "getting-started"
+}

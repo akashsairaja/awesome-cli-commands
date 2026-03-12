@@ -1,0 +1,47 @@
+{
+  "id": "code-review-sync",
+  "stackId": "github",
+  "name": "Code Review Sync",
+  "description": "Stay on top of code reviews by checking pending reviews, viewing PR diffs, and submitting review feedback from the CLI.",
+  "difficulty": "beginner",
+  "timeMinutes": 5,
+  "trending": false,
+  "tags": ["review", "pull-requests", "workflow", "collaboration"],
+  "prerequisites": ["GitHub CLI (gh) installed and authenticated"],
+  "steps": [
+    {
+      "title": "Check your review status across repos",
+      "description": "See all PRs where your review is requested.",
+      "command": "gh pr status",
+      "tip": "This shows PRs you created, PRs requesting your review, and PRs on your current branch."
+    },
+    {
+      "title": "View the diff of a PR",
+      "description": "See the code changes in a pull request.",
+      "command": "gh pr diff 42"
+    },
+    {
+      "title": "Submit a review with comments",
+      "description": "Approve, request changes, or comment on a PR.",
+      "command": "gh pr review 42 --comment --body 'Looks good overall. One suggestion on the error handling in auth.ts.'"
+    },
+    {
+      "title": "View review comments on a PR",
+      "description": "Read all review comments and conversations.",
+      "command": "gh pr view 42 --comments"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Code Review Sync\nset -euo pipefail\n\necho \"=== Your PR Status ===\"\ngh pr status\n\necho \"\"\necho \"=== Review Commands ===\"\necho \"Diff:     gh pr diff <number>\"\necho \"Approve:  gh pr review <number> --approve\"\necho \"Changes:  gh pr review <number> --request-changes --body 'reason'\"\necho \"Comment:  gh pr review <number> --comment --body 'feedback'\"\necho \"View:     gh pr view <number> --comments\"",
+  "faq": [
+    {
+      "question": "How do I review PRs across multiple repositories?",
+      "answer": "Use GitHub's notification settings or 'gh search prs --review-requested=@me --state=open' to find all PRs awaiting your review."
+    },
+    {
+      "question": "Can I add line-specific comments from the CLI?",
+      "answer": "Not directly with gh pr review. For line comments, use the GitHub web interface or the API via 'gh api'."
+    }
+  ],
+  "relatedRecipes": ["pr-workflow-automation", "branch-protection-setup"],
+  "lastUpdated": "2026-03-11"
+}

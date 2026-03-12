@@ -1,0 +1,8 @@
+{
+  "id": "mongo-agg-3",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-aggregate",
+  "title": "Lookup (join)",
+  "command": "db.orders.aggregate([{ $lookup: { from: \"users\", localField: \"userId\", foreignField: \"_id\", as: \"user\" } }])",
+  "description": "Join with another collection."
+}

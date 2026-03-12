@@ -1,0 +1,8 @@
+{
+  "id": "linux-16",
+  "categoryId": "linux",
+  "subcategoryId": "disk",
+  "title": "Disk usage by directory",
+  "command": "du -sh */ | sort -hr | head -10",
+  "description": "Show top 10 largest directories."
+}

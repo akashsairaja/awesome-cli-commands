@@ -1,0 +1,8 @@
+{
+  "id": "mvn-dep-6",
+  "categoryId": "maven",
+  "subcategoryId": "dependencies",
+  "title": "Plugin updates",
+  "command": "mvn versions:display-plugin-updates",
+  "description": "Show plugin updates."
+}

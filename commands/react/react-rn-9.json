@@ -1,0 +1,8 @@
+{
+  "id": "react-rn-9",
+  "categoryId": "react",
+  "subcategoryId": "react-native",
+  "title": "Clean build",
+  "command": "npx react-native clean",
+  "description": "Clean build artifacts."
+}

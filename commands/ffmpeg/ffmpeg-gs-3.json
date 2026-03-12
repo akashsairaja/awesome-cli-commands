@@ -1,0 +1,8 @@
+{
+  "id": "ffmpeg-gs-3",
+  "title": "Check FFmpeg version",
+  "command": "ffmpeg -version",
+  "description": "Verify FFmpeg is installed and display version info",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "getting-started"
+}

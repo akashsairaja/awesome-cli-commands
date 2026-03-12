@@ -1,0 +1,20 @@
+{
+  // Only lint agent/skill/rule markdown files (not README, CONTRIBUTING)
+  "globs": ["agents/**/*.md", "skills/**/*.md", "rules/**/*.md"],
+  "ignores": ["**/node_modules/**", "**/_template.md"],
+  "config": {
+    "default": false,
+    // Enable only rules that catch real problems:
+    // Heading levels should increment by one
+    "MD001": true,
+    // No duplicate headings (in same scope)
+    "MD024": { "siblings_only": true },
+    // No empty links
+    "MD042": true,
+    // No reversed link syntax [](url) vs [text](url)
+    "MD011": true,
+    // MD037 disabled — too many false positives with glob patterns (*.tf) and __dirname in prose
+    // No space inside link text
+    "MD039": true
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "id": "linux-64",
+  "categoryId": "linux",
+  "subcategoryId": "text",
+  "title": "Extract columns with awk",
+  "command": "awk '{print $1, $3}' file.txt",
+  "description": "Print the first and third columns from a file."
+}

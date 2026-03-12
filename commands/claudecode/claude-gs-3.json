@@ -1,0 +1,8 @@
+{
+  "id": "claude-gs-3",
+  "title": "Start Claude Code",
+  "command": "claude",
+  "description": "Launch an interactive Claude Code session in the current directory",
+  "categoryId": "claudecode",
+  "subcategoryId": "getting-started"
+}

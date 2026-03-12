@@ -1,0 +1,8 @@
+{
+  "id": "helm-gs-2",
+  "title": "Install Helm (Linux)",
+  "command": "curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash",
+  "description": "Install Helm on Linux using the official installer script",
+  "categoryId": "helm",
+  "subcategoryId": "getting-started"
+}

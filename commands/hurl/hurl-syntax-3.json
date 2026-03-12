@@ -1,0 +1,8 @@
+{
+  "id": "hurl-syntax-3",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-syntax",
+  "title": "Capture value",
+  "command": "GET https://api.example.com/users/1\nHTTP 200\n[Captures]\nuser_id: jsonpath \"$.id\"",
+  "description": "Capture value from response."
+}

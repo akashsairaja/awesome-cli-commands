@@ -1,0 +1,8 @@
+{
+  "id": "vault-operator-6",
+  "categoryId": "vault",
+  "subcategoryId": "vault-operator",
+  "title": "Raft list peers",
+  "command": "vault operator raft list-peers",
+  "description": "List Raft cluster peers."
+}

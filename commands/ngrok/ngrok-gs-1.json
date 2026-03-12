@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-gs-1",
+  "title": "Install ngrok (macOS)",
+  "command": "brew install ngrok",
+  "description": "Install ngrok using Homebrew on macOS",
+  "categoryId": "ngrok",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "tmux-switch-session",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-sessions",
+  "title": "Switch sessions",
+  "command": "Ctrl+b s",
+  "description": "Show session list and switch",
+  "tags": ["session", "switch", "select"]
+}

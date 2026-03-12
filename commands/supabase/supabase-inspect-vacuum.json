@@ -1,0 +1,9 @@
+{
+  "id": "supabase-inspect-vacuum",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-inspect",
+  "title": "Show vacuum stats",
+  "command": "supabase inspect db vacuum-stats --local",
+  "description": "Show vacuum activity and dead row counts",
+  "tags": ["inspect", "vacuum", "maintenance"]
+}

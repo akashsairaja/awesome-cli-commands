@@ -1,0 +1,8 @@
+{
+  "id": "nats-consumer-1",
+  "categoryId": "nats",
+  "subcategoryId": "nats-consumer",
+  "title": "Create pull consumer",
+  "command": "nats consumer add ORDERS DISPATCH --pull --ack explicit --max-deliver 20",
+  "description": "Create pull-based consumer with retry limits."
+}

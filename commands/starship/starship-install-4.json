@@ -1,0 +1,8 @@
+{
+  "id": "starship-install-4",
+  "categoryId": "starship",
+  "subcategoryId": "starship-install",
+  "title": "Init PowerShell",
+  "command": "Invoke-Expression (&starship init powershell)",
+  "description": "Initialize Starship in PowerShell."
+}

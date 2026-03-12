@@ -1,0 +1,8 @@
+{
+  "id": "java-17",
+  "categoryId": "java",
+  "subcategoryId": "java-runtime",
+  "title": "Run single-file source",
+  "command": "java MyScript.java",
+  "description": "Compile and run single-file program directly (Java 11+)."
+}

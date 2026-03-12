@@ -1,0 +1,8 @@
+{
+  "id": "mongo-changestream-1",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-changestreams",
+  "title": "Watch collection changes",
+  "command": "db.collection.watch()",
+  "description": "Monitor real-time changes to a collection."
+}

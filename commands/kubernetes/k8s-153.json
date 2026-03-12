@@ -1,0 +1,8 @@
+{
+  "id": "k8s-153",
+  "categoryId": "kubernetes",
+  "subcategoryId": "manifests",
+  "title": "Apply with automatic pruning",
+  "command": "kubectl apply --prune -l app=myapp --all",
+  "description": "Apply manifests and automatically delete removed resources."
+}

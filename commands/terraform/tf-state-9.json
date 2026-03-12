@@ -1,0 +1,8 @@
+{
+  "id": "tf-state-9",
+  "categoryId": "terraform",
+  "subcategoryId": "state",
+  "title": "Remove from state",
+  "command": "terraform state rm aws_instance.example",
+  "description": "Remove resource from state (keeps infrastructure)."
+}

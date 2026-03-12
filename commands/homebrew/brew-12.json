@@ -1,0 +1,8 @@
+{
+  "id": "brew-12",
+  "categoryId": "homebrew",
+  "subcategoryId": "packages",
+  "title": "List pinned packages",
+  "command": "brew list --pinned",
+  "description": "Show all pinned packages."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "xh-gs-3",
+  "title": "Check xh version",
+  "command": "xh --version",
+  "description": "Verify xh is installed and display the current version",
+  "categoryId": "xh",
+  "subcategoryId": "getting-started"
+}

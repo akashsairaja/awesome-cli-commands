@@ -1,0 +1,8 @@
+{
+  "id": "react-vite-5",
+  "categoryId": "react",
+  "subcategoryId": "react-vite",
+  "title": "Build for production",
+  "command": "vite build",
+  "description": "Build production bundle with Rollup."
+}

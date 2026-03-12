@@ -1,0 +1,9 @@
+{
+  "id": "vercel-integration-list",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-integrations",
+  "title": "List integrations",
+  "command": "vercel integration list",
+  "description": "Show all installed integrations",
+  "tags": ["integration", "list", "show"]
+}

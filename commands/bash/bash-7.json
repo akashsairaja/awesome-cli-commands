@@ -1,0 +1,8 @@
+{
+  "id": "bash-7",
+  "categoryId": "bash",
+  "subcategoryId": "scripting",
+  "title": "Strict mode",
+  "command": "set -euo pipefail",
+  "description": "Enable all safety options."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tofu-init-5",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-init",
+  "title": "Backend config file",
+  "command": "tofu init -backend-config=backend.hcl",
+  "description": "Initialize with external backend config file."
+}

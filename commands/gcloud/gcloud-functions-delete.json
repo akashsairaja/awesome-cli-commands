@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-functions-delete",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-functions",
+  "title": "Delete Function",
+  "command": "gcloud functions delete <name> --region=<region>",
+  "description": "Delete a Cloud Function",
+  "tags": ["functions", "delete", "cleanup"]
+}

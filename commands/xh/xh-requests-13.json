@@ -1,0 +1,8 @@
+{
+  "id": "xh-requests-13",
+  "categoryId": "xh",
+  "subcategoryId": "xh-requests",
+  "title": "File upload",
+  "command": "xh --form POST https://api.example.com/upload file@./photo.jpg",
+  "description": "Upload a file via multipart form data."
+}

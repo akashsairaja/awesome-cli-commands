@@ -1,0 +1,8 @@
+{
+  "id": "vim-25",
+  "categoryId": "vim",
+  "subcategoryId": "buffers",
+  "title": "Save and quit",
+  "command": ":wq / ZZ",
+  "description": "Save and quit."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "scoop-update-1",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-update",
+  "title": "Update Scoop",
+  "command": "scoop update",
+  "description": "Update Scoop and bucket manifests."
+}

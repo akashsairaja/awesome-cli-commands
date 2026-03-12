@@ -1,0 +1,8 @@
+{
+  "id": "node-debug-12",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-debug",
+  "title": "Abort on uncaught exception",
+  "command": "node --abort-on-uncaught-exception app.js",
+  "description": "Generate core dump on uncaught exceptions."
+}

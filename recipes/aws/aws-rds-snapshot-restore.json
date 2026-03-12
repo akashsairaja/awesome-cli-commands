@@ -1,0 +1,69 @@
+{
+  "id": "aws-rds-snapshot-restore",
+  "stackId": "aws",
+  "name": "Database Backup and Point-in-Time Recovery with RDS",
+  "description": "Create manual RDS snapshots, configure automated backups, and perform point-in-time recovery to restore databases to any second within the retention window.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "trending": false,
+  "tags": ["rds", "backup", "snapshot", "database", "recovery"],
+  "prerequisites": [
+    "AWS CLI v2 installed and configured",
+    "Existing RDS database instance",
+    "IAM permissions for RDS snapshot operations"
+  ],
+  "steps": [
+    {
+      "title": "Create a manual snapshot",
+      "description": "Take an immediate snapshot of the RDS instance to capture the current state of the database before making changes.",
+      "command": "aws rds create-db-snapshot --db-instance-identifier my-production-db --db-snapshot-identifier my-production-db-pre-migration-$(date +%Y%m%d)",
+      "tip": "Always create a manual snapshot before schema migrations or major updates. Manual snapshots persist until you explicitly delete them, unlike automated backups."
+    },
+    {
+      "title": "Wait for the snapshot to complete",
+      "description": "Monitor the snapshot creation progress and wait until it reaches the available state.",
+      "command": "aws rds wait db-snapshot-available --db-snapshot-identifier my-production-db-pre-migration-$(date +%Y%m%d) && echo 'Snapshot ready'",
+      "warning": "Snapshot creation time depends on database size and can take from minutes to hours for large databases. The database remains available during snapshot creation but may experience brief I/O suspension."
+    },
+    {
+      "title": "Check the restore window for point-in-time recovery",
+      "description": "Determine the earliest and latest times you can restore to using the automated backup retention window.",
+      "command": "aws rds describe-db-instances --db-instance-identifier my-production-db --query 'DBInstances[0].{LatestRestorableTime:LatestRestorableTime,BackupRetentionPeriod:BackupRetentionPeriod,BackupWindow:PreferredBackupWindow}' --output table",
+      "tip": "LatestRestorableTime is typically within the last 5 minutes. The restore window extends back by the number of days in BackupRetentionPeriod."
+    },
+    {
+      "title": "Restore to a point in time",
+      "description": "Create a new RDS instance restored to a specific point in time. This creates a completely new database instance, leaving the original untouched.",
+      "command": "aws rds restore-db-instance-to-point-in-time --source-db-instance-identifier my-production-db --target-db-instance-identifier my-production-db-restored --restore-time 2026-03-11T08:30:00Z --db-instance-class db.t3.medium --vpc-security-group-ids sg-0example",
+      "warning": "Point-in-time restore creates a new instance with a new endpoint. You must update your application's connection string to point to the restored instance."
+    },
+    {
+      "title": "Monitor restore progress",
+      "description": "Wait for the restored instance to become available and check its status.",
+      "command": "aws rds wait db-instance-available --db-instance-identifier my-production-db-restored && aws rds describe-db-instances --db-instance-identifier my-production-db-restored --query 'DBInstances[0].{Status:DBInstanceStatus,Endpoint:Endpoint.Address,Port:Endpoint.Port}' --output table"
+    },
+    {
+      "title": "Clean up old snapshots",
+      "description": "List and delete snapshots older than your retention policy to manage storage costs.",
+      "command": "aws rds describe-db-snapshots --db-instance-identifier my-production-db --snapshot-type manual --query 'DBSnapshots | sort_by(@, &SnapshotCreateTime) | [*].{Snapshot:DBSnapshotIdentifier,Created:SnapshotCreateTime,Size:AllocatedStorage}' --output table",
+      "tip": "Automated snapshots are free up to your allocated storage size. Manual snapshots incur standard EBS snapshot storage charges at approximately $0.095/GB-month."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# RDS Snapshot and Point-in-Time Recovery\n# Usage: ./rds-backup.sh <action> <db-identifier> [restore-time]\n# Actions: snapshot, restore, list, cleanup\n\nset -euo pipefail\n\nACTION=\"${1:?Usage: $0 <snapshot|restore|list|cleanup> <db-identifier> [restore-time]}\"\nDB_ID=\"${2:?Provide RDS instance identifier}\"\n\ncase \"$ACTION\" in\n  snapshot)\n    SNAPSHOT_ID=\"$DB_ID-manual-$(date +%Y%m%d-%H%M%S)\"\n    echo \"Creating snapshot: $SNAPSHOT_ID\"\n    aws rds create-db-snapshot \\\n      --db-instance-identifier \"$DB_ID\" \\\n      --db-snapshot-identifier \"$SNAPSHOT_ID\"\n\n    echo \"Waiting for snapshot to complete...\"\n    aws rds wait db-snapshot-available --db-snapshot-identifier \"$SNAPSHOT_ID\"\n    echo \"Snapshot complete: $SNAPSHOT_ID\"\n    ;;\n\n  restore)\n    RESTORE_TIME=\"${3:?Provide restore time in ISO 8601 format (e.g., 2026-03-11T08:30:00Z)}\"\n    TARGET_ID=\"$DB_ID-restored-$(date +%s)\"\n    echo \"Restoring $DB_ID to $RESTORE_TIME as $TARGET_ID ...\"\n\n    aws rds restore-db-instance-to-point-in-time \\\n      --source-db-instance-identifier \"$DB_ID\" \\\n      --target-db-instance-identifier \"$TARGET_ID\" \\\n      --restore-time \"$RESTORE_TIME\"\n\n    echo \"Waiting for restored instance...\"\n    aws rds wait db-instance-available --db-instance-identifier \"$TARGET_ID\"\n\n    ENDPOINT=$(aws rds describe-db-instances \\\n      --db-instance-identifier \"$TARGET_ID\" \\\n      --query 'DBInstances[0].Endpoint.Address' --output text)\n    echo \"Restored instance available at: $ENDPOINT\"\n    ;;\n\n  list)\n    echo \"=== Automated Backups ===\"\n    aws rds describe-db-instances --db-instance-identifier \"$DB_ID\" \\\n      --query 'DBInstances[0].{LatestRestore:LatestRestorableTime,RetentionDays:BackupRetentionPeriod}' \\\n      --output table\n\n    echo \"\"\n    echo \"=== Manual Snapshots ===\"\n    aws rds describe-db-snapshots \\\n      --db-instance-identifier \"$DB_ID\" \\\n      --snapshot-type manual \\\n      --query 'DBSnapshots | sort_by(@, &SnapshotCreateTime) | reverse(@) | [*].{Snapshot:DBSnapshotIdentifier,Created:SnapshotCreateTime,SizeGB:AllocatedStorage,Status:Status}' \\\n      --output table\n    ;;\n\n  cleanup)\n    DAYS=\"${3:-30}\"\n    CUTOFF=$(date -d \"$DAYS days ago\" +%Y-%m-%dT%H:%M:%S)\n    echo \"Finding manual snapshots older than $DAYS days (before $CUTOFF)...\"\n\n    aws rds describe-db-snapshots \\\n      --db-instance-identifier \"$DB_ID\" \\\n      --snapshot-type manual \\\n      --query \"DBSnapshots[?SnapshotCreateTime<'$CUTOFF'].DBSnapshotIdentifier\" \\\n      --output text | tr '\\t' '\\n' | while read -r SNAP; do\n        echo \"Deleting: $SNAP\"\n        aws rds delete-db-snapshot --db-snapshot-identifier \"$SNAP\"\n      done\n    echo \"Cleanup complete.\"\n    ;;\n\n  *)\n    echo \"Unknown action: $ACTION (use snapshot, restore, list, or cleanup)\"\n    exit 1\n    ;;\nesac",
+  "faq": [
+    {
+      "question": "Does creating a snapshot cause downtime?",
+      "answer": "No. RDS snapshots are taken from the underlying EBS volumes without stopping the database. For single-AZ instances there may be a brief I/O pause (typically a few seconds). Multi-AZ instances take the snapshot from the standby, so there is no impact on the primary."
+    },
+    {
+      "question": "Can I restore a snapshot to a different instance class or engine version?",
+      "answer": "You can restore to a different instance class (size). For engine version upgrades, restore first and then modify the instance to upgrade. You cannot downgrade engine versions."
+    },
+    {
+      "question": "How long does point-in-time recovery take?",
+      "answer": "Recovery time depends on database size and the amount of transaction log replay needed. A small database may take 10-15 minutes while a large database with heavy write activity can take an hour or more. The restored instance is a completely new RDS instance with a new endpoint."
+    }
+  ],
+  "relatedRecipes": ["aws-secrets-rotation", "aws-cloudwatch-log-analysis"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "scoop-search-2",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-search",
+  "title": "Show app info",
+  "command": "scoop info git",
+  "description": "Show detailed app information."
+}

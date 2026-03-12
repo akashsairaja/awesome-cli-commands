@@ -1,0 +1,9 @@
+{
+  "id": "gh-repo-rename",
+  "categoryId": "github",
+  "subcategoryId": "gh-repo",
+  "title": "Rename repository",
+  "command": "gh repo rename <new-name>",
+  "description": "Rename the current repository",
+  "tags": ["repo", "rename"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "nuget-config-2",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-config",
+  "title": "Get config value",
+  "command": "dotnet nuget config get defaultPushSource",
+  "description": "Get a specific NuGet configuration value."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "minikube-profile-3",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-profile",
+  "title": "Switch profile",
+  "command": "minikube profile dev-cluster",
+  "description": "Switch to different profile."
+}

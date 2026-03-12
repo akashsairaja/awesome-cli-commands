@@ -1,0 +1,8 @@
+{
+  "id": "claude-4",
+  "categoryId": "claudecode",
+  "subcategoryId": "general",
+  "title": "Continue last session",
+  "command": "claude --continue",
+  "description": "Resume the most recent conversation session."
+}

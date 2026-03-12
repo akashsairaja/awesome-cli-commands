@@ -1,0 +1,8 @@
+{
+  "id": "npm-scripts-9",
+  "categoryId": "npm",
+  "subcategoryId": "npm-scripts",
+  "title": "Run scripts in parallel",
+  "command": "npm-run-all --parallel dev:*",
+  "description": "Run matching scripts in parallel."
+}

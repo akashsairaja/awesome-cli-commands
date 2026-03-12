@@ -1,0 +1,8 @@
+{
+  "id": "git-59",
+  "categoryId": "git",
+  "subcategoryId": "rebase",
+  "title": "Rebase onto branch",
+  "command": "git rebase <branch>",
+  "description": "Rebase current branch onto another."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "vercel-certs-ls",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-domains",
+  "title": "List SSL certificates",
+  "command": "vercel certs ls",
+  "description": "List SSL certificates",
+  "tags": ["certs", "ssl", "list"]
+}

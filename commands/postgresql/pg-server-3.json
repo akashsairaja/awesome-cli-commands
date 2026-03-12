@@ -1,0 +1,8 @@
+{
+  "id": "pg-server-3",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-server",
+  "title": "Reload configuration",
+  "command": "pg_ctl reload -D /var/lib/postgresql/data",
+  "description": "Reload server configuration without restart."
+}

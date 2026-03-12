@@ -1,0 +1,54 @@
+{
+  "id": "playwright-parallel-sharding",
+  "stackId": "playwright",
+  "name": "Parallel Test Execution with Sharding",
+  "description": "Scale Playwright test suites by splitting tests across multiple CI machines using sharding for dramatically faster feedback loops.",
+  "difficulty": "advanced",
+  "timeMinutes": 15,
+  "tags": ["parallel", "sharding", "performance", "ci", "scaling"],
+  "prerequisites": [
+    "Playwright test suite with many tests",
+    "GitHub Actions or similar CI with matrix support"
+  ],
+  "steps": [
+    {
+      "title": "Run tests with sharding locally",
+      "description": "Split test files across multiple shards for parallel execution.",
+      "command": "npx playwright test --shard=1/3",
+      "tip": "Sharding splits test files, not individual tests. Use --shard=N/M where N is the shard index (1-based) and M is the total number of shards."
+    },
+    {
+      "title": "Configure CI matrix for sharding",
+      "description": "Set up GitHub Actions to run shards in parallel across machines.",
+      "command": "cat > .github/workflows/playwright-sharded.yml << 'EOF'\nname: Playwright Sharded\non: [push, pull_request]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    strategy:\n      fail-fast: false\n      matrix:\n        shard: [1/4, 2/4, 3/4, 4/4]\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 20\n          cache: npm\n      - run: npm ci\n      - run: npx playwright install --with-deps chromium\n      - run: npx playwright test --shard=${{ matrix.shard }} --project=chromium\n      - uses: actions/upload-artifact@v4\n        if: ${{ !cancelled() }}\n        with:\n          name: blob-report-${{ strategy.job-index }}\n          path: blob-report/\n  merge-reports:\n    if: ${{ !cancelled() }}\n    needs: test\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 20\n          cache: npm\n      - run: npm ci\n      - uses: actions/download-artifact@v4\n        with:\n          path: all-blob-reports\n          pattern: blob-report-*\n          merge-multiple: true\n      - run: npx playwright merge-reports --reporter html ./all-blob-reports\n      - uses: actions/upload-artifact@v4\n        with:\n          name: playwright-report\n          path: playwright-report/\nEOF"
+    },
+    {
+      "title": "Configure blob reporter for shard merging",
+      "description": "Use the blob reporter to collect results from each shard for merging.",
+      "command": "cat << 'EOF'\n// playwright.config.ts\nreporter: process.env.CI\n  ? [['blob'], ['github']]\n  : [['html']],\nEOF"
+    },
+    {
+      "title": "Configure parallel workers per shard",
+      "description": "Tune the number of parallel workers within each shard.",
+      "command": "cat << 'EOF'\n// playwright.config.ts\nfullyParallel: true,\nworkers: process.env.CI ? 2 : undefined,\nEOF",
+      "tip": "Each shard runs its own set of workers. With 4 shards and 2 workers each, you get 8 parallel test executions across your CI cluster."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Playwright Sharding Test\nset -euo pipefail\n\nTOTAL_SHARDS=${1:-4}\n\necho \"=== Playwright Sharding Test ===\"\necho \"Total shards: $TOTAL_SHARDS\"\necho \"\"\n\n# Estimate test distribution\nTOTAL_TESTS=$(npx playwright test --list 2>/dev/null | grep -c 'test' || echo \"unknown\")\necho \"Total tests: $TOTAL_TESTS\"\n\necho \"\"\necho \"=== Running Each Shard ===\"\nfor i in $(seq 1 \"$TOTAL_SHARDS\"); do\n  echo \"\"\n  echo \"--- Shard $i/$TOTAL_SHARDS ---\"\n  TESTS_IN_SHARD=$(npx playwright test --shard=\"$i/$TOTAL_SHARDS\" --list 2>/dev/null | grep -c 'test' || echo \"?\")\n  echo \"Tests in shard: $TESTS_IN_SHARD\"\ndone\n\necho \"\"\necho \"=== CI Matrix Configuration ===\"\necho \"Add to your workflow:\"\necho \"  strategy:\"\necho \"    matrix:\"\necho -n \"      shard: [\"\nfor i in $(seq 1 \"$TOTAL_SHARDS\"); do\n  [ $i -gt 1 ] && echo -n \", \"\n  echo -n \"\"$i/$TOTAL_SHARDS\"\"\ndone\necho \"]\"",
+  "faq": [
+    {
+      "question": "How does Playwright distribute tests across shards?",
+      "answer": "Playwright splits test files (not individual tests) across shards using a round-robin distribution. Each shard gets an approximately equal number of test files. Tests within a file always run in the same shard."
+    },
+    {
+      "question": "How do I merge reports from multiple shards?",
+      "answer": "Use the blob reporter in each shard to create binary report files. After all shards complete, run 'npx playwright merge-reports --reporter html ./all-blob-reports' to combine them into a single HTML report."
+    },
+    {
+      "question": "What is the optimal number of shards?",
+      "answer": "Start with 2-4 shards and measure. More shards add CI overhead (checkout, install, browser download). The sweet spot is where each shard runs for 2-5 minutes. For very large suites, 8-16 shards is common."
+    }
+  ],
+  "relatedRecipes": ["playwright-ci-setup", "playwright-trace-debugging"],
+  "lastUpdated": "2026-03-11"
+}

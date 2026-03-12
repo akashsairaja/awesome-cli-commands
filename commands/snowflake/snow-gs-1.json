@@ -1,0 +1,8 @@
+{
+  "id": "snow-gs-1",
+  "title": "Install SnowSQL (macOS)",
+  "command": "brew install --cask snowflake-snowsql",
+  "description": "Install SnowSQL CLI using Homebrew on macOS",
+  "categoryId": "snowflake",
+  "subcategoryId": "getting-started"
+}

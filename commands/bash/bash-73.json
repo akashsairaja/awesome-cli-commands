@@ -1,0 +1,8 @@
+{
+  "id": "bash-73",
+  "categoryId": "bash",
+  "subcategoryId": "strings",
+  "title": "Lowercase",
+  "command": "echo \"${str,,}\"",
+  "description": "Convert to lowercase (Bash 4+)."
+}

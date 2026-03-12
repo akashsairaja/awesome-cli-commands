@@ -1,0 +1,8 @@
+{
+  "id": "git-118",
+  "categoryId": "git",
+  "subcategoryId": "submodules",
+  "title": "Execute in all submodules",
+  "command": "git submodule foreach 'git pull'",
+  "description": "Run command in each submodule."
+}

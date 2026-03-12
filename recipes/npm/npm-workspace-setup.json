@@ -1,0 +1,58 @@
+{
+  "id": "npm-workspace-setup",
+  "stackId": "npm",
+  "name": "Monorepo with npm Workspaces",
+  "description": "Set up and manage a monorepo using npm workspaces to share code, dependencies, and scripts across multiple packages in a single repository.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "Monorepos are becoming standard for managing multi-package projects without external tools",
+  "tags": ["workspaces", "monorepo", "packages", "organization"],
+  "prerequisites": ["Node.js 16+ and npm 7+ installed", "Basic package.json knowledge"],
+  "steps": [
+    {
+      "title": "Initialize the root package",
+      "description": "Create the root package.json with workspace definitions.",
+      "command": "npm init -y && npm pkg set workspaces='[\"packages/*\"]' private=true",
+      "tip": "The root package must have 'private: true' to prevent accidentally publishing the monorepo root."
+    },
+    {
+      "title": "Create workspace packages",
+      "description": "Scaffold individual packages within the workspaces directory.",
+      "command": "mkdir -p packages/shared packages/api packages/web && npm init -y -w packages/shared && npm init -y -w packages/api && npm init -y -w packages/web"
+    },
+    {
+      "title": "Add a dependency to a specific workspace",
+      "description": "Install a package into one workspace without affecting others.",
+      "command": "npm install express -w packages/api && npm install react react-dom -w packages/web"
+    },
+    {
+      "title": "Link a workspace as a dependency",
+      "description": "Reference one workspace package from another for code sharing.",
+      "command": "npm install packages/shared -w packages/api && npm install packages/shared -w packages/web",
+      "tip": "npm automatically creates a symlink. The shared package will appear in the workspace's package.json as a regular dependency."
+    },
+    {
+      "title": "Run scripts across workspaces",
+      "description": "Execute npm scripts in specific or all workspaces.",
+      "command": "npm run build --workspaces && npm run test -w packages/api"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# npm Workspaces Monorepo Setup\nset -euo pipefail\n\nPROJECT=${1:?\"Usage: $0 <project-name>\"}\n\necho \"=== Creating Monorepo: $PROJECT ===\"\nmkdir -p \"$PROJECT\" && cd \"$PROJECT\"\n\n# Root package.json\nnpm init -y\nnpm pkg set private=true\nnpm pkg set workspaces='[\"packages/*\"]'\n\n# Create workspace packages\nfor pkg in shared api web; do\n  mkdir -p \"packages/$pkg/src\"\n  cd \"packages/$pkg\"\n  npm init -y\n  npm pkg set name=\"@$PROJECT/$pkg\"\n  echo \"export {};\" > src/index.ts\n  cd ../..\ndone\n\n# Link shared package to api and web\nnpm install \"./packages/shared\" -w \"packages/api\"\nnpm install \"./packages/shared\" -w \"packages/web\"\n\necho \"\"\necho \"=== Workspace Structure ===\"\nfind . -name 'package.json' -not -path '*/node_modules/*' | sort\n\necho \"\"\necho \"=== Workspace Info ===\"\nnpm ls --workspaces --depth=0\n\necho \"\"\necho \"Monorepo created at $PROJECT/\"",
+  "faq": [
+    {
+      "question": "How do npm workspaces differ from Lerna?",
+      "answer": "npm workspaces handle dependency hoisting and cross-package linking natively. Lerna adds versioning, changelog generation, and selective publishing on top. Many projects now use npm workspaces alone or combine them with Changesets for versioning."
+    },
+    {
+      "question": "How do I run a script in only one workspace?",
+      "answer": "Use the -w flag: 'npm run build -w packages/api'. You can also use --workspace with the package name: 'npm run build --workspace=@myorg/api'."
+    },
+    {
+      "question": "Can I hoist a dependency to the root?",
+      "answer": "npm 7+ automatically hoists shared dependencies to the root node_modules. If a workspace needs a different version, npm installs that version locally in the workspace's own node_modules."
+    }
+  ],
+  "relatedRecipes": ["npm-script-automation", "npm-publish-package"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "azure-aks-start",
+  "categoryId": "azure",
+  "subcategoryId": "azure-aks",
+  "title": "Start AKS Cluster",
+  "command": "az aks start --resource-group <rg> --name <cluster>",
+  "description": "Start a stopped AKS cluster",
+  "tags": ["aks", "start"]
+}

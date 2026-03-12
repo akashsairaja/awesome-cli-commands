@@ -1,0 +1,9 @@
+{
+  "id": "bun-shell",
+  "categoryId": "bun",
+  "subcategoryId": "bun-run",
+  "title": "Bun Shell",
+  "command": "bun --shell",
+  "description": "Start Bun's cross-platform shell",
+  "tags": ["shell", "interactive", "cli"]
+}

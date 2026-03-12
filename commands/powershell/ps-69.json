@@ -1,0 +1,8 @@
+{
+  "id": "ps-69",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-modules",
+  "title": "List installed modules",
+  "command": "Get-Module -ListAvailable",
+  "description": "Show all installed modules."
+}

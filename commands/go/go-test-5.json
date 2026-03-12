@@ -1,0 +1,8 @@
+{
+  "id": "go-test-5",
+  "categoryId": "go",
+  "subcategoryId": "go-test",
+  "title": "Generate coverage report",
+  "command": "go test -coverprofile=coverage.out ./...",
+  "description": "Generate coverage profile file."
+}

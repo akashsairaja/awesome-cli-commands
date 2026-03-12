@@ -1,0 +1,9 @@
+{
+  "id": "tmux-rename-session",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-sessions",
+  "title": "Rename session",
+  "command": "Ctrl+b $",
+  "description": "Rename current session",
+  "tags": ["session", "rename"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "py-62",
+  "categoryId": "python",
+  "subcategoryId": "python-venv",
+  "title": "Activate (Linux/macOS)",
+  "command": "source venv/bin/activate",
+  "description": "Activate virtual environment on Unix systems."
+}

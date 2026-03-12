@@ -1,0 +1,8 @@
+{
+  "id": "py-7",
+  "categoryId": "python",
+  "subcategoryId": "python-pip",
+  "title": "Freeze requirements",
+  "command": "pip freeze > requirements.txt",
+  "description": "Export installed packages to requirements file."
+}

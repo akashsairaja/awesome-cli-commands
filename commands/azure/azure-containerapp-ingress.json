@@ -1,0 +1,9 @@
+{
+  "id": "azure-containerapp-ingress",
+  "categoryId": "azure",
+  "subcategoryId": "azure-containerapp",
+  "title": "Enable Ingress",
+  "command": "az containerapp ingress enable -n myapp -g rg --target-port 80",
+  "description": "Enable ingress and expose container app on port 80",
+  "tags": ["containerapp", "ingress", "expose"]
+}

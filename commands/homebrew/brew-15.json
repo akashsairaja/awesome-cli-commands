@@ -1,0 +1,8 @@
+{
+  "id": "brew-15",
+  "categoryId": "homebrew",
+  "subcategoryId": "packages",
+  "title": "Reinstall package",
+  "command": "brew reinstall <package>",
+  "description": "Reinstall a package."
+}

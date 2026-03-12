@@ -1,0 +1,9 @@
+{
+  "id": "curl-http-code",
+  "categoryId": "curl",
+  "subcategoryId": "curl-download",
+  "title": "Get HTTP status code",
+  "command": "curl -s -o /dev/null -w \"%{http_code}\" https://example.com",
+  "description": "Get only the HTTP status code",
+  "tags": ["status", "code", "http"]
+}

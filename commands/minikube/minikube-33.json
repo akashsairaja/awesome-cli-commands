@@ -1,0 +1,8 @@
+{
+  "id": "minikube-33",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-cluster",
+  "title": "Unpause cluster",
+  "command": "minikube unpause",
+  "description": "Resume paused cluster."
+}

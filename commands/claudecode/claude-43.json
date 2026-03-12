@@ -1,0 +1,8 @@
+{
+  "id": "claude-43",
+  "categoryId": "claudecode",
+  "subcategoryId": "config",
+  "title": "Toggle sandbox mode",
+  "command": "/sandbox",
+  "description": "Toggle filesystem/network isolation."
+}

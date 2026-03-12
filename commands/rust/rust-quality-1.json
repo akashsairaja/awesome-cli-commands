@@ -1,0 +1,8 @@
+{
+  "id": "rust-quality-1",
+  "categoryId": "rust",
+  "subcategoryId": "rust-quality",
+  "title": "Format code",
+  "command": "cargo fmt",
+  "description": "Format all code with rustfmt."
+}

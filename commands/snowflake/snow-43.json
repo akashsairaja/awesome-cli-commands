@@ -1,0 +1,8 @@
+{
+  "id": "snow-43",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-git",
+  "title": "Fetch repository",
+  "command": "snow git fetch <repository-name>",
+  "description": "Fetch latest changes from Git repository."
+}

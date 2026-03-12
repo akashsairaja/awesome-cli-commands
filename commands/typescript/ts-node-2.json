@@ -1,0 +1,8 @@
+{
+  "id": "ts-node-2",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-node",
+  "title": "Start REPL",
+  "command": "ts-node",
+  "description": "Start interactive TypeScript REPL."
+}

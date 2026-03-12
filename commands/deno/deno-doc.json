@@ -1,0 +1,9 @@
+{
+  "id": "deno-doc",
+  "categoryId": "deno",
+  "subcategoryId": "deno-info",
+  "title": "Generate Docs",
+  "command": "deno doc script.ts",
+  "description": "Generate documentation from JSDoc",
+  "tags": ["doc", "documentation", "jsdoc"]
+}

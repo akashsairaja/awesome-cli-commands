@@ -1,0 +1,9 @@
+{
+  "id": "deno-task-dev",
+  "categoryId": "deno",
+  "subcategoryId": "deno-tasks",
+  "title": "Development Task",
+  "command": "deno task dev",
+  "description": "Run the dev task (commonly defined)",
+  "tags": ["task", "dev", "development"]
+}

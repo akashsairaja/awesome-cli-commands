@@ -1,0 +1,8 @@
+{
+  "id": "databricks-3",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-clusters",
+  "title": "Start cluster",
+  "command": "databricks clusters start --cluster-id <cluster-id>",
+  "description": "Start a terminated cluster."
+}

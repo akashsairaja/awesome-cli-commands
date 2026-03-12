@@ -1,0 +1,8 @@
+{
+  "id": "go-env-2",
+  "categoryId": "go",
+  "subcategoryId": "go-env",
+  "title": "Get specific env var",
+  "command": "go env GOPATH",
+  "description": "Show specific environment variable."
+}

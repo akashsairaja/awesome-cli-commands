@@ -1,0 +1,8 @@
+{
+  "id": "make-targets-8",
+  "categoryId": "make",
+  "subcategoryId": "make-targets",
+  "title": "Help",
+  "command": "make help",
+  "description": "Show available targets (if defined)."
+}

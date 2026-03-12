@@ -1,0 +1,8 @@
+{
+  "id": "task-vars-5",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-vars",
+  "title": "CLI_ARGS variable",
+  "command": "tasks:\n  test:\n    cmds:\n      - go test {{.CLI_ARGS}} ./...",
+  "description": "Pass through -- args to CLI_ARGS."
+}

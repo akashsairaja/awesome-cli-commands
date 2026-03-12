@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-config-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-auth",
+  "title": "List Configuration",
+  "command": "gcloud config list",
+  "description": "Show current configuration settings",
+  "tags": ["config", "list", "show"]
+}

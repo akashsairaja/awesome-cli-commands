@@ -1,0 +1,8 @@
+{
+  "id": "linux-78",
+  "categoryId": "linux",
+  "subcategoryId": "ssh",
+  "title": "Copy file via SCP",
+  "command": "scp -r /local/dir user@remote:/remote/dir",
+  "description": "Securely copy a directory to a remote server."
+}

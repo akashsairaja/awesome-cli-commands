@@ -1,0 +1,9 @@
+{
+  "id": "zsh-extended-glob",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-config",
+  "title": "Enable extended globbing",
+  "command": "setopt EXTENDED_GLOB",
+  "description": "Enable powerful glob patterns",
+  "tags": ["glob", "pattern", "extended"]
+}

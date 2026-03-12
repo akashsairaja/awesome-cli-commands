@@ -1,0 +1,9 @@
+{
+  "id": "vercel-switch",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-projects",
+  "title": "Switch team/scope",
+  "command": "vercel switch",
+  "description": "Switch between teams or personal account",
+  "tags": ["switch", "team", "scope"]
+}

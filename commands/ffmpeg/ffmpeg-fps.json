@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-fps",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-video",
+  "title": "Change frame rate",
+  "command": "ffmpeg -i input.mp4 -r 30 output.mp4",
+  "description": "Change video frame rate",
+  "tags": ["fps", "framerate", "frames"]
+}

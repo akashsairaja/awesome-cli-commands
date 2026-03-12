@@ -1,0 +1,9 @@
+{
+  "id": "azure-storage-list",
+  "categoryId": "azure",
+  "subcategoryId": "azure-storage",
+  "title": "List Storage Accounts",
+  "command": "az storage account list --output table",
+  "description": "List all storage accounts in subscription",
+  "tags": ["storage", "list", "account"]
+}

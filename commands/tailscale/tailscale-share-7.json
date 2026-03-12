@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-share-7",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-share",
+  "title": "Serve in background",
+  "command": "tailscale serve --bg https / http://localhost:3000",
+  "description": "Run serve in the background."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k8s-38",
+  "categoryId": "kubernetes",
+  "subcategoryId": "deployments",
+  "title": "Rollout history",
+  "command": "kubectl rollout history deployment/<name>",
+  "description": "View deployment revision history."
+}

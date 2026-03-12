@@ -1,0 +1,8 @@
+{
+  "id": "git-139",
+  "categoryId": "git",
+  "subcategoryId": "git-config",
+  "title": "Set default branch",
+  "command": "git config --global init.defaultBranch main",
+  "description": "Set default branch for new repos."
+}

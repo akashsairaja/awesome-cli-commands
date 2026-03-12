@@ -1,0 +1,8 @@
+{
+  "id": "nats-pub-2",
+  "categoryId": "nats",
+  "subcategoryId": "nats-pubsub",
+  "title": "Publish multiple",
+  "command": "nats pub demo \"message {{.Count}}\" --count=10",
+  "description": "Publish multiple messages with templating."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "httpie-requests-15",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-requests",
+  "title": "File upload (multipart)",
+  "command": "http -f POST https://api.example.com/upload file@./photo.jpg",
+  "description": "Upload a file as multipart form data using @."
+}

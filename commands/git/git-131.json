@@ -1,0 +1,8 @@
+{
+  "id": "git-131",
+  "categoryId": "git",
+  "subcategoryId": "cleanup",
+  "title": "Discard file changes",
+  "command": "git checkout -- <file>",
+  "description": "Discard changes to a file."
+}

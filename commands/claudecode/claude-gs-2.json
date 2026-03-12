@@ -1,0 +1,8 @@
+{
+  "id": "claude-gs-2",
+  "title": "Check Claude Code version",
+  "command": "claude --version",
+  "description": "Verify Claude Code is installed and display the current version",
+  "categoryId": "claudecode",
+  "subcategoryId": "getting-started"
+}

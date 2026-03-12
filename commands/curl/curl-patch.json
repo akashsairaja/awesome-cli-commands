@@ -1,0 +1,9 @@
+{
+  "id": "curl-patch",
+  "categoryId": "curl",
+  "subcategoryId": "curl-requests",
+  "title": "PATCH request",
+  "command": "curl -X PATCH -H \"Content-Type: application/json\" -d '{\"key\":\"value\"}' https://api.example.com/resource",
+  "description": "Make a PATCH request with JSON body",
+  "tags": ["patch", "update", "request"]
+}

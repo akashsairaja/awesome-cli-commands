@@ -1,0 +1,8 @@
+{
+  "id": "k8s-gs-4",
+  "title": "Verify cluster connection",
+  "command": "kubectl cluster-info",
+  "description": "Display cluster info to verify kubectl is connected",
+  "categoryId": "kubernetes",
+  "subcategoryId": "getting-started"
+}

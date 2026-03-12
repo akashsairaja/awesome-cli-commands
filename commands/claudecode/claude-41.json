@@ -1,0 +1,8 @@
+{
+  "id": "claude-41",
+  "categoryId": "claudecode",
+  "subcategoryId": "config",
+  "title": "Switch model mid-session",
+  "command": "/model opus",
+  "description": "Switch AI model during conversation."
+}

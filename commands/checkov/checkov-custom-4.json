@@ -1,0 +1,8 @@
+{
+  "id": "checkov-custom-4",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-custom",
+  "title": "Python custom check",
+  "command": "from checkov.terraform.checks.resource.base_resource_check import BaseResourceCheck\nfrom checkov.common.models.enums import CheckResult, CheckCategories\n\nclass MyCheck(BaseResourceCheck):\n    def __init__(self):\n        super().__init__(name=\"My custom check\", id=\"CKV_CUSTOM_1\",\n          categories=[CheckCategories.ENCRYPTION],\n          supported_resources=[\"aws_s3_bucket\"])\n\n    def scan_resource_conf(self, conf):\n        return CheckResult.PASSED",
+  "description": "Python-based custom check class."
+}

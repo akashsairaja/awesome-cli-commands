@@ -1,0 +1,8 @@
+{
+  "id": "snyk-monitor-4",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-monitor",
+  "title": "Monitor for specific org",
+  "command": "snyk monitor --org=my-team",
+  "description": "Send monitor snapshot to a specific organization."
+}

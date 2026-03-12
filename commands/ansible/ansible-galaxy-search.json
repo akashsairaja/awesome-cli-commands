@@ -1,0 +1,9 @@
+{
+  "id": "ansible-galaxy-search",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-galaxy",
+  "title": "Search Roles",
+  "command": "ansible-galaxy search nginx",
+  "description": "Search for roles on Galaxy",
+  "tags": ["galaxy", "search", "find"]
+}

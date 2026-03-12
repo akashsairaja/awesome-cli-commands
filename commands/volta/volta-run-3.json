@@ -1,0 +1,8 @@
+{
+  "id": "volta-run-3",
+  "categoryId": "volta",
+  "subcategoryId": "volta-run",
+  "title": "Which tool version",
+  "command": "volta which node",
+  "description": "Show path to active tool."
+}

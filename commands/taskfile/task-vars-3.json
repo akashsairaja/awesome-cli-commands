@@ -1,0 +1,8 @@
+{
+  "id": "task-vars-3",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-vars",
+  "title": "Environment variables",
+  "command": "env:\n  CGO_ENABLED: 0\n\ntasks:\n  build:\n    cmds:\n      - go build",
+  "description": "Set environment variables."
+}

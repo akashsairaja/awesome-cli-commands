@@ -1,0 +1,8 @@
+{
+  "id": "pg-server-1",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-server",
+  "title": "Start PostgreSQL server",
+  "command": "pg_ctl start -D /var/lib/postgresql/data",
+  "description": "Start the PostgreSQL server instance."
+}

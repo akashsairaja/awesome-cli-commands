@@ -1,0 +1,9 @@
+{
+  "id": "gradle-bootjar",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-build",
+  "title": "Spring Boot JAR",
+  "command": "./gradlew bootJar",
+  "description": "Build executable Spring Boot JAR",
+  "tags": ["spring", "boot", "jar"]
+}

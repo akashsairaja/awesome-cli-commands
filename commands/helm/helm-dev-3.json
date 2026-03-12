@@ -1,0 +1,8 @@
+{
+  "id": "helm-dev-3",
+  "categoryId": "helm",
+  "subcategoryId": "helm-dev",
+  "title": "Package chart",
+  "command": "helm package ./mychart",
+  "description": "Package chart into versioned archive."
+}

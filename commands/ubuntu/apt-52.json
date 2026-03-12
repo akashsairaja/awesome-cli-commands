@@ -1,0 +1,8 @@
+{
+  "id": "apt-52",
+  "categoryId": "ubuntu",
+  "subcategoryId": "system",
+  "title": "Install proprietary drivers",
+  "command": "sudo ubuntu-drivers autoinstall",
+  "description": "Automatically detect and install recommended proprietary drivers."
+}

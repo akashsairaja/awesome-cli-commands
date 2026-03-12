@@ -1,0 +1,9 @@
+{
+  "id": "vercel-bisect-range",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-testing",
+  "title": "Bisect with range",
+  "command": "vercel bisect --good <url> --bad <url>",
+  "description": "Bisect with known good and bad deployments",
+  "tags": ["bisect", "range", "debug"]
+}

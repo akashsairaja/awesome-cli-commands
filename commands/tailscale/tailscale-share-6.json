@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-share-6",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-share",
+  "title": "Serve on specific path",
+  "command": "tailscale serve https /api http://localhost:8080",
+  "description": "Serve a local service at a specific URL path."
+}

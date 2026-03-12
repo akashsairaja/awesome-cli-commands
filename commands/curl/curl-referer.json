@@ -1,0 +1,9 @@
+{
+  "id": "curl-referer",
+  "categoryId": "curl",
+  "subcategoryId": "curl-headers",
+  "title": "Set Referer",
+  "command": "curl -e \"https://google.com\" https://example.com",
+  "description": "Set Referer header",
+  "tags": ["header", "referer", "referrer"]
+}

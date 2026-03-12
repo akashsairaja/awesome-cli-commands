@@ -1,0 +1,8 @@
+{
+  "id": "xh-sessions-9",
+  "categoryId": "xh",
+  "subcategoryId": "xh-sessions",
+  "title": "Set timeout",
+  "command": "xh --timeout=30 GET https://api.example.com/slow-endpoint",
+  "description": "Set request timeout in seconds."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "vault-token-1",
+  "categoryId": "vault",
+  "subcategoryId": "vault-token",
+  "title": "Create token",
+  "command": "vault token create -policy=myapp-policy -ttl=1h",
+  "description": "Create a new token with policy."
+}

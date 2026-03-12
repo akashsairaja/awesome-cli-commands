@@ -1,0 +1,8 @@
+{
+  "id": "apt-34",
+  "categoryId": "ubuntu",
+  "subcategoryId": "apt-packages",
+  "title": "Reinstall a package",
+  "command": "sudo apt install --reinstall <package>",
+  "description": "Reinstall a package to fix corrupted files."
+}

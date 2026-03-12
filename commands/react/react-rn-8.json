@@ -1,0 +1,8 @@
+{
+  "id": "react-rn-8",
+  "categoryId": "react",
+  "subcategoryId": "react-native",
+  "title": "View Android logs",
+  "command": "npx react-native log-android",
+  "description": "Stream Android device logs."
+}

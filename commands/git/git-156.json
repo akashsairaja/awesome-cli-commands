@@ -1,0 +1,8 @@
+{
+  "id": "git-156",
+  "categoryId": "git",
+  "subcategoryId": "sparse-checkout",
+  "title": "Initialize sparse checkout",
+  "command": "git sparse-checkout init",
+  "description": "Enable sparse checkout mode."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "rg-before",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-search",
+  "title": "Show lines before",
+  "command": "rg -B 3 \"pattern\"",
+  "description": "Show 3 lines before each match",
+  "tags": ["search", "before", "context"]
+}

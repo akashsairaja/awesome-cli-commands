@@ -1,0 +1,8 @@
+{
+  "id": "react-server-1",
+  "categoryId": "react",
+  "subcategoryId": "react-server",
+  "title": "Mark Server Action",
+  "command": "'use server'",
+  "description": "Directive to mark async functions as Server Actions (top of file or function)."
+}

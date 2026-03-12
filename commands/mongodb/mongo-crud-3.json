@@ -1,0 +1,8 @@
+{
+  "id": "mongo-crud-3",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-crud",
+  "title": "Find all",
+  "command": "db.users.find()",
+  "description": "Retrieve all documents."
+}

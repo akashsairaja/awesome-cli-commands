@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-share-3",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-share",
+  "title": "Show serve status",
+  "command": "tailscale serve status",
+  "description": "Show what's being served."
+}

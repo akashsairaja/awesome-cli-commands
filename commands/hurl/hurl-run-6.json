@@ -1,0 +1,8 @@
+{
+  "id": "hurl-run-6",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-run",
+  "title": "Follow redirects",
+  "command": "hurl --location api.hurl",
+  "description": "Follow HTTP redirects automatically."
+}

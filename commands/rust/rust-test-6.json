@@ -1,0 +1,8 @@
+{
+  "id": "rust-test-6",
+  "categoryId": "rust",
+  "subcategoryId": "rust-test",
+  "title": "Run ignored tests",
+  "command": "cargo test -- --ignored",
+  "description": "Run tests marked with #[ignore]."
+}

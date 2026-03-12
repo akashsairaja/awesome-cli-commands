@@ -1,0 +1,9 @@
+{
+  "id": "tmux-list-windows",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-windows",
+  "title": "List windows",
+  "command": "Ctrl+b w",
+  "description": "List and select windows",
+  "tags": ["window", "list", "select"]
+}

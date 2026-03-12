@@ -1,0 +1,9 @@
+{
+  "id": "ansible-inventory-graph",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-inventory",
+  "title": "Show Inventory Graph",
+  "command": "ansible-inventory --graph",
+  "description": "Display inventory hierarchy",
+  "tags": ["inventory", "graph", "tree"]
+}

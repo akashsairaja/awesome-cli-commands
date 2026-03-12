@@ -1,0 +1,8 @@
+{
+  "id": "k8s-77",
+  "categoryId": "kubernetes",
+  "subcategoryId": "nodes",
+  "title": "Label node",
+  "command": "kubectl label nodes <node-name> key=value",
+  "description": "Add label to a node."
+}

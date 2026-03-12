@@ -1,0 +1,8 @@
+{
+  "id": "go-test-12",
+  "categoryId": "go",
+  "subcategoryId": "go-test",
+  "title": "Fuzz testing",
+  "command": "go test -fuzz=FuzzParse -fuzztime=30s",
+  "description": "Run fuzzing on specific test for 30 seconds."
+}

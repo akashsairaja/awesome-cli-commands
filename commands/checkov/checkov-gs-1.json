@@ -1,0 +1,8 @@
+{
+  "id": "checkov-gs-1",
+  "title": "Install Checkov",
+  "command": "pip install checkov",
+  "description": "Install Checkov infrastructure-as-code scanner using pip",
+  "categoryId": "checkov",
+  "subcategoryId": "getting-started"
+}

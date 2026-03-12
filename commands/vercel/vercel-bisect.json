@@ -1,0 +1,9 @@
+{
+  "id": "vercel-bisect",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-testing",
+  "title": "Bisect deployments",
+  "command": "vercel bisect",
+  "description": "Binary search to find deployment that introduced bug",
+  "tags": ["bisect", "debug", "search"]
+}

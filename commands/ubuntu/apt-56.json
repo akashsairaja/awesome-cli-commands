@@ -1,0 +1,8 @@
+{
+  "id": "apt-56",
+  "categoryId": "ubuntu",
+  "subcategoryId": "system",
+  "title": "Refresh all snaps",
+  "command": "sudo snap refresh",
+  "description": "Update all installed snap packages to their latest version."
+}

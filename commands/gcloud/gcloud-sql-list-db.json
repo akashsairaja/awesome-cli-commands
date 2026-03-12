@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-sql-list-db",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-sql",
+  "title": "List Databases",
+  "command": "gcloud sql databases list --instance=<instance>",
+  "description": "List all databases on a Cloud SQL instance",
+  "tags": ["sql", "database", "list"]
+}

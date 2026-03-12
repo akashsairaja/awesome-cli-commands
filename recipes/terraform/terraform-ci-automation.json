@@ -1,0 +1,68 @@
+{
+  "id": "terraform-ci-automation",
+  "stackId": "terraform",
+  "name": "Automated Plan/Apply in CI/CD Pipelines",
+  "description": "Set up automated Terraform plan and apply workflows in GitHub Actions or GitLab CI with proper safeguards.",
+  "difficulty": "advanced",
+  "timeMinutes": 20,
+  "tags": ["ci", "cd", "automation", "github-actions", "pipeline"],
+  "prerequisites": [
+    "Terraform installed",
+    "Remote backend configured",
+    "CI/CD platform access (GitHub Actions or GitLab CI)"
+  ],
+  "steps": [
+    {
+      "title": "Create the GitHub Actions workflow file",
+      "description": "Set up a workflow that runs terraform plan on pull requests and apply on merge to main.",
+      "command": "mkdir -p .github/workflows && cat <<'EOF' > .github/workflows/terraform.yml\nname: Terraform\non:\n  pull_request:\n    branches: [main]\n  push:\n    branches: [main]\n\nenv:\n  TF_VERSION: \"1.7.0\"\n\njobs:\n  plan:\n    runs-on: ubuntu-latest\n    if: github.event_name == 'pull_request'\n    steps:\n      - uses: actions/checkout@v4\n      - uses: hashicorp/setup-terraform@v3\n        with:\n          terraform_version: ${{ env.TF_VERSION }}\n      - run: terraform init\n      - run: terraform validate\n      - run: terraform plan -no-color -out=tfplan\n      - uses: actions/upload-artifact@v4\n        with:\n          name: tfplan\n          path: tfplan\nEOF",
+      "tip": "Use -no-color in CI to avoid ANSI escape codes in log output."
+    },
+    {
+      "title": "Add the apply job for main branch",
+      "description": "Add a job that applies changes only when code is merged to the main branch.",
+      "command": "cat <<'EOF' >> .github/workflows/terraform.yml\n  apply:\n    runs-on: ubuntu-latest\n    if: github.ref == 'refs/heads/main' && github.event_name == 'push'\n    environment: production\n    steps:\n      - uses: actions/checkout@v4\n      - uses: hashicorp/setup-terraform@v3\n        with:\n          terraform_version: ${{ env.TF_VERSION }}\n      - run: terraform init\n      - run: terraform apply -auto-approve\nEOF",
+      "warning": "The -auto-approve flag skips confirmation. This is only safe when gated by PR review and environment protection rules."
+    },
+    {
+      "title": "Configure cloud credentials as secrets",
+      "description": "Add cloud provider credentials to your CI/CD platform's secret store.",
+      "command": "gh secret set AWS_ACCESS_KEY_ID --body \"AKIA...\"\ngh secret set AWS_SECRET_ACCESS_KEY --body \"wJal...\"",
+      "warning": "Never commit credentials to the repository. Always use CI/CD secrets or OIDC federation."
+    },
+    {
+      "title": "Add PR comment with plan output",
+      "description": "Post the terraform plan output as a comment on the pull request for team review.",
+      "command": "cat <<'EOF' >> .github/workflows/terraform.yml\n      - name: Comment Plan\n        uses: actions/github-script@v7\n        if: github.event_name == 'pull_request'\n        with:\n          script: |\n            const output = `#### Terraform Plan\n            \\`\\`\\`\\n${{ steps.plan.outputs.stdout }}\\`\\`\\`\n            `;\n            github.rest.issues.createComment({\n              issue_number: context.issue.number,\n              owner: context.repo.owner,\n              repo: context.repo.repo,\n              body: output\n            });\nEOF"
+    },
+    {
+      "title": "Add format and validation checks",
+      "description": "Include terraform fmt and validate as early checks to catch formatting and syntax issues.",
+      "command": "cat <<'EOF' > .github/workflows/terraform-checks.yml\nname: Terraform Checks\non: pull_request\njobs:\n  checks:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: hashicorp/setup-terraform@v3\n      - name: Format Check\n        run: terraform fmt -check -recursive\n      - name: Init\n        run: terraform init -backend=false\n      - name: Validate\n        run: terraform validate\nEOF",
+      "tip": "Run fmt -check first. It is the fastest check and catches the most common issues."
+    },
+    {
+      "title": "Set up environment protection rules",
+      "description": "Add GitHub environment protection rules to require approval before applying to production.",
+      "command": "gh api repos/{owner}/{repo}/environments/production -X PUT -f 'reviewers[][type]=User' -f 'reviewers[][id]=1'",
+      "tip": "Combine environment protection with branch protection rules for defense in depth."
+    }
+  ],
+  "fullScript": "#!/bin/bash\nset -euo pipefail\n\n# Terraform CI/CD Setup Script\n# Creates GitHub Actions workflows for Terraform automation\n\necho \"==> Creating workflow directories...\"\nmkdir -p .github/workflows\n\ncat > .github/workflows/terraform.yml <<'WORKFLOW'\nname: Terraform\non:\n  pull_request:\n    branches: [main]\n    paths: [\"**.tf\", \"**.tfvars\"]\n  push:\n    branches: [main]\n    paths: [\"**.tf\", \"**.tfvars\"]\n\npermissions:\n  contents: read\n  pull-requests: write\n\nenv:\n  TF_VERSION: \"1.7.0\"\n  AWS_REGION: \"us-east-1\"\n\njobs:\n  fmt-validate:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: hashicorp/setup-terraform@v3\n        with:\n          terraform_version: ${{ env.TF_VERSION }}\n      - run: terraform fmt -check -recursive\n      - run: terraform init -backend=false\n      - run: terraform validate\n\n  plan:\n    needs: fmt-validate\n    runs-on: ubuntu-latest\n    if: github.event_name == 'pull_request'\n    env:\n      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}\n      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}\n    steps:\n      - uses: actions/checkout@v4\n      - uses: hashicorp/setup-terraform@v3\n        with:\n          terraform_version: ${{ env.TF_VERSION }}\n      - run: terraform init\n      - id: plan\n        run: terraform plan -no-color -out=tfplan\n        continue-on-error: true\n      - uses: actions/upload-artifact@v4\n        with:\n          name: tfplan\n          path: tfplan\n          retention-days: 5\n\n  apply:\n    needs: fmt-validate\n    runs-on: ubuntu-latest\n    if: github.ref == 'refs/heads/main' && github.event_name == 'push'\n    environment: production\n    env:\n      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}\n      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}\n    steps:\n      - uses: actions/checkout@v4\n      - uses: hashicorp/setup-terraform@v3\n        with:\n          terraform_version: ${{ env.TF_VERSION }}\n      - run: terraform init\n      - run: terraform apply -auto-approve\nWORKFLOW\n\necho \"==> Workflow created at .github/workflows/terraform.yml\"\necho \"\"\necho \"Next steps:\"\necho \"  1. Set repository secrets: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY\"\necho \"  2. Create a 'production' environment with protection rules\"\necho \"  3. Push the workflow and open a PR to test\"",
+  "faq": [
+    {
+      "question": "Should I use -auto-approve in CI?",
+      "answer": "Only on the main branch after PR review and with environment protection rules requiring manual approval. Never auto-approve on feature branches or without gating."
+    },
+    {
+      "question": "How do I handle multiple environments in CI?",
+      "answer": "Use separate jobs or workflows per environment with workspace selection or separate backend configs. Gate production applies behind environment protection rules."
+    },
+    {
+      "question": "Is OIDC better than static credentials for CI?",
+      "answer": "Yes. OIDC federation (e.g., GitHub's aws-actions/configure-aws-credentials with role-to-assume) eliminates long-lived credentials. The CI runner gets short-lived tokens scoped to the specific workflow."
+    }
+  ],
+  "relatedRecipes": ["terraform-plan-review", "terraform-module-creation"],
+  "lastUpdated": "2026-03-11"
+}

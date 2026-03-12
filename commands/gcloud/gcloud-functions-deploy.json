@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-functions-deploy",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-functions",
+  "title": "Deploy Function",
+  "command": "gcloud functions deploy <name> --runtime=nodejs20 --trigger-http --allow-unauthenticated --gen2 --region=<region>",
+  "description": "Deploy a Cloud Function (2nd gen)",
+  "tags": ["functions", "deploy", "serverless"]
+}

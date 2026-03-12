@@ -1,0 +1,8 @@
+{
+  "id": "ssh-43",
+  "categoryId": "sshgpg",
+  "subcategoryId": "tunnels",
+  "title": "Dynamic port forward (SOCKS5)",
+  "command": "ssh -D 9090 -N -f user@host",
+  "description": "Background SOCKS5 proxy for browser traffic."
+}

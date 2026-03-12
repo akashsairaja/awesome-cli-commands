@@ -1,0 +1,9 @@
+{
+  "id": "curl-upload",
+  "categoryId": "curl",
+  "subcategoryId": "curl-download",
+  "title": "Upload file",
+  "command": "curl -F \"file=@/path/to/file.txt\" https://api.example.com/upload",
+  "description": "Upload file via multipart form",
+  "tags": ["upload", "file", "form"]
+}

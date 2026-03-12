@@ -1,0 +1,8 @@
+{
+  "id": "tofu-output-5",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-output",
+  "title": "Format files",
+  "command": "tofu fmt",
+  "description": "Format all .tf files in current directory."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "spark-25",
+  "categoryId": "spark",
+  "subcategoryId": "spark-sql",
+  "title": "Enable adaptive query",
+  "command": "spark-sql --conf spark.sql.adaptive.enabled=true",
+  "description": "Enable Adaptive Query Execution for optimization."
+}

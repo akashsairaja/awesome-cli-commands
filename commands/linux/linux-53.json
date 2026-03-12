@@ -1,0 +1,8 @@
+{
+  "id": "linux-53",
+  "categoryId": "linux",
+  "subcategoryId": "network",
+  "title": "Manage firewall with UFW",
+  "command": "sudo ufw allow 22/tcp && sudo ufw enable",
+  "description": "Allow SSH traffic and enable the UFW firewall."
+}

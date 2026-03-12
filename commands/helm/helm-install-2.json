@@ -1,0 +1,8 @@
+{
+  "id": "helm-install-2",
+  "categoryId": "helm",
+  "subcategoryId": "helm-install",
+  "title": "Install with values",
+  "command": "helm install my-release bitnami/nginx -f values.yaml",
+  "description": "Install using custom values file."
+}

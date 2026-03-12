@@ -1,0 +1,8 @@
+{
+  "id": "git-152",
+  "categoryId": "git",
+  "subcategoryId": "maintenance",
+  "title": "Register for maintenance",
+  "command": "git maintenance register",
+  "description": "Register repo for background maintenance."
+}

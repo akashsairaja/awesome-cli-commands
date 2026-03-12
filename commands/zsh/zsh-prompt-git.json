@@ -1,0 +1,9 @@
+{
+  "id": "zsh-prompt-git",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-prompt",
+  "title": "Enable git info in prompt",
+  "command": "autoload -Uz vcs_info && precmd() { vcs_info }",
+  "description": "Enable version control info in prompt",
+  "tags": ["prompt", "git", "vcs"]
+}

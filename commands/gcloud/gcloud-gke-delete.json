@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-gke-delete",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-gke",
+  "title": "Delete GKE Cluster",
+  "command": "gcloud container clusters delete <name> --zone=<zone>",
+  "description": "Delete a GKE cluster",
+  "tags": ["gke", "delete", "cleanup"]
+}

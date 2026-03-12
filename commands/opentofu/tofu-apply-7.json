@@ -1,0 +1,8 @@
+{
+  "id": "tofu-apply-7",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-apply",
+  "title": "Replace resource",
+  "command": "tofu apply -replace=aws_instance.web",
+  "description": "Force-replace a specific resource."
+}

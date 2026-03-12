@@ -1,0 +1,8 @@
+{
+  "id": "k3s-backup-9",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-backup",
+  "title": "Set snapshot directory",
+  "command": "curl -sfL https://get.k3s.io | sh -s - --etcd-snapshot-dir /mnt/backups/k3s",
+  "description": "Configure a custom directory for storing etcd snapshots."
+}

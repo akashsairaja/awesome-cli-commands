@@ -1,0 +1,8 @@
+{
+  "id": "claude-74",
+  "categoryId": "claudecode",
+  "subcategoryId": "utilities",
+  "title": "View release notes",
+  "command": "/release-notes",
+  "description": "View latest updates and changes."
+}

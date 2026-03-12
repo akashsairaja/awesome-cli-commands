@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-logging-create-sink",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-logging",
+  "title": "Create Log Sink",
+  "command": "gcloud logging sinks create <name> storage.googleapis.com/<bucket> --log-filter=\"severity>=ERROR\"",
+  "description": "Create a log sink to export logs to Cloud Storage, BigQuery, or Pub/Sub",
+  "tags": ["logging", "sink", "create", "export"]
+}

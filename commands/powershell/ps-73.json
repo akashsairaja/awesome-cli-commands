@@ -1,0 +1,8 @@
+{
+  "id": "ps-73",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-modules",
+  "title": "Update module",
+  "command": "Update-Module -Name ModuleName",
+  "description": "Update installed module."
+}

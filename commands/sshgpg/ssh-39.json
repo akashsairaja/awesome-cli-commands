@@ -1,0 +1,8 @@
+{
+  "id": "ssh-39",
+  "categoryId": "sshgpg",
+  "subcategoryId": "connections",
+  "title": "GPG sign file",
+  "command": "gpg --sign file.txt",
+  "description": "Create a binary signature for a file."
+}

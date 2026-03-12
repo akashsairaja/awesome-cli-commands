@@ -1,0 +1,8 @@
+{
+  "id": "rust-project-3",
+  "categoryId": "rust",
+  "subcategoryId": "rust-project",
+  "title": "Initialize in existing dir",
+  "command": "cargo init",
+  "description": "Initialize Cargo project in current directory."
+}

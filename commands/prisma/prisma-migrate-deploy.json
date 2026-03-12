@@ -1,0 +1,9 @@
+{
+  "id": "prisma-migrate-deploy",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-migrate",
+  "title": "Deploy migrations",
+  "command": "npx prisma migrate deploy",
+  "description": "Apply pending migrations to production/staging",
+  "tags": ["migrate", "deploy", "production"]
+}

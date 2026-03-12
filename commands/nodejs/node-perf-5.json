@@ -1,0 +1,8 @@
+{
+  "id": "node-perf-5",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-perf",
+  "title": "Heap snapshot on OOM",
+  "command": "node --heap-snapshot-on-oom app.js",
+  "description": "Generate snapshot before out-of-memory crash."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "linux-39",
+  "categoryId": "linux",
+  "subcategoryId": "processes",
+  "title": "Show all running processes",
+  "command": "ps aux --sort=-%mem | head -20",
+  "description": "List all processes sorted by memory usage, top 20."
+}

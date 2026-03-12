@@ -1,0 +1,8 @@
+{
+  "id": "bun-gs-4",
+  "title": "Run TypeScript file",
+  "command": "bun run index.ts",
+  "description": "Execute a TypeScript file directly with Bun",
+  "categoryId": "bun",
+  "subcategoryId": "getting-started"
+}

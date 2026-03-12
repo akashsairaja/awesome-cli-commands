@@ -1,0 +1,8 @@
+{
+  "id": "tf-backend-3",
+  "categoryId": "terraform",
+  "subcategoryId": "terraform-backend",
+  "title": "Reconfigure backend",
+  "command": "terraform init -reconfigure",
+  "description": "Reconfigure backend, ignoring existing configuration."
+}

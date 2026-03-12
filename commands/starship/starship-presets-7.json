@@ -1,0 +1,8 @@
+{
+  "id": "starship-presets-7",
+  "categoryId": "starship",
+  "subcategoryId": "starship-presets",
+  "title": "Bracketed Segments preset",
+  "command": "starship preset bracketed-segments -o ~/.config/starship.toml",
+  "description": "Apply Bracketed Segments style preset."
+}

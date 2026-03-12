@@ -1,0 +1,9 @@
+{
+  "id": "nginx-version-full",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-control",
+  "title": "Show version and modules",
+  "command": "nginx -V",
+  "description": "Show version, compiler, and configure arguments",
+  "tags": ["version", "modules", "config"]
+}

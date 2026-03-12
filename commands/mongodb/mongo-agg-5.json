@@ -1,0 +1,8 @@
+{
+  "id": "mongo-agg-5",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-aggregate",
+  "title": "Project fields",
+  "command": "db.users.aggregate([{ $project: { fullName: { $concat: [\"$firstName\", \" \", \"$lastName\"] }, age: 1 } }])",
+  "description": "Transform document structure."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "grafana-dashboard-8",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-dashboard",
+  "title": "List folders",
+  "command": "curl -s http://localhost:3000/api/folders -H 'Authorization: Bearer TOKEN'",
+  "description": "List all dashboard folders."
+}

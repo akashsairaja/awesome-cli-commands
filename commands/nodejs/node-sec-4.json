@@ -1,0 +1,8 @@
+{
+  "id": "node-sec-4",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-security",
+  "title": "Allow network",
+  "command": "node --permission --allow-net app.js",
+  "description": "Enable network access."
+}

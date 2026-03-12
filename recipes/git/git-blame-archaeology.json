@@ -1,0 +1,63 @@
+{
+  "id": "git-blame-archaeology",
+  "stackId": "git",
+  "name": "Code Archaeology and Change Tracking with Git Blame",
+  "description": "Use git blame and git log to trace the history of code changes, understand why lines were written, and find the context behind decisions.",
+  "difficulty": "beginner",
+  "timeMinutes": 7,
+  "trending": false,
+  "tags": ["blame", "history", "archaeology", "tracking", "debugging"],
+  "prerequisites": ["Git installed", "A repository with meaningful commit history"],
+  "steps": [
+    {
+      "title": "Blame a file to see line-by-line authorship",
+      "command": "git blame src/utils/auth.ts",
+      "description": "Show each line of a file annotated with the commit hash, author, and date of the last change. This tells you who changed each line and when.",
+      "tip": "Use 'git blame -w' to ignore whitespace changes, which often clutter blame output after reformatting."
+    },
+    {
+      "title": "Blame a specific line range",
+      "command": "git blame -L 45,65 src/utils/auth.ts",
+      "description": "Focus on lines 45 through 65. This is much faster than blaming the entire file when you know which lines you are investigating."
+    },
+    {
+      "title": "See the commit details for a blamed line",
+      "command": "git show abc1234",
+      "description": "Once blame identifies the commit hash, use git show to see the full commit diff, message, and context of why the change was made."
+    },
+    {
+      "title": "Trace a line through renames and moves",
+      "command": "git log --follow -p -S 'validateToken' -- src/utils/auth.ts",
+      "description": "Search for commits that added or removed the string 'validateToken' in the file, even across renames. The -p flag shows the actual diff.",
+      "tip": "Use -G instead of -S for regex pattern matching. -S finds commits where the count of the string changes, while -G finds commits where the diff matches the pattern."
+    },
+    {
+      "title": "Ignore bulk formatting commits in blame",
+      "command": "git blame --ignore-rev abc1234 src/utils/auth.ts",
+      "description": "Skip a specific commit (like a code formatting change) in blame output. Git will attribute the lines to the previous meaningful change instead.",
+      "tip": "Create a .git-blame-ignore-revs file with commit hashes to always ignore, then configure it with: git config blame.ignoreRevsFile .git-blame-ignore-revs"
+    },
+    {
+      "title": "View file history with full diffs",
+      "command": "git log -p --follow -- src/utils/auth.ts",
+      "description": "Show the complete change history of a file with diffs for each commit. The --follow flag tracks the file even if it was renamed."
+    }
+  ],
+  "fullScript": "#!/usr/bin/env bash\n# git-archaeology.sh — Code archaeology helper\nset -euo pipefail\n\nFILE=\"${1:?Usage: $0 <file> [line-start] [line-end] [search-string]}\"\nLINE_START=\"${2:-}\"\nLINE_END=\"${3:-}\"\nSEARCH=\"${4:-}\"\n\necho \"=== File: $FILE ===\"\necho \"\"\n\nif [ -n \"$SEARCH\" ]; then\n  echo \"--- Commits containing '$SEARCH' ---\"\n  git log --oneline -S \"$SEARCH\" --follow -- \"$FILE\"\n  echo \"\"\n  echo \"--- Diffs for '$SEARCH' ---\"\n  git log -p -S \"$SEARCH\" --follow -- \"$FILE\" | head -100\nelif [ -n \"$LINE_START\" ] && [ -n \"$LINE_END\" ]; then\n  echo \"--- Blame for lines $LINE_START-$LINE_END ---\"\n  git blame -w -L \"$LINE_START,$LINE_END\" \"$FILE\"\n  echo \"\"\n  echo \"--- Log for lines $LINE_START-$LINE_END ---\"\n  git log --oneline -L \"$LINE_START,$LINE_END:$FILE\" | head -40\nelse\n  echo \"--- Blame (ignoring whitespace) ---\"\n  git blame -w \"$FILE\" | head -50\n  echo \"\"\n  if [ \"$(git blame \"$FILE\" | wc -l)\" -gt 50 ]; then\n    echo \"(showing first 50 lines, use line range for specifics)\"\n  fi\n  echo \"\"\n  echo \"--- Recent file history ---\"\n  git log --oneline --follow -10 -- \"$FILE\"\nfi",
+  "faq": [
+    {
+      "question": "How do I ignore a Prettier or formatting commit in blame?",
+      "answer": "Create a file called .git-blame-ignore-revs in your repository root, add the formatting commit hash on its own line, and run 'git config blame.ignoreRevsFile .git-blame-ignore-revs'. Commit this file so all team members benefit. GitHub also supports this file automatically."
+    },
+    {
+      "question": "What is the difference between git blame and git log for tracking changes?",
+      "answer": "Git blame shows the last commit that modified each line of a file at a specific point in time. Git log shows the full sequence of commits that changed a file over time. Use blame to find who last changed a line, and log to see the full evolution of a file."
+    },
+    {
+      "question": "Can git blame show the original author if a line was moved from another file?",
+      "answer": "Use 'git blame -C' to detect lines that were copied or moved from other files in the same commit. Use '-C -C' (twice) to also search in the commit that created the file, and '-C -C -C' to search all commits. This significantly increases processing time."
+    }
+  ],
+  "relatedRecipes": ["git-bisect-debugging", "interactive-rebase-workflow", "git-stash-mastery"],
+  "lastUpdated": "2026-03-11"
+}

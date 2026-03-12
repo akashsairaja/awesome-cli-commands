@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-net-dns-record",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-networking",
+  "title": "Add DNS Record",
+  "command": "gcloud dns record-sets create <domain>. --zone=<zone> --type=A --ttl=300 --rrdatas=<ip>",
+  "description": "Create a DNS record in a managed zone",
+  "tags": ["dns", "record", "create"]
+}

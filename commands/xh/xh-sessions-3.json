@@ -1,0 +1,8 @@
+{
+  "id": "xh-sessions-3",
+  "categoryId": "xh",
+  "subcategoryId": "xh-sessions",
+  "title": "Read-only session",
+  "command": "xh --session-read-only=api GET https://api.example.com",
+  "description": "Use session without saving."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "git-107",
+  "categoryId": "git",
+  "subcategoryId": "worktree",
+  "title": "Add worktree",
+  "command": "git worktree add <path> <branch>",
+  "description": "Create new working tree for branch."
+}

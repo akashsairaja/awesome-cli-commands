@@ -1,0 +1,8 @@
+{
+  "id": "composer-update-1",
+  "categoryId": "composer",
+  "subcategoryId": "composer-update",
+  "title": "Update all packages",
+  "command": "composer update",
+  "description": "Update all dependencies."
+}

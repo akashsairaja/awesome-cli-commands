@@ -1,0 +1,8 @@
+{
+  "id": "helm-install-5",
+  "categoryId": "helm",
+  "subcategoryId": "helm-install",
+  "title": "Upgrade release",
+  "command": "helm upgrade my-release bitnami/nginx -f values.yaml",
+  "description": "Upgrade existing release with new values."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "sops-keys-4",
+  "categoryId": "sops",
+  "subcategoryId": "sops-keys",
+  "title": "Generate age key",
+  "command": "age-keygen -o keys.txt",
+  "description": "Generate new age keypair."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "spark-33",
+  "categoryId": "spark",
+  "subcategoryId": "spark-config",
+  "title": "Configure memory fraction",
+  "command": "spark-submit --conf spark.memory.fraction=0.8 --conf spark.memory.storageFraction=0.3 app.py",
+  "description": "Tune execution vs storage memory balance."
+}

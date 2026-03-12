@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-iam-roles",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-iam",
+  "title": "List Roles",
+  "command": "gcloud iam roles list --filter=\"title~editor\"",
+  "description": "List available IAM roles",
+  "tags": ["iam", "roles", "list"]
+}

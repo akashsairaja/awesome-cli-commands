@@ -1,0 +1,54 @@
+{
+  "id": "nodejs-esm-migration",
+  "stackId": "nodejs",
+  "name": "Migrate from CommonJS to ES Modules",
+  "description": "Convert a Node.js project from require/module.exports to import/export syntax with proper configuration.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "tags": ["esm", "commonjs", "modules", "import", "migration"],
+  "prerequisites": ["Node.js 16 or later", "Existing CommonJS project"],
+  "steps": [
+    {
+      "title": "Set module type in package.json",
+      "description": "Add the type field to package.json to tell Node.js to treat .js files as ES modules by default.",
+      "command": "npm pkg set type=module",
+      "tip": "With type: module, all .js files use ESM. Use .cjs extension for files that must remain CommonJS."
+    },
+    {
+      "title": "Convert require statements to import",
+      "description": "Replace require() calls with import statements and module.exports with export.",
+      "command": "# Before (CommonJS):\n# const express = require('express');\n# const { readFile } = require('fs/promises');\n# module.exports = { handler };\n\n# After (ESM):\n# import express from 'express';\n# import { readFile } from 'fs/promises';\n# export { handler };"
+    },
+    {
+      "title": "Fix __dirname and __filename references",
+      "description": "Replace __dirname and __filename with ESM equivalents since these globals do not exist in ES modules.",
+      "command": "cat <<'EOF'\n// Add this to files that need __dirname or __filename:\nimport { fileURLToPath } from 'url';\nimport { dirname } from 'path';\n\nconst __filename = fileURLToPath(import.meta.url);\nconst __dirname = dirname(__filename);\nEOF",
+      "warning": "__dirname and __filename are not available in ESM. Every file that uses them needs the import.meta.url workaround."
+    },
+    {
+      "title": "Add file extensions to relative imports",
+      "description": "ESM requires explicit file extensions on relative imports. Update all local import paths.",
+      "command": "# ESM requires extensions on relative imports:\n# Before: import { handler } from './routes/api'\n# After:  import { handler } from './routes/api.js'\n\n# Find all relative imports missing extensions:\ngrep -rn \"from '\\./\" src/ --include='*.js' | grep -v \"\\.js'\" | grep -v \"\\.json'\"",
+      "warning": "This is the most tedious part. Every relative import must include .js even if the source file is .ts (TypeScript resolves .js to .ts)."
+    },
+    {
+      "title": "Handle JSON imports",
+      "description": "JSON imports require an import assertion in ESM mode.",
+      "command": "# Before (CommonJS):\n# const config = require('./config.json');\n\n# After (ESM) - Node 20+:\nimport config from './config.json' with { type: 'json' };\n\n# After (ESM) - Node 16-19:\nimport { createRequire } from 'module';\nconst require = createRequire(import.meta.url);\nconst config = require('./config.json');",
+      "tip": "The createRequire workaround works on all Node.js versions and is useful for packages that only support CommonJS."
+    }
+  ],
+  "fullScript": "#!/bin/bash\nset -euo pipefail\n\n# CommonJS to ESM Migration Helper\n\necho \"==> Analyzing project for CJS patterns...\"\n\necho \"\"\necho \"==> require() calls found:\"\ngrep -rn \"require(\" src/ --include='*.js' --include='*.ts' 2>/dev/null | wc -l\n\necho \"\"\necho \"==> module.exports found:\"\ngrep -rn \"module.exports\" src/ --include='*.js' --include='*.ts' 2>/dev/null | wc -l\n\necho \"\"\necho \"==> __dirname/__filename usage:\"\ngrep -rn \"__dirname|__filename\" src/ --include='*.js' --include='*.ts' 2>/dev/null | wc -l\n\necho \"\"\necho \"==> Relative imports missing .js extension:\"\ngrep -rn \"from '\\./\\|from \"\\.\\./\" src/ --include='*.js' --include='*.ts' 2>/dev/null | grep -v \"\\.js['\"]\" | grep -v \"\\.json['\"]\" | grep -v \"\\.mjs['\"]\" | wc -l\n\necho \"\"\necho \"==> JSON requires:\"\ngrep -rn \"require.*\\.json\" src/ --include='*.js' --include='*.ts' 2>/dev/null | wc -l\n\necho \"\"\necho \"Migration steps:\"\necho \"  1. Run: npm pkg set type=module\"\necho \"  2. Rename files that must stay CJS to .cjs\"\necho \"  3. Convert require() -> import\"\necho \"  4. Convert module.exports -> export\"\necho \"  5. Replace __dirname with import.meta.url\"\necho \"  6. Add .js extensions to relative imports\"\necho \"  7. Update JSON imports with assertions\"\necho \"  8. Run: node --experimental-vm-modules app.js (if using vm)\"",
+  "faq": [
+    {
+      "question": "Can I mix ESM and CommonJS in the same project?",
+      "answer": "Yes. With type: module in package.json, use .cjs for CommonJS files. Without it, use .mjs for ESM files. ESM can import CJS modules, but CJS cannot require() ESM modules (use dynamic import() instead)."
+    },
+    {
+      "question": "Do I have to migrate all at once?",
+      "answer": "No. You can migrate incrementally by using .mjs extension for converted files while keeping the project as CJS (no type: module). Or set type: module and use .cjs for files not yet converted."
+    }
+  ],
+  "relatedRecipes": ["nodejs-test-runner", "nodejs-monorepo-setup"],
+  "lastUpdated": "2026-03-11"
+}

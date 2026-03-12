@@ -1,0 +1,8 @@
+{
+  "id": "minikube-cluster-1",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-cluster",
+  "title": "Start cluster",
+  "command": "minikube start",
+  "description": "Start local Kubernetes cluster."
+}

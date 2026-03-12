@@ -1,0 +1,8 @@
+{
+  "id": "java-11",
+  "categoryId": "java",
+  "subcategoryId": "java-runtime",
+  "title": "Run with classpath",
+  "command": "java -cp lib/*:target/classes com.example.Main",
+  "description": "Run with specified classpath including JARs."
+}

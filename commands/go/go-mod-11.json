@@ -1,0 +1,8 @@
+{
+  "id": "go-mod-11",
+  "categoryId": "go",
+  "subcategoryId": "go-mod",
+  "title": "Edit go.mod (replace)",
+  "command": "go mod edit -replace=github.com/old/pkg=../local/pkg",
+  "description": "Add module replacement for local development."
+}

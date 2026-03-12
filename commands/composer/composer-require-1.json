@@ -1,0 +1,8 @@
+{
+  "id": "composer-require-1",
+  "categoryId": "composer",
+  "subcategoryId": "composer-require",
+  "title": "Require package",
+  "command": "composer require vendor/package",
+  "description": "Add and install a package."
+}

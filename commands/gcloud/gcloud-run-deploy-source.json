@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-run-deploy-source",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-run",
+  "title": "Deploy from Source",
+  "command": "gcloud run deploy <service> --source=. --region=<region>",
+  "description": "Build and deploy from source code",
+  "tags": ["run", "deploy", "source"]
+}

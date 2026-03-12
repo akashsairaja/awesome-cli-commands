@@ -1,0 +1,9 @@
+{
+  "id": "zsh-common-aliases",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-aliases",
+  "title": "Common useful aliases",
+  "command": "alias ..='cd ..' ...='cd ../..' ll='ls -la' la='ls -A'",
+  "description": "Define common navigation aliases",
+  "tags": ["alias", "navigation", "common"]
+}

@@ -1,0 +1,64 @@
+{
+  "id": "azure-aks-cluster",
+  "stackId": "azure",
+  "name": "Create and Manage an AKS Kubernetes Cluster",
+  "description": "Provision a fully managed Kubernetes cluster on Azure Kubernetes Service, connect kubectl, and deploy a workload.",
+  "difficulty": "advanced",
+  "timeMinutes": 20,
+  "trending": true,
+  "trendingReason": "AKS adoption is surging as teams migrate from self-managed Kubernetes to managed offerings.",
+  "tags": ["aks", "kubernetes", "cluster", "containers", "orchestration"],
+  "prerequisites": [
+    "Azure CLI installed",
+    "Active Azure subscription",
+    "kubectl installed",
+    "Basic Kubernetes knowledge"
+  ],
+  "steps": [
+    {
+      "title": "Create a resource group",
+      "command": "az group create --name aks-rg --location eastus",
+      "description": "Create a dedicated resource group for the AKS cluster."
+    },
+    {
+      "title": "Create the AKS cluster",
+      "command": "az aks create --resource-group aks-rg --name myaks --node-count 2 --node-vm-size Standard_B2s --generate-ssh-keys --enable-managed-identity",
+      "description": "Provisions a two-node cluster with managed identity authentication.",
+      "tip": "Standard_B2s is cost-effective for dev/test. Use Standard_D4s_v5 or larger for production.",
+      "warning": "Cluster creation takes 5-10 minutes. Do not interrupt the command."
+    },
+    {
+      "title": "Get cluster credentials",
+      "command": "az aks get-credentials --resource-group aks-rg --name myaks",
+      "description": "Downloads the kubeconfig and merges it into your local kubectl context."
+    },
+    {
+      "title": "Verify connectivity",
+      "command": "kubectl get nodes",
+      "description": "Confirms kubectl can reach the cluster and shows the node status."
+    },
+    {
+      "title": "Deploy a sample workload",
+      "command": "kubectl create deployment nginx --image=nginx:latest --replicas=2 && kubectl expose deployment nginx --port=80 --type=LoadBalancer",
+      "description": "Deploys an nginx pod with two replicas and exposes it via an Azure Load Balancer."
+    },
+    {
+      "title": "Scale the cluster",
+      "command": "az aks scale --resource-group aks-rg --name myaks --node-count 3",
+      "description": "Adds another node to the cluster to handle increased load."
+    }
+  ],
+  "fullScript": "# Create and manage an AKS cluster\naz group create --name aks-rg --location eastus\naz aks create --resource-group aks-rg --name myaks --node-count 2 --node-vm-size Standard_B2s --generate-ssh-keys --enable-managed-identity\naz aks get-credentials --resource-group aks-rg --name myaks\nkubectl get nodes\nkubectl create deployment nginx --image=nginx:latest --replicas=2\nkubectl expose deployment nginx --port=80 --type=LoadBalancer\naz aks scale --resource-group aks-rg --name myaks --node-count 3",
+  "faq": [
+    {
+      "question": "How much does an AKS cluster cost?",
+      "answer": "The AKS control plane is free. You pay only for the underlying VMs, storage, and networking. A two-node Standard_B2s cluster costs roughly $50-70/month."
+    },
+    {
+      "question": "How do I enable autoscaling on AKS?",
+      "answer": "Use 'az aks update --resource-group aks-rg --name myaks --enable-cluster-autoscaler --min-count 1 --max-count 5' to let the cluster scale nodes automatically based on pod demand."
+    }
+  ],
+  "relatedRecipes": ["azure-container-apps", "azure-identity-setup"],
+  "lastUpdated": "2026-03-11"
+}

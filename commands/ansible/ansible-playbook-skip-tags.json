@@ -1,0 +1,9 @@
+{
+  "id": "ansible-playbook-skip-tags",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-playbook",
+  "title": "Skip Tags",
+  "command": "ansible-playbook playbook.yml --skip-tags \"test\"",
+  "description": "Skip tasks with specific tags",
+  "tags": ["playbook", "skip", "tags"]
+}

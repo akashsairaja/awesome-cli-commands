@@ -1,0 +1,8 @@
+{
+  "id": "scoop-bucket-4",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-bucket",
+  "title": "Add custom bucket",
+  "command": "scoop bucket add mybucket https://github.com/user/scoop-bucket",
+  "description": "Add a custom bucket."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "task-run-3",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-run",
+  "title": "Run multiple tasks",
+  "command": "task build test deploy",
+  "description": "Run multiple tasks in sequence."
+}

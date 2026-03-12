@@ -1,0 +1,8 @@
+{
+  "id": "composer-install-6",
+  "categoryId": "composer",
+  "subcategoryId": "composer-install",
+  "title": "Install no plugins",
+  "command": "composer install --no-plugins",
+  "description": "Install without running plugins."
+}

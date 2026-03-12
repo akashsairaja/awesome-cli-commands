@@ -1,0 +1,8 @@
+{
+  "id": "scoop-config-5",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-config",
+  "title": "Enable debug mode",
+  "command": "scoop config debug true",
+  "description": "Enable debug output for troubleshooting."
+}

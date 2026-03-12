@@ -1,0 +1,9 @@
+{
+  "id": "azure-containerapp-logs",
+  "categoryId": "azure",
+  "subcategoryId": "azure-containerapp",
+  "title": "Stream Container Logs",
+  "command": "az containerapp logs show -n myapp -g rg --follow",
+  "description": "Stream live logs from container app",
+  "tags": ["containerapp", "logs", "stream"]
+}

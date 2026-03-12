@@ -1,0 +1,8 @@
+{
+  "id": "docker-43",
+  "categoryId": "docker",
+  "subcategoryId": "images",
+  "title": "Tag image",
+  "command": "docker tag <image> <registry>/<name>:<tag>",
+  "description": "Tag image for registry."
+}

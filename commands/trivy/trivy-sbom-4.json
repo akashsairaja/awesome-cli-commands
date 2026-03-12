@@ -1,0 +1,8 @@
+{
+  "id": "trivy-sbom-4",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-sbom",
+  "title": "Filesystem SBOM",
+  "command": "trivy fs --format cyclonedx -o sbom.json .",
+  "description": "Generate SBOM for filesystem."
+}

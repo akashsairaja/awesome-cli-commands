@@ -1,0 +1,8 @@
+{
+  "id": "task-watch-8",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-watch",
+  "title": "Namespaced includes",
+  "command": "includes:\n  api:\n    taskfile: ./api/Taskfile.yml\n    dir: ./api",
+  "description": "Namespace included tasks with dir context."
+}

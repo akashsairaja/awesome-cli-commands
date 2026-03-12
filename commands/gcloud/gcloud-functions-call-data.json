@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-functions-call-data",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-functions",
+  "title": "Test Function with Data",
+  "command": "gcloud functions call <name> --data='{\"key\":\"value\"}' --region=us-central1",
+  "description": "Invoke function with JSON payload for testing",
+  "tags": ["functions", "call", "test", "invoke"]
+}

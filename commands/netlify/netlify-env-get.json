@@ -1,0 +1,9 @@
+{
+  "id": "netlify-env-get",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-env",
+  "title": "Get env variable",
+  "command": "netlify env:get <key>",
+  "description": "Get value of environment variable",
+  "tags": ["env", "get", "show"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ssh-19",
+  "categoryId": "sshgpg",
+  "subcategoryId": "config",
+  "title": "SSH config file",
+  "command": "~/.ssh/config",
+  "description": "SSH client configuration file path."
+}

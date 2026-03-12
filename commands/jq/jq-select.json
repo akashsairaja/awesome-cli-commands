@@ -1,0 +1,9 @@
+{
+  "id": "jq-select",
+  "categoryId": "jq",
+  "subcategoryId": "jq-filters",
+  "title": "Filter by condition",
+  "command": "cat file.json | jq '.[] | select(.active == true)'",
+  "description": "Filter elements matching condition",
+  "tags": ["select", "filter", "where"]
+}

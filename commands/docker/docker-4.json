@@ -1,0 +1,8 @@
+{
+  "id": "docker-4",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Run with port mapping",
+  "command": "docker run -d -p 8080:80 <image>",
+  "description": "Map host port 8080 to container port 80."
+}

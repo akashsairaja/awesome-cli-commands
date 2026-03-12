@@ -1,0 +1,9 @@
+{
+  "id": "nginx-start",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-control",
+  "title": "Start Nginx",
+  "command": "sudo nginx",
+  "description": "Start Nginx server",
+  "tags": ["start", "run", "begin"]
+}

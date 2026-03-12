@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-config-12",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-config",
+  "title": "Post-checkout hook",
+  "command": "post-checkout:\n  commands:\n    deps:\n      run: npm install\n      files: git diff --name-only HEAD@{1} HEAD",
+  "description": "Run npm install on branch switch."
+}

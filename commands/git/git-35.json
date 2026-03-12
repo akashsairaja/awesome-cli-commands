@@ -1,0 +1,8 @@
+{
+  "id": "git-35",
+  "categoryId": "git",
+  "subcategoryId": "branches",
+  "title": "Create and switch (modern)",
+  "command": "git switch -c <name>",
+  "description": "Create and switch to new branch."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "db-73",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Grant specific table access",
+  "command": "GRANT SELECT, INSERT ON mydb.users TO 'appuser'@'localhost';",
+  "description": "Grant specific privileges on a single table."
+}

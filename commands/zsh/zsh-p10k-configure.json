@@ -1,0 +1,9 @@
+{
+  "id": "zsh-p10k-configure",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-plugins",
+  "title": "Configure Powerlevel10k",
+  "command": "p10k configure",
+  "description": "Run Powerlevel10k configuration wizard",
+  "tags": ["powerlevel10k", "configure", "wizard"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "podman-container-1",
+  "categoryId": "podman",
+  "subcategoryId": "podman-container",
+  "title": "Run container",
+  "command": "podman run -d --name myapp -p 8080:80 nginx",
+  "description": "Run a container in background."
+}

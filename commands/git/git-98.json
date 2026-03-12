@@ -1,0 +1,8 @@
+{
+  "id": "git-98",
+  "categoryId": "git",
+  "subcategoryId": "reflog",
+  "title": "Recover lost commit",
+  "command": "git cherry-pick <reflog-hash>",
+  "description": "Recover commit from reflog."
+}

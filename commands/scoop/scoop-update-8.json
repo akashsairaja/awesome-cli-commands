@@ -1,0 +1,8 @@
+{
+  "id": "scoop-update-8",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-update",
+  "title": "Clear entire cache",
+  "command": "scoop cache rm *",
+  "description": "Remove all cached downloads."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "podman-pod-5",
+  "categoryId": "podman",
+  "subcategoryId": "podman-pod",
+  "title": "Play Kubernetes YAML",
+  "command": "podman play kube mypod.yaml",
+  "description": "Create pod from Kubernetes manifest."
+}

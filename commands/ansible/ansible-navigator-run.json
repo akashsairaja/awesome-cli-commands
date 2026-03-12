@@ -1,0 +1,9 @@
+{
+  "id": "ansible-navigator-run",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-navigator",
+  "title": "Run Playbook with TUI",
+  "command": "ansible-navigator run playbook.yml",
+  "description": "Execute playbook with text-based user interface",
+  "tags": ["navigator", "tui", "playbook", "run"]
+}

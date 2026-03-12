@@ -1,0 +1,9 @@
+{
+  "id": "netlify-env-unset",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-env",
+  "title": "Remove env variable",
+  "command": "netlify env:unset <key>",
+  "description": "Remove an environment variable",
+  "tags": ["env", "unset", "remove", "delete"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "task-syntax-3",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-syntax",
+  "title": "Task with preconditions",
+  "command": "tasks:\n  deploy:\n    preconditions:\n      - test -f config.yaml\n    cmds:\n      - kubectl apply -f .",
+  "description": "Task with preconditions."
+}

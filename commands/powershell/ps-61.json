@@ -1,0 +1,8 @@
+{
+  "id": "ps-61",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-pipeline",
+  "title": "Group objects",
+  "command": "Get-Process | Group-Object ProcessName",
+  "description": "Group by property value."
+}

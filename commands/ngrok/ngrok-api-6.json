@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-api-6",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-api",
+  "title": "List reserved domains",
+  "command": "ngrok api reserved-domains list",
+  "description": "List all reserved domains on your account."
+}

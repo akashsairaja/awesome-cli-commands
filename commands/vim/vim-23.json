@@ -1,0 +1,8 @@
+{
+  "id": "vim-23",
+  "categoryId": "vim",
+  "subcategoryId": "buffers",
+  "title": "Save file",
+  "command": ":w",
+  "description": "Write buffer to file."
+}

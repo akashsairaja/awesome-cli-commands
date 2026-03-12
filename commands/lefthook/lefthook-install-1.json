@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-install-1",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-install",
+  "title": "Install hooks",
+  "command": "lefthook install",
+  "description": "Install Git hooks in repository."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "git-gs-1",
+  "title": "Install Git (macOS)",
+  "command": "brew install git",
+  "description": "Install Git using Homebrew on macOS",
+  "categoryId": "git",
+  "subcategoryId": "getting-started"
+}

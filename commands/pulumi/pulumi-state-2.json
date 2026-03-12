@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-state-2",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-state",
+  "title": "Import state",
+  "command": "pulumi stack import --file state.json",
+  "description": "Import stack state from file."
+}

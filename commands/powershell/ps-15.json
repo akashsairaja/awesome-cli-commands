@@ -1,0 +1,8 @@
+{
+  "id": "ps-15",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-processes",
+  "title": "Kill process by ID",
+  "command": "Stop-Process -Id 1234",
+  "description": "Stop process by PID."
+}

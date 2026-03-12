@@ -1,0 +1,8 @@
+{
+  "id": "git-165",
+  "categoryId": "git",
+  "subcategoryId": "advanced",
+  "title": "Create bundle file",
+  "command": "git bundle create <file> <refs>",
+  "description": "Create bundle file for offline transport."
+}

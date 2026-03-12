@@ -1,0 +1,8 @@
+{
+  "id": "helm-release-3",
+  "categoryId": "helm",
+  "subcategoryId": "helm-release",
+  "title": "Release status",
+  "command": "helm status my-release",
+  "description": "Show status of a release."
+}

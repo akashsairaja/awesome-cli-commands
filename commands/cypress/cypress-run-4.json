@@ -1,0 +1,8 @@
+{
+  "id": "cypress-run-4",
+  "categoryId": "cypress",
+  "subcategoryId": "cypress-run",
+  "title": "Run headed",
+  "command": "npx cypress run --headed",
+  "description": "Run with browser visible."
+}

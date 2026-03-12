@@ -1,0 +1,8 @@
+{
+  "id": "db-82",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Unlock user account",
+  "command": "ALTER USER 'appuser'@'localhost' ACCOUNT UNLOCK;",
+  "description": "Unlock a previously locked user account."
+}

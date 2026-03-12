@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-config-18",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-config",
+  "title": "Prepare-commit-msg",
+  "command": "prepare-commit-msg:\n  commands:\n    template:\n      run: echo 'feat: ' > {1}",
+  "description": "Pre-fill commit message template."
+}

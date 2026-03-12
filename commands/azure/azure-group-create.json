@@ -1,0 +1,9 @@
+{
+  "id": "azure-group-create",
+  "categoryId": "azure",
+  "subcategoryId": "azure-resources",
+  "title": "Create Resource Group",
+  "command": "az group create --name <name> --location <region>",
+  "description": "Create a new resource group in a specific region",
+  "tags": ["resource-group", "create", "region"]
+}

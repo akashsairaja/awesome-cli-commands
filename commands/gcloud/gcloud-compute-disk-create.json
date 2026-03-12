@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-compute-disk-create",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-compute",
+  "title": "Create Persistent Disk",
+  "command": "gcloud compute disks create <name> --size=100GB --type=pd-ssd --zone=<zone>",
+  "description": "Create a persistent disk (standard or SSD)",
+  "tags": ["disk", "create", "storage"]
+}

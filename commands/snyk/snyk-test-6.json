@@ -1,0 +1,8 @@
+{
+  "id": "snyk-test-6",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-test",
+  "title": "Test for specific org",
+  "command": "snyk test --org=my-team",
+  "description": "Run test against a specific Snyk organization."
+}

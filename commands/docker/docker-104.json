@@ -1,0 +1,8 @@
+{
+  "id": "docker-104",
+  "categoryId": "docker",
+  "subcategoryId": "buildx",
+  "title": "Bake from file",
+  "command": "docker buildx bake -f docker-bake.hcl",
+  "description": "Build from bake definition file."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "aws-cw-4",
+  "categoryId": "aws",
+  "subcategoryId": "cloudwatch",
+  "title": "List alarms",
+  "command": "aws cloudwatch describe-alarms --output table",
+  "description": "List all CloudWatch alarms."
+}

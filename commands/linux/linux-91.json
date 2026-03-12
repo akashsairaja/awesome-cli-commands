@@ -1,0 +1,8 @@
+{
+  "id": "linux-91",
+  "categoryId": "linux",
+  "subcategoryId": "network",
+  "title": "Display routing table",
+  "command": "ip route show",
+  "description": "Show the kernel IP routing table with all configured routes."
+}

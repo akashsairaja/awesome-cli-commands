@@ -1,0 +1,8 @@
+{
+  "id": "starship-config-2",
+  "categoryId": "starship",
+  "subcategoryId": "starship-config",
+  "title": "Config location",
+  "command": "echo $STARSHIP_CONFIG",
+  "description": "Show config file location."
+}

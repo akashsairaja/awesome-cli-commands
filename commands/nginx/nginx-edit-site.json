@@ -1,0 +1,9 @@
+{
+  "id": "nginx-edit-site",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-config",
+  "title": "Edit site config",
+  "command": "sudo nano /etc/nginx/sites-available/<site>",
+  "description": "Edit site-specific configuration",
+  "tags": ["edit", "site", "config"]
+}

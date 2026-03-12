@@ -1,0 +1,8 @@
+{
+  "id": "k8s-100",
+  "categoryId": "kubernetes",
+  "subcategoryId": "storage",
+  "title": "Describe PVC",
+  "command": "kubectl describe pvc <name>",
+  "description": "Show detailed PVC information."
+}

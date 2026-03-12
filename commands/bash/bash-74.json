@@ -1,0 +1,8 @@
+{
+  "id": "bash-74",
+  "categoryId": "bash",
+  "subcategoryId": "strings",
+  "title": "Capitalize first",
+  "command": "echo \"${str^}\"",
+  "description": "Capitalize first character (Bash 4+)."
+}

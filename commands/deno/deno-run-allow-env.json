@@ -1,0 +1,9 @@
+{
+  "id": "deno-run-allow-env",
+  "categoryId": "deno",
+  "subcategoryId": "deno-run",
+  "title": "Allow Environment Access",
+  "command": "deno run --allow-env script.ts",
+  "description": "Run with environment variable access",
+  "tags": ["run", "permissions", "env"]
+}

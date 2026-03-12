@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-connect-13",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-connect",
+  "title": "Logout and remove device",
+  "command": "tailscale logout",
+  "description": "Log out and remove device from tailnet."
+}

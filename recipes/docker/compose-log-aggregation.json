@@ -1,0 +1,42 @@
+{
+  "id": "compose-log-aggregation",
+  "stackId": "docker",
+  "name": "Compose Log Aggregation",
+  "description": "Aggregate, filter, and follow logs across multiple Docker Compose services in a single terminal view.",
+  "difficulty": "beginner",
+  "timeMinutes": 5,
+  "trending": false,
+  "tags": ["compose", "logs", "debugging", "monitoring"],
+  "prerequisites": ["Docker Compose installed", "A running Compose stack"],
+  "steps": [
+    {
+      "title": "Follow logs for all services",
+      "description": "Stream logs from every service in the Compose stack.",
+      "command": "docker compose logs -f"
+    },
+    {
+      "title": "Follow logs for specific services",
+      "description": "Focus on logs from one or more specific services.",
+      "command": "docker compose logs -f api worker",
+      "tip": "List multiple service names to filter to just those services."
+    },
+    {
+      "title": "Show logs with timestamps",
+      "description": "Add timestamps to log output for correlation.",
+      "command": "docker compose logs -f -t --tail=50"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Compose Log Aggregation\nset -euo pipefail\n\nSERVICE=${1:-\"\"}\n\necho \"=== Docker Compose Services ===\"\ndocker compose ps --format 'table {{.Name}}\\t{{.Status}}'\n\necho \"\"\nif [ -n \"$SERVICE\" ]; then\n  echo \"=== Following logs for: $SERVICE ===\"\n  docker compose logs -f -t --tail=100 \"$SERVICE\"\nelse\n  echo \"=== Following logs for all services ===\"\n  docker compose logs -f -t --tail=50\nfi",
+  "faq": [
+    {
+      "question": "How do I limit log output to avoid flooding the terminal?",
+      "answer": "Use --tail=N to show only the last N lines, and --since=1h to show logs from the last hour."
+    },
+    {
+      "question": "Can I save Compose logs to a file?",
+      "answer": "Yes. Use 'docker compose logs > logs.txt' or configure a logging driver in your compose file (e.g., json-file with max-size)."
+    }
+  ],
+  "relatedRecipes": ["container-debug-ephemeral", "compose-networking-debug"],
+  "lastUpdated": "2026-03-11"
+}

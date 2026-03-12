@@ -1,0 +1,8 @@
+{
+  "id": "xh-requests-8",
+  "categoryId": "xh",
+  "subcategoryId": "xh-requests",
+  "title": "PATCH request",
+  "command": "xh PATCH https://api.example.com/users/1 name=Patched",
+  "description": "Make a PATCH request to partially update a resource."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "checkov-checks-7",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-checks",
+  "title": "Skip entire framework",
+  "command": "checkov -d . --skip-framework dockerfile",
+  "description": "Skip all checks for a framework."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-services-enable",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-projects",
+  "title": "Enable API",
+  "command": "gcloud services enable <api>.googleapis.com",
+  "description": "Enable a Google Cloud API",
+  "tags": ["services", "enable", "api"]
+}

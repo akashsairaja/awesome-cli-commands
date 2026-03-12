@@ -1,0 +1,8 @@
+{
+  "id": "task-syntax-10",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-syntax",
+  "title": "Task description",
+  "command": "tasks:\n  build:\n    desc: Build the application binary\n    cmds:\n      - go build -o app",
+  "description": "Add description shown by task -l."
+}

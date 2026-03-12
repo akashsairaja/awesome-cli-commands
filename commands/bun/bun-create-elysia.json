@@ -1,0 +1,9 @@
+{
+  "id": "bun-create-elysia",
+  "categoryId": "bun",
+  "subcategoryId": "bun-init",
+  "title": "Create Elysia App",
+  "command": "bun create elysia my-api",
+  "description": "Create an Elysia API project",
+  "tags": ["create", "elysia", "api"]
+}

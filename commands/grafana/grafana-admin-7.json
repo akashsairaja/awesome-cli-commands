@@ -1,0 +1,8 @@
+{
+  "id": "grafana-admin-7",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-admin",
+  "title": "Get current org",
+  "command": "curl -s http://localhost:3000/api/org -H 'Authorization: Bearer TOKEN'",
+  "description": "Get current organization details."
+}

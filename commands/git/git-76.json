@@ -1,0 +1,8 @@
+{
+  "id": "git-76",
+  "categoryId": "git",
+  "subcategoryId": "remote",
+  "title": "Fetch and prune",
+  "command": "git fetch --prune",
+  "description": "Fetch and remove deleted branches."
+}

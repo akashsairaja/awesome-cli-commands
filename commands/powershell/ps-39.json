@@ -1,0 +1,8 @@
+{
+  "id": "ps-39",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-network",
+  "title": "Get network adapters",
+  "command": "Get-NetAdapter",
+  "description": "List network adapters."
+}

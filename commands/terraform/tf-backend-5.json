@@ -1,0 +1,8 @@
+{
+  "id": "tf-backend-5",
+  "categoryId": "terraform",
+  "subcategoryId": "terraform-backend",
+  "title": "Pull remote state",
+  "command": "terraform state pull > terraform.tfstate",
+  "description": "Download remote state to local file."
+}

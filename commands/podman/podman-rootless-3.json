@@ -1,0 +1,8 @@
+{
+  "id": "podman-rootless-3",
+  "categoryId": "podman",
+  "subcategoryId": "podman-rootless",
+  "title": "Change file ownership",
+  "command": "podman unshare chown 1000:1000 myfile",
+  "description": "Change ownership in user namespace."
+}

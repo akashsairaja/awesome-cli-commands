@@ -1,0 +1,8 @@
+{
+  "id": "ssh-8",
+  "categoryId": "sshgpg",
+  "subcategoryId": "keys",
+  "title": "List GPG keys",
+  "command": "gpg --list-keys",
+  "description": "List all GPG public keys."
+}

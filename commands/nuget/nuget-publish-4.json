@@ -1,0 +1,8 @@
+{
+  "id": "nuget-publish-4",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-publish",
+  "title": "Delete package",
+  "command": "dotnet nuget delete MyPackage 1.0.0 -s https://api.nuget.org/v3/index.json -k API_KEY",
+  "description": "Unlist package from feed."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "pg-io-5",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-import",
+  "title": "Import with options",
+  "command": "\\copy users FROM 'data.csv' DELIMITER ',' NULL 'NULL' CSV",
+  "description": "Import with custom delimiter and null handling."
+}

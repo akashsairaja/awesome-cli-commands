@@ -1,0 +1,8 @@
+{
+  "id": "bash-55",
+  "categoryId": "bash",
+  "subcategoryId": "arrays",
+  "title": "Array slice",
+  "command": "echo \"${arr[@]:1:2}\"",
+  "description": "Get subset of array (offset:length)."
+}

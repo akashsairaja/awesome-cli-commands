@@ -1,0 +1,9 @@
+{
+  "id": "firebase-emulators-export",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-emulators",
+  "title": "Export emulator data",
+  "command": "firebase emulators:export ./data",
+  "description": "Export current emulator data to directory",
+  "tags": ["emulators", "export", "data"]
+}

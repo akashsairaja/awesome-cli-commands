@@ -1,0 +1,8 @@
+{
+  "id": "kafka-cons-2",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-consumer",
+  "title": "From beginning",
+  "command": "kafka-console-consumer.sh --topic my-topic --bootstrap-server localhost:9092 --from-beginning",
+  "description": "Consume all messages from start."
+}

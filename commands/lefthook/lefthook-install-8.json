@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-install-8",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-install",
+  "title": "Add commit-msg hook",
+  "command": "lefthook add -d commit-msg",
+  "description": "Add commit-msg hook with template."
+}

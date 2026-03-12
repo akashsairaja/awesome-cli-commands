@@ -1,0 +1,8 @@
+{
+  "id": "git-34",
+  "categoryId": "git",
+  "subcategoryId": "branches",
+  "title": "Switch branch (modern)",
+  "command": "git switch <branch>",
+  "description": "Switch to branch (Git 2.23+)."
+}

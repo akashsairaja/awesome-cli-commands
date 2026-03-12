@@ -1,0 +1,8 @@
+{
+  "id": "linux-gs-1",
+  "title": "Check kernel version",
+  "command": "uname -r",
+  "description": "Display the current Linux kernel version",
+  "categoryId": "linux",
+  "subcategoryId": "getting-started"
+}

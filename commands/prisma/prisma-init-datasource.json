@@ -1,0 +1,9 @@
+{
+  "id": "prisma-init-datasource",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-generate",
+  "title": "Initialize with datasource",
+  "command": "npx prisma init --datasource-provider postgresql",
+  "description": "Initialize Prisma with specific database provider",
+  "tags": ["init", "datasource", "provider"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "db-3",
+  "categoryId": "database",
+  "subcategoryId": "postgresql",
+  "title": "Restore database",
+  "command": "psql -h localhost -U postgres dbname < backup.sql",
+  "description": "Restore database from SQL file."
+}

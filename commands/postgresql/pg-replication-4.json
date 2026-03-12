@@ -1,0 +1,8 @@
+{
+  "id": "pg-replication-4",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-replication",
+  "title": "View replication slots",
+  "command": "SELECT * FROM pg_replication_slots;",
+  "description": "List all replication slots and their status."
+}

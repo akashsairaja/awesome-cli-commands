@@ -1,0 +1,8 @@
+{
+  "id": "temporal-search-2",
+  "categoryId": "temporal",
+  "subcategoryId": "search-attribute",
+  "title": "Create Text attribute",
+  "command": "temporal operator search-attribute create --name Description --type Text",
+  "description": "Create full-text searchable attribute."
+}

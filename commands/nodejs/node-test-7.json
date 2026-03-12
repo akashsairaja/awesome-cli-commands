@@ -1,0 +1,8 @@
+{
+  "id": "node-test-7",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-test",
+  "title": "Spec reporter",
+  "command": "node --test --test-reporter=spec",
+  "description": "Output tests with spec reporter (human-readable)."
+}

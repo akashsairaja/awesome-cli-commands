@@ -1,0 +1,8 @@
+{
+  "id": "snow-41",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-git",
+  "title": "Create Git repository",
+  "command": "snow git create-repository <name> --url <repo-url>",
+  "description": "Create a Git repository integration."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "bash-48",
+  "categoryId": "bash",
+  "subcategoryId": "functions",
+  "title": "Check function exists",
+  "command": "declare -f function_name > /dev/null && function_name",
+  "description": "Call function only if it exists."
+}

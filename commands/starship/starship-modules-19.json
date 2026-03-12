@@ -1,0 +1,8 @@
+{
+  "id": "starship-modules-19",
+  "categoryId": "starship",
+  "subcategoryId": "starship-modules",
+  "title": "Color palette",
+  "command": "palette = 'catppuccin'\n\n[palettes.catppuccin]\nrosewater = '#f5e0dc'\nflamingo = '#f2cdcd'",
+  "description": "Define a named color palette for theming."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-config-set-zone",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-auth",
+  "title": "Set Default Zone",
+  "command": "gcloud config set compute/zone <zone>",
+  "description": "Set the default compute zone for commands",
+  "tags": ["config", "zone", "default"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-audio-codec",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-audio",
+  "title": "Change audio codec",
+  "command": "ffmpeg -i input.mp4 -c:v copy -c:a aac output.mp4",
+  "description": "Re-encode audio with different codec",
+  "tags": ["audio", "codec", "aac"]
+}

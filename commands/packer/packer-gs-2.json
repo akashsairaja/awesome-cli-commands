@@ -1,0 +1,8 @@
+{
+  "id": "packer-gs-2",
+  "title": "Check Packer version",
+  "command": "packer --version",
+  "description": "Verify Packer is installed and display the current version",
+  "categoryId": "packer",
+  "subcategoryId": "getting-started"
+}

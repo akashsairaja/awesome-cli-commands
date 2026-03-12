@@ -1,0 +1,8 @@
+{
+  "id": "apt-55",
+  "categoryId": "ubuntu",
+  "subcategoryId": "system",
+  "title": "List installed snaps",
+  "command": "snap list",
+  "description": "Show all installed snap packages with version and revision."
+}

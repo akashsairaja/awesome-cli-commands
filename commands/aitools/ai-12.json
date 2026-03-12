@@ -1,0 +1,8 @@
+{
+  "id": "ai-12",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-shellgpt",
+  "title": "Generate code",
+  "command": "sgpt --code \"function to validate email in Python\"",
+  "description": "Generate code with syntax highlighting."
+}

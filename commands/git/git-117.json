@@ -1,0 +1,8 @@
+{
+  "id": "git-117",
+  "categoryId": "git",
+  "subcategoryId": "submodules",
+  "title": "Remove submodule",
+  "command": "git submodule deinit <path> && git rm <path>",
+  "description": "Remove a submodule."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "db-96",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Show binary log status",
+  "command": "SHOW MASTER STATUS;",
+  "description": "Display current binary log file and position for replication."
+}

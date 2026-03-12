@@ -1,0 +1,8 @@
+{
+  "id": "flux-notification-3",
+  "categoryId": "flux",
+  "subcategoryId": "flux-notification",
+  "title": "List alerts",
+  "command": "flux get alerts",
+  "description": "List all configured alerts."
+}

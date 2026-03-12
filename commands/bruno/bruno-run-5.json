@@ -1,0 +1,8 @@
+{
+  "id": "bruno-run-5",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-run",
+  "title": "Output format",
+  "command": "bru run --output json",
+  "description": "Output results as JSON."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "db-94",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Kill query by ID",
+  "command": "KILL QUERY <process_id>;",
+  "description": "Terminate a running query without disconnecting the session."
+}

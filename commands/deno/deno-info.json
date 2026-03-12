@@ -1,0 +1,9 @@
+{
+  "id": "deno-info",
+  "categoryId": "deno",
+  "subcategoryId": "deno-info",
+  "title": "Deno Info",
+  "command": "deno info",
+  "description": "Show Deno installation info",
+  "tags": ["info", "install", "cache"]
+}

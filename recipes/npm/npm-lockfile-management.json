@@ -1,0 +1,57 @@
+{
+  "id": "npm-lockfile-management",
+  "stackId": "npm",
+  "name": "Understand and Manage package-lock.json",
+  "description": "Master the package-lock.json file to ensure reproducible installs, resolve merge conflicts, and maintain a healthy dependency tree.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "tags": ["lockfile", "dependencies", "reproducibility", "ci"],
+  "prerequisites": ["Node.js and npm installed"],
+  "steps": [
+    {
+      "title": "Generate a fresh lockfile",
+      "description": "Create or regenerate package-lock.json from package.json.",
+      "command": "npm install",
+      "tip": "The lockfile pins exact versions of every package in the dependency tree. Always commit it to version control."
+    },
+    {
+      "title": "Install from lockfile only (CI mode)",
+      "description": "Use npm ci for clean, reproducible installs in CI pipelines.",
+      "command": "npm ci",
+      "warning": "npm ci deletes node_modules and installs exactly what is in package-lock.json. It fails if the lockfile is out of sync with package.json."
+    },
+    {
+      "title": "Check for outdated packages",
+      "description": "See which dependencies have newer versions available.",
+      "command": "npm outdated"
+    },
+    {
+      "title": "Update a specific package",
+      "description": "Update one dependency and its lockfile entry.",
+      "command": "npm update lodash",
+      "tip": "npm update respects semver ranges in package.json. To jump to a new major version, use 'npm install lodash@latest'."
+    },
+    {
+      "title": "Verify lockfile integrity",
+      "description": "Check that the lockfile matches the installed node_modules.",
+      "command": "npm ls --all 2>&1 | grep -E '(WARN|ERR|invalid|missing)' || echo 'Dependency tree is clean'"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# npm Lockfile Health Check\nset -euo pipefail\n\necho \"=== Lockfile Status ===\"\nif [ -f \"package-lock.json\" ]; then\n  LOCK_VERSION=$(node -e \"console.log(JSON.parse(require('fs').readFileSync('package-lock.json','utf8')).lockfileVersion)\")\n  echo \"Lockfile version: $LOCK_VERSION\"\n  echo \"File size: $(du -h package-lock.json | cut -f1)\"\nelse\n  echo \"No package-lock.json found!\"\n  exit 1\nfi\n\necho \"\"\necho \"=== Dependency Counts ===\"\nTOTAL=$(npm ls --all --json 2>/dev/null | node -e \"const d=JSON.parse(require('fs').readFileSync('/dev/stdin','utf8'));const count=(obj)=>obj.dependencies?Object.keys(obj.dependencies).length+Object.values(obj.dependencies).reduce((a,v)=>a+count(v),0):0;console.log(count(d))\" 2>/dev/null || echo \"unknown\")\necho \"Total packages in tree: $TOTAL\"\n\necho \"\"\necho \"=== Outdated Packages ===\"\nnpm outdated 2>/dev/null || echo \"All packages are up to date\"\n\necho \"\"\necho \"=== Tree Integrity ===\"\nnpm ls --all 2>&1 | grep -cE '(ERR|invalid|missing|WARN)' | xargs -I{} echo \"{} issues found\" || echo \"No issues found\"\n\necho \"\"\necho \"=== Commands ===\"\necho \"Clean install (CI): npm ci\"\necho \"Update all:         npm update\"\necho \"Update one:         npm update <package>\"\necho \"Rebuild lockfile:   rm package-lock.json && npm install\"",
+  "faq": [
+    {
+      "question": "What is the difference between npm install and npm ci?",
+      "answer": "npm install reads package.json, resolves versions, and updates the lockfile. npm ci reads only the lockfile, ignores package.json ranges, deletes node_modules first, and fails if the lockfile is out of sync. Use npm ci in CI for speed and reproducibility."
+    },
+    {
+      "question": "Should I commit package-lock.json?",
+      "answer": "Yes, always commit package-lock.json for applications and CLIs to ensure reproducible builds. For libraries, some teams choose not to commit it since consumers will use their own lockfile, but committing it still helps with reproducible CI builds."
+    },
+    {
+      "question": "How do I resolve merge conflicts in package-lock.json?",
+      "answer": "Accept either version of the lockfile, then run 'npm install' to regenerate it based on the merged package.json. Never try to manually resolve lockfile conflicts as the format is complex and error-prone."
+    }
+  ],
+  "relatedRecipes": ["npm-security-audit", "npm-cache-optimization"],
+  "lastUpdated": "2026-03-11"
+}

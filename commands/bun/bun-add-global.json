@@ -1,0 +1,9 @@
+{
+  "id": "bun-add-global",
+  "categoryId": "bun",
+  "subcategoryId": "bun-package",
+  "title": "Add Global Package",
+  "command": "bun add -g <package>",
+  "description": "Install package globally",
+  "tags": ["add", "global", "install"]
+}

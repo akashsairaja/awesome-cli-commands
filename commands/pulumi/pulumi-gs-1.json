@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-gs-1",
+  "title": "Install Pulumi (macOS)",
+  "command": "brew install pulumi",
+  "description": "Install Pulumi CLI using Homebrew on macOS",
+  "categoryId": "pulumi",
+  "subcategoryId": "getting-started"
+}

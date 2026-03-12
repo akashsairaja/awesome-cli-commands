@@ -1,0 +1,8 @@
+{
+  "id": "mongo-backup-7",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-backup",
+  "title": "Import from JSON",
+  "command": "mongoimport --db mydb --collection users --file users.json",
+  "description": "Import from JSON file."
+}

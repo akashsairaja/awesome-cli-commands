@@ -1,0 +1,8 @@
+{
+  "id": "task-gs-1",
+  "title": "Install Task (macOS)",
+  "command": "brew install go-task",
+  "description": "Install Task runner using Homebrew on macOS",
+  "categoryId": "taskfile",
+  "subcategoryId": "getting-started"
+}

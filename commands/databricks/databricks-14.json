@@ -1,0 +1,8 @@
+{
+  "id": "databricks-14",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-jobs",
+  "title": "Delete job",
+  "command": "databricks jobs delete --job-id <job-id>",
+  "description": "Delete a job from the workspace."
+}

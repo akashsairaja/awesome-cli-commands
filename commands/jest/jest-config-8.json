@@ -1,0 +1,8 @@
+{
+  "id": "jest-config-8",
+  "categoryId": "jest",
+  "subcategoryId": "jest-configuration",
+  "title": "Force exit",
+  "command": "jest --forceExit",
+  "description": "Force Jest to exit after tests complete."
+}

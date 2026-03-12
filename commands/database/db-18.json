@@ -1,0 +1,8 @@
+{
+  "id": "db-18",
+  "categoryId": "database",
+  "subcategoryId": "mongodb",
+  "title": "Find all documents",
+  "command": "db.collection.find().pretty()",
+  "description": "Query all documents with formatted output."
+}

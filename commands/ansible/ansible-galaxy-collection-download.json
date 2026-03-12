@@ -1,0 +1,9 @@
+{
+  "id": "ansible-galaxy-collection-download",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-galaxy",
+  "title": "Download Collection",
+  "command": "ansible-galaxy collection download community.general",
+  "description": "Download collection without installing",
+  "tags": ["galaxy", "collection", "download"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-storage-ls",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-storage",
+  "title": "List Buckets/Objects",
+  "command": "gsutil ls gs://<bucket-name>",
+  "description": "List buckets or objects in a bucket",
+  "tags": ["storage", "list", "bucket"]
+}

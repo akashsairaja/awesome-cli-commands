@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-config-5",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-config",
+  "title": "Piped commands",
+  "command": "pre-commit:\n  piped: true\n  commands:\n    format:\n      run: prettier --write {staged_files}\n      stage_fixed: true\n    lint:\n      run: eslint {staged_files}",
+  "description": "Run commands sequentially in a pipeline."
+}

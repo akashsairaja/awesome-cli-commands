@@ -1,0 +1,8 @@
+{
+  "id": "k6-cloud-1",
+  "categoryId": "k6",
+  "subcategoryId": "k6-cloud",
+  "title": "Login to cloud",
+  "command": "k6 login cloud --token YOUR_TOKEN",
+  "description": "Authenticate with k6 Cloud."
+}

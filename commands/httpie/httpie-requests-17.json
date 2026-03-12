@@ -1,0 +1,8 @@
+{
+  "id": "httpie-requests-17",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-requests",
+  "title": "Pipe from stdin",
+  "command": "echo '{\"name\":\"Alice\"}' | http POST https://api.example.com/users",
+  "description": "Pipe JSON data from stdin as the request body."
+}

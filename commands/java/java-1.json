@@ -1,0 +1,8 @@
+{
+  "id": "java-1",
+  "categoryId": "java",
+  "subcategoryId": "java-compiler",
+  "title": "Compile Java file",
+  "command": "javac MyClass.java",
+  "description": "Compile a single Java source file."
+}

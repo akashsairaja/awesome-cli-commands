@@ -1,0 +1,9 @@
+{
+  "id": "nginx-proxy-health-check",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-reverse-proxy",
+  "title": "Health check with failover",
+  "command": "server 127.0.0.1:3001 max_fails=3 fail_timeout=30s; server 127.0.0.1:3002 backup;",
+  "description": "Mark server down after 3 failures with backup",
+  "tags": ["proxy", "health", "failover", "backup"]
+}

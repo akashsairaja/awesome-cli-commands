@@ -1,0 +1,8 @@
+{
+  "id": "bash-28",
+  "categoryId": "bash",
+  "subcategoryId": "variables",
+  "title": "Current PID",
+  "command": "echo $$",
+  "description": "Get process ID of current shell."
+}

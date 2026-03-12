@@ -1,0 +1,8 @@
+{
+  "id": "scoop-manage-2",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-manage",
+  "title": "Uninstall app",
+  "command": "scoop uninstall git",
+  "description": "Remove an installed app."
+}

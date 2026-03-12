@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-logging-list-sinks",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-logging",
+  "title": "List Log Sinks",
+  "command": "gcloud logging sinks list",
+  "description": "List all log sinks (exports) in the project",
+  "tags": ["logging", "sinks", "export"]
+}

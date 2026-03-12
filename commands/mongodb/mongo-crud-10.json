@@ -1,0 +1,8 @@
+{
+  "id": "mongo-crud-10",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-crud",
+  "title": "Replace one",
+  "command": "db.users.replaceOne({ name: \"John\" }, { name: \"John\", age: 32, email: \"john@ex.com\" })",
+  "description": "Replace entire document."
+}

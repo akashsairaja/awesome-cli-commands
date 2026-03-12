@@ -1,0 +1,8 @@
+{
+  "id": "snow-13",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-sql",
+  "title": "SQL with specific warehouse",
+  "command": "snow sql -q \"SELECT ...\" --warehouse COMPUTE_WH",
+  "description": "Execute query using a specific warehouse."
+}

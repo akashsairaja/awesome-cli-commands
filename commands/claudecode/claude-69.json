@@ -1,0 +1,8 @@
+{
+  "id": "claude-69",
+  "categoryId": "claudecode",
+  "subcategoryId": "workflows",
+  "title": "Explain code",
+  "command": "claude \"explain how this authentication works\"",
+  "description": "Get detailed code explanations."
+}

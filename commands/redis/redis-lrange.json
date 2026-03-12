@@ -1,0 +1,9 @@
+{
+  "id": "redis-lrange",
+  "categoryId": "redis",
+  "subcategoryId": "redis-lists",
+  "title": "Get list range",
+  "command": "LRANGE key 0 -1",
+  "description": "Get all elements in list (0 to -1 = all)",
+  "tags": ["lrange", "list", "range"]
+}

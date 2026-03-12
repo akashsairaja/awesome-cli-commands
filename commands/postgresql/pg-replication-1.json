@@ -1,0 +1,8 @@
+{
+  "id": "pg-replication-1",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-replication",
+  "title": "Replication status",
+  "command": "SELECT * FROM pg_stat_replication;",
+  "description": "Monitor replication status and lag."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "git-36",
+  "categoryId": "git",
+  "subcategoryId": "branches",
+  "title": "Rename current branch",
+  "command": "git branch -m <new-name>",
+  "description": "Rename the current branch."
+}

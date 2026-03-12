@@ -1,0 +1,9 @@
+{
+  "id": "vercel-blob-upload",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-storage",
+  "title": "Upload to Blob",
+  "command": "vercel blob put <file>",
+  "description": "Upload file to Blob storage",
+  "tags": ["blob", "upload", "put"]
+}

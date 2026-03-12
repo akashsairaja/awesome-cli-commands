@@ -1,0 +1,8 @@
+{
+  "id": "linux-56",
+  "categoryId": "linux",
+  "subcategoryId": "disk",
+  "title": "List block devices",
+  "command": "lsblk -f",
+  "description": "Show all block devices with filesystem type, label, and UUID."
+}

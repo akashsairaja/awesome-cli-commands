@@ -1,0 +1,8 @@
+{
+  "id": "packer-validate-5",
+  "categoryId": "packer",
+  "subcategoryId": "packer-validate",
+  "title": "Evaluate datasources",
+  "command": "packer validate -evaluate-datasources .",
+  "description": "Validate and evaluate data source blocks."
+}

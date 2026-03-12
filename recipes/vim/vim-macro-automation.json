@@ -1,0 +1,65 @@
+{
+  "id": "vim-macro-automation",
+  "stackId": "vim",
+  "name": "Record and Replay Macros for Repetitive Edits",
+  "description": "Automate repetitive text transformations by recording keystroke macros and replaying them across lines or files.",
+  "difficulty": "intermediate",
+  "timeMinutes": 8,
+  "trending": true,
+  "trendingReason": "Macro workflows are a key differentiator for Vim power users",
+  "tags": ["macros", "automation", "recording", "productivity"],
+  "prerequisites": ["Neovim or Vim installed"],
+  "steps": [
+    {
+      "title": "Record a macro",
+      "description": "Start recording keystrokes into register 'a', perform the edit, then stop recording.",
+      "command": "qa  (perform edits)  q",
+      "tip": "Use 'qq' to record into register 'q' for quick macros. The register letter is arbitrary."
+    },
+    {
+      "title": "Replay the macro once",
+      "description": "Execute the macro stored in register 'a' on the current line.",
+      "command": "@a"
+    },
+    {
+      "title": "Replay the macro on multiple lines",
+      "description": "Run the macro 20 times or across a visual selection of lines.",
+      "command": "20@a",
+      "tip": "Select lines visually and use :'<,'>normal @a to run the macro on each selected line."
+    },
+    {
+      "title": "View and edit a macro",
+      "description": "Paste the macro contents into the buffer, edit them, and yank back to the register.",
+      "command": "\"ap  (edit the pasted text)  0\"ay$",
+      "tip": "Paste with \"ap, edit the keystrokes, then select and yank back with \"ay to update the macro."
+    },
+    {
+      "title": "Run a macro across all matching lines",
+      "description": "Use the :global command to execute a macro on every line matching a pattern.",
+      "command": ":g/pattern/normal @a"
+    },
+    {
+      "title": "Chain macros with recursive recording",
+      "description": "Create a macro that calls itself to process until the end of the file.",
+      "command": "qaqqa  (edits)  j@aq",
+      "warning": "The recursive macro stops when any command fails (like j at the end of file). Always clear the register first with qaq."
+    }
+  ],
+  "fullScript": "# Vim Macro Quick Reference\n# (These are sequences you type in Normal mode)\n\n# Record macro into register 'a'\nqa ... q\n\n# Replay macro\n@a\n\n# Replay last macro\n@@\n\n# Replay macro 50 times\n50@a\n\n# Replay on visual selection\n:'<,'>normal @a\n\n# Replay on all matching lines\n:g/TODO/normal @a\n\n# View macro contents\n:echo @a\n\n# Edit macro: paste, edit, yank back\n\"ap    (edit)    0\"ay$\n\n# Recursive macro (auto-repeat until fail)\nqaq           # Clear register a\nqa ... j@a q  # Record with self-call\n\n# Common macro examples:\n# Wrap word in quotes:     qa ea\"<Esc>bi\"<Esc> q\n# Delete to comma, join:   qa dt,J q\n# Add semicolons:          qa A;<Esc>j q",
+  "faq": [
+    {
+      "question": "How do I save macros permanently?",
+      "answer": "Add the macro to your init.lua: vim.fn.setreg('a', 'macro-keystrokes'). Or create a keybinding that performs the same operation for commonly used macros."
+    },
+    {
+      "question": "Why does my macro fail on some lines?",
+      "answer": "Macros replay exact keystrokes, so they fail if the text structure differs. Use motions like 'f,' (find comma) or 'w' (next word) instead of fixed character counts. Design macros to be position-independent."
+    },
+    {
+      "question": "What is the difference between macros and :substitute?",
+      "answer": "Use :substitute for pattern-based text replacement. Use macros for structural edits that involve cursor movement, mode changes, or multi-step transformations that regex cannot express."
+    }
+  ],
+  "relatedRecipes": ["vim-search-replace", "vim-split-workflow"],
+  "lastUpdated": "2026-03-11"
+}

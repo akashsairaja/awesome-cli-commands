@@ -1,0 +1,8 @@
+{
+  "id": "tf-prov-14",
+  "categoryId": "terraform",
+  "subcategoryId": "providers",
+  "title": "Untaint resource",
+  "command": "terraform untaint aws_instance.example",
+  "description": "Remove taint from resource."
+}

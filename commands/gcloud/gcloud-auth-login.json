@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-auth-login",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-auth",
+  "title": "Interactive Login",
+  "command": "gcloud auth login",
+  "description": "Authenticate with Google Cloud using browser",
+  "tags": ["login", "auth", "interactive"]
+}

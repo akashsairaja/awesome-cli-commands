@@ -1,0 +1,8 @@
+{
+  "id": "linux-37",
+  "categoryId": "linux",
+  "subcategoryId": "files",
+  "title": "Locate file by name",
+  "command": "locate filename",
+  "description": "Quickly find files using the mlocate database. Run updatedb first."
+}

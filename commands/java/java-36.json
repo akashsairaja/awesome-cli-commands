@@ -1,0 +1,8 @@
+{
+  "id": "java-36",
+  "categoryId": "java",
+  "subcategoryId": "java-tools",
+  "title": "Analyze dependencies (jdeps)",
+  "command": "jdeps --multi-release 17 app.jar",
+  "description": "Analyze class and package dependencies of a JAR."
+}

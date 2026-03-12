@@ -1,0 +1,8 @@
+{
+  "id": "flux-kustomization-1",
+  "categoryId": "flux",
+  "subcategoryId": "flux-kustomization",
+  "title": "Create Kustomization",
+  "command": "flux create kustomization podinfo --source=GitRepository/podinfo --path=./kustomize --prune=true --interval=10m",
+  "description": "Create a Kustomization to deploy from source."
+}

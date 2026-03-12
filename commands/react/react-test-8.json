@@ -1,0 +1,8 @@
+{
+  "id": "react-test-8",
+  "categoryId": "react",
+  "subcategoryId": "react-testing",
+  "title": "Vitest UI",
+  "command": "vitest --ui",
+  "description": "Run Vitest with interactive UI."
+}

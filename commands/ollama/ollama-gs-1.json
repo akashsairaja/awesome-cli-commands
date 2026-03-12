@@ -1,0 +1,8 @@
+{
+  "id": "ollama-gs-1",
+  "title": "Install Ollama (macOS)",
+  "command": "brew install ollama",
+  "description": "Install Ollama using Homebrew on macOS",
+  "categoryId": "ollama",
+  "subcategoryId": "getting-started"
+}

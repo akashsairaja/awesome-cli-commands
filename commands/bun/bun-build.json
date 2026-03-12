@@ -1,0 +1,9 @@
+{
+  "id": "bun-build",
+  "categoryId": "bun",
+  "subcategoryId": "bun-build",
+  "title": "Bundle Code",
+  "command": "bun build ./src/index.ts --outdir ./dist",
+  "description": "Bundle code to output directory",
+  "tags": ["build", "bundle", "output"]
+}

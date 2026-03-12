@@ -1,0 +1,9 @@
+{
+  "id": "gh-api-repos",
+  "categoryId": "github",
+  "subcategoryId": "gh-api",
+  "title": "Get repo info via API",
+  "command": "gh api repos/<owner>/<repo>",
+  "description": "Get repository information via API",
+  "tags": ["api", "repos", "info"]
+}

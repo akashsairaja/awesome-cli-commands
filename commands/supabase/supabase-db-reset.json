@@ -1,0 +1,9 @@
+{
+  "id": "supabase-db-reset",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-db",
+  "title": "Reset database",
+  "command": "supabase db reset",
+  "description": "Reset local database to initial state",
+  "tags": ["db", "reset", "clean"]
+}

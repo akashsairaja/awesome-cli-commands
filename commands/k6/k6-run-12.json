@@ -1,0 +1,8 @@
+{
+  "id": "k6-run-12",
+  "categoryId": "k6",
+  "subcategoryId": "k6-run",
+  "title": "Inspect test script",
+  "command": "k6 inspect script.js",
+  "description": "Show test options without running."
+}

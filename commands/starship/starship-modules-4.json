@@ -1,0 +1,8 @@
+{
+  "id": "starship-modules-4",
+  "categoryId": "starship",
+  "subcategoryId": "starship-modules",
+  "title": "Node module config",
+  "command": "[nodejs]\nformat = \"via [🤖 $version](bold green) \"",
+  "description": "Customize Node.js module."
+}

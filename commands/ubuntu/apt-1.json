@@ -1,0 +1,8 @@
+{
+  "id": "apt-1",
+  "categoryId": "ubuntu",
+  "subcategoryId": "apt-packages",
+  "title": "Update package lists",
+  "command": "sudo apt update",
+  "description": "Refresh available packages list."
+}

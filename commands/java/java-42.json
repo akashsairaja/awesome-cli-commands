@@ -1,0 +1,8 @@
+{
+  "id": "java-42",
+  "categoryId": "java",
+  "subcategoryId": "java-diagnostics",
+  "title": "Thread dump",
+  "command": "jcmd <pid> Thread.print",
+  "description": "Generate thread dump to analyze deadlocks and thread states."
+}

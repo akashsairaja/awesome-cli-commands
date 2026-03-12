@@ -1,0 +1,8 @@
+{
+  "id": "helm-dev-1",
+  "categoryId": "helm",
+  "subcategoryId": "helm-dev",
+  "title": "Create chart",
+  "command": "helm create mychart",
+  "description": "Create a new chart scaffold."
+}

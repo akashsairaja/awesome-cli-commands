@@ -1,0 +1,8 @@
+{
+  "id": "claude-90",
+  "categoryId": "claudecode",
+  "subcategoryId": "installation",
+  "title": "Install via WinGet",
+  "command": "winget install Anthropic.ClaudeCode",
+  "description": "Install Claude Code using WinGet."
+}

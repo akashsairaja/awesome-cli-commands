@@ -1,0 +1,8 @@
+{
+  "id": "vim-8",
+  "categoryId": "vim",
+  "subcategoryId": "editing",
+  "title": "Insert mode",
+  "command": "i / a",
+  "description": "Insert before/after cursor."
+}

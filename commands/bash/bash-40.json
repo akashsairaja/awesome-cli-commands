@@ -1,0 +1,8 @@
+{
+  "id": "bash-40",
+  "categoryId": "bash",
+  "subcategoryId": "loops",
+  "title": "Loop with step",
+  "command": "for i in {0..20..5}; do echo $i; done",
+  "description": "Loop with custom step value."
+}

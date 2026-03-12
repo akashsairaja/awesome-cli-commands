@@ -1,0 +1,8 @@
+{
+  "id": "redis-gs-3",
+  "title": "Test Redis connection",
+  "command": "redis-cli ping",
+  "description": "Send PING to verify Redis server is responding (returns PONG)",
+  "categoryId": "redis",
+  "subcategoryId": "getting-started"
+}

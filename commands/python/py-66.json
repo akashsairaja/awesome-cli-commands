@@ -1,0 +1,8 @@
+{
+  "id": "py-66",
+  "categoryId": "python",
+  "subcategoryId": "python-venv",
+  "title": "Create with system packages",
+  "command": "python -m venv venv --system-site-packages",
+  "description": "Create venv with access to system packages."
+}

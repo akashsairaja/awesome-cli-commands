@@ -1,0 +1,8 @@
+{
+  "id": "bruno-scripts-12",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-scripts",
+  "title": "Assert contains and matches",
+  "command": "assert {\n  res.body.email: contains @example.com\n  res.body.phone: matches ^\\+[0-9]{10,15}$\n  res.body.items: length 5\n}",
+  "description": "Use contains, matches, and length assertions."
+}

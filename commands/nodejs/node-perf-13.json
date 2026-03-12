@@ -1,0 +1,8 @@
+{
+  "id": "node-perf-13",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-perf",
+  "title": "Diagnostic report on signal",
+  "command": "node --report-on-signal app.js",
+  "description": "Generate diagnostic report on SIGUSR2 signal."
+}

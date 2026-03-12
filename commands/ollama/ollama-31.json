@@ -1,0 +1,8 @@
+{
+  "id": "ollama-31",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-api",
+  "title": "Chat completion",
+  "command": "curl http://localhost:11434/api/chat -d '{\"model\": \"llama2\", \"messages\": [{\"role\": \"user\", \"content\": \"Hi\"}]}'",
+  "description": "Multi-turn chat via REST API."
+}

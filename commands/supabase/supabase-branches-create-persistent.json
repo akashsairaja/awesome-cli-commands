@@ -1,0 +1,9 @@
+{
+  "id": "supabase-branches-create-persistent",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-branches",
+  "title": "Create persistent branch",
+  "command": "supabase branches create <name> --persistent",
+  "description": "Create persistent staging branch",
+  "tags": ["branches", "persistent", "staging"]
+}

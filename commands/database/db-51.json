@@ -1,0 +1,8 @@
+{
+  "id": "db-51",
+  "categoryId": "database",
+  "subcategoryId": "mongodb",
+  "title": "Create collection",
+  "command": "db.createCollection('collectionName')",
+  "description": "Explicitly create a new collection."
+}

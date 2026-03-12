@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-projects-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-projects",
+  "title": "List Projects",
+  "command": "gcloud projects list",
+  "description": "List all accessible projects",
+  "tags": ["projects", "list"]
+}

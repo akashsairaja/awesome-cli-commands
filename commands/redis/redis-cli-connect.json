@@ -1,0 +1,9 @@
+{
+  "id": "redis-cli-connect",
+  "categoryId": "redis",
+  "subcategoryId": "redis-server",
+  "title": "Connect to Redis",
+  "command": "redis-cli -h host -p port -a password",
+  "description": "Connect to Redis server with authentication",
+  "tags": ["cli", "connect", "auth"]
+}

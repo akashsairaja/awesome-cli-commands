@@ -1,0 +1,9 @@
+{
+  "id": "gh-release-download",
+  "categoryId": "github",
+  "subcategoryId": "gh-release",
+  "title": "Download release assets",
+  "command": "gh release download <tag>",
+  "description": "Download release assets",
+  "tags": ["release", "download", "assets"]
+}

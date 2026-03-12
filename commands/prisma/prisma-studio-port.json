@@ -1,0 +1,9 @@
+{
+  "id": "prisma-studio-port",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-studio",
+  "title": "Studio on custom port",
+  "command": "npx prisma studio --port 5555",
+  "description": "Open Prisma Studio on custom port",
+  "tags": ["studio", "port", "custom"]
+}

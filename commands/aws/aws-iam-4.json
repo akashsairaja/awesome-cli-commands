@@ -1,0 +1,8 @@
+{
+  "id": "aws-iam-4",
+  "categoryId": "aws",
+  "subcategoryId": "iam",
+  "title": "Assume role",
+  "command": "aws sts assume-role --role-arn arn:aws:iam::123:role/name --role-session-name session",
+  "description": "Get temporary credentials for role."
+}

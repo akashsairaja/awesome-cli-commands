@@ -1,0 +1,8 @@
+{
+  "id": "httpie-sessions-1",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-sessions",
+  "title": "Create session",
+  "command": "http --session=api POST https://api.example.com/login user=admin pass=secret",
+  "description": "Create a named session."
+}

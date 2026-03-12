@@ -1,0 +1,9 @@
+{
+  "id": "jq-type",
+  "categoryId": "jq",
+  "subcategoryId": "jq-basics",
+  "title": "Get value type",
+  "command": "cat file.json | jq '.key | type'",
+  "description": "Get the type of a value",
+  "tags": ["type", "check"]
+}

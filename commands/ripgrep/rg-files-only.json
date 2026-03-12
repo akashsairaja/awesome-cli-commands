@@ -1,0 +1,9 @@
+{
+  "id": "rg-files-only",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-files",
+  "title": "List matching files",
+  "command": "rg -l \"pattern\"",
+  "description": "List only files that contain matches",
+  "tags": ["files", "list", "names"]
+}

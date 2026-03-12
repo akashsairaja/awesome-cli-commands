@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-config-4",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-config",
+  "title": "List config",
+  "command": "pulumi config",
+  "description": "List all configuration values."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "db-gs-1",
+  "title": "Install MySQL (macOS)",
+  "command": "brew install mysql",
+  "description": "Install MySQL database server using Homebrew on macOS",
+  "categoryId": "database",
+  "subcategoryId": "getting-started"
+}

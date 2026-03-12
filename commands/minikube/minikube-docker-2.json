@@ -1,0 +1,8 @@
+{
+  "id": "minikube-docker-2",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-docker",
+  "title": "Reset Docker env",
+  "command": "eval $(minikube docker-env -u)",
+  "description": "Reset to host Docker daemon."
+}

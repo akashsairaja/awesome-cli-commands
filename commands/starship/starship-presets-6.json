@@ -1,0 +1,8 @@
+{
+  "id": "starship-presets-6",
+  "categoryId": "starship",
+  "subcategoryId": "starship-presets",
+  "title": "Apply Gruvbox preset",
+  "command": "starship preset gruvbox-rainbow -o ~/.config/starship.toml",
+  "description": "Apply Gruvbox Rainbow color scheme."
+}

@@ -1,0 +1,55 @@
+{
+  "id": "mongo-aggregation-pipeline",
+  "stackId": "mongodb",
+  "name": "Build Aggregation Pipelines from CLI",
+  "description": "Construct and test MongoDB aggregation pipelines in mongosh for data transformation, grouping, and analysis directly from the command line.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "tags": ["aggregation", "pipeline", "analytics", "data-processing"],
+  "prerequisites": ["MongoDB 6+ with mongosh", "A collection with sample data"],
+  "steps": [
+    {
+      "title": "Basic match and group pipeline",
+      "description": "Filter documents and group them to compute aggregated values.",
+      "command": "mongosh --eval 'db.orders.aggregate([{$match: {status: \"completed\"}}, {$group: {_id: \"$customerId\", totalSpent: {$sum: \"$amount\"}, orderCount: {$sum: 1}}}, {$sort: {totalSpent: -1}}, {$limit: 10}])' mydb"
+    },
+    {
+      "title": "Use $lookup for collection joins",
+      "description": "Join data from another collection similar to a SQL LEFT JOIN.",
+      "command": "mongosh --eval 'db.orders.aggregate([{$lookup: {from: \"customers\", localField: \"customerId\", foreignField: \"_id\", as: \"customer\"}}, {$unwind: \"$customer\"}, {$project: {orderId: 1, amount: 1, customerName: \"$customer.name\"}}, {$limit: 5}])' mydb"
+    },
+    {
+      "title": "Date-based aggregation with $group",
+      "description": "Group orders by month to analyze trends over time.",
+      "command": "mongosh --eval 'db.orders.aggregate([{$group: {_id: {year: {$year: \"$createdAt\"}, month: {$month: \"$createdAt\"}}, revenue: {$sum: \"$amount\"}, count: {$sum: 1}}}, {$sort: {\"_id.year\": 1, \"_id.month\": 1}}])' mydb"
+    },
+    {
+      "title": "Use $facet for multiple aggregations in one query",
+      "description": "Run several aggregation pipelines in parallel within a single query.",
+      "command": "mongosh --eval 'db.orders.aggregate([{$facet: {byStatus: [{$group: {_id: \"$status\", count: {$sum: 1}}}], topCustomers: [{$group: {_id: \"$customerId\", total: {$sum: \"$amount\"}}}, {$sort: {total: -1}}, {$limit: 5}], dailyRevenue: [{$group: {_id: {$dateToString: {format: \"%Y-%m-%d\", date: \"$createdAt\"}}, revenue: {$sum: \"$amount\"}}}, {$sort: {_id: -1}}, {$limit: 7}]}}])' mydb",
+      "tip": "$facet runs all sub-pipelines on the same input dataset, making it efficient for dashboard-style queries."
+    },
+    {
+      "title": "Explain an aggregation pipeline",
+      "description": "Analyze the execution plan to understand how MongoDB processes the pipeline.",
+      "command": "mongosh --eval 'db.orders.explain(\"executionStats\").aggregate([{$match: {status: \"completed\"}}, {$group: {_id: \"$customerId\", total: {$sum: \"$amount\"}}}])' mydb"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# MongoDB Aggregation Pipeline Examples\nset -euo pipefail\n\nDB=\"mydb\"\n\necho \"=== Revenue by status ===\"\nmongosh --quiet --eval \"\ndb.orders.aggregate([\n  {$group: {\n    _id: '$status',\n    count: {$sum: 1},\n    totalRevenue: {$sum: '$amount'},\n    avgOrder: {$avg: '$amount'}\n  }},\n  {$sort: {totalRevenue: -1}}\n]).forEach(doc => {\n  print(doc._id + ': ' + doc.count + ' orders, $' + doc.totalRevenue.toFixed(2) + ' total, $' + doc.avgOrder.toFixed(2) + ' avg');\n});\n\" \"$DB\"\n\necho \"\"\necho \"=== Top 10 customers by spending ===\"\nmongosh --quiet --eval \"\ndb.orders.aggregate([\n  {$match: {status: 'completed'}},\n  {$group: {_id: '$customerId', total: {$sum: '$amount'}, orders: {$sum: 1}}},\n  {$sort: {total: -1}},\n  {$limit: 10}\n]).forEach(doc => {\n  print(doc._id + ': $' + doc.total.toFixed(2) + ' (' + doc.orders + ' orders)');\n});\n\" \"$DB\"\n\necho \"\"\necho \"=== Monthly revenue trend ===\"\nmongosh --quiet --eval \"\ndb.orders.aggregate([\n  {$match: {status: 'completed'}},\n  {$group: {\n    _id: {$dateToString: {format: '%Y-%m', date: '$createdAt'}},\n    revenue: {$sum: '$amount'},\n    orders: {$sum: 1}\n  }},\n  {$sort: {_id: 1}}\n]).forEach(doc => {\n  print(doc._id + ': $' + doc.revenue.toFixed(2) + ' (' + doc.orders + ' orders)');\n});\n\" \"$DB\"",
+  "faq": [
+    {
+      "question": "What is the maximum size of an aggregation pipeline result?",
+      "answer": "By default, each document in the pipeline cannot exceed 16MB (BSON limit). The total result returned to the client is also limited to 16MB. For large results, use $out or $merge to write results to a collection, or use a cursor."
+    },
+    {
+      "question": "Does $match use indexes?",
+      "answer": "Yes, but only when $match is at the beginning of the pipeline (or right after $sort). Place $match as early as possible to filter documents before they enter more expensive pipeline stages."
+    },
+    {
+      "question": "How do I save an aggregation result to a new collection?",
+      "answer": "Add {$out: 'result_collection'} or {$merge: {into: 'result_collection'}} as the last pipeline stage. $out replaces the target collection entirely. $merge can insert, update, or merge into an existing collection."
+    }
+  ],
+  "relatedRecipes": ["mongo-index-optimization", "mongo-schema-validation"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k3s-cluster-9",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-cluster",
+  "title": "Uncordon a node",
+  "command": "k3s kubectl uncordon <node-name>",
+  "description": "Mark node as schedulable again after maintenance."
+}

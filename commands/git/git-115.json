@@ -1,0 +1,8 @@
+{
+  "id": "git-115",
+  "categoryId": "git",
+  "subcategoryId": "submodules",
+  "title": "List submodules",
+  "command": "git submodule status",
+  "description": "Show submodule status."
+}

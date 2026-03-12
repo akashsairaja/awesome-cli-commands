@@ -1,0 +1,8 @@
+{
+  "id": "bash-30",
+  "categoryId": "bash",
+  "subcategoryId": "loops",
+  "title": "Range loop",
+  "command": "for i in {1..10}; do echo $i; done",
+  "description": "Loop through number range."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "jq-array-iterate",
+  "categoryId": "jq",
+  "subcategoryId": "jq-arrays",
+  "title": "Iterate array",
+  "command": "cat file.json | jq '.[]'",
+  "description": "Iterate over all array elements",
+  "tags": ["array", "iterate", "each"]
+}

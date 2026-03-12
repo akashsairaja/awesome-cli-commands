@@ -1,0 +1,9 @@
+{
+  "id": "firebase-auth-import",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-auth",
+  "title": "Import users",
+  "command": "firebase auth:import users.json",
+  "description": "Import users from JSON file",
+  "tags": ["auth", "import", "users"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ps-56",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-pipeline",
+  "title": "Expand property",
+  "command": "Get-Process | Select-Object -ExpandProperty Modules",
+  "description": "Expand nested property."
+}

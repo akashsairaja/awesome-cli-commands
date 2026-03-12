@@ -1,0 +1,8 @@
+{
+  "id": "ps-89",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-remoting",
+  "title": "Remote with credentials",
+  "command": "$cred = Get-Credential; Enter-PSSession -ComputerName Server01 -Credential $cred",
+  "description": "Connect with alternate credentials."
+}

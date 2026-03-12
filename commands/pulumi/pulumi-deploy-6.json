@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-deploy-6",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-deploy",
+  "title": "Refresh state",
+  "command": "pulumi refresh",
+  "description": "Sync state with actual resources."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "claude-gs-1",
+  "title": "Install Claude Code",
+  "command": "npm install -g @anthropic-ai/claude-code",
+  "description": "Install Claude Code CLI globally using npm",
+  "categoryId": "claudecode",
+  "subcategoryId": "getting-started"
+}

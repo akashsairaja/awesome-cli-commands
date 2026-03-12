@@ -1,0 +1,58 @@
+{
+  "id": "rust-project-setup",
+  "stackId": "rust",
+  "name": "Cargo Project Init with Proper Structure",
+  "description": "Initialize a new Rust project with Cargo, set up workspace structure, and configure essential project metadata.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "trending": true,
+  "trendingReason": "Rust adoption continues to accelerate for systems, CLI, and WebAssembly projects",
+  "tags": ["cargo", "init", "project-structure", "workspace"],
+  "prerequisites": ["Rust toolchain installed via rustup"],
+  "steps": [
+    {
+      "title": "Create a new binary project",
+      "description": "Initialize a new Rust project with a binary target using Cargo.",
+      "command": "cargo new myapp && cd myapp",
+      "tip": "Use 'cargo new --lib mylib' to create a library crate instead of a binary."
+    },
+    {
+      "title": "Set up a workspace for multiple crates",
+      "description": "Create a Cargo workspace to manage multiple related crates in one repository.",
+      "command": "mkdir myproject && cd myproject && cat > Cargo.toml << 'EOF'\n[workspace]\nmembers = [\n    \"crates/core\",\n    \"crates/cli\",\n    \"crates/api\",\n]\nresolver = \"2\"\nEOF\nmkdir -p crates && cargo new crates/core --lib && cargo new crates/cli && cargo new crates/api"
+    },
+    {
+      "title": "Configure Cargo.toml metadata",
+      "description": "Add essential metadata to Cargo.toml for documentation and publishing.",
+      "command": "cat >> Cargo.toml << 'EOF'\n\n[package]\nedition = \"2021\"\nrust-version = \"1.75\"\ndescription = \"A brief description of the project\"\nlicense = \"MIT OR Apache-2.0\"\nrepository = \"https://github.com/yourname/myapp\"\nkeywords = [\"cli\", \"tool\"]\ncategories = [\"command-line-utilities\"]\nEOF"
+    },
+    {
+      "title": "Add common dependencies",
+      "description": "Use cargo add to install dependencies with proper version constraints.",
+      "command": "cargo add serde --features derive && cargo add tokio --features full && cargo add anyhow",
+      "tip": "cargo add automatically picks the latest compatible version and adds it to Cargo.toml."
+    },
+    {
+      "title": "Build and run the project",
+      "description": "Verify the setup by building and running the application.",
+      "command": "cargo build && cargo run"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Rust Project Setup\nset -euo pipefail\n\nPROJECT=${1:?\"Usage: $0 <project-name> [--lib]\"}\nTYPE=${2:-\"\"}\n\necho \"=== Creating Rust Project: $PROJECT ===\"\nif [ \"$TYPE\" = \"--lib\" ]; then\n  cargo new --lib \"$PROJECT\"\nelse\n  cargo new \"$PROJECT\"\nfi\ncd \"$PROJECT\"\n\necho \"\"\necho \"=== Project Structure ===\"\nfind . -type f | head -20\n\necho \"\"\necho \"=== Building ===\"\ncargo build\n\necho \"\"\necho \"=== Cargo Commands ===\"\necho \"Build:     cargo build\"\necho \"Run:       cargo run\"\necho \"Test:      cargo test\"\necho \"Check:     cargo check\"\necho \"Add dep:   cargo add serde --features derive\"\necho \"Doc:       cargo doc --open\"\necho \"Release:   cargo build --release\"",
+  "faq": [
+    {
+      "question": "What is the difference between cargo new and cargo init?",
+      "answer": "'cargo new' creates a new directory with the project. 'cargo init' initializes a project in the current directory. Use init when you already have a directory set up."
+    },
+    {
+      "question": "Should I use a workspace for every project?",
+      "answer": "Workspaces are useful when you have multiple crates that share dependencies. For small single-crate projects, a workspace adds unnecessary complexity."
+    },
+    {
+      "question": "What Rust edition should I use?",
+      "answer": "Use the latest edition (2021 or newer). Editions are backwards-compatible and unlock new language features. Set it in Cargo.toml under [package]."
+    }
+  ],
+  "relatedRecipes": ["rust-clippy-fmt", "rust-test-workflow"],
+  "lastUpdated": "2026-03-11"
+}

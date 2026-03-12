@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-certs-19",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-certs",
+  "title": "List SANs in certificate",
+  "command": "openssl x509 -in cert.pem -noout -ext subjectAltName",
+  "description": "Show all Subject Alternative Names in a cert."
+}

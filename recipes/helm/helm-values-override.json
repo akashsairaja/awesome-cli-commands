@@ -1,0 +1,57 @@
+{
+  "id": "helm-values-override",
+  "stackId": "helm",
+  "name": "Override Chart Values for Environments",
+  "description": "Customize Helm chart behavior using values files and --set flags to manage configurations across development, staging, and production environments.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "tags": ["values", "configuration", "environments", "overrides"],
+  "prerequisites": ["Helm 3 installed", "A Helm chart to configure"],
+  "steps": [
+    {
+      "title": "View default chart values",
+      "description": "Inspect all configurable values and their defaults for a chart.",
+      "command": "helm show values bitnami/nginx > default-values.yaml",
+      "tip": "Redirect to a file so you can use it as a starting point for your custom values."
+    },
+    {
+      "title": "Create an environment-specific values file",
+      "description": "Write a values file tailored for production settings.",
+      "command": "cat > values-production.yaml << 'EOF'\nreplicaCount: 3\nresources:\n  requests:\n    cpu: 250m\n    memory: 256Mi\n  limits:\n    cpu: 500m\n    memory: 512Mi\nautoscaling:\n  enabled: true\n  minReplicas: 3\n  maxReplicas: 10\n  targetCPUUtilizationPercentage: 75\nEOF"
+    },
+    {
+      "title": "Install using a custom values file",
+      "description": "Deploy the chart with your environment-specific overrides.",
+      "command": "helm install my-nginx bitnami/nginx -f values-production.yaml --namespace production --create-namespace"
+    },
+    {
+      "title": "Layer multiple values files",
+      "description": "Combine a base config with environment-specific overrides. Later files take precedence.",
+      "command": "helm install my-nginx bitnami/nginx -f values-base.yaml -f values-production.yaml -f values-secrets.yaml",
+      "tip": "Files are merged left to right. The rightmost file wins for conflicting keys."
+    },
+    {
+      "title": "Override individual values from the command line",
+      "description": "Set specific values without modifying files, useful for CI/CD.",
+      "command": "helm upgrade my-nginx bitnami/nginx -f values-production.yaml --set image.tag=1.25.3 --set service.type=LoadBalancer",
+      "warning": "Command-line --set values override everything, including values files. Use sparingly to keep configurations reproducible."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Helm Values Override Workflow\nset -euo pipefail\n\nCHART=${1:?\"Usage: $0 <chart> <release> <environment>\"}\nRELEASE=${2:?\"Missing release name\"}\nENV=${3:?\"Missing environment (dev|staging|production)\"}\n\nVALUES_FILE=\"values-$ENV.yaml\"\n\nif [ ! -f \"$VALUES_FILE\" ]; then\n  echo \"Error: $VALUES_FILE not found\"\n  echo \"Creating template...\"\n  helm show values \"$CHART\" > \"$VALUES_FILE\"\n  echo \"Edit $VALUES_FILE and re-run this script\"\n  exit 1\nfi\n\necho \"=== Deploying $RELEASE to $ENV ===\"\necho \"Chart: $CHART\"\necho \"Values: $VALUES_FILE\"\n\necho \"\"\necho \"=== Rendered Values Preview ===\"\nhelm template \"$RELEASE\" \"$CHART\" -f \"$VALUES_FILE\" --show-only templates/deployment.yaml 2>/dev/null | head -30\n\necho \"\"\necho \"=== Installing/Upgrading ===\"\nhelm upgrade --install \"$RELEASE\" \"$CHART\" \\\n  -f \"$VALUES_FILE\" \\\n  --namespace \"$ENV\" \\\n  --create-namespace \\\n  --atomic \\\n  --timeout 5m\n\necho \"\"\necho \"=== Deployed Values ===\"\nhelm get values \"$RELEASE\" -n \"$ENV\"",
+  "faq": [
+    {
+      "question": "What is the precedence order for values?",
+      "answer": "From lowest to highest priority: chart defaults (values.yaml) < parent chart values < -f files (left to right) < --set and --set-string flags. The last source wins."
+    },
+    {
+      "question": "How do I set nested values with --set?",
+      "answer": "Use dot notation for nested keys: '--set server.resources.limits.cpu=500m'. For arrays use index notation: '--set servers[0].port=8080'. Escape dots in keys with a backslash."
+    },
+    {
+      "question": "Can I validate my values file before deploying?",
+      "answer": "Yes. Use 'helm template <release> <chart> -f values.yaml' to render locally, or 'helm install --dry-run --debug' to validate against the cluster API without deploying."
+    }
+  ],
+  "relatedRecipes": ["helm-chart-install", "helm-release-management"],
+  "lastUpdated": "2026-03-11"
+}

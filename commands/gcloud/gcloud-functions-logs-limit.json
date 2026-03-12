@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-functions-logs-limit",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-functions",
+  "title": "Read Function Logs with Limit",
+  "command": "gcloud functions logs read <name> --region=us-central1 --limit=50",
+  "description": "Read recent function logs with result limit",
+  "tags": ["functions", "logs", "debug", "limit"]
+}

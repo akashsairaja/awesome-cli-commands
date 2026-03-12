@@ -1,0 +1,8 @@
+{
+  "id": "ai-10",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-shellgpt",
+  "title": "Ask a question",
+  "command": "sgpt \"What is the difference between REST and GraphQL?\"",
+  "description": "Ask Shell-GPT a general question."
+}

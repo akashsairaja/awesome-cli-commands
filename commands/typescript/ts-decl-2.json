@@ -1,0 +1,8 @@
+{
+  "id": "ts-decl-2",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-declarations",
+  "title": "Declarations only",
+  "command": "tsc --declaration --emitDeclarationOnly",
+  "description": "Generate only .d.ts files (no JavaScript)."
+}

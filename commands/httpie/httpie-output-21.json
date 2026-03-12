@@ -1,0 +1,8 @@
+{
+  "id": "httpie-output-21",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-output",
+  "title": "Use proxy",
+  "command": "http --proxy=http:http://proxy.example.com:8080 GET https://api.example.com",
+  "description": "Route request through an HTTP proxy."
+}

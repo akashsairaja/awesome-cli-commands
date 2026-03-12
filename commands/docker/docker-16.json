@@ -1,0 +1,8 @@
+{
+  "id": "docker-16",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Remove container",
+  "command": "docker rm <container>",
+  "description": "Remove a stopped container."
+}

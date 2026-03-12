@@ -1,0 +1,8 @@
+{
+  "id": "helm-repo-1",
+  "categoryId": "helm",
+  "subcategoryId": "helm-repo",
+  "title": "Add repository",
+  "command": "helm repo add bitnami https://charts.bitnami.com/bitnami",
+  "description": "Add a Helm chart repository."
+}

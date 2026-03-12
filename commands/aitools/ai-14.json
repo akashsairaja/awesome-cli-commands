@@ -1,0 +1,8 @@
+{
+  "id": "ai-14",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-shellgpt",
+  "title": "Use custom role",
+  "command": "sgpt --role devops \"how to optimize nginx config\"",
+  "description": "Use a predefined role for specialized responses."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "mvn-plugin-2",
+  "categoryId": "maven",
+  "subcategoryId": "plugins",
+  "title": "Effective settings",
+  "command": "mvn help:effective-settings",
+  "description": "Show resolved settings.xml."
+}

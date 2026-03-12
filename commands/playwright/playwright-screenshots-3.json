@@ -1,0 +1,8 @@
+{
+  "id": "playwright-screenshots-3",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-screenshots",
+  "title": "Screenshot on failure",
+  "command": "npx playwright test --screenshot=only-on-failure",
+  "description": "Auto capture on test failure."
+}

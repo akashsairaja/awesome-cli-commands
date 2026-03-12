@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-install-8",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-install",
+  "title": "Copy CA for Docker use",
+  "command": "cp \"$(mkcert -CAROOT)/rootCA.pem\" ./docker/ca-cert.pem",
+  "description": "Copy CA cert into Docker build context."
+}

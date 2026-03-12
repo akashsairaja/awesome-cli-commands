@@ -1,0 +1,8 @@
+{
+  "id": "docker-98",
+  "categoryId": "docker",
+  "subcategoryId": "buildx",
+  "title": "Inspect builder",
+  "command": "docker buildx inspect --bootstrap",
+  "description": "Inspect and bootstrap builder."
+}

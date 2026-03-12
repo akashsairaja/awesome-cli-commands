@@ -1,0 +1,8 @@
+{
+  "id": "xh-requests-14",
+  "categoryId": "xh",
+  "subcategoryId": "xh-requests",
+  "title": "Multipart with fields",
+  "command": "xh --multipart POST https://api.example.com/upload file@./doc.pdf title=Report",
+  "description": "Upload file with additional form fields."
+}

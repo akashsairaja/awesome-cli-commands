@@ -1,0 +1,8 @@
+{
+  "id": "playwright-debug-8",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-debug",
+  "title": "Multiple reporters",
+  "command": "npx playwright test --reporter=html --reporter=json",
+  "description": "Output multiple report formats."
+}

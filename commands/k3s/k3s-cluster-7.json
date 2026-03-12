@@ -1,0 +1,8 @@
+{
+  "id": "k3s-cluster-7",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-cluster",
+  "title": "Drain a node",
+  "command": "k3s kubectl drain <node-name> --ignore-daemonsets --delete-emptydir-data",
+  "description": "Safely evict all pods from a node before maintenance."
+}

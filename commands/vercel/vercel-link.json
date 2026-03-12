@@ -1,0 +1,9 @@
+{
+  "id": "vercel-link",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-projects",
+  "title": "Link to project",
+  "command": "vercel link",
+  "description": "Link current directory to a Vercel project",
+  "tags": ["link", "connect", "project"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "trivy-repo-1",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-repo",
+  "title": "Scan Git repo",
+  "command": "trivy repo https://github.com/user/repo",
+  "description": "Scan a remote Git repository."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "deno-test-filter",
+  "categoryId": "deno",
+  "subcategoryId": "deno-test",
+  "title": "Filter Tests",
+  "command": "deno test --filter \"test name\"",
+  "description": "Run tests matching pattern",
+  "tags": ["test", "filter", "pattern"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ps-48",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-objects",
+  "title": "Call method",
+  "command": "$string.ToUpper()",
+  "description": "Call method on object."
+}

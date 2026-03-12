@@ -1,0 +1,9 @@
+{
+  "id": "rg-color",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-output",
+  "title": "Force color output",
+  "command": "rg --color=always \"pattern\" | less -R",
+  "description": "Force colored output in pipes",
+  "tags": ["output", "color", "highlight"]
+}

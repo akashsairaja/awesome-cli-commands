@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-certs-16",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-certs",
+  "title": "Node.js HTTPS server",
+  "command": "node -e \"require('https').createServer({key:require('fs').readFileSync('key.pem'),cert:require('fs').readFileSync('cert.pem')},(q,r)=>r.end('OK')).listen(443)\"",
+  "description": "Quick Node.js HTTPS server using mkcert certs."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "task-run-10",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-run",
+  "title": "Run in parallel",
+  "command": "task -p lint test",
+  "description": "Run multiple tasks in parallel."
+}

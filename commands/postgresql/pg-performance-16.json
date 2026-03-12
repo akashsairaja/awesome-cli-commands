@@ -1,0 +1,8 @@
+{
+  "id": "pg-performance-16",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-performance",
+  "title": "Sequential scan heavy tables",
+  "command": "SELECT relname, seq_scan, seq_tup_read, idx_scan, idx_tup_fetch FROM pg_stat_user_tables WHERE seq_scan > 100 ORDER BY seq_tup_read DESC LIMIT 10;",
+  "description": "Find tables doing excessive sequential scans. Top candidates for adding indexes."
+}

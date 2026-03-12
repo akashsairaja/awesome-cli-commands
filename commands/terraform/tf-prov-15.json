@@ -1,0 +1,8 @@
+{
+  "id": "tf-prov-15",
+  "categoryId": "terraform",
+  "subcategoryId": "providers",
+  "title": "Replace resource",
+  "command": "terraform apply -replace=aws_instance.example",
+  "description": "Force recreation of resource (replaces taint)."
+}

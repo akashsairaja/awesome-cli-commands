@@ -1,0 +1,59 @@
+{
+  "id": "mongo-index-optimization",
+  "stackId": "mongodb",
+  "name": "Index Analysis and Optimization",
+  "description": "Analyze query performance with explain plans, identify missing indexes, and optimize existing indexes to speed up MongoDB queries.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "Index optimization is the most impactful performance tuning technique for MongoDB at scale",
+  "tags": ["indexes", "performance", "explain", "optimization", "tuning"],
+  "prerequisites": ["MongoDB 6+ with mongosh", "A database with collections and data to analyze"],
+  "steps": [
+    {
+      "title": "Analyze a query with explain",
+      "description": "Run explain on a query to see if it uses an index or performs a full collection scan.",
+      "command": "mongosh --eval 'db.orders.find({customerId: \"c1001\", status: \"pending\"}).explain(\"executionStats\")' mydb",
+      "tip": "Look for COLLSCAN in the winning plan. That means no index is being used and the query scans every document."
+    },
+    {
+      "title": "List all indexes on a collection",
+      "description": "View existing indexes and their key patterns to understand current coverage.",
+      "command": "mongosh --eval 'db.orders.getIndexes()' mydb"
+    },
+    {
+      "title": "Create a compound index for a common query",
+      "description": "Add an index that covers frequently queried field combinations.",
+      "command": "mongosh --eval 'db.orders.createIndex({customerId: 1, status: 1, createdAt: -1}, {name: \"idx_customer_status_date\"})' mydb",
+      "tip": "Order index fields by equality filters first, then sort fields, then range filters (ESR rule)."
+    },
+    {
+      "title": "Find unused indexes",
+      "description": "Identify indexes that consume storage but are never used by any query.",
+      "command": "mongosh --eval 'db.orders.aggregate([{$indexStats: {}}, {$project: {name: 1, accesses: \"$accesses.ops\", since: \"$accesses.since\"}}])' mydb",
+      "warning": "Index stats reset on server restart. Check over a full business cycle (at least a week) before dropping unused indexes."
+    },
+    {
+      "title": "Check index sizes",
+      "description": "View how much memory each index consumes to prioritize optimization.",
+      "command": "mongosh --eval 'db.orders.stats().indexSizes' mydb"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# MongoDB Index Optimization Report\nset -euo pipefail\n\nDB=\"mydb\"\n\necho \"=== Collection stats ===\"\nmongosh --quiet --eval \"\nconst collections = db.getCollectionNames();\ncollections.forEach(c => {\n  const stats = db[c].stats();\n  print(c + ': ' + stats.count + ' docs, ' +\n    Math.round(stats.size / 1024 / 1024) + 'MB data, ' +\n    Math.round(stats.totalIndexSize / 1024 / 1024) + 'MB indexes, ' +\n    stats.nindexes + ' indexes');\n});\n\" \"$DB\"\n\necho \"\"\necho \"=== Index usage stats (all collections) ===\"\nmongosh --quiet --eval \"\nconst collections = db.getCollectionNames();\ncollections.forEach(c => {\n  print('--- ' + c + ' ---');\n  const stats = db[c].aggregate([{$indexStats: {}}]).toArray();\n  stats.forEach(s => {\n    print('  ' + s.name + ': ' + s.accesses.ops + ' ops since ' + s.accesses.since);\n  });\n});\n\" \"$DB\"\n\necho \"\"\necho \"=== Potentially unused indexes (0 ops) ===\"\nmongosh --quiet --eval \"\nconst collections = db.getCollectionNames();\ncollections.forEach(c => {\n  const stats = db[c].aggregate([{$indexStats: {}}]).toArray();\n  stats.filter(s => s.accesses.ops === 0 && s.name !== '_id_').forEach(s => {\n    print(c + '.' + s.name + ' (0 ops since ' + s.accesses.since + ')');\n  });\n});\n\" \"$DB\"\n\necho \"\"\necho \"=== Index sizes ===\"\nmongosh --quiet --eval \"\nconst collections = db.getCollectionNames();\ncollections.forEach(c => {\n  const sizes = db[c].stats().indexSizes;\n  Object.keys(sizes).forEach(idx => {\n    print(c + '.' + idx + ': ' + Math.round(sizes[idx] / 1024) + 'KB');\n  });\n});\n\" \"$DB\"",
+  "faq": [
+    {
+      "question": "What is the ESR rule for compound indexes?",
+      "answer": "ESR stands for Equality, Sort, Range. Place equality match fields first, then sort fields, then range filter fields in your compound index definition. This ordering produces the most efficient index scans."
+    },
+    {
+      "question": "How many indexes should a collection have?",
+      "answer": "There is no hard limit, but each index slows down writes and consumes RAM. Aim for the minimum number that covers your query patterns. Most collections work well with 3-8 indexes. Use $indexStats to find and drop unused ones."
+    },
+    {
+      "question": "What is a covered query?",
+      "answer": "A covered query is answered entirely from the index without reading the actual documents. Add a projection that only requests indexed fields and the explain plan will show IXSCAN without a FETCH stage."
+    }
+  ],
+  "relatedRecipes": ["mongo-aggregation-pipeline", "mongo-schema-validation"],
+  "lastUpdated": "2026-03-11"
+}

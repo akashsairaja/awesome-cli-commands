@@ -1,0 +1,8 @@
+{
+  "id": "node-test-3",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-test",
+  "title": "Test with coverage",
+  "command": "node --test --experimental-test-coverage",
+  "description": "Generate test coverage report."
+}

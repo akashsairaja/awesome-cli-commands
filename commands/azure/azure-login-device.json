@@ -1,0 +1,9 @@
+{
+  "id": "azure-login-device",
+  "categoryId": "azure",
+  "subcategoryId": "azure-auth",
+  "title": "Device Code Login",
+  "command": "az login --use-device-code",
+  "description": "Login using device code for headless environments",
+  "tags": ["login", "device", "ssh"]
+}

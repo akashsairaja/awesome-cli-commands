@@ -1,0 +1,8 @@
+{
+  "id": "make-run-9",
+  "categoryId": "make",
+  "subcategoryId": "make-run",
+  "title": "Silent mode",
+  "command": "make -s",
+  "description": "Don't print commands as executed."
+}

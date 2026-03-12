@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-components-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-auth",
+  "title": "List Components",
+  "command": "gcloud components list",
+  "description": "List installed and available gcloud CLI components",
+  "tags": ["components", "list", "installed"]
+}

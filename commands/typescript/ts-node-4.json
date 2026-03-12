@@ -1,0 +1,8 @@
+{
+  "id": "ts-node-4",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-node",
+  "title": "Transpile only (fast)",
+  "command": "ts-node --transpile-only src/index.ts",
+  "description": "Skip type checking for faster execution."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "prisma-log-level",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-studio",
+  "title": "Set Prisma log queries",
+  "command": "PRISMA_LOG_LEVEL=query npx prisma studio",
+  "description": "Start Prisma Studio with query-level logging enabled",
+  "tags": ["log", "query", "verbose"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "jest-coverage-4",
+  "categoryId": "jest",
+  "subcategoryId": "jest-coverage",
+  "title": "Coverage directory",
+  "command": "jest --coverageDirectory=coverage",
+  "description": "Set coverage output directory."
+}

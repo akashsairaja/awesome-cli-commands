@@ -1,0 +1,8 @@
+{
+  "id": "pg-query-5",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-query",
+  "title": "Lock info",
+  "command": "SELECT * FROM pg_locks WHERE NOT granted;",
+  "description": "View blocked locks."
+}

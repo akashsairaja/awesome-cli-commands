@@ -1,0 +1,8 @@
+{
+  "id": "claude-9",
+  "categoryId": "claudecode",
+  "subcategoryId": "general",
+  "title": "Verbose output",
+  "command": "claude --verbose",
+  "description": "Show detailed output and debug information."
+}

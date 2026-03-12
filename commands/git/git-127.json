@@ -1,0 +1,8 @@
+{
+  "id": "git-127",
+  "categoryId": "git",
+  "subcategoryId": "tags",
+  "title": "Checkout tag",
+  "command": "git checkout tags/<tagname>",
+  "description": "Checkout a specific tag."
+}

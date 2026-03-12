@@ -1,0 +1,8 @@
+{
+  "id": "node-perf-12",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-perf",
+  "title": "Trace event categories",
+  "command": "node --trace-event-categories v8,node app.js",
+  "description": "Enable trace events for specific categories."
+}

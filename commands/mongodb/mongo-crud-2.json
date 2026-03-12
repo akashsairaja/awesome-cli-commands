@@ -1,0 +1,8 @@
+{
+  "id": "mongo-crud-2",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-crud",
+  "title": "Insert many",
+  "command": "db.users.insertMany([{ name: \"A\" }, { name: \"B\" }])",
+  "description": "Insert multiple documents."
+}

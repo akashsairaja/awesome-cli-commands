@@ -1,0 +1,8 @@
+{
+  "id": "k6-cloud-2",
+  "categoryId": "k6",
+  "subcategoryId": "k6-cloud",
+  "title": "Run in cloud",
+  "command": "k6 cloud script.js",
+  "description": "Run test in k6 Cloud."
+}

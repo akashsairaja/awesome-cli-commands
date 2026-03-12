@@ -1,0 +1,9 @@
+{
+  "id": "ansible-playbook-start",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-playbook",
+  "title": "Start at Task",
+  "command": "ansible-playbook playbook.yml --start-at-task=\"Deploy app\"",
+  "description": "Resume from a specific task",
+  "tags": ["playbook", "start", "resume"]
+}

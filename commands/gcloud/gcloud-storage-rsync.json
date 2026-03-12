@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-storage-rsync",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-storage",
+  "title": "Sync Files",
+  "command": "gsutil rsync -r <local-dir> gs://<bucket>/<path>",
+  "description": "Synchronize local directory with bucket",
+  "tags": ["storage", "sync", "rsync"]
+}

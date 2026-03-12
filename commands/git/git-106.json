@@ -1,0 +1,8 @@
+{
+  "id": "git-106",
+  "categoryId": "git",
+  "subcategoryId": "worktree",
+  "title": "List worktrees",
+  "command": "git worktree list",
+  "description": "Show all linked working trees."
+}

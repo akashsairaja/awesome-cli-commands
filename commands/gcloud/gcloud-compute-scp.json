@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-compute-scp",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-compute",
+  "title": "Copy Files to/from VM",
+  "command": "gcloud compute scp <local-file> <instance-name>:<remote-path> --zone=<zone>",
+  "description": "Copy files between local machine and VM using SCP",
+  "tags": ["vm", "scp", "copy", "transfer"]
+}

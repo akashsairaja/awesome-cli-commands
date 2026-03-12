@@ -1,0 +1,8 @@
+{
+  "id": "playwright-config-3",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-config",
+  "title": "List projects",
+  "command": "npx playwright test --list",
+  "description": "List all configured projects."
+}

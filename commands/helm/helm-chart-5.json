@@ -1,0 +1,8 @@
+{
+  "id": "helm-chart-5",
+  "categoryId": "helm",
+  "subcategoryId": "helm-chart",
+  "title": "Template locally",
+  "command": "helm template my-release ./mychart",
+  "description": "Render templates locally without installing."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "jq-limit",
+  "categoryId": "jq",
+  "subcategoryId": "jq-arrays",
+  "title": "Limit results",
+  "command": "cat file.json | jq '.[:10]'",
+  "description": "Get first N elements",
+  "tags": ["limit", "first", "head"]
+}

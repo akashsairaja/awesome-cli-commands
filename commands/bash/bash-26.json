@@ -1,0 +1,8 @@
+{
+  "id": "bash-26",
+  "categoryId": "bash",
+  "subcategoryId": "variables",
+  "title": "Number of arguments",
+  "command": "echo $#",
+  "description": "Get number of positional parameters."
+}

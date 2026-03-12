@@ -1,0 +1,8 @@
+{
+  "id": "mongo-users-4",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-users",
+  "title": "Create user with multiple roles",
+  "command": "db.createUser({ user: \"devuser\", pwd: \"password\", roles: [{ role: \"readWrite\", db: \"mydb\" }, { role: \"read\", db: \"analytics\" }] })",
+  "description": "Create a user with different roles across multiple databases."
+}

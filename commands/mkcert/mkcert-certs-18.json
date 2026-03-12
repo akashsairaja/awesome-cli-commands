@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-certs-18",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-certs",
+  "title": "Full local dev setup",
+  "command": "mkcert -key-file key.pem -cert-file cert.pem localhost 127.0.0.1 ::1 myapp.local '*.myapp.local'",
+  "description": "Comprehensive cert for local development."
+}

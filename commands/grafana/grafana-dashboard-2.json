@@ -1,0 +1,8 @@
+{
+  "id": "grafana-dashboard-2",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-dashboard",
+  "title": "Import dashboard",
+  "command": "curl -X POST http://localhost:3000/api/dashboards/db -H 'Content-Type: application/json' -H 'Authorization: Bearer TOKEN' -d @dashboard.json",
+  "description": "Import dashboard from JSON."
+}

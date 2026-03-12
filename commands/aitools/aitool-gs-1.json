@@ -1,0 +1,8 @@
+{
+  "id": "aitool-gs-1",
+  "title": "Install OpenAI CLI",
+  "command": "pip install openai",
+  "description": "Install the OpenAI Python package and CLI via pip",
+  "categoryId": "aitools",
+  "subcategoryId": "getting-started"
+}

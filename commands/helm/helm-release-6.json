@@ -1,0 +1,8 @@
+{
+  "id": "helm-release-6",
+  "categoryId": "helm",
+  "subcategoryId": "helm-release",
+  "title": "Get all values",
+  "command": "helm get values my-release --all",
+  "description": "Get all computed values (including defaults)."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "curl-timeout",
+  "categoryId": "curl",
+  "subcategoryId": "curl-requests",
+  "title": "Set timeout",
+  "command": "curl --connect-timeout 5 -m 30 https://api.example.com/resource",
+  "description": "Set connection and max timeout",
+  "tags": ["timeout", "limit"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "vercel-redeploy",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-deploy",
+  "title": "Redeploy",
+  "command": "vercel redeploy <url>",
+  "description": "Redeploy an existing deployment",
+  "tags": ["redeploy", "rebuild"]
+}

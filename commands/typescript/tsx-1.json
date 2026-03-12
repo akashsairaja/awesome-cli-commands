@@ -1,0 +1,8 @@
+{
+  "id": "tsx-1",
+  "categoryId": "typescript",
+  "subcategoryId": "tsx",
+  "title": "Run with tsx",
+  "command": "tsx src/index.ts",
+  "description": "Execute TypeScript with near-instant compilation (~20ms)."
+}

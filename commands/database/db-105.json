@@ -1,0 +1,8 @@
+{
+  "id": "db-105",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Analyze table",
+  "command": "ANALYZE TABLE tablename;",
+  "description": "Update index statistics for the query optimizer."
+}

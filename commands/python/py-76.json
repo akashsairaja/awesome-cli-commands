@@ -1,0 +1,8 @@
+{
+  "id": "py-76",
+  "categoryId": "python",
+  "subcategoryId": "python-pyenv",
+  "title": "Show current version",
+  "command": "pyenv version",
+  "description": "Display currently active Python version."
+}

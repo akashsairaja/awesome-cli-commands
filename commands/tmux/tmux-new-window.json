@@ -1,0 +1,9 @@
+{
+  "id": "tmux-new-window",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-windows",
+  "title": "New window",
+  "command": "Ctrl+b c",
+  "description": "Create new window",
+  "tags": ["window", "new", "create"]
+}

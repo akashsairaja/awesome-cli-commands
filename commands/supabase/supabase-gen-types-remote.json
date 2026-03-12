@@ -1,0 +1,9 @@
+{
+  "id": "supabase-gen-types-remote",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-auth",
+  "title": "Generate types from remote",
+  "command": "supabase gen types typescript --project-id <id> > types/supabase.ts",
+  "description": "Generate TypeScript types from remote database",
+  "tags": ["gen", "types", "remote"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "spark-30",
+  "categoryId": "spark",
+  "subcategoryId": "spark-config",
+  "title": "Set config via CLI",
+  "command": "spark-submit --conf spark.executor.memory=4g --conf spark.executor.cores=2 app.py",
+  "description": "Pass configuration options via command line."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-status-5",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-status",
+  "title": "Debug info",
+  "command": "tailscale debug",
+  "description": "Show debug information."
+}

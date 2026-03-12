@@ -1,0 +1,8 @@
+{
+  "id": "java-48",
+  "categoryId": "java",
+  "subcategoryId": "java-diagnostics",
+  "title": "Native memory tracking",
+  "command": "jcmd <pid> VM.native_memory summary",
+  "description": "Show native memory usage (requires -XX:NativeMemoryTracking=summary)."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-stack-6",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-stack",
+  "title": "Stack history",
+  "command": "pulumi stack history",
+  "description": "Show stack update history."
+}

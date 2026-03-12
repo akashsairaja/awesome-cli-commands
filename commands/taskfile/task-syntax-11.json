@@ -1,0 +1,8 @@
+{
+  "id": "task-syntax-11",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-syntax",
+  "title": "Task summary block",
+  "command": "tasks:\n  deploy:\n    summary: |\n      Deploys the app to production.\n      Requires kubectl access.\n    cmds:\n      - kubectl apply -f k8s/",
+  "description": "Longer summary shown by --summary."
+}

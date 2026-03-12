@@ -1,0 +1,8 @@
+{
+  "id": "ollama-6",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-models",
+  "title": "Copy model",
+  "command": "ollama cp llama2 my-llama2",
+  "description": "Create a copy of a model with a new name."
+}

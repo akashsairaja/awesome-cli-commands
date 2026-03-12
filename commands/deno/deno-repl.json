@@ -1,0 +1,9 @@
+{
+  "id": "deno-repl",
+  "categoryId": "deno",
+  "subcategoryId": "deno-info",
+  "title": "Start REPL",
+  "command": "deno repl",
+  "description": "Start interactive REPL",
+  "tags": ["repl", "interactive", "shell"]
+}

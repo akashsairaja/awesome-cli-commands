@@ -1,0 +1,9 @@
+{
+  "id": "rg-column",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-output",
+  "title": "Show column numbers",
+  "command": "rg --column \"pattern\"",
+  "description": "Show column numbers of matches",
+  "tags": ["output", "column", "position"]
+}

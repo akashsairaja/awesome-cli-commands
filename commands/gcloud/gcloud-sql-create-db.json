@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-sql-create-db",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-sql",
+  "title": "Create Database",
+  "command": "gcloud sql databases create <db-name> --instance=<instance>",
+  "description": "Create a new database on a Cloud SQL instance",
+  "tags": ["sql", "database", "create"]
+}

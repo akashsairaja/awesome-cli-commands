@@ -1,0 +1,8 @@
+{
+  "id": "pg-performance-12",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-performance",
+  "title": "Bloated tables",
+  "command": "SELECT relname, n_dead_tup, n_live_tup, round(100.0 * n_dead_tup / nullif(n_live_tup + n_dead_tup, 0), 2) AS dead_pct, last_vacuum, last_autovacuum FROM pg_stat_user_tables WHERE n_dead_tup > 1000 ORDER BY n_dead_tup DESC;",
+  "description": "Find tables with high dead tuple counts that need vacuuming."
+}

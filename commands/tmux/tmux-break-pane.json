@@ -1,0 +1,9 @@
+{
+  "id": "tmux-break-pane",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-panes",
+  "title": "Break pane to window",
+  "command": "Ctrl+b !",
+  "description": "Convert pane to new window",
+  "tags": ["pane", "break", "window"]
+}

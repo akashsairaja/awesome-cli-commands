@@ -1,0 +1,9 @@
+{
+  "id": "nginx-access-log",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-logs",
+  "title": "View access log",
+  "command": "sudo tail -f /var/log/nginx/access.log",
+  "description": "Follow access log in real-time",
+  "tags": ["log", "access", "tail"]
+}

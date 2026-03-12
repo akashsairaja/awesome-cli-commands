@@ -1,0 +1,8 @@
+{
+  "id": "nats-ctx-4",
+  "categoryId": "nats",
+  "subcategoryId": "nats-context",
+  "title": "Server info",
+  "command": "nats server info",
+  "description": "Display server version, uptime, connections, cluster info."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "scoop-manage-12",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-manage",
+  "title": "Create alias",
+  "command": "scoop alias add upgrade \"scoop update *\" \"Update all apps\"",
+  "description": "Create a custom Scoop command alias."
+}

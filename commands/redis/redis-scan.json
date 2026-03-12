@@ -1,0 +1,9 @@
+{
+  "id": "redis-scan",
+  "categoryId": "redis",
+  "subcategoryId": "redis-server",
+  "title": "Scan keys (safe)",
+  "command": "SCAN 0 MATCH pattern* COUNT 100",
+  "description": "Iterate keys safely (non-blocking)",
+  "tags": ["scan", "iterate", "safe"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k8s-39",
+  "categoryId": "kubernetes",
+  "subcategoryId": "deployments",
+  "title": "Rollback deployment",
+  "command": "kubectl rollout undo deployment/<name>",
+  "description": "Rollback to previous deployment version."
+}

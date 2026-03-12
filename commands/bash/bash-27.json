@@ -1,0 +1,8 @@
+{
+  "id": "bash-27",
+  "categoryId": "bash",
+  "subcategoryId": "variables",
+  "title": "Last exit status",
+  "command": "echo $?",
+  "description": "Get exit status of last command."
+}

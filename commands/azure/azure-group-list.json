@@ -1,0 +1,9 @@
+{
+  "id": "azure-group-list",
+  "categoryId": "azure",
+  "subcategoryId": "azure-resources",
+  "title": "List Resource Groups",
+  "command": "az group list --output table",
+  "description": "List all resource groups in the subscription",
+  "tags": ["resource-group", "list"]
+}

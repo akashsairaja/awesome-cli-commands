@@ -1,0 +1,9 @@
+{
+  "id": "nginx-enable-systemd",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-control",
+  "title": "Enable on boot",
+  "command": "sudo systemctl enable nginx",
+  "description": "Enable Nginx to start on system boot",
+  "tags": ["enable", "boot", "systemd"]
+}

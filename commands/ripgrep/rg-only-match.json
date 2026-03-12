@@ -1,0 +1,9 @@
+{
+  "id": "rg-only-match",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-search",
+  "title": "Show only matches",
+  "command": "rg -o \"pattern\"",
+  "description": "Print only the matching part",
+  "tags": ["match", "only", "extract"]
+}

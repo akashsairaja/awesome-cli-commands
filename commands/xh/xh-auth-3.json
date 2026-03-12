@@ -1,0 +1,8 @@
+{
+  "id": "xh-auth-3",
+  "categoryId": "xh",
+  "subcategoryId": "xh-auth",
+  "title": "Authorization header",
+  "command": "xh GET https://api.example.com Authorization:'Bearer token123'",
+  "description": "Set Authorization header."
+}

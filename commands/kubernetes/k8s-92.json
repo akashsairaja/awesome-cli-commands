@@ -1,0 +1,8 @@
+{
+  "id": "k8s-92",
+  "categoryId": "kubernetes",
+  "subcategoryId": "statefulsets",
+  "title": "Describe statefulset",
+  "command": "kubectl describe statefulset <name>",
+  "description": "Show detailed statefulset information."
+}

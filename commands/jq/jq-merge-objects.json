@@ -1,0 +1,9 @@
+{
+  "id": "jq-merge-objects",
+  "categoryId": "jq",
+  "subcategoryId": "jq-objects",
+  "title": "Merge objects",
+  "command": "jq -s '.[0] * .[1]' file1.json file2.json",
+  "description": "Deep merge two JSON objects",
+  "tags": ["object", "merge", "combine"]
+}

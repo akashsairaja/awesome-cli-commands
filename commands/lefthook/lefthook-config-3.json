@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-config-3",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-config",
+  "title": "Pre-push hook",
+  "command": "pre-push:\n  commands:\n    test:\n      run: npm test\n    build:\n      run: npm run build",
+  "description": "Pre-push hook configuration."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ansible-version",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-config",
+  "title": "Show Version",
+  "command": "ansible --version",
+  "description": "Display Ansible version and config file path",
+  "tags": ["version", "info"]
+}

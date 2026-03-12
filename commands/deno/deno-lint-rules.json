@@ -1,0 +1,9 @@
+{
+  "id": "deno-lint-rules",
+  "categoryId": "deno",
+  "subcategoryId": "deno-fmt",
+  "title": "List Lint Rules",
+  "command": "deno lint --rules",
+  "description": "Show all available lint rules",
+  "tags": ["lint", "rules", "list"]
+}

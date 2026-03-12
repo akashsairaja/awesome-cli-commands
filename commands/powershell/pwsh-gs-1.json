@@ -1,0 +1,8 @@
+{
+  "id": "pwsh-gs-1",
+  "title": "Install PowerShell (macOS)",
+  "command": "brew install powershell",
+  "description": "Install PowerShell using Homebrew on macOS",
+  "categoryId": "powershell",
+  "subcategoryId": "getting-started"
+}

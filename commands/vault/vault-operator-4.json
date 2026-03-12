@@ -1,0 +1,8 @@
+{
+  "id": "vault-operator-4",
+  "categoryId": "vault",
+  "subcategoryId": "vault-operator",
+  "title": "Check status",
+  "command": "vault status",
+  "description": "Check Vault server status."
+}

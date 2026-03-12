@@ -1,0 +1,8 @@
+{
+  "id": "snow-35",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-cortex",
+  "title": "Extract answer (SQL)",
+  "command": "snow sql -q \"SELECT SNOWFLAKE.CORTEX.EXTRACT_ANSWER(context, 'What is...?')\"",
+  "description": "Extract answers from context using Cortex."
+}

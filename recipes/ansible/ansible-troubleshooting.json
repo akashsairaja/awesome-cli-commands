@@ -1,0 +1,55 @@
+{
+  "id": "ansible-troubleshooting",
+  "stackId": "ansible",
+  "name": "Debug Playbook Failures with Verbosity and Check Mode",
+  "description": "Diagnose and fix Ansible playbook failures using increased verbosity levels, debug module, check mode, and step-by-step execution.",
+  "difficulty": "intermediate",
+  "timeMinutes": 8,
+  "tags": ["debugging", "troubleshooting", "verbose", "check-mode"],
+  "prerequisites": ["Ansible installed", "A playbook to debug"],
+  "steps": [
+    {
+      "title": "Run with increased verbosity",
+      "command": "ansible-playbook site.yml -vvv",
+      "description": "Shows SSH connection details, module arguments, and full return values. Use -vvvv for connection-level debugging.",
+      "tip": "Start with -v and increase verbosity only if you need more detail. -vvvv shows raw SSH commands."
+    },
+    {
+      "title": "Use the debug module",
+      "command": "ansible-playbook -e 'debug_task=true' site.yml",
+      "description": "Add debug tasks in your playbook to print variable values: 'debug: var=my_variable' or 'debug: msg=\"Value is {{ my_var }}\"'."
+    },
+    {
+      "title": "Run in step mode",
+      "command": "ansible-playbook site.yml --step",
+      "description": "Prompts you before each task with yes/no/continue, letting you step through the playbook interactively."
+    },
+    {
+      "title": "Start at a specific task",
+      "command": "ansible-playbook site.yml --start-at-task \"Deploy nginx config\"",
+      "description": "Skips all tasks before the named task. Useful when you know which task is failing."
+    },
+    {
+      "title": "Check for syntax errors",
+      "command": "ansible-playbook site.yml --syntax-check && ansible-lint site.yml",
+      "description": "Validates YAML syntax and checks for common mistakes and best practice violations."
+    }
+  ],
+  "fullScript": "# Ansible troubleshooting workflow\nansible-playbook site.yml --syntax-check\nansible-lint site.yml\nansible-playbook site.yml --check --diff\nansible-playbook site.yml -vvv\nansible-playbook site.yml --step\nansible-playbook site.yml --start-at-task \"Deploy nginx config\"",
+  "faq": [
+    {
+      "question": "My task says 'changed' but nothing happened. Why?",
+      "answer": "The module reported a change but it may not have had the expected effect. Use -v to see the full module return values. Check that you are targeting the right hosts and using the correct module parameters."
+    },
+    {
+      "question": "How do I see which hosts failed after a playbook run?",
+      "answer": "Ansible prints a PLAY RECAP at the end showing ok, changed, unreachable, and failed counts per host. You can also use the 'json' callback plugin for machine-readable output."
+    },
+    {
+      "question": "How do I ignore errors on a specific task?",
+      "answer": "Add 'ignore_errors: true' to the task. For more control, use 'failed_when: false' or register the result and check it conditionally with 'failed_when: result.rc != 0 and result.rc != 2'."
+    }
+  ],
+  "relatedRecipes": ["ansible-playbook-basics", "ansible-ci-integration"],
+  "lastUpdated": "2026-03-11"
+}

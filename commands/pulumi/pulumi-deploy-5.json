@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-deploy-5",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-deploy",
+  "title": "Target specific resource",
+  "command": "pulumi up --target urn:pulumi:dev::myproject::aws:s3/bucket:Bucket::mybucket",
+  "description": "Update only specific resources."
+}

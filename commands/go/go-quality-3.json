@@ -1,0 +1,8 @@
+{
+  "id": "go-quality-3",
+  "categoryId": "go",
+  "subcategoryId": "go-quality",
+  "title": "Simplify code",
+  "command": "gofmt -s -w .",
+  "description": "Format and simplify code patterns."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "deno-gs-4",
+  "title": "Check version",
+  "command": "deno --version",
+  "description": "Display Deno, V8, and TypeScript versions",
+  "categoryId": "deno",
+  "subcategoryId": "getting-started"
+}

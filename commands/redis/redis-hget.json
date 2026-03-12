@@ -1,0 +1,9 @@
+{
+  "id": "redis-hget",
+  "categoryId": "redis",
+  "subcategoryId": "redis-hashes",
+  "title": "Get hash field",
+  "command": "HGET key field",
+  "description": "Get value of hash field",
+  "tags": ["hget", "hash", "field"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "xh-requests-1",
+  "categoryId": "xh",
+  "subcategoryId": "xh-requests",
+  "title": "GET request",
+  "command": "xh GET https://api.example.com/users",
+  "description": "Make a GET request."
+}

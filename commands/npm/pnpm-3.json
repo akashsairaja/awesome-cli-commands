@@ -1,0 +1,8 @@
+{
+  "id": "pnpm-3",
+  "categoryId": "npm",
+  "subcategoryId": "pnpm",
+  "title": "pnpm patch commit",
+  "command": "pnpm patch-commit <path>",
+  "description": "Create and register patch from modifications."
+}

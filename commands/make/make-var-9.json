@@ -1,0 +1,8 @@
+{
+  "id": "make-var-9",
+  "categoryId": "make",
+  "subcategoryId": "make-variables",
+  "title": "Pattern stem",
+  "command": "%.o: %.c\n\t$(CC) -c $< -o $@",
+  "description": "$* = matched pattern stem."
+}

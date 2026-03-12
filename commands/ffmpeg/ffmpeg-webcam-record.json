@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-webcam-record",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-streaming",
+  "title": "Record from webcam",
+  "command": "ffmpeg -f v4l2 -i /dev/video0 output.mp4",
+  "description": "Record video from webcam (Linux)",
+  "tags": ["webcam", "record", "camera"]
+}

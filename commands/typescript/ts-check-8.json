@@ -1,0 +1,8 @@
+{
+  "id": "ts-check-8",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-check",
+  "title": "Clean watch output",
+  "command": "tsc --preserveWatchOutput",
+  "description": "Preserve console output in watch mode instead of clearing screen."
+}

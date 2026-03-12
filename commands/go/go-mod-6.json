@@ -1,0 +1,8 @@
+{
+  "id": "go-mod-6",
+  "categoryId": "go",
+  "subcategoryId": "go-mod",
+  "title": "Show dependency graph",
+  "command": "go mod graph",
+  "description": "Print module dependency graph."
+}

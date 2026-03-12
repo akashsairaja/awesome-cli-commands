@@ -1,0 +1,8 @@
+{
+  "id": "db-10",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Grant privileges",
+  "command": "GRANT ALL PRIVILEGES ON db.* TO 'user'@'localhost';",
+  "description": "Grant all privileges on database to user."
+}

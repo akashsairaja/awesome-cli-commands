@@ -1,0 +1,8 @@
+{
+  "id": "playwright-ci-1",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-ci",
+  "title": "Run test shard",
+  "command": "npx playwright test --shard=1/4",
+  "description": "Run specific shard for parallel CI."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "apt-26",
+  "categoryId": "ubuntu",
+  "subcategoryId": "apt-packages",
+  "title": "Unhold package version",
+  "command": "sudo apt-mark unhold <package>",
+  "description": "Allow a previously held package to be upgraded again."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "db-84",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "List all users",
+  "command": "SELECT user, host, account_locked FROM mysql.user;",
+  "description": "List all MySQL users with their host restrictions and lock status."
+}

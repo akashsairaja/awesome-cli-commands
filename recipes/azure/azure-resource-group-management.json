@@ -1,0 +1,52 @@
+{
+  "id": "azure-resource-group-management",
+  "stackId": "azure",
+  "name": "Resource Group Lifecycle Management",
+  "description": "Create, list, tag, and delete Azure resource groups to organize and manage cloud resources effectively.",
+  "difficulty": "beginner",
+  "timeMinutes": 5,
+  "tags": ["resource-group", "organization", "tagging", "cleanup"],
+  "prerequisites": ["Azure CLI installed", "Active Azure subscription"],
+  "steps": [
+    {
+      "title": "Create a resource group with tags",
+      "command": "az group create --name dev-rg --location eastus --tags Environment=dev Team=backend",
+      "description": "Tags make it easy to filter resources by environment, team, or cost center."
+    },
+    {
+      "title": "List all resource groups",
+      "command": "az group list --output table",
+      "description": "Displays all resource groups in the subscription in a readable table format."
+    },
+    {
+      "title": "Show resources inside a group",
+      "command": "az resource list --resource-group dev-rg --output table",
+      "description": "Lists every resource contained within the specified resource group."
+    },
+    {
+      "title": "Update tags on a resource group",
+      "command": "az group update --name dev-rg --tags Environment=staging Team=backend Sprint=42",
+      "description": "Replaces all tags on the resource group with the new set.",
+      "warning": "This replaces all existing tags. Use 'az tag update --operation merge' to add tags without removing existing ones."
+    },
+    {
+      "title": "Delete a resource group",
+      "command": "az group delete --name dev-rg --yes --no-wait",
+      "description": "Deletes the group and all resources inside it. The --no-wait flag returns immediately.",
+      "warning": "This permanently deletes all resources in the group. This action cannot be undone."
+    }
+  ],
+  "fullScript": "# Resource group lifecycle management\naz group create --name dev-rg --location eastus --tags Environment=dev Team=backend\naz group list --output table\naz resource list --resource-group dev-rg --output table\naz group update --name dev-rg --tags Environment=staging Team=backend Sprint=42\n# Careful: this deletes everything in the group\naz group delete --name dev-rg --yes --no-wait",
+  "faq": [
+    {
+      "question": "Can I move resources between resource groups?",
+      "answer": "Yes. Use 'az resource move --destination-group new-rg --ids <resource-id>'. Not all resource types support moves, so check the documentation first."
+    },
+    {
+      "question": "Is there a limit on how many resource groups I can have?",
+      "answer": "The default limit is 980 resource groups per subscription. You can request an increase through Azure support."
+    }
+  ],
+  "relatedRecipes": ["azure-cost-management", "azure-webapp-deploy"],
+  "lastUpdated": "2026-03-11"
+}

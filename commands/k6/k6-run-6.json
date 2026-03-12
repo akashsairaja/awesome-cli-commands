@@ -1,0 +1,8 @@
+{
+  "id": "k6-run-6",
+  "categoryId": "k6",
+  "subcategoryId": "k6-run",
+  "title": "Run with config file",
+  "command": "k6 run --config config.json script.js",
+  "description": "Run with external config file."
+}

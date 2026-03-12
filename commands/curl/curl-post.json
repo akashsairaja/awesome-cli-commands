@@ -1,0 +1,9 @@
+{
+  "id": "curl-post",
+  "categoryId": "curl",
+  "subcategoryId": "curl-requests",
+  "title": "POST request",
+  "command": "curl -X POST https://api.example.com/resource",
+  "description": "Make a POST request",
+  "tags": ["post", "request", "create"]
+}

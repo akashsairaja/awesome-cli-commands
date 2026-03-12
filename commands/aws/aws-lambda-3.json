@@ -1,0 +1,8 @@
+{
+  "id": "aws-lambda-3",
+  "categoryId": "aws",
+  "subcategoryId": "lambda",
+  "title": "Invoke async",
+  "command": "aws lambda invoke --function-name myfunction --invocation-type Event --payload '{}' output.json",
+  "description": "Invoke Lambda asynchronously."
+}

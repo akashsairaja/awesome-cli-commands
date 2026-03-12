@@ -1,0 +1,8 @@
+{
+  "id": "git-119",
+  "categoryId": "git",
+  "subcategoryId": "tags",
+  "title": "List tags",
+  "command": "git tag",
+  "description": "List all tags."
+}

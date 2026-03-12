@@ -1,0 +1,9 @@
+{
+  "id": "rg-trim",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-output",
+  "title": "Trim whitespace",
+  "command": "rg --trim \"pattern\"",
+  "description": "Trim leading whitespace from lines",
+  "tags": ["trim", "whitespace", "clean"]
+}

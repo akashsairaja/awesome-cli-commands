@@ -1,0 +1,8 @@
+{
+  "id": "spark-43",
+  "categoryId": "spark",
+  "subcategoryId": "spark-cluster",
+  "title": "Stop cluster",
+  "command": "$SPARK_HOME/sbin/stop-all.sh",
+  "description": "Stop master and all workers."
+}

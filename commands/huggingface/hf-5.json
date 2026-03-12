@@ -1,0 +1,8 @@
+{
+  "id": "hf-5",
+  "categoryId": "huggingface",
+  "subcategoryId": "hf-auth",
+  "title": "Set token via env",
+  "command": "export HF_TOKEN=hf_xxxxx",
+  "description": "Set access token as environment variable."
+}

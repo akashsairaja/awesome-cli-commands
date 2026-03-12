@@ -1,0 +1,8 @@
+{
+  "id": "httpie-gs-3",
+  "title": "Check HTTPie version",
+  "command": "http --version",
+  "description": "Verify HTTPie is installed and display the current version",
+  "categoryId": "httpie",
+  "subcategoryId": "getting-started"
+}

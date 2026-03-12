@@ -1,0 +1,8 @@
+{
+  "id": "nuget-config-1",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-config",
+  "title": "Set config value",
+  "command": "nuget config -set defaultPushSource=https://api.nuget.org/v3/index.json",
+  "description": "Set a NuGet configuration value."
+}

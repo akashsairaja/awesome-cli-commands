@@ -1,0 +1,8 @@
+{
+  "id": "docker-118",
+  "categoryId": "docker",
+  "subcategoryId": "security",
+  "title": "Compare image security",
+  "command": "docker scout compare <image1> <image2>",
+  "description": "Compare vulnerabilities between images."
+}

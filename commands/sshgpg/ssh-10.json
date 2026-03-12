@@ -1,0 +1,8 @@
+{
+  "id": "ssh-10",
+  "categoryId": "sshgpg",
+  "subcategoryId": "connections",
+  "title": "Connect with custom port",
+  "command": "ssh -p 2222 user@host",
+  "description": "Connect using non-standard port."
+}

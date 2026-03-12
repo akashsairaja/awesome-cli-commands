@@ -1,0 +1,8 @@
+{
+  "id": "ts-build-2",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-build",
+  "title": "Build with watch",
+  "command": "tsc --build --watch",
+  "description": "Build mode with continuous watching for changes."
+}

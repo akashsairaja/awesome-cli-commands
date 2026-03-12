@@ -1,0 +1,8 @@
+{
+  "id": "brew-45",
+  "categoryId": "homebrew",
+  "subcategoryId": "cleanup",
+  "title": "Cache path",
+  "command": "brew --cache",
+  "description": "Show Homebrew cache directory."
+}

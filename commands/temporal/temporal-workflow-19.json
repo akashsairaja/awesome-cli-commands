@@ -1,0 +1,8 @@
+{
+  "id": "temporal-workflow-19",
+  "categoryId": "temporal",
+  "subcategoryId": "workflow",
+  "title": "Reset with signal reapply",
+  "command": "temporal workflow reset --workflow-id my-wf --event-id 10 --reapply-type Signal",
+  "description": "Reset and reapply only signal events (Signal, None, or All)."
+}

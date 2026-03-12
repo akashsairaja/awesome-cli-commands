@@ -1,0 +1,8 @@
+{
+  "id": "db-5",
+  "categoryId": "database",
+  "subcategoryId": "postgresql",
+  "title": "List tables",
+  "command": "\\dt",
+  "description": "List all tables in current database."
+}

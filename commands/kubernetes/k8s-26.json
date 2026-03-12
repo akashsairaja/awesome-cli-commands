@@ -1,0 +1,8 @@
+{
+  "id": "k8s-26",
+  "categoryId": "kubernetes",
+  "subcategoryId": "pods",
+  "title": "Copy files from pod",
+  "command": "kubectl cp <pod>:/path/file ./local/path",
+  "description": "Copy files from pod to local machine."
+}

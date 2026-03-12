@@ -1,0 +1,8 @@
+{
+  "id": "temporal-task-queue-1",
+  "categoryId": "temporal",
+  "subcategoryId": "task-queue",
+  "title": "Describe task queue",
+  "command": "temporal task-queue describe --task-queue my-queue",
+  "description": "Show active workers, backlog, and statistics."
+}

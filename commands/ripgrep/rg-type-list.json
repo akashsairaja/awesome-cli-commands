@@ -1,0 +1,9 @@
+{
+  "id": "rg-type-list",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-files",
+  "title": "List file types",
+  "command": "rg --type-list",
+  "description": "List all known file types",
+  "tags": ["type", "list", "extensions"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "db-80",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Rename user",
+  "command": "RENAME USER 'oldname'@'localhost' TO 'newname'@'localhost';",
+  "description": "Rename an existing MySQL user account."
+}

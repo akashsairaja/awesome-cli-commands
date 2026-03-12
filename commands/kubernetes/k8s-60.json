@@ -1,0 +1,8 @@
+{
+  "id": "k8s-60",
+  "categoryId": "kubernetes",
+  "subcategoryId": "secrets",
+  "title": "Create secret from file",
+  "command": "kubectl create secret generic <name> --from-file=./secret.txt",
+  "description": "Create secret from file contents."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-resize-aspect",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-video",
+  "title": "Resize keeping aspect ratio",
+  "command": "ffmpeg -i input.mp4 -vf scale=1280:-1 output.mp4",
+  "description": "Resize video keeping aspect ratio",
+  "tags": ["resize", "scale", "aspect"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "npm-config-2",
+  "categoryId": "npm",
+  "subcategoryId": "npm-config",
+  "title": "Set config value",
+  "command": "npm config set registry https://registry.npmjs.org/",
+  "description": "Set config value."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "nats-consumer-3",
+  "categoryId": "nats",
+  "subcategoryId": "nats-consumer",
+  "title": "List consumers",
+  "command": "nats consumer ls ORDERS",
+  "description": "List consumers for a stream."
+}

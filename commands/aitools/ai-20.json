@@ -1,0 +1,8 @@
+{
+  "id": "ai-20",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-aider",
+  "title": "Start Aider session",
+  "command": "aider",
+  "description": "Start Aider in the current Git repository."
+}

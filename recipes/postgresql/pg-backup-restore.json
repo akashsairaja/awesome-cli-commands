@@ -1,0 +1,69 @@
+{
+  "id": "pg-backup-restore",
+  "stackId": "postgresql",
+  "name": "pg_dump and pg_restore Workflow",
+  "description": "Create reliable database backups with pg_dump and restore them with pg_restore for disaster recovery and environment cloning.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "Backup and restore is the most critical DBA skill and a common interview topic for production readiness",
+  "tags": ["backup", "restore", "pg_dump", "disaster-recovery"],
+  "prerequisites": [
+    "PostgreSQL installed",
+    "psql and pg_dump available in PATH",
+    "Database connection credentials"
+  ],
+  "steps": [
+    {
+      "title": "Create a plain SQL backup",
+      "description": "Dump the entire database as a SQL script file for portability.",
+      "command": "pg_dump -U postgres -d mydb -F plain -f /backups/mydb_$(date +%Y%m%d).sql",
+      "tip": "Plain format is human-readable and can be restored with psql. Use -F custom for large databases that benefit from compression."
+    },
+    {
+      "title": "Create a compressed custom-format backup",
+      "description": "Dump the database in PostgreSQL custom format with built-in compression.",
+      "command": "pg_dump -U postgres -d mydb -F custom -Z 6 -f /backups/mydb_$(date +%Y%m%d).dump",
+      "tip": "-Z 6 sets gzip compression level (0-9). Custom format also supports parallel restore."
+    },
+    {
+      "title": "Backup a single table",
+      "description": "Dump only a specific table for targeted backup or migration.",
+      "command": "pg_dump -U postgres -d mydb -t public.users -F custom -f /backups/users_table.dump"
+    },
+    {
+      "title": "Restore from a custom-format backup",
+      "description": "Restore a database from a custom-format dump file.",
+      "command": "pg_restore -U postgres -d mydb_restored -F custom -c /backups/mydb_$(date +%Y%m%d).dump",
+      "warning": "The -c flag drops existing objects before recreating them. Omit it if restoring into an empty database."
+    },
+    {
+      "title": "Restore from a plain SQL backup",
+      "description": "Execute a plain SQL dump file to restore the database.",
+      "command": "psql -U postgres -d mydb_restored -f /backups/mydb_$(date +%Y%m%d).sql"
+    },
+    {
+      "title": "Parallel restore for large databases",
+      "description": "Speed up restoration by using multiple parallel jobs.",
+      "command": "pg_restore -U postgres -d mydb_restored -F custom -j 4 /backups/mydb_$(date +%Y%m%d).dump",
+      "tip": "-j 4 uses 4 parallel workers. Match this to your available CPU cores for optimal speed."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# PostgreSQL Backup and Restore\nset -euo pipefail\n\nDB_NAME=\"mydb\"\nDB_USER=\"postgres\"\nBACKUP_DIR=\"/backups/postgresql\"\nTIMESTAMP=$(date +%Y%m%d-%H%M%S)\nmkdir -p \"$BACKUP_DIR\"\n\necho \"=== Creating custom-format backup ===\"\npg_dump -U \"$DB_USER\" -d \"$DB_NAME\" -F custom -Z 6 -f \"$BACKUP_DIR/${DB_NAME}_${TIMESTAMP}.dump\"\necho \"Backup: $BACKUP_DIR/${DB_NAME}_${TIMESTAMP}.dump\"\nls -lh \"$BACKUP_DIR/${DB_NAME}_${TIMESTAMP}.dump\"\n\necho \"\"\necho \"=== Listing backup contents ===\"\npg_restore -l \"$BACKUP_DIR/${DB_NAME}_${TIMESTAMP}.dump\" | head -20\n\necho \"\"\necho \"=== Backup verification ===\"\npg_restore -l \"$BACKUP_DIR/${DB_NAME}_${TIMESTAMP}.dump\" | wc -l\necho \"objects in backup\"\n\necho \"\"\necho \"=== To restore, run: ===\"\necho \"createdb -U $DB_USER ${DB_NAME}_restored\"\necho \"pg_restore -U $DB_USER -d ${DB_NAME}_restored -F custom -j 4 $BACKUP_DIR/${DB_NAME}_${TIMESTAMP}.dump\"\n\necho \"\"\necho \"=== Cleanup old backups (30+ days) ===\"\nfind \"$BACKUP_DIR\" -name \"*.dump\" -mtime +30 -delete -print",
+  "faq": [
+    {
+      "question": "Plain vs custom format: which should I use?",
+      "answer": "Use custom format (-F custom) for production backups. It supports compression, parallel restore, and selective object restoration. Use plain format only when you need a human-readable SQL file or for simple migrations."
+    },
+    {
+      "question": "How do I backup all databases on a server?",
+      "answer": "Use pg_dumpall to dump all databases, roles, and tablespaces: 'pg_dumpall -U postgres -f /backups/all_databases.sql'. Note that pg_dumpall only outputs plain format."
+    },
+    {
+      "question": "Can I restore specific tables from a custom dump?",
+      "answer": "Yes. Use 'pg_restore -l dump.file > list.txt' to list contents, edit the list to keep only desired tables, then restore with 'pg_restore -L list.txt -d mydb dump.file'."
+    }
+  ],
+  "relatedRecipes": ["pg-vacuum-maintenance", "pg-replication-setup"],
+  "lastUpdated": "2026-03-11"
+}

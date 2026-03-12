@@ -1,0 +1,8 @@
+{
+  "id": "podman-image-2",
+  "categoryId": "podman",
+  "subcategoryId": "podman-image",
+  "title": "List images",
+  "command": "podman images",
+  "description": "List local images."
+}

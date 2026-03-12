@@ -1,0 +1,8 @@
+{
+  "id": "minikube-addons-3",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-addons",
+  "title": "Enable ingress",
+  "command": "minikube addons enable ingress",
+  "description": "Enable NGINX ingress controller."
+}

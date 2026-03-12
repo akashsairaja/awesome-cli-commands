@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-extract-audio",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-convert",
+  "title": "Extract audio from video",
+  "command": "ffmpeg -i input.mp4 -vn -acodec copy output.aac",
+  "description": "Extract audio track from video file",
+  "tags": ["extract", "audio", "video"]
+}

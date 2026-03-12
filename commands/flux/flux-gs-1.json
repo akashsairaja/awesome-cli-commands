@@ -1,0 +1,8 @@
+{
+  "id": "flux-gs-1",
+  "title": "Install Flux CLI (macOS)",
+  "command": "brew install fluxcd/tap/flux",
+  "description": "Install Flux CLI using Homebrew on macOS",
+  "categoryId": "flux",
+  "subcategoryId": "getting-started"
+}

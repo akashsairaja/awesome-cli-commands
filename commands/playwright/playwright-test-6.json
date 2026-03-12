@@ -1,0 +1,8 @@
+{
+  "id": "playwright-test-6",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-test",
+  "title": "UI mode",
+  "command": "npx playwright test --ui",
+  "description": "Run tests in interactive UI mode."
+}

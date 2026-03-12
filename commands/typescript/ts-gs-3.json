@@ -1,0 +1,8 @@
+{
+  "id": "ts-gs-3",
+  "title": "Initialize TypeScript config",
+  "command": "tsc --init",
+  "description": "Generate a tsconfig.json file with default compiler options",
+  "categoryId": "typescript",
+  "subcategoryId": "getting-started"
+}

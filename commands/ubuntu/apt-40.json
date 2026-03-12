@@ -1,0 +1,8 @@
+{
+  "id": "apt-40",
+  "categoryId": "ubuntu",
+  "subcategoryId": "systemd-services",
+  "title": "Follow service logs live",
+  "command": "journalctl -u <service> -f",
+  "description": "Stream live log output for a specific service."
+}

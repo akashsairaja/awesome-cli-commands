@@ -1,0 +1,9 @@
+{
+  "id": "deno-run-watch",
+  "categoryId": "deno",
+  "subcategoryId": "deno-run",
+  "title": "Watch Mode",
+  "command": "deno run --watch script.ts",
+  "description": "Auto-restart on file changes",
+  "tags": ["run", "watch", "dev"]
+}

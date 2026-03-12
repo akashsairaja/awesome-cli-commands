@@ -1,0 +1,63 @@
+{
+  "id": "go-benchmark-profiling",
+  "stackId": "go",
+  "name": "Performance Benchmarks and pprof Profiling",
+  "description": "Write benchmarks, generate CPU and memory profiles, and analyze performance bottlenecks with pprof.",
+  "difficulty": "advanced",
+  "timeMinutes": 20,
+  "tags": ["benchmarks", "profiling", "pprof", "performance", "optimization"],
+  "prerequisites": ["Go 1.21+ installed", "graphviz installed (for pprof visualization)"],
+  "steps": [
+    {
+      "title": "Write a benchmark function",
+      "description": "Create a benchmark test file following Go naming conventions.",
+      "command": "cat > handler_bench_test.go << 'EOF'\npackage handler\n\nimport \"testing\"\n\nfunc BenchmarkProcess(b *testing.B) {\n\tfor i := 0; i < b.N; i++ {\n\t\tProcess(testData)\n\t}\n}\nEOF"
+    },
+    {
+      "title": "Run benchmarks",
+      "description": "Execute benchmarks with memory allocation statistics.",
+      "command": "go test -bench=. -benchmem -count=5 ./...",
+      "tip": "Use -count=5 for statistically meaningful results. Use benchstat to compare multiple runs."
+    },
+    {
+      "title": "Generate a CPU profile",
+      "description": "Run benchmarks and produce a CPU profile for analysis.",
+      "command": "go test -bench=BenchmarkProcess -cpuprofile=cpu.prof -benchtime=10s ./..."
+    },
+    {
+      "title": "Analyze the CPU profile interactively",
+      "description": "Open pprof to explore hotspots in the CPU profile.",
+      "command": "go tool pprof -http=:6060 cpu.prof",
+      "tip": "The web UI shows flame graphs, call graphs, and source-level annotations. Focus on the widest bars in the flame graph."
+    },
+    {
+      "title": "Generate and analyze memory profile",
+      "description": "Profile heap allocations to find memory-intensive code paths.",
+      "command": "go test -bench=BenchmarkProcess -memprofile=mem.prof ./... && go tool pprof -http=:6060 mem.prof",
+      "warning": "Memory profiles show allocations, not current memory usage. Look for high alloc_objects to find GC pressure."
+    },
+    {
+      "title": "Compare benchmarks with benchstat",
+      "description": "Use benchstat to compare two benchmark runs and detect regressions.",
+      "command": "go test -bench=. -count=10 ./... > old.txt && go test -bench=. -count=10 ./... > new.txt && benchstat old.txt new.txt",
+      "tip": "Install benchstat with: go install golang.org/x/perf/cmd/benchstat@latest"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Go Benchmark and Profiling Workflow\nset -euo pipefail\n\nPACKAGE=${1:-\"./...\"}\n\necho \"=== Running Benchmarks ===\"\ngo test -bench=. -benchmem -count=3 \"$PACKAGE\" | tee bench.txt\n\necho \"\"\necho \"=== Generating CPU Profile ===\"\ngo test -bench=. -cpuprofile=cpu.prof -benchtime=5s \"$PACKAGE\"\n\necho \"\"\necho \"=== Generating Memory Profile ===\"\ngo test -bench=. -memprofile=mem.prof \"$PACKAGE\"\n\necho \"\"\necho \"=== Top CPU Consumers ===\"\ngo tool pprof -top cpu.prof 2>/dev/null | head -20\n\necho \"\"\necho \"=== Top Memory Allocators ===\"\ngo tool pprof -top mem.prof 2>/dev/null | head -20\n\necho \"\"\necho \"=== Profiling Commands ===\"\necho \"Interactive CPU:  go tool pprof -http=:6060 cpu.prof\"\necho \"Interactive Mem:  go tool pprof -http=:6060 mem.prof\"\necho \"Compare runs:     benchstat old.txt new.txt\"\necho \"Trace:            go test -trace=trace.out && go tool trace trace.out\"",
+  "faq": [
+    {
+      "question": "What does b.N mean in benchmarks?",
+      "answer": "b.N is the number of iterations the benchmark framework chooses. Go automatically adjusts it to run the benchmark long enough for a stable measurement. Do not set it manually."
+    },
+    {
+      "question": "How do I profile a running HTTP server instead of benchmarks?",
+      "answer": "Import net/http/pprof in your server code. Then access profiles at /debug/pprof/. Use 'go tool pprof http://localhost:6060/debug/pprof/profile?seconds=30' to capture a 30-second CPU profile."
+    },
+    {
+      "question": "What is the difference between -benchtime and -count?",
+      "answer": "-benchtime sets how long each individual benchmark runs (default 1s). -count sets how many times to repeat the entire benchmark suite. Use -count for statistical significance."
+    }
+  ],
+  "relatedRecipes": ["go-test-coverage", "go-release-automation"],
+  "lastUpdated": "2026-03-11"
+}

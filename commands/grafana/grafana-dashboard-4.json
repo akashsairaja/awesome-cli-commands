@@ -1,0 +1,8 @@
+{
+  "id": "grafana-dashboard-4",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-dashboard",
+  "title": "Delete dashboard",
+  "command": "curl -X DELETE http://localhost:3000/api/dashboards/uid/DASHBOARD_UID -H 'Authorization: Bearer TOKEN'",
+  "description": "Delete a dashboard."
+}

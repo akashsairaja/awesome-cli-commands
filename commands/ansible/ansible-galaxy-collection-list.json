@@ -1,0 +1,9 @@
+{
+  "id": "ansible-galaxy-collection-list",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-galaxy",
+  "title": "List Installed Collections",
+  "command": "ansible-galaxy collection list",
+  "description": "Show installed collections",
+  "tags": ["galaxy", "list", "collections"]
+}

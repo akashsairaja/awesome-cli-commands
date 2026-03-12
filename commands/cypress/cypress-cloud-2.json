@@ -1,0 +1,8 @@
+{
+  "id": "cypress-cloud-2",
+  "categoryId": "cypress",
+  "subcategoryId": "cypress-cloud",
+  "title": "Parallel execution",
+  "command": "npx cypress run --record --parallel --group 'e2e'",
+  "description": "Run tests in parallel on CI."
+}

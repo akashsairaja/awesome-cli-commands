@@ -1,0 +1,8 @@
+{
+  "id": "aws-rds-4",
+  "categoryId": "aws",
+  "subcategoryId": "rds",
+  "title": "Create snapshot",
+  "command": "aws rds create-db-snapshot --db-instance-identifier mydb --db-snapshot-identifier mydb-snapshot",
+  "description": "Create manual snapshot."
+}

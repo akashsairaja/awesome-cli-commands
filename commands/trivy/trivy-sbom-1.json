@@ -1,0 +1,8 @@
+{
+  "id": "trivy-sbom-1",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-sbom",
+  "title": "Generate CycloneDX",
+  "command": "trivy image --format cyclonedx -o sbom.json nginx:latest",
+  "description": "Generate CycloneDX SBOM."
+}

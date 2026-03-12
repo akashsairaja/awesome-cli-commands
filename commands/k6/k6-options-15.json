@@ -1,0 +1,8 @@
+{
+  "id": "k6-options-15",
+  "categoryId": "k6",
+  "subcategoryId": "k6-options",
+  "title": "Shared iterations",
+  "command": "export const options = {\n  scenarios: {\n    shared: {\n      executor: 'shared-iterations',\n      vus: 10,\n      iterations: 1000,\n    },\n  },\n};",
+  "description": "Divide iterations across VUs."
+}

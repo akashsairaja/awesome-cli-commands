@@ -1,0 +1,8 @@
+{
+  "id": "java-46",
+  "categoryId": "java",
+  "subcategoryId": "java-diagnostics",
+  "title": "Heap histogram",
+  "command": "jcmd <pid> GC.class_histogram",
+  "description": "Show memory usage by class (live object counts)."
+}

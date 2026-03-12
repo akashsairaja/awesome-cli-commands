@@ -1,0 +1,8 @@
+{
+  "id": "helm-oci-2",
+  "categoryId": "helm",
+  "subcategoryId": "helm-oci",
+  "title": "Pull from OCI registry",
+  "command": "helm pull oci://registry.example.com/helm-charts/mychart --version 0.1.0",
+  "description": "Pull chart from OCI registry with specific version."
+}

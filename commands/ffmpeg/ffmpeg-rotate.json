@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-rotate",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-video",
+  "title": "Rotate video 90°",
+  "command": "ffmpeg -i input.mp4 -vf \"transpose=1\" output.mp4",
+  "description": "Rotate video 90° clockwise",
+  "tags": ["rotate", "90", "transpose"]
+}

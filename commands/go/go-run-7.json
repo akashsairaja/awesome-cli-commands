@@ -1,0 +1,8 @@
+{
+  "id": "go-run-7",
+  "categoryId": "go",
+  "subcategoryId": "go-run",
+  "title": "Clean module cache",
+  "command": "go clean -modcache",
+  "description": "Clear module download cache."
+}

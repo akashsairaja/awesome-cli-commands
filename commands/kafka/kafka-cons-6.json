@@ -1,0 +1,8 @@
+{
+  "id": "kafka-cons-6",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-consumer",
+  "title": "Max messages",
+  "command": "kafka-console-consumer.sh --topic my-topic --bootstrap-server localhost:9092 --max-messages 10",
+  "description": "Consume limited number of messages."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "react-rn-3",
+  "categoryId": "react",
+  "subcategoryId": "react-native",
+  "title": "Reset Metro cache",
+  "command": "npx react-native start --reset-cache",
+  "description": "Start Metro with cache cleared."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "node-perf-14",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-perf",
+  "title": "Report on fatal error",
+  "command": "node --report-on-fatalerror app.js",
+  "description": "Auto-generate report on fatal errors."
+}

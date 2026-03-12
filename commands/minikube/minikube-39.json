@@ -1,0 +1,8 @@
+{
+  "id": "minikube-39",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-cache",
+  "title": "Delete cached image",
+  "command": "minikube cache delete <image>",
+  "description": "Remove image from cache."
+}

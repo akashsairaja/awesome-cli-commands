@@ -1,0 +1,8 @@
+{
+  "id": "git-50",
+  "categoryId": "git",
+  "subcategoryId": "stash",
+  "title": "Stash specific files",
+  "command": "git stash push <file1> <file2>",
+  "description": "Stash only specific files."
+}

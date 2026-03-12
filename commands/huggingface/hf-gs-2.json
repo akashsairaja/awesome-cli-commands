@@ -1,0 +1,8 @@
+{
+  "id": "hf-gs-2",
+  "title": "Login to Hugging Face",
+  "command": "huggingface-cli login",
+  "description": "Authenticate with Hugging Face using an access token",
+  "categoryId": "huggingface",
+  "subcategoryId": "getting-started"
+}

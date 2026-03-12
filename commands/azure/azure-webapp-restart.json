@@ -1,0 +1,9 @@
+{
+  "id": "azure-webapp-restart",
+  "categoryId": "azure",
+  "subcategoryId": "azure-webapp",
+  "title": "Restart Web App",
+  "command": "az webapp restart --resource-group <rg> --name <app-name>",
+  "description": "Restart the web app",
+  "tags": ["webapp", "restart"]
+}

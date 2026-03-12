@@ -1,0 +1,8 @@
+{
+  "id": "ssh-6",
+  "categoryId": "sshgpg",
+  "subcategoryId": "keys",
+  "title": "Copy key to server",
+  "command": "ssh-copy-id user@host",
+  "description": "Install public key on server."
+}

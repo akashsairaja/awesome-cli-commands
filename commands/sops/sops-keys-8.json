@@ -1,0 +1,8 @@
+{
+  "id": "sops-keys-8",
+  "categoryId": "sops",
+  "subcategoryId": "sops-keys",
+  "title": "Rotate data key in place",
+  "command": "sops -r -i secrets.enc.yaml",
+  "description": "Rotate and write data key in place."
+}

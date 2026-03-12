@@ -1,0 +1,8 @@
+{
+  "id": "flux-helm-1",
+  "categoryId": "flux",
+  "subcategoryId": "flux-helm",
+  "title": "Create HelmRelease",
+  "command": "flux create helmrelease nginx --source=HelmRepository/bitnami --chart=nginx --interval=1h",
+  "description": "Create a HelmRelease from repository."
+}

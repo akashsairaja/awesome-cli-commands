@@ -1,0 +1,9 @@
+{
+  "id": "vercel-cache-delete-tag",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-cache",
+  "title": "Delete cache by tag",
+  "command": "vercel cache dangerously-delete --tag <tag>",
+  "description": "Permanently delete cached content by tag",
+  "tags": ["cache", "delete", "permanent"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "go-install-3",
+  "categoryId": "go",
+  "subcategoryId": "go-install",
+  "title": "Install from local",
+  "command": "go install .",
+  "description": "Install current package as executable."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "vim-27",
+  "categoryId": "vim",
+  "subcategoryId": "buffers",
+  "title": "List buffers",
+  "command": ":ls",
+  "description": "Show all open buffers."
+}

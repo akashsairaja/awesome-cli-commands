@@ -1,0 +1,8 @@
+{
+  "id": "mvn-profile-3",
+  "categoryId": "maven",
+  "subcategoryId": "profiles",
+  "title": "Deactivate profile",
+  "command": "mvn install -P!dev",
+  "description": "Deactivate a profile."
+}

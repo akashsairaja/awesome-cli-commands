@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-run-7",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-run",
+  "title": "Run commit-msg hook",
+  "command": "lefthook run commit-msg",
+  "description": "Manually trigger commit-msg hook."
+}

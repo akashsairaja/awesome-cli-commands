@@ -1,0 +1,8 @@
+{
+  "id": "k8s-76",
+  "categoryId": "kubernetes",
+  "subcategoryId": "nodes",
+  "title": "Drain node",
+  "command": "kubectl drain <node> --ignore-daemonsets --delete-emptydir-data",
+  "description": "Safely evict pods before maintenance."
+}

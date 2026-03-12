@@ -1,0 +1,9 @@
+{
+  "id": "prisma-db-seed",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-db",
+  "title": "Seed database",
+  "command": "npx prisma db seed",
+  "description": "Run database seed script",
+  "tags": ["db", "seed", "data"]
+}

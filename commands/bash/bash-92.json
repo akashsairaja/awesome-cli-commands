@@ -1,0 +1,8 @@
+{
+  "id": "bash-92",
+  "categoryId": "bash",
+  "subcategoryId": "conditionals",
+  "title": "String is empty",
+  "command": "[ -z \"$str\" ] && echo \"empty\"",
+  "description": "Check if string has length 0."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "xh-sessions-6",
+  "categoryId": "xh",
+  "subcategoryId": "xh-sessions",
+  "title": "Skip TLS verification",
+  "command": "xh --verify=no GET https://self-signed.example.com",
+  "description": "Disable TLS certificate verification."
+}

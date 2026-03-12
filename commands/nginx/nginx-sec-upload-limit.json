@@ -1,0 +1,9 @@
+{
+  "id": "nginx-sec-upload-limit",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-security",
+  "title": "Limit upload size",
+  "command": "client_max_body_size 10m;",
+  "description": "Restrict maximum request body size",
+  "tags": ["security", "upload", "limit", "body-size"]
+}

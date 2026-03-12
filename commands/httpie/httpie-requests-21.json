@@ -1,0 +1,8 @@
+{
+  "id": "httpie-requests-21",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-requests",
+  "title": "Max redirects limit",
+  "command": "http --follow --max-redirects=3 GET https://example.com/page",
+  "description": "Follow redirects with a maximum limit."
+}

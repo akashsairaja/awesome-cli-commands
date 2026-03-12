@@ -1,0 +1,8 @@
+{
+  "id": "npm-scripts-2",
+  "categoryId": "npm",
+  "subcategoryId": "npm-scripts",
+  "title": "Run start",
+  "command": "npm start",
+  "description": "Run start script (shorthand)."
+}

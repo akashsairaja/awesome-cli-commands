@@ -1,0 +1,9 @@
+{
+  "id": "gradle-check",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-tasks",
+  "title": "Run All Checks",
+  "command": "./gradlew check",
+  "description": "Run all verification tasks",
+  "tags": ["check", "verify", "quality"]
+}

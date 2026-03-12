@@ -1,0 +1,8 @@
+{
+  "id": "task-vars-4",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-vars",
+  "title": "Dotenv file",
+  "command": "dotenv: ['.env', '.env.local']",
+  "description": "Load variables from .env files."
+}

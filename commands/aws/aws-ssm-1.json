@@ -1,0 +1,8 @@
+{
+  "id": "aws-ssm-1",
+  "categoryId": "aws",
+  "subcategoryId": "ssm",
+  "title": "Get parameter",
+  "command": "aws ssm get-parameter --name /app/database/password --with-decryption --query Parameter.Value --output text",
+  "description": "Retrieve parameter value with KMS decryption."
+}

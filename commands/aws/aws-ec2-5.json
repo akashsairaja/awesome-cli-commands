@@ -1,0 +1,8 @@
+{
+  "id": "aws-ec2-5",
+  "categoryId": "aws",
+  "subcategoryId": "ec2",
+  "title": "Get public IP",
+  "command": "aws ec2 describe-instances --instance-ids i-xxx --query 'Reservations[].Instances[].PublicIpAddress' --output text",
+  "description": "Get public IP address of instance."
+}

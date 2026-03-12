@@ -1,0 +1,8 @@
+{
+  "id": "claude-60",
+  "categoryId": "claudecode",
+  "subcategoryId": "agents",
+  "title": "Monitor running tasks",
+  "command": "/tasks",
+  "description": "View status of background agents and tasks."
+}

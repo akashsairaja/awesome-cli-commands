@@ -1,0 +1,8 @@
+{
+  "id": "py-81",
+  "categoryId": "python",
+  "subcategoryId": "python-pipx",
+  "title": "Run without install",
+  "command": "pipx run cowsay hello",
+  "description": "Run a tool without permanent installation."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "aws-cw-8",
+  "categoryId": "aws",
+  "subcategoryId": "cloudwatch",
+  "title": "Tail logs",
+  "command": "aws logs tail /aws/lambda/myfunction --follow --since 1h",
+  "description": "Stream logs in real-time with follow mode."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "nginx-log-grep",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-logs",
+  "title": "Search in access log",
+  "command": "sudo grep \"pattern\" /var/log/nginx/access.log",
+  "description": "Search for pattern in access log",
+  "tags": ["log", "grep", "search"]
+}

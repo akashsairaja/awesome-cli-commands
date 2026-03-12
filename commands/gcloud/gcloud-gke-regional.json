@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-gke-regional",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-gke",
+  "title": "Create Regional Cluster",
+  "command": "gcloud container clusters create <name> --region=<region> --num-nodes=1",
+  "description": "Create a highly-available regional cluster (nodes across 3 zones)",
+  "tags": ["gke", "regional", "high-availability"]
+}

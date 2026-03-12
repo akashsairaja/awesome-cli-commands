@@ -1,0 +1,8 @@
+{
+  "id": "db-71",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Grant read-only access",
+  "command": "GRANT SELECT ON mydb.* TO 'readonly'@'localhost';",
+  "description": "Grant SELECT-only access to all tables in a database."
+}

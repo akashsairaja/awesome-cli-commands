@@ -1,0 +1,8 @@
+{
+  "id": "nginx-gs-2",
+  "title": "Install Nginx (Linux)",
+  "command": "sudo apt install nginx -y",
+  "description": "Install Nginx using APT on Debian/Ubuntu Linux",
+  "categoryId": "nginx",
+  "subcategoryId": "getting-started"
+}

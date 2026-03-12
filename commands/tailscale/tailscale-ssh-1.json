@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-ssh-1",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-ssh",
+  "title": "SSH to peer",
+  "command": "tailscale ssh user@hostname",
+  "description": "SSH using Tailscale identity."
+}

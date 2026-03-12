@@ -1,0 +1,8 @@
+{
+  "id": "minikube-47",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-maintenance",
+  "title": "Check version",
+  "command": "minikube version",
+  "description": "Show minikube version."
+}

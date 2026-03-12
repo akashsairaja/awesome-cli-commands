@@ -1,0 +1,8 @@
+{
+  "id": "node-perf-4",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-perf",
+  "title": "Heap snapshot on signal",
+  "command": "node --heapsnapshot-signal=SIGUSR2 app.js",
+  "description": "Generate heap dump on signal (kill -USR2 <pid>)."
+}

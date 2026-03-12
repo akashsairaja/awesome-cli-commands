@@ -1,0 +1,8 @@
+{
+  "id": "cypress-run-6",
+  "categoryId": "cypress",
+  "subcategoryId": "cypress-run",
+  "title": "Run with env",
+  "command": "npx cypress run --env API_URL=http://localhost:3000",
+  "description": "Run with environment variable."
+}

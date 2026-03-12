@@ -1,0 +1,8 @@
+{
+  "id": "py-67",
+  "categoryId": "python",
+  "subcategoryId": "python-venv",
+  "title": "Create and upgrade pip",
+  "command": "python -m venv venv --upgrade-deps",
+  "description": "Create venv with latest pip and setuptools."
+}

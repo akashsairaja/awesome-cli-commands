@@ -1,0 +1,8 @@
+{
+  "id": "bash-51",
+  "categoryId": "bash",
+  "subcategoryId": "arrays",
+  "title": "All elements",
+  "command": "echo \"${arr[@]}\"",
+  "description": "Get all array elements."
+}

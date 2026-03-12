@@ -1,0 +1,9 @@
+{
+  "id": "nginx-last-errors",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-logs",
+  "title": "Show last 100 errors",
+  "command": "sudo tail -n 100 /var/log/nginx/error.log",
+  "description": "Show last 100 lines of error log",
+  "tags": ["log", "error", "last"]
+}

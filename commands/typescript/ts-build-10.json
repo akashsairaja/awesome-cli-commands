@@ -1,0 +1,8 @@
+{
+  "id": "ts-build-10",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-build",
+  "title": "Enable composite mode",
+  "command": "tsc --composite",
+  "description": "Enable constraints for project references (required for --build)."
+}

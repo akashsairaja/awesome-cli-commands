@@ -1,0 +1,8 @@
+{
+  "id": "bash-93",
+  "categoryId": "bash",
+  "subcategoryId": "conditionals",
+  "title": "Numeric comparisons",
+  "command": "[ $a -eq $b ] # -ne -lt -le -gt -ge",
+  "description": "Numeric: equal, not-equal, less-than, etc."
+}

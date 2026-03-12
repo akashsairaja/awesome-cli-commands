@@ -1,0 +1,58 @@
+{
+  "id": "react-component-testing",
+  "stackId": "react",
+  "name": "Test React Components with Vitest and Testing Library",
+  "description": "Set up and write component tests using Vitest and React Testing Library with user-centric queries and assertions.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "Vitest has overtaken Jest as the fastest React testing framework with native ESM support",
+  "tags": ["testing", "vitest", "testing-library", "unit-tests", "components"],
+  "prerequisites": ["React or Next.js project", "Node.js 18+", "Familiarity with React components"],
+  "steps": [
+    {
+      "title": "Install Vitest and React Testing Library",
+      "description": "Add the testing dependencies including jsdom for browser environment simulation.",
+      "command": "pnpm add -D vitest @testing-library/react @testing-library/jest-dom @testing-library/user-event jsdom @vitejs/plugin-react"
+    },
+    {
+      "title": "Create the Vitest config",
+      "description": "Add a vitest.config.ts with jsdom environment and React plugin.",
+      "command": "cat > vitest.config.ts << 'EOF'\nimport { defineConfig } from 'vitest/config';\nimport react from '@vitejs/plugin-react';\n\nexport default defineConfig({\n  plugins: [react()],\n  test: {\n    environment: 'jsdom',\n    globals: true,\n    setupFiles: ['./src/test/setup.ts'],\n    css: true,\n  },\n});\nEOF"
+    },
+    {
+      "title": "Create the test setup file",
+      "description": "Import jest-dom matchers so you can use toBeInTheDocument() and similar assertions.",
+      "command": "mkdir -p src/test && echo \"import '@testing-library/jest-dom/vitest';\" > src/test/setup.ts"
+    },
+    {
+      "title": "Write a component test",
+      "description": "Create a test file that renders a component and asserts on its output.",
+      "command": "cat > src/components/__tests__/Button.test.tsx << 'EOF'\nimport { render, screen } from '@testing-library/react';\nimport userEvent from '@testing-library/user-event';\nimport { describe, it, expect, vi } from 'vitest';\nimport { Button } from '../Button';\n\ndescribe('Button', () => {\n  it('renders with text and handles click', async () => {\n    const onClick = vi.fn();\n    render(<Button onClick={onClick}>Click me</Button>);\n    await userEvent.click(screen.getByRole('button', { name: /click me/i }));\n    expect(onClick).toHaveBeenCalledOnce();\n  });\n});\nEOF",
+      "tip": "Always query by role or accessible name instead of test IDs for more resilient tests."
+    },
+    {
+      "title": "Run the tests",
+      "description": "Execute the test suite with Vitest in watch mode.",
+      "command": "pnpm vitest",
+      "tip": "Use 'pnpm vitest run' for a single CI-friendly run without watch mode."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# React Component Testing Setup with Vitest\nset -euo pipefail\n\necho \"=== Installing test dependencies ===\"\npnpm add -D vitest @testing-library/react @testing-library/jest-dom \\\n  @testing-library/user-event jsdom @vitejs/plugin-react\n\necho \"=== Creating vitest.config.ts ===\"\ncat > vitest.config.ts << 'EOF'\nimport { defineConfig } from 'vitest/config';\nimport react from '@vitejs/plugin-react';\n\nexport default defineConfig({\n  plugins: [react()],\n  test: {\n    environment: 'jsdom',\n    globals: true,\n    setupFiles: ['./src/test/setup.ts'],\n    css: true,\n    coverage: {\n      provider: 'v8',\n      reporter: ['text', 'html'],\n      exclude: ['node_modules/', 'src/test/'],\n    },\n  },\n});\nEOF\n\necho \"=== Creating test setup ===\"\nmkdir -p src/test\necho \"import '@testing-library/jest-dom/vitest';\" > src/test/setup.ts\n\necho \"=== Adding test script to package.json ===\"\nnpm pkg set scripts.test=\"vitest\"\nnpm pkg set scripts.test:run=\"vitest run\"\nnpm pkg set scripts.test:coverage=\"vitest run --coverage\"\n\necho \"=== Setup complete. Run: pnpm test ===\"",
+  "faq": [
+    {
+      "question": "Why Vitest over Jest for React projects?",
+      "answer": "Vitest is faster due to native ESM support, shares Vite's config and plugin ecosystem, and has a Jest-compatible API so migration is straightforward."
+    },
+    {
+      "question": "How do I test components that use Next.js features like useRouter?",
+      "answer": "Mock Next.js modules with vi.mock('next/navigation', () => ({ useRouter: () => ({ push: vi.fn() }) })). For server components, test them as regular async functions."
+    },
+    {
+      "question": "Should I test implementation details or user behavior?",
+      "answer": "Always test user behavior. Query by role, label, or text content. Avoid testing state variables or internal methods directly. If a user cannot observe it, do not test it."
+    }
+  ],
+  "relatedRecipes": ["react-storybook-setup", "react-a11y-audit"],
+  "lastUpdated": "2026-03-11"
+}

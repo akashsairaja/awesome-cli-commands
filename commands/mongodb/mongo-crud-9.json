@@ -1,0 +1,8 @@
+{
+  "id": "mongo-crud-9",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-crud",
+  "title": "Delete many",
+  "command": "db.users.deleteMany({ status: \"inactive\" })",
+  "description": "Delete all matching documents."
+}

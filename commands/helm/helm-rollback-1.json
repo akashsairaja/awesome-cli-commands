@@ -1,0 +1,8 @@
+{
+  "id": "helm-rollback-1",
+  "categoryId": "helm",
+  "subcategoryId": "helm-rollback",
+  "title": "Rollback to revision",
+  "command": "helm rollback my-release 2",
+  "description": "Rollback to specific revision number."
+}

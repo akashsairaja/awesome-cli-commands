@@ -1,0 +1,8 @@
+{
+  "id": "nats-kv-3",
+  "categoryId": "nats",
+  "subcategoryId": "nats-kv",
+  "title": "Put value",
+  "command": "nats kv put my-kv key1 'value1'",
+  "description": "Store or update key value."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "apt-14",
+  "categoryId": "ubuntu",
+  "subcategoryId": "users",
+  "title": "Add user",
+  "command": "sudo adduser <username>",
+  "description": "Create a new user with home directory and prompts."
+}

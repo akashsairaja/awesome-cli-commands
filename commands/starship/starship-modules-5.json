@@ -1,0 +1,8 @@
+{
+  "id": "starship-modules-5",
+  "categoryId": "starship",
+  "subcategoryId": "starship-modules",
+  "title": "Git branch module",
+  "command": "[git_branch]\nformat = \"on [$symbol$branch]($style) \"",
+  "description": "Customize git branch display."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "node-perf-2",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-perf",
+  "title": "CPU profiling",
+  "command": "node --cpu-prof app.js",
+  "description": "Generate CPU profile (*.cpuprofile)."
+}

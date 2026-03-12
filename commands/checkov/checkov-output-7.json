@@ -1,0 +1,8 @@
+{
+  "id": "checkov-output-7",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-output",
+  "title": "CSV output",
+  "command": "checkov -d . -o csv > results.csv",
+  "description": "Output results as CSV."
+}

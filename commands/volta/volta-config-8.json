@@ -1,0 +1,8 @@
+{
+  "id": "volta-config-8",
+  "categoryId": "volta",
+  "subcategoryId": "volta-config",
+  "title": "Enable pnpm support",
+  "command": "export VOLTA_FEATURE_PNPM=1",
+  "description": "Enable experimental pnpm support."
+}

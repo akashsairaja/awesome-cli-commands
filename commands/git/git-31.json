@@ -1,0 +1,8 @@
+{
+  "id": "git-31",
+  "categoryId": "git",
+  "subcategoryId": "branches",
+  "title": "Create branch",
+  "command": "git branch <name>",
+  "description": "Create a new branch."
+}

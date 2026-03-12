@@ -1,0 +1,8 @@
+{
+  "id": "rust-rustup-5",
+  "categoryId": "rust",
+  "subcategoryId": "rust-rustup",
+  "title": "Add component",
+  "command": "rustup component add clippy rustfmt",
+  "description": "Add toolchain components."
+}

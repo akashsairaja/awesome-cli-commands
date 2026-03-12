@@ -1,0 +1,9 @@
+{
+  "id": "gh-run-watch",
+  "categoryId": "github",
+  "subcategoryId": "gh-workflow",
+  "title": "Watch workflow run",
+  "command": "gh run watch <run-id>",
+  "description": "Watch a workflow run until completion",
+  "tags": ["run", "watch", "monitor"]
+}

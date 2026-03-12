@@ -1,0 +1,9 @@
+{
+  "id": "vercel-curl-post",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-testing",
+  "title": "POST request to deployment",
+  "command": "vercel curl /api/users -X POST -d '{\"name\":\"John\"}'",
+  "description": "Send POST request to deployment",
+  "tags": ["curl", "post", "json"]
+}

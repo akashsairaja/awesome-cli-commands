@@ -1,0 +1,8 @@
+{
+  "id": "make-syntax-1",
+  "categoryId": "make",
+  "subcategoryId": "make-syntax",
+  "title": "Basic rule",
+  "command": "target: prerequisites\n\trecipe",
+  "description": "Standard Makefile rule structure."
+}

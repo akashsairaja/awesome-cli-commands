@@ -1,0 +1,8 @@
+{
+  "id": "linux-87",
+  "categoryId": "linux",
+  "subcategoryId": "network",
+  "title": "Show listening TCP/UDP sockets",
+  "command": "ss -tuln",
+  "description": "Display all listening TCP and UDP sockets (modern netstat replacement)."
+}

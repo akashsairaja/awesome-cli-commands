@@ -1,0 +1,8 @@
+{
+  "id": "ts-check-1",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-check",
+  "title": "Type check only",
+  "command": "tsc --noEmit",
+  "description": "Validate types without generating JavaScript files."
+}

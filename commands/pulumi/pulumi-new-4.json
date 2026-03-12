@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-new-4",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-new",
+  "title": "List templates",
+  "command": "pulumi new --list-templates",
+  "description": "List available project templates."
+}

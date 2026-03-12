@@ -1,0 +1,8 @@
+{
+  "id": "ssh-50",
+  "categoryId": "sshgpg",
+  "subcategoryId": "config",
+  "title": "ForwardAgent in config",
+  "command": "Host bastion\n  ForwardAgent yes",
+  "description": "Enable agent forwarding for a host."
+}

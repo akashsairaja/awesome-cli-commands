@@ -1,0 +1,8 @@
+{
+  "id": "docker-22",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "View resource usage",
+  "command": "docker stats",
+  "description": "Live stream of container resource usage."
+}

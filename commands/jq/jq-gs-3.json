@@ -1,0 +1,8 @@
+{
+  "id": "jq-gs-3",
+  "title": "Check jq version",
+  "command": "jq --version",
+  "description": "Verify jq is installed and display version",
+  "categoryId": "jq",
+  "subcategoryId": "getting-started"
+}

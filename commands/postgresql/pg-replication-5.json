@@ -1,0 +1,8 @@
+{
+  "id": "pg-replication-5",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-replication",
+  "title": "Create logical publication",
+  "command": "CREATE PUBLICATION my_pub FOR TABLE users;",
+  "description": "Create publication for logical replication."
+}

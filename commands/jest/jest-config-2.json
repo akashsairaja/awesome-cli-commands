@@ -1,0 +1,8 @@
+{
+  "id": "jest-config-2",
+  "categoryId": "jest",
+  "subcategoryId": "jest-configuration",
+  "title": "Config file option",
+  "command": "jest --config jest.config.js",
+  "description": "Specify configuration file path."
+}

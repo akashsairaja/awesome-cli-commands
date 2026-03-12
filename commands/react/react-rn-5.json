@@ -1,0 +1,8 @@
+{
+  "id": "react-rn-5",
+  "categoryId": "react",
+  "subcategoryId": "react-native",
+  "title": "Run on iOS device",
+  "command": "npx react-native run-ios --device \"iPhone\"",
+  "description": "Build and run on specific iOS device."
+}

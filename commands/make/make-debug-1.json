@@ -1,0 +1,8 @@
+{
+  "id": "make-debug-1",
+  "categoryId": "make",
+  "subcategoryId": "make-debug",
+  "title": "Dry run",
+  "command": "make -n",
+  "description": "Print commands without executing."
+}

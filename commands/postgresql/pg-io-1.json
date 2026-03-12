@@ -1,0 +1,8 @@
+{
+  "id": "pg-io-1",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-import",
+  "title": "Copy to CSV",
+  "command": "\\copy users TO 'users.csv' WITH CSV HEADER",
+  "description": "Export table to CSV file."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "trivy-fs-2",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-fs",
+  "title": "Scan with skip",
+  "command": "trivy fs --skip-dirs node_modules,vendor .",
+  "description": "Scan and skip certain directories."
+}

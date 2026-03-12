@@ -1,0 +1,8 @@
+{
+  "id": "mongo-backup-4",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-backup",
+  "title": "Restore database",
+  "command": "mongorestore --db mydb /backup/mydb",
+  "description": "Import from BSON dump."
+}

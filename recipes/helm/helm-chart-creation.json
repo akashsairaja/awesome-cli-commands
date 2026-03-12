@@ -1,0 +1,67 @@
+{
+  "id": "helm-chart-creation",
+  "stackId": "helm",
+  "name": "Create Custom Helm Charts",
+  "description": "Scaffold, structure, and build custom Helm charts for your applications with proper templates, helpers, and values files.",
+  "difficulty": "intermediate",
+  "timeMinutes": 20,
+  "trending": true,
+  "trendingReason": "Teams increasingly package internal services as Helm charts for standardized deployments",
+  "tags": ["create", "scaffold", "templates", "packaging"],
+  "prerequisites": [
+    "Helm 3 installed",
+    "Basic understanding of Kubernetes manifests",
+    "Familiarity with Go templates"
+  ],
+  "steps": [
+    {
+      "title": "Scaffold a new chart",
+      "description": "Generate the default Helm chart directory structure.",
+      "command": "helm create myapp",
+      "tip": "The scaffold includes a Deployment, Service, ServiceAccount, Ingress, and HPA template ready to customize."
+    },
+    {
+      "title": "Explore the chart structure",
+      "description": "Understand the key files and directories in the generated chart.",
+      "command": "find myapp -type f | sort"
+    },
+    {
+      "title": "Edit the values file",
+      "description": "Customize the default values that will be used across your templates.",
+      "command": "cat myapp/values.yaml",
+      "tip": "Keep values.yaml well-documented with comments explaining each parameter and its default."
+    },
+    {
+      "title": "Add a custom template",
+      "description": "Create a ConfigMap template using Helm template syntax.",
+      "command": "cat > myapp/templates/configmap.yaml << 'EOF'\napiVersion: v1\nkind: ConfigMap\nmetadata:\n  name: {{ include \"myapp.fullname\" . }}-config\n  labels:\n    {{- include \"myapp.labels\" . | nindent 4 }}\ndata:\n  APP_ENV: {{ .Values.config.environment | quote }}\n  LOG_LEVEL: {{ .Values.config.logLevel | quote }}\nEOF"
+    },
+    {
+      "title": "Render templates locally",
+      "description": "Preview the generated Kubernetes manifests without deploying.",
+      "command": "helm template my-release myapp --set config.environment=production --set config.logLevel=warn"
+    },
+    {
+      "title": "Package the chart",
+      "description": "Create a versioned .tgz archive of the chart for distribution.",
+      "command": "helm package myapp --version 1.0.0 --app-version 1.0.0"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Helm Chart Creation Workflow\nset -euo pipefail\n\nCHART_NAME=${1:?\"Usage: $0 <chart-name>\"}\n\necho \"=== Scaffolding Chart ===\"\nhelm create \"$CHART_NAME\"\n\necho \"\"\necho \"=== Chart Structure ===\"\nfind \"$CHART_NAME\" -type f | sort\n\necho \"\"\necho \"=== Adding ConfigMap Template ===\"\ncat > \"$CHART_NAME/templates/configmap.yaml\" << 'TMPL'\napiVersion: v1\nkind: ConfigMap\nmetadata:\n  name: {{ include \"CHART.fullname\" . }}-config\n  labels:\n    {{- include \"CHART.labels\" . | nindent 4 }}\ndata:\n  APP_ENV: {{ .Values.config.environment | default \"development\" | quote }}\n  LOG_LEVEL: {{ .Values.config.logLevel | default \"info\" | quote }}\nTMPL\n\n# Replace CHART placeholder with actual chart name\nsed -i \"s/CHART/$CHART_NAME/g\" \"$CHART_NAME/templates/configmap.yaml\"\n\necho \"\"\necho \"=== Rendering Templates ===\"\nhelm template test-release \"$CHART_NAME\"\n\necho \"\"\necho \"=== Linting Chart ===\"\nhelm lint \"$CHART_NAME\"\n\necho \"\"\necho \"=== Packaging Chart ===\"\nhelm package \"$CHART_NAME\"\n\necho \"Done! Chart packaged as $CHART_NAME-0.1.0.tgz\"",
+  "faq": [
+    {
+      "question": "How do I add dependencies to my chart?",
+      "answer": "Define dependencies in Chart.yaml under the 'dependencies' key with name, version, and repository. Then run 'helm dependency update' to download them into the charts/ directory."
+    },
+    {
+      "question": "What are named templates and when should I use them?",
+      "answer": "Named templates (defined in _helpers.tpl with 'define') are reusable template snippets. Use them for labels, selectors, and resource names that appear in multiple templates to keep your chart DRY."
+    },
+    {
+      "question": "How do I handle secrets in Helm charts?",
+      "answer": "Never commit secrets in values.yaml. Use Kubernetes Secrets with values injected at deploy time via --set or external secret managers like External Secrets Operator or Sealed Secrets."
+    }
+  ],
+  "relatedRecipes": ["helm-chart-testing", "helm-hooks-workflow"],
+  "lastUpdated": "2026-03-11"
+}

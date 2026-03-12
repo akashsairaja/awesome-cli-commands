@@ -1,0 +1,9 @@
+{
+  "id": "deno-outdated",
+  "categoryId": "deno",
+  "subcategoryId": "deno-package",
+  "title": "Check Outdated",
+  "command": "deno outdated",
+  "description": "Check for outdated dependencies",
+  "tags": ["outdated", "update", "dependencies"]
+}

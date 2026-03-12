@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-config-region",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-auth",
+  "title": "Set Default Region",
+  "command": "gcloud config set compute/region <region>",
+  "description": "Set the default compute region",
+  "tags": ["config", "region", "default"]
+}

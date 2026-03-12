@@ -1,0 +1,8 @@
+{
+  "id": "snow-gs-3",
+  "title": "Connect to Snowflake",
+  "command": "snowsql -a <account> -u <user>",
+  "description": "Connect to a Snowflake account using SnowSQL with account name and username",
+  "categoryId": "snowflake",
+  "subcategoryId": "getting-started"
+}

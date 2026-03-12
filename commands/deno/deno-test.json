@@ -1,0 +1,9 @@
+{
+  "id": "deno-test",
+  "categoryId": "deno",
+  "subcategoryId": "deno-test",
+  "title": "Run Tests",
+  "command": "deno test",
+  "description": "Execute all tests in project",
+  "tags": ["test", "run", "all"]
+}

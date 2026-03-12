@@ -1,0 +1,9 @@
+{
+  "id": "nginx-perf-browser-cache",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-performance",
+  "title": "Browser cache static assets",
+  "command": "location ~* \\.(jpg|css|js|svg|woff2)$ { expires 1y; add_header Cache-Control \"public, immutable\"; }",
+  "description": "Cache static files for one year",
+  "tags": ["performance", "cache", "static", "expires"]
+}

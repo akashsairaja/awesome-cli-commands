@@ -1,0 +1,8 @@
+{
+  "id": "snyk-fix-1",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-fix",
+  "title": "Auto-fix vulnerabilities",
+  "command": "snyk fix",
+  "description": "Automatically apply available fixes to dependencies."
+}

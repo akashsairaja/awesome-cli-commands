@@ -1,0 +1,8 @@
+{
+  "id": "ollama-44",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-modelfile",
+  "title": "Push to registry",
+  "command": "ollama push username/my-model",
+  "description": "Upload custom model to Ollama registry."
+}

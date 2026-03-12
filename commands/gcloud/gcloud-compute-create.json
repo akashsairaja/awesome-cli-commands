@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-compute-create",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-compute",
+  "title": "Create VM Instance",
+  "command": "gcloud compute instances create <name> --zone=<zone> --machine-type=e2-medium --image-family=ubuntu-2204-lts --image-project=ubuntu-os-cloud",
+  "description": "Create a new Compute Engine VM",
+  "tags": ["vm", "create", "instance"]
+}

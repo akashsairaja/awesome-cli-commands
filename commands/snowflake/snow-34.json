@@ -1,0 +1,8 @@
+{
+  "id": "snow-34",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-cortex",
+  "title": "Translate text (SQL)",
+  "command": "snow sql -q \"SELECT SNOWFLAKE.CORTEX.TRANSLATE(text_col, 'en', 'es') FROM docs\"",
+  "description": "Translate text between languages."
+}

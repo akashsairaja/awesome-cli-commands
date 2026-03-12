@@ -1,0 +1,8 @@
+{
+  "id": "linux-47",
+  "categoryId": "linux",
+  "subcategoryId": "processes",
+  "title": "Send signal to process",
+  "command": "kill -SIGTERM <pid>",
+  "description": "Send a graceful termination signal to a process."
+}

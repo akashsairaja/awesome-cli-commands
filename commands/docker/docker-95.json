@@ -1,0 +1,8 @@
+{
+  "id": "docker-95",
+  "categoryId": "docker",
+  "subcategoryId": "buildx",
+  "title": "Create builder",
+  "command": "docker buildx create --name mybuilder --use",
+  "description": "Create and use new builder instance."
+}

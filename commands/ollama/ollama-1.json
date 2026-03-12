@@ -1,0 +1,8 @@
+{
+  "id": "ollama-1",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-models",
+  "title": "Pull a model",
+  "command": "ollama pull llama2",
+  "description": "Download a model from the Ollama library."
+}

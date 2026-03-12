@@ -1,0 +1,8 @@
+{
+  "id": "docker-79",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "Stop and remove images",
+  "command": "docker compose down --rmi all",
+  "description": "Stop services and remove all images."
+}

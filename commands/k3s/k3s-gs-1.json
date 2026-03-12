@@ -1,0 +1,8 @@
+{
+  "id": "k3s-gs-1",
+  "title": "Install k3s",
+  "command": "curl -sfL https://get.k3s.io | sh -",
+  "description": "Install k3s lightweight Kubernetes on Linux",
+  "categoryId": "k3s",
+  "subcategoryId": "getting-started"
+}

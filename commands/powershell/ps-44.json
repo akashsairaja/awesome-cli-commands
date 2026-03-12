@@ -1,0 +1,8 @@
+{
+  "id": "ps-44",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-objects",
+  "title": "Create custom object",
+  "command": "[PSCustomObject]@{ Name = 'John'; Age = 30 }",
+  "description": "Create custom object from hashtable."
+}

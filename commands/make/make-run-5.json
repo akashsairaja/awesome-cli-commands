@@ -1,0 +1,8 @@
+{
+  "id": "make-run-5",
+  "categoryId": "make",
+  "subcategoryId": "make-run",
+  "title": "Change directory",
+  "command": "make -C subdir",
+  "description": "Run make in different directory."
+}

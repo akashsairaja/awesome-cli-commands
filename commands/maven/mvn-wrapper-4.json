@@ -1,0 +1,8 @@
+{
+  "id": "mvn-wrapper-4",
+  "categoryId": "maven",
+  "subcategoryId": "mvn-wrapper",
+  "title": "Generate with source downloader",
+  "command": "mvn wrapper:wrapper -Dtype=source",
+  "description": "Include MavenWrapperDownloader.java source. Compiles on-the-fly to download the wrapper JAR."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tofu-output-7",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-output",
+  "title": "Check formatting",
+  "command": "tofu fmt -check",
+  "description": "Check if files are formatted without modifying."
+}

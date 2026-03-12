@@ -1,0 +1,8 @@
+{
+  "id": "vim-65",
+  "categoryId": "vim",
+  "subcategoryId": "advanced-editing",
+  "title": "Join lines",
+  "command": "J",
+  "description": "Merge current line with next."
+}

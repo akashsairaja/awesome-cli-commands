@@ -1,0 +1,8 @@
+{
+  "id": "tf-state-4",
+  "categoryId": "terraform",
+  "subcategoryId": "state",
+  "title": "Migrate state",
+  "command": "terraform init -migrate-state",
+  "description": "Migrate state to new backend."
+}

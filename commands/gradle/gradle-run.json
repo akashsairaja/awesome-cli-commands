@@ -1,0 +1,9 @@
+{
+  "id": "gradle-run",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-tasks",
+  "title": "Run Application",
+  "command": "./gradlew run",
+  "description": "Run the application (application plugin)",
+  "tags": ["run", "execute", "application"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "vercel-git-disconnect",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-integrations",
+  "title": "Disconnect Git provider",
+  "command": "vercel git disconnect",
+  "description": "Remove Git provider connection",
+  "tags": ["git", "disconnect", "unlink"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "rust-gs-1",
+  "title": "Install Rust",
+  "command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh",
+  "description": "Install Rust using rustup (official installer)",
+  "categoryId": "rust",
+  "subcategoryId": "getting-started"
+}

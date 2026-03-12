@@ -1,0 +1,8 @@
+{
+  "id": "npm-install-11",
+  "categoryId": "npm",
+  "subcategoryId": "npm-install",
+  "title": "yarn frozen lockfile",
+  "command": "yarn install --frozen-lockfile",
+  "description": "Install without updating yarn.lock."
+}

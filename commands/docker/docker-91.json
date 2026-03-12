@@ -1,0 +1,8 @@
+{
+  "id": "docker-91",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "Restart services",
+  "command": "docker compose restart",
+  "description": "Restart all services."
+}

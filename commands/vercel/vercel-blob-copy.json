@@ -1,0 +1,9 @@
+{
+  "id": "vercel-blob-copy",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-storage",
+  "title": "Copy blob file",
+  "command": "vercel blob copy <from-url> <to-pathname>",
+  "description": "Copy file to new location in Blob",
+  "tags": ["blob", "copy", "move"]
+}

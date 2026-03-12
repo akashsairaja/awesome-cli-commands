@@ -1,0 +1,8 @@
+{
+  "id": "spark-gs-1",
+  "title": "Install Apache Spark (macOS)",
+  "command": "brew install apache-spark",
+  "description": "Install Apache Spark using Homebrew on macOS",
+  "categoryId": "spark",
+  "subcategoryId": "getting-started"
+}

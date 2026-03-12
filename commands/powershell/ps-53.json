@@ -1,0 +1,8 @@
+{
+  "id": "ps-53",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-pipeline",
+  "title": "Filter with Where-Object",
+  "command": "Get-Process | Where-Object CPU -gt 10",
+  "description": "Filter objects by property."
+}

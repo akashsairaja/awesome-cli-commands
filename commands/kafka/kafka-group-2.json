@@ -1,0 +1,8 @@
+{
+  "id": "kafka-group-2",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-groups",
+  "title": "Describe group",
+  "command": "kafka-consumer-groups.sh --describe --group my-group --bootstrap-server localhost:9092",
+  "description": "Show group members and lag."
+}

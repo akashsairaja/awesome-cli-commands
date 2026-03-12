@@ -1,0 +1,9 @@
+{
+  "id": "nginx-quit",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-control",
+  "title": "Graceful stop",
+  "command": "sudo nginx -s quit",
+  "description": "Gracefully stop Nginx (finish current requests)",
+  "tags": ["quit", "graceful", "stop"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "azure-webapp-config",
+  "categoryId": "azure",
+  "subcategoryId": "azure-webapp",
+  "title": "Configure App Settings",
+  "command": "az webapp config appsettings set --resource-group <rg> --name <app-name> --settings KEY=value",
+  "description": "Set environment variables for web app",
+  "tags": ["webapp", "config", "env"]
+}

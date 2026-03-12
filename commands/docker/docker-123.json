@@ -1,0 +1,8 @@
+{
+  "id": "docker-123",
+  "categoryId": "docker",
+  "subcategoryId": "swarm",
+  "title": "Get manager join token",
+  "command": "docker swarm join-token manager",
+  "description": "Show token to add managers."
+}

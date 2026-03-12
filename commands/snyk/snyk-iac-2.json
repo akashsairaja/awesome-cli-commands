@@ -1,0 +1,8 @@
+{
+  "id": "snyk-iac-2",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-iac",
+  "title": "Test specific file",
+  "command": "snyk iac test main.tf",
+  "description": "Test specific Terraform file."
+}

@@ -1,0 +1,58 @@
+{
+  "id": "mongo-replica-set",
+  "stackId": "mongodb",
+  "name": "Replica Set Initialization and Management",
+  "description": "Deploy a MongoDB replica set for high availability with automatic failover, data redundancy, and read scaling across multiple nodes.",
+  "difficulty": "advanced",
+  "timeMinutes": 20,
+  "tags": ["replica-set", "high-availability", "failover", "replication"],
+  "prerequisites": [
+    "MongoDB 6+ installed on 3 servers (or 3 local instances on different ports)",
+    "Network connectivity between all nodes"
+  ],
+  "steps": [
+    {
+      "title": "Start MongoDB instances with replication enabled",
+      "description": "Launch three mongod instances with the same replica set name.",
+      "command": "mongod --replSet rs0 --port 27017 --dbpath /data/rs0-0 --bind_ip localhost --fork --logpath /var/log/mongodb/rs0-0.log",
+      "tip": "Repeat for ports 27018 and 27019 with different dbpath and logpath values."
+    },
+    {
+      "title": "Initialize the replica set",
+      "description": "Connect to one instance and initialize the replica set with all members.",
+      "command": "mongosh --port 27017 --eval 'rs.initiate({_id: \"rs0\", members: [{_id: 0, host: \"localhost:27017\"}, {_id: 1, host: \"localhost:27018\"}, {_id: 2, host: \"localhost:27019\"}]})'"
+    },
+    {
+      "title": "Check replica set status",
+      "description": "View the current state of all replica set members and identify the primary.",
+      "command": "mongosh --port 27017 --eval 'rs.status().members.forEach(m => print(m.name + \": \" + m.stateStr + \" (health: \" + m.health + \")\"))'"
+    },
+    {
+      "title": "Verify replication is working",
+      "description": "Write data to the primary and read it from a secondary to confirm replication.",
+      "command": "mongosh --port 27017 --eval 'db.test.insertOne({msg: \"replication test\", ts: new Date()})' mydb && mongosh --port 27018 --eval 'db.getMongo().setReadPref(\"secondary\"); db.test.find().sort({ts: -1}).limit(1)' mydb"
+    },
+    {
+      "title": "View replication lag",
+      "description": "Check how far behind each secondary is from the primary.",
+      "command": "mongosh --port 27017 --eval 'rs.printSecondaryReplicationInfo()'"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# MongoDB Replica Set Status and Health Check\nset -euo pipefail\n\nRS_PRIMARY=\"localhost:27017\"\n\necho \"=== Replica Set Configuration ===\"\nmongosh --port 27017 --quiet --eval \"\nconst config = rs.conf();\nprint('Replica Set: ' + config._id);\nconfig.members.forEach(m => {\n  print('  ' + m.host + ' (priority: ' + m.priority + ', votes: ' + m.votes + ')');\n});\n\"\n\necho \"\"\necho \"=== Member Status ===\"\nmongosh --port 27017 --quiet --eval \"\nconst status = rs.status();\nstatus.members.forEach(m => {\n  const lag = m.optimeDate ? (status.date - m.optimeDate) / 1000 : 'N/A';\n  print(m.name + ': ' + m.stateStr + ' | health: ' + m.health + ' | lag: ' + lag + 's');\n});\n\"\n\necho \"\"\necho \"=== Replication Lag Detail ===\"\nmongosh --port 27017 --quiet --eval \"rs.printSecondaryReplicationInfo()\"\n\necho \"\"\necho \"=== Oplog Size ===\"\nmongosh --port 27017 --quiet --eval \"\nconst oplog = db.getSiblingDB('local').oplog.rs.stats();\nprint('Size: ' + Math.round(oplog.size / 1024 / 1024) + 'MB');\nprint('Max Size: ' + Math.round(oplog.maxSize / 1024 / 1024) + 'MB');\nprint('Docs: ' + oplog.count);\n\"\n\necho \"\"\necho \"=== Connection String ===\"\nmongosh --port 27017 --quiet --eval \"\nconst config = rs.conf();\nconst hosts = config.members.map(m => m.host).join(',');\nprint('mongodb://' + hosts + '/mydb?replicaSet=' + config._id);\n\"",
+  "faq": [
+    {
+      "question": "What happens when the primary goes down?",
+      "answer": "The remaining members hold an election and a secondary with the most up-to-date data is promoted to primary. This typically completes in 10-12 seconds. Applications using the replica set connection string reconnect automatically."
+    },
+    {
+      "question": "Why do I need an odd number of members?",
+      "answer": "Elections require a majority vote. With 3 members, 2 form a majority even if 1 is down. With 2 members, losing one means no majority and no election can happen. Use an arbiter if you can only afford 2 data-bearing nodes."
+    },
+    {
+      "question": "How do I add a new member to an existing replica set?",
+      "answer": "Start a new mongod with --replSet and the same replica set name. Then on the primary run rs.add('new-host:27017'). MongoDB automatically syncs data to the new member via initial sync."
+    }
+  ],
+  "relatedRecipes": ["mongo-backup-restore", "mongo-sharding-setup"],
+  "lastUpdated": "2026-03-11"
+}

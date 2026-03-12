@@ -1,0 +1,8 @@
+{
+  "id": "tf-state-5",
+  "categoryId": "terraform",
+  "subcategoryId": "state",
+  "title": "List resources",
+  "command": "terraform state list",
+  "description": "Show all resources in state."
+}

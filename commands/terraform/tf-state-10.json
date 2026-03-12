@@ -1,0 +1,8 @@
+{
+  "id": "tf-state-10",
+  "categoryId": "terraform",
+  "subcategoryId": "state",
+  "title": "Pull remote state",
+  "command": "terraform state pull > state.json",
+  "description": "Download and output remote state."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "py-73",
+  "categoryId": "python",
+  "subcategoryId": "python-pyenv",
+  "title": "Set global version",
+  "command": "pyenv global 3.12.0",
+  "description": "Set Python version for all shells."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "db-62",
+  "categoryId": "database",
+  "subcategoryId": "mongodb",
+  "title": "Find with filter",
+  "command": "db.collection.find({ age: { $gte: 18 } }).sort({ name: 1 })",
+  "description": "Query with comparison operator and sort."
+}

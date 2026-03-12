@@ -1,0 +1,8 @@
+{
+  "id": "make-modern-2",
+  "categoryId": "make",
+  "subcategoryId": "make-modern",
+  "title": "Docker target",
+  "command": "docker-build:\n\tdocker build -t myapp:$(VERSION) .",
+  "description": "Build Docker image."
+}

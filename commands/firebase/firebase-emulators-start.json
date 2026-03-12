@@ -1,0 +1,9 @@
+{
+  "id": "firebase-emulators-start",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-emulators",
+  "title": "Start all emulators",
+  "command": "firebase emulators:start",
+  "description": "Start all configured Firebase emulators",
+  "tags": ["emulators", "start", "local"]
+}

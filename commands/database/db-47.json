@@ -1,0 +1,8 @@
+{
+  "id": "db-47",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Show variables",
+  "command": "SHOW VARIABLES LIKE '%max_connections%';",
+  "description": "Show server configuration variables."
+}

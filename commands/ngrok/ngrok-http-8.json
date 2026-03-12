@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-http-8",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-http",
+  "title": "Enable compression",
+  "command": "ngrok http --compression 3000",
+  "description": "Enable gzip compression for responses."
+}

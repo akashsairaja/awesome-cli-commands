@@ -1,0 +1,9 @@
+{
+  "id": "ansible-galaxy-install-requirements",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-galaxy",
+  "title": "Install from Requirements",
+  "command": "ansible-galaxy install -r requirements.yml",
+  "description": "Install roles/collections from requirements file",
+  "tags": ["galaxy", "requirements", "install"]
+}

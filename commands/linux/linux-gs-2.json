@@ -1,0 +1,8 @@
+{
+  "id": "linux-gs-2",
+  "title": "Check distro info",
+  "command": "cat /etc/os-release",
+  "description": "Display distribution name, version, and release details",
+  "categoryId": "linux",
+  "subcategoryId": "getting-started"
+}

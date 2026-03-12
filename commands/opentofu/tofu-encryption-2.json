@@ -1,0 +1,8 @@
+{
+  "id": "tofu-encryption-2",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-encryption",
+  "title": "AWS KMS encryption",
+  "command": "key_provider \"aws_kms\" \"my_kms\" {\n  kms_key_id = \"alias/my-key\"\n  region = \"us-east-1\"\n}",
+  "description": "Use AWS KMS for encryption."
+}

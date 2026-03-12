@@ -1,0 +1,8 @@
+{
+  "id": "npm-scripts-3",
+  "categoryId": "npm",
+  "subcategoryId": "npm-scripts",
+  "title": "Run test",
+  "command": "npm test",
+  "description": "Run test script (shorthand)."
+}

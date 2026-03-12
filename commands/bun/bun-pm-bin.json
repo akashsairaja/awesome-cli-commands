@@ -1,0 +1,9 @@
+{
+  "id": "bun-pm-bin",
+  "categoryId": "bun",
+  "subcategoryId": "bun-tools",
+  "title": "Show Bin Path",
+  "command": "bun pm bin",
+  "description": "Show local bin folder path",
+  "tags": ["pm", "bin", "path"]
+}

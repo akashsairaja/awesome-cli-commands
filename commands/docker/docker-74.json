@@ -1,0 +1,8 @@
+{
+  "id": "docker-74",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "Start detached",
+  "command": "docker compose up -d",
+  "description": "Start all services in background."
+}

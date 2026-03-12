@@ -1,0 +1,8 @@
+{
+  "id": "lazygit-1",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-lazygit",
+  "title": "Open lazygit",
+  "command": "lazygit",
+  "description": "Launch interactive git interface."
+}

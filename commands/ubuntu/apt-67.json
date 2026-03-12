@@ -1,0 +1,8 @@
+{
+  "id": "apt-67",
+  "categoryId": "ubuntu",
+  "subcategoryId": "ubuntu-network",
+  "title": "Allow port through UFW",
+  "command": "sudo ufw allow <port>/tcp",
+  "description": "Allow incoming TCP traffic on a specific port."
+}

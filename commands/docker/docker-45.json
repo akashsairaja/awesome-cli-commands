@@ -1,0 +1,8 @@
+{
+  "id": "docker-45",
+  "categoryId": "docker",
+  "subcategoryId": "images",
+  "title": "Remove image",
+  "command": "docker rmi <image>",
+  "description": "Remove a local image."
+}

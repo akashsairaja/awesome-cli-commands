@@ -1,0 +1,8 @@
+{
+  "id": "minikube-42",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-config",
+  "title": "Set default memory",
+  "command": "minikube config set memory 4096",
+  "description": "Set default memory allocation (MB)."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "snyk-container-7",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-container",
+  "title": "Specify platform",
+  "command": "snyk container test myapp:latest --platform=linux/amd64",
+  "description": "Test a specific platform for multi-arch images."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ps-55",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-pipeline",
+  "title": "Select properties",
+  "command": "Get-Process | Select-Object Name, CPU, WorkingSet",
+  "description": "Select specific properties."
+}

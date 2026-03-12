@@ -1,0 +1,8 @@
+{
+  "id": "npm-ws-5",
+  "categoryId": "npm",
+  "subcategoryId": "npm-workspaces",
+  "title": "pnpm filter with deps",
+  "command": "pnpm --filter @myapp/core... build",
+  "description": "Run in workspace and its dependencies."
+}

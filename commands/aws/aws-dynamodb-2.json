@@ -1,0 +1,8 @@
+{
+  "id": "aws-dynamodb-2",
+  "categoryId": "aws",
+  "subcategoryId": "dynamodb",
+  "title": "Batch write items",
+  "command": "aws dynamodb batch-write-item --request-items file://batch-write.json --return-consumed-capacity TOTAL",
+  "description": "Bulk insert/delete up to 25 items per request."
+}

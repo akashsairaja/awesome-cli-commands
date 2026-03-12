@@ -1,0 +1,8 @@
+{
+  "id": "temporal-task-queue-3",
+  "categoryId": "temporal",
+  "subcategoryId": "task-queue",
+  "title": "List task queue partitions",
+  "command": "temporal task-queue list-partition --task-queue my-queue",
+  "description": "Display partition assignments and matching nodes."
+}

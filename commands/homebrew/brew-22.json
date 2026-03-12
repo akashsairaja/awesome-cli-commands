@@ -1,0 +1,8 @@
+{
+  "id": "brew-22",
+  "categoryId": "homebrew",
+  "subcategoryId": "casks",
+  "title": "Upgrade all casks",
+  "command": "brew upgrade --cask",
+  "description": "Upgrade all cask applications."
+}

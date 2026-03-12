@@ -1,0 +1,8 @@
+{
+  "id": "docker-51",
+  "categoryId": "docker",
+  "subcategoryId": "images",
+  "title": "Show image history",
+  "command": "docker history <image>",
+  "description": "Show image layer history."
+}

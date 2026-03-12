@@ -1,0 +1,8 @@
+{
+  "id": "httpie-auth-6",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-auth",
+  "title": "Netrc authentication",
+  "command": "http --auth-type=netrc GET https://api.example.com/data",
+  "description": "Use credentials from ~/.netrc file."
+}

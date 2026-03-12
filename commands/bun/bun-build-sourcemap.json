@@ -1,0 +1,9 @@
+{
+  "id": "bun-build-sourcemap",
+  "categoryId": "bun",
+  "subcategoryId": "bun-build",
+  "title": "Build with Sourcemaps",
+  "command": "bun build ./src/index.ts --outdir ./dist --sourcemap",
+  "description": "Generate source maps",
+  "tags": ["build", "sourcemap", "debug"]
+}

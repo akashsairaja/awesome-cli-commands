@@ -1,0 +1,8 @@
+{
+  "id": "kafka-cons-1",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-consumer",
+  "title": "Console consumer",
+  "command": "kafka-console-consumer.sh --topic my-topic --bootstrap-server localhost:9092",
+  "description": "Consume new messages."
+}

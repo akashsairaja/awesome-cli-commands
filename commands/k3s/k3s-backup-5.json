@@ -1,0 +1,8 @@
+{
+  "id": "k3s-backup-5",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-backup",
+  "title": "Configure auto snapshots",
+  "command": "curl -sfL https://get.k3s.io | sh -s - --etcd-snapshot-schedule-cron '0 */6 * * *'",
+  "description": "Enable automatic snapshots every 6 hours."
+}

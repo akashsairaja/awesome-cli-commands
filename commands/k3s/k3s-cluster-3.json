@@ -1,0 +1,8 @@
+{
+  "id": "k3s-cluster-3",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-cluster",
+  "title": "Check k3s status",
+  "command": "sudo systemctl status k3s",
+  "description": "Check k3s service status."
+}

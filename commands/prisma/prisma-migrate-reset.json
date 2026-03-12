@@ -1,0 +1,9 @@
+{
+  "id": "prisma-migrate-reset",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-migrate",
+  "title": "Reset database",
+  "command": "npx prisma migrate reset",
+  "description": "Reset database and apply all migrations",
+  "tags": ["migrate", "reset", "clean"]
+}

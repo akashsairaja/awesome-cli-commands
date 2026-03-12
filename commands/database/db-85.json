@@ -1,0 +1,8 @@
+{
+  "id": "db-85",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Flush privileges",
+  "command": "FLUSH PRIVILEGES;",
+  "description": "Reload grant tables to apply user/privilege changes made directly to mysql tables."
+}

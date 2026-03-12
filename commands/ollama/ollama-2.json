@@ -1,0 +1,8 @@
+{
+  "id": "ollama-2",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-models",
+  "title": "Pull specific version",
+  "command": "ollama pull llama2:13b",
+  "description": "Download a specific model variant or size."
+}

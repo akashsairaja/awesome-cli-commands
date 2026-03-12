@@ -1,0 +1,9 @@
+{
+  "id": "curl-use-cookies",
+  "categoryId": "curl",
+  "subcategoryId": "curl-auth",
+  "title": "Use cookies from file",
+  "command": "curl -b cookies.txt https://example.com/protected",
+  "description": "Load cookies from file for request",
+  "tags": ["cookie", "load", "file"]
+}

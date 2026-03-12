@@ -1,0 +1,8 @@
+{
+  "id": "xh-requests-11",
+  "categoryId": "xh",
+  "subcategoryId": "xh-requests",
+  "title": "Custom headers",
+  "command": "xh GET https://api.example.com X-Custom-Header:myvalue Accept:application/xml",
+  "description": "Set custom request headers."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "snyk-gs-3",
+  "title": "Check Snyk version",
+  "command": "snyk --version",
+  "description": "Verify Snyk is installed and display the current version",
+  "categoryId": "snyk",
+  "subcategoryId": "getting-started"
+}

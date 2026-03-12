@@ -1,0 +1,9 @@
+{
+  "id": "redis-mset",
+  "categoryId": "redis",
+  "subcategoryId": "redis-strings",
+  "title": "Set multiple keys",
+  "command": "MSET key1 value1 key2 value2",
+  "description": "Set multiple key-value pairs atomically",
+  "tags": ["mset", "multiple", "batch"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "brew-20",
+  "categoryId": "homebrew",
+  "subcategoryId": "casks",
+  "title": "Uninstall cask",
+  "command": "brew uninstall --cask <app>",
+  "description": "Uninstall macOS application."
+}

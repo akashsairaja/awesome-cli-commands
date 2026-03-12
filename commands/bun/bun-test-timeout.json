@@ -1,0 +1,9 @@
+{
+  "id": "bun-test-timeout",
+  "categoryId": "bun",
+  "subcategoryId": "bun-test",
+  "title": "Set Test Timeout",
+  "command": "bun test --timeout 10000",
+  "description": "Set test timeout in milliseconds",
+  "tags": ["test", "timeout", "config"]
+}

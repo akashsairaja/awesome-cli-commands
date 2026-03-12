@@ -1,0 +1,9 @@
+{
+  "id": "rg-context",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-search",
+  "title": "Show context lines",
+  "command": "rg -C 3 \"pattern\"",
+  "description": "Show 3 lines before and after match",
+  "tags": ["search", "context", "lines"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "mongo-perf-3",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-performance",
+  "title": "Kill operation",
+  "command": "db.killOp(<opid>)",
+  "description": "Terminate a long-running or stuck operation."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ts-check-6",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-check",
+  "title": "Check unused locals",
+  "command": "tsc --noEmit --noUnusedLocals --noUnusedParameters",
+  "description": "Error on unused variables and parameters."
+}

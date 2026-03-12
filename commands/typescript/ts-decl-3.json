@@ -1,0 +1,8 @@
+{
+  "id": "ts-decl-3",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-declarations",
+  "title": "With declaration maps",
+  "command": "tsc --declaration --declarationMap",
+  "description": "Generate source maps for .d.ts files (enables Go to Definition)."
+}

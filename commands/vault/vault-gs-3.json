@@ -1,0 +1,8 @@
+{
+  "id": "vault-gs-3",
+  "title": "Check Vault status",
+  "command": "vault status",
+  "description": "Display the current status of the Vault server",
+  "categoryId": "vault",
+  "subcategoryId": "getting-started"
+}

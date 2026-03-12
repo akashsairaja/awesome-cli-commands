@@ -1,0 +1,8 @@
+{
+  "id": "helm-install-3",
+  "categoryId": "helm",
+  "subcategoryId": "helm-install",
+  "title": "Install with set",
+  "command": "helm install my-release bitnami/nginx --set replicaCount=3",
+  "description": "Install with inline value overrides."
+}

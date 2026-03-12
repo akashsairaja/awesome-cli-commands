@@ -1,0 +1,8 @@
+{
+  "id": "mongo-users-5",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-users",
+  "title": "Create database admin",
+  "command": "db.createUser({ user: \"dbadmin\", pwd: \"password\", roles: [{ role: \"dbAdmin\", db: \"mydb\" }] })",
+  "description": "Create a user with database admin rights (indexes, stats, compact, but no read/write)."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "claude-36",
+  "categoryId": "claudecode",
+  "subcategoryId": "sessions",
+  "title": "Resume numbered session",
+  "command": "/resume 3",
+  "description": "Resume session by number from history."
+}

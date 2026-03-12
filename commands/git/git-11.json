@@ -1,0 +1,8 @@
+{
+  "id": "git-11",
+  "categoryId": "git",
+  "subcategoryId": "basics",
+  "title": "Commit all tracked changes",
+  "command": "git commit -am \"message\"",
+  "description": "Stage and commit all tracked files."
+}

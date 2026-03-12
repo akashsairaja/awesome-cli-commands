@@ -1,0 +1,8 @@
+{
+  "id": "httpie-requests-14",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-requests",
+  "title": "Form data (URL-encoded)",
+  "command": "http -f POST https://api.example.com/login user=admin password=secret",
+  "description": "Submit URL-encoded form data with -f/--form."
+}

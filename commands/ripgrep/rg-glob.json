@@ -1,0 +1,9 @@
+{
+  "id": "rg-glob",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-files",
+  "title": "Search with glob pattern",
+  "command": "rg -g \"*.ts\" \"pattern\"",
+  "description": "Search only in matching files",
+  "tags": ["glob", "pattern", "filter"]
+}

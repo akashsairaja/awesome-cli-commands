@@ -1,0 +1,9 @@
+{
+  "id": "firebase-functions-config-set",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-functions",
+  "title": "Set function config",
+  "command": "firebase functions:config:set service.key=\"value\"",
+  "description": "Set environment config for functions",
+  "tags": ["functions", "config", "set", "env"]
+}

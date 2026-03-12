@@ -1,0 +1,8 @@
+{
+  "id": "databricks-42",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-mlflow",
+  "title": "Search runs",
+  "command": "databricks runs search --experiment-ids <exp-id>",
+  "description": "Search for runs in an experiment."
+}

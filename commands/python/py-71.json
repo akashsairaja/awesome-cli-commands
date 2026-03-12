@@ -1,0 +1,8 @@
+{
+  "id": "py-71",
+  "categoryId": "python",
+  "subcategoryId": "python-pyenv",
+  "title": "Install Python version",
+  "command": "pyenv install 3.12.0",
+  "description": "Install a specific Python version."
+}

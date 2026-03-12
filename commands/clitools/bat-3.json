@@ -1,0 +1,8 @@
+{
+  "id": "bat-3",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-bat",
+  "title": "Plain output",
+  "command": "bat -p file.txt",
+  "description": "No line numbers or decorations."
+}

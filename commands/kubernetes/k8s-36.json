@@ -1,0 +1,8 @@
+{
+  "id": "k8s-36",
+  "categoryId": "kubernetes",
+  "subcategoryId": "deployments",
+  "title": "Update deployment image",
+  "command": "kubectl set image deployment/<name> <container>=<image>:<tag>",
+  "description": "Update container image in deployment."
+}

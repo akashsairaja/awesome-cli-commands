@@ -1,0 +1,8 @@
+{
+  "id": "flux-debug-3",
+  "categoryId": "flux",
+  "subcategoryId": "flux-debug",
+  "title": "Get events",
+  "command": "flux events",
+  "description": "List recent Flux events."
+}

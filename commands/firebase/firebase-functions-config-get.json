@@ -1,0 +1,9 @@
+{
+  "id": "firebase-functions-config-get",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-functions",
+  "title": "Get function config",
+  "command": "firebase functions:config:get",
+  "description": "Get current function configuration",
+  "tags": ["functions", "config", "get"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "apt-68",
+  "categoryId": "ubuntu",
+  "subcategoryId": "ubuntu-network",
+  "title": "Deny port through UFW",
+  "command": "sudo ufw deny <port>",
+  "description": "Block incoming traffic on a specific port."
+}

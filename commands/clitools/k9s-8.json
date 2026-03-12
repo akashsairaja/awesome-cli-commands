@@ -1,0 +1,8 @@
+{
+  "id": "k9s-8",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-k9s",
+  "title": "Shell into pod (s)",
+  "command": "s",
+  "description": "Open shell in container."
+}

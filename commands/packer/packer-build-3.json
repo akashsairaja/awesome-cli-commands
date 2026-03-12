@@ -1,0 +1,8 @@
+{
+  "id": "packer-build-3",
+  "categoryId": "packer",
+  "subcategoryId": "packer-build",
+  "title": "Build with variables",
+  "command": "packer build -var 'ami_name=myami' -var 'region=us-east-1' .",
+  "description": "Build with variable overrides."
+}

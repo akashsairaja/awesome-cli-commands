@@ -1,0 +1,8 @@
+{
+  "id": "k6-output-4",
+  "categoryId": "k6",
+  "subcategoryId": "k6-output",
+  "title": "Summary export",
+  "command": "k6 run --summary-export=summary.json script.js",
+  "description": "Export summary to JSON."
+}

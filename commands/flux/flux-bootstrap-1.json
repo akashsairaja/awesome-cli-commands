@@ -1,0 +1,8 @@
+{
+  "id": "flux-bootstrap-1",
+  "categoryId": "flux",
+  "subcategoryId": "flux-bootstrap",
+  "title": "Bootstrap GitHub",
+  "command": "flux bootstrap github --owner=myorg --repository=fleet-infra --path=clusters/prod --personal",
+  "description": "Bootstrap Flux on a cluster with a GitHub repository."
+}

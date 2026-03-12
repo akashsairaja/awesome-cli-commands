@@ -1,0 +1,8 @@
+{
+  "id": "docker-46",
+  "categoryId": "docker",
+  "subcategoryId": "images",
+  "title": "Remove unused images",
+  "command": "docker image prune",
+  "description": "Remove dangling images."
+}

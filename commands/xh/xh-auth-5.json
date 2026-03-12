@@ -1,0 +1,8 @@
+{
+  "id": "xh-auth-5",
+  "categoryId": "xh",
+  "subcategoryId": "xh-auth",
+  "title": "Netrc auth",
+  "command": "xh --auth-type=bearer --netrc GET https://api.example.com",
+  "description": "Read credentials from .netrc file."
+}

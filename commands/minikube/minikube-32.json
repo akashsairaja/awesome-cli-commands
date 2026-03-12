@@ -1,0 +1,8 @@
+{
+  "id": "minikube-32",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-cluster",
+  "title": "Pause cluster",
+  "command": "minikube pause",
+  "description": "Pause cluster to save resources."
+}

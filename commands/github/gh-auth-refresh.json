@@ -1,0 +1,9 @@
+{
+  "id": "gh-auth-refresh",
+  "categoryId": "github",
+  "subcategoryId": "gh-auth",
+  "title": "Refresh auth credentials",
+  "command": "gh auth refresh",
+  "description": "Refresh stored authentication credentials",
+  "tags": ["auth", "refresh", "token"]
+}

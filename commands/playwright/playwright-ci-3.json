@@ -1,0 +1,8 @@
+{
+  "id": "playwright-ci-3",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-ci",
+  "title": "Fully parallel mode",
+  "command": "npx playwright test --fully-parallel",
+  "description": "Run all tests in parallel."
+}

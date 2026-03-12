@@ -1,0 +1,8 @@
+{
+  "id": "vault-auth-2",
+  "categoryId": "vault",
+  "subcategoryId": "vault-auth",
+  "title": "Login with userpass",
+  "command": "vault login -method=userpass username=admin",
+  "description": "Login with username/password auth."
+}

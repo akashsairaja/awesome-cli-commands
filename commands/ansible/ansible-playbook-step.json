@@ -1,0 +1,9 @@
+{
+  "id": "ansible-playbook-step",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-playbook",
+  "title": "Step Through Tasks",
+  "command": "ansible-playbook playbook.yml --step",
+  "description": "Confirm each task before executing",
+  "tags": ["playbook", "step", "interactive"]
+}

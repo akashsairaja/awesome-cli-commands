@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-convert-format",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-convert",
+  "title": "Convert video format",
+  "command": "ffmpeg -i input.mp4 output.avi",
+  "description": "Convert video from one format to another",
+  "tags": ["convert", "format", "video"]
+}

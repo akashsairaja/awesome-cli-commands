@@ -1,0 +1,58 @@
+{
+  "id": "redis-lua-scripting",
+  "stackId": "redis",
+  "name": "Atomic Operations with Lua Scripts",
+  "description": "Execute complex multi-step operations atomically in Redis using server-side Lua scripting to eliminate race conditions.",
+  "difficulty": "advanced",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "Lua scripting enables atomic transactions that replace MULTI/EXEC for complex logic in high-concurrency systems",
+  "tags": ["lua", "scripting", "atomic", "transactions", "advanced"],
+  "prerequisites": ["Redis installed and running", "Basic understanding of Lua syntax"],
+  "steps": [
+    {
+      "title": "Run an inline Lua script",
+      "description": "Execute a simple Lua script that sets and returns a value atomically.",
+      "command": "redis-cli EVAL \"redis.call('SET', KEYS[1], ARGV[1]) return redis.call('GET', KEYS[1])\" 1 mykey hello",
+      "tip": "KEYS[1] is the first key argument, ARGV[1] is the first non-key argument. Always pass keys via KEYS for cluster compatibility."
+    },
+    {
+      "title": "Atomic compare-and-swap",
+      "description": "Implement a compare-and-swap operation that only updates a key if it matches an expected value.",
+      "command": "redis-cli EVAL \"if redis.call('GET', KEYS[1]) == ARGV[1] then redis.call('SET', KEYS[1], ARGV[2]) return 1 else return 0 end\" 1 mykey hello world"
+    },
+    {
+      "title": "Load a script for reuse",
+      "description": "Load a Lua script into Redis and get its SHA hash for repeated execution without resending the script body.",
+      "command": "redis-cli SCRIPT LOAD \"redis.call('SET', KEYS[1], ARGV[1]) redis.call('EXPIRE', KEYS[1], ARGV[2]) return 1\"",
+      "tip": "Save the returned SHA hash and use EVALSHA to call the script by hash, reducing bandwidth."
+    },
+    {
+      "title": "Execute a loaded script by SHA",
+      "description": "Run a previously loaded script using its SHA hash.",
+      "command": "redis-cli EVALSHA <sha-hash> 1 cached:item '{\"data\":\"value\"}' 3600"
+    },
+    {
+      "title": "Atomic rate limiter in Lua",
+      "description": "Implement a precise rate limiter as a single atomic Lua script.",
+      "command": "redis-cli EVAL \"local count = redis.call('INCR', KEYS[1]) if count == 1 then redis.call('EXPIRE', KEYS[1], ARGV[2]) end if count > tonumber(ARGV[1]) then return 0 else return 1 end\" 1 ratelimit:user1001 10 60"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Redis Lua Scripting Examples\nset -euo pipefail\n\necho \"=== Inline script: SET + GET ===\"\nredis-cli EVAL \"redis.call('SET', KEYS[1], ARGV[1]) return redis.call('GET', KEYS[1])\" 1 lua:test \"hello-lua\"\n\necho \"\"\necho \"=== Compare-and-swap ===\"\nredis-cli SET cas:key \"old-value\"\nRESULT=$(redis-cli EVAL \"if redis.call('GET', KEYS[1]) == ARGV[1] then redis.call('SET', KEYS[1], ARGV[2]) return 1 else return 0 end\" 1 cas:key \"old-value\" \"new-value\")\necho \"CAS result (1=swapped): $RESULT\"\necho \"New value: $(redis-cli GET cas:key)\"\n\necho \"\"\necho \"=== Load script and use EVALSHA ===\"\nSHA=$(redis-cli SCRIPT LOAD \"redis.call('SET', KEYS[1], ARGV[1]) redis.call('EXPIRE', KEYS[1], tonumber(ARGV[2])) return 1\")\necho \"Script SHA: $SHA\"\nredis-cli EVALSHA \"$SHA\" 1 lua:cached \"cached-data\" 300\necho \"Cached value: $(redis-cli GET lua:cached)\"\necho \"TTL: $(redis-cli TTL lua:cached)\"\n\necho \"\"\necho \"=== Atomic rate limiter ===\"\nRATE_SCRIPT=\"local count = redis.call('INCR', KEYS[1]) if count == 1 then redis.call('EXPIRE', KEYS[1], tonumber(ARGV[2])) end if count > tonumber(ARGV[1]) then return 0 else return 1 end\"\nfor i in {1..12}; do\n  ALLOWED=$(redis-cli EVAL \"$RATE_SCRIPT\" 1 lua:ratelimit 10 60)\n  echo \"Request $i: $([ \"$ALLOWED\" = \"1\" ] && echo \"ALLOWED\" || echo \"DENIED\")\"\ndone\n\necho \"\"\necho \"=== Cleanup ===\"\nredis-cli DEL lua:test cas:key lua:cached lua:ratelimit",
+  "faq": [
+    {
+      "question": "Are Lua scripts atomic in Redis?",
+      "answer": "Yes, Redis executes Lua scripts atomically. No other command runs while a script is executing. This makes Lua scripts a powerful alternative to MULTI/EXEC transactions for complex logic."
+    },
+    {
+      "question": "What is the difference between EVAL and EVALSHA?",
+      "answer": "EVAL sends the full script body each time. EVALSHA sends only the SHA1 hash of a previously loaded script, saving bandwidth. Use SCRIPT LOAD first, then EVALSHA for frequently called scripts."
+    },
+    {
+      "question": "Can Lua scripts call external services?",
+      "answer": "No, Redis Lua is sandboxed. Scripts can only call redis.call() and redis.pcall() to interact with Redis, plus use built-in Lua libraries (string, math, table, cjson). No network or file I/O is available."
+    }
+  ],
+  "relatedRecipes": ["redis-rate-limiting", "redis-monitoring"],
+  "lastUpdated": "2026-03-11"
+}

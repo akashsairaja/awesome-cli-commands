@@ -1,0 +1,8 @@
+{
+  "id": "go-mod-1",
+  "categoryId": "go",
+  "subcategoryId": "go-mod",
+  "title": "Initialize module",
+  "command": "go mod init github.com/user/project",
+  "description": "Create new Go module (generates go.mod)."
+}

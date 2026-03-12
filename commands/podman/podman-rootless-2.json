@@ -1,0 +1,8 @@
+{
+  "id": "podman-rootless-2",
+  "categoryId": "podman",
+  "subcategoryId": "podman-rootless",
+  "title": "Enter user namespace",
+  "command": "podman unshare",
+  "description": "Enter user namespace for debugging."
+}

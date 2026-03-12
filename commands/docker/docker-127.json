@@ -1,0 +1,8 @@
+{
+  "id": "docker-127",
+  "categoryId": "docker",
+  "subcategoryId": "swarm",
+  "title": "Create service",
+  "command": "docker service create --name <name> --replicas 3 <image>",
+  "description": "Create a swarm service."
+}

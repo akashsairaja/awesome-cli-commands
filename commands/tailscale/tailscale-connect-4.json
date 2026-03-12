@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-connect-4",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-connect",
+  "title": "Accept routes",
+  "command": "tailscale up --accept-routes",
+  "description": "Accept subnet routes."
+}

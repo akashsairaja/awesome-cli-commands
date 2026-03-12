@@ -1,0 +1,8 @@
+{
+  "id": "py-88",
+  "categoryId": "python",
+  "subcategoryId": "python-pipx",
+  "title": "Reinstall all",
+  "command": "pipx reinstall-all",
+  "description": "Reinstall all tools (after Python upgrade)."
+}

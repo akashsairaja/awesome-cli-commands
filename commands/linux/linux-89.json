@@ -1,0 +1,8 @@
+{
+  "id": "linux-89",
+  "categoryId": "linux",
+  "subcategoryId": "network",
+  "title": "Display network interfaces",
+  "command": "ip link show",
+  "description": "Show all network interfaces with their status and MAC addresses."
+}

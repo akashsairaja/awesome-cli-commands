@@ -1,0 +1,8 @@
+{
+  "id": "docker-30",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Unpause container",
+  "command": "docker unpause <container>",
+  "description": "Resume paused container."
+}

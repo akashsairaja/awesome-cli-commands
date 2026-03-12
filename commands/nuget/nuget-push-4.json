@@ -1,0 +1,8 @@
+{
+  "id": "nuget-push-4",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-push",
+  "title": "Verify package signature",
+  "command": "dotnet nuget verify MyPackage.1.0.0.nupkg",
+  "description": "Verify the signature of a NuGet package."
+}

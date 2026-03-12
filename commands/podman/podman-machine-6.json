@@ -1,0 +1,8 @@
+{
+  "id": "podman-machine-6",
+  "categoryId": "podman",
+  "subcategoryId": "podman-machine",
+  "title": "Init with resources",
+  "command": "podman machine init --cpus 4 --memory 8192",
+  "description": "Initialize with specific resources."
+}

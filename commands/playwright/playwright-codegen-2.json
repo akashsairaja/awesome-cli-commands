@@ -1,0 +1,8 @@
+{
+  "id": "playwright-codegen-2",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-codegen",
+  "title": "Record with viewport",
+  "command": "npx playwright codegen --viewport-size=1280,720 example.com",
+  "description": "Record with specific viewport size."
+}

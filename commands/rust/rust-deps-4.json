@@ -1,0 +1,8 @@
+{
+  "id": "rust-deps-4",
+  "categoryId": "rust",
+  "subcategoryId": "rust-deps",
+  "title": "Find duplicates",
+  "command": "cargo tree -d",
+  "description": "Show duplicate dependencies."
+}

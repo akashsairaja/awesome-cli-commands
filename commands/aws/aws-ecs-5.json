@@ -1,0 +1,8 @@
+{
+  "id": "aws-ecs-5",
+  "categoryId": "aws",
+  "subcategoryId": "ecs",
+  "title": "Scale service",
+  "command": "aws ecs update-service --cluster mycluster --service myservice --desired-count 3",
+  "description": "Change desired task count."
+}

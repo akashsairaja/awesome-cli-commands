@@ -1,0 +1,9 @@
+{
+  "id": "gh-run-rerun",
+  "categoryId": "github",
+  "subcategoryId": "gh-workflow",
+  "title": "Rerun workflow",
+  "command": "gh run rerun <run-id>",
+  "description": "Rerun a failed workflow run",
+  "tags": ["run", "rerun", "retry"]
+}

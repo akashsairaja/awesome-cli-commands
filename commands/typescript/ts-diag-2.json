@@ -1,0 +1,8 @@
+{
+  "id": "ts-diag-2",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-diagnostics",
+  "title": "Explain file inclusion",
+  "command": "tsc --explainFiles",
+  "description": "Show detailed reasons why each file is part of the compilation."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "volta-run-4",
+  "categoryId": "volta",
+  "subcategoryId": "volta-run",
+  "title": "List Node versions",
+  "command": "volta list node",
+  "description": "List installed Node.js versions."
+}

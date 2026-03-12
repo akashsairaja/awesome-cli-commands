@@ -1,0 +1,9 @@
+{
+  "id": "supabase-storage-delete-recursive",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-storage",
+  "title": "Delete folder recursively",
+  "command": "supabase storage rm supabase://bucket/folder/ --recursive --local",
+  "description": "Delete folder and contents recursively",
+  "tags": ["storage", "delete", "recursive"]
+}

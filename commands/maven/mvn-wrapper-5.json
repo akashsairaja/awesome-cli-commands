@@ -1,0 +1,8 @@
+{
+  "id": "mvn-wrapper-5",
+  "categoryId": "maven",
+  "subcategoryId": "mvn-wrapper",
+  "title": "Generate with debug scripts",
+  "command": "mvn wrapper:wrapper -DincludeDebug=true",
+  "description": "Also generate mvnwDebug and mvnwDebug.cmd scripts for debugging Maven plugins and extensions."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "flux-kustomization-4",
+  "categoryId": "flux",
+  "subcategoryId": "flux-kustomization",
+  "title": "Suspend Kustomization",
+  "command": "flux suspend kustomization podinfo",
+  "description": "Pause reconciliation of a Kustomization."
+}

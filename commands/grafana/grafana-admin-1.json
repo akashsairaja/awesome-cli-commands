@@ -1,0 +1,8 @@
+{
+  "id": "grafana-admin-1",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-admin",
+  "title": "Reset admin password",
+  "command": "grafana-cli admin reset-admin-password newpassword",
+  "description": "Reset the admin password."
+}

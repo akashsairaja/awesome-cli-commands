@@ -1,0 +1,8 @@
+{
+  "id": "k6-output-1",
+  "categoryId": "k6",
+  "subcategoryId": "k6-output",
+  "title": "JSON output",
+  "command": "k6 run --out json=results.json script.js",
+  "description": "Output results to JSON file."
+}

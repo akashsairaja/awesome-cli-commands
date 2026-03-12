@@ -1,0 +1,8 @@
+{
+  "id": "bruno-env-5",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-env",
+  "title": "Secret variables",
+  "command": "vars:secret [\n  apiKey\n  dbPassword\n  jwtSecret\n]",
+  "description": "Declare secret vars excluded from Git."
+}

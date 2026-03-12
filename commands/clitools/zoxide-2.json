@@ -1,0 +1,8 @@
+{
+  "id": "zoxide-2",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-zoxide",
+  "title": "Interactive mode",
+  "command": "zi",
+  "description": "Interactive directory selection with fzf."
+}

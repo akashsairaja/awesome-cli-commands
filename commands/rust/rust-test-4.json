@@ -1,0 +1,8 @@
+{
+  "id": "rust-test-4",
+  "categoryId": "rust",
+  "subcategoryId": "rust-test",
+  "title": "Run library tests",
+  "command": "cargo test --lib",
+  "description": "Run only library unit tests."
+}

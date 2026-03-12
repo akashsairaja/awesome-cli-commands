@@ -1,0 +1,9 @@
+{
+  "id": "ansible-playbook-run",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-playbook",
+  "title": "Run Playbook",
+  "command": "ansible-playbook playbook.yml",
+  "description": "Execute an Ansible playbook",
+  "tags": ["playbook", "run", "execute"]
+}

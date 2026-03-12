@@ -1,0 +1,9 @@
+{
+  "id": "deno-add",
+  "categoryId": "deno",
+  "subcategoryId": "deno-package",
+  "title": "Add Package",
+  "command": "deno add @std/http",
+  "description": "Add a JSR package to deno.json",
+  "tags": ["add", "install", "jsr"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "databricks-20",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-workspace",
+  "title": "List workspace contents",
+  "command": "databricks workspace list /path/to/folder",
+  "description": "List contents of a workspace folder."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tf-test-3",
+  "categoryId": "terraform",
+  "subcategoryId": "terraform-test",
+  "title": "Run specific test",
+  "command": "terraform test -filter=test_name",
+  "description": "Run a specific test by name or pattern."
+}

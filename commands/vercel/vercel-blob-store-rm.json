@@ -1,0 +1,9 @@
+{
+  "id": "vercel-blob-store-rm",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-storage",
+  "title": "Remove Blob store",
+  "command": "vercel blob store remove <store-id>",
+  "description": "Remove Blob storage store",
+  "tags": ["blob", "delete", "store"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "bruno-scripts-7",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-scripts",
+  "title": "Set next request",
+  "command": "bru.setNextRequest('Create Order');",
+  "description": "Control request execution order."
+}

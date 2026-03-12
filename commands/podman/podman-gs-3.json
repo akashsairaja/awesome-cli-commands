@@ -1,0 +1,8 @@
+{
+  "id": "podman-gs-3",
+  "title": "Initialize Podman machine",
+  "command": "podman machine init",
+  "description": "Create and initialize a new Podman virtual machine for containers",
+  "categoryId": "podman",
+  "subcategoryId": "getting-started"
+}

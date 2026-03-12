@@ -1,0 +1,8 @@
+{
+  "id": "ssh-46",
+  "categoryId": "sshgpg",
+  "subcategoryId": "tunnels",
+  "title": "Reverse tunnel for remote access",
+  "command": "ssh -R 2222:localhost:22 user@public-server",
+  "description": "Expose local SSH via remote server."
+}

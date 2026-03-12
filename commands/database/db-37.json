@@ -1,0 +1,8 @@
+{
+  "id": "db-37",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Describe table",
+  "command": "DESCRIBE tablename;",
+  "description": "Show table structure and column types."
+}

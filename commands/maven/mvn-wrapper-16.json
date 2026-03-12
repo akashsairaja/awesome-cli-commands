@@ -1,0 +1,8 @@
+{
+  "id": "mvn-wrapper-16",
+  "categoryId": "maven",
+  "subcategoryId": "mvn-wrapper",
+  "title": "Authenticated wrapper download",
+  "command": "MVNW_USERNAME=user MVNW_PASSWORD=pass ./mvnw clean install",
+  "description": "Provide credentials when downloading Maven from a password-protected repository."
+}

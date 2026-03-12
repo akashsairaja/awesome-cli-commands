@@ -1,0 +1,8 @@
+{
+  "id": "docker-gs-2",
+  "title": "Run Hello World container",
+  "command": "docker run hello-world",
+  "description": "Test Docker installation by running a simple container",
+  "categoryId": "docker",
+  "subcategoryId": "getting-started"
+}

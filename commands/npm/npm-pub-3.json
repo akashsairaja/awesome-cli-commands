@@ -1,0 +1,8 @@
+{
+  "id": "npm-pub-3",
+  "categoryId": "npm",
+  "subcategoryId": "npm-publish",
+  "title": "Publish with tag",
+  "command": "npm publish --tag beta",
+  "description": "Publish with specific tag (beta, next, etc.)."
+}

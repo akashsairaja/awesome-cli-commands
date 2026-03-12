@@ -1,0 +1,8 @@
+{
+  "id": "claude-39",
+  "categoryId": "claudecode",
+  "subcategoryId": "sessions",
+  "title": "Exit session",
+  "command": "/exit",
+  "description": "End current session."
+}

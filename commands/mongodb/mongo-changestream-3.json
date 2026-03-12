@@ -1,0 +1,8 @@
+{
+  "id": "mongo-changestream-3",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-changestreams",
+  "title": "Filtered change stream",
+  "command": "db.collection.watch([{$match: {operationType: 'insert'}}])",
+  "description": "Watch only insert operations on collection."
+}

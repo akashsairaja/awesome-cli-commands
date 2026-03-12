@@ -1,0 +1,8 @@
+{
+  "id": "ps-46",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-objects",
+  "title": "Get object members",
+  "command": "Get-Process | Get-Member",
+  "description": "View properties and methods of object."
+}

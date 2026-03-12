@@ -1,0 +1,8 @@
+{
+  "id": "grafana-admin-5",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-admin",
+  "title": "Start Grafana server",
+  "command": "grafana-server --config=/etc/grafana/grafana.ini --homepath=/usr/share/grafana",
+  "description": "Start Grafana with custom config."
+}

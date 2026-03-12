@@ -1,0 +1,8 @@
+{
+  "id": "docker-83",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "Run one-off command",
+  "command": "docker compose run --rm <service> <command>",
+  "description": "Run command in new container."
+}

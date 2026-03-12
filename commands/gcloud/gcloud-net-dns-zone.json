@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-net-dns-zone",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-networking",
+  "title": "Create DNS Zone",
+  "command": "gcloud dns managed-zones create <name> --dns-name=<domain>. --description=<desc>",
+  "description": "Create a Cloud DNS managed zone",
+  "tags": ["dns", "zone", "create"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ssh-45",
+  "categoryId": "sshgpg",
+  "subcategoryId": "tunnels",
+  "title": "Forward to third-party host",
+  "command": "ssh -L 5432:db.internal:5432 user@bastion",
+  "description": "Tunnel to a host behind bastion."
+}

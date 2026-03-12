@@ -1,0 +1,8 @@
+{
+  "id": "docker-57",
+  "categoryId": "docker",
+  "subcategoryId": "volumes",
+  "title": "Remove volume",
+  "command": "docker volume rm <volume-name>",
+  "description": "Remove a volume."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "packer-build-13",
+  "categoryId": "packer",
+  "subcategoryId": "packer-build",
+  "title": "No color output",
+  "command": "packer build -color=false .",
+  "description": "Build without colored output for CI logs."
+}

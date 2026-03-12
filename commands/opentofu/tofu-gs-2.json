@@ -1,0 +1,8 @@
+{
+  "id": "tofu-gs-2",
+  "title": "Check OpenTofu version",
+  "command": "tofu --version",
+  "description": "Display the installed OpenTofu version",
+  "categoryId": "opentofu",
+  "subcategoryId": "getting-started"
+}

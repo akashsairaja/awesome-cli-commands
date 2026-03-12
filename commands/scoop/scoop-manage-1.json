@@ -1,0 +1,8 @@
+{
+  "id": "scoop-manage-1",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-manage",
+  "title": "List installed",
+  "command": "scoop list",
+  "description": "List installed apps."
+}

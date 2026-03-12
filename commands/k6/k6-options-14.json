@@ -1,0 +1,8 @@
+{
+  "id": "k6-options-14",
+  "categoryId": "k6",
+  "subcategoryId": "k6-options",
+  "title": "Ramping arrival rate",
+  "command": "export const options = {\n  scenarios: {\n    ramping_rate: {\n      executor: 'ramping-arrival-rate',\n      startRate: 10,\n      timeUnit: '1s',\n      preAllocatedVUs: 50,\n      maxVUs: 200,\n      stages: [\n        { duration: '1m', target: 100 },\n        { duration: '2m', target: 100 },\n        { duration: '1m', target: 0 },\n      ],\n    },\n  },\n};",
+  "description": "Ramp request rate up and down."
+}

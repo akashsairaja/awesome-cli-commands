@@ -1,0 +1,8 @@
+{
+  "id": "mongo-crud-5",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-crud",
+  "title": "Find one",
+  "command": "db.users.findOne({ name: \"John\" })",
+  "description": "Retrieve first matching document."
+}

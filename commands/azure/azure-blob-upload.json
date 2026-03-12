@@ -1,0 +1,9 @@
+{
+  "id": "azure-blob-upload",
+  "categoryId": "azure",
+  "subcategoryId": "azure-storage",
+  "title": "Upload Blob",
+  "command": "az storage blob upload --account-name <storage> --container-name <container> --name <blob-name> --file <local-file>",
+  "description": "Upload a file to blob storage",
+  "tags": ["storage", "blob", "upload"]
+}

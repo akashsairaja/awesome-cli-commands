@@ -1,0 +1,8 @@
+{
+  "id": "bruno-env-3",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-env",
+  "title": "Run with env file",
+  "command": "bru run --env-file .env.local",
+  "description": "Use dotenv file for secrets."
+}

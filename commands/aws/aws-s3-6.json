@@ -1,0 +1,8 @@
+{
+  "id": "aws-s3-6",
+  "categoryId": "aws",
+  "subcategoryId": "s3",
+  "title": "Create bucket",
+  "command": "aws s3 mb s3://my-new-bucket --region us-east-1",
+  "description": "Create new S3 bucket."
+}

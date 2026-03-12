@@ -1,0 +1,8 @@
+{
+  "id": "flux-kustomization-2",
+  "categoryId": "flux",
+  "subcategoryId": "flux-kustomization",
+  "title": "List Kustomizations",
+  "command": "flux get kustomizations",
+  "description": "List all Kustomizations."
+}

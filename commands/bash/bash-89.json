@@ -1,0 +1,8 @@
+{
+  "id": "bash-89",
+  "categoryId": "bash",
+  "subcategoryId": "conditionals",
+  "title": "Is executable",
+  "command": "[ -x file ] && echo \"executable\"",
+  "description": "Check if file is executable."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "bruno-gs-3",
+  "title": "Check Bruno CLI version",
+  "command": "bru --version",
+  "description": "Verify Bruno CLI is installed and display the current version",
+  "categoryId": "bruno",
+  "subcategoryId": "getting-started"
+}

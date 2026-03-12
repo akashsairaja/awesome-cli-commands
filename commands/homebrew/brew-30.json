@@ -1,0 +1,8 @@
+{
+  "id": "brew-30",
+  "categoryId": "homebrew",
+  "subcategoryId": "brew-services",
+  "title": "Stop service",
+  "command": "brew services stop <service>",
+  "description": "Stop a service."
+}

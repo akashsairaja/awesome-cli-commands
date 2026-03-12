@@ -1,0 +1,8 @@
+{
+  "id": "mongo-backup-3",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-backup",
+  "title": "Dump with compression",
+  "command": "mongodump --db mydb --gzip --archive=backup.gz",
+  "description": "Export as compressed archive."
+}

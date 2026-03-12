@@ -1,0 +1,8 @@
+{
+  "id": "ts-config-1",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-config",
+  "title": "Initialize tsconfig",
+  "command": "tsc --init",
+  "description": "Create tsconfig.json with default settings."
+}

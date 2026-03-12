@@ -1,0 +1,8 @@
+{
+  "id": "playwright-report-2",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-report",
+  "title": "HTML reporter",
+  "command": "npx playwright test --reporter=html",
+  "description": "Generate HTML report."
+}

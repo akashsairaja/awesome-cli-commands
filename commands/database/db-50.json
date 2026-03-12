@@ -1,0 +1,8 @@
+{
+  "id": "db-50",
+  "categoryId": "database",
+  "subcategoryId": "mongodb",
+  "title": "Show databases",
+  "command": "show dbs",
+  "description": "List all databases with their sizes."
+}

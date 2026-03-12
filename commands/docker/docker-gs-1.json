@@ -1,0 +1,8 @@
+{
+  "id": "docker-gs-1",
+  "title": "Verify Docker installation",
+  "command": "docker --version",
+  "description": "Check if Docker is installed and display version",
+  "categoryId": "docker",
+  "subcategoryId": "getting-started"
+}

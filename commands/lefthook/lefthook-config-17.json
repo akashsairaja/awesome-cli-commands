@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-config-17",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-config",
+  "title": "Skip merge commits",
+  "command": "pre-commit:\n  commands:\n    lint:\n      run: eslint {staged_files}\n      skip:\n        - merge\n        - rebase",
+  "description": "Skip hooks during merge or rebase."
+}

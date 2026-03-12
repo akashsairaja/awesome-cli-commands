@@ -1,0 +1,8 @@
+{
+  "id": "claude-17",
+  "categoryId": "claudecode",
+  "subcategoryId": "permissions",
+  "title": "Skip all permission prompts (YOLO mode)",
+  "command": "claude --dangerously-skip-permissions",
+  "description": "Bypass all permission checks. Only use in isolated containers!"
+}

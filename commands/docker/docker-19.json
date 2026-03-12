@@ -1,0 +1,8 @@
+{
+  "id": "docker-19",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Execute as root",
+  "command": "docker exec -u root -it <container> /bin/bash",
+  "description": "Execute as root user in container."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "git-121",
+  "categoryId": "git",
+  "subcategoryId": "tags",
+  "title": "Create annotated tag",
+  "command": "git tag -a <tagname> -m \"message\"",
+  "description": "Create tag with message."
+}

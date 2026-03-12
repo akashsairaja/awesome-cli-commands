@@ -1,0 +1,8 @@
+{
+  "id": "make-run-6",
+  "categoryId": "make",
+  "subcategoryId": "make-run",
+  "title": "Pass variable",
+  "command": "make CFLAGS=\"-O2 -Wall\" build",
+  "description": "Override variable on command line."
+}

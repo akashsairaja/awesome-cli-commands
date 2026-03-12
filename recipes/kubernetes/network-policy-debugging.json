@@ -1,0 +1,54 @@
+{
+  "id": "network-policy-debugging",
+  "stackId": "kubernetes",
+  "name": "Network Policy Debugging",
+  "description": "Debug and verify Kubernetes network policies to ensure traffic is correctly allowed or blocked between pods and services.",
+  "difficulty": "advanced",
+  "timeMinutes": 15,
+  "trending": false,
+  "tags": ["networking", "security", "network-policy", "debug"],
+  "prerequisites": [
+    "kubectl configured",
+    "A CNI that supports NetworkPolicy (Calico, Cilium, etc.)"
+  ],
+  "steps": [
+    {
+      "title": "List network policies in a namespace",
+      "description": "View all network policies and what pods they select.",
+      "command": "kubectl get networkpolicies -n <namespace> -o wide"
+    },
+    {
+      "title": "Inspect a network policy's rules",
+      "description": "View the ingress and egress rules of a specific policy.",
+      "command": "kubectl describe networkpolicy <policy-name> -n <namespace>"
+    },
+    {
+      "title": "Test connectivity between pods",
+      "description": "Verify whether traffic is allowed or blocked between two pods.",
+      "command": "kubectl exec <source-pod> -- curl -s --connect-timeout 5 http://<target-service>:<port>/health || echo 'Connection blocked or failed'"
+    },
+    {
+      "title": "Check which policies apply to a pod",
+      "description": "Find all network policies that select a specific pod based on its labels.",
+      "command": "kubectl get networkpolicies -n <namespace> -o json | jq --arg pod_labels \"$(kubectl get pod <pod-name> -n <namespace> -o jsonpath='{.metadata.labels}')\" '.items[] | select(.spec.podSelector.matchLabels as $sel | all(to_entries[]; . as $e | ($pod_labels | fromjson)[$e.key] == $e.value)) | .metadata.name'"
+    },
+    {
+      "title": "Deploy a test pod for connectivity testing",
+      "description": "Launch a temporary pod with networking tools for manual testing.",
+      "command": "kubectl run nettest --rm -it --restart=Never --image=nicolaka/netshoot -n <namespace> -- bash"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Network Policy Debugging\nset -euo pipefail\n\nNS=${1:-\"default\"}\n\necho \"=== Network Policies in $NS ===\"\nkubectl get networkpolicies -n \"$NS\" 2>/dev/null || echo \"No network policies found\"\n\necho \"\"\necho \"=== Policy Details ===\"\nfor policy in $(kubectl get networkpolicies -n \"$NS\" -o jsonpath='{.items[*].metadata.name}' 2>/dev/null); do\n  echo \"--- $policy ---\"\n  kubectl describe networkpolicy \"$policy\" -n \"$NS\" | grep -A20 'Spec:'\n  echo \"\"\ndone\n\necho \"\"\necho \"=== Debug Commands ===\"\necho \"Test connectivity: kubectl exec <pod> -n $NS -- curl -s --connect-timeout 5 http://<service>:<port>\"\necho \"Netshoot pod:      kubectl run nettest --rm -it --restart=Never --image=nicolaka/netshoot -n $NS -- bash\"\necho \"DNS test:          kubectl exec <pod> -n $NS -- nslookup <service>\"",
+  "faq": [
+    {
+      "question": "What happens if no network policy selects a pod?",
+      "answer": "By default, if no NetworkPolicy selects a pod, all traffic is allowed. Once any NetworkPolicy selects a pod, all traffic not explicitly allowed by a policy is denied."
+    },
+    {
+      "question": "How do I allow traffic from all namespaces?",
+      "answer": "Use a namespaceSelector with an empty matchLabels ({}) in the ingress/egress rule. This matches all namespaces."
+    }
+  ],
+  "relatedRecipes": ["pod-debug-ephemeral", "rbac-auditing-workflow"],
+  "lastUpdated": "2026-03-11"
+}

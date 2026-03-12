@@ -1,0 +1,8 @@
+{
+  "id": "helm-dev-9",
+  "categoryId": "helm",
+  "subcategoryId": "helm-dev",
+  "title": "Install test plugin",
+  "command": "helm plugin install https://github.com/helm-unittest/helm-unittest",
+  "description": "Install helm-unittest plugin for chart testing."
+}

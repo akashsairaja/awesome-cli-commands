@@ -1,0 +1,8 @@
+{
+  "id": "mongo-users-14",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-users",
+  "title": "Authenticate in shell",
+  "command": "db.auth(\"appuser\", \"password\")",
+  "description": "Authenticate as a user within an existing mongosh session."
+}

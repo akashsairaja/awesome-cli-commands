@@ -1,0 +1,8 @@
+{
+  "id": "rust-rustup-6",
+  "categoryId": "rust",
+  "subcategoryId": "rust-rustup",
+  "title": "List installed",
+  "command": "rustup show",
+  "description": "Show installed toolchains and targets."
+}

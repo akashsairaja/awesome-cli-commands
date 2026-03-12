@@ -1,0 +1,8 @@
+{
+  "id": "snow-5",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-connections",
+  "title": "Remove connection",
+  "command": "snow connection remove <name>",
+  "description": "Remove a connection from configuration."
+}

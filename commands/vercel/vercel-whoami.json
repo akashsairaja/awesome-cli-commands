@@ -1,0 +1,9 @@
+{
+  "id": "vercel-whoami",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-projects",
+  "title": "Show current user",
+  "command": "vercel whoami",
+  "description": "Show the currently logged in user",
+  "tags": ["whoami", "user", "account"]
+}

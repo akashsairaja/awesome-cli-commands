@@ -1,0 +1,8 @@
+{
+  "id": "spark-26",
+  "categoryId": "spark",
+  "subcategoryId": "spark-sql",
+  "title": "Set shuffle partitions",
+  "command": "spark-sql --conf spark.sql.shuffle.partitions=200",
+  "description": "Configure number of shuffle partitions."
+}

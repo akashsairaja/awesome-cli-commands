@@ -1,0 +1,8 @@
+{
+  "id": "ts-node-6",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-node",
+  "title": "With specific config",
+  "command": "ts-node --project tsconfig.dev.json src/index.ts",
+  "description": "Use specific tsconfig for execution."
+}

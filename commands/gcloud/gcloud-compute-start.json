@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-compute-start",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-compute",
+  "title": "Start VM Instance",
+  "command": "gcloud compute instances start <name> --zone=<zone>",
+  "description": "Start a stopped VM instance",
+  "tags": ["vm", "start", "power"]
+}

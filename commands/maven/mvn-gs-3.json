@@ -1,0 +1,8 @@
+{
+  "id": "mvn-gs-3",
+  "title": "Create a new Maven project",
+  "command": "mvn archetype:generate -DgroupId=com.example -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false",
+  "description": "Generate a new Maven project from the quickstart archetype",
+  "categoryId": "maven",
+  "subcategoryId": "getting-started"
+}

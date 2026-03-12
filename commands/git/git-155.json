@@ -1,0 +1,8 @@
+{
+  "id": "git-155",
+  "categoryId": "git",
+  "subcategoryId": "maintenance",
+  "title": "Prune unreachable objects",
+  "command": "git prune",
+  "description": "Remove unreachable objects from database."
+}

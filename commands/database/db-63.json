@@ -1,0 +1,8 @@
+{
+  "id": "db-63",
+  "categoryId": "database",
+  "subcategoryId": "mongodb",
+  "title": "Count documents",
+  "command": "db.collection.countDocuments({ status: 'active' })",
+  "description": "Count documents matching a filter."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "claude-85",
+  "categoryId": "claudecode",
+  "subcategoryId": "environment",
+  "title": "Set bash timeout",
+  "command": "export BASH_DEFAULT_TIMEOUT_MS=30000",
+  "description": "Set default timeout for bash commands."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "make-debug-3",
+  "categoryId": "make",
+  "subcategoryId": "make-debug",
+  "title": "Debug mode",
+  "command": "make -d",
+  "description": "Print debugging information."
+}

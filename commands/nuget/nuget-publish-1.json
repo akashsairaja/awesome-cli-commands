@@ -1,0 +1,8 @@
+{
+  "id": "nuget-publish-1",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-publish",
+  "title": "Pack project",
+  "command": "dotnet pack -c Release",
+  "description": "Create NuGet package."
+}

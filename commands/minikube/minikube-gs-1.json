@@ -1,0 +1,8 @@
+{
+  "id": "minikube-gs-1",
+  "title": "Install minikube (macOS)",
+  "command": "brew install minikube",
+  "description": "Install minikube using Homebrew on macOS",
+  "categoryId": "minikube",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "azure-deployment-list",
+  "categoryId": "azure",
+  "subcategoryId": "azure-deployment",
+  "title": "List Deployments",
+  "command": "az deployment group list -g rg",
+  "description": "List all deployments in a resource group",
+  "tags": ["deployment", "list", "history"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "netlify-env-list",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-env",
+  "title": "List env variables",
+  "command": "netlify env:list",
+  "description": "List all environment variables",
+  "tags": ["env", "list", "show"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "git-74",
+  "categoryId": "git",
+  "subcategoryId": "remote",
+  "title": "Delete remote branch",
+  "command": "git push origin --delete <branch>",
+  "description": "Delete branch from remote."
+}

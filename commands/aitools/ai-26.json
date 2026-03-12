@@ -1,0 +1,8 @@
+{
+  "id": "ai-26",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-aider",
+  "title": "Use Claude model",
+  "command": "aider --model claude-3-5-sonnet-20241022",
+  "description": "Use a specific model (Claude or GPT)."
+}

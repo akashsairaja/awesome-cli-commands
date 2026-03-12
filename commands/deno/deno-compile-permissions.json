@@ -1,0 +1,9 @@
+{
+  "id": "deno-compile-permissions",
+  "categoryId": "deno",
+  "subcategoryId": "deno-compile",
+  "title": "Compile with Permissions",
+  "command": "deno compile --allow-read --allow-net script.ts",
+  "description": "Bake permissions into binary",
+  "tags": ["compile", "permissions", "bake"]
+}

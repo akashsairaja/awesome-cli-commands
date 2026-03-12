@@ -1,0 +1,8 @@
+{
+  "id": "ssh-gs-1",
+  "title": "Check SSH version",
+  "command": "ssh -V",
+  "description": "Display the installed OpenSSH client version",
+  "categoryId": "sshgpg",
+  "subcategoryId": "getting-started"
+}

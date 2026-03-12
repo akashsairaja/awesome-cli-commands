@@ -1,0 +1,8 @@
+{
+  "id": "node-debug-6",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-debug",
+  "title": "Trace deprecations",
+  "command": "node --trace-deprecation app.js",
+  "description": "Show stack traces for deprecations."
+}

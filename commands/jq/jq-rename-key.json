@@ -1,0 +1,9 @@
+{
+  "id": "jq-rename-key",
+  "categoryId": "jq",
+  "subcategoryId": "jq-objects",
+  "title": "Rename key",
+  "command": "cat file.json | jq '.newName = .oldName | del(.oldName)'",
+  "description": "Rename object key",
+  "tags": ["object", "rename", "key"]
+}

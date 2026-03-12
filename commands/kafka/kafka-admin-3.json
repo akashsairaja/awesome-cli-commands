@@ -1,0 +1,8 @@
+{
+  "id": "kafka-admin-3",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-admin",
+  "title": "List under-replicated",
+  "command": "kafka-topics.sh --describe --under-replicated-partitions --bootstrap-server localhost:9092",
+  "description": "Find under-replicated partitions."
+}

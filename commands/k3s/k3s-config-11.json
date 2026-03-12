@@ -1,0 +1,8 @@
+{
+  "id": "k3s-config-11",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-config",
+  "title": "Set kubelet args",
+  "command": "curl -sfL https://get.k3s.io | sh -s - --kubelet-arg max-pods=150",
+  "description": "Pass custom arguments to the kubelet process."
+}

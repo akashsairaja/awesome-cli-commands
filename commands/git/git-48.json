@@ -1,0 +1,8 @@
+{
+  "id": "git-48",
+  "categoryId": "git",
+  "subcategoryId": "stash",
+  "title": "Stash with message",
+  "command": "git stash push -m \"WIP: feature\"",
+  "description": "Stash with descriptive message."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "netlify-env-set",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-env",
+  "title": "Set env variable",
+  "command": "netlify env:set <key> <value>",
+  "description": "Set an environment variable",
+  "tags": ["env", "set", "add"]
+}

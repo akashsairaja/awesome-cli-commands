@@ -1,0 +1,9 @@
+{
+  "id": "ansible-vault-create",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-vault",
+  "title": "Create Encrypted File",
+  "command": "ansible-vault create secrets.yml",
+  "description": "Create a new encrypted file",
+  "tags": ["vault", "create", "encrypt"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tofu-apply-5",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-apply",
+  "title": "Target specific resource",
+  "command": "tofu apply -target=aws_instance.web",
+  "description": "Apply to specific resource."
+}

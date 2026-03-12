@@ -1,0 +1,71 @@
+{
+  "id": "python-poetry-workflow",
+  "stackId": "python",
+  "name": "Full Project Lifecycle with Poetry",
+  "description": "Manage Python project dependencies, virtual environments, versioning, and publishing with Poetry's declarative pyproject.toml workflow.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "trending": false,
+  "tags": ["poetry", "pyproject", "packaging", "publish", "dependencies"],
+  "prerequisites": [
+    "Python 3.8+ installed",
+    "pipx or uv installed (recommended for Poetry install)"
+  ],
+  "steps": [
+    {
+      "title": "Install Poetry",
+      "command": "pipx install poetry",
+      "description": "Install Poetry in an isolated environment using pipx. This prevents Poetry's own dependencies from conflicting with your projects.",
+      "tip": "Alternatively use: curl -sSL https://install.python-poetry.org | python3 -",
+      "warning": "Do not install Poetry with pip into a project virtualenv. It should be installed globally via pipx or the official installer."
+    },
+    {
+      "title": "Create a new project",
+      "command": "poetry new myproject && cd myproject",
+      "description": "Scaffolds a new project with pyproject.toml, a package directory, and a tests directory. The generated structure follows Python packaging best practices."
+    },
+    {
+      "title": "Add production dependencies",
+      "command": "poetry add requests flask sqlalchemy",
+      "description": "Adds packages to the [tool.poetry.dependencies] section and installs them. The poetry.lock file is updated automatically."
+    },
+    {
+      "title": "Add development dependencies",
+      "command": "poetry add --group dev pytest ruff mypy coverage",
+      "description": "Adds packages to the dev dependency group. These are excluded when building distribution packages.",
+      "tip": "You can create custom groups like --group docs for documentation tools."
+    },
+    {
+      "title": "Run commands inside the environment",
+      "command": "poetry run pytest tests/",
+      "description": "Execute any command within the project's virtual environment without manually activating it."
+    },
+    {
+      "title": "Build and publish the package",
+      "command": "poetry version patch && poetry build && poetry publish --dry-run",
+      "description": "Bump the version, build source and wheel distributions, and preview a publish to PyPI. Remove --dry-run when ready to publish for real.",
+      "warning": "You need a PyPI account and API token configured via 'poetry config pypi-token.pypi <token>' before you can publish."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Full Poetry project workflow\nset -e\n\nPROJECT_NAME=${1:-myproject}\n\n# Install Poetry if not present\nif ! command -v poetry &> /dev/null; then\n  pipx install poetry\nfi\n\npoetry new \"$PROJECT_NAME\"\ncd \"$PROJECT_NAME\"\n\npoetry add requests flask sqlalchemy\npoetry add --group dev pytest ruff mypy coverage\n\npoetry run pytest tests/\npoetry build\n\necho \"Project '$PROJECT_NAME' built with Poetry.\"\nls -la dist/",
+  "faq": [
+    {
+      "question": "What is the difference between poetry.lock and pyproject.toml?",
+      "answer": "pyproject.toml declares your dependency constraints (e.g., requests>=2.28). poetry.lock pins every dependency to exact versions, including transitive dependencies. Always commit both files."
+    },
+    {
+      "question": "How do I switch Python versions in a Poetry project?",
+      "answer": "Use 'poetry env use python3.12' to create a new environment with a specific Python version. The python version must already be installed on your system (use pyenv to manage installations)."
+    },
+    {
+      "question": "Should I use Poetry or uv for new projects?",
+      "answer": "For speed and simplicity, uv is increasingly popular. For mature plugin support and PyPI publishing workflows, Poetry is well-established. Both produce standard pyproject.toml files."
+    }
+  ],
+  "relatedRecipes": [
+    "python-venv-project-setup",
+    "python-uv-fast-deps",
+    "python-pyenv-version-management"
+  ],
+  "lastUpdated": "2026-03-11"
+}

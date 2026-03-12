@@ -1,0 +1,9 @@
+{
+  "id": "prisma-validate",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-generate",
+  "title": "Validate schema",
+  "command": "npx prisma validate",
+  "description": "Validate the Prisma schema",
+  "tags": ["validate", "check", "schema"]
+}

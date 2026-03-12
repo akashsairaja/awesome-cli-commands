@@ -1,0 +1,8 @@
+{
+  "id": "starship-modules-16",
+  "categoryId": "starship",
+  "subcategoryId": "starship-modules",
+  "title": "Custom module",
+  "command": "[custom.git_email]\ncommand = 'git config user.email'\nwhen = 'git rev-parse --git-dir'\nformat = '[$output]($style) '",
+  "description": "Define a custom module with shell command."
+}

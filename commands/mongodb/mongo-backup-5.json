@@ -1,0 +1,8 @@
+{
+  "id": "mongo-backup-5",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-backup",
+  "title": "Restore from archive",
+  "command": "mongorestore --gzip --archive=backup.gz",
+  "description": "Restore from compressed archive."
+}

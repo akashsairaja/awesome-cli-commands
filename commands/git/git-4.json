@@ -1,0 +1,8 @@
+{
+  "id": "git-4",
+  "categoryId": "git",
+  "subcategoryId": "basics",
+  "title": "Clone specific branch",
+  "command": "git clone -b <branch> <url>",
+  "description": "Clone a specific branch."
+}

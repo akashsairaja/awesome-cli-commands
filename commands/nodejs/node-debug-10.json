@@ -1,0 +1,8 @@
+{
+  "id": "node-debug-10",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-debug",
+  "title": "Throw on deprecation",
+  "command": "node --throw-deprecation app.js",
+  "description": "Throw errors on deprecated API usage."
+}

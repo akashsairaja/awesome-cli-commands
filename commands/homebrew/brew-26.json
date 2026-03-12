@@ -1,0 +1,8 @@
+{
+  "id": "brew-26",
+  "categoryId": "homebrew",
+  "subcategoryId": "casks",
+  "title": "Reinstall cask",
+  "command": "brew reinstall --cask <app>",
+  "description": "Reinstall cask application."
+}

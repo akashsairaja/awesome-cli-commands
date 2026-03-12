@@ -1,0 +1,8 @@
+{
+  "id": "temporal-namespace-3",
+  "categoryId": "temporal",
+  "subcategoryId": "namespace",
+  "title": "Create global namespace",
+  "command": "temporal operator namespace create --namespace global-ns --global",
+  "description": "Create multi-region namespace for cluster replication."
+}

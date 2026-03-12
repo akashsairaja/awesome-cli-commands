@@ -1,0 +1,8 @@
+{
+  "id": "react-server-6",
+  "categoryId": "react",
+  "subcategoryId": "react-server",
+  "title": "Access headers in Server Component",
+  "command": "headers().get('user-agent')",
+  "description": "Read request headers in Server Components or Server Actions."
+}

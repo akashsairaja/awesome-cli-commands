@@ -1,0 +1,8 @@
+{
+  "id": "apt-30",
+  "categoryId": "ubuntu",
+  "subcategoryId": "apt-packages",
+  "title": "List package files",
+  "command": "dpkg -L <package>",
+  "description": "Show all files installed by a specific package."
+}

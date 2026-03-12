@@ -1,0 +1,9 @@
+{
+  "id": "jq-raw-output",
+  "categoryId": "jq",
+  "subcategoryId": "jq-basics",
+  "title": "Raw string output",
+  "command": "cat file.json | jq -r '.key'",
+  "description": "Output raw strings without quotes",
+  "tags": ["raw", "string", "unquote"]
+}

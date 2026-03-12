@@ -1,0 +1,9 @@
+{
+  "id": "gh-issue-close",
+  "categoryId": "github",
+  "subcategoryId": "gh-issue",
+  "title": "Close issue",
+  "command": "gh issue close <number>",
+  "description": "Close an issue",
+  "tags": ["issue", "close"]
+}

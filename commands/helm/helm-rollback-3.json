@@ -1,0 +1,8 @@
+{
+  "id": "helm-rollback-3",
+  "categoryId": "helm",
+  "subcategoryId": "helm-rollback",
+  "title": "Force rollback",
+  "command": "helm rollback my-release 1 --force",
+  "description": "Force resource updates through delete/recreate."
+}

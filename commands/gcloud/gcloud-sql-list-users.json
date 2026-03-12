@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-sql-list-users",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-sql",
+  "title": "List SQL Users",
+  "command": "gcloud sql users list --instance=<instance>",
+  "description": "List all users on a Cloud SQL instance",
+  "tags": ["sql", "user", "list"]
+}

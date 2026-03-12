@@ -1,0 +1,8 @@
+{
+  "id": "starship-config-7",
+  "categoryId": "starship",
+  "subcategoryId": "starship-config",
+  "title": "Zsh completions",
+  "command": "starship completions zsh > ~/.zfunc/_starship",
+  "description": "Generate shell completions for Zsh."
+}

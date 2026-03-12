@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-sql-create",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-sql",
+  "title": "Create Cloud SQL Instance",
+  "command": "gcloud sql instances create <name> --database-version=POSTGRES_15 --tier=db-f1-micro --region=<region>",
+  "description": "Create a new Cloud SQL instance (PostgreSQL, MySQL, or SQL Server)",
+  "tags": ["sql", "create", "instance", "database"]
+}

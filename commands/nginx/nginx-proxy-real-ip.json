@@ -1,0 +1,9 @@
+{
+  "id": "nginx-proxy-real-ip",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-reverse-proxy",
+  "title": "Pass real IP to backend",
+  "command": "proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;",
+  "description": "Forward client IP to backend service",
+  "tags": ["proxy", "real-ip", "forwarded", "header"]
+}

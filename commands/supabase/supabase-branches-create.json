@@ -1,0 +1,9 @@
+{
+  "id": "supabase-branches-create",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-branches",
+  "title": "Create preview branch",
+  "command": "supabase branches create <name>",
+  "description": "Create new preview branch",
+  "tags": ["branches", "create", "preview"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k8s-3",
+  "categoryId": "kubernetes",
+  "subcategoryId": "context",
+  "title": "Switch context",
+  "command": "kubectl config use-context <context-name>",
+  "description": "Switch to a different cluster context."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k3s-backup-4",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-backup",
+  "title": "Delete snapshot",
+  "command": "k3s etcd-snapshot delete backup-20240101",
+  "description": "Delete an etcd snapshot."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tf-security-2",
+  "categoryId": "terraform",
+  "subcategoryId": "terraform-security",
+  "title": "Replace provider",
+  "command": "terraform state replace-provider old new",
+  "description": "Replace provider reference in state (e.g., after fork)."
+}

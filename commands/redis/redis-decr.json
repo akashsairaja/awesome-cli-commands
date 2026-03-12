@@ -1,0 +1,9 @@
+{
+  "id": "redis-decr",
+  "categoryId": "redis",
+  "subcategoryId": "redis-strings",
+  "title": "Decrement value",
+  "command": "DECR key",
+  "description": "Decrement integer value by 1",
+  "tags": ["decr", "decrement", "counter"]
+}

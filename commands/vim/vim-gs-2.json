@@ -1,0 +1,8 @@
+{
+  "id": "vim-gs-2",
+  "title": "Install Vim (macOS)",
+  "command": "brew install vim",
+  "description": "Install the latest version of Vim using Homebrew on macOS",
+  "categoryId": "vim",
+  "subcategoryId": "getting-started"
+}

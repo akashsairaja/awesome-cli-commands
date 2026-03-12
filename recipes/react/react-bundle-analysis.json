@@ -1,0 +1,53 @@
+{
+  "id": "react-bundle-analysis",
+  "stackId": "react",
+  "name": "Analyze and Reduce Bundle Size",
+  "description": "Visualize your JavaScript bundle, identify bloated dependencies, and apply tree-shaking and code-splitting to reduce load times.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "trending": false,
+  "tags": ["bundle", "webpack", "tree-shaking", "code-splitting", "optimization"],
+  "prerequisites": ["React or Next.js project", "Production build capability"],
+  "steps": [
+    {
+      "title": "Install the bundle analyzer",
+      "description": "Add @next/bundle-analyzer for Next.js or webpack-bundle-analyzer for other setups.",
+      "command": "pnpm add -D @next/bundle-analyzer"
+    },
+    {
+      "title": "Configure the analyzer in next.config",
+      "description": "Wrap your Next.js config with the bundle analyzer plugin.",
+      "command": "echo \"const withBundleAnalyzer = require('@next/bundle-analyzer')({ enabled: process.env.ANALYZE === 'true' });\\nmodule.exports = withBundleAnalyzer(nextConfig);\"",
+      "tip": "For non-Next.js projects, use 'npx vite-bundle-visualizer' or 'npx webpack-bundle-analyzer stats.json'."
+    },
+    {
+      "title": "Generate the bundle analysis report",
+      "description": "Build with the ANALYZE flag to open an interactive treemap in the browser.",
+      "command": "ANALYZE=true pnpm build"
+    },
+    {
+      "title": "Check individual package sizes with bundlephobia",
+      "description": "Quickly check the cost of any npm package before adding it.",
+      "command": "npx bundle-phobia-cli lodash dayjs date-fns",
+      "tip": "Prefer smaller alternatives: dayjs over moment, zustand over redux, preact/signals over mobx."
+    },
+    {
+      "title": "Apply dynamic imports for code splitting",
+      "description": "Lazy-load heavy components to reduce the initial bundle size.",
+      "command": "echo \"const HeavyChart = dynamic(() => import('./HeavyChart'), { loading: () => <Skeleton />, ssr: false });\""
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# React Bundle Analysis\nset -euo pipefail\n\necho \"=== Installing bundle analyzer ===\"\npnpm add -D @next/bundle-analyzer\n\necho \"=== Running analysis build ===\"\nANALYZE=true pnpm build\n\necho \"\"\necho \"=== Quick Wins for Reducing Bundle Size ===\"\necho \"1. Replace moment.js with dayjs (2KB vs 72KB)\"\necho \"2. Import only needed lodash functions: import debounce from 'lodash/debounce'\"\necho \"3. Use dynamic(() => import('./Heavy')) for below-fold components\"\necho \"4. Set sideEffects: false in package.json for better tree-shaking\"\necho \"5. Use next/dynamic with ssr: false for client-only libraries\"",
+  "faq": [
+    {
+      "question": "What is a good bundle size for a React app?",
+      "answer": "Aim for under 200KB gzipped for the initial JavaScript payload. First-load JS under 100KB provides the best user experience. Next.js shows first-load sizes after every build."
+    },
+    {
+      "question": "How does tree-shaking work?",
+      "answer": "Tree-shaking removes unused exports during bundling. It requires ES modules (import/export), a bundler like Webpack or Rollup, and sideEffects: false in package.json. Named imports like 'import { map } from lodash-es' enable better tree-shaking than default imports."
+    }
+  ],
+  "relatedRecipes": ["react-performance-audit", "react-docker-deploy"],
+  "lastUpdated": "2026-03-11"
+}

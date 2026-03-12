@@ -1,0 +1,51 @@
+{
+  "id": "ansible-inventory-management",
+  "stackId": "ansible",
+  "name": "Dynamic and Static Inventory Setup",
+  "description": "Configure static INI or YAML inventory files and dynamic inventory scripts for cloud providers to manage host groups.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "tags": ["inventory", "hosts", "groups", "dynamic-inventory"],
+  "prerequisites": ["Ansible installed", "SSH access to target hosts"],
+  "steps": [
+    {
+      "title": "Create a static INI inventory",
+      "command": "cat > inventory.ini << 'EOF'\n[webservers]\nweb01 ansible_host=192.168.1.10\nweb02 ansible_host=192.168.1.11\n\n[dbservers]\ndb01 ansible_host=192.168.1.20\n\n[all:vars]\nansible_user=deploy\nansible_python_interpreter=/usr/bin/python3\nEOF",
+      "description": "Defines host groups with connection details and shared variables."
+    },
+    {
+      "title": "Test connectivity to all hosts",
+      "command": "ansible all -i inventory.ini -m ping",
+      "description": "Sends a ping module to every host in the inventory to verify SSH connectivity."
+    },
+    {
+      "title": "List hosts in a specific group",
+      "command": "ansible webservers -i inventory.ini --list-hosts",
+      "description": "Shows which hosts belong to the webservers group."
+    },
+    {
+      "title": "Set up dynamic inventory for AWS",
+      "command": "pip install boto3 && ansible-inventory -i aws_ec2.yml --graph",
+      "description": "Uses the aws_ec2 inventory plugin to auto-discover EC2 instances grouped by tags, regions, or instance types.",
+      "tip": "Create an aws_ec2.yml with 'plugin: amazon.aws.aws_ec2' and configure keyed_groups to organize instances by tags."
+    },
+    {
+      "title": "View the complete inventory graph",
+      "command": "ansible-inventory -i inventory.ini --graph --vars",
+      "description": "Displays the full inventory tree with all groups, hosts, and their variables."
+    }
+  ],
+  "fullScript": "# Inventory management\ncat > inventory.ini << 'EOF'\n[webservers]\nweb01 ansible_host=192.168.1.10\nweb02 ansible_host=192.168.1.11\n\n[dbservers]\ndb01 ansible_host=192.168.1.20\n\n[all:vars]\nansible_user=deploy\nansible_python_interpreter=/usr/bin/python3\nEOF\nansible all -i inventory.ini -m ping\nansible-inventory -i inventory.ini --graph --vars",
+  "faq": [
+    {
+      "question": "Should I use INI or YAML format for inventory?",
+      "answer": "INI is simpler for small setups. YAML is better for complex inventories with nested groups and structured variables. Both are fully supported."
+    },
+    {
+      "question": "How do I set a default inventory so I don't need -i every time?",
+      "answer": "Set 'inventory = ./inventory.ini' in your ansible.cfg file under [defaults], or set the ANSIBLE_INVENTORY environment variable."
+    }
+  ],
+  "relatedRecipes": ["ansible-playbook-basics", "ansible-ad-hoc-commands"],
+  "lastUpdated": "2026-03-11"
+}

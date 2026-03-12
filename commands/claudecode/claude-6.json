@@ -1,0 +1,8 @@
+{
+  "id": "claude-6",
+  "categoryId": "claudecode",
+  "subcategoryId": "general",
+  "title": "Use specific model",
+  "command": "claude --model opus",
+  "description": "Override default model (opus, sonnet, haiku)."
+}

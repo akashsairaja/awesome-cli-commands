@@ -1,0 +1,8 @@
+{
+  "id": "yarn-1",
+  "categoryId": "npm",
+  "subcategoryId": "yarn",
+  "title": "yarn upgrade interactive",
+  "command": "yarn upgrade-interactive",
+  "description": "Interactive upgrade interface."
+}

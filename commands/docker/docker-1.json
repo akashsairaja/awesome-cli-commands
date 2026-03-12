@@ -1,0 +1,8 @@
+{
+  "id": "docker-1",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Run container interactively",
+  "command": "docker run -it <image> /bin/bash",
+  "description": "Start interactive container with bash shell."
+}

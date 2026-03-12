@@ -1,0 +1,8 @@
+{
+  "id": "docker-28",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Rename container",
+  "command": "docker rename <old-name> <new-name>",
+  "description": "Rename a container."
+}

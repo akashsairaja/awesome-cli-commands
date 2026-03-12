@@ -1,0 +1,56 @@
+{
+  "id": "ansible-role-creation",
+  "stackId": "ansible",
+  "name": "Create Reusable Ansible Roles",
+  "description": "Structure automation into reusable roles with tasks, handlers, templates, defaults, and metadata for sharing across projects.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "Roles are the standard way to share and reuse automation, and Ansible Galaxy has 30,000+ community roles.",
+  "tags": ["roles", "reusable", "structure", "templates", "best-practices"],
+  "prerequisites": ["Ansible installed", "Basic playbook knowledge"],
+  "steps": [
+    {
+      "title": "Initialize a role skeleton",
+      "command": "ansible-galaxy role init roles/nginx",
+      "description": "Creates the standard role directory structure with tasks, handlers, defaults, vars, templates, files, and meta."
+    },
+    {
+      "title": "Define default variables",
+      "command": "cat > roles/nginx/defaults/main.yml << 'EOF'\n---\nnginx_port: 80\nnginx_worker_processes: auto\nnginx_server_name: localhost\nEOF",
+      "description": "Defaults have the lowest precedence and can be overridden by users of the role."
+    },
+    {
+      "title": "Write the main tasks",
+      "command": "cat > roles/nginx/tasks/main.yml << 'EOF'\n---\n- name: Install nginx\n  apt:\n    name: nginx\n    state: present\n  notify: restart nginx\n\n- name: Deploy nginx config\n  template:\n    src: nginx.conf.j2\n    dest: /etc/nginx/nginx.conf\n  notify: restart nginx\n\n- name: Ensure nginx is running\n  service:\n    name: nginx\n    state: started\n    enabled: true\nEOF",
+      "description": "Tasks use handlers for service restarts and templates for dynamic configuration."
+    },
+    {
+      "title": "Create a handler",
+      "command": "cat > roles/nginx/handlers/main.yml << 'EOF'\n---\n- name: restart nginx\n  service:\n    name: nginx\n    state: restarted\nEOF",
+      "description": "Handlers run only when notified by a task that made a change, avoiding unnecessary restarts."
+    },
+    {
+      "title": "Use the role in a playbook",
+      "command": "cat > site.yml << 'EOF'\n---\n- name: Deploy web servers\n  hosts: webservers\n  become: true\n  roles:\n    - role: nginx\n      nginx_port: 8080\n      nginx_server_name: app.example.com\nEOF",
+      "description": "Imports the role and overrides default variables at the play level."
+    }
+  ],
+  "fullScript": "# Create a reusable Ansible role\nansible-galaxy role init roles/nginx\ncat > roles/nginx/defaults/main.yml << 'EOF'\n---\nnginx_port: 80\nnginx_worker_processes: auto\nnginx_server_name: localhost\nEOF\ncat > roles/nginx/tasks/main.yml << 'EOF'\n---\n- name: Install nginx\n  apt:\n    name: nginx\n    state: present\n  notify: restart nginx\n\n- name: Deploy nginx config\n  template:\n    src: nginx.conf.j2\n    dest: /etc/nginx/nginx.conf\n  notify: restart nginx\n\n- name: Ensure nginx is running\n  service:\n    name: nginx\n    state: started\n    enabled: true\nEOF\ncat > roles/nginx/handlers/main.yml << 'EOF'\n---\n- name: restart nginx\n  service:\n    name: nginx\n    state: restarted\nEOF",
+  "faq": [
+    {
+      "question": "What is the difference between defaults and vars in a role?",
+      "answer": "defaults/main.yml has the lowest variable precedence and is meant to be overridden by users. vars/main.yml has higher precedence and is for internal role variables that should not be changed."
+    },
+    {
+      "question": "How do I share a role on Ansible Galaxy?",
+      "answer": "Push the role to a public GitHub repository, then import it with 'ansible-galaxy role import <github_user> <repo_name>'. Add a meta/main.yml with galaxy_info for discoverability."
+    },
+    {
+      "question": "Can a role depend on other roles?",
+      "answer": "Yes. List dependencies in meta/main.yml under 'dependencies:'. Ansible installs and runs dependent roles automatically before the current role."
+    }
+  ],
+  "relatedRecipes": ["ansible-galaxy-workflow", "ansible-playbook-basics"],
+  "lastUpdated": "2026-03-11"
+}

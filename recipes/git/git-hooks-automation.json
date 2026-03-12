@@ -1,0 +1,72 @@
+{
+  "id": "git-hooks-automation",
+  "stackId": "git",
+  "name": "Pre-commit and Pre-push Hook Setup with Husky",
+  "description": "Automate code quality checks with Git hooks using husky and lint-staged to run linters, formatters, and tests before commits and pushes.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "Shift-left testing practices are making pre-commit hooks standard in professional workflows to catch issues before they reach CI.",
+  "tags": ["hooks", "automation", "husky", "lint-staged", "ci"],
+  "prerequisites": [
+    "Node.js and npm installed",
+    "A Git repository with a package.json",
+    "ESLint, Prettier, or another linter configured"
+  ],
+  "steps": [
+    {
+      "title": "Install husky and lint-staged",
+      "command": "npm install --save-dev husky lint-staged",
+      "description": "Install husky for managing Git hooks and lint-staged for running linters on only staged files, keeping hooks fast."
+    },
+    {
+      "title": "Initialize husky",
+      "command": "npx husky init",
+      "description": "Sets up the .husky directory and adds a prepare script to package.json so hooks are installed automatically when anyone runs npm install."
+    },
+    {
+      "title": "Configure lint-staged in package.json",
+      "command": "npm pkg set lint-staged.'*.{js,jsx,ts,tsx}'='[\"eslint --fix\", \"prettier --write\"]' lint-staged.'*.{json,md,css}'='prettier --write'",
+      "description": "Define which commands to run on staged files by file extension. This runs ESLint and Prettier on JS/TS files, and Prettier alone on JSON/MD/CSS.",
+      "tip": "Lint-staged only processes files that are staged for commit, making hooks fast even in large repositories."
+    },
+    {
+      "title": "Create the pre-commit hook",
+      "command": "echo 'npx lint-staged' > .husky/pre-commit",
+      "description": "Create a pre-commit hook that runs lint-staged. This will lint and format only the files being committed."
+    },
+    {
+      "title": "Create a pre-push hook for tests",
+      "command": "echo 'npm test -- --bail --watchAll=false' > .husky/pre-push",
+      "description": "Add a pre-push hook that runs the test suite before allowing a push. The --bail flag stops at the first failure for fast feedback.",
+      "warning": "Pre-push hooks that run a full test suite can be slow. Consider running only critical tests or tests related to changed files."
+    },
+    {
+      "title": "Test the hooks with a commit",
+      "command": "echo '// test' >> src/index.ts\ngit add src/index.ts\ngit commit -m \"test: verify pre-commit hooks\"",
+      "description": "Make a small change and commit to verify the pre-commit hook triggers lint-staged, which runs ESLint and Prettier on the staged file.",
+      "tip": "If a hook fails, the commit is aborted. Fix the issues reported by the linter and try committing again."
+    }
+  ],
+  "fullScript": "#!/usr/bin/env bash\n# git-hooks-setup.sh — Set up husky + lint-staged hooks\nset -euo pipefail\n\necho \"Installing husky and lint-staged...\"\nnpm install --save-dev husky lint-staged\n\necho \"\"\necho \"Initializing husky...\"\nnpx husky init\n\necho \"\"\necho \"Configuring lint-staged in package.json...\"\nnode -e \"\nconst pkg = require('./package.json');\npkg['lint-staged'] = {\n  '*.{js,jsx,ts,tsx}': ['eslint --fix', 'prettier --write'],\n  '*.{json,md,css,yml}': ['prettier --write']\n};\nrequire('fs').writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\\n');\n\"\n\necho \"\"\necho \"Creating pre-commit hook (lint-staged)...\"\necho 'npx lint-staged' > .husky/pre-commit\n\necho \"\"\necho \"Creating pre-push hook (tests)...\"\necho 'npm test -- --bail --watchAll=false' > .husky/pre-push\n\nchmod +x .husky/pre-commit .husky/pre-push 2>/dev/null || true\n\necho \"\"\necho \"Git hooks setup complete.\"\necho \"\"\necho \"Hooks installed:\"\necho \"  pre-commit: lint-staged (ESLint + Prettier on staged files)\"\necho \"  pre-push:   npm test (full test suite)\"\necho \"\"\necho \"To skip hooks in an emergency: git commit --no-verify\"",
+  "faq": [
+    {
+      "question": "How do I bypass hooks when I need to commit quickly?",
+      "answer": "Use 'git commit --no-verify' or 'git push --no-verify' to skip hooks. This should be used sparingly and only in genuine emergencies, as it defeats the purpose of having hooks."
+    },
+    {
+      "question": "Will hooks slow down my commits?",
+      "answer": "Lint-staged only processes staged files, not the entire codebase, so pre-commit hooks are typically fast (1-5 seconds). Pre-push hooks running tests may be slower. Consider using --bail and running only affected tests."
+    },
+    {
+      "question": "Do team members need to set up hooks manually?",
+      "answer": "No. When husky is installed with a 'prepare' script in package.json, hooks are automatically set up when anyone runs 'npm install'. The hooks themselves are committed to the repository in the .husky directory."
+    }
+  ],
+  "relatedRecipes": [
+    "conventional-commits-setup",
+    "branch-cleanup-automation",
+    "git-bisect-debugging"
+  ],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tf-mod-5",
+  "categoryId": "terraform",
+  "subcategoryId": "modules",
+  "title": "Get output JSON",
+  "command": "terraform output -json",
+  "description": "Output values as JSON."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "playwright-component-1",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-component",
+  "title": "UI mode on network",
+  "command": "npx playwright test --ui-port=0 --ui-host=0.0.0.0",
+  "description": "Open UI mode accessible from any network interface."
+}

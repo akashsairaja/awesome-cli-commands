@@ -1,0 +1,8 @@
+{
+  "id": "aws-ecs-2",
+  "categoryId": "aws",
+  "subcategoryId": "ecs",
+  "title": "List services",
+  "command": "aws ecs list-services --cluster mycluster",
+  "description": "List services in cluster."
+}

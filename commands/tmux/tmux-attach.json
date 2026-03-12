@@ -1,0 +1,9 @@
+{
+  "id": "tmux-attach",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-sessions",
+  "title": "Attach to session",
+  "command": "tmux attach -t mysession",
+  "description": "Attach to existing session",
+  "tags": ["session", "attach", "connect"]
+}

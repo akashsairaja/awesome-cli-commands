@@ -1,0 +1,8 @@
+{
+  "id": "java-5",
+  "categoryId": "java",
+  "subcategoryId": "java-compiler",
+  "title": "Compile for specific version",
+  "command": "javac --release 17 MyClass.java",
+  "description": "Compile targeting a specific Java version."
+}

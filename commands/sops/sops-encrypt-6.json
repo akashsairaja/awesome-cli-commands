@@ -1,0 +1,8 @@
+{
+  "id": "sops-encrypt-6",
+  "categoryId": "sops",
+  "subcategoryId": "sops-encrypt",
+  "title": "Encrypt with GCP KMS",
+  "command": "sops -e --gcp-kms projects/myproj/locations/global/keyRings/myring/cryptoKeys/mykey secrets.yaml",
+  "description": "Encrypt using Google Cloud KMS."
+}

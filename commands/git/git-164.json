@@ -1,0 +1,8 @@
+{
+  "id": "git-164",
+  "categoryId": "git",
+  "subcategoryId": "advanced",
+  "title": "Compare commit ranges",
+  "command": "git range-diff <base> <branch1> <branch2>",
+  "description": "Compare two commit ranges for rebasing."
+}

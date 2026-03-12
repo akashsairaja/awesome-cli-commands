@@ -1,0 +1,8 @@
+{
+  "id": "httpie-output-15",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-output",
+  "title": "Format options for JSON",
+  "command": "http --format-options=json.indent:4 GET https://api.example.com/data",
+  "description": "Customize JSON indentation in the output."
+}

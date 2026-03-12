@@ -1,0 +1,48 @@
+{
+  "id": "branch-protection-setup",
+  "stackId": "github",
+  "name": "Branch Protection Setup",
+  "description": "Configure branch protection rules to enforce code review, status checks, and merge requirements on important branches.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": false,
+  "tags": ["branch-protection", "security", "rules", "governance"],
+  "prerequisites": ["GitHub CLI (gh) installed and authenticated", "Repository admin access"],
+  "steps": [
+    {
+      "title": "View current branch protection rules",
+      "description": "Check what protection rules are currently set on a branch.",
+      "command": "gh api repos/{owner}/{repo}/branches/main/protection --jq '{requiredReviews: .required_pull_request_reviews.required_approving_review_count, statusChecks: .required_status_checks.contexts, enforceAdmins: .enforce_admins.enabled}'"
+    },
+    {
+      "title": "Enable required pull request reviews",
+      "description": "Require at least one approval before merging to main.",
+      "command": "gh api -X PUT repos/{owner}/{repo}/branches/main/protection -f required_pull_request_reviews[required_approving_review_count]=1 -F enforce_admins=true -f required_status_checks[strict]=true -f required_status_checks[contexts][]='ci/test'",
+      "warning": "This applies to everyone including admins when enforce_admins is true."
+    },
+    {
+      "title": "Require status checks to pass",
+      "description": "Ensure CI checks pass before a PR can be merged.",
+      "command": "gh api -X PUT repos/{owner}/{repo}/branches/main/protection/required_status_checks -f strict=true -f contexts[]='ci/test' -f contexts[]='ci/lint'",
+      "tip": "Set strict=true to require the branch to be up-to-date with the base branch before merging."
+    },
+    {
+      "title": "View rulesets (newer alternative)",
+      "description": "List repository rulesets which provide more flexible branch protection.",
+      "command": "gh api repos/{owner}/{repo}/rulesets --jq '.[] | {name, enforcement, target: .conditions.ref_name}'"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Branch Protection Setup\nset -euo pipefail\n\nREPO=${1:?\"Usage: $0 <owner/repo>\"}\nBRANCH=${2:-\"main\"}\n\necho \"=== Current Protection for $BRANCH ===\"\ngh api \"repos/$REPO/branches/$BRANCH/protection\" 2>/dev/null | jq '{\n  required_reviews: .required_pull_request_reviews.required_approving_review_count,\n  dismiss_stale_reviews: .required_pull_request_reviews.dismiss_stale_reviews,\n  status_checks: .required_status_checks.contexts,\n  enforce_admins: .enforce_admins.enabled,\n  linear_history: .required_linear_history.enabled\n}' || echo \"No branch protection configured\"\n\necho \"\"\necho \"=== Rulesets ===\"\ngh api \"repos/$REPO/rulesets\" --jq '.[] | .name + \" (\" + .enforcement + \")\"' 2>/dev/null || echo \"No rulesets configured\"\n\necho \"\"\necho \"=== Protection Commands ===\"\necho \"View:   gh api repos/$REPO/branches/$BRANCH/protection\"\necho \"Delete: gh api -X DELETE repos/$REPO/branches/$BRANCH/protection\"",
+  "faq": [
+    {
+      "question": "What is the difference between branch protection and rulesets?",
+      "answer": "Rulesets are the newer, more flexible system. They support multiple rule targets, organization-level rules, and bypass lists. Branch protection rules are per-branch and simpler to configure."
+    },
+    {
+      "question": "Can I protect branches matching a pattern?",
+      "answer": "With branch protection rules, you can use wildcard patterns like 'release/*'. With rulesets, you get even more flexible ref name patterns."
+    }
+  ],
+  "relatedRecipes": ["pr-workflow-automation", "enterprise-secrets-audit"],
+  "lastUpdated": "2026-03-11"
+}

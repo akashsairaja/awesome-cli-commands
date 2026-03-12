@@ -1,0 +1,9 @@
+{
+  "id": "redis-lpop",
+  "categoryId": "redis",
+  "subcategoryId": "redis-lists",
+  "title": "Pop from list head",
+  "command": "LPOP key",
+  "description": "Remove and return first element",
+  "tags": ["lpop", "list", "head"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gradle-build",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-build",
+  "title": "Build Project",
+  "command": "./gradlew build",
+  "description": "Compile, test, and assemble the project",
+  "tags": ["build", "compile", "assemble"]
+}

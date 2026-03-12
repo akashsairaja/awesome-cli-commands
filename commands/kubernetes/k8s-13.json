@@ -1,0 +1,8 @@
+{
+  "id": "k8s-13",
+  "categoryId": "kubernetes",
+  "subcategoryId": "pods",
+  "title": "Watch pods in real-time",
+  "command": "kubectl get pods -w",
+  "description": "Watch pods for changes in real-time."
+}

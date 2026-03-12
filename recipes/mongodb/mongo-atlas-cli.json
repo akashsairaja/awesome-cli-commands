@@ -1,0 +1,67 @@
+{
+  "id": "mongo-atlas-cli",
+  "stackId": "mongodb",
+  "name": "MongoDB Atlas Management from CLI",
+  "description": "Manage MongoDB Atlas clusters, databases, and users from the command line using the Atlas CLI for automated cloud database operations.",
+  "difficulty": "beginner",
+  "timeMinutes": 12,
+  "trending": true,
+  "trendingReason": "Atlas is the dominant MongoDB hosting platform and CLI management enables infrastructure-as-code workflows",
+  "tags": ["atlas", "cloud", "cli", "managed-database", "automation"],
+  "prerequisites": [
+    "MongoDB Atlas account (free tier available)",
+    "Atlas CLI installed (brew install mongodb-atlas-cli or equivalent)"
+  ],
+  "steps": [
+    {
+      "title": "Authenticate with Atlas",
+      "description": "Log in to your Atlas account from the CLI.",
+      "command": "atlas auth login",
+      "tip": "This opens a browser for OAuth authentication. For CI/CD, use API keys: atlas config init --apiKey and --privateKey."
+    },
+    {
+      "title": "List your Atlas projects",
+      "description": "View all projects (organizations) in your Atlas account.",
+      "command": "atlas projects list"
+    },
+    {
+      "title": "Create a free-tier cluster",
+      "description": "Deploy a new M0 (free tier) cluster in your project.",
+      "command": "atlas clusters create dev-cluster --provider AWS --region US_EAST_1 --tier M0",
+      "tip": "M0 is free forever with 512MB storage. Use M10+ for production workloads."
+    },
+    {
+      "title": "Check cluster status",
+      "description": "View the status and connection details of your clusters.",
+      "command": "atlas clusters describe dev-cluster"
+    },
+    {
+      "title": "Create a database user",
+      "description": "Add a user with readWrite access for application connections.",
+      "command": "atlas dbusers create --username app_user --password secure_pass --role readWriteAnyDatabase --projectId <project-id>"
+    },
+    {
+      "title": "Get the connection string",
+      "description": "Retrieve the connection string to use in your application.",
+      "command": "atlas clusters connectionStrings describe dev-cluster",
+      "tip": "Use the 'mongodb+srv://' connection string format. It handles DNS-based service discovery and replica set routing automatically."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# MongoDB Atlas CLI Management\nset -euo pipefail\n\necho \"=== Atlas Projects ===\"\natlas projects list --output json | mongosh --nodb --quiet --eval \"\nconst projects = JSON.parse(cat());\nprojects.results.forEach(p => {\n  print(p.id + ': ' + p.name + ' (org: ' + p.orgId + ')');\n});\n\" 2>/dev/null || atlas projects list\n\necho \"\"\necho \"=== Clusters ===\"\natlas clusters list --output json | mongosh --nodb --quiet --eval \"\nconst clusters = JSON.parse(cat());\nclusters.results.forEach(c => {\n  print(c.name + ': ' + c.stateName + ' | ' + c.providerSettings.providerName +\n    ' ' + c.providerSettings.regionName + ' | tier: ' + c.providerSettings.instanceSizeName);\n});\n\" 2>/dev/null || atlas clusters list\n\necho \"\"\necho \"=== Database Users ===\"\natlas dbusers list\n\necho \"\"\necho \"=== IP Access List ===\"\natlas accessLists list\n\necho \"\"\necho \"=== Connection Strings ===\"\nfor CLUSTER in $(atlas clusters list --output json 2>/dev/null | mongosh --nodb --quiet --eval \"JSON.parse(cat()).results.forEach(c => print(c.name))\" 2>/dev/null || atlas clusters list --output go-template='{{range .results}}{{.name}}{{\"\n\"}}{{end}}'); do\n  echo \"--- $CLUSTER ---\"\n  atlas clusters connectionStrings describe \"$CLUSTER\" 2>/dev/null || echo \"  (unable to fetch)\"\ndone",
+  "faq": [
+    {
+      "question": "Is the Atlas CLI free?",
+      "answer": "Yes, the Atlas CLI is free and open source. It works with all Atlas tiers including the free M0 tier. You only pay for the Atlas cluster resources you provision (M0 is always free)."
+    },
+    {
+      "question": "How do I use the Atlas CLI in CI/CD pipelines?",
+      "answer": "Create an API key in the Atlas web console under Organization > Access Manager > API Keys. Then configure the CLI with 'atlas config init' using the public and private API keys instead of interactive login."
+    },
+    {
+      "question": "Can I manage Atlas with Terraform instead?",
+      "answer": "Yes, the MongoDB Atlas Terraform provider (mongodbatlas) supports full cluster, user, and network management as infrastructure-as-code. Use the Atlas CLI for quick operations and Terraform for reproducible infrastructure."
+    }
+  ],
+  "relatedRecipes": ["mongo-user-auth", "mongo-backup-restore"],
+  "lastUpdated": "2026-03-11"
+}

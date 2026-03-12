@@ -1,0 +1,8 @@
+{
+  "id": "snyk-test-4",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-test",
+  "title": "JSON output",
+  "command": "snyk test --json > results.json",
+  "description": "Output results as JSON."
+}

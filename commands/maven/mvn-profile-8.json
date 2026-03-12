@@ -1,0 +1,8 @@
+{
+  "id": "mvn-profile-8",
+  "categoryId": "maven",
+  "subcategoryId": "profiles",
+  "title": "Build dependents",
+  "command": "mvn -pl module-name -amd install",
+  "description": "Build module and dependents."
+}

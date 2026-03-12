@@ -1,0 +1,8 @@
+{
+  "id": "git-96",
+  "categoryId": "git",
+  "subcategoryId": "reflog",
+  "title": "Reflog for branch",
+  "command": "git reflog <branch>",
+  "description": "Show reflog for specific branch."
+}

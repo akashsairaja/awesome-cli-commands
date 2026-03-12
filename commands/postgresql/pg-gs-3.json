@@ -1,0 +1,8 @@
+{
+  "id": "pg-gs-3",
+  "title": "List databases",
+  "command": "psql -U postgres -c '\\l'",
+  "description": "List all databases in PostgreSQL",
+  "categoryId": "postgresql",
+  "subcategoryId": "getting-started"
+}

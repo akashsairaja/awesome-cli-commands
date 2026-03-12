@@ -1,0 +1,8 @@
+{
+  "id": "bash-2",
+  "categoryId": "bash",
+  "subcategoryId": "scripting",
+  "title": "Make executable",
+  "command": "chmod +x script.sh",
+  "description": "Make script executable."
+}

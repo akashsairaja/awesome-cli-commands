@@ -1,0 +1,8 @@
+{
+  "id": "claude-29",
+  "categoryId": "claudecode",
+  "subcategoryId": "context",
+  "title": "View token usage breakdown",
+  "command": "/context",
+  "description": "Display detailed token usage breakdown."
+}

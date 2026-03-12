@@ -1,0 +1,8 @@
+{
+  "id": "py-43",
+  "categoryId": "python",
+  "subcategoryId": "python-uv",
+  "title": "Sync environment",
+  "command": "uv sync",
+  "description": "Synchronize environment with lock file."
+}

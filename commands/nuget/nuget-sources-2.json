@@ -1,0 +1,8 @@
+{
+  "id": "nuget-sources-2",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-sources",
+  "title": "Add source",
+  "command": "dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org",
+  "description": "Add a package source."
+}

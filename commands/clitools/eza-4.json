@@ -1,0 +1,8 @@
+{
+  "id": "eza-4",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-eza",
+  "title": "Git status",
+  "command": "eza -l --git",
+  "description": "Show git status for each file."
+}

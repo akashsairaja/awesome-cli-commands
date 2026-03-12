@@ -1,0 +1,8 @@
+{
+  "id": "trivy-image-3",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-image",
+  "title": "Ignore unfixed",
+  "command": "trivy image --ignore-unfixed nginx:latest",
+  "description": "Hide vulnerabilities without fixes."
+}

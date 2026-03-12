@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-net-vpc-create",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-networking",
+  "title": "Create VPC Network",
+  "command": "gcloud compute networks create <name> --subnet-mode=custom",
+  "description": "Create a custom VPC network",
+  "tags": ["vpc", "network", "create"]
+}

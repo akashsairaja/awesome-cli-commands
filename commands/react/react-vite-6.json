@@ -1,0 +1,8 @@
+{
+  "id": "react-vite-6",
+  "categoryId": "react",
+  "subcategoryId": "react-vite",
+  "title": "Preview production",
+  "command": "vite preview",
+  "description": "Preview production build locally."
+}

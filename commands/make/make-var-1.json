@@ -1,0 +1,8 @@
+{
+  "id": "make-var-1",
+  "categoryId": "make",
+  "subcategoryId": "make-variables",
+  "title": "Simple variable",
+  "command": "CC := gcc",
+  "description": "Immediate assignment (expanded once)."
+}

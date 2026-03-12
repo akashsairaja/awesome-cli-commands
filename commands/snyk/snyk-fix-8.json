@@ -1,0 +1,8 @@
+{
+  "id": "snyk-fix-8",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-fix",
+  "title": "Clear config",
+  "command": "snyk config clear",
+  "description": "Remove all Snyk CLI configuration."
+}

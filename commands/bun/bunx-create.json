@@ -1,0 +1,9 @@
+{
+  "id": "bunx-create",
+  "categoryId": "bun",
+  "subcategoryId": "bun-tools",
+  "title": "Run Create Package",
+  "command": "bunx create-react-app my-app",
+  "description": "Run create-* packages",
+  "tags": ["bunx", "create", "scaffold"]
+}

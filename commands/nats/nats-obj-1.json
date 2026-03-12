@@ -1,0 +1,8 @@
+{
+  "id": "nats-obj-1",
+  "categoryId": "nats",
+  "subcategoryId": "nats-object",
+  "title": "Create object store",
+  "command": "nats obj add files --description 'File storage'",
+  "description": "Create object store bucket."
+}

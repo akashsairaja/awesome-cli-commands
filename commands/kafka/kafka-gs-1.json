@@ -1,0 +1,8 @@
+{
+  "id": "kafka-gs-1",
+  "title": "Start Kafka with Docker Compose",
+  "command": "docker-compose up -d",
+  "description": "Start Kafka cluster using Docker Compose (requires compose file)",
+  "categoryId": "kafka",
+  "subcategoryId": "getting-started"
+}

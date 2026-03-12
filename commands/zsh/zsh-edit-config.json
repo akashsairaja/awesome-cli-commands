@@ -1,0 +1,9 @@
+{
+  "id": "zsh-edit-config",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-config",
+  "title": "Edit zsh config",
+  "command": "$EDITOR ~/.zshrc",
+  "description": "Open .zshrc in default editor",
+  "tags": ["edit", "config", "zshrc"]
+}

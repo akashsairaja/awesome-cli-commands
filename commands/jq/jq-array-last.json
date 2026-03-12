@@ -1,0 +1,9 @@
+{
+  "id": "jq-array-last",
+  "categoryId": "jq",
+  "subcategoryId": "jq-arrays",
+  "title": "Get last element",
+  "command": "cat file.json | jq '.[-1]'",
+  "description": "Get last element of array",
+  "tags": ["array", "last", "index"]
+}

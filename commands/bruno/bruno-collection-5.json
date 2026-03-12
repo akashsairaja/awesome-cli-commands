@@ -1,0 +1,8 @@
+{
+  "id": "bruno-collection-5",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-collection",
+  "title": "Form data upload",
+  "command": "post {\n  url: {{baseUrl}}/upload\n  body: multipart-form\n}\n\nbody:multipart-form {\n  file: @file(/path/to/image.png)\n  description: Profile photo\n}",
+  "description": "Upload file using multipart form data."
+}

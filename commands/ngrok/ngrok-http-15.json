@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-http-15",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-http",
+  "title": "Traffic policy file",
+  "command": "ngrok http --traffic-policy-file=policy.yml 3000",
+  "description": "Apply a traffic policy from a YAML file."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "brew-9",
+  "categoryId": "homebrew",
+  "subcategoryId": "packages",
+  "title": "Show outdated packages",
+  "command": "brew outdated",
+  "description": "List packages with updates available."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "rust-test-8",
+  "categoryId": "rust",
+  "subcategoryId": "rust-test",
+  "title": "Use nextest",
+  "command": "cargo nextest run",
+  "description": "Run tests with cargo-nextest (faster, better output)."
+}

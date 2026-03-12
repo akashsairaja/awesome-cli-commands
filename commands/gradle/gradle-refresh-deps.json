@@ -1,0 +1,9 @@
+{
+  "id": "gradle-refresh-deps",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-dependencies",
+  "title": "Refresh Dependencies",
+  "command": "./gradlew build --refresh-dependencies",
+  "description": "Force refresh of all dependencies",
+  "tags": ["dependencies", "refresh", "update"]
+}

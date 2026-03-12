@@ -1,0 +1,8 @@
+{
+  "id": "aitool-gs-2",
+  "title": "Check OpenAI version",
+  "command": "openai --version",
+  "description": "Display the installed OpenAI CLI version",
+  "categoryId": "aitools",
+  "subcategoryId": "getting-started"
+}

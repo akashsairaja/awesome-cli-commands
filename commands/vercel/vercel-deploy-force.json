@@ -1,0 +1,9 @@
+{
+  "id": "vercel-deploy-force",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-deploy",
+  "title": "Force new deployment",
+  "command": "vercel --force",
+  "description": "Force a new deployment even if unchanged",
+  "tags": ["deploy", "force", "rebuild"]
+}

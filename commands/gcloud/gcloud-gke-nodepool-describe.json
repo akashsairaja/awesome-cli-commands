@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-gke-nodepool-describe",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-gke",
+  "title": "Describe Node Pool",
+  "command": "gcloud container node-pools describe <pool-name> --cluster=<cluster> --zone=<zone>",
+  "description": "Get detailed info about a node pool including machine type and autoscaling",
+  "tags": ["gke", "node-pool", "describe"]
+}

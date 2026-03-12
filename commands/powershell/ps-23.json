@@ -1,0 +1,8 @@
+{
+  "id": "ps-23",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-system",
+  "title": "Check execution policy",
+  "command": "Get-ExecutionPolicy",
+  "description": "Show current execution policy."
+}

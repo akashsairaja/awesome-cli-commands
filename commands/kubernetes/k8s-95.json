@@ -1,0 +1,8 @@
+{
+  "id": "k8s-95",
+  "categoryId": "kubernetes",
+  "subcategoryId": "daemonsets",
+  "title": "List daemonsets",
+  "command": "kubectl get daemonsets",
+  "description": "List all daemonsets."
+}

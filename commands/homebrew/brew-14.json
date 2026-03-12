@@ -1,0 +1,8 @@
+{
+  "id": "brew-14",
+  "categoryId": "homebrew",
+  "subcategoryId": "packages",
+  "title": "Show dependents",
+  "command": "brew uses <package> --installed",
+  "description": "Show which packages depend on this one."
+}

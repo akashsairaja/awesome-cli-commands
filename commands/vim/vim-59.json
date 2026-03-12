@@ -1,0 +1,8 @@
+{
+  "id": "vim-59",
+  "categoryId": "vim",
+  "subcategoryId": "macros",
+  "title": "View registers",
+  "command": ":reg",
+  "description": "Display contents of all registers."
+}

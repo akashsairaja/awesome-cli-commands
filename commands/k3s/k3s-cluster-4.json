@@ -1,0 +1,8 @@
+{
+  "id": "k3s-cluster-4",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-cluster",
+  "title": "Restart k3s",
+  "command": "sudo systemctl restart k3s",
+  "description": "Restart k3s service."
+}

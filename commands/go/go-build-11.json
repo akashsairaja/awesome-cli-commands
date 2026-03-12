@@ -1,0 +1,8 @@
+{
+  "id": "go-build-11",
+  "categoryId": "go",
+  "subcategoryId": "go-build",
+  "title": "Production build",
+  "command": "CGO_ENABLED=0 go build -ldflags=\"-w -s\" -trimpath -o myapp",
+  "description": "Static binary with no CGO, stripped debug info."
+}

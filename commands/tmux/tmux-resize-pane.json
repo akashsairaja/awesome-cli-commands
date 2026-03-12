@@ -1,0 +1,9 @@
+{
+  "id": "tmux-resize-pane",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-panes",
+  "title": "Resize pane",
+  "command": "Ctrl+b Ctrl+[arrow]",
+  "description": "Resize pane in direction",
+  "tags": ["pane", "resize", "size"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "go-env-1",
+  "categoryId": "go",
+  "subcategoryId": "go-env",
+  "title": "Show all env vars",
+  "command": "go env",
+  "description": "Display all Go environment variables."
+}

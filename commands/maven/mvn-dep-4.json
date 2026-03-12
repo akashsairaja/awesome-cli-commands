@@ -1,0 +1,8 @@
+{
+  "id": "mvn-dep-4",
+  "categoryId": "maven",
+  "subcategoryId": "dependencies",
+  "title": "Analyze dependencies",
+  "command": "mvn dependency:analyze",
+  "description": "Find unused and undeclared deps."
+}

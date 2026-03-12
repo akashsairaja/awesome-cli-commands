@@ -1,0 +1,8 @@
+{
+  "id": "db-29",
+  "categoryId": "database",
+  "subcategoryId": "postgresql",
+  "title": "Create role",
+  "command": "CREATE ROLE username WITH LOGIN PASSWORD 'pass';",
+  "description": "Create a new database role with login."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "snyk-fix-9",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-fix",
+  "title": "Set default org",
+  "command": "snyk config set org=my-org-slug",
+  "description": "Set the default organization for all commands."
+}

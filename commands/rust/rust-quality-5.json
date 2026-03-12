@@ -1,0 +1,8 @@
+{
+  "id": "rust-quality-5",
+  "categoryId": "rust",
+  "subcategoryId": "rust-quality",
+  "title": "Clippy auto-fix",
+  "command": "cargo clippy --fix",
+  "description": "Auto-fix Clippy issues where possible."
+}

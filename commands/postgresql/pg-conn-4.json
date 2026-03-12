@@ -1,0 +1,8 @@
+{
+  "id": "pg-conn-4",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-connection",
+  "title": "Execute and exit",
+  "command": "psql -c \"SELECT version();\" -d postgres",
+  "description": "Run single command and exit."
+}

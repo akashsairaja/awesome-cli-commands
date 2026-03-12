@@ -1,0 +1,9 @@
+{
+  "id": "azure-staticwebapp-settings",
+  "categoryId": "azure",
+  "subcategoryId": "azure-staticwebapp",
+  "title": "Configure App Settings",
+  "command": "az staticwebapp appsettings set -n mysite -g rg --setting-names KEY=value",
+  "description": "Set application settings and environment variables",
+  "tags": ["staticwebapp", "settings", "env"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "vault-gs-2",
+  "title": "Set Vault address",
+  "command": "export VAULT_ADDR='http://127.0.0.1:8200'",
+  "description": "Configure Vault CLI to connect to local dev server",
+  "categoryId": "vault",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gradle-task-graph",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-tasks",
+  "title": "Show Task Graph",
+  "command": "./gradlew <task> --dry-run",
+  "description": "Show task execution order without running",
+  "tags": ["tasks", "graph", "dry-run"]
+}

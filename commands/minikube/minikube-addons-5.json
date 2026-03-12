@@ -1,0 +1,8 @@
+{
+  "id": "minikube-addons-5",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-addons",
+  "title": "Open dashboard",
+  "command": "minikube dashboard",
+  "description": "Open Kubernetes dashboard in browser."
+}

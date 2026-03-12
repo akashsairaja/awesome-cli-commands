@@ -1,0 +1,8 @@
+{
+  "id": "claude-13",
+  "categoryId": "claudecode",
+  "subcategoryId": "general",
+  "title": "Limit conversation turns",
+  "command": "claude --max-turns 5",
+  "description": "Limit the number of conversation turns."
+}

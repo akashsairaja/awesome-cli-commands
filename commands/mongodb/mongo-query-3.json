@@ -1,0 +1,8 @@
+{
+  "id": "mongo-query-3",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-query",
+  "title": "Logical OR",
+  "command": "db.users.find({ $or: [{ age: { $lt: 20 } }, { status: \"vip\" }] })",
+  "description": "Match any condition."
+}

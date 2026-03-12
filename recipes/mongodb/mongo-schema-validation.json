@@ -1,0 +1,56 @@
+{
+  "id": "mongo-schema-validation",
+  "stackId": "mongodb",
+  "name": "JSON Schema Validation Rules",
+  "description": "Enforce data integrity in MongoDB by defining JSON Schema validation rules that reject documents not matching your expected structure.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "tags": ["schema", "validation", "data-integrity", "json-schema"],
+  "prerequisites": ["MongoDB 6+ with mongosh", "Understanding of JSON Schema basics"],
+  "steps": [
+    {
+      "title": "Create a collection with schema validation",
+      "description": "Define a collection with JSON Schema rules that enforce required fields and types.",
+      "command": "mongosh --eval 'db.createCollection(\"products\", {validator: {$jsonSchema: {bsonType: \"object\", required: [\"name\", \"price\", \"category\"], properties: {name: {bsonType: \"string\", description: \"must be a string\"}, price: {bsonType: \"number\", minimum: 0, description: \"must be a non-negative number\"}, category: {enum: [\"electronics\", \"clothing\", \"food\", \"books\"], description: \"must be a valid category\"}, inStock: {bsonType: \"bool\"}}}}})' mydb"
+    },
+    {
+      "title": "Test validation with a valid document",
+      "description": "Insert a document that passes all validation rules.",
+      "command": "mongosh --eval 'db.products.insertOne({name: \"Laptop\", price: 999.99, category: \"electronics\", inStock: true})' mydb"
+    },
+    {
+      "title": "Test validation with an invalid document",
+      "description": "Attempt to insert a document that violates the schema to verify enforcement.",
+      "command": "mongosh --eval 'try { db.products.insertOne({name: \"Bad Product\", price: -10, category: \"invalid\"}); } catch(e) { print(\"Validation error: \" + e.message); }' mydb",
+      "tip": "The insert will fail with a document validation error showing which rules were violated."
+    },
+    {
+      "title": "Add validation to an existing collection",
+      "description": "Apply schema validation rules to a collection that already has data.",
+      "command": "mongosh --eval 'db.runCommand({collMod: \"orders\", validator: {$jsonSchema: {bsonType: \"object\", required: [\"customerId\", \"items\", \"total\"], properties: {customerId: {bsonType: \"string\"}, items: {bsonType: \"array\", minItems: 1}, total: {bsonType: \"number\", minimum: 0}}}}, validationLevel: \"moderate\"})' mydb",
+      "tip": "validationLevel 'moderate' only validates inserts and updates to documents that already match the schema. Use 'strict' to validate all writes."
+    },
+    {
+      "title": "View current validation rules",
+      "description": "Inspect the validation rules configured on a collection.",
+      "command": "mongosh --eval 'db.getCollectionInfos({name: \"products\"})[0].options.validator' mydb"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# MongoDB Schema Validation Setup\nset -euo pipefail\n\nDB=\"mydb\"\n\necho \"=== Creating validated collection ===\"\nmongosh --quiet --eval \"\ndb.createCollection('products', {\n  validator: {\n    $jsonSchema: {\n      bsonType: 'object',\n      required: ['name', 'price', 'category', 'sku'],\n      properties: {\n        name: {bsonType: 'string', minLength: 1, maxLength: 200},\n        price: {bsonType: 'number', minimum: 0},\n        category: {enum: ['electronics', 'clothing', 'food', 'books', 'other']},\n        sku: {bsonType: 'string', pattern: '^[A-Z]{2,4}-[0-9]{4,8}$'},\n        description: {bsonType: 'string', maxLength: 2000},\n        tags: {bsonType: 'array', items: {bsonType: 'string'}},\n        inStock: {bsonType: 'bool'}\n      }\n    }\n  },\n  validationLevel: 'strict',\n  validationAction: 'error'\n});\nprint('Collection created with validation');\n\" \"$DB\"\n\necho \"\"\necho \"=== Testing valid insert ===\"\nmongosh --quiet --eval \"\nconst result = db.products.insertOne({\n  name: 'Wireless Mouse',\n  price: 29.99,\n  category: 'electronics',\n  sku: 'ELEC-00142',\n  tags: ['wireless', 'mouse', 'usb'],\n  inStock: true\n});\nprint('Inserted: ' + result.insertedId);\n\" \"$DB\"\n\necho \"\"\necho \"=== Testing invalid inserts ===\"\nmongosh --quiet --eval \"\nconst tests = [\n  {doc: {name: 'Bad Price', price: -5, category: 'electronics', sku: 'ELEC-0001'}, reason: 'negative price'},\n  {doc: {name: 'Bad Category', price: 10, category: 'invalid', sku: 'XX-0001'}, reason: 'invalid enum'},\n  {doc: {price: 10, category: 'books', sku: 'BOOK-0001'}, reason: 'missing name'},\n  {doc: {name: 'Bad SKU', price: 10, category: 'books', sku: 'bad-sku'}, reason: 'invalid SKU pattern'}\n];\ntests.forEach(t => {\n  try {\n    db.products.insertOne(t.doc);\n    print('UNEXPECTED: ' + t.reason + ' - should have failed');\n  } catch(e) {\n    print('BLOCKED (' + t.reason + '): validation correctly rejected');\n  }\n});\n\" \"$DB\"\n\necho \"\"\necho \"=== Current validation rules ===\"\nmongosh --quiet --eval \"\nconst info = db.getCollectionInfos({name: 'products'})[0];\nprintjson(info.options);\n\" \"$DB\"",
+  "faq": [
+    {
+      "question": "What is the difference between strict and moderate validation?",
+      "answer": "Strict validates all inserts and updates. Moderate only validates documents that already match the schema, allowing existing non-conforming documents to be updated without triggering errors. Use moderate when adding validation to an existing collection with legacy data."
+    },
+    {
+      "question": "Can I use validation with error or warn action?",
+      "answer": "validationAction 'error' rejects non-conforming documents (default). 'warn' allows the write but logs a warning to the MongoDB log. Use 'warn' during a migration period to identify non-conforming documents without breaking the application."
+    },
+    {
+      "question": "Does schema validation affect read performance?",
+      "answer": "No, validation only runs on writes (insert, update, replaceOne). Read queries are not affected. The performance impact on writes is minimal since JSON Schema validation is executed in memory."
+    }
+  ],
+  "relatedRecipes": ["mongo-index-optimization", "mongo-aggregation-pipeline"],
+  "lastUpdated": "2026-03-11"
+}

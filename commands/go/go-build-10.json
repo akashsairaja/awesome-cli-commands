@@ -1,0 +1,8 @@
+{
+  "id": "go-build-10",
+  "categoryId": "go",
+  "subcategoryId": "go-build",
+  "title": "Build with trimpath",
+  "command": "go build -trimpath",
+  "description": "Remove file system paths from binary for reproducibility."
+}

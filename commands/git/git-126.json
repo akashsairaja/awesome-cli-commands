@@ -1,0 +1,8 @@
+{
+  "id": "git-126",
+  "categoryId": "git",
+  "subcategoryId": "tags",
+  "title": "Push single tag",
+  "command": "git push origin <tagname>",
+  "description": "Push specific tag to remote."
+}

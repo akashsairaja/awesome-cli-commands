@@ -1,0 +1,8 @@
+{
+  "id": "bash-76",
+  "categoryId": "bash",
+  "subcategoryId": "strings",
+  "title": "Replace at end",
+  "command": "echo \"${str/%old/new}\"",
+  "description": "Replace if at end."
+}

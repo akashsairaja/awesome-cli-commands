@@ -1,0 +1,8 @@
+{
+  "id": "react-next-4",
+  "categoryId": "react",
+  "subcategoryId": "react-nextjs",
+  "title": "Build for production",
+  "command": "next build",
+  "description": "Create optimized production build."
+}

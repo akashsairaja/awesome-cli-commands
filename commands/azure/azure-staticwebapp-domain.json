@@ -1,0 +1,9 @@
+{
+  "id": "azure-staticwebapp-domain",
+  "categoryId": "azure",
+  "subcategoryId": "azure-staticwebapp",
+  "title": "Add Custom Domain",
+  "command": "az staticwebapp hostname set -n mysite -g rg --hostname custom.com",
+  "description": "Configure custom domain for static web app",
+  "tags": ["staticwebapp", "domain", "hostname"]
+}

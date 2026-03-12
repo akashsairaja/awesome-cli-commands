@@ -1,0 +1,8 @@
+{
+  "id": "composer-autoload-3",
+  "categoryId": "composer",
+  "subcategoryId": "composer-autoload",
+  "title": "Classmap authoritative",
+  "command": "composer dump-autoload --classmap-authoritative",
+  "description": "Only load from classmap."
+}

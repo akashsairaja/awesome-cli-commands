@@ -1,0 +1,8 @@
+{
+  "id": "go-build-5",
+  "categoryId": "go",
+  "subcategoryId": "go-build",
+  "title": "Build for Windows",
+  "command": "GOOS=windows GOARCH=amd64 go build -o myapp.exe",
+  "description": "Cross-compile for Windows AMD64."
+}

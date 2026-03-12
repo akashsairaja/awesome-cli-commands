@@ -1,0 +1,8 @@
+{
+  "id": "node-test-5",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-test",
+  "title": "Coverage thresholds",
+  "command": "node --test --experimental-test-coverage --test-coverage-lines=80",
+  "description": "Set minimum line coverage threshold."
+}

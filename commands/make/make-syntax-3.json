@@ -1,0 +1,8 @@
+{
+  "id": "make-syntax-3",
+  "categoryId": "make",
+  "subcategoryId": "make-syntax",
+  "title": "Pattern rule",
+  "command": "%.o: %.c\n\t$(CC) -c $< -o $@",
+  "description": "Rule for multiple targets with pattern."
+}

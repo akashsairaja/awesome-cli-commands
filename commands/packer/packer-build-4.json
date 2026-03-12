@@ -1,0 +1,8 @@
+{
+  "id": "packer-build-4",
+  "categoryId": "packer",
+  "subcategoryId": "packer-build",
+  "title": "Build specific source",
+  "command": "packer build -only='amazon-ebs.ubuntu' .",
+  "description": "Build only specific source."
+}

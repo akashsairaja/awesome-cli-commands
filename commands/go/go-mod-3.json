@@ -1,0 +1,8 @@
+{
+  "id": "go-mod-3",
+  "categoryId": "go",
+  "subcategoryId": "go-mod",
+  "title": "Download dependencies",
+  "command": "go mod download",
+  "description": "Download modules to local cache."
+}

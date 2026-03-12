@@ -1,0 +1,8 @@
+{
+  "id": "httpie-requests-2",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-requests",
+  "title": "POST JSON",
+  "command": "http POST https://api.example.com/users name=John email=john@example.com",
+  "description": "POST JSON data (= for strings)."
+}

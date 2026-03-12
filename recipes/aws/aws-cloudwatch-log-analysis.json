@@ -1,0 +1,64 @@
+{
+  "id": "aws-cloudwatch-log-analysis",
+  "stackId": "aws",
+  "name": "Query and Filter CloudWatch Logs with Insights",
+  "description": "Use CloudWatch Logs Insights to search, filter, and analyze log data across log groups with powerful query syntax for rapid debugging.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "CloudWatch Logs Insights has become the go-to tool for serverless and container log analysis as Lambda and ECS adoption grows.",
+  "tags": ["cloudwatch", "logs", "monitoring", "debugging", "insights"],
+  "prerequisites": [
+    "AWS CLI v2 installed and configured",
+    "Application writing logs to CloudWatch Logs"
+  ],
+  "steps": [
+    {
+      "title": "List available log groups",
+      "description": "Browse available CloudWatch log groups to identify where your application or service writes its logs.",
+      "command": "aws logs describe-log-groups --query 'logGroups[].logGroupName' --output table",
+      "tip": "Use --log-group-name-prefix to filter results, for example --log-group-name-prefix /aws/lambda/ to see only Lambda function logs."
+    },
+    {
+      "title": "Tail logs in real time",
+      "description": "Stream live log events from a log group to your terminal for real-time debugging.",
+      "command": "aws logs tail /aws/lambda/my-function --follow --since 5m --format short",
+      "tip": "The --since flag accepts relative times like 5m, 1h, or 1d as well as absolute ISO 8601 timestamps."
+    },
+    {
+      "title": "Start a Logs Insights query",
+      "description": "Run a structured query to find error patterns in your logs over a specific time range.",
+      "command": "aws logs start-query --log-group-name /aws/lambda/my-function --start-time $(date -d '1 hour ago' +%s) --end-time $(date +%s) --query-string 'fields @timestamp, @message | filter @message like /ERROR/ | sort @timestamp desc | limit 50'",
+      "warning": "Logs Insights queries are asynchronous. The command returns a queryId that you use to fetch results in the next step."
+    },
+    {
+      "title": "Get query results",
+      "description": "Retrieve the results of a previously started Logs Insights query using the query ID.",
+      "command": "aws logs get-query-results --query-id 12345678-abcd-efgh-ijkl-example",
+      "tip": "Check the status field in the response. If it shows 'Running', wait a few seconds and retry. Results are only available when status is 'Complete'."
+    },
+    {
+      "title": "Analyze patterns with stats",
+      "description": "Use the stats command to aggregate log data and identify trends like error rates or latency distributions.",
+      "command": "aws logs start-query --log-group-name /aws/lambda/my-function --start-time $(date -d '24 hours ago' +%s) --end-time $(date +%s) --query-string 'filter @type = \"REPORT\" | stats avg(@duration), max(@duration), count(*) by bin(1h)'",
+      "tip": "Lambda REPORT lines contain execution duration, memory used, and billed duration. Use @type = REPORT to filter for these summary lines."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# CloudWatch Logs Analysis\n# Usage: ./analyze-logs.sh <log-group-name> [hours-back] [filter-pattern]\n\nset -euo pipefail\n\nLOG_GROUP=\"${1:?Usage: $0 <log-group-name> [hours-back] [filter-pattern]}\"\nHOURS_BACK=\"${2:-1}\"\nFILTER=\"${3:-ERROR}\"\n\nEND_TIME=$(date +%s)\nSTART_TIME=$((END_TIME - HOURS_BACK * 3600))\n\necho \"=== Querying $LOG_GROUP for '$FILTER' (last ${HOURS_BACK}h) ===\"\n\nQUERY_ID=$(aws logs start-query \\\n  --log-group-name \"$LOG_GROUP\" \\\n  --start-time \"$START_TIME\" \\\n  --end-time \"$END_TIME\" \\\n  --query-string \"fields @timestamp, @message | filter @message like /$FILTER/ | sort @timestamp desc | limit 100\" \\\n  --output text --query 'queryId')\n\necho \"Query ID: $QUERY_ID\"\necho \"Waiting for results...\"\n\nSTATUS=\"Running\"\nwhile [ \"$STATUS\" = \"Running\" ] || [ \"$STATUS\" = \"Scheduled\" ]; do\n  sleep 2\n  RESULT=$(aws logs get-query-results --query-id \"$QUERY_ID\" --output json)\n  STATUS=$(echo \"$RESULT\" | jq -r '.status')\ndone\n\necho \"Status: $STATUS\"\necho \"\"\n\nMATCH_COUNT=$(echo \"$RESULT\" | jq '.results | length')\necho \"Found $MATCH_COUNT matching log entries:\"\necho \"\"\n\necho \"$RESULT\" | jq -r '.results[] | \"\\(.[] | select(.field == \"@timestamp\") | .value)  \\(.[] | select(.field == \"@message\") | .value)\"' | head -50",
+  "faq": [
+    {
+      "question": "How much does CloudWatch Logs Insights cost?",
+      "answer": "CloudWatch Logs Insights charges $0.005 per GB of data scanned per query. Use time range filters and specific log groups to minimize scanned data and costs."
+    },
+    {
+      "question": "Can I query multiple log groups at once?",
+      "answer": "Yes. Pass multiple log group names to start-query with --log-group-names (plural). You can query up to 50 log groups in a single Insights query."
+    },
+    {
+      "question": "What is the difference between filter-log-events and Logs Insights?",
+      "answer": "filter-log-events does basic text matching and returns raw events. Logs Insights supports a full query language with aggregation, stats, parsing, and field extraction, making it far more powerful for analysis."
+    }
+  ],
+  "relatedRecipes": ["aws-lambda-deploy-cli", "aws-ecs-service-update"],
+  "lastUpdated": "2026-03-11"
+}

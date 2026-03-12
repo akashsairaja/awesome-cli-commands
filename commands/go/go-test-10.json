@@ -1,0 +1,8 @@
+{
+  "id": "go-test-10",
+  "categoryId": "go",
+  "subcategoryId": "go-test",
+  "title": "Run benchmarks",
+  "command": "go test -bench=. ./...",
+  "description": "Run all benchmarks."
+}

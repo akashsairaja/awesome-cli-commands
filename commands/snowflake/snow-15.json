@@ -1,0 +1,8 @@
+{
+  "id": "snow-15",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-sql",
+  "title": "SQL interactive mode",
+  "command": "snow sql",
+  "description": "Enter interactive SQL mode."
+}

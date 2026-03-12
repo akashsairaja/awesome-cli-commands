@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-config-3",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-config",
+  "title": "Get config",
+  "command": "pulumi config get aws:region",
+  "description": "Get a configuration value."
+}

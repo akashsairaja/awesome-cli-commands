@@ -1,0 +1,8 @@
+{
+  "id": "mvn-plugin-7",
+  "categoryId": "maven",
+  "subcategoryId": "plugins",
+  "title": "Javadoc",
+  "command": "mvn javadoc:javadoc",
+  "description": "Generate Javadoc."
+}

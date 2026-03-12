@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-logging-write",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-logging",
+  "title": "Write Log Entry",
+  "command": "gcloud logging write <log-name> \"Log message\" --severity=INFO",
+  "description": "Write a custom log entry to Cloud Logging",
+  "tags": ["logging", "write", "custom"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "bun-install",
+  "categoryId": "bun",
+  "subcategoryId": "bun-package",
+  "title": "Install Dependencies",
+  "command": "bun install",
+  "description": "Install all dependencies from package.json",
+  "tags": ["install", "dependencies", "all"]
+}

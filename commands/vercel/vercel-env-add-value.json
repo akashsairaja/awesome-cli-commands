@@ -1,0 +1,9 @@
+{
+  "id": "vercel-env-add-value",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-env",
+  "title": "Add env with value",
+  "command": "vercel env add <name> production < value.txt",
+  "description": "Add environment variable with value from file",
+  "tags": ["env", "add", "value"]
+}

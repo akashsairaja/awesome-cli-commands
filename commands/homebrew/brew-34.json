@@ -1,0 +1,8 @@
+{
+  "id": "brew-34",
+  "categoryId": "homebrew",
+  "subcategoryId": "brew-services",
+  "title": "Stop all services",
+  "command": "brew services stop --all",
+  "description": "Stop all managed services."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-init",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-auth",
+  "title": "Initialize gcloud CLI",
+  "command": "gcloud init",
+  "description": "Initialize or reinitialize gcloud with project, region, and account",
+  "tags": ["init", "setup", "configure"]
+}

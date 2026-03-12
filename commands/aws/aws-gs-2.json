@@ -1,0 +1,8 @@
+{
+  "id": "aws-gs-2",
+  "title": "Configure credentials",
+  "command": "aws configure",
+  "description": "Set up AWS access key, secret key, and default region",
+  "categoryId": "aws",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "starship-install-1",
+  "categoryId": "starship",
+  "subcategoryId": "starship-install",
+  "title": "Init Bash",
+  "command": "eval \"$(starship init bash)\"",
+  "description": "Initialize Starship in Bash."
+}

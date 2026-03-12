@@ -1,0 +1,9 @@
+{
+  "id": "jq-multiple-keys",
+  "categoryId": "jq",
+  "subcategoryId": "jq-basics",
+  "title": "Get multiple keys",
+  "command": "cat file.json | jq '{name: .name, id: .id}'",
+  "description": "Extract multiple keys into new object",
+  "tags": ["multiple", "keys", "select"]
+}

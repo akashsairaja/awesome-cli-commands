@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-config-2",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-config",
+  "title": "Set secret",
+  "command": "pulumi config set --secret dbPassword mySecretPass123",
+  "description": "Set an encrypted secret value."
+}

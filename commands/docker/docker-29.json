@@ -1,0 +1,8 @@
+{
+  "id": "docker-29",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Pause container",
+  "command": "docker pause <container>",
+  "description": "Pause all processes in container."
+}

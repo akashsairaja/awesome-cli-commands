@@ -1,0 +1,8 @@
+{
+  "id": "claude-25",
+  "categoryId": "claudecode",
+  "subcategoryId": "context",
+  "title": "Add directory to context",
+  "command": "/add-dir ./src",
+  "description": "Add a directory to the working context."
+}

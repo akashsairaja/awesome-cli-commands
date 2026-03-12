@@ -1,0 +1,8 @@
+{
+  "id": "trivy-image-5",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-image",
+  "title": "Scan for secrets",
+  "command": "trivy image --scanners secret nginx:latest",
+  "description": "Scan image for embedded secrets."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "redis-psubscribe",
+  "categoryId": "redis",
+  "subcategoryId": "redis-pubsub",
+  "title": "Pattern subscribe",
+  "command": "PSUBSCRIBE pattern*",
+  "description": "Subscribe to channels matching pattern",
+  "tags": ["psubscribe", "pubsub", "pattern"]
+}

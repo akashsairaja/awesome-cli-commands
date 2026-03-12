@@ -1,0 +1,9 @@
+{
+  "id": "tmux-show-pane-numbers",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-panes",
+  "title": "Show pane numbers",
+  "command": "Ctrl+b q",
+  "description": "Display pane numbers briefly",
+  "tags": ["pane", "numbers", "display"]
+}

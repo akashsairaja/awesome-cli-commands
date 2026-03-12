@@ -1,0 +1,8 @@
+{
+  "id": "ollama-12",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-run",
+  "title": "Pipe input",
+  "command": "cat document.txt | ollama run llama2 \"Summarize this text\"",
+  "description": "Process file content through the model."
+}

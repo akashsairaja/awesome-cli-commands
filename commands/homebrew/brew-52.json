@@ -1,0 +1,8 @@
+{
+  "id": "brew-52",
+  "categoryId": "homebrew",
+  "subcategoryId": "taps",
+  "title": "Tap from URL",
+  "command": "brew tap user/repo https://github.com/user/homebrew-repo",
+  "description": "Add tap from specific URL."
+}

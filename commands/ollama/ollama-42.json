@@ -1,0 +1,8 @@
+{
+  "id": "ollama-42",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-modelfile",
+  "title": "Set context length",
+  "command": "FROM llama2\nPARAMETER num_ctx 4096",
+  "description": "Configure model context window size."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "flux-source-3",
+  "categoryId": "flux",
+  "subcategoryId": "flux-source",
+  "title": "List sources",
+  "command": "flux get sources all",
+  "description": "List all Flux sources."
+}

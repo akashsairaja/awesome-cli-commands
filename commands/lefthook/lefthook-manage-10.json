@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-manage-10",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-manage",
+  "title": "NPM postinstall hook",
+  "command": "{\n  \"scripts\": {\n    \"postinstall\": \"lefthook install\"\n  }\n}",
+  "description": "Auto-install hooks after npm install."
+}

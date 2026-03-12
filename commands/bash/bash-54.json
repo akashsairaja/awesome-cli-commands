@@ -1,0 +1,8 @@
+{
+  "id": "bash-54",
+  "categoryId": "bash",
+  "subcategoryId": "arrays",
+  "title": "Append to array",
+  "command": "arr+=(four)",
+  "description": "Add element to end of array."
+}

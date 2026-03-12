@@ -1,0 +1,8 @@
+{
+  "id": "xh-sessions-10",
+  "categoryId": "xh",
+  "subcategoryId": "xh-sessions",
+  "title": "Force HTTP/2",
+  "command": "xh --http-version=2 GET https://api.example.com",
+  "description": "Use HTTP/2 for the request."
+}

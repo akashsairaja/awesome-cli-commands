@@ -1,0 +1,8 @@
+{
+  "id": "playwright-report-5",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-report",
+  "title": "Multiple reporters",
+  "command": "npx playwright test --reporter=html,json",
+  "description": "Use multiple reporters."
+}

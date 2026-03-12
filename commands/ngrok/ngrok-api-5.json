@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-api-5",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-api",
+  "title": "List endpoints",
+  "command": "ngrok api endpoints list",
+  "description": "List all active endpoints via ngrok API."
+}

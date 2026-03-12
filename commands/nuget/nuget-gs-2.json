@@ -1,0 +1,8 @@
+{
+  "id": "nuget-gs-2",
+  "title": "Show NuGet help",
+  "command": "nuget help",
+  "description": "Display NuGet CLI help and available commands",
+  "categoryId": "nuget",
+  "subcategoryId": "getting-started"
+}

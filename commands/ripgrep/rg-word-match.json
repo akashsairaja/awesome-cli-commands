@@ -1,0 +1,9 @@
+{
+  "id": "rg-word-match",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-search",
+  "title": "Match whole words",
+  "command": "rg -w \"word\"",
+  "description": "Match only whole words",
+  "tags": ["search", "word", "boundary"]
+}

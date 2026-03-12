@@ -1,0 +1,8 @@
+{
+  "id": "tf-gs-1",
+  "title": "Install Terraform (macOS)",
+  "command": "brew install terraform",
+  "description": "Install Terraform using Homebrew on macOS",
+  "categoryId": "terraform",
+  "subcategoryId": "getting-started"
+}

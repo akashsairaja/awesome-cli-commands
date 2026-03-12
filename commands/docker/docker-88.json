@@ -1,0 +1,8 @@
+{
+  "id": "docker-88",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "Validate compose file",
+  "command": "docker compose config",
+  "description": "Validate and view composed configuration."
+}

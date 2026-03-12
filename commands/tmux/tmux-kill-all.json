@@ -1,0 +1,9 @@
+{
+  "id": "tmux-kill-all",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-sessions",
+  "title": "Kill all sessions",
+  "command": "tmux kill-server",
+  "description": "Kill tmux server and all sessions",
+  "tags": ["session", "kill", "all", "server"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "fd-6",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-fd",
+  "title": "Execute command",
+  "command": "fd -e ts -x prettier --write",
+  "description": "Run command on each result."
+}

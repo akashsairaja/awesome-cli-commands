@@ -1,0 +1,8 @@
+{
+  "id": "db-103",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Dump data only",
+  "command": "mysqldump -u root -p --no-create-info mydb > data.sql",
+  "description": "Export data without CREATE TABLE statements."
+}

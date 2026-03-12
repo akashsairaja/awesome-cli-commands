@@ -1,0 +1,69 @@
+{
+  "id": "ts-migration-from-js",
+  "stackId": "typescript",
+  "name": "Migrate a JavaScript Project to TypeScript",
+  "description": "Convert an existing JavaScript project to TypeScript incrementally by renaming files, adding types, and enabling strict mode over time.",
+  "difficulty": "advanced",
+  "timeMinutes": 20,
+  "trending": true,
+  "trendingReason": "JavaScript-to-TypeScript migration is the most requested developer workflow as teams adopt type safety",
+  "tags": ["migration", "javascript", "adoption", "incremental", "refactoring"],
+  "prerequisites": [
+    "Existing JavaScript project",
+    "Node.js 18+",
+    "Passing test suite (recommended)"
+  ],
+  "steps": [
+    {
+      "title": "Install TypeScript and generate tsconfig",
+      "description": "Add TypeScript and create a permissive initial configuration that allows JavaScript files.",
+      "command": "pnpm add -D typescript @types/node && npx tsc --init",
+      "tip": "Start with strict: false and allowJs: true to avoid hundreds of errors on day one."
+    },
+    {
+      "title": "Configure tsconfig for gradual migration",
+      "description": "Set allowJs and checkJs to enable mixed JS/TS development.",
+      "command": "cat > tsconfig.json << 'EOF'\n{\n  \"compilerOptions\": {\n    \"target\": \"ES2022\",\n    \"module\": \"ESNext\",\n    \"moduleResolution\": \"bundler\",\n    \"allowJs\": true,\n    \"checkJs\": false,\n    \"strict\": false,\n    \"noEmit\": true,\n    \"esModuleInterop\": true,\n    \"skipLibCheck\": true,\n    \"resolveJsonModule\": true,\n    \"isolatedModules\": true\n  },\n  \"include\": [\"src\"],\n  \"exclude\": [\"node_modules\", \"dist\"]\n}\nEOF",
+      "warning": "Do not enable strict: true at the start. Migrate files first, then enable strict flags incrementally."
+    },
+    {
+      "title": "Rename files from .js to .ts incrementally",
+      "description": "Start with utility files and leaf modules that have no dependents.",
+      "command": "find src/utils -name '*.js' -exec bash -c 'mv \"$0\" \"${0%.js}.ts\"' {} \\;",
+      "tip": "Rename leaf files first (utilities, constants, types) then work inward to core modules and entry points."
+    },
+    {
+      "title": "Install type definitions for dependencies",
+      "description": "Add @types packages for libraries that do not include their own types.",
+      "command": "pnpm add -D @types/express @types/lodash @types/jest"
+    },
+    {
+      "title": "Run type checking and fix errors",
+      "description": "Incrementally fix type errors file by file.",
+      "command": "npx tsc --noEmit 2>&1 | head -40",
+      "tip": "Use 'any' as an escape hatch for complex types initially, then refine to proper types in a follow-up pass."
+    },
+    {
+      "title": "Enable strict flags after all files are converted",
+      "description": "Once all .js files are renamed to .ts, enable strict mode incrementally.",
+      "command": "npx tsc --noEmit --strict 2>&1 | grep -c 'error TS' && echo 'errors remaining'"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# JavaScript to TypeScript Migration\nset -euo pipefail\n\necho \"=== Installing TypeScript ===\"\npnpm add -D typescript @types/node\n\necho \"\"\necho \"=== Migration Progress ===\"\nJS_COUNT=$(find src -name '*.js' -o -name '*.jsx' | wc -l)\nTS_COUNT=$(find src -name '*.ts' -o -name '*.tsx' | wc -l)\nTOTAL=$((JS_COUNT + TS_COUNT))\nif [ $TOTAL -gt 0 ]; then\n  PCT=$((TS_COUNT * 100 / TOTAL))\nelse\n  PCT=0\nfi\n\necho \"JavaScript files: $JS_COUNT\"\necho \"TypeScript files: $TS_COUNT\"\necho \"Migration progress: $PCT%\"\n\necho \"\"\necho \"=== Type Errors ===\"\nERRORS=$(npx tsc --noEmit 2>&1 | grep -c 'error TS' || true)\necho \"Current type errors: $ERRORS\"\n\necho \"\"\necho \"=== Migration Steps ===\"\necho \"1. Rename leaf files (.js -> .ts) first\"\necho \"2. Add types to function parameters and return values\"\necho \"3. Install @types/ packages for untyped dependencies\"\necho \"4. Replace 'any' with proper types\"\necho \"5. Enable strict flags one at a time\"\necho \"6. Enable strict: true when all flags pass\"",
+  "faq": [
+    {
+      "question": "Can I use TypeScript and JavaScript files side by side?",
+      "answer": "Yes. Set allowJs: true in tsconfig.json. TypeScript can import from JavaScript files and vice versa. This is the key to incremental migration without blocking the team."
+    },
+    {
+      "question": "How long does a typical migration take?",
+      "answer": "It depends on project size. A 50-file project might take 1-2 weeks. A 500-file project might take 2-3 months. The key is migrating incrementally without blocking feature development. Rename a few files per PR."
+    },
+    {
+      "question": "Should I use JSDoc types instead of converting to .ts files?",
+      "answer": "JSDoc types work with checkJs: true and avoid file renames, but they are verbose, lack features like generics and utility types, and are harder to maintain. Converting to .ts files is the recommended long-term approach."
+    }
+  ],
+  "relatedRecipes": ["ts-strict-migration", "ts-config-optimization"],
+  "lastUpdated": "2026-03-11"
+}

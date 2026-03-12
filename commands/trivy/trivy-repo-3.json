@@ -1,0 +1,8 @@
+{
+  "id": "trivy-repo-3",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-repo",
+  "title": "Scan specific branch",
+  "command": "trivy repo --branch develop https://github.com/user/repo",
+  "description": "Scan a specific branch."
+}

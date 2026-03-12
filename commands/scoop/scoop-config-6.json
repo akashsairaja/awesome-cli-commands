@@ -1,0 +1,8 @@
+{
+  "id": "scoop-config-6",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-config",
+  "title": "Show config",
+  "command": "scoop config",
+  "description": "Show all Scoop configuration values."
+}

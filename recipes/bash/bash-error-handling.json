@@ -1,0 +1,53 @@
+{
+  "id": "bash-error-handling",
+  "stackId": "bash",
+  "name": "Proper Error Handling with trap and set -euo pipefail",
+  "description": "Implement robust error handling in bash scripts using set flags, trap for cleanup, error reporting with line numbers, and safe variable expansion.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "trending": false,
+  "tags": ["error-handling", "trap", "debugging", "safety"],
+  "prerequisites": ["Bash 4.0+"],
+  "steps": [
+    {
+      "title": "Enable strict mode",
+      "description": "Add set flags at the top of every script to catch errors immediately.",
+      "command": "echo '#!/usr/bin/env bash' > safe_script.sh && echo 'set -euo pipefail' >> safe_script.sh",
+      "tip": "-e exits on error, -u exits on unset variables, -o pipefail catches failures in pipes."
+    },
+    {
+      "title": "Add an error trap with line number reporting",
+      "description": "Register a trap that reports the exact line number and command that failed.",
+      "command": "cat >> safe_script.sh << 'EOF'\n\non_error() {\n  echo \"Error on line $1: command '$2' exited with code $?\" >&2\n}\ntrap 'on_error ${LINENO} \"${BASH_COMMAND}\"' ERR\nEOF"
+    },
+    {
+      "title": "Add a cleanup trap for temp files",
+      "description": "Ensure temporary files and resources are cleaned up on exit, error, or interrupt.",
+      "command": "cat >> safe_script.sh << 'EOF'\n\nTMPDIR=$(mktemp -d)\ncleanup() {\n  rm -rf \"$TMPDIR\"\n  echo \"Cleaned up temp directory\"\n}\ntrap cleanup EXIT\nEOF",
+      "warning": "EXIT traps run on both success and failure. ERR traps only run on errors. Use EXIT for cleanup and ERR for error reporting."
+    },
+    {
+      "title": "Use safe variable defaults",
+      "description": "Prevent unset variable errors with default values and explicit checks.",
+      "command": "echo 'NAME=\"${1:-default_name}\"' && echo 'DIR=\"${OUTPUT_DIR:=/tmp/output}\"' && echo '[[ -z \"${API_KEY:-}\" ]] && { echo \"API_KEY not set\" >&2; exit 1; }'",
+      "tip": "${var:-default} provides a default without setting the variable. ${var:=default} also assigns the default."
+    }
+  ],
+  "fullScript": "#!/usr/bin/env bash\nset -euo pipefail\n\n# Error Handling Template\n\n# Error reporting with line numbers\non_error() {\n  local line=$1\n  local cmd=$2\n  local code=$?\n  echo \"\" >&2\n  echo \"=== ERROR ===\" >&2\n  echo \"Script:  $(basename \"$0\")\" >&2\n  echo \"Line:    $line\" >&2\n  echo \"Command: $cmd\" >&2\n  echo \"Code:    $code\" >&2\n  echo \"=============\" >&2\n}\ntrap 'on_error ${LINENO} \"${BASH_COMMAND}\"' ERR\n\n# Cleanup on exit\nTMPDIR=$(mktemp -d)\ncleanup() {\n  local exit_code=$?\n  rm -rf \"$TMPDIR\"\n  [[ $exit_code -ne 0 ]] && echo \"Script failed with code $exit_code\" >&2\n  exit \"$exit_code\"\n}\ntrap cleanup EXIT\n\n# Safe variable access\nNAME=\"${1:-}\"\n[[ -z \"$NAME\" ]] && { echo \"Error: name argument required\" >&2; exit 1; }\n\n# Safe command execution\nif ! output=$(some_command 2>&1); then\n  echo \"Command failed: $output\" >&2\n  exit 1\nfi\n\necho \"Success: $output\"",
+  "faq": [
+    {
+      "question": "Can I have both ERR and EXIT traps?",
+      "answer": "Yes. ERR fires when a command fails, EXIT fires when the script exits (for any reason). The ERR trap runs first, then EXIT. Use ERR for error reporting and EXIT for cleanup."
+    },
+    {
+      "question": "How do I intentionally allow a command to fail?",
+      "answer": "Use 'command || true' to suppress the error, or 'if ! command; then handle_error; fi' for explicit handling. You can also temporarily disable errexit with 'set +e; command; rc=$?; set -e' but this is fragile."
+    },
+    {
+      "question": "What is the difference between ${var:-} and ${var-}?",
+      "answer": "${var:-default} uses default if var is unset OR empty. ${var-default} uses default only if var is unset. The colon version (:-) is almost always what you want, as it catches both unset and empty string cases."
+    }
+  ],
+  "relatedRecipes": ["bash-script-template", "bash-argument-parsing"],
+  "lastUpdated": "2026-03-11"
+}

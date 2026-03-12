@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-new-1",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-new",
+  "title": "New TypeScript project",
+  "command": "pulumi new aws-typescript",
+  "description": "Create new TypeScript AWS project."
+}

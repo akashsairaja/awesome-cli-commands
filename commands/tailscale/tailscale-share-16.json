@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-share-16",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-share",
+  "title": "Serve TCP proxy",
+  "command": "tailscale serve tcp:5432 tcp://localhost:5432",
+  "description": "Proxy a TCP port like PostgreSQL over tailnet."
+}

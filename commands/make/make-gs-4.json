@@ -1,0 +1,8 @@
+{
+  "id": "make-gs-4",
+  "title": "Run default target",
+  "command": "make",
+  "description": "Execute the first target defined in the Makefile",
+  "categoryId": "make",
+  "subcategoryId": "getting-started"
+}

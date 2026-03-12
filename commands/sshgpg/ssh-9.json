@@ -1,0 +1,8 @@
+{
+  "id": "ssh-9",
+  "categoryId": "sshgpg",
+  "subcategoryId": "connections",
+  "title": "Connect to server",
+  "command": "ssh user@host",
+  "description": "Connect to remote server."
+}

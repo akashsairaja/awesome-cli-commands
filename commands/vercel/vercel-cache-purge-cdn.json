@@ -1,0 +1,9 @@
+{
+  "id": "vercel-cache-purge-cdn",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-cache",
+  "title": "Purge CDN cache",
+  "command": "vercel cache purge --type cdn",
+  "description": "Purge entire CDN cache for project",
+  "tags": ["cache", "purge", "cdn"]
+}

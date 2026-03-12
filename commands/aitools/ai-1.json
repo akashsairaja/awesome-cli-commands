@@ -1,0 +1,8 @@
+{
+  "id": "ai-1",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-codex",
+  "title": "Run with prompt",
+  "command": "codex \"create a Python script that...\"",
+  "description": "Execute Codex CLI with a natural language prompt."
+}

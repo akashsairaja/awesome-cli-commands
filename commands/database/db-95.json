@@ -1,0 +1,8 @@
+{
+  "id": "db-95",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Kill connection",
+  "command": "KILL <process_id>;",
+  "description": "Terminate a client connection and its running query."
+}

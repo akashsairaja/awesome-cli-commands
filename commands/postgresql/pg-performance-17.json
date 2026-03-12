@@ -1,0 +1,8 @@
+{
+  "id": "pg-performance-17",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-performance",
+  "title": "Transaction wraparound check",
+  "command": "SELECT datname, age(datfrozenxid), current_setting('autovacuum_freeze_max_age') FROM pg_database ORDER BY age(datfrozenxid) DESC;",
+  "description": "Check transaction ID age to prevent wraparound. Critical for long-running databases."
+}

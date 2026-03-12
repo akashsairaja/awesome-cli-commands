@@ -1,0 +1,60 @@
+{
+  "id": "npm-security-audit",
+  "stackId": "npm",
+  "name": "Audit and Fix Dependency Vulnerabilities",
+  "description": "Scan your project for known security vulnerabilities in dependencies, understand severity levels, and apply fixes safely.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "trending": true,
+  "trendingReason": "Supply chain security is a top priority as dependency-based attacks increase in frequency",
+  "tags": ["security", "audit", "vulnerabilities", "dependencies"],
+  "prerequisites": ["Node.js and npm installed", "A project with package-lock.json"],
+  "steps": [
+    {
+      "title": "Run a security audit",
+      "description": "Scan all dependencies for known vulnerabilities.",
+      "command": "npm audit"
+    },
+    {
+      "title": "View detailed audit report as JSON",
+      "description": "Get machine-readable output for CI integration or detailed analysis.",
+      "command": "npm audit --json | head -50",
+      "tip": "Pipe to jq for filtering: 'npm audit --json | jq '.vulnerabilities | to_entries[] | select(.value.severity==\"critical\")'"
+    },
+    {
+      "title": "Auto-fix compatible vulnerabilities",
+      "description": "Automatically update packages to patched versions within semver range.",
+      "command": "npm audit fix",
+      "warning": "npm audit fix only updates within the current semver range. It will not make breaking changes to your dependency tree."
+    },
+    {
+      "title": "Force-fix with major version updates",
+      "description": "Apply fixes that may include breaking semver changes.",
+      "command": "npm audit fix --force --dry-run",
+      "warning": "Always use --dry-run first to review changes. Force-fixing can introduce breaking changes that require code updates."
+    },
+    {
+      "title": "Check audit in CI with exit codes",
+      "description": "Fail CI builds when critical or high vulnerabilities are found.",
+      "command": "npm audit --audit-level=high",
+      "tip": "Use --audit-level to set the minimum severity that causes a non-zero exit code: info, low, moderate, high, critical."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# npm Security Audit Workflow\nset -euo pipefail\n\necho \"=== Dependency Audit Report ===\"\nnpm audit 2>/dev/null || true\n\necho \"\"\necho \"=== Vulnerability Summary ===\"\nnpm audit --json 2>/dev/null | node -e \"\n  const data = JSON.parse(require('fs').readFileSync('/dev/stdin','utf8'));\n  const meta = data.metadata?.vulnerabilities || {};\n  console.log('Critical:', meta.critical || 0);\n  console.log('High:    ', meta.high || 0);\n  console.log('Moderate:', meta.moderate || 0);\n  console.log('Low:     ', meta.low || 0);\n  console.log('Info:    ', meta.info || 0);\n  console.log('Total:   ', meta.total || 0);\n\" 2>/dev/null || echo \"Could not parse audit data\"\n\necho \"\"\necho \"=== Safe Auto-Fix Preview ===\"\nnpm audit fix --dry-run 2>/dev/null || echo \"No auto-fixes available\"\n\necho \"\"\necho \"=== Commands ===\"\necho \"Auto-fix (safe):     npm audit fix\"\necho \"Auto-fix (breaking): npm audit fix --force --dry-run  (preview first!)\"\necho \"CI gate:             npm audit --audit-level=high\"",
+  "faq": [
+    {
+      "question": "What if npm audit fix does not resolve all vulnerabilities?",
+      "answer": "Some vulnerabilities require major version bumps of transitive dependencies that npm cannot safely auto-fix. In these cases, check if the vulnerability affects your usage, file an issue with the package maintainer, or use overrides in package.json to force a specific version."
+    },
+    {
+      "question": "How do I ignore a specific vulnerability?",
+      "answer": "There is no built-in ignore mechanism in npm audit. Use the 'overrides' field in package.json to pin a transitive dependency to a patched version, or use a tool like better-npm-audit that supports allowlists."
+    },
+    {
+      "question": "Should I run npm audit in production CI?",
+      "answer": "Yes. Add 'npm audit --audit-level=critical' to your CI pipeline to block deployments with critical vulnerabilities. Use --audit-level=high for stricter policies. Consider --omit=dev to only audit production dependencies."
+    }
+  ],
+  "relatedRecipes": ["npm-lockfile-management", "npm-version-management"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "nginx-perf-gzip",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-performance",
+  "title": "Enable gzip compression",
+  "command": "gzip on; gzip_types text/plain text/css application/json application/javascript;",
+  "description": "Compress text responses to reduce bandwidth",
+  "tags": ["performance", "gzip", "compression", "bandwidth"]
+}

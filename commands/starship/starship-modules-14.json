@@ -1,0 +1,8 @@
+{
+  "id": "starship-modules-14",
+  "categoryId": "starship",
+  "subcategoryId": "starship-modules",
+  "title": "Battery module",
+  "command": "[[battery.display]]\nthreshold = 30\nstyle = 'bold red'",
+  "description": "Show battery level below threshold."
+}

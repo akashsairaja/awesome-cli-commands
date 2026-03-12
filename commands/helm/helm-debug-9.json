@@ -1,0 +1,8 @@
+{
+  "id": "helm-debug-9",
+  "categoryId": "helm",
+  "subcategoryId": "helm-debug",
+  "title": "Get manifest revision",
+  "command": "helm get manifest my-release --revision 2",
+  "description": "Get manifest for specific revision number."
+}

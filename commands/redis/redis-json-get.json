@@ -1,0 +1,9 @@
+{
+  "id": "redis-json-get",
+  "categoryId": "redis",
+  "subcategoryId": "redis-json",
+  "title": "Get JSON document",
+  "command": "JSON.GET key $",
+  "description": "Get entire JSON document or specific path",
+  "tags": ["json", "get", "document", "redisjson"]
+}

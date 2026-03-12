@@ -1,0 +1,8 @@
+{
+  "id": "k3s-kubectl-9",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-kubectl",
+  "title": "Exec into a pod",
+  "command": "k3s kubectl exec -it <pod-name> -n <namespace> -- /bin/sh",
+  "description": "Open an interactive shell inside a running pod."
+}

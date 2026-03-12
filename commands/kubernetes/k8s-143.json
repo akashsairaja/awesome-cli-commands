@@ -1,0 +1,8 @@
+{
+  "id": "k8s-143",
+  "categoryId": "kubernetes",
+  "subcategoryId": "helm",
+  "title": "Show chart values",
+  "command": "helm show values <chart>",
+  "description": "Display chart's default values."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "kafka-cons-3",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-consumer",
+  "title": "With keys",
+  "command": "kafka-console-consumer.sh --topic my-topic --bootstrap-server localhost:9092 --property print.key=true --property key.separator=:",
+  "description": "Show message keys."
+}

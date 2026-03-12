@@ -1,0 +1,8 @@
+{
+  "id": "ps-40",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-network",
+  "title": "Get TCP connections",
+  "command": "Get-NetTCPConnection | Where-Object State -eq 'Established'",
+  "description": "Show established TCP connections."
+}

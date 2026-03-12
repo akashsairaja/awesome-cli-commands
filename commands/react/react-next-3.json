@@ -1,0 +1,8 @@
+{
+  "id": "react-next-3",
+  "categoryId": "react",
+  "subcategoryId": "react-nextjs",
+  "title": "Dev with custom port",
+  "command": "next dev -p 3001",
+  "description": "Start dev server on custom port."
+}

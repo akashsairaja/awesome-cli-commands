@@ -1,0 +1,8 @@
+{
+  "id": "task-gs-3",
+  "title": "Check Task version",
+  "command": "task --version",
+  "description": "Verify Task is installed and display the current version",
+  "categoryId": "taskfile",
+  "subcategoryId": "getting-started"
+}

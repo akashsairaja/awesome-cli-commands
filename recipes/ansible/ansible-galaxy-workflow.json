@@ -1,0 +1,51 @@
+{
+  "id": "ansible-galaxy-workflow",
+  "stackId": "ansible",
+  "name": "Install and Manage Community Roles",
+  "description": "Use Ansible Galaxy to discover, install, and manage community roles and collections to accelerate automation development.",
+  "difficulty": "beginner",
+  "timeMinutes": 6,
+  "tags": ["galaxy", "collections", "community", "dependencies"],
+  "prerequisites": ["Ansible installed"],
+  "steps": [
+    {
+      "title": "Search for roles on Galaxy",
+      "command": "ansible-galaxy role search nginx --platforms Ubuntu",
+      "description": "Searches Ansible Galaxy for nginx roles that support Ubuntu."
+    },
+    {
+      "title": "Install a role from Galaxy",
+      "command": "ansible-galaxy role install geerlingguy.docker",
+      "description": "Downloads and installs the geerlingguy.docker role to the default roles path.",
+      "tip": "Jeff Geerling's roles are among the most popular and well-maintained on Galaxy."
+    },
+    {
+      "title": "Install a collection",
+      "command": "ansible-galaxy collection install community.general",
+      "description": "Installs the community.general collection which provides hundreds of additional modules."
+    },
+    {
+      "title": "Create a requirements file",
+      "command": "cat > requirements.yml << 'EOF'\n---\nroles:\n  - name: geerlingguy.docker\n    version: \"6.1.0\"\n  - name: geerlingguy.nginx\n\ncollections:\n  - name: community.general\n    version: \">=8.0.0\"\n  - name: amazon.aws\nEOF",
+      "description": "Defines all role and collection dependencies with version constraints in a single file."
+    },
+    {
+      "title": "Install all dependencies from the requirements file",
+      "command": "ansible-galaxy install -r requirements.yml",
+      "description": "Installs all roles and collections defined in the requirements file."
+    }
+  ],
+  "fullScript": "# Ansible Galaxy workflow\nansible-galaxy role search nginx --platforms Ubuntu\nansible-galaxy role install geerlingguy.docker\nansible-galaxy collection install community.general\ncat > requirements.yml << 'EOF'\n---\nroles:\n  - name: geerlingguy.docker\n    version: \"6.1.0\"\n  - name: geerlingguy.nginx\n\ncollections:\n  - name: community.general\n    version: \">=8.0.0\"\n  - name: amazon.aws\nEOF\nansible-galaxy install -r requirements.yml",
+  "faq": [
+    {
+      "question": "What is the difference between a role and a collection?",
+      "answer": "A role is a single unit of automation (tasks, handlers, templates). A collection is a larger bundle that can contain multiple roles, modules, plugins, and documentation. Collections are the modern distribution format."
+    },
+    {
+      "question": "Where are Galaxy roles installed?",
+      "answer": "By default, roles install to ~/.ansible/roles. You can change this with --roles-path or by setting roles_path in ansible.cfg."
+    }
+  ],
+  "relatedRecipes": ["ansible-role-creation", "ansible-playbook-basics"],
+  "lastUpdated": "2026-03-11"
+}

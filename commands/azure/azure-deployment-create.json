@@ -1,0 +1,9 @@
+{
+  "id": "azure-deployment-create",
+  "categoryId": "azure",
+  "subcategoryId": "azure-resources",
+  "title": "Deploy ARM Template",
+  "command": "az deployment group create --resource-group <name> --template-file template.json",
+  "description": "Deploy resources using ARM template",
+  "tags": ["deploy", "arm", "template"]
+}

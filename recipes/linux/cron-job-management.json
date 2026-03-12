@@ -1,0 +1,48 @@
+{
+  "id": "cron-job-management",
+  "stackId": "linux",
+  "name": "Cron Job Management",
+  "description": "Schedule, manage, and debug recurring tasks using cron and systemd timers for automated system maintenance.",
+  "difficulty": "beginner",
+  "timeMinutes": 5,
+  "trending": false,
+  "tags": ["cron", "scheduling", "automation", "timers"],
+  "prerequisites": ["Linux shell access"],
+  "steps": [
+    {
+      "title": "List current user's cron jobs",
+      "description": "View all scheduled tasks for the current user.",
+      "command": "crontab -l"
+    },
+    {
+      "title": "Edit the crontab",
+      "description": "Open the crontab editor to add or modify scheduled tasks.",
+      "command": "crontab -e",
+      "tip": "Cron format: minute hour day-of-month month day-of-week command. Use crontab.guru to verify expressions."
+    },
+    {
+      "title": "View system-wide cron jobs",
+      "description": "Check for cron jobs defined in system directories.",
+      "command": "ls -la /etc/cron.d/ /etc/cron.daily/ /etc/cron.hourly/ /etc/cron.weekly/ /etc/cron.monthly/ 2>/dev/null"
+    },
+    {
+      "title": "List systemd timers (modern alternative)",
+      "description": "View all scheduled timers managed by systemd.",
+      "command": "systemctl list-timers --all",
+      "tip": "Systemd timers are more flexible than cron and can depend on other services, handle missed runs, and provide better logging."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Cron Job Management\nset -euo pipefail\n\necho \"=== User Crontab ===\"\ncrontab -l 2>/dev/null || echo \"No crontab for $(whoami)\"\n\necho \"\"\necho \"=== System Cron Jobs ===\"\nfor dir in /etc/cron.d /etc/cron.daily /etc/cron.hourly /etc/cron.weekly /etc/cron.monthly; do\n  if [ -d \"$dir\" ]; then\n    echo \"--- $dir ---\"\n    ls \"$dir\" 2>/dev/null || echo \"Empty\"\n  fi\ndone\n\necho \"\"\necho \"=== Systemd Timers ===\"\nsystemctl list-timers --no-pager 2>/dev/null | head -15\n\necho \"\"\necho \"=== Cron Syntax Reference ===\"\necho \"* * * * *  command\"\necho \"| | | | |\"\necho \"| | | | +-- Day of week (0-7, Sun=0 or 7)\"\necho \"| | | +---- Month (1-12)\"\necho \"| | +------ Day of month (1-31)\"\necho \"| +-------- Hour (0-23)\"\necho \"+---------- Minute (0-59)\"\necho \"\"\necho \"Examples:\"\necho \"  0 2 * * *   Daily at 2:00 AM\"\necho \"  */15 * * * * Every 15 minutes\"\necho \"  0 9 * * 1-5  Weekdays at 9:00 AM\"",
+  "faq": [
+    {
+      "question": "How do I debug a cron job that is not running?",
+      "answer": "Check the cron log: 'grep CRON /var/log/syslog' or 'journalctl -u cron'. Common issues: wrong PATH (use full paths), permission errors, or the cron daemon not running."
+    },
+    {
+      "question": "How do I capture cron job output?",
+      "answer": "Redirect stdout and stderr in the crontab: '0 2 * * * /path/to/script.sh >> /var/log/myjob.log 2>&1'. To suppress all output: '0 2 * * * /path/to/script.sh > /dev/null 2>&1'."
+    }
+  ],
+  "relatedRecipes": ["process-management-systemd", "log-analysis-journalctl"],
+  "lastUpdated": "2026-03-11"
+}

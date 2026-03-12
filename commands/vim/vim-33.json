@@ -1,0 +1,8 @@
+{
+  "id": "vim-33",
+  "categoryId": "vim",
+  "subcategoryId": "visual-mode",
+  "title": "Uppercase selection",
+  "command": "U",
+  "description": "Convert selection to uppercase (visual mode)."
+}

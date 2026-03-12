@@ -1,0 +1,9 @@
+{
+  "id": "nginx-clear-logs",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-logs",
+  "title": "Truncate logs",
+  "command": "sudo truncate -s 0 /var/log/nginx/access.log /var/log/nginx/error.log",
+  "description": "Clear log files without deleting them",
+  "tags": ["log", "clear", "truncate"]
+}

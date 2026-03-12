@@ -1,0 +1,8 @@
+{
+  "id": "ps-26",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-system",
+  "title": "Start service",
+  "command": "Start-Service -Name ServiceName",
+  "description": "Start a Windows service."
+}

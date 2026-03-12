@@ -1,0 +1,8 @@
+{
+  "id": "snyk-monitor-3",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-monitor",
+  "title": "Monitor with tags",
+  "command": "snyk monitor --tags=env=prod,team=backend",
+  "description": "Add tags for filtering."
+}

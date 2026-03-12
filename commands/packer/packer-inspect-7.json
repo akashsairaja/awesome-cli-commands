@@ -1,0 +1,8 @@
+{
+  "id": "packer-inspect-7",
+  "categoryId": "packer",
+  "subcategoryId": "packer-inspect",
+  "title": "Show version",
+  "command": "packer version",
+  "description": "Display installed Packer version."
+}

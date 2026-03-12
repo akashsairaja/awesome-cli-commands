@@ -1,0 +1,8 @@
+{
+  "id": "linux-26",
+  "categoryId": "linux",
+  "subcategoryId": "files",
+  "title": "Copy directory recursively",
+  "command": "cp -r /source/dir /dest/dir",
+  "description": "Copy a directory and all its contents recursively."
+}

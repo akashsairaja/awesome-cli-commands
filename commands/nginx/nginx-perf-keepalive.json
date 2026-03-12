@@ -1,0 +1,9 @@
+{
+  "id": "nginx-perf-keepalive",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-performance",
+  "title": "Keepalive upstream connections",
+  "command": "upstream backend { server 127.0.0.1:3000; keepalive 32; }",
+  "description": "Reuse connections to backend servers",
+  "tags": ["performance", "keepalive", "upstream", "connections"]
+}

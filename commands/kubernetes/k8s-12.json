@@ -1,0 +1,8 @@
+{
+  "id": "k8s-12",
+  "categoryId": "kubernetes",
+  "subcategoryId": "pods",
+  "title": "Get pods with wide output",
+  "command": "kubectl get pods -o wide",
+  "description": "Show pods with node and IP information."
+}

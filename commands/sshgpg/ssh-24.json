@@ -1,0 +1,8 @@
+{
+  "id": "ssh-24",
+  "categoryId": "sshgpg",
+  "subcategoryId": "keys",
+  "title": "Export GPG public key",
+  "command": "gpg --armor --export user@example.com > pubkey.asc",
+  "description": "Export GPG public key in ASCII."
+}

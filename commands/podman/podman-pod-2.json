@@ -1,0 +1,8 @@
+{
+  "id": "podman-pod-2",
+  "categoryId": "podman",
+  "subcategoryId": "podman-pod",
+  "title": "List pods",
+  "command": "podman pod ps",
+  "description": "List all pods."
+}

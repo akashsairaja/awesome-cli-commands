@@ -1,0 +1,8 @@
+{
+  "id": "git-104",
+  "categoryId": "git",
+  "subcategoryId": "bisect",
+  "title": "Bisect with script",
+  "command": "git bisect run <script>",
+  "description": "Automate bisect with test script."
+}

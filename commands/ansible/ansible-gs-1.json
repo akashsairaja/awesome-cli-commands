@@ -1,0 +1,8 @@
+{
+  "id": "ansible-gs-1",
+  "title": "Install Ansible (macOS)",
+  "command": "brew install ansible",
+  "description": "Install Ansible using Homebrew on macOS",
+  "categoryId": "ansible",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "zsh-powerlevel10k",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-plugins",
+  "title": "Install Powerlevel10k",
+  "command": "git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k",
+  "description": "Install Powerlevel10k theme",
+  "tags": ["powerlevel10k", "theme", "prompt"]
+}

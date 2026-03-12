@@ -1,0 +1,8 @@
+{
+  "id": "jest-coverage-5",
+  "categoryId": "jest",
+  "subcategoryId": "jest-coverage",
+  "title": "Coverage reporters",
+  "command": "jest --coverageReporters=html,text,lcov",
+  "description": "Specify coverage report formats."
+}

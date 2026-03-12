@@ -1,0 +1,8 @@
+{
+  "id": "py-128",
+  "categoryId": "python",
+  "subcategoryId": "python-mypy",
+  "title": "No incremental",
+  "command": "mypy --no-incremental src/",
+  "description": "Run fresh check without using cache."
+}

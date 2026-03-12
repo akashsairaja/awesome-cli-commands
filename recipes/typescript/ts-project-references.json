@@ -1,0 +1,60 @@
+{
+  "id": "ts-project-references",
+  "stackId": "typescript",
+  "name": "Monorepo Setup with TypeScript Project References",
+  "description": "Configure TypeScript project references to build, type-check, and navigate across multiple packages in a monorepo with incremental compilation.",
+  "difficulty": "advanced",
+  "timeMinutes": 20,
+  "trending": false,
+  "tags": ["monorepo", "project-references", "incremental", "workspaces"],
+  "prerequisites": [
+    "TypeScript 4.0+",
+    "Monorepo with multiple packages (pnpm workspaces, npm workspaces, or Turborepo)"
+  ],
+  "steps": [
+    {
+      "title": "Create a base tsconfig for shared settings",
+      "description": "Define a root tsconfig.base.json with common compiler options shared across all packages.",
+      "command": "cat > tsconfig.base.json << 'EOF'\n{\n  \"compilerOptions\": {\n    \"target\": \"ES2022\",\n    \"module\": \"ESNext\",\n    \"moduleResolution\": \"bundler\",\n    \"strict\": true,\n    \"esModuleInterop\": true,\n    \"skipLibCheck\": true,\n    \"declaration\": true,\n    \"declarationMap\": true,\n    \"sourceMap\": true,\n    \"composite\": true\n  }\n}\nEOF",
+      "tip": "The composite: true flag is required for project references to work."
+    },
+    {
+      "title": "Configure each package tsconfig",
+      "description": "Each package extends the base config and declares references to packages it depends on.",
+      "command": "cat > packages/shared/tsconfig.json << 'EOF'\n{\n  \"extends\": \"../../tsconfig.base.json\",\n  \"compilerOptions\": {\n    \"outDir\": \"./dist\",\n    \"rootDir\": \"./src\"\n  },\n  \"include\": [\"src\"]\n}\nEOF"
+    },
+    {
+      "title": "Add references in dependent packages",
+      "description": "Packages that import from shared add it as a reference.",
+      "command": "cat > packages/web/tsconfig.json << 'EOF'\n{\n  \"extends\": \"../../tsconfig.base.json\",\n  \"compilerOptions\": {\n    \"outDir\": \"./dist\",\n    \"rootDir\": \"./src\"\n  },\n  \"references\": [\n    { \"path\": \"../shared\" }\n  ],\n  \"include\": [\"src\"]\n}\nEOF"
+    },
+    {
+      "title": "Create the root tsconfig with all references",
+      "description": "The root tsconfig.json lists all packages as references for orchestrated builds.",
+      "command": "cat > tsconfig.json << 'EOF'\n{\n  \"files\": [],\n  \"references\": [\n    { \"path\": \"packages/shared\" },\n    { \"path\": \"packages/web\" },\n    { \"path\": \"packages/api\" }\n  ]\n}\nEOF"
+    },
+    {
+      "title": "Build all projects incrementally",
+      "description": "Use tsc --build to compile all referenced projects in the correct dependency order.",
+      "command": "tsc --build --verbose",
+      "tip": "Subsequent builds only recompile changed packages. Use tsc --build --clean to reset."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# TypeScript Project References Setup\nset -euo pipefail\n\necho \"=== Creating base tsconfig ===\"\ncat > tsconfig.base.json << 'EOF'\n{\n  \"compilerOptions\": {\n    \"target\": \"ES2022\",\n    \"module\": \"ESNext\",\n    \"moduleResolution\": \"bundler\",\n    \"strict\": true,\n    \"esModuleInterop\": true,\n    \"skipLibCheck\": true,\n    \"declaration\": true,\n    \"declarationMap\": true,\n    \"sourceMap\": true,\n    \"composite\": true,\n    \"incremental\": true\n  }\n}\nEOF\n\necho \"=== Building all projects ===\"\ntsc --build --verbose\n\necho \"\"\necho \"=== Project References Commands ===\"\necho \"Build all:   tsc --build\"\necho \"Watch all:   tsc --build --watch\"\necho \"Clean all:   tsc --build --clean\"\necho \"Force:       tsc --build --force\"\necho \"Check refs:  tsc --build --dry\"",
+  "faq": [
+    {
+      "question": "What is the difference between paths and project references?",
+      "answer": "Paths are module resolution aliases that tell TypeScript where to find source files. Project references define build dependencies between packages, enabling incremental builds and proper build ordering. Use both together: paths for imports, references for builds."
+    },
+    {
+      "question": "Do I need project references if I use Turborepo?",
+      "answer": "Turborepo handles build orchestration but not type checking across package boundaries. Project references enable Go to Definition, incremental type checking, and proper declaration file generation that Turborepo alone cannot provide."
+    },
+    {
+      "question": "Why do I need composite: true?",
+      "answer": "The composite flag tells TypeScript to generate .tsbuildinfo files for incremental compilation and ensures all output files can be reliably found. It is required for any project that is referenced by another project."
+    }
+  ],
+  "relatedRecipes": ["ts-build-pipeline", "ts-declaration-generation"],
+  "lastUpdated": "2026-03-11"
+}

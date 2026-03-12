@@ -1,0 +1,9 @@
+{
+  "id": "supabase-inspect-calls",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-inspect",
+  "title": "List queries by frequency",
+  "command": "supabase inspect db calls --linked",
+  "description": "List queries ordered by call frequency",
+  "tags": ["inspect", "queries", "frequency"]
+}

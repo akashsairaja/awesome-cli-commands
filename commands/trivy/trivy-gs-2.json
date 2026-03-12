@@ -1,0 +1,8 @@
+{
+  "id": "trivy-gs-2",
+  "title": "Install Trivy (Linux)",
+  "command": "sudo apt install trivy -y",
+  "description": "Install Trivy security scanner on Debian/Ubuntu Linux",
+  "categoryId": "trivy",
+  "subcategoryId": "getting-started"
+}

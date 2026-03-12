@@ -1,0 +1,8 @@
+{
+  "id": "docker-34",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Show container processes",
+  "command": "docker top <container>",
+  "description": "Display running processes in container."
+}

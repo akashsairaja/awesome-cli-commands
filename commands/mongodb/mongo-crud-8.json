@@ -1,0 +1,8 @@
+{
+  "id": "mongo-crud-8",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-crud",
+  "title": "Delete one",
+  "command": "db.users.deleteOne({ name: \"John\" })",
+  "description": "Delete first matching document."
+}

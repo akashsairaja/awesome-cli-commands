@@ -1,0 +1,8 @@
+{
+  "id": "nuget-sources-6",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-sources",
+  "title": "Enable source",
+  "command": "dotnet nuget enable source MyFeed",
+  "description": "Enable a disabled package source."
+}

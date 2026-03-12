@@ -1,0 +1,8 @@
+{
+  "id": "hf-20",
+  "categoryId": "huggingface",
+  "subcategoryId": "hf-upload",
+  "title": "Upload folder",
+  "command": "huggingface-cli upload my-org/my-model ./model-files",
+  "description": "Upload a local folder to a Hub repository."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "volta-install-4",
+  "categoryId": "volta",
+  "subcategoryId": "volta-install",
+  "title": "Install yarn",
+  "command": "volta install yarn",
+  "description": "Install Yarn package manager."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "hurl-options-11",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-options",
+  "title": "Use client certificate",
+  "command": "hurl --cert cert.pem --key key.pem api.hurl",
+  "description": "Use client certificate for mTLS."
+}

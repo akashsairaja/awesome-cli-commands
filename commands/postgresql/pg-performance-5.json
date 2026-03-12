@@ -1,0 +1,8 @@
+{
+  "id": "pg-performance-5",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-performance",
+  "title": "Database size",
+  "command": "SELECT pg_size_pretty(pg_database_size(current_database()));",
+  "description": "Get human-readable size of the current database."
+}

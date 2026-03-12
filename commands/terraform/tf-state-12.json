@@ -1,0 +1,8 @@
+{
+  "id": "tf-state-12",
+  "categoryId": "terraform",
+  "subcategoryId": "state",
+  "title": "Replace provider",
+  "command": "terraform state replace-provider hashicorp/aws registry.acme.corp/aws",
+  "description": "Replace provider in state."
+}

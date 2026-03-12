@@ -1,0 +1,8 @@
+{
+  "id": "jest-coverage-3",
+  "categoryId": "jest",
+  "subcategoryId": "jest-coverage",
+  "title": "Coverage from pattern",
+  "command": "jest --collectCoverageFrom='src/**/*.js'",
+  "description": "Collect coverage from specific files."
+}

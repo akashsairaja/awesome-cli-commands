@@ -1,0 +1,8 @@
+{
+  "id": "k8s-154",
+  "categoryId": "kubernetes",
+  "subcategoryId": "manifests",
+  "title": "Force replace resource",
+  "command": "kubectl replace --force -f <manifest>",
+  "description": "Force replace resource by deleting and recreating it."
+}

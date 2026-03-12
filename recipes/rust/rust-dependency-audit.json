@@ -1,0 +1,58 @@
+{
+  "id": "rust-dependency-audit",
+  "stackId": "rust",
+  "name": "Audit Dependencies with cargo-audit and cargo-deny",
+  "description": "Scan Rust dependencies for security vulnerabilities, license violations, and supply chain risks.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "trending": true,
+  "trendingReason": "Supply chain security is a top priority in modern software development",
+  "tags": ["security", "audit", "dependencies", "supply-chain"],
+  "prerequisites": ["Rust toolchain installed", "A Cargo project with dependencies"],
+  "steps": [
+    {
+      "title": "Install cargo-audit",
+      "description": "Install the security audit tool that checks against the RustSec advisory database.",
+      "command": "cargo install cargo-audit"
+    },
+    {
+      "title": "Run a vulnerability scan",
+      "description": "Check all dependencies for known security vulnerabilities.",
+      "command": "cargo audit",
+      "tip": "Run this in CI to catch new vulnerabilities as the advisory database is updated daily."
+    },
+    {
+      "title": "Install and configure cargo-deny",
+      "description": "Set up cargo-deny for comprehensive dependency policy enforcement.",
+      "command": "cargo install cargo-deny && cargo deny init"
+    },
+    {
+      "title": "Check licenses and advisories",
+      "description": "Run cargo-deny to check for license compliance and security advisories.",
+      "command": "cargo deny check advisories && cargo deny check licenses"
+    },
+    {
+      "title": "Check for duplicate and banned dependencies",
+      "description": "Detect duplicate crate versions and enforce banned crate rules.",
+      "command": "cargo deny check bans && cargo deny check sources",
+      "tip": "Duplicate dependencies increase binary size. Use 'cargo deny check bans' to find them."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Rust Dependency Audit\nset -euo pipefail\n\necho \"=== Security Vulnerabilities ===\"\ncargo audit 2>&1 || true\n\necho \"\"\necho \"=== Dependency Policy Check ===\"\nif command -v cargo-deny &> /dev/null; then\n  echo \"--- Advisories ---\"\n  cargo deny check advisories 2>&1 || true\n  echo \"\"\n  echo \"--- Licenses ---\"\n  cargo deny check licenses 2>&1 || true\n  echo \"\"\n  echo \"--- Bans (duplicates) ---\"\n  cargo deny check bans 2>&1 || true\nelse\n  echo \"cargo-deny not installed. Run: cargo install cargo-deny\"\nfi\n\necho \"\"\necho \"=== Audit Commands ===\"\necho \"Vulnerabilities: cargo audit\"\necho \"Fix vuln:        cargo audit fix\"\necho \"Advisories:      cargo deny check advisories\"\necho \"Licenses:        cargo deny check licenses\"\necho \"Duplicates:      cargo deny check bans\"\necho \"All checks:      cargo deny check\"",
+  "faq": [
+    {
+      "question": "What is the difference between cargo-audit and cargo-deny?",
+      "answer": "cargo-audit focuses on security vulnerabilities from the RustSec database. cargo-deny covers a broader scope including license compliance, banned crates, duplicate dependencies, and source restrictions."
+    },
+    {
+      "question": "How do I allow a known vulnerability temporarily?",
+      "answer": "In cargo-deny's deny.toml, add the advisory ID to the [advisories] ignore list with a reason and expiry date. For cargo-audit, use --ignore RUSTSEC-XXXX-XXXX."
+    },
+    {
+      "question": "Should I run audits in CI?",
+      "answer": "Yes. Run 'cargo audit' and 'cargo deny check' in your CI pipeline. The RustSec database is updated frequently, so a dependency that was safe yesterday might have a new advisory today."
+    }
+  ],
+  "relatedRecipes": ["rust-clippy-fmt", "rust-publish-crate"],
+  "lastUpdated": "2026-03-11"
+}

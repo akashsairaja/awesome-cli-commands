@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-manage-9",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-manage",
+  "title": "Use local overrides",
+  "command": "# Create lefthook-local.yml\n# Overrides lefthook.yml (gitignored)",
+  "description": "Add local overrides not committed to repo."
+}

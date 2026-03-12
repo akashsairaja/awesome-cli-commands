@@ -1,0 +1,8 @@
+{
+  "id": "aws-ec2-4",
+  "categoryId": "aws",
+  "subcategoryId": "ec2",
+  "title": "Terminate instance",
+  "command": "aws ec2 terminate-instances --instance-ids i-xxx",
+  "description": "Permanently delete an instance."
+}

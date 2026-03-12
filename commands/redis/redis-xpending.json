@@ -1,0 +1,9 @@
+{
+  "id": "redis-xpending",
+  "categoryId": "redis",
+  "subcategoryId": "redis-streams",
+  "title": "View pending messages",
+  "command": "XPENDING stream group - + 10",
+  "description": "Get detailed information about pending messages in consumer group",
+  "tags": ["xpending", "stream", "consumer", "pending"]
+}

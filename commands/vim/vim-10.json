@@ -1,0 +1,8 @@
+{
+  "id": "vim-10",
+  "categoryId": "vim",
+  "subcategoryId": "editing",
+  "title": "Delete line",
+  "command": "dd",
+  "description": "Delete current line."
+}

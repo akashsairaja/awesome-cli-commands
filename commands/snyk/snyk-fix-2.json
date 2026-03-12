@@ -1,0 +1,8 @@
+{
+  "id": "snyk-fix-2",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-fix",
+  "title": "Ignore a vulnerability",
+  "command": "snyk ignore --id=SNYK-JS-LODASH-590103 --reason='No fix available'",
+  "description": "Ignore a specific vulnerability by ID with a reason."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "vault-gs-1",
+  "title": "Start Vault dev server",
+  "command": "vault server -dev",
+  "description": "Start Vault in development mode (insecure, for local testing only)",
+  "categoryId": "vault",
+  "subcategoryId": "getting-started"
+}

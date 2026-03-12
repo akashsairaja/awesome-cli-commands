@@ -1,0 +1,8 @@
+{
+  "id": "pg-conn-1",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-connection",
+  "title": "Connect to database",
+  "command": "psql -h localhost -U postgres -d mydb",
+  "description": "Connect with host, user, and database."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k3s-cluster-13",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-cluster",
+  "title": "Delete a node",
+  "command": "k3s kubectl delete node <node-name>",
+  "description": "Remove a node from the cluster."
+}

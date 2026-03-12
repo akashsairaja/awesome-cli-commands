@@ -1,0 +1,8 @@
+{
+  "id": "jq-gs-1",
+  "title": "Install jq (macOS)",
+  "command": "brew install jq",
+  "description": "Install jq using Homebrew on macOS",
+  "categoryId": "jq",
+  "subcategoryId": "getting-started"
+}

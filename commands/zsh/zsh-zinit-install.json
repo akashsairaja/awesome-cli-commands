@@ -1,0 +1,9 @@
+{
+  "id": "zsh-zinit-install",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-plugins",
+  "title": "Install Zinit",
+  "command": "bash -c \"$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)\"",
+  "description": "Install Zinit plugin manager",
+  "tags": ["zinit", "install", "plugin"]
+}

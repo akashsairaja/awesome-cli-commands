@@ -1,0 +1,8 @@
+{
+  "id": "spark-12",
+  "categoryId": "spark",
+  "subcategoryId": "spark-shell",
+  "title": "PySpark with Jupyter",
+  "command": "PYSPARK_DRIVER_PYTHON=jupyter PYSPARK_DRIVER_PYTHON_OPTS=notebook pyspark",
+  "description": "Launch PySpark with Jupyter notebook interface."
+}

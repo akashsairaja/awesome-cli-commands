@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-compute-firewall-delete",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-compute",
+  "title": "Delete Firewall Rule",
+  "command": "gcloud compute firewall-rules delete <name>",
+  "description": "Delete a firewall rule",
+  "tags": ["firewall", "delete", "cleanup"]
+}

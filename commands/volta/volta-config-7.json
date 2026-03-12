@@ -1,0 +1,8 @@
+{
+  "id": "volta-config-7",
+  "categoryId": "volta",
+  "subcategoryId": "volta-config",
+  "title": "Set VOLTA_HOME",
+  "command": "export VOLTA_HOME=$HOME/.volta",
+  "description": "Set custom Volta home directory."
+}

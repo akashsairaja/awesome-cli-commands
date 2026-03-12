@@ -1,0 +1,8 @@
+{
+  "id": "bat-6",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-bat",
+  "title": "Pipe friendly",
+  "command": "curl -s api.example.com | bat -l json",
+  "description": "Highlight piped JSON output."
+}

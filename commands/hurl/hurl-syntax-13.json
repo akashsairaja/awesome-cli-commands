@@ -1,0 +1,8 @@
+{
+  "id": "hurl-syntax-13",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-syntax",
+  "title": "Capture header value",
+  "command": "GET https://api.example.com/login\nHTTP 200\n[Captures]\ntoken: header \"X-Auth-Token\"",
+  "description": "Capture a response header value."
+}

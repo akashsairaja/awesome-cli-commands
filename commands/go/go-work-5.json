@@ -1,0 +1,8 @@
+{
+  "id": "go-work-5",
+  "categoryId": "go",
+  "subcategoryId": "go-work",
+  "title": "Edit workspace",
+  "command": "go work edit -replace github.com/old=./local",
+  "description": "Add replacement to workspace."
+}

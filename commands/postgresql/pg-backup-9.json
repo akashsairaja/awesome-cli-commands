@@ -1,0 +1,8 @@
+{
+  "id": "pg-backup-9",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-backup",
+  "title": "Restore parallel",
+  "command": "pg_restore -j 4 -U postgres -d mydb backup.dump",
+  "description": "Parallel restore with 4 jobs."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ts-config-3",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-config",
+  "title": "List compiled files",
+  "command": "tsc --listFiles",
+  "description": "Print names of all files included in compilation."
+}

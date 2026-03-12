@@ -1,0 +1,9 @@
+{
+  "id": "deno-cache",
+  "categoryId": "deno",
+  "subcategoryId": "deno-package",
+  "title": "Cache Dependencies",
+  "command": "deno cache script.ts",
+  "description": "Download and cache dependencies",
+  "tags": ["cache", "download", "dependencies"]
+}

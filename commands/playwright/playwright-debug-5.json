@@ -1,0 +1,8 @@
+{
+  "id": "playwright-debug-5",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-debug",
+  "title": "Slow motion",
+  "command": "npx playwright test --headed --slowmo=500",
+  "description": "Run tests in slow motion."
+}

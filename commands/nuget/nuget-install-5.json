@@ -1,0 +1,8 @@
+{
+  "id": "nuget-install-5",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-install",
+  "title": "Remove package",
+  "command": "dotnet remove package Newtonsoft.Json",
+  "description": "Remove package from project."
+}

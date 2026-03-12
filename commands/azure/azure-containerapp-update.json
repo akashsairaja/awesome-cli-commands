@@ -1,0 +1,9 @@
+{
+  "id": "azure-containerapp-update",
+  "categoryId": "azure",
+  "subcategoryId": "azure-containerapp",
+  "title": "Update Container Image",
+  "command": "az containerapp update -n myapp -g rg --image myimage:v2",
+  "description": "Update container app to use a new image version",
+  "tags": ["containerapp", "update", "image"]
+}

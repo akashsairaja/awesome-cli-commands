@@ -1,0 +1,8 @@
+{
+  "id": "docker-41",
+  "categoryId": "docker",
+  "subcategoryId": "images",
+  "title": "Build with build args",
+  "command": "docker build --build-arg VERSION=1.0 -t <name>:<tag> .",
+  "description": "Pass build-time variables."
+}

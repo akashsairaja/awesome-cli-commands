@@ -1,0 +1,8 @@
+{
+  "id": "checkov-scan-10",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-scan",
+  "title": "Scan multiple frameworks",
+  "command": "checkov -d . --framework terraform,kubernetes,dockerfile",
+  "description": "Scan with multiple frameworks."
+}

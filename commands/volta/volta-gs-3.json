@@ -1,0 +1,8 @@
+{
+  "id": "volta-gs-3",
+  "title": "Check Volta version",
+  "command": "volta --version",
+  "description": "Verify Volta is installed and display the current version",
+  "categoryId": "volta",
+  "subcategoryId": "getting-started"
+}

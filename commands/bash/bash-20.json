@@ -1,0 +1,8 @@
+{
+  "id": "bash-20",
+  "categoryId": "bash",
+  "subcategoryId": "variables",
+  "title": "Error if unset",
+  "command": "echo ${VAR:?\"error message\"}",
+  "description": "Error if variable unset."
+}

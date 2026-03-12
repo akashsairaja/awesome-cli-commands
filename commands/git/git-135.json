@@ -1,0 +1,8 @@
+{
+  "id": "git-135",
+  "categoryId": "git",
+  "subcategoryId": "cleanup",
+  "title": "Garbage collect",
+  "command": "git gc --aggressive",
+  "description": "Optimize repository storage."
+}

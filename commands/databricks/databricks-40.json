@@ -1,0 +1,8 @@
+{
+  "id": "databricks-40",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-mlflow",
+  "title": "List experiments",
+  "command": "databricks experiments list",
+  "description": "List all MLflow experiments."
+}

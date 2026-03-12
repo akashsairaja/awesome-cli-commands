@@ -1,0 +1,8 @@
+{
+  "id": "composer-scripts-5",
+  "categoryId": "composer",
+  "subcategoryId": "composer-scripts",
+  "title": "Run with timeout",
+  "command": "composer run-script --timeout=300 long-task",
+  "description": "Run script with custom timeout."
+}

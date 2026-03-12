@@ -1,0 +1,8 @@
+{
+  "id": "databricks-15",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-jobs",
+  "title": "List job runs",
+  "command": "databricks runs list --job-id <job-id>",
+  "description": "List all runs for a specific job."
+}

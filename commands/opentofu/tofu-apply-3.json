@@ -1,0 +1,8 @@
+{
+  "id": "tofu-apply-3",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-apply",
+  "title": "Auto-approve",
+  "command": "tofu apply -auto-approve",
+  "description": "Apply without confirmation."
+}

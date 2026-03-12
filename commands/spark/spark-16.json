@@ -1,0 +1,8 @@
+{
+  "id": "spark-16",
+  "categoryId": "spark",
+  "subcategoryId": "spark-shell",
+  "title": "Start SparkR shell",
+  "command": "sparkR",
+  "description": "Launch interactive R shell with Spark context."
+}

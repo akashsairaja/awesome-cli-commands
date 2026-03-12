@@ -1,0 +1,8 @@
+{
+  "id": "tf-ws-2",
+  "categoryId": "terraform",
+  "subcategoryId": "workspace",
+  "title": "Show current",
+  "command": "terraform workspace show",
+  "description": "Display current workspace name."
+}

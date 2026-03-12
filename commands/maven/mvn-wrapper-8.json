@@ -1,0 +1,8 @@
+{
+  "id": "mvn-wrapper-8",
+  "categoryId": "maven",
+  "subcategoryId": "mvn-wrapper",
+  "title": "Build with wrapper (Windows)",
+  "command": "mvnw.cmd clean install",
+  "description": "Run clean install using the Maven wrapper on Windows. Uses PowerShell to download Maven."
+}

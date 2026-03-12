@@ -1,0 +1,9 @@
+{
+  "id": "nginx-reopen",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-control",
+  "title": "Reopen log files",
+  "command": "sudo nginx -s reopen",
+  "description": "Reopen log files (for log rotation)",
+  "tags": ["reopen", "logs", "rotate"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ai-25",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-aider",
+  "title": "No auto-commits",
+  "command": "aider --no-auto-commits",
+  "description": "Disable automatic Git commits."
+}

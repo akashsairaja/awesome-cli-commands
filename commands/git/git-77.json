@@ -1,0 +1,8 @@
+{
+  "id": "git-77",
+  "categoryId": "git",
+  "subcategoryId": "remote",
+  "title": "Push tags",
+  "command": "git push --tags",
+  "description": "Push all tags to remote."
+}

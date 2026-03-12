@@ -1,0 +1,9 @@
+{
+  "id": "gh-repo-sync",
+  "categoryId": "github",
+  "subcategoryId": "gh-repo",
+  "title": "Sync fork with upstream",
+  "command": "gh repo sync",
+  "description": "Sync a fork with its upstream repository",
+  "tags": ["repo", "sync", "fork", "upstream"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "bat-2",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-bat",
+  "title": "Show line numbers",
+  "command": "bat -n file.py",
+  "description": "Display line numbers only."
+}

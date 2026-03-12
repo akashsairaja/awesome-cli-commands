@@ -1,0 +1,8 @@
+{
+  "id": "vim-61",
+  "categoryId": "vim",
+  "subcategoryId": "macros",
+  "title": "Paste from clipboard",
+  "command": "\"+p",
+  "description": "Paste from system clipboard."
+}

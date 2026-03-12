@@ -1,0 +1,8 @@
+{
+  "id": "node-env-5",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-env",
+  "title": "Show V8 options",
+  "command": "node --v8-options",
+  "description": "List all V8 command-line options."
+}

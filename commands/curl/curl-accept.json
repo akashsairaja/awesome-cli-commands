@@ -1,0 +1,9 @@
+{
+  "id": "curl-accept",
+  "categoryId": "curl",
+  "subcategoryId": "curl-headers",
+  "title": "Set Accept header",
+  "command": "curl -H \"Accept: application/json\" https://api.example.com",
+  "description": "Set Accept header for response type",
+  "tags": ["header", "accept"]
+}

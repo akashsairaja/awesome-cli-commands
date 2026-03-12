@@ -1,0 +1,9 @@
+{
+  "id": "azure-deployment-whatif",
+  "categoryId": "azure",
+  "subcategoryId": "azure-deployment",
+  "title": "Preview Deployment Changes",
+  "command": "az deployment group what-if -g rg --template-file main.bicep",
+  "description": "Preview what changes will be made before deployment",
+  "tags": ["deployment", "what-if", "preview"]
+}

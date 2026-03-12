@@ -1,0 +1,8 @@
+{
+  "id": "mvn-wrapper-17",
+  "categoryId": "maven",
+  "subcategoryId": "mvn-wrapper",
+  "title": "Upgrade wrapper Maven version",
+  "command": "./mvnw wrapper:wrapper -Dmaven=3.9.9",
+  "description": "Update an existing wrapper to use a newer Maven version. Rewrites maven-wrapper.properties."
+}

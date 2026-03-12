@@ -1,0 +1,8 @@
+{
+  "id": "db-21",
+  "categoryId": "database",
+  "subcategoryId": "postgresql",
+  "title": "Toggle expanded display",
+  "command": "\\x",
+  "description": "Toggle expanded output for wide rows."
+}

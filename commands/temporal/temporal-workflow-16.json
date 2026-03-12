@@ -1,0 +1,8 @@
+{
+  "id": "temporal-workflow-16",
+  "categoryId": "temporal",
+  "subcategoryId": "workflow",
+  "title": "Query workflow state",
+  "command": "temporal workflow query --workflow-id my-workflow --name GetStatus",
+  "description": "Query current state from running workflow (synchronous read)."
+}

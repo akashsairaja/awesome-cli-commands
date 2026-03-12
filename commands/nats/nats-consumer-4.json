@@ -1,0 +1,8 @@
+{
+  "id": "nats-consumer-4",
+  "categoryId": "nats",
+  "subcategoryId": "nats-consumer",
+  "title": "Consumer info",
+  "command": "nats consumer info ORDERS DISPATCH",
+  "description": "View consumer configuration and state."
+}

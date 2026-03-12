@@ -1,0 +1,8 @@
+{
+  "id": "vault-engine-2",
+  "categoryId": "vault",
+  "subcategoryId": "vault-engine",
+  "title": "List secrets engines",
+  "command": "vault secrets list",
+  "description": "List enabled secrets engines."
+}

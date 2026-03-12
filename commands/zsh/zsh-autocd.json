@@ -1,0 +1,9 @@
+{
+  "id": "zsh-autocd",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-config",
+  "title": "Enable auto cd",
+  "command": "setopt AUTO_CD",
+  "description": "cd into directory by typing its name",
+  "tags": ["autocd", "navigation", "option"]
+}

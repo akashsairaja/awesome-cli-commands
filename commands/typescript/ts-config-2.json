@@ -1,0 +1,8 @@
+{
+  "id": "ts-config-2",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-config",
+  "title": "Show effective config",
+  "command": "tsc --showConfig",
+  "description": "Display effective configuration after extending base configs."
+}

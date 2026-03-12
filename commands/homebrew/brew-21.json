@@ -1,0 +1,8 @@
+{
+  "id": "brew-21",
+  "categoryId": "homebrew",
+  "subcategoryId": "casks",
+  "title": "List installed casks",
+  "command": "brew list --cask",
+  "description": "Show installed cask applications."
+}

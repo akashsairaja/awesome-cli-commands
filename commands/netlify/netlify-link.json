@@ -1,0 +1,9 @@
+{
+  "id": "netlify-link",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-sites",
+  "title": "Link to site",
+  "command": "netlify link",
+  "description": "Link local project to a Netlify site",
+  "tags": ["link", "connect", "site"]
+}

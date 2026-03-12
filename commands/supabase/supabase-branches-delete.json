@@ -1,0 +1,9 @@
+{
+  "id": "supabase-branches-delete",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-branches",
+  "title": "Delete preview branch",
+  "command": "supabase branches delete <name>",
+  "description": "Delete a preview branch",
+  "tags": ["branches", "delete", "remove"]
+}

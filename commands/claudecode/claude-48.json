@@ -1,0 +1,8 @@
+{
+  "id": "claude-48",
+  "categoryId": "claudecode",
+  "subcategoryId": "mcp",
+  "title": "Interactive MCP management",
+  "command": "/mcp",
+  "description": "Open interactive MCP server management."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "docker-20",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "View container logs",
+  "command": "docker logs <container>",
+  "description": "Show logs from a container."
+}

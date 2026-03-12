@@ -1,0 +1,8 @@
+{
+  "id": "java-7",
+  "categoryId": "java",
+  "subcategoryId": "java-compiler",
+  "title": "Compile module",
+  "command": "javac -d out --module-source-path src $(find src -name '*.java')",
+  "description": "Compile Java modules from source path."
+}

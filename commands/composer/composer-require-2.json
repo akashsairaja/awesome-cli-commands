@@ -1,0 +1,8 @@
+{
+  "id": "composer-require-2",
+  "categoryId": "composer",
+  "subcategoryId": "composer-require",
+  "title": "Require dev package",
+  "command": "composer require --dev phpunit/phpunit",
+  "description": "Add development dependency."
+}

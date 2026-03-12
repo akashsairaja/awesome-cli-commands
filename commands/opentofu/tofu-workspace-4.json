@@ -1,0 +1,8 @@
+{
+  "id": "tofu-workspace-4",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-workspace",
+  "title": "Show current workspace",
+  "command": "tofu workspace show",
+  "description": "Display the current workspace name."
+}

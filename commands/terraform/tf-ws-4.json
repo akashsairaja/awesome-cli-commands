@@ -1,0 +1,8 @@
+{
+  "id": "tf-ws-4",
+  "categoryId": "terraform",
+  "subcategoryId": "workspace",
+  "title": "Select workspace",
+  "command": "terraform workspace select prod",
+  "description": "Switch to existing workspace."
+}

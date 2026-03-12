@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-net-ip-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-networking",
+  "title": "List Static IPs",
+  "command": "gcloud compute addresses list",
+  "description": "List all reserved static IP addresses",
+  "tags": ["ip", "static", "list"]
+}

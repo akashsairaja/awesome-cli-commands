@@ -1,0 +1,8 @@
+{
+  "id": "k6-options-6",
+  "categoryId": "k6",
+  "subcategoryId": "k6-options",
+  "title": "Custom user agent",
+  "command": "export const options = {\n  userAgent: 'k6-load-test/1.0',\n};",
+  "description": "Set custom HTTP user agent."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k3s-config-7",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-config",
+  "title": "Configure containerd",
+  "command": "sudo cp /var/lib/rancher/k3s/agent/etc/containerd/config.toml /var/lib/rancher/k3s/agent/etc/containerd/config.toml.tmpl",
+  "description": "Create custom containerd config template for k3s."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ts-check-11",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-check",
+  "title": "Optimize rebuild speed",
+  "command": "tsc --assumeChangesOnlyAffectDirectDependencies",
+  "description": "Assume file changes only affect direct imports (faster, less safe)."
+}

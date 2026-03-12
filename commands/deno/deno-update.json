@@ -1,0 +1,9 @@
+{
+  "id": "deno-update",
+  "categoryId": "deno",
+  "subcategoryId": "deno-package",
+  "title": "Update Dependencies",
+  "command": "deno outdated --update",
+  "description": "Update dependencies to latest versions",
+  "tags": ["update", "upgrade", "dependencies"]
+}

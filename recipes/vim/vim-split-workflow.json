@@ -1,0 +1,57 @@
+{
+  "id": "vim-split-workflow",
+  "stackId": "vim",
+  "name": "Efficient Multi-File Editing with Splits and Buffers",
+  "description": "Navigate and edit multiple files simultaneously using Vim splits, tabs, and buffer management for a productive workflow.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "tags": ["splits", "buffers", "tabs", "navigation", "workflow"],
+  "prerequisites": ["Neovim or Vim installed"],
+  "steps": [
+    {
+      "title": "Open a horizontal split",
+      "description": "Split the current window horizontally and open a file in the new pane.",
+      "command": ":split filename.ts",
+      "tip": "Use Ctrl-w s for a quick horizontal split of the current file, or Ctrl-w v for vertical."
+    },
+    {
+      "title": "Open a vertical split",
+      "description": "Split the current window vertically for side-by-side editing.",
+      "command": ":vsplit tests/filename.test.ts"
+    },
+    {
+      "title": "Navigate between splits",
+      "description": "Move focus between split panes using keyboard shortcuts.",
+      "command": "Ctrl-w h/j/k/l",
+      "tip": "Map these to Ctrl-h/j/k/l for faster navigation: vim.keymap.set('n', '<C-h>', '<C-w>h')"
+    },
+    {
+      "title": "List and switch buffers",
+      "description": "View all open buffers and switch between them without splits.",
+      "command": ":ls  then  :b <number>  or  :b <partial-name>",
+      "tip": "Use :bnext/:bprev or map them to Tab/Shift-Tab for quick cycling."
+    },
+    {
+      "title": "Resize splits",
+      "description": "Adjust split dimensions to give more space to the active pane.",
+      "command": "Ctrl-w =  (equalize) or  Ctrl-w 10+  (increase height by 10)"
+    }
+  ],
+  "fullScript": "# Vim Splits and Buffers Quick Reference\n# (These are commands and key sequences in Normal mode)\n\n# Horizontal split\n:split file.ts           # or Ctrl-w s (same file)\n\n# Vertical split\n:vsplit file.ts          # or Ctrl-w v (same file)\n\n# Navigate splits\nCtrl-w h                 # Move left\nCtrl-w j                 # Move down\nCtrl-w k                 # Move up\nCtrl-w l                 # Move right\n\n# Resize splits\nCtrl-w =                 # Equalize sizes\nCtrl-w 10>               # Widen by 10 columns\nCtrl-w 10+               # Increase height by 10 rows\nCtrl-w _                 # Maximize height\nCtrl-w |                 # Maximize width\n\n# Close splits\nCtrl-w q                 # Close current split\n:only                    # Close all except current\n\n# Buffer management\n:ls                      # List buffers\n:b <name>                # Switch to buffer\n:bnext / :bprev          # Next / previous buffer\n:bd                      # Delete (close) buffer\n:e file.ts               # Open file in current window\n\n# Tabs\n:tabnew file.ts          # Open in new tab\ngt / gT                  # Next / previous tab",
+  "faq": [
+    {
+      "question": "Should I use splits, buffers, or tabs?",
+      "answer": "Use buffers for all open files (they are lightweight). Use splits to view multiple files simultaneously. Use tabs to group different split layouts, like one tab for source and another for tests."
+    },
+    {
+      "question": "How do I open a terminal in a split?",
+      "answer": "Use ':terminal' to open a terminal buffer, or ':vsplit | terminal' for a vertical terminal split. Press Ctrl-\\ Ctrl-n to exit terminal mode and navigate normally."
+    },
+    {
+      "question": "How do I save and restore my split layout?",
+      "answer": "Use ':mksession session.vim' to save the current layout. Restore with 'nvim -S session.vim' or ':source session.vim'. Consider a session manager plugin for automatic persistence."
+    }
+  ],
+  "relatedRecipes": ["vim-search-replace", "vim-macro-automation"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "bash-39",
+  "categoryId": "bash",
+  "subcategoryId": "loops",
+  "title": "Process substitution",
+  "command": "while read -r line; do echo \"$line\"; done < <(command)",
+  "description": "Read from command output."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "py-48",
+  "categoryId": "python",
+  "subcategoryId": "python-uv",
+  "title": "Create venv",
+  "command": "uv venv",
+  "description": "Create virtual environment (80x faster than venv)."
+}

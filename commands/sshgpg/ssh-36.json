@@ -1,0 +1,8 @@
+{
+  "id": "ssh-36",
+  "categoryId": "sshgpg",
+  "subcategoryId": "connections",
+  "title": "SSH with agent forwarding",
+  "command": "ssh -A user@host",
+  "description": "Forward local SSH agent to remote."
+}

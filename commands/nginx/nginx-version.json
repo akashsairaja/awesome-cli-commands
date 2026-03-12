@@ -1,0 +1,9 @@
+{
+  "id": "nginx-version",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-control",
+  "title": "Show version",
+  "command": "nginx -v",
+  "description": "Show Nginx version",
+  "tags": ["version", "info"]
+}

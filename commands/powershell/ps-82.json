@@ -1,0 +1,8 @@
+{
+  "id": "ps-82",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-remoting",
+  "title": "Run remote command",
+  "command": "Invoke-Command -ComputerName Server01 -ScriptBlock { Get-Process }",
+  "description": "Execute command on remote computer."
+}

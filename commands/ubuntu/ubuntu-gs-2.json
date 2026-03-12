@@ -1,0 +1,8 @@
+{
+  "id": "ubuntu-gs-2",
+  "title": "Update and upgrade packages",
+  "command": "sudo apt update && sudo apt upgrade -y",
+  "description": "Update package lists and upgrade all installed packages",
+  "categoryId": "ubuntu",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "trivy-image-4",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-image",
+  "title": "JSON output",
+  "command": "trivy image -f json -o results.json nginx:latest",
+  "description": "Output results as JSON."
+}

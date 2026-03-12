@@ -1,0 +1,8 @@
+{
+  "id": "playwright-test-2",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-test",
+  "title": "Run specific file",
+  "command": "npx playwright test tests/login.spec.ts",
+  "description": "Run tests from a specific file."
+}

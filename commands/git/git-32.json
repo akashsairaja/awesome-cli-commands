@@ -1,0 +1,8 @@
+{
+  "id": "git-32",
+  "categoryId": "git",
+  "subcategoryId": "branches",
+  "title": "Create and checkout branch",
+  "command": "git checkout -b <name>",
+  "description": "Create and switch to new branch."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "temporal-server-6",
+  "categoryId": "temporal",
+  "subcategoryId": "server",
+  "title": "Register search attributes",
+  "command": "temporal server start-dev --search-attribute 'CustomField=Text'",
+  "description": "Pre-register custom search attributes (Text, Keyword, Int, Double, Bool, Datetime, KeywordList)."
+}

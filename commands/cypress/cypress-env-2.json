@@ -1,0 +1,8 @@
+{
+  "id": "cypress-env-2",
+  "categoryId": "cypress",
+  "subcategoryId": "cypress-env",
+  "title": "Access env in test",
+  "command": "const apiUrl = Cypress.env('API_URL');",
+  "description": "Read env variable in test."
+}

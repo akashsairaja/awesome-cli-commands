@@ -1,0 +1,8 @@
+{
+  "id": "apt-9",
+  "categoryId": "ubuntu",
+  "subcategoryId": "systemd-services",
+  "title": "Start service",
+  "command": "sudo systemctl start <service>",
+  "description": "Start a systemd service."
+}

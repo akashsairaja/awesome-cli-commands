@@ -1,0 +1,9 @@
+{
+  "id": "jq-array-map",
+  "categoryId": "jq",
+  "subcategoryId": "jq-arrays",
+  "title": "Map array",
+  "command": "cat file.json | jq '[.[] | .name]'",
+  "description": "Transform each array element",
+  "tags": ["array", "map", "transform"]
+}

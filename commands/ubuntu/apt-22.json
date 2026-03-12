@@ -1,0 +1,8 @@
+{
+  "id": "apt-22",
+  "categoryId": "ubuntu",
+  "subcategoryId": "system",
+  "title": "Show memory usage",
+  "command": "free -h",
+  "description": "Display memory usage."
+}

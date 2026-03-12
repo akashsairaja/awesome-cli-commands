@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-compress",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-video",
+  "title": "Compress video",
+  "command": "ffmpeg -i input.mp4 -vcodec libx264 -crf 28 output.mp4",
+  "description": "Compress video (higher CRF = smaller file)",
+  "tags": ["compress", "crf", "size"]
+}

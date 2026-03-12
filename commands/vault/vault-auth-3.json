@@ -1,0 +1,8 @@
+{
+  "id": "vault-auth-3",
+  "categoryId": "vault",
+  "subcategoryId": "vault-auth",
+  "title": "Enable auth method",
+  "command": "vault auth enable kubernetes",
+  "description": "Enable Kubernetes authentication method."
+}

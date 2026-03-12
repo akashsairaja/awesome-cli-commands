@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-projects-describe",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-projects",
+  "title": "Describe Project",
+  "command": "gcloud projects describe <project-id>",
+  "description": "Get details of a project",
+  "tags": ["projects", "describe", "info"]
+}

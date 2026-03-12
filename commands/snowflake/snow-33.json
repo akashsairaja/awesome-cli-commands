@@ -1,0 +1,8 @@
+{
+  "id": "snow-33",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-cortex",
+  "title": "Generate embeddings (SQL)",
+  "command": "snow sql -q \"SELECT SNOWFLAKE.CORTEX.EMBED_TEXT('e5-base-v2', text_column) FROM docs\"",
+  "description": "Generate text embeddings for semantic search."
+}

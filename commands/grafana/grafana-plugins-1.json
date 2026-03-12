@@ -1,0 +1,8 @@
+{
+  "id": "grafana-plugins-1",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-plugins",
+  "title": "Install plugin",
+  "command": "grafana-cli plugins install grafana-piechart-panel",
+  "description": "Install a Grafana plugin."
+}

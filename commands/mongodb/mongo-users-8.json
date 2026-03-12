@@ -1,0 +1,8 @@
+{
+  "id": "mongo-users-8",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-users",
+  "title": "Show user info",
+  "command": "db.getUser(\"appuser\")",
+  "description": "Display detailed info for a specific user including roles and privileges."
+}

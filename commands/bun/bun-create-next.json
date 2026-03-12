@@ -1,0 +1,9 @@
+{
+  "id": "bun-create-next",
+  "categoryId": "bun",
+  "subcategoryId": "bun-init",
+  "title": "Create Next.js App",
+  "command": "bun create next-app my-app",
+  "description": "Create a new Next.js application",
+  "tags": ["create", "next", "app"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "nginx-ssl-hsts",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-ssl",
+  "title": "Enable HSTS",
+  "command": "add_header Strict-Transport-Security \"max-age=31536000; includeSubDomains\" always;",
+  "description": "Force browsers to always use HTTPS",
+  "tags": ["ssl", "hsts", "security", "header"]
+}

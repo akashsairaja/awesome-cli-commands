@@ -1,0 +1,9 @@
+{
+  "id": "netlify-login",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-env",
+  "title": "Login to Netlify",
+  "command": "netlify login",
+  "description": "Login to your Netlify account",
+  "tags": ["login", "auth", "authenticate"]
+}

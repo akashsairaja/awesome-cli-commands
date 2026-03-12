@@ -1,0 +1,8 @@
+{
+  "id": "helm-dev-8",
+  "categoryId": "helm",
+  "subcategoryId": "helm-dev",
+  "title": "Template with debug",
+  "command": "helm template ./mychart --debug",
+  "description": "Render templates locally with debug output."
+}

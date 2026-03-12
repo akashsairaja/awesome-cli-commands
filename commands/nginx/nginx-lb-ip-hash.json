@@ -1,0 +1,9 @@
+{
+  "id": "nginx-lb-ip-hash",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-reverse-proxy",
+  "title": "IP hash session persistence",
+  "command": "upstream backend { ip_hash; server 127.0.0.1:3001; server 127.0.0.1:3002; }",
+  "description": "Same client IP always reaches same backend",
+  "tags": ["proxy", "load-balance", "ip-hash", "sticky"]
+}

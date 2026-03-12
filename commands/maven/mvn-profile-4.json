@@ -1,0 +1,8 @@
+{
+  "id": "mvn-profile-4",
+  "categoryId": "maven",
+  "subcategoryId": "profiles",
+  "title": "Active profiles",
+  "command": "mvn help:active-profiles",
+  "description": "Show currently active profiles."
+}

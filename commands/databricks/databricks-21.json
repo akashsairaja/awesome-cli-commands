@@ -1,0 +1,8 @@
+{
+  "id": "databricks-21",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-workspace",
+  "title": "Export notebook",
+  "command": "databricks workspace export /path/to/notebook local-file.py",
+  "description": "Export a notebook to a local file."
+}

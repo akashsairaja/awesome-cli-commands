@@ -1,0 +1,9 @@
+{
+  "id": "tmux-help",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-config",
+  "title": "Show help",
+  "command": "Ctrl+b ?",
+  "description": "Show all key bindings",
+  "tags": ["help", "keys", "bindings"]
+}

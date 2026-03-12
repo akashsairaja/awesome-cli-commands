@@ -1,0 +1,9 @@
+{
+  "id": "nginx-ssl-redirect",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-ssl",
+  "title": "HTTP to HTTPS redirect",
+  "command": "server { listen 80; server_name example.com; return 301 https://$server_name$request_uri; }",
+  "description": "Redirect all HTTP to HTTPS",
+  "tags": ["ssl", "redirect", "https", "301"]
+}

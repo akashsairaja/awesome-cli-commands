@@ -1,0 +1,59 @@
+{
+  "id": "python-ruff-linting",
+  "stackId": "python",
+  "name": "Fast Linting and Formatting with Ruff",
+  "description": "Use Ruff to lint and format Python code at extreme speed, replacing Flake8, isort, Black, and dozens of other tools in a single binary.",
+  "difficulty": "beginner",
+  "timeMinutes": 6,
+  "trending": true,
+  "trendingReason": "Ruff has become the standard Python linter and formatter, adopted by major projects like FastAPI, Pandas, and Airflow for its speed and breadth of rules.",
+  "tags": ["ruff", "linting", "formatting", "code-quality"],
+  "prerequisites": ["Python 3.8+ installed"],
+  "steps": [
+    {
+      "title": "Install Ruff",
+      "command": "pip install ruff",
+      "description": "Install the Ruff linter and formatter. It is a single Rust binary that runs 10-100x faster than Flake8 and Black combined.",
+      "tip": "You can also install via 'uv tool install ruff' or 'pipx install ruff' for a global installation."
+    },
+    {
+      "title": "Lint your project",
+      "command": "ruff check .",
+      "description": "Run the linter across all Python files in the current directory. Ruff supports 800+ lint rules from Flake8, isort, pyupgrade, and more."
+    },
+    {
+      "title": "Auto-fix lint violations",
+      "command": "ruff check --fix .",
+      "description": "Automatically fix all safely fixable lint violations. Ruff will only apply fixes that do not change program behavior.",
+      "warning": "Review the changes after auto-fix. While safe fixes preserve behavior, they may alter code style in ways you want to verify."
+    },
+    {
+      "title": "Format code (Black-compatible)",
+      "command": "ruff format .",
+      "description": "Format all Python files using Ruff's built-in formatter, which is compatible with Black's output style. This replaces the need for a separate Black installation."
+    },
+    {
+      "title": "Check formatting without modifying files",
+      "command": "ruff format --check --diff .",
+      "description": "Preview formatting changes without writing them. Useful in CI pipelines to enforce formatting standards without modifying code.",
+      "tip": "Use this command in your CI pipeline to fail the build if code is not properly formatted."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Ruff linting and formatting workflow\nset -e\n\npip install ruff\n\n# Add Ruff config to pyproject.toml if it exists\nif [ -f pyproject.toml ]; then\n  cat >> pyproject.toml << 'TOMLEOF'\n\n[tool.ruff]\ntarget-version = \"py311\"\nline-length = 88\n\n[tool.ruff.lint]\nselect = [\"E\", \"F\", \"I\", \"N\", \"UP\", \"B\", \"SIM\", \"RUF\"]\nignore = [\"E501\"]\n\n[tool.ruff.format]\nquote-style = \"double\"\nindent-style = \"space\"\nTOMLEOF\n  echo \"Ruff config added to pyproject.toml\"\nfi\n\necho \"=== Linting ===\"\nruff check . --fix\n\necho \"=== Formatting ===\"\nruff format .\n\necho \"Linting and formatting complete.\"",
+  "faq": [
+    {
+      "question": "Does Ruff replace Black and isort?",
+      "answer": "Yes. 'ruff format' is a drop-in replacement for Black, and Ruff includes isort-compatible import sorting rules (I001, I002). You can remove Black, isort, and Flake8 from your dev dependencies."
+    },
+    {
+      "question": "How do I configure which rules Ruff enforces?",
+      "answer": "Add a [tool.ruff.lint] section to pyproject.toml with 'select' for enabled rule prefixes and 'ignore' for specific rules to skip. Common starting sets include E (pycodestyle), F (pyflakes), I (isort), and UP (pyupgrade)."
+    },
+    {
+      "question": "Can I use Ruff with pre-commit hooks?",
+      "answer": "Yes. Add the ruff-pre-commit hook to your .pre-commit-config.yaml. Use 'ruff check --fix' for linting and 'ruff format' for formatting as separate hooks."
+    }
+  ],
+  "relatedRecipes": ["python-mypy-type-checking", "python-pytest-testing", "python-ci-pipeline"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "prisma-db-execute-stdin",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-db",
+  "title": "Execute SQL from stdin",
+  "command": "echo \"SELECT 1;\" | npx prisma db execute --stdin",
+  "description": "Execute raw SQL piped through standard input",
+  "tags": ["db", "execute", "stdin", "sql"]
+}

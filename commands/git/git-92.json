@@ -1,0 +1,8 @@
+{
+  "id": "git-92",
+  "categoryId": "git",
+  "subcategoryId": "history",
+  "title": "Diff between commits",
+  "command": "git diff <commit1>..<commit2>",
+  "description": "Show differences between commits."
+}

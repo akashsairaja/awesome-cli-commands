@@ -1,0 +1,9 @@
+{
+  "id": "azure-func-logs",
+  "categoryId": "azure",
+  "subcategoryId": "azure-functions",
+  "title": "Stream Function Logs",
+  "command": "az functionapp log tail --resource-group <rg> --name <name>",
+  "description": "Stream live logs from function app",
+  "tags": ["functions", "logs", "stream"]
+}

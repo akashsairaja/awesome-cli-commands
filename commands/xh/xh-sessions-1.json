@@ -1,0 +1,8 @@
+{
+  "id": "xh-sessions-1",
+  "categoryId": "xh",
+  "subcategoryId": "xh-sessions",
+  "title": "Create session",
+  "command": "xh --session=api POST https://api.example.com/login user=admin",
+  "description": "Create a named session."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k3s-cluster-11",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-cluster",
+  "title": "View k3s logs",
+  "command": "sudo journalctl -u k3s -f",
+  "description": "Follow k3s service logs in real time."
+}

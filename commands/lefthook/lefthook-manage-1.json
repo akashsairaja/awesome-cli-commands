@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-manage-1",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-manage",
+  "title": "Uninstall hooks",
+  "command": "lefthook uninstall",
+  "description": "Remove all Git hooks."
+}

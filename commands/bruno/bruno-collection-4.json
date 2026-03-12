@@ -1,0 +1,8 @@
+{
+  "id": "bruno-collection-4",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-collection",
+  "title": "POST with JSON body",
+  "command": "post {\n  url: {{baseUrl}}/users\n  body: json\n}\n\nbody:json {\n  {\n    \"name\": \"John\",\n    \"email\": \"john@example.com\"\n  }\n}",
+  "description": "POST request with JSON body payload."
+}

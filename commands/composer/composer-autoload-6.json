@@ -1,0 +1,8 @@
+{
+  "id": "composer-autoload-6",
+  "categoryId": "composer",
+  "subcategoryId": "composer-autoload",
+  "title": "No dev autoload",
+  "command": "composer dump-autoload --no-dev",
+  "description": "Rebuild autoloader without dev packages."
+}

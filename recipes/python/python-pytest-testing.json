@@ -1,0 +1,64 @@
+{
+  "id": "python-pytest-testing",
+  "stackId": "python",
+  "name": "Testing Workflow with pytest, Fixtures, and Coverage",
+  "description": "Write and run Python tests with pytest, using fixtures for setup, parametrize for data-driven tests, and coverage for reporting.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "pytest dominates Python testing with its simple assertion syntax and powerful fixture system, adopted by virtually every major Python project.",
+  "tags": ["pytest", "testing", "fixtures", "coverage", "tdd"],
+  "prerequisites": ["Python 3.8+ installed", "A Python project with virtual environment"],
+  "steps": [
+    {
+      "title": "Install pytest and coverage",
+      "command": "pip install pytest pytest-cov pytest-xdist",
+      "description": "Install the pytest framework, coverage plugin for code coverage reports, and xdist for parallel test execution.",
+      "tip": "pytest-xdist lets you run tests in parallel with -n auto, dramatically reducing test suite times on multi-core machines."
+    },
+    {
+      "title": "Write and run a basic test",
+      "command": "pytest tests/ -v",
+      "description": "Run all tests in the tests/ directory with verbose output showing each test name and result. pytest auto-discovers files matching test_*.py or *_test.py."
+    },
+    {
+      "title": "Run tests matching a keyword",
+      "command": "pytest -k 'test_login or test_signup' -v",
+      "description": "Run only tests whose names match the given keyword expression. Useful for running a subset of tests during development."
+    },
+    {
+      "title": "Run tests with coverage report",
+      "command": "pytest --cov=src --cov-report=term-missing tests/",
+      "description": "Run the full test suite and generate a coverage report showing which lines in the src/ directory are not covered by tests.",
+      "tip": "Add --cov-fail-under=80 to fail the test run if coverage drops below 80 percent."
+    },
+    {
+      "title": "Run tests in parallel",
+      "command": "pytest -n auto tests/",
+      "description": "Execute tests across all available CPU cores using pytest-xdist. This can cut test runtime by 50-80 percent on large suites.",
+      "warning": "Parallel tests must be independent. Tests that share global state, databases, or files may fail or produce flaky results when parallelized."
+    },
+    {
+      "title": "Run only failed tests from the last run",
+      "command": "pytest --lf -v",
+      "description": "Re-run only the tests that failed in the previous execution. This is the fastest way to iterate on fixing broken tests."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Pytest testing workflow\nset -e\n\npip install pytest pytest-cov pytest-xdist\n\n# Create a sample test file if none exists\nmkdir -p tests\ncat > tests/test_example.py << 'PYEOF'\nimport pytest\n\ndef add(a, b):\n    return a + b\n\nclass TestAdd:\n    def test_integers(self):\n        assert add(1, 2) == 3\n\n    def test_strings(self):\n        assert add(\"hello \", \"world\") == \"hello world\"\n\n    @pytest.mark.parametrize(\"a,b,expected\", [\n        (0, 0, 0),\n        (-1, 1, 0),\n        (100, 200, 300),\n    ])\n    def test_parametrized(self, a, b, expected):\n        assert add(a, b) == expected\n\n@pytest.fixture\ndef sample_data():\n    return {\"users\": [\"alice\", \"bob\"], \"count\": 2}\n\ndef test_with_fixture(sample_data):\n    assert len(sample_data[\"users\"]) == sample_data[\"count\"]\nPYEOF\n\npytest tests/ -v --tb=short\npytest tests/ --cov=tests --cov-report=term-missing\n\necho \"All tests passed with coverage report.\"",
+  "faq": [
+    {
+      "question": "What is the difference between pytest fixtures and setUp/tearDown?",
+      "answer": "Fixtures are more flexible than unittest's setUp/tearDown. They support dependency injection, scoping (function, class, module, session), parametrization, and can be shared across files via conftest.py."
+    },
+    {
+      "question": "How do I skip a test conditionally?",
+      "answer": "Use @pytest.mark.skip(reason='...') to always skip, or @pytest.mark.skipif(condition, reason='...') to skip based on a condition like platform or Python version."
+    },
+    {
+      "question": "How do I test for expected exceptions?",
+      "answer": "Use the pytest.raises context manager: with pytest.raises(ValueError, match='invalid input'): my_function('bad_data'). This asserts that the exception is raised with a matching message."
+    }
+  ],
+  "relatedRecipes": ["python-ruff-linting", "python-mypy-type-checking", "python-ci-pipeline"],
+  "lastUpdated": "2026-03-11"
+}

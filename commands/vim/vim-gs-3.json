@@ -1,0 +1,8 @@
+{
+  "id": "vim-gs-3",
+  "title": "Open a file in Vim",
+  "command": "vim filename",
+  "description": "Open a file for editing in Vim (creates it if it does not exist)",
+  "categoryId": "vim",
+  "subcategoryId": "getting-started"
+}

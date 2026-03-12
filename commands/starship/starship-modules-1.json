@@ -1,0 +1,8 @@
+{
+  "id": "starship-modules-1",
+  "categoryId": "starship",
+  "subcategoryId": "starship-modules",
+  "title": "List modules",
+  "command": "starship module --list",
+  "description": "List all available modules."
+}

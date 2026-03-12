@@ -1,0 +1,8 @@
+{
+  "id": "trivy-k8s-3",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-k8s",
+  "title": "Scan workloads",
+  "command": "trivy k8s --report all deployments,pods",
+  "description": "Scan specific resource types."
+}

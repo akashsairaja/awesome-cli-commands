@@ -1,0 +1,9 @@
+{
+  "id": "azure-lock-create",
+  "categoryId": "azure",
+  "subcategoryId": "azure-resources",
+  "title": "Create Resource Lock",
+  "command": "az lock create --name <lock-name> --lock-type CanNotDelete --resource-group <name>",
+  "description": "Prevent accidental deletion of resource group",
+  "tags": ["lock", "protect", "delete"]
+}

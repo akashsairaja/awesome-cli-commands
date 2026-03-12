@@ -1,0 +1,9 @@
+{
+  "id": "curl-api-key",
+  "categoryId": "curl",
+  "subcategoryId": "curl-auth",
+  "title": "API key in header",
+  "command": "curl -H \"X-API-Key: your-api-key\" https://api.example.com/resource",
+  "description": "Make request with API key header",
+  "tags": ["auth", "apikey", "header"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "db-61",
+  "categoryId": "database",
+  "subcategoryId": "mongodb",
+  "title": "Restore with mongorestore",
+  "command": "mongorestore --uri='mongodb://localhost:27017/dbname' backup/dbname/",
+  "description": "Restore database from BSON dump files."
+}

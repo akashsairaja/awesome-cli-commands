@@ -1,0 +1,8 @@
+{
+  "id": "flux-helm-3",
+  "categoryId": "flux",
+  "subcategoryId": "flux-helm",
+  "title": "Reconcile HelmRelease",
+  "command": "flux reconcile helmrelease nginx --with-source",
+  "description": "Reconcile HelmRelease and source."
+}

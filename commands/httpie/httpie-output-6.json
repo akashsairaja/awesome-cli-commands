@@ -1,0 +1,8 @@
+{
+  "id": "httpie-output-6",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-output",
+  "title": "Save to file",
+  "command": "http GET https://api.example.com > response.json",
+  "description": "Save response to file."
+}

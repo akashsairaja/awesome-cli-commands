@@ -1,0 +1,8 @@
+{
+  "id": "db-55",
+  "categoryId": "database",
+  "subcategoryId": "mongodb",
+  "title": "Delete document",
+  "command": "db.collection.deleteOne({ name: 'value' })",
+  "description": "Delete a single matching document."
+}

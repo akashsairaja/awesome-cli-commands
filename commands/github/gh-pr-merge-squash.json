@@ -1,0 +1,9 @@
+{
+  "id": "gh-pr-merge-squash",
+  "categoryId": "github",
+  "subcategoryId": "gh-pr",
+  "title": "Squash merge PR",
+  "command": "gh pr merge <number> --squash",
+  "description": "Squash and merge a pull request",
+  "tags": ["pr", "merge", "squash"]
+}

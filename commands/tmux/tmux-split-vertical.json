@@ -1,0 +1,9 @@
+{
+  "id": "tmux-split-vertical",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-panes",
+  "title": "Split vertically",
+  "command": "Ctrl+b %",
+  "description": "Split pane vertically (left/right)",
+  "tags": ["pane", "split", "vertical"]
+}

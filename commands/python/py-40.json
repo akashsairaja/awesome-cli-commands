@@ -1,0 +1,8 @@
+{
+  "id": "py-40",
+  "categoryId": "python",
+  "subcategoryId": "python-uv",
+  "title": "Create project",
+  "command": "uv init my-project",
+  "description": "Create a new Python project with uv."
+}

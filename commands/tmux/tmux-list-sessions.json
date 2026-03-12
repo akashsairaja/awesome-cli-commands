@@ -1,0 +1,9 @@
+{
+  "id": "tmux-list-sessions",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-sessions",
+  "title": "List sessions",
+  "command": "tmux ls",
+  "description": "List all tmux sessions",
+  "tags": ["session", "list", "show"]
+}

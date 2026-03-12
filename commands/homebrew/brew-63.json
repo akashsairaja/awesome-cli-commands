@@ -1,0 +1,8 @@
+{
+  "id": "brew-63",
+  "categoryId": "homebrew",
+  "subcategoryId": "bundle",
+  "title": "Cleanup extra packages",
+  "command": "brew bundle cleanup",
+  "description": "List packages not in Brewfile."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "java-45",
+  "categoryId": "java",
+  "subcategoryId": "java-diagnostics",
+  "title": "Start flight recording",
+  "command": "jcmd <pid> JFR.start duration=60s filename=recording.jfr",
+  "description": "Start Java Flight Recorder for low-overhead profiling."
+}

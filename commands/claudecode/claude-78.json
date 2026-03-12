@@ -1,0 +1,8 @@
+{
+  "id": "claude-78",
+  "categoryId": "claudecode",
+  "subcategoryId": "environment",
+  "title": "Set API key",
+  "command": "export ANTHROPIC_API_KEY=sk-...",
+  "description": "Set Anthropic API key for direct access."
+}

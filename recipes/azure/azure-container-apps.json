@@ -1,0 +1,61 @@
+{
+  "id": "azure-container-apps",
+  "stackId": "azure",
+  "name": "Deploy Containerized Apps to Azure Container Apps",
+  "description": "Deploy and scale container images on Azure Container Apps with built-in ingress, scaling rules, and revision management.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "Container Apps offers a serverless container platform without the complexity of Kubernetes.",
+  "tags": ["container-apps", "containers", "serverless", "microservices", "scaling"],
+  "prerequisites": [
+    "Azure CLI installed",
+    "containerapp CLI extension installed",
+    "Container image in a registry"
+  ],
+  "steps": [
+    {
+      "title": "Install the Container Apps extension",
+      "command": "az extension add --name containerapp --upgrade",
+      "description": "Ensures the latest Container Apps CLI extension is installed."
+    },
+    {
+      "title": "Create a Container Apps environment",
+      "command": "az containerapp env create --name myenv --resource-group myapp-rg --location eastus",
+      "description": "The environment is a secure boundary around a group of container apps that share networking and logging."
+    },
+    {
+      "title": "Deploy a container app",
+      "command": "az containerapp create --name myapi --resource-group myapp-rg --environment myenv --image mcr.microsoft.com/k8se/quickstart:latest --target-port 80 --ingress external --min-replicas 1 --max-replicas 5",
+      "description": "Creates a publicly accessible container app with auto-scaling between 1 and 5 replicas.",
+      "tip": "Use --ingress internal for apps that should only be reachable within the environment."
+    },
+    {
+      "title": "Set scaling rules",
+      "command": "az containerapp update --name myapi --resource-group myapp-rg --scale-rule-name http-rule --scale-rule-type http --scale-rule-http-concurrency 50",
+      "description": "Scales out when concurrent HTTP requests per replica exceed 50."
+    },
+    {
+      "title": "View app logs",
+      "command": "az containerapp logs show --name myapi --resource-group myapp-rg --follow",
+      "description": "Streams real-time logs from the running container app."
+    }
+  ],
+  "fullScript": "# Deploy to Azure Container Apps\naz extension add --name containerapp --upgrade\naz containerapp env create --name myenv --resource-group myapp-rg --location eastus\naz containerapp create --name myapi --resource-group myapp-rg --environment myenv --image mcr.microsoft.com/k8se/quickstart:latest --target-port 80 --ingress external --min-replicas 1 --max-replicas 5\naz containerapp update --name myapi --resource-group myapp-rg --scale-rule-name http-rule --scale-rule-type http --scale-rule-http-concurrency 50\naz containerapp logs show --name myapi --resource-group myapp-rg --follow",
+  "faq": [
+    {
+      "question": "When should I use Container Apps instead of AKS?",
+      "answer": "Use Container Apps when you want serverless containers without managing infrastructure. Choose AKS when you need full Kubernetes API access, custom operators, or complex networking."
+    },
+    {
+      "question": "Can I deploy multiple containers in one Container App?",
+      "answer": "Yes. Container Apps supports sidecar containers. Add additional containers using the --yaml flag with a multi-container configuration."
+    },
+    {
+      "question": "Does Container Apps support private container registries?",
+      "answer": "Yes. Use 'az containerapp create --registry-server <acr-name>.azurecr.io --registry-username <user> --registry-password <pass>' or configure managed identity for passwordless pulls."
+    }
+  ],
+  "relatedRecipes": ["azure-aks-cluster", "azure-identity-setup"],
+  "lastUpdated": "2026-03-11"
+}

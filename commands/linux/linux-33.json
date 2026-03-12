@@ -1,0 +1,8 @@
+{
+  "id": "linux-33",
+  "categoryId": "linux",
+  "subcategoryId": "files",
+  "title": "Create symbolic link",
+  "command": "ln -s /path/to/target /path/to/symlink",
+  "description": "Create a symbolic (soft) link pointing to the target file."
+}

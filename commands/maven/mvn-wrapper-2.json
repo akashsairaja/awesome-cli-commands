@@ -1,0 +1,8 @@
+{
+  "id": "mvn-wrapper-2",
+  "categoryId": "maven",
+  "subcategoryId": "mvn-wrapper",
+  "title": "Generate for specific Maven version",
+  "command": "mvn wrapper:wrapper -Dmaven=3.9.9",
+  "description": "Pin the wrapper to a specific Maven version. Sets distributionUrl in .mvn/wrapper/maven-wrapper.properties."
+}

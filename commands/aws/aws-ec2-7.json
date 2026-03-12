@@ -1,0 +1,8 @@
+{
+  "id": "aws-ec2-7",
+  "categoryId": "aws",
+  "subcategoryId": "ec2",
+  "title": "Create key pair",
+  "command": "aws ec2 create-key-pair --key-name mykey --query 'KeyMaterial' --output text > mykey.pem",
+  "description": "Create and save SSH key pair."
+}

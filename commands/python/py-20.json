@@ -1,0 +1,8 @@
+{
+  "id": "py-20",
+  "categoryId": "python",
+  "subcategoryId": "python-poetry",
+  "title": "Create new project",
+  "command": "poetry new my-project",
+  "description": "Create a new Python project with Poetry structure."
+}

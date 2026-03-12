@@ -1,0 +1,8 @@
+{
+  "id": "react-next-6",
+  "categoryId": "react",
+  "subcategoryId": "react-nextjs",
+  "title": "Use Webpack (not Turbopack)",
+  "command": "next dev --webpack",
+  "description": "Use Webpack instead of Turbopack for dev."
+}

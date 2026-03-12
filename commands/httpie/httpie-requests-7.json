@@ -1,0 +1,8 @@
+{
+  "id": "httpie-requests-7",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-requests",
+  "title": "POST from file",
+  "command": "http POST https://api.example.com/users < data.json",
+  "description": "Send JSON from a file."
+}

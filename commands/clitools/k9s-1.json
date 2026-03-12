@@ -1,0 +1,8 @@
+{
+  "id": "k9s-1",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-k9s",
+  "title": "Open k9s",
+  "command": "k9s",
+  "description": "Launch Kubernetes cluster UI."
+}

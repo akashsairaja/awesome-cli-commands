@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-run-deploy",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-run",
+  "title": "Deploy to Cloud Run",
+  "command": "gcloud run deploy <service> --image=<image> --region=<region> --allow-unauthenticated",
+  "description": "Deploy a container to Cloud Run",
+  "tags": ["run", "deploy", "container"]
+}

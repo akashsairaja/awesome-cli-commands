@@ -1,0 +1,8 @@
+{
+  "id": "ps-28",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-system",
+  "title": "Restart service",
+  "command": "Restart-Service -Name ServiceName",
+  "description": "Restart a Windows service."
+}

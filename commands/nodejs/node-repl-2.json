@@ -1,0 +1,8 @@
+{
+  "id": "node-repl-2",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-repl",
+  "title": "Force interactive",
+  "command": "node -i",
+  "description": "Force REPL even without TTY."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "delta-2",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-delta",
+  "title": "Side by side",
+  "command": "git diff | delta --side-by-side",
+  "description": "Show diff in side-by-side view."
+}

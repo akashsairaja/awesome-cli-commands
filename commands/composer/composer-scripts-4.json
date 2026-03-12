@@ -1,0 +1,8 @@
+{
+  "id": "composer-scripts-4",
+  "categoryId": "composer",
+  "subcategoryId": "composer-scripts",
+  "title": "Execute binary",
+  "command": "composer exec phpunit -- --version",
+  "description": "Run a vendor binary via exec."
+}

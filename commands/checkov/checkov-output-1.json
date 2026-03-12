@@ -1,0 +1,8 @@
+{
+  "id": "checkov-output-1",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-output",
+  "title": "JSON output",
+  "command": "checkov -d . -o json",
+  "description": "Output results as JSON."
+}

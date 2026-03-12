@@ -1,0 +1,8 @@
+{
+  "id": "lazygit-5",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-lazygit",
+  "title": "Commit (c)",
+  "command": "c",
+  "description": "Open commit message editor."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ps-90",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-remoting",
+  "title": "SSH remoting",
+  "command": "Enter-PSSession -HostName user@linux-host -SSHTransport",
+  "description": "Connect via SSH (PS 7+)."
+}

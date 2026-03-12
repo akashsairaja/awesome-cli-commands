@@ -1,0 +1,8 @@
+{
+  "id": "ollama-10",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-run",
+  "title": "Start chat session",
+  "command": "ollama run llama2",
+  "description": "Start interactive chat with a model."
+}

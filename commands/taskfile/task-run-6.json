@@ -1,0 +1,8 @@
+{
+  "id": "task-run-6",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-run",
+  "title": "Force run",
+  "command": "task --force build",
+  "description": "Run task ignoring up-to-date check."
+}

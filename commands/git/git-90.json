@@ -1,0 +1,8 @@
+{
+  "id": "git-90",
+  "categoryId": "git",
+  "subcategoryId": "history",
+  "title": "Blame ignore whitespace",
+  "command": "git blame -w <file>",
+  "description": "Blame ignoring whitespace changes."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-manage-5",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-manage",
+  "title": "Verbose debug output",
+  "command": "LEFTHOOK_VERBOSE=1 git commit -m 'message'",
+  "description": "Enable verbose logging for debugging hooks."
+}

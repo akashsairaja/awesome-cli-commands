@@ -1,0 +1,8 @@
+{
+  "id": "k8s-145",
+  "categoryId": "kubernetes",
+  "subcategoryId": "debugging",
+  "title": "Debug pod copy with modifications",
+  "command": "kubectl debug <pod> --copy-to=<new-pod> --container=<name>",
+  "description": "Create a copy of pod with modified container for debugging."
+}

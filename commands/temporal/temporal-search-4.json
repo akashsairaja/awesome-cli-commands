@@ -1,0 +1,8 @@
+{
+  "id": "temporal-search-4",
+  "categoryId": "temporal",
+  "subcategoryId": "search-attribute",
+  "title": "Create Int attribute",
+  "command": "temporal operator search-attribute create --name Priority --type Int",
+  "description": "Create integer attribute for numeric filtering."
+}

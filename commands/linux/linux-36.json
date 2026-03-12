@@ -1,0 +1,8 @@
+{
+  "id": "linux-36",
+  "categoryId": "linux",
+  "subcategoryId": "files",
+  "title": "Find and execute command",
+  "command": "find . -name '*.log' -exec gzip {} \\;",
+  "description": "Find files matching a pattern and execute a command on each."
+}

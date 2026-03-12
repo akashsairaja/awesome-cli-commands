@@ -1,0 +1,8 @@
+{
+  "id": "snyk-fix-4",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-fix",
+  "title": "Authenticate Snyk CLI",
+  "command": "snyk auth",
+  "description": "Authenticate via browser to connect CLI to your account."
+}

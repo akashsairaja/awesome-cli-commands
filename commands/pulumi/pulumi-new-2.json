@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-new-2",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-new",
+  "title": "New Python project",
+  "command": "pulumi new aws-python",
+  "description": "Create new Python AWS project."
+}

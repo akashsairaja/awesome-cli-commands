@@ -1,0 +1,9 @@
+{
+  "id": "azure-blob-download",
+  "categoryId": "azure",
+  "subcategoryId": "azure-storage",
+  "title": "Download Blob",
+  "command": "az storage blob download --account-name <storage> --container-name <container> --name <blob-name> --file <local-file>",
+  "description": "Download a blob to local file",
+  "tags": ["storage", "blob", "download"]
+}

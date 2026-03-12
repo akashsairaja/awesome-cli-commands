@@ -1,0 +1,9 @@
+{
+  "id": "bun-test-coverage",
+  "categoryId": "bun",
+  "subcategoryId": "bun-test",
+  "title": "Test with Coverage",
+  "command": "bun test --coverage",
+  "description": "Generate code coverage report",
+  "tags": ["test", "coverage", "report"]
+}

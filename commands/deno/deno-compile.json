@@ -1,0 +1,9 @@
+{
+  "id": "deno-compile",
+  "categoryId": "deno",
+  "subcategoryId": "deno-compile",
+  "title": "Compile to Binary",
+  "command": "deno compile script.ts",
+  "description": "Create standalone executable",
+  "tags": ["compile", "binary", "executable"]
+}

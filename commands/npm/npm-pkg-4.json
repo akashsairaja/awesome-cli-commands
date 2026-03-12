@@ -1,0 +1,8 @@
+{
+  "id": "npm-pkg-4",
+  "categoryId": "npm",
+  "subcategoryId": "npm-packages",
+  "title": "Fix vulnerabilities",
+  "command": "npm audit fix",
+  "description": "Auto-fix security vulnerabilities."
+}

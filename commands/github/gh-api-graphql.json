@@ -1,0 +1,9 @@
+{
+  "id": "gh-api-graphql",
+  "categoryId": "github",
+  "subcategoryId": "gh-api",
+  "title": "GraphQL query",
+  "command": "gh api graphql -f query='<query>'",
+  "description": "Execute GraphQL query against GitHub API",
+  "tags": ["api", "graphql", "query"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ps-76",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-modules",
+  "title": "Remove module",
+  "command": "Remove-Module -Name ModuleName",
+  "description": "Unload module from session."
+}

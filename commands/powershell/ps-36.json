@@ -1,0 +1,8 @@
+{
+  "id": "ps-36",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-network",
+  "title": "HTTP request",
+  "command": "Invoke-WebRequest -Uri https://api.example.com",
+  "description": "Make HTTP request."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "starship-modules-17",
+  "categoryId": "starship",
+  "subcategoryId": "starship-modules",
+  "title": "Right prompt",
+  "command": "right_format = '$time$battery'",
+  "description": "Configure right-side prompt modules."
+}

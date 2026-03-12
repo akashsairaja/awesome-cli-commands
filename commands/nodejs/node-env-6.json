@@ -1,0 +1,8 @@
+{
+  "id": "node-env-6",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-env",
+  "title": "Enable source maps",
+  "command": "node --enable-source-maps app.js",
+  "description": "Enable source map support in stack traces."
+}

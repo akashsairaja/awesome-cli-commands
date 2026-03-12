@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-connect-14",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-connect",
+  "title": "Use auth key",
+  "command": "tailscale up --auth-key=tskey-auth-xxxxx",
+  "description": "Authenticate non-interactively with a pre-auth key."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "deno-doc-json",
+  "categoryId": "deno",
+  "subcategoryId": "deno-info",
+  "title": "Docs as JSON",
+  "command": "deno doc --json script.ts",
+  "description": "Output documentation as JSON",
+  "tags": ["doc", "json", "api"]
+}

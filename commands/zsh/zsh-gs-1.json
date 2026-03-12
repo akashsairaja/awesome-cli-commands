@@ -1,0 +1,8 @@
+{
+  "id": "zsh-gs-1",
+  "title": "Check Zsh version",
+  "command": "zsh --version",
+  "description": "Display the installed Zsh version",
+  "categoryId": "zsh",
+  "subcategoryId": "getting-started"
+}

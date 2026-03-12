@@ -1,0 +1,8 @@
+{
+  "id": "nuget-install-2",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-install",
+  "title": "Add specific version",
+  "command": "dotnet add package Newtonsoft.Json --version 13.0.1",
+  "description": "Add specific package version."
+}

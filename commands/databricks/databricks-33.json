@@ -1,0 +1,8 @@
+{
+  "id": "databricks-33",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-unity-catalog",
+  "title": "Get table info",
+  "command": "databricks unity-catalog tables get --full-name <catalog.schema.table>",
+  "description": "Get detailed information about a table."
+}

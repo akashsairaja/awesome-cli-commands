@@ -1,0 +1,49 @@
+{
+  "id": "system-monitoring-dashboard",
+  "stackId": "linux",
+  "name": "System Monitoring Dashboard",
+  "description": "Build a quick system monitoring overview using standard Linux commands to check CPU, memory, disk, and network status.",
+  "difficulty": "beginner",
+  "timeMinutes": 5,
+  "trending": true,
+  "trendingReason": "Fundamental skill for any server or cloud instance troubleshooting",
+  "tags": ["monitoring", "system", "cpu", "memory"],
+  "prerequisites": ["Linux shell access"],
+  "steps": [
+    {
+      "title": "Check system uptime and load average",
+      "description": "View how long the system has been running and the current load average.",
+      "command": "uptime",
+      "tip": "Load average numbers represent 1-min, 5-min, and 15-min averages. Values should be below the number of CPU cores."
+    },
+    {
+      "title": "View memory usage",
+      "description": "Check total, used, free, and available memory.",
+      "command": "free -h",
+      "tip": "Focus on the 'available' column, not 'free'. Linux uses free RAM for disk cache, which is reclaimable."
+    },
+    {
+      "title": "Check disk usage",
+      "description": "View disk space usage across all mounted filesystems.",
+      "command": "df -h --type=ext4 --type=xfs --type=btrfs 2>/dev/null || df -h | grep -v tmpfs"
+    },
+    {
+      "title": "View top processes by resource usage",
+      "description": "See the most resource-intensive processes sorted by CPU usage.",
+      "command": "ps aux --sort=-%cpu | head -15"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# System Monitoring Dashboard\nset -euo pipefail\n\necho \"=========================================\"\necho \"  System Monitoring Dashboard\"\necho \"=========================================\"\n\necho \"\"\necho \"--- Hostname & Uptime ---\"\nhostname\nuptime\n\necho \"\"\necho \"--- CPU Info ---\"\nnproc && echo \"cores\"\ngrep 'model name' /proc/cpuinfo | head -1 | cut -d: -f2\n\necho \"\"\necho \"--- Memory ---\"\nfree -h\n\necho \"\"\necho \"--- Disk Usage ---\"\ndf -h | grep -v tmpfs | grep -v udev\n\necho \"\"\necho \"--- Top 5 Processes (CPU) ---\"\nps aux --sort=-%cpu | head -6\n\necho \"\"\necho \"--- Top 5 Processes (Memory) ---\"\nps aux --sort=-%mem | head -6\n\necho \"\"\necho \"--- Network Interfaces ---\"\nip -brief addr 2>/dev/null || ifconfig -a 2>/dev/null | grep -E '^[a-z]|inet '\n\necho \"\"\necho \"=========================================\"",
+  "faq": [
+    {
+      "question": "What load average is too high?",
+      "answer": "A sustained load average above the number of CPU cores indicates the system is overloaded. For example, on a 4-core system, a load above 4.0 means processes are waiting for CPU time."
+    },
+    {
+      "question": "Why does 'free' show very little free memory?",
+      "answer": "Linux uses available RAM for disk cache (buff/cache). This memory is automatically reclaimed when applications need it. Look at the 'available' column for actual usable memory."
+    }
+  ],
+  "relatedRecipes": ["process-management-systemd", "log-analysis-journalctl"],
+  "lastUpdated": "2026-03-11"
+}

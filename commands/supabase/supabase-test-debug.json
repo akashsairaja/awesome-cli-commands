@@ -1,0 +1,9 @@
+{
+  "id": "supabase-test-debug",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-test",
+  "title": "Debug function with breakpoint",
+  "command": "supabase functions serve <name> --inspect-mode brk",
+  "description": "Serve function with debugger breakpoint",
+  "tags": ["test", "debug", "inspect"]
+}

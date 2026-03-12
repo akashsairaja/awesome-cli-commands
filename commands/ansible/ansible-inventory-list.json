@@ -1,0 +1,9 @@
+{
+  "id": "ansible-inventory-list",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-inventory",
+  "title": "List Inventory",
+  "command": "ansible-inventory --list",
+  "description": "Display full inventory in JSON",
+  "tags": ["inventory", "list", "json"]
+}

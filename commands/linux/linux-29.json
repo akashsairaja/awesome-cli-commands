@@ -1,0 +1,8 @@
+{
+  "id": "linux-29",
+  "categoryId": "linux",
+  "subcategoryId": "files",
+  "title": "Create nested directories",
+  "command": "mkdir -p /path/to/nested/directory",
+  "description": "Create directory structure including all parent directories."
+}

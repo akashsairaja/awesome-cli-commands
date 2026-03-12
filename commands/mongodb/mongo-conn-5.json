@@ -1,0 +1,8 @@
+{
+  "id": "mongo-conn-5",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-connection",
+  "title": "Run script file",
+  "command": "mongosh mydb script.js",
+  "description": "Execute JavaScript file."
+}

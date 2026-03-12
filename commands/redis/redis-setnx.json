@@ -1,0 +1,9 @@
+{
+  "id": "redis-setnx",
+  "categoryId": "redis",
+  "subcategoryId": "redis-strings",
+  "title": "Set if not exists",
+  "command": "SETNX key value",
+  "description": "Set value only if key doesn't exist",
+  "tags": ["setnx", "conditional", "lock"]
+}

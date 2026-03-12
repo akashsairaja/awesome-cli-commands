@@ -1,0 +1,8 @@
+{
+  "id": "claude-8",
+  "categoryId": "claudecode",
+  "subcategoryId": "general",
+  "title": "Pipe input to Claude",
+  "command": "cat file.ts | claude \"explain this code\"",
+  "description": "Pipe file content to Claude for analysis."
+}

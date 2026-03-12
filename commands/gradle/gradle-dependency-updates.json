@@ -1,0 +1,9 @@
+{
+  "id": "gradle-dependency-updates",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-dependencies",
+  "title": "Check for Updates",
+  "command": "./gradlew dependencyUpdates",
+  "description": "Check for dependency updates (requires plugin)",
+  "tags": ["dependencies", "updates", "outdated"]
+}

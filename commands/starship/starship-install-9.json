@@ -1,0 +1,8 @@
+{
+  "id": "starship-install-9",
+  "categoryId": "starship",
+  "subcategoryId": "starship-install",
+  "title": "Custom config path",
+  "command": "export STARSHIP_CONFIG=~/custom/starship.toml",
+  "description": "Set a custom config file location."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "npm-scripts-7",
+  "categoryId": "npm",
+  "subcategoryId": "npm-scripts",
+  "title": "pnpm dlx",
+  "command": "pnpm dlx <command>",
+  "description": "Download and execute (pnpm's npx)."
+}

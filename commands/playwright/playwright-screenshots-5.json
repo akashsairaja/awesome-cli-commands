@@ -1,0 +1,8 @@
+{
+  "id": "playwright-screenshots-5",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-screenshots",
+  "title": "Omit background",
+  "command": "await page.screenshot({ path: 'shot.png', omitBackground: true });",
+  "description": "Screenshot with transparent bg."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-sql-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-sql",
+  "title": "List SQL Instances",
+  "command": "gcloud sql instances list",
+  "description": "List all Cloud SQL instances in the project",
+  "tags": ["sql", "list", "instances"]
+}

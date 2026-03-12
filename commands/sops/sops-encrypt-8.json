@@ -1,0 +1,8 @@
+{
+  "id": "sops-encrypt-8",
+  "categoryId": "sops",
+  "subcategoryId": "sops-encrypt",
+  "title": "Encrypt with multiple keys",
+  "command": "sops -e --age age1key1,age1key2 secrets.yaml",
+  "description": "Encrypt for multiple age recipients."
+}

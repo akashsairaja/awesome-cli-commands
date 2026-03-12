@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-stack-2",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-stack",
+  "title": "Select stack",
+  "command": "pulumi stack select prod",
+  "description": "Switch to a different stack."
+}

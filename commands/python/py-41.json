@@ -1,0 +1,8 @@
+{
+  "id": "py-41",
+  "categoryId": "python",
+  "subcategoryId": "python-uv",
+  "title": "Add dependency",
+  "command": "uv add requests",
+  "description": "Add a package to the project."
+}

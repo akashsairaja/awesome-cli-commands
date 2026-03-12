@@ -1,0 +1,8 @@
+{
+  "id": "snyk-code-4",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-code",
+  "title": "SARIF output",
+  "command": "snyk code test --sarif",
+  "description": "Output in SARIF for GitHub integration."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "firebase-hosting-disable",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-hosting",
+  "title": "Disable hosting",
+  "command": "firebase hosting:disable",
+  "description": "Disable Firebase Hosting and stop serving",
+  "tags": ["hosting", "disable", "stop"]
+}

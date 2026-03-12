@@ -1,0 +1,8 @@
+{
+  "id": "composer-install-7",
+  "categoryId": "composer",
+  "subcategoryId": "composer-install",
+  "title": "Install no scripts",
+  "command": "composer install --no-scripts",
+  "description": "Install without running scripts."
+}

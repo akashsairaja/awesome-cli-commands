@@ -1,0 +1,8 @@
+{
+  "id": "az-gs-3",
+  "title": "Check Azure CLI version",
+  "command": "az --version",
+  "description": "Display the installed Azure CLI version and dependencies",
+  "categoryId": "azure",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "zoxide-4",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-zoxide",
+  "title": "Query database",
+  "command": "zoxide query project",
+  "description": "Print matching directory without jumping."
+}

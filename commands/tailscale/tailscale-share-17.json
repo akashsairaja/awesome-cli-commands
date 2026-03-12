@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-share-17",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-share",
+  "title": "Funnel turn off",
+  "command": "tailscale funnel off",
+  "description": "Stop all funnel configurations."
+}

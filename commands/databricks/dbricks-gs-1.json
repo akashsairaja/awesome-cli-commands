@@ -1,0 +1,8 @@
+{
+  "id": "dbricks-gs-1",
+  "title": "Install Databricks CLI",
+  "command": "pip install databricks-cli",
+  "description": "Install the Databricks command-line interface via pip",
+  "categoryId": "databricks",
+  "subcategoryId": "getting-started"
+}

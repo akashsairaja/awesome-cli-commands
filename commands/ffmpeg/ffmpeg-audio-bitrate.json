@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-audio-bitrate",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-audio",
+  "title": "Change audio bitrate",
+  "command": "ffmpeg -i input.mp3 -b:a 192k output.mp3",
+  "description": "Re-encode audio with specific bitrate",
+  "tags": ["audio", "bitrate", "quality"]
+}

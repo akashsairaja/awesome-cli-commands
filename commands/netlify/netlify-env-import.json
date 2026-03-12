@@ -1,0 +1,9 @@
+{
+  "id": "netlify-env-import",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-env",
+  "title": "Import env from file",
+  "command": "netlify env:import .env",
+  "description": "Import environment variables from .env file",
+  "tags": ["env", "import", "file"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "deno-run-allow-net",
+  "categoryId": "deno",
+  "subcategoryId": "deno-run",
+  "title": "Allow Network Access",
+  "command": "deno run --allow-net script.ts",
+  "description": "Run with network permission",
+  "tags": ["run", "permissions", "network"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tldr-2",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-tldr",
+  "title": "Update cache",
+  "command": "tldr --update",
+  "description": "Update local tldr cache."
+}

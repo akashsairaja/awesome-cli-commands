@@ -1,0 +1,8 @@
+{
+  "id": "py-8",
+  "categoryId": "python",
+  "subcategoryId": "python-pip",
+  "title": "List installed packages",
+  "command": "pip list",
+  "description": "Show all installed packages."
+}

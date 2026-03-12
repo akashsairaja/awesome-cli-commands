@@ -1,0 +1,8 @@
+{
+  "id": "rust-util-2",
+  "categoryId": "rust",
+  "subcategoryId": "rust-util",
+  "title": "List installed tools",
+  "command": "cargo install --list",
+  "description": "Show globally installed binaries."
+}

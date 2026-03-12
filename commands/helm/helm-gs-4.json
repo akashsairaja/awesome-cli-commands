@@ -1,0 +1,8 @@
+{
+  "id": "helm-gs-4",
+  "title": "Update Helm repositories",
+  "command": "helm repo update",
+  "description": "Update all Helm chart repositories",
+  "categoryId": "helm",
+  "subcategoryId": "getting-started"
+}

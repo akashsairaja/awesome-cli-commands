@@ -1,0 +1,8 @@
+{
+  "id": "mvn-plugin-3",
+  "categoryId": "maven",
+  "subcategoryId": "plugins",
+  "title": "Plugin help",
+  "command": "mvn help:describe -Dplugin=compiler",
+  "description": "Show plugin documentation."
+}

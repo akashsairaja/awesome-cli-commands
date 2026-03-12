@@ -1,0 +1,8 @@
+{
+  "id": "nats-admin-6",
+  "categoryId": "nats",
+  "subcategoryId": "nats-admin",
+  "title": "System events",
+  "command": "nats events",
+  "description": "Monitor connects, disconnects, auth errors."
+}

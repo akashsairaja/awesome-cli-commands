@@ -1,0 +1,8 @@
+{
+  "id": "ai-41",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-api",
+  "title": "List models",
+  "command": "curl https://api.openai.com/v1/models -H \"Authorization: Bearer $OPENAI_API_KEY\"",
+  "description": "List available OpenAI models."
+}

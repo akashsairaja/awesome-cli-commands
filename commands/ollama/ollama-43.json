@@ -1,0 +1,8 @@
+{
+  "id": "ollama-43",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-modelfile",
+  "title": "Custom template",
+  "command": "FROM llama2\nTEMPLATE \"{{ .System }}\\n\\nUser: {{ .Prompt }}\\nAssistant:\"",
+  "description": "Define custom prompt template format."
+}

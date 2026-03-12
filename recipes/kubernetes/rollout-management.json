@@ -1,0 +1,58 @@
+{
+  "id": "rollout-management",
+  "stackId": "kubernetes",
+  "name": "Rollout Management",
+  "description": "Manage deployment rollouts including monitoring progress, pausing, resuming, and rolling back to previous versions.",
+  "difficulty": "advanced",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "Zero-downtime deployments are essential for production reliability",
+  "tags": ["deployments", "rollout", "rollback", "zero-downtime"],
+  "prerequisites": ["kubectl configured", "An existing deployment"],
+  "steps": [
+    {
+      "title": "Check rollout status",
+      "description": "Monitor the progress of a deployment rollout.",
+      "command": "kubectl rollout status deployment/<deployment-name>"
+    },
+    {
+      "title": "View rollout history",
+      "description": "See previous revisions of a deployment including change causes.",
+      "command": "kubectl rollout history deployment/<deployment-name>",
+      "tip": "Add --revision=N to see the details of a specific revision."
+    },
+    {
+      "title": "Pause a rollout",
+      "description": "Pause a rollout mid-way to inspect or run canary tests before proceeding.",
+      "command": "kubectl rollout pause deployment/<deployment-name>"
+    },
+    {
+      "title": "Resume a paused rollout",
+      "description": "Continue a paused rollout after validation.",
+      "command": "kubectl rollout resume deployment/<deployment-name>"
+    },
+    {
+      "title": "Rollback to the previous revision",
+      "description": "Revert a deployment to its last known good state.",
+      "command": "kubectl rollout undo deployment/<deployment-name>",
+      "tip": "Use --to-revision=N to roll back to a specific revision number from the history."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Rollout Management\nset -euo pipefail\n\nDEPLOYMENT=${1:?\"Usage: $0 <deployment-name> [namespace]\"}\nNS=${2:-\"default\"}\n\necho \"=== Deployment Status ===\"\nkubectl get deployment \"$DEPLOYMENT\" -n \"$NS\" -o wide\n\necho \"\"\necho \"=== Rollout Status ===\"\nkubectl rollout status deployment/\"$DEPLOYMENT\" -n \"$NS\" --timeout=5s 2>&1 || true\n\necho \"\"\necho \"=== Rollout History ===\"\nkubectl rollout history deployment/\"$DEPLOYMENT\" -n \"$NS\"\n\necho \"\"\necho \"=== Current ReplicaSets ===\"\nkubectl get rs -n \"$NS\" -l \"app=$DEPLOYMENT\" -o wide 2>/dev/null || kubectl get rs -n \"$NS\" | head -10\n\necho \"\"\necho \"=== Rollout Commands ===\"\necho \"Rollback:  kubectl rollout undo deployment/$DEPLOYMENT -n $NS\"\necho \"Pause:     kubectl rollout pause deployment/$DEPLOYMENT -n $NS\"\necho \"Resume:    kubectl rollout resume deployment/$DEPLOYMENT -n $NS\"\necho \"Revision:  kubectl rollout undo deployment/$DEPLOYMENT -n $NS --to-revision=N\"",
+  "faq": [
+    {
+      "question": "How do I set a change cause for rollout history?",
+      "answer": "Use the annotation: 'kubectl annotate deployment/<name> kubernetes.io/change-cause=\"Updated image to v2.0\"'. This appears in rollout history."
+    },
+    {
+      "question": "What rollout strategy should I use?",
+      "answer": "RollingUpdate (default) replaces pods gradually. Recreate kills all old pods first. Use RollingUpdate for zero-downtime and Recreate when you cannot run two versions simultaneously."
+    },
+    {
+      "question": "How many revisions are kept?",
+      "answer": "Controlled by .spec.revisionHistoryLimit, which defaults to 10. Old ReplicaSets beyond this limit are garbage collected."
+    }
+  ],
+  "relatedRecipes": ["cluster-health-checks", "namespace-management"],
+  "lastUpdated": "2026-03-11"
+}

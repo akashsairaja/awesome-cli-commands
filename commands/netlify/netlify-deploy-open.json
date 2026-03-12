@@ -1,0 +1,9 @@
+{
+  "id": "netlify-deploy-open",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-deploy",
+  "title": "Deploy and open",
+  "command": "netlify deploy --open",
+  "description": "Deploy and open site in browser",
+  "tags": ["deploy", "open", "browser"]
+}

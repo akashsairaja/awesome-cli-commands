@@ -1,0 +1,8 @@
+{
+  "id": "jest-execution-4",
+  "categoryId": "jest",
+  "subcategoryId": "jest-execution",
+  "title": "Run specific file",
+  "command": "jest path/to/test.spec.js",
+  "description": "Run tests from a specific file."
+}

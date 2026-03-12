@@ -1,0 +1,8 @@
+{
+  "id": "mvn-build-1",
+  "categoryId": "maven",
+  "subcategoryId": "build",
+  "title": "Clean and compile",
+  "command": "mvn clean compile",
+  "description": "Clean and compile source code."
+}

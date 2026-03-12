@@ -1,0 +1,8 @@
+{
+  "id": "docker-87",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "Build without cache",
+  "command": "docker compose build --no-cache",
+  "description": "Build images without using cache."
+}

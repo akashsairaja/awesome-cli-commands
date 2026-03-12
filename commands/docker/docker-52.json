@@ -1,0 +1,8 @@
+{
+  "id": "docker-52",
+  "categoryId": "docker",
+  "subcategoryId": "images",
+  "title": "Inspect image",
+  "command": "docker inspect <image>",
+  "description": "Show detailed image information."
+}

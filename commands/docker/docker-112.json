@@ -1,0 +1,8 @@
+{
+  "id": "docker-112",
+  "categoryId": "docker",
+  "subcategoryId": "system",
+  "title": "Docker version",
+  "command": "docker version",
+  "description": "Show Docker version info."
+}

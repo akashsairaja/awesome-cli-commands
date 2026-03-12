@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-gs-3",
+  "title": "Check Tailscale status",
+  "command": "tailscale status",
+  "description": "Show connected peers and current Tailscale network status",
+  "categoryId": "tailscale",
+  "subcategoryId": "getting-started"
+}

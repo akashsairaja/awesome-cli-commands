@@ -1,0 +1,8 @@
+{
+  "id": "nuget-cache-1",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-cache",
+  "title": "List cache locations",
+  "command": "dotnet nuget locals all -l",
+  "description": "Show all cache locations."
+}

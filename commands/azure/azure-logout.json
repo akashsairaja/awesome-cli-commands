@@ -1,0 +1,9 @@
+{
+  "id": "azure-logout",
+  "categoryId": "azure",
+  "subcategoryId": "azure-auth",
+  "title": "Logout",
+  "command": "az logout",
+  "description": "Clear all cached Azure credentials",
+  "tags": ["logout", "auth", "clear"]
+}

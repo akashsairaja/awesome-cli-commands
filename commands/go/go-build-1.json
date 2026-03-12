@@ -1,0 +1,8 @@
+{
+  "id": "go-build-1",
+  "categoryId": "go",
+  "subcategoryId": "go-build",
+  "title": "Build project",
+  "command": "go build",
+  "description": "Compile packages and dependencies in current directory."
+}

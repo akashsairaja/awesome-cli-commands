@@ -1,0 +1,9 @@
+{
+  "id": "deno-types",
+  "categoryId": "deno",
+  "subcategoryId": "deno-info",
+  "title": "Print Types",
+  "command": "deno types",
+  "description": "Print Deno runtime TypeScript definitions",
+  "tags": ["types", "typescript", "definitions"]
+}

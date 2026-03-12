@@ -1,0 +1,8 @@
+{
+  "id": "git-43",
+  "categoryId": "git",
+  "subcategoryId": "branches",
+  "title": "Show merged branches",
+  "command": "git branch --merged",
+  "description": "List branches merged into current."
+}

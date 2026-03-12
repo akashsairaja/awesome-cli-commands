@@ -1,0 +1,8 @@
+{
+  "id": "node-repl-4",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-repl",
+  "title": "Load file in REPL",
+  "command": ".load filename.js",
+  "description": "Load JavaScript file into REPL session."
+}

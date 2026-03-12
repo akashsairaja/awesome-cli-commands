@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-config-7",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-config",
+  "title": "Exclude patterns",
+  "command": "pre-commit:\n  commands:\n    lint:\n      glob: '*.{js,ts}'\n      exclude: 'vendor/**'\n      run: eslint {staged_files}",
+  "description": "Exclude files matching a pattern."
+}

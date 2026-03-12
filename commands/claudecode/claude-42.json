@@ -1,0 +1,8 @@
+{
+  "id": "claude-42",
+  "categoryId": "claudecode",
+  "subcategoryId": "config",
+  "title": "Set output style",
+  "command": "/output-style verbose",
+  "description": "Change output format and verbosity."
+}

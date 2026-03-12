@@ -1,0 +1,58 @@
+{
+  "id": "container-debug-ephemeral",
+  "stackId": "docker",
+  "name": "Container Debug with Ephemeral Containers",
+  "description": "Debug running containers by attaching an ephemeral debug shell or inspecting container internals without modifying the original image.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "Distroless and minimal images make debugging harder without these techniques",
+  "tags": ["debug", "containers", "exec", "troubleshooting"],
+  "prerequisites": ["Docker installed", "A running container to debug"],
+  "steps": [
+    {
+      "title": "List running containers",
+      "description": "Identify the container you want to debug.",
+      "command": "docker ps --format 'table {{.ID}}\\t{{.Names}}\\t{{.Status}}\\t{{.Image}}'"
+    },
+    {
+      "title": "Exec into a running container",
+      "description": "Open an interactive shell inside a running container.",
+      "command": "docker exec -it <container-name> /bin/sh",
+      "tip": "Use /bin/sh if /bin/bash is not available (common in Alpine-based images)."
+    },
+    {
+      "title": "Run a debug sidecar with full tools",
+      "description": "Attach a debug container that shares the network and PID namespace of the target container.",
+      "command": "docker run -it --rm --pid=container:<container-name> --net=container:<container-name> nicolaka/netshoot",
+      "tip": "nicolaka/netshoot includes curl, dig, nslookup, tcpdump, iptables, and many more network tools."
+    },
+    {
+      "title": "Copy files from a container for inspection",
+      "description": "Extract files from a container to your local machine for analysis.",
+      "command": "docker cp <container-name>:/app/logs/ ./debug-logs/"
+    },
+    {
+      "title": "View container resource usage in real time",
+      "description": "Monitor CPU, memory, and network I/O of running containers.",
+      "command": "docker stats --format 'table {{.Name}}\\t{{.CPUPerc}}\\t{{.MemUsage}}\\t{{.NetIO}}'"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Container Debug Workflow\nset -euo pipefail\n\nCONTAINER=${1:?\"Usage: $0 <container-name>\"}\n\necho \"=== Container Info ===\"\ndocker inspect \"$CONTAINER\" --format '{{.State.Status}} | Image: {{.Config.Image}} | PID: {{.State.Pid}}'\n\necho \"\"\necho \"=== Container Logs (last 20 lines) ===\"\ndocker logs --tail 20 \"$CONTAINER\"\n\necho \"\"\necho \"=== Container Processes ===\"\ndocker top \"$CONTAINER\"\n\necho \"\"\necho \"=== Container Resource Usage ===\"\ndocker stats --no-stream \"$CONTAINER\"\n\necho \"\"\necho \"=== Debug Commands ===\"\necho \"Shell:     docker exec -it $CONTAINER /bin/sh\"\necho \"Netshoot:  docker run -it --rm --pid=container:$CONTAINER --net=container:$CONTAINER nicolaka/netshoot\"\necho \"Copy logs: docker cp $CONTAINER:/var/log/ ./container-logs/\"",
+  "faq": [
+    {
+      "question": "What if the container has no shell?",
+      "answer": "Use the netshoot sidecar technique or 'docker export' to create a tarball of the filesystem you can inspect locally."
+    },
+    {
+      "question": "How do I debug a container that keeps crashing?",
+      "answer": "Use 'docker logs <container>' to see the crash output. Override the entrypoint with 'docker run -it --entrypoint /bin/sh <image>' to get a shell before the app starts."
+    },
+    {
+      "question": "Can I attach a debugger to a container process?",
+      "answer": "Yes. Use 'docker exec' with the debugger CLI, or map a debug port when starting the container with -p flag. For Node.js: --inspect=0.0.0.0:9229."
+    }
+  ],
+  "relatedRecipes": ["compose-networking-debug", "container-performance-monitoring"],
+  "lastUpdated": "2026-03-11"
+}

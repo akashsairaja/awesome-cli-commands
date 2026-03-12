@@ -1,0 +1,8 @@
+{
+  "id": "firebase-gs-2",
+  "title": "Check Firebase CLI version",
+  "command": "firebase --version",
+  "description": "Verify Firebase CLI is installed and display version",
+  "categoryId": "firebase",
+  "subcategoryId": "getting-started"
+}

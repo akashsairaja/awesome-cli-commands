@@ -1,0 +1,8 @@
+{
+  "id": "composer-install-1",
+  "categoryId": "composer",
+  "subcategoryId": "composer-install",
+  "title": "Install dependencies",
+  "command": "composer install",
+  "description": "Install from composer.lock."
+}

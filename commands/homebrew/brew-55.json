@@ -1,0 +1,8 @@
+{
+  "id": "brew-55",
+  "categoryId": "homebrew",
+  "subcategoryId": "taps",
+  "title": "List tap formulae",
+  "command": "brew tap-info --json user/repo | jq '.formulae'",
+  "description": "Show formulae provided by tap."
+}

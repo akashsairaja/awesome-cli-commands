@@ -1,0 +1,9 @@
+{
+  "id": "rg-no-line-number",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-output",
+  "title": "Hide line numbers",
+  "command": "rg -N \"pattern\"",
+  "description": "Don't show line numbers",
+  "tags": ["output", "line", "number"]
+}

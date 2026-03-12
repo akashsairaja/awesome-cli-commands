@@ -1,0 +1,8 @@
+{
+  "id": "ts-compile-6",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-compile",
+  "title": "Use specific config",
+  "command": "tsc --project tsconfig.production.json",
+  "description": "Compile using a specific tsconfig file."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "vercel-deploy-prod",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-deploy",
+  "title": "Deploy to production",
+  "command": "vercel --prod",
+  "description": "Deploy directly to production environment",
+  "tags": ["deploy", "production", "prod"]
+}

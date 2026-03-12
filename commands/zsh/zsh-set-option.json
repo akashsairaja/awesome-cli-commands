@@ -1,0 +1,9 @@
+{
+  "id": "zsh-set-option",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-config",
+  "title": "Enable option",
+  "command": "setopt AUTO_CD",
+  "description": "Enable a zsh option",
+  "tags": ["option", "enable", "set"]
+}

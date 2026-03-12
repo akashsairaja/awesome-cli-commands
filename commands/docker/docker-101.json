@@ -1,0 +1,8 @@
+{
+  "id": "docker-101",
+  "categoryId": "docker",
+  "subcategoryId": "buildx",
+  "title": "Build and load locally",
+  "command": "docker buildx build --load -t <image> .",
+  "description": "Build and load into local Docker."
+}

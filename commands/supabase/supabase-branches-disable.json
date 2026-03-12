@@ -1,0 +1,9 @@
+{
+  "id": "supabase-branches-disable",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-branches",
+  "title": "Disable branching",
+  "command": "supabase branches disable",
+  "description": "Disable branching for project",
+  "tags": ["branches", "disable", "off"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "packer-init-3",
+  "categoryId": "packer",
+  "subcategoryId": "packer-init",
+  "title": "Install specific plugin",
+  "command": "packer plugins install github.com/hashicorp/amazon",
+  "description": "Install a specific plugin from the registry."
+}

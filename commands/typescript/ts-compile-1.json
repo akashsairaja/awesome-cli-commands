@@ -1,0 +1,8 @@
+{
+  "id": "ts-compile-1",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-compile",
+  "title": "Compile project",
+  "command": "tsc",
+  "description": "Compile project using tsconfig.json in current directory."
+}

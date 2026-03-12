@@ -1,0 +1,9 @@
+{
+  "id": "redis-incrby",
+  "categoryId": "redis",
+  "subcategoryId": "redis-strings",
+  "title": "Increment by amount",
+  "command": "INCRBY key amount",
+  "description": "Increment integer value by specific amount",
+  "tags": ["incrby", "increment", "counter"]
+}

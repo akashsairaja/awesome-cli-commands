@@ -1,0 +1,8 @@
+{
+  "id": "vim-7",
+  "categoryId": "vim",
+  "subcategoryId": "navigation",
+  "title": "Go to line number",
+  "command": ":123",
+  "description": "Jump to line 123."
+}

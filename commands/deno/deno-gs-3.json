@@ -1,0 +1,8 @@
+{
+  "id": "deno-gs-3",
+  "title": "Run example script",
+  "command": "deno run https://examples.deno.land/hello-world.ts",
+  "description": "Run a remote TypeScript file to test Deno",
+  "categoryId": "deno",
+  "subcategoryId": "getting-started"
+}

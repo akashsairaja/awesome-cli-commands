@@ -1,0 +1,8 @@
+{
+  "id": "claude-19",
+  "categoryId": "claudecode",
+  "subcategoryId": "permissions",
+  "title": "Plan-only permission mode",
+  "command": "claude --permission-mode plan",
+  "description": "Only allow planning, no file modifications."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "pg-admin-2",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-admin",
+  "title": "Create user",
+  "command": "CREATE USER appuser WITH PASSWORD 'secret';",
+  "description": "Create a new user with password."
+}

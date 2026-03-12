@@ -1,0 +1,8 @@
+{
+  "id": "bash-71",
+  "categoryId": "bash",
+  "subcategoryId": "strings",
+  "title": "Remove suffix greedy",
+  "command": "echo \"${str%%.*}\"",
+  "description": "Remove longest suffix (remove extension)."
+}

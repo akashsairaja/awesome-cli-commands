@@ -1,0 +1,8 @@
+{
+  "id": "node-mod-5",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-modules",
+  "title": "Run TypeScript directly",
+  "command": "node --experimental-strip-types app.ts",
+  "description": "Execute TypeScript without transpiling (Node.js 22+, 2026)."
+}

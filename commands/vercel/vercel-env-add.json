@@ -1,0 +1,9 @@
+{
+  "id": "vercel-env-add",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-env",
+  "title": "Add env variable",
+  "command": "vercel env add <name>",
+  "description": "Add an environment variable interactively",
+  "tags": ["env", "add", "environment"]
+}

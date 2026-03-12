@@ -1,0 +1,8 @@
+{
+  "id": "go-test-3",
+  "categoryId": "go",
+  "subcategoryId": "go-test",
+  "title": "Run specific test",
+  "command": "go test -run TestUserLogin ./...",
+  "description": "Run only tests matching pattern."
+}

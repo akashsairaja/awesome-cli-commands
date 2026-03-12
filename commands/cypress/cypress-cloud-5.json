@@ -1,0 +1,8 @@
+{
+  "id": "cypress-cloud-5",
+  "categoryId": "cypress",
+  "subcategoryId": "cypress-cloud",
+  "title": "Auto-cancel failed",
+  "command": "npx cypress run --record --auto-cancel-after-failures 3",
+  "description": "Cancel run after N failures."
+}

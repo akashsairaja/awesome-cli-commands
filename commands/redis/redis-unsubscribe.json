@@ -1,0 +1,9 @@
+{
+  "id": "redis-unsubscribe",
+  "categoryId": "redis",
+  "subcategoryId": "redis-pubsub",
+  "title": "Unsubscribe from channel",
+  "command": "UNSUBSCRIBE channel",
+  "description": "Unsubscribe from channel",
+  "tags": ["unsubscribe", "pubsub"]
+}

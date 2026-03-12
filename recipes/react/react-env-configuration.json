@@ -1,0 +1,57 @@
+{
+  "id": "react-env-configuration",
+  "stackId": "react",
+  "name": "Environment Variable Management Across Environments",
+  "description": "Configure and validate environment variables for development, staging, and production in React and Next.js projects.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "trending": false,
+  "tags": ["environment", "configuration", "env", "dotenv", "validation"],
+  "prerequisites": ["React or Next.js project"],
+  "steps": [
+    {
+      "title": "Create environment files for each environment",
+      "description": "Set up .env files for local, development, and production environments.",
+      "command": "echo 'NEXT_PUBLIC_API_URL=http://localhost:3001/api' > .env.local && echo 'NEXT_PUBLIC_API_URL=https://api.staging.example.com' > .env.staging && echo 'NEXT_PUBLIC_API_URL=https://api.example.com' > .env.production",
+      "warning": "Never commit .env.local or files containing secrets. Add them to .gitignore."
+    },
+    {
+      "title": "Create a .env.example file",
+      "description": "Document all required environment variables without actual values.",
+      "command": "printf 'NEXT_PUBLIC_API_URL=\\nNEXT_PUBLIC_SITE_URL=\\nDATABASE_URL=\\nJWT_SECRET=\\n' > .env.example",
+      "tip": "Commit .env.example to the repository so other developers know which variables are needed."
+    },
+    {
+      "title": "Add runtime validation with zod",
+      "description": "Validate environment variables at startup to fail fast on missing configuration.",
+      "command": "cat > src/lib/env.ts << 'EOF'\nimport { z } from 'zod';\n\nconst envSchema = z.object({\n  NEXT_PUBLIC_API_URL: z.string().url(),\n  NEXT_PUBLIC_SITE_URL: z.string().url().optional(),\n});\n\nexport const env = envSchema.parse({\n  NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,\n  NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,\n});\nEOF"
+    },
+    {
+      "title": "Add env files to .gitignore",
+      "description": "Ensure sensitive environment files are not committed to version control.",
+      "command": "echo -e '.env\\n.env.local\\n.env.*.local\\n.env.staging\\n.env.production' >> .gitignore"
+    },
+    {
+      "title": "Verify environment loading in development",
+      "description": "Check that Next.js loads the correct variables at runtime.",
+      "command": "node -e \"require('dotenv').config({ path: '.env.local' }); console.log('API URL:', process.env.NEXT_PUBLIC_API_URL);\""
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Environment Variable Setup\nset -euo pipefail\n\necho \"=== Creating environment files ===\"\n\ncat > .env.example << 'EOF'\n# API Configuration\nNEXT_PUBLIC_API_URL=\nNEXT_PUBLIC_SITE_URL=\n\n# Database\nDATABASE_URL=\n\n# Authentication\nJWT_SECRET=\nNEXTAUTH_SECRET=\nNEXTAUTH_URL=\nEOF\n\ncp .env.example .env.local\necho \"NEXT_PUBLIC_API_URL=http://localhost:3001/api\" > .env.local\n\necho \"=== Updating .gitignore ===\"\ngrep -qxF '.env.local' .gitignore 2>/dev/null || echo -e '\\n.env\\n.env.local\\n.env.*.local' >> .gitignore\n\necho \"\"\necho \"=== Environment files created ===\"\necho \".env.example  - Committed template (no secrets)\"\necho \".env.local    - Local development (gitignored)\"\necho \"\"\necho \"For validation, install zod: pnpm add zod\"",
+  "faq": [
+    {
+      "question": "What is the difference between NEXT_PUBLIC_ and server-only variables?",
+      "answer": "Variables prefixed with NEXT_PUBLIC_ are bundled into the client-side JavaScript and visible to users. Server-only variables (without the prefix) are only available in server-side code like API routes and server components. Never put secrets in NEXT_PUBLIC_ variables."
+    },
+    {
+      "question": "How does Next.js load .env files?",
+      "answer": "Next.js loads .env, .env.local, .env.[environment], and .env.[environment].local in that order. Later files override earlier ones. .env.local always overrides and is meant for machine-specific secrets."
+    },
+    {
+      "question": "Should I use a secrets manager instead of .env files?",
+      "answer": "For production, yes. Use your platform's secrets management (Vercel Environment Variables, AWS Secrets Manager, Vault) rather than .env files. .env files are best for local development only."
+    }
+  ],
+  "relatedRecipes": ["react-nextjs-app-scaffold", "react-docker-deploy"],
+  "lastUpdated": "2026-03-11"
+}

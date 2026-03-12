@@ -1,0 +1,8 @@
+{
+  "id": "docker-49",
+  "categoryId": "docker",
+  "subcategoryId": "images",
+  "title": "Save image to file",
+  "command": "docker save -o image.tar <image>",
+  "description": "Save image as tar archive."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "kafka-cons-7",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-consumer",
+  "title": "Consumer group",
+  "command": "kafka-console-consumer.sh --topic my-topic --bootstrap-server localhost:9092 --group my-group",
+  "description": "Consume as part of consumer group."
+}

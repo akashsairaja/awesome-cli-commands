@@ -1,0 +1,8 @@
+{
+  "id": "hurl-run-7",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-run",
+  "title": "Set connect timeout",
+  "command": "hurl --connect-timeout 10 api.hurl",
+  "description": "Set connection timeout in seconds."
+}

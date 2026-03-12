@@ -1,0 +1,9 @@
+{
+  "id": "deno-test-coverage",
+  "categoryId": "deno",
+  "subcategoryId": "deno-test",
+  "title": "Test with Coverage",
+  "command": "deno test --coverage=coverage",
+  "description": "Generate coverage data",
+  "tags": ["test", "coverage", "report"]
+}

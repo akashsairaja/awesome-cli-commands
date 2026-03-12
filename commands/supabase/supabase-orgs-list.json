@@ -1,0 +1,9 @@
+{
+  "id": "supabase-orgs-list",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-auth",
+  "title": "List organizations",
+  "command": "supabase orgs list",
+  "description": "List all organizations",
+  "tags": ["orgs", "organizations", "list"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "claude-47",
+  "categoryId": "claudecode",
+  "subcategoryId": "config",
+  "title": "Connect to IDE",
+  "command": "/ide",
+  "description": "Connect Claude Code to your IDE."
+}

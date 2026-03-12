@@ -1,0 +1,9 @@
+{
+  "id": "deno-lint-fix",
+  "categoryId": "deno",
+  "subcategoryId": "deno-fmt",
+  "title": "Lint and Fix",
+  "command": "deno lint --fix",
+  "description": "Auto-fix linting issues",
+  "tags": ["lint", "fix", "auto"]
+}

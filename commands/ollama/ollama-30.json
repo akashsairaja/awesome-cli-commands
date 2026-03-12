@@ -1,0 +1,8 @@
+{
+  "id": "ollama-30",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-api",
+  "title": "Generate completion",
+  "command": "curl http://localhost:11434/api/generate -d '{\"model\": \"llama2\", \"prompt\": \"Hello\"}'",
+  "description": "Generate text completion via REST API."
+}

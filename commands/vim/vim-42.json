@@ -1,0 +1,8 @@
+{
+  "id": "vim-42",
+  "categoryId": "vim",
+  "subcategoryId": "windows-tabs",
+  "title": "Equalize splits",
+  "command": "Ctrl+w =",
+  "description": "Make all windows equal size."
+}

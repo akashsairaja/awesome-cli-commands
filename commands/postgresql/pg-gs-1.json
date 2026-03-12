@@ -1,0 +1,8 @@
+{
+  "id": "pg-gs-1",
+  "title": "Run PostgreSQL with Docker",
+  "command": "docker run -d -p 5432:5432 -e POSTGRES_PASSWORD=postgres --name postgres postgres:alpine",
+  "description": "Start PostgreSQL server in a Docker container on port 5432",
+  "categoryId": "postgresql",
+  "subcategoryId": "getting-started"
+}

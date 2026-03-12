@@ -1,0 +1,8 @@
+{
+  "id": "playwright-report-4",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-report",
+  "title": "JUnit reporter",
+  "command": "npx playwright test --reporter=junit",
+  "description": "Generate JUnit XML report."
+}

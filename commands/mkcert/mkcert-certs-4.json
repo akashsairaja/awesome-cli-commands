@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-certs-4",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-certs",
+  "title": "Custom output name",
+  "command": "mkcert -key-file key.pem -cert-file cert.pem localhost",
+  "description": "Specify output file names."
+}

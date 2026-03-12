@@ -1,0 +1,8 @@
+{
+  "id": "minikube-cluster-7",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-cluster",
+  "title": "Start with K8s version",
+  "command": "minikube start --kubernetes-version=v1.28.0",
+  "description": "Start with specific Kubernetes version."
+}

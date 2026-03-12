@@ -1,0 +1,8 @@
+{
+  "id": "packer-hcl-9",
+  "categoryId": "packer",
+  "subcategoryId": "packer-hcl",
+  "title": "Post-processor manifest",
+  "command": "post-processor \"manifest\" {\n  output     = \"manifest.json\"\n  strip_path = true\n}",
+  "description": "Generate build manifest with artifact IDs."
+}

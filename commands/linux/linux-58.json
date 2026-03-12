@@ -1,0 +1,8 @@
+{
+  "id": "linux-58",
+  "categoryId": "linux",
+  "subcategoryId": "disk",
+  "title": "Mount a filesystem",
+  "command": "sudo mount /dev/sdb1 /mnt/data",
+  "description": "Mount a partition to a directory mount point."
+}

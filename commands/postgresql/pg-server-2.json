@@ -1,0 +1,8 @@
+{
+  "id": "pg-server-2",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-server",
+  "title": "Stop server fast",
+  "command": "pg_ctl stop -D /var/lib/postgresql/data -m fast",
+  "description": "Stop server, abort connections, shutdown cleanly."
+}

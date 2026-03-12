@@ -1,0 +1,8 @@
+{
+  "id": "linux-34",
+  "categoryId": "linux",
+  "subcategoryId": "files",
+  "title": "Change file permissions",
+  "command": "chmod 755 script.sh",
+  "description": "Set read/write/execute for owner, read/execute for group and others."
+}

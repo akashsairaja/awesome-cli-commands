@@ -1,0 +1,8 @@
+{
+  "id": "ts-build-5",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-build",
+  "title": "Dry run build",
+  "command": "tsc --build --dry",
+  "description": "Show what would be built without actually building."
+}

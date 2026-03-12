@@ -1,0 +1,8 @@
+{
+  "id": "git-132",
+  "categoryId": "git",
+  "subcategoryId": "cleanup",
+  "title": "Restore file (modern)",
+  "command": "git restore <file>",
+  "description": "Discard changes (Git 2.23+)."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "docker-67",
+  "categoryId": "docker",
+  "subcategoryId": "networks",
+  "title": "Connect container to network",
+  "command": "docker network connect <network> <container>",
+  "description": "Connect running container to network."
+}

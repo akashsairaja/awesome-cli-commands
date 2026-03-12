@@ -1,0 +1,59 @@
+{
+  "id": "go-release-automation",
+  "stackId": "go",
+  "name": "Build Releases with GoReleaser",
+  "description": "Automate Go binary releases across platforms with GoReleaser, including changelogs, checksums, and GitHub releases.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "GoReleaser is the standard tool for publishing Go project releases",
+  "tags": ["goreleaser", "release", "automation", "ci-cd"],
+  "prerequisites": ["Go 1.21+ installed", "GoReleaser installed", "Git repository with tags"],
+  "steps": [
+    {
+      "title": "Install GoReleaser",
+      "description": "Install GoReleaser using Go install or your package manager.",
+      "command": "go install github.com/goreleaser/goreleaser/v2@latest",
+      "tip": "On macOS you can also use: brew install goreleaser"
+    },
+    {
+      "title": "Initialize GoReleaser configuration",
+      "description": "Generate a default .goreleaser.yaml configuration file.",
+      "command": "goreleaser init"
+    },
+    {
+      "title": "Customize the configuration",
+      "description": "Edit .goreleaser.yaml to define build targets, archives, and changelog settings.",
+      "command": "cat > .goreleaser.yaml << 'EOF'\nversion: 2\nbuilds:\n  - main: ./cmd/myapp\n    binary: myapp\n    env:\n      - CGO_ENABLED=0\n    goos:\n      - linux\n      - darwin\n      - windows\n    goarch:\n      - amd64\n      - arm64\n    ldflags:\n      - -s -w -X main.version={{.Version}}\n\narchives:\n  - format: tar.gz\n    name_template: \"{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}\"\n    format_overrides:\n      - goos: windows\n        format: zip\n\nchecksum:\n  name_template: checksums.txt\n\nchangelog:\n  sort: asc\n  filters:\n    exclude:\n      - '^docs:'\n      - '^chore:'\nEOF"
+    },
+    {
+      "title": "Test the release locally",
+      "description": "Run a snapshot build without publishing to verify everything works.",
+      "command": "goreleaser release --snapshot --clean",
+      "tip": "Check the dist/ directory for the generated artifacts."
+    },
+    {
+      "title": "Create a tag and publish the release",
+      "description": "Tag a version in Git and run GoReleaser to publish to GitHub.",
+      "command": "git tag -a v1.0.0 -m 'Release v1.0.0' && git push origin v1.0.0 && goreleaser release --clean",
+      "warning": "Make sure your GITHUB_TOKEN environment variable is set with repo permissions."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# GoReleaser Automation\nset -euo pipefail\n\nVERSION=${1:?\"Usage: $0 <version> [--snapshot]\"}\nSNAPSHOT=${2:-\"\"}\n\necho \"=== GoReleaser Version ===\"\ngoreleaser --version\n\nif [ \"$SNAPSHOT\" = \"--snapshot\" ]; then\n  echo \"\"\n  echo \"=== Snapshot Build (no publish) ===\"\n  goreleaser release --snapshot --clean\nelse\n  echo \"\"\n  echo \"=== Creating Git Tag ===\"\n  git tag -a \"$VERSION\" -m \"Release $VERSION\"\n  git push origin \"$VERSION\"\n\n  echo \"\"\n  echo \"=== Publishing Release ===\"\n  goreleaser release --clean\nfi\n\necho \"\"\necho \"=== Build Artifacts ===\"\nls -lh dist/ 2>/dev/null || echo \"No dist/ directory found\"\n\necho \"\"\necho \"=== GoReleaser Commands ===\"\necho \"Init:     goreleaser init\"\necho \"Check:    goreleaser check\"\necho \"Snapshot: goreleaser release --snapshot --clean\"\necho \"Release:  goreleaser release --clean\"",
+  "faq": [
+    {
+      "question": "How do I integrate GoReleaser with GitHub Actions?",
+      "answer": "Use the official goreleaser/goreleaser-action. Trigger it on tag pushes. Set the GITHUB_TOKEN secret and GoReleaser handles the rest."
+    },
+    {
+      "question": "Can GoReleaser build Docker images too?",
+      "answer": "Yes. Add a 'dockers' section to .goreleaser.yaml to build and push Docker images as part of the release process."
+    },
+    {
+      "question": "How do I generate a changelog from conventional commits?",
+      "answer": "Configure the changelog section with groups that match commit prefixes like 'feat:', 'fix:', 'docs:'. GoReleaser will categorize changelog entries automatically."
+    }
+  ],
+  "relatedRecipes": ["go-cross-compile", "go-docker-build"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tofu-output-9",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-output",
+  "title": "Dependency graph",
+  "command": "tofu graph | dot -Tpng > graph.png",
+  "description": "Generate visual dependency graph."
+}

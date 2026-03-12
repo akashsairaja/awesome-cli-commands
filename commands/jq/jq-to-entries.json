@@ -1,0 +1,9 @@
+{
+  "id": "jq-to-entries",
+  "categoryId": "jq",
+  "subcategoryId": "jq-objects",
+  "title": "Object to array",
+  "command": "cat file.json | jq 'to_entries'",
+  "description": "Convert object to key-value array",
+  "tags": ["object", "entries", "array"]
+}

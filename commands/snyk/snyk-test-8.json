@@ -1,0 +1,8 @@
+{
+  "id": "snyk-test-8",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-test",
+  "title": "Prune repeated subdeps",
+  "command": "snyk test --prune-repeated-subdependencies",
+  "description": "Remove duplicate sub-dependencies for cleaner results."
+}

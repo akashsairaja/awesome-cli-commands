@@ -1,0 +1,8 @@
+{
+  "id": "ts-node-7",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-node",
+  "title": "Register hook (Node.js)",
+  "command": "node -r ts-node/register src/index.ts",
+  "description": "Run TypeScript via Node.js with ts-node as loader."
+}

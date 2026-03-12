@@ -1,0 +1,8 @@
+{
+  "id": "react-test-2",
+  "categoryId": "react",
+  "subcategoryId": "react-testing",
+  "title": "Jest watch mode",
+  "command": "jest --watch",
+  "description": "Run tests in watch mode."
+}

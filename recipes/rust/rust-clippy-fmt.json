@@ -1,0 +1,58 @@
+{
+  "id": "rust-clippy-fmt",
+  "stackId": "rust",
+  "name": "Code Quality with Clippy and rustfmt",
+  "description": "Enforce code quality and consistent formatting using clippy for linting and rustfmt for automatic code formatting.",
+  "difficulty": "beginner",
+  "timeMinutes": 6,
+  "trending": true,
+  "trendingReason": "Clippy and rustfmt are required in most Rust CI pipelines",
+  "tags": ["clippy", "rustfmt", "linting", "formatting", "quality"],
+  "prerequisites": ["Rust toolchain installed via rustup"],
+  "steps": [
+    {
+      "title": "Run clippy for lint warnings",
+      "description": "Analyze your code with clippy to catch common mistakes and unidiomatic patterns.",
+      "command": "cargo clippy -- -W clippy::pedantic",
+      "tip": "Use -W clippy::pedantic for stricter checks. Use -D warnings to treat warnings as errors in CI."
+    },
+    {
+      "title": "Auto-fix clippy suggestions",
+      "description": "Apply automatic fixes for issues clippy can resolve.",
+      "command": "cargo clippy --fix --allow-dirty",
+      "warning": "Review the changes after auto-fixing. Some fixes may change behavior in subtle ways."
+    },
+    {
+      "title": "Format code with rustfmt",
+      "description": "Apply consistent formatting across the entire project.",
+      "command": "cargo fmt"
+    },
+    {
+      "title": "Check formatting without modifying files",
+      "description": "Verify that all code is properly formatted, failing if changes are needed. Ideal for CI.",
+      "command": "cargo fmt -- --check"
+    },
+    {
+      "title": "Create a rustfmt configuration",
+      "description": "Customize formatting rules with a rustfmt.toml file.",
+      "command": "cat > rustfmt.toml << 'EOF'\nmax_width = 100\ntab_spaces = 4\nedition = \"2021\"\nuse_field_init_shorthand = true\nEOF"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Rust Code Quality: Clippy + rustfmt\nset -euo pipefail\n\necho \"=== Formatting Check ===\"\ncargo fmt -- --check && echo \"Formatting OK\" || { echo \"Formatting issues found. Run 'cargo fmt' to fix.\"; }\n\necho \"\"\necho \"=== Clippy Lint ===\"\ncargo clippy -- -D warnings 2>&1\n\necho \"\"\necho \"=== Quality Commands ===\"\necho \"Lint:        cargo clippy\"\necho \"Strict:      cargo clippy -- -W clippy::pedantic\"\necho \"CI mode:     cargo clippy -- -D warnings\"\necho \"Auto-fix:    cargo clippy --fix --allow-dirty\"\necho \"Format:      cargo fmt\"\necho \"Format check: cargo fmt -- --check\"",
+  "faq": [
+    {
+      "question": "How do I suppress a clippy warning for a specific line?",
+      "answer": "Add #[allow(clippy::lint_name)] above the item. For a single expression, use #[allow(clippy::lint_name)] on the enclosing block. Prefer fixing the issue over suppressing."
+    },
+    {
+      "question": "What is the difference between clippy::pedantic and default lints?",
+      "answer": "Default clippy lints catch clear mistakes. Pedantic lints enforce idiomatic Rust style more strictly, including things like missing docs and verbose patterns. Enable pedantic gradually."
+    },
+    {
+      "question": "Can I use rustfmt with nightly-only options?",
+      "answer": "Yes. Install the nightly toolchain with 'rustup install nightly' and run 'cargo +nightly fmt'. Some options like imports_granularity require nightly."
+    }
+  ],
+  "relatedRecipes": ["rust-test-workflow", "rust-project-setup"],
+  "lastUpdated": "2026-03-11"
+}

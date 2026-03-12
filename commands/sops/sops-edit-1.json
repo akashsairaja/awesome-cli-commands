@@ -1,0 +1,8 @@
+{
+  "id": "sops-edit-1",
+  "categoryId": "sops",
+  "subcategoryId": "sops-edit",
+  "title": "Edit encrypted file",
+  "command": "sops secrets.enc.yaml",
+  "description": "Open encrypted file in editor."
+}

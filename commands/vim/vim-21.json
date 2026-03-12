@@ -1,0 +1,8 @@
+{
+  "id": "vim-21",
+  "categoryId": "vim",
+  "subcategoryId": "search",
+  "title": "Clear search highlight",
+  "command": ":noh",
+  "description": "Remove search highlighting."
+}

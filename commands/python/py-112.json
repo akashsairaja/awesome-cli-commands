@@ -1,0 +1,8 @@
+{
+  "id": "py-112",
+  "categoryId": "python",
+  "subcategoryId": "python-ruff",
+  "title": "Fix with unsafe",
+  "command": "ruff check . --fix --unsafe-fixes",
+  "description": "Apply all fixes including potentially unsafe ones."
+}

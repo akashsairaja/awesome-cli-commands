@@ -1,0 +1,8 @@
+{
+  "id": "brew-56",
+  "categoryId": "homebrew",
+  "subcategoryId": "bundle",
+  "title": "Install from Brewfile",
+  "command": "brew bundle",
+  "description": "Install all from Brewfile."
+}

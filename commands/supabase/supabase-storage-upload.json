@@ -1,0 +1,9 @@
+{
+  "id": "supabase-storage-upload",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-storage",
+  "title": "Upload file to storage",
+  "command": "supabase storage cp ./file.png supabase://bucket/file.png --local",
+  "description": "Upload file to storage bucket",
+  "tags": ["storage", "upload", "copy"]
+}

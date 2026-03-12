@@ -1,0 +1,8 @@
+{
+  "id": "ollama-24",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-server",
+  "title": "Enable GPU layers",
+  "command": "OLLAMA_NUM_GPU=35 ollama serve",
+  "description": "Configure number of layers to offload to GPU."
+}

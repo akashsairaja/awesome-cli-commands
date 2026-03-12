@@ -1,0 +1,9 @@
+{
+  "id": "gh-gist-edit",
+  "categoryId": "github",
+  "subcategoryId": "gh-gist",
+  "title": "Edit gist",
+  "command": "gh gist edit <gist-id>",
+  "description": "Edit an existing gist",
+  "tags": ["gist", "edit", "update"]
+}

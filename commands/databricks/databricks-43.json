@@ -1,0 +1,8 @@
+{
+  "id": "databricks-43",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-mlflow",
+  "title": "List registered models",
+  "command": "databricks registered-models list",
+  "description": "List all registered models in the registry."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "supabase-test-no-jwt",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-test",
+  "title": "Serve without JWT verification",
+  "command": "supabase functions serve --no-verify-jwt",
+  "description": "Serve functions without JWT verification",
+  "tags": ["test", "jwt", "local"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "eza-6",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-eza",
+  "title": "Sort by modified",
+  "command": "eza -l --sort=modified",
+  "description": "Sort by modification time."
+}

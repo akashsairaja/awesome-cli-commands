@@ -1,0 +1,8 @@
+{
+  "id": "py-5",
+  "categoryId": "python",
+  "subcategoryId": "python-pip",
+  "title": "Upgrade package",
+  "command": "pip install --upgrade requests",
+  "description": "Upgrade package to latest version."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "playwright-browser-4",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-browser",
+  "title": "Install deps only",
+  "command": "npx playwright install-deps",
+  "description": "Install system dependencies only."
+}

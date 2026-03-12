@@ -1,0 +1,9 @@
+{
+  "id": "curl-head",
+  "categoryId": "curl",
+  "subcategoryId": "curl-requests",
+  "title": "HEAD request",
+  "command": "curl -I https://example.com",
+  "description": "Get only response headers",
+  "tags": ["head", "headers", "info"]
+}

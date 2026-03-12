@@ -1,0 +1,8 @@
+{
+  "id": "composer-gs-1",
+  "title": "Install Composer (macOS)",
+  "command": "brew install composer",
+  "description": "Install PHP Composer using Homebrew on macOS",
+  "categoryId": "composer",
+  "subcategoryId": "getting-started"
+}

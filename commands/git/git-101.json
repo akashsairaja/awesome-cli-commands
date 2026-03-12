@@ -1,0 +1,8 @@
+{
+  "id": "git-101",
+  "categoryId": "git",
+  "subcategoryId": "bisect",
+  "title": "Mark bad commit",
+  "command": "git bisect bad",
+  "description": "Mark current commit as bad."
+}

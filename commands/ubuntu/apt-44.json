@@ -1,0 +1,8 @@
+{
+  "id": "apt-44",
+  "categoryId": "ubuntu",
+  "subcategoryId": "users",
+  "title": "Edit sudoers file",
+  "command": "sudo visudo",
+  "description": "Safely edit the sudoers file with syntax checking."
+}

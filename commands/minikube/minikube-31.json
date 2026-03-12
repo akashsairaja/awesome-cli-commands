@@ -1,0 +1,8 @@
+{
+  "id": "minikube-31",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-cluster",
+  "title": "Use Docker driver",
+  "command": "minikube start --driver docker",
+  "description": "Start cluster using Docker driver."
+}

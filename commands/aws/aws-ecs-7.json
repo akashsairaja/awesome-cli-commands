@@ -1,0 +1,8 @@
+{
+  "id": "aws-ecs-7",
+  "categoryId": "aws",
+  "subcategoryId": "ecs",
+  "title": "Execute command",
+  "command": "aws ecs execute-command --cluster mycluster --task task-id --container container --interactive --command '/bin/sh'",
+  "description": "Open shell in container."
+}

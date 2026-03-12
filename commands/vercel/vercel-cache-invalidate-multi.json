@@ -1,0 +1,9 @@
+{
+  "id": "vercel-cache-invalidate-multi",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-cache",
+  "title": "Invalidate multiple tags",
+  "command": "vercel cache invalidate --tag blog,users,homepage",
+  "description": "Invalidate multiple cache tags at once",
+  "tags": ["cache", "invalidate", "tags"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-new-5",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-new",
+  "title": "New from URL",
+  "command": "pulumi new https://github.com/user/repo",
+  "description": "Create project from Git template."
+}

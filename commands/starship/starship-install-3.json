@@ -1,0 +1,8 @@
+{
+  "id": "starship-install-3",
+  "categoryId": "starship",
+  "subcategoryId": "starship-install",
+  "title": "Init Fish",
+  "command": "starship init fish | source",
+  "description": "Initialize Starship in Fish."
+}

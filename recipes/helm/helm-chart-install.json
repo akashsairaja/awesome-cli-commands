@@ -1,0 +1,58 @@
+{
+  "id": "helm-chart-install",
+  "stackId": "helm",
+  "name": "Install and Configure Helm Charts",
+  "description": "Install applications from Helm chart repositories, customize values, and verify successful deployments in your Kubernetes cluster.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "Helm remains the de facto package manager for Kubernetes deployments",
+  "tags": ["install", "charts", "kubernetes", "deploy"],
+  "prerequisites": ["Helm 3 installed", "kubectl configured with cluster access"],
+  "steps": [
+    {
+      "title": "Add the chart repository",
+      "description": "Register a Helm chart repository so you can search and install its charts.",
+      "command": "helm repo add bitnami https://charts.bitnami.com/bitnami && helm repo update",
+      "tip": "Always run 'helm repo update' after adding a repo to fetch the latest chart index."
+    },
+    {
+      "title": "Search for available charts",
+      "description": "Browse the repository to find the chart you want to install.",
+      "command": "helm search repo bitnami/nginx --versions | head -10"
+    },
+    {
+      "title": "Install a chart with default values",
+      "description": "Deploy a chart into your cluster with a named release.",
+      "command": "helm install my-nginx bitnami/nginx --namespace web --create-namespace",
+      "tip": "Use --create-namespace to automatically create the target namespace if it does not exist."
+    },
+    {
+      "title": "Verify the deployment",
+      "description": "Check that the release was deployed successfully and pods are running.",
+      "command": "helm status my-nginx --namespace web"
+    },
+    {
+      "title": "List all installed releases",
+      "description": "View all Helm releases across namespaces.",
+      "command": "helm list --all-namespaces"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Helm Chart Install Workflow\nset -euo pipefail\n\nREPO_NAME=${1:?\"Usage: $0 <repo-name> <repo-url> <chart> <release-name> <namespace>\"}\nREPO_URL=${2:?\"Missing repo URL\"}\nCHART=${3:?\"Missing chart name\"}\nRELEASE=${4:?\"Missing release name\"}\nNAMESPACE=${5:-\"default\"}\n\necho \"=== Adding Helm Repository ===\"\nhelm repo add \"$REPO_NAME\" \"$REPO_URL\"\nhelm repo update\n\necho \"\"\necho \"=== Searching for Chart ===\"\nhelm search repo \"$REPO_NAME/$CHART\" --versions | head -5\n\necho \"\"\necho \"=== Installing Chart ===\"\nhelm install \"$RELEASE\" \"$REPO_NAME/$CHART\" \\\n  --namespace \"$NAMESPACE\" \\\n  --create-namespace \\\n  --wait --timeout 5m\n\necho \"\"\necho \"=== Release Status ===\"\nhelm status \"$RELEASE\" --namespace \"$NAMESPACE\"\n\necho \"\"\necho \"=== Running Pods ===\"\nkubectl get pods -n \"$NAMESPACE\" -l \"app.kubernetes.io/instance=$RELEASE\"",
+  "faq": [
+    {
+      "question": "What is the difference between helm install and helm upgrade --install?",
+      "answer": "helm install only creates a new release and fails if one already exists. helm upgrade --install creates the release if it does not exist or upgrades it if it does, making it ideal for CI/CD pipelines."
+    },
+    {
+      "question": "How do I install a specific version of a chart?",
+      "answer": "Use the --version flag: 'helm install my-release bitnami/nginx --version 15.0.0'. You can find available versions with 'helm search repo bitnami/nginx --versions'."
+    },
+    {
+      "question": "Can I install a chart without connecting to a cluster?",
+      "answer": "You can use 'helm template' to render the manifests locally without a cluster connection. Use 'helm install --dry-run --debug' to simulate an install against the cluster API."
+    }
+  ],
+  "relatedRecipes": ["helm-values-override", "helm-repo-management"],
+  "lastUpdated": "2026-03-11"
+}

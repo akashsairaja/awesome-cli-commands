@@ -1,0 +1,8 @@
+{
+  "id": "vim-28",
+  "categoryId": "vim",
+  "subcategoryId": "visual-mode",
+  "title": "Character visual mode",
+  "command": "v",
+  "description": "Select text character by character."
+}

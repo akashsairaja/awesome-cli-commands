@@ -1,0 +1,8 @@
+{
+  "id": "composer-publish-1",
+  "categoryId": "composer",
+  "subcategoryId": "composer-publish",
+  "title": "Create project",
+  "command": "composer create-project laravel/laravel myapp",
+  "description": "Create a new project from a template."
+}

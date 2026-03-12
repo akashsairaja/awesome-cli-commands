@@ -1,0 +1,8 @@
+{
+  "id": "spark-44",
+  "categoryId": "spark",
+  "subcategoryId": "spark-cluster",
+  "title": "Submit with supervise",
+  "command": "spark-submit --deploy-mode cluster --supervise --master spark://host:7077 app.py",
+  "description": "Enable automatic driver restart on failure."
+}

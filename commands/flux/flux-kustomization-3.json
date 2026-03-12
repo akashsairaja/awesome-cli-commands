@@ -1,0 +1,8 @@
+{
+  "id": "flux-kustomization-3",
+  "categoryId": "flux",
+  "subcategoryId": "flux-kustomization",
+  "title": "Reconcile Kustomization",
+  "command": "flux reconcile kustomization podinfo --with-source",
+  "description": "Reconcile Kustomization and its source."
+}

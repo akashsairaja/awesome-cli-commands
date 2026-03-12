@@ -1,0 +1,9 @@
+{
+  "id": "azure-vm-stop",
+  "categoryId": "azure",
+  "subcategoryId": "azure-compute",
+  "title": "Stop and Deallocate VM",
+  "command": "az vm deallocate --resource-group <rg> --name <vm-name>",
+  "description": "Stop VM and release compute resources (stops billing)",
+  "tags": ["vm", "stop", "deallocate"]
+}

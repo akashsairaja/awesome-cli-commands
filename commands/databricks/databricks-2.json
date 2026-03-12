@@ -1,0 +1,8 @@
+{
+  "id": "databricks-2",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-clusters",
+  "title": "Get cluster info",
+  "command": "databricks clusters get --cluster-id <cluster-id>",
+  "description": "Get detailed information about a specific cluster."
+}

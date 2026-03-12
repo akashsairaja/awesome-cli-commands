@@ -1,0 +1,8 @@
+{
+  "id": "db-24",
+  "categoryId": "database",
+  "subcategoryId": "postgresql",
+  "title": "Restore custom dump",
+  "command": "pg_restore -h localhost -U postgres -d dbname backup.dump",
+  "description": "Restore from custom format dump file."
+}

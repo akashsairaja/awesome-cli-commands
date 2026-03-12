@@ -1,0 +1,8 @@
+{
+  "id": "k6-options-9",
+  "categoryId": "k6",
+  "subcategoryId": "k6-options",
+  "title": "Abort on fail threshold",
+  "command": "export const options = {\n  thresholds: {\n    http_req_duration: [{ threshold: 'p(99)<1000', abortOnFail: true, delayAbortEval: '10s' }],\n  },\n};",
+  "description": "Abort test on threshold failure."
+}

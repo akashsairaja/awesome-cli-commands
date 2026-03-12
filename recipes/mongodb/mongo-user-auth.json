@@ -1,0 +1,52 @@
+{
+  "id": "mongo-user-auth",
+  "stackId": "mongodb",
+  "name": "Authentication and User Management",
+  "description": "Secure your MongoDB deployment by enabling authentication, creating users with specific roles, and managing access control.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "tags": ["authentication", "security", "users", "roles", "access-control"],
+  "prerequisites": ["MongoDB installed and running", "mongosh available"],
+  "steps": [
+    {
+      "title": "Create an admin user",
+      "description": "Create a superuser in the admin database before enabling authentication.",
+      "command": "mongosh --eval 'db.getSiblingDB(\"admin\").createUser({user: \"admin\", pwd: \"secure_admin_pass\", roles: [{role: \"userAdminAnyDatabase\", db: \"admin\"}, {role: \"readWriteAnyDatabase\", db: \"admin\"}, {role: \"clusterAdmin\", db: \"admin\"}]})'",
+      "warning": "Create the admin user BEFORE enabling authentication. Once auth is enabled, you cannot connect without credentials."
+    },
+    {
+      "title": "Create an application user with specific database access",
+      "description": "Add a user with read-write access limited to a single database.",
+      "command": "mongosh -u admin -p secure_admin_pass --authenticationDatabase admin --eval 'db.getSiblingDB(\"mydb\").createUser({user: \"app_user\", pwd: \"app_secure_pass\", roles: [{role: \"readWrite\", db: \"mydb\"}]})'"
+    },
+    {
+      "title": "Create a read-only user",
+      "description": "Add a user that can only read data for reporting or analytics.",
+      "command": "mongosh -u admin -p secure_admin_pass --authenticationDatabase admin --eval 'db.getSiblingDB(\"mydb\").createUser({user: \"readonly_user\", pwd: \"readonly_pass\", roles: [{role: \"read\", db: \"mydb\"}]})'"
+    },
+    {
+      "title": "Enable authentication in mongod config",
+      "description": "Update the MongoDB configuration to require authentication for all connections.",
+      "command": "echo -e 'security:\\n  authorization: enabled' | sudo tee -a /etc/mongod.conf && sudo systemctl restart mongod",
+      "tip": "After this restart, all connections must authenticate. Test with: mongosh -u admin -p secure_admin_pass --authenticationDatabase admin"
+    },
+    {
+      "title": "List all users in a database",
+      "description": "View existing users and their assigned roles.",
+      "command": "mongosh -u admin -p secure_admin_pass --authenticationDatabase admin --eval 'db.getSiblingDB(\"mydb\").getUsers()'"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# MongoDB User Management\nset -euo pipefail\n\nADMIN_USER=\"admin\"\nADMIN_PASS=\"secure_admin_pass\"\nAUTH_DB=\"admin\"\nTARGET_DB=\"mydb\"\n\necho \"=== Current users in $TARGET_DB ===\"\nmongosh -u \"$ADMIN_USER\" -p \"$ADMIN_PASS\" --authenticationDatabase \"$AUTH_DB\" --quiet --eval \"\nconst users = db.getSiblingDB('$TARGET_DB').getUsers();\nusers.users.forEach(u => {\n  const roles = u.roles.map(r => r.role + '@' + r.db).join(', ');\n  print(u.user + ': ' + roles);\n});\n\"\n\necho \"\"\necho \"=== All users across all databases ===\"\nmongosh -u \"$ADMIN_USER\" -p \"$ADMIN_PASS\" --authenticationDatabase \"$AUTH_DB\" --quiet --eval \"\nconst adminDb = db.getSiblingDB('admin');\nconst allUsers = adminDb.aggregate([\n  {$currentOp: {allUsers: true, idleConnections: false}},\n]).toArray();\n// List users from admin system\ndb.getSiblingDB('admin').system.users.find({}, {user: 1, db: 1, roles: 1}).forEach(u => {\n  const roles = u.roles.map(r => r.role + '@' + r.db).join(', ');\n  print(u.user + '@' + u.db + ': ' + roles);\n});\n\"\n\necho \"\"\necho \"=== Testing connections ===\"\nmongosh -u \"app_user\" -p \"app_secure_pass\" --authenticationDatabase \"$TARGET_DB\" --quiet --eval \"\nprint('app_user connected successfully to $TARGET_DB');\nprint('Can read: ' + (db.runCommand({find: 'test', limit: 1}).ok === 1));\n\" \"$TARGET_DB\" 2>/dev/null || echo \"app_user: connection failed or user does not exist\"",
+  "faq": [
+    {
+      "question": "What built-in roles are available?",
+      "answer": "Common roles: read (read-only), readWrite (read and write), dbAdmin (schema and index management), userAdmin (user management), clusterAdmin (replica set and sharding admin), root (superuser). You can also create custom roles with fine-grained privileges."
+    },
+    {
+      "question": "How do I change a user password?",
+      "answer": "Connect as admin and run: db.getSiblingDB('mydb').changeUserPassword('app_user', 'new_secure_password'). The change takes effect immediately for new connections."
+    }
+  ],
+  "relatedRecipes": ["mongo-backup-restore", "mongo-atlas-cli"],
+  "lastUpdated": "2026-03-11"
+}

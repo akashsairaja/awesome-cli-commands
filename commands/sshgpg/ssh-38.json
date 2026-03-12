@@ -1,0 +1,8 @@
+{
+  "id": "ssh-38",
+  "categoryId": "sshgpg",
+  "subcategoryId": "connections",
+  "title": "GPG decrypt file",
+  "command": "gpg --decrypt file.txt.gpg > file.txt",
+  "description": "Decrypt a GPG-encrypted file."
+}

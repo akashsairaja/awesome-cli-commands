@@ -1,0 +1,8 @@
+{
+  "id": "hurl-options-10",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-options",
+  "title": "Output to file",
+  "command": "hurl --output response.bin api.hurl",
+  "description": "Save response body to file."
+}

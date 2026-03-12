@@ -1,0 +1,9 @@
+{
+  "id": "supabase-migration-squash",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-migrations",
+  "title": "Squash migrations",
+  "command": "supabase migration squash",
+  "description": "Squash migrations into a single file",
+  "tags": ["migration", "squash", "combine"]
+}

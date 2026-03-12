@@ -1,0 +1,9 @@
+{
+  "id": "zsh-completion-init",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-prompt",
+  "title": "Initialize completions",
+  "command": "autoload -Uz compinit && compinit",
+  "description": "Initialize zsh completion system",
+  "tags": ["completion", "init", "autoload"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "composer-require-5",
+  "categoryId": "composer",
+  "subcategoryId": "composer-require",
+  "title": "Global require",
+  "command": "composer global require friendsofphp/php-cs-fixer",
+  "description": "Install a package globally."
+}

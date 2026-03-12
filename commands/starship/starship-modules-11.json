@@ -1,0 +1,8 @@
+{
+  "id": "starship-modules-11",
+  "categoryId": "starship",
+  "subcategoryId": "starship-modules",
+  "title": "Time module",
+  "command": "[time]\ndisabled = false\nformat = '[$time]($style) '",
+  "description": "Show current time in prompt."
+}

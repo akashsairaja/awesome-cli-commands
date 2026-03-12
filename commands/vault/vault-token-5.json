@@ -1,0 +1,8 @@
+{
+  "id": "vault-token-5",
+  "categoryId": "vault",
+  "subcategoryId": "vault-token",
+  "title": "Create periodic token",
+  "command": "vault token create -policy=myapp-policy -period=24h",
+  "description": "Create a periodic token for services."
+}

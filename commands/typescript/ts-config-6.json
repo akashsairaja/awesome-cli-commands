@@ -1,0 +1,8 @@
+{
+  "id": "ts-config-6",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-config",
+  "title": "Set module resolution",
+  "command": "tsc --moduleResolution bundler",
+  "description": "Specify resolution strategy (NodeNext, node16, bundler)."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k3s-gs-3",
+  "title": "Copy kubeconfig",
+  "command": "sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config",
+  "description": "Copy k3s kubeconfig for standard kubectl access",
+  "categoryId": "k3s",
+  "subcategoryId": "getting-started"
+}

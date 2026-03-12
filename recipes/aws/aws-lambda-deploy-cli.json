@@ -1,0 +1,69 @@
+{
+  "id": "aws-lambda-deploy-cli",
+  "stackId": "aws",
+  "name": "Deploy Lambda Functions from CLI with Layers",
+  "description": "Package and deploy AWS Lambda functions using the CLI, including dependency management through Lambda layers for smaller deployment bundles.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "trending": false,
+  "tags": ["lambda", "serverless", "deploy", "layers", "cli"],
+  "prerequisites": [
+    "AWS CLI v2 installed and configured",
+    "IAM role with Lambda execution permissions",
+    "Node.js or Python runtime available locally"
+  ],
+  "steps": [
+    {
+      "title": "Package the function code",
+      "description": "Create a ZIP archive containing your Lambda function handler and any application-specific modules.",
+      "command": "zip -r function.zip index.mjs lib/ -x '*.test.*' -x 'node_modules/*'",
+      "tip": "Exclude test files and node_modules from the function ZIP. Dependencies should go in a layer instead."
+    },
+    {
+      "title": "Create or update the Lambda function",
+      "description": "Deploy the function code ZIP to Lambda. Use create-function for the first deploy, or update-function-code for subsequent deploys.",
+      "command": "aws lambda update-function-code --function-name my-api-handler --zip-file fileb://function.zip",
+      "warning": "The fileb:// prefix is required for binary file uploads. Using file:// will corrupt the ZIP."
+    },
+    {
+      "title": "Package the layer dependencies",
+      "description": "Create a layer ZIP with the correct directory structure for your runtime. Node.js expects a nodejs/node_modules path.",
+      "command": "mkdir -p layer/nodejs && cp package.json layer/nodejs/ && cd layer/nodejs && npm install --omit=dev && cd ../.. && zip -r layer.zip layer/",
+      "tip": "Lambda layers must follow a specific directory structure: nodejs/node_modules/ for Node.js, python/ for Python."
+    },
+    {
+      "title": "Publish the Lambda layer",
+      "description": "Upload the dependency layer to Lambda. Each publish creates a new immutable version that can be referenced by functions.",
+      "command": "aws lambda publish-layer-version --layer-name my-api-deps --zip-file fileb://layer.zip --compatible-runtimes nodejs20.x nodejs22.x"
+    },
+    {
+      "title": "Attach the layer to the function",
+      "description": "Update the function configuration to reference the new layer version, making the packaged dependencies available at runtime.",
+      "command": "aws lambda update-function-configuration --function-name my-api-handler --layers arn:aws:lambda:us-east-1:111111111111:layer:my-api-deps:3",
+      "tip": "You can attach up to 5 layers to a single function. The total unzipped size of function code plus all layers must be under 250 MB."
+    },
+    {
+      "title": "Test the deployed function",
+      "description": "Invoke the Lambda function with a test payload and view the response to confirm the deployment works correctly.",
+      "command": "aws lambda invoke --function-name my-api-handler --payload '{\"path\": \"/health\", \"httpMethod\": \"GET\"}' --cli-binary-format raw-in-base64-out response.json && cat response.json",
+      "warning": "Use --cli-binary-format raw-in-base64-out when passing JSON payloads directly, otherwise the CLI will base64-encode your payload."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Lambda Deployment with Layers\n# Usage: ./deploy-lambda.sh <function-name> <layer-name> <runtime>\n\nset -euo pipefail\n\nFUNCTION_NAME=\"${1:?Usage: $0 <function-name> <layer-name> <runtime>}\"\nLAYER_NAME=\"${2:?Provide your layer name}\"\nRUNTIME=\"${3:-nodejs20.x}\"\n\necho \"=== Packaging function code ===\"\nzip -r function.zip index.mjs lib/ -x '*.test.*' -x 'node_modules/*'\n\necho \"=== Deploying function code ===\"\naws lambda update-function-code \\\n  --function-name \"$FUNCTION_NAME\" \\\n  --zip-file fileb://function.zip\n\necho \"=== Packaging layer dependencies ===\"\nrm -rf layer\nmkdir -p layer/nodejs\ncp package.json layer/nodejs/\ncd layer/nodejs && npm install --omit=dev && cd ../..\nzip -r layer.zip layer/\n\necho \"=== Publishing layer ===\"\nLAYER_VERSION=$(aws lambda publish-layer-version \\\n  --layer-name \"$LAYER_NAME\" \\\n  --zip-file fileb://layer.zip \\\n  --compatible-runtimes \"$RUNTIME\" \\\n  --output json | jq -r '.LayerVersionArn')\n\necho \"Published layer: $LAYER_VERSION\"\n\necho \"=== Attaching layer to function ===\"\naws lambda update-function-configuration \\\n  --function-name \"$FUNCTION_NAME\" \\\n  --layers \"$LAYER_VERSION\"\n\necho \"=== Waiting for function update ===\"\naws lambda wait function-updated --function-name \"$FUNCTION_NAME\"\n\necho \"=== Testing function ===\"\naws lambda invoke \\\n  --function-name \"$FUNCTION_NAME\" \\\n  --payload '{\"path\": \"/health\", \"httpMethod\": \"GET\"}' \\\n  --cli-binary-format raw-in-base64-out \\\n  response.json\n\necho \"Response:\"\ncat response.json\necho \"\"\n\n# Cleanup\nrm -f function.zip layer.zip response.json\nrm -rf layer\n\necho \"Deployment complete.\"",
+  "faq": [
+    {
+      "question": "What is the benefit of using Lambda layers?",
+      "answer": "Layers separate dependencies from function code, dramatically reducing deployment ZIP size and upload time. Multiple functions can share the same layer, and you only re-deploy the layer when dependencies change."
+    },
+    {
+      "question": "What is the maximum deployment package size for Lambda?",
+      "answer": "The direct upload limit is 50 MB zipped. For larger packages up to 250 MB unzipped, upload the ZIP to S3 first and reference the S3 location. The total unzipped size including all layers cannot exceed 250 MB."
+    },
+    {
+      "question": "How do I roll back a Lambda function to a previous version?",
+      "answer": "Publish a version before each deployment with aws lambda publish-version. To roll back, update the alias to point to the previous version number using aws lambda update-alias --function-version."
+    }
+  ],
+  "relatedRecipes": ["aws-cloudwatch-log-analysis", "aws-assume-role-workflow"],
+  "lastUpdated": "2026-03-11"
+}

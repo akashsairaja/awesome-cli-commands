@@ -1,0 +1,9 @@
+{
+  "id": "tmux-paste",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-config",
+  "title": "Paste buffer",
+  "command": "Ctrl+b ]",
+  "description": "Paste from tmux buffer",
+  "tags": ["paste", "buffer"]
+}

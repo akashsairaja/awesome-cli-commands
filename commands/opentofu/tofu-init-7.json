@@ -1,0 +1,8 @@
+{
+  "id": "tofu-init-7",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-init",
+  "title": "Plugin cache directory",
+  "command": "TF_PLUGIN_CACHE_DIR=~/.tofu.d/plugin-cache tofu init",
+  "description": "Use local plugin cache to speed up init."
+}

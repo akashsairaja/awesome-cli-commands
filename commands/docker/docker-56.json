@@ -1,0 +1,8 @@
+{
+  "id": "docker-56",
+  "categoryId": "docker",
+  "subcategoryId": "volumes",
+  "title": "Inspect volume",
+  "command": "docker volume inspect <volume-name>",
+  "description": "Show volume details and mount point."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "java-43",
+  "categoryId": "java",
+  "subcategoryId": "java-diagnostics",
+  "title": "Heap dump",
+  "command": "jcmd <pid> GC.heap_dump /tmp/heap.hprof",
+  "description": "Create heap dump for memory analysis."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "zsh-prompt-colors",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-prompt",
+  "title": "Colored prompt",
+  "command": "PROMPT='%F{green}%n%f@%F{blue}%m%f:%F{yellow}%~%f%# '",
+  "description": "Set colored prompt",
+  "tags": ["prompt", "color", "style"]
+}

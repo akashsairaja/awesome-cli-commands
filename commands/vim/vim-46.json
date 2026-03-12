@@ -1,0 +1,8 @@
+{
+  "id": "vim-46",
+  "categoryId": "vim",
+  "subcategoryId": "text-objects",
+  "title": "Change inside quotes",
+  "command": "ci\"",
+  "description": "Replace text inside double quotes."
+}

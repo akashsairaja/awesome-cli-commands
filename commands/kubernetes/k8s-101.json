@@ -1,0 +1,8 @@
+{
+  "id": "k8s-101",
+  "categoryId": "kubernetes",
+  "subcategoryId": "storage",
+  "title": "Get PV sorted by capacity",
+  "command": "kubectl get pv --sort-by=.spec.capacity.storage",
+  "description": "List persistent volumes sorted by size."
+}

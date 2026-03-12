@@ -1,0 +1,8 @@
+{
+  "id": "node-test-6",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-test",
+  "title": "Update snapshots",
+  "command": "node --test --test-update-snapshots",
+  "description": "Update test snapshot files."
+}

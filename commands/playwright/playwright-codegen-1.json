@@ -1,0 +1,8 @@
+{
+  "id": "playwright-codegen-1",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-codegen",
+  "title": "Record tests",
+  "command": "npx playwright codegen example.com",
+  "description": "Record user interactions as tests."
+}

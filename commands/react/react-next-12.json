@@ -1,0 +1,8 @@
+{
+  "id": "react-next-12",
+  "categoryId": "react",
+  "subcategoryId": "react-nextjs",
+  "title": "Parallel build optimization",
+  "command": "next build --experimental-build-worker",
+  "description": "Build with experimental parallel build workers for faster builds."
+}

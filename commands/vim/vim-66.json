@@ -1,0 +1,8 @@
+{
+  "id": "vim-66",
+  "categoryId": "vim",
+  "subcategoryId": "advanced-editing",
+  "title": "Uppercase word",
+  "command": "gUw",
+  "description": "Convert word to uppercase."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "composer-publish-10",
+  "categoryId": "composer",
+  "subcategoryId": "composer-publish",
+  "title": "Show suggests",
+  "command": "composer suggests",
+  "description": "Show suggested packages."
+}

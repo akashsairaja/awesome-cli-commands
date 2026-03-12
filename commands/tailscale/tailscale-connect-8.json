@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-connect-8",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-connect",
+  "title": "Set custom hostname",
+  "command": "tailscale up --hostname=my-server",
+  "description": "Set device hostname on the tailnet."
+}

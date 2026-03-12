@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-concat",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-video",
+  "title": "Concatenate videos",
+  "command": "ffmpeg -f concat -safe 0 -i list.txt -c copy output.mp4",
+  "description": "Join multiple videos (needs list.txt)",
+  "tags": ["concat", "join", "merge"]
+}

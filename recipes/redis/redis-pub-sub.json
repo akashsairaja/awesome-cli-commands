@@ -1,0 +1,55 @@
+{
+  "id": "redis-pub-sub",
+  "stackId": "redis",
+  "name": "Real-Time Messaging with Pub/Sub",
+  "description": "Implement real-time event broadcasting using Redis publish/subscribe channels for decoupled microservice communication.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "tags": ["pub/sub", "messaging", "real-time", "events"],
+  "prerequisites": [
+    "Redis installed and running",
+    "Two terminal windows for publisher and subscriber"
+  ],
+  "steps": [
+    {
+      "title": "Start a subscriber on a channel",
+      "description": "Open a terminal and subscribe to a named channel to listen for messages.",
+      "command": "redis-cli SUBSCRIBE notifications",
+      "tip": "The subscriber blocks and waits for messages. You will need a second terminal for the publisher."
+    },
+    {
+      "title": "Publish a message to the channel",
+      "description": "In a second terminal, send a message to all subscribers on the channel.",
+      "command": "redis-cli PUBLISH notifications '{\"event\":\"user.signup\",\"userId\":1001}'"
+    },
+    {
+      "title": "Subscribe with pattern matching",
+      "description": "Use PSUBSCRIBE to listen to multiple channels matching a glob pattern.",
+      "command": "redis-cli PSUBSCRIBE 'events.*'",
+      "tip": "This matches events.user, events.order, events.payment, etc."
+    },
+    {
+      "title": "Publish to a patterned channel",
+      "description": "Send a message to a specific channel that pattern subscribers will receive.",
+      "command": "redis-cli PUBLISH events.order '{\"orderId\":5001,\"status\":\"created\"}'"
+    },
+    {
+      "title": "Check active channels and subscribers",
+      "description": "Inspect which pub/sub channels are currently active.",
+      "command": "redis-cli PUBSUB CHANNELS '*'"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Redis Pub/Sub Demo\nset -euo pipefail\n\necho \"=== Active channels before ===\"\nredis-cli PUBSUB CHANNELS '*'\n\necho \"\"\necho \"=== Starting subscriber in background ===\"\nredis-cli SUBSCRIBE notifications &\nSUB_PID=$!\nsleep 1\n\necho \"\"\necho \"=== Publishing messages ===\"\nredis-cli PUBLISH notifications '{\"event\":\"user.signup\",\"userId\":1001}'\nredis-cli PUBLISH notifications '{\"event\":\"user.login\",\"userId\":1002}'\nredis-cli PUBLISH notifications '{\"event\":\"order.created\",\"orderId\":5001}'\n\nsleep 1\nkill $SUB_PID 2>/dev/null || true\n\necho \"\"\necho \"=== Active channels after ===\"\nredis-cli PUBSUB CHANNELS '*'\necho \"=== Number of subscribers ===\"\nredis-cli PUBSUB NUMSUB notifications",
+  "faq": [
+    {
+      "question": "Are pub/sub messages persisted?",
+      "answer": "No. Redis pub/sub is fire-and-forget. If no subscriber is listening when a message is published, it is lost. Use Redis Streams if you need message persistence and consumer groups."
+    },
+    {
+      "question": "Can pub/sub work across Redis Cluster nodes?",
+      "answer": "Yes, published messages are broadcast to all cluster nodes so subscribers on any node receive them. However, this adds network overhead in large clusters."
+    }
+  ],
+  "relatedRecipes": ["redis-lua-scripting", "redis-monitoring"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "httpie-headers-5",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-headers",
+  "title": "Multiple custom headers",
+  "command": "http GET https://api.example.com X-Request-ID:abc123 X-Api-Version:v2 Accept:application/json",
+  "description": "Set multiple custom headers in a single request."
+}

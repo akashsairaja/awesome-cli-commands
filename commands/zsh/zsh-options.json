@@ -1,0 +1,9 @@
+{
+  "id": "zsh-options",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-config",
+  "title": "List all options",
+  "command": "setopt",
+  "description": "Show all enabled zsh options",
+  "tags": ["options", "settings", "list"]
+}

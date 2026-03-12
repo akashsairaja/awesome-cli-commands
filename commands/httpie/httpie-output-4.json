@@ -1,0 +1,8 @@
+{
+  "id": "httpie-output-4",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-output",
+  "title": "Download file",
+  "command": "http --download GET https://example.com/file.zip",
+  "description": "Download a file."
+}

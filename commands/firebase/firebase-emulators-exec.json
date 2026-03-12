@@ -1,0 +1,9 @@
+{
+  "id": "firebase-emulators-exec",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-emulators",
+  "title": "Run script with emulators",
+  "command": "firebase emulators:exec \"npm test\"",
+  "description": "Start emulators, run script, then stop",
+  "tags": ["emulators", "exec", "script", "test"]
+}

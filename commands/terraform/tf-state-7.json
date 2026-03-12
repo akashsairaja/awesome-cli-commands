@@ -1,0 +1,8 @@
+{
+  "id": "tf-state-7",
+  "categoryId": "terraform",
+  "subcategoryId": "state",
+  "title": "Move resource",
+  "command": "terraform state mv aws_instance.old aws_instance.new",
+  "description": "Rename resource in state."
+}

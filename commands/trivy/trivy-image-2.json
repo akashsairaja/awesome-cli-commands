@@ -1,0 +1,8 @@
+{
+  "id": "trivy-image-2",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-image",
+  "title": "Scan with severity filter",
+  "command": "trivy image --severity HIGH,CRITICAL nginx:latest",
+  "description": "Show only high and critical vulnerabilities."
+}

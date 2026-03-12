@@ -1,0 +1,9 @@
+{
+  "id": "gradle-properties",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-wrapper",
+  "title": "Show Properties",
+  "command": "./gradlew properties",
+  "description": "Display all project properties",
+  "tags": ["properties", "config", "show"]
+}

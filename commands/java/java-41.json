@@ -1,0 +1,8 @@
+{
+  "id": "java-41",
+  "categoryId": "java",
+  "subcategoryId": "java-diagnostics",
+  "title": "Get JVM flags",
+  "command": "jcmd <pid> VM.flags",
+  "description": "Display all JVM flags including defaults for a process."
+}

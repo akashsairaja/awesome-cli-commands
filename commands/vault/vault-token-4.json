@@ -1,0 +1,8 @@
+{
+  "id": "vault-token-4",
+  "categoryId": "vault",
+  "subcategoryId": "vault-token",
+  "title": "Revoke token",
+  "command": "vault token revoke hvs.xxxxx",
+  "description": "Revoke a specific token."
+}

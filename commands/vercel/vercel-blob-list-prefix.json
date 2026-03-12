@@ -1,0 +1,9 @@
+{
+  "id": "vercel-blob-list-prefix",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-storage",
+  "title": "Filter blobs by prefix",
+  "command": "vercel blob list --prefix images/",
+  "description": "Filter blobs by path prefix",
+  "tags": ["blob", "filter", "prefix"]
+}

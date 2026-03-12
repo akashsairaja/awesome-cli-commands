@@ -1,0 +1,8 @@
+{
+  "id": "rust-rustup-4",
+  "categoryId": "rust",
+  "subcategoryId": "rust-rustup",
+  "title": "Add target",
+  "command": "rustup target add wasm32-unknown-unknown",
+  "description": "Add compilation target."
+}

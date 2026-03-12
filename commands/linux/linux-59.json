@@ -1,0 +1,8 @@
+{
+  "id": "linux-59",
+  "categoryId": "linux",
+  "subcategoryId": "disk",
+  "title": "Unmount a filesystem",
+  "command": "sudo umount /mnt/data",
+  "description": "Unmount a mounted filesystem safely."
+}

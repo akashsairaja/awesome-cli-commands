@@ -1,0 +1,8 @@
+{
+  "id": "sops-encrypt-4",
+  "categoryId": "sops",
+  "subcategoryId": "sops-encrypt",
+  "title": "Encrypt specific keys",
+  "command": "sops -e --encrypted-regex '^(password|secret)$' config.yaml",
+  "description": "Encrypt only matching keys."
+}

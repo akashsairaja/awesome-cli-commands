@@ -1,0 +1,8 @@
+{
+  "id": "linux-72",
+  "categoryId": "linux",
+  "subcategoryId": "text",
+  "title": "Show first N lines",
+  "command": "head -n 50 file.txt",
+  "description": "Display the first 50 lines of a file."
+}

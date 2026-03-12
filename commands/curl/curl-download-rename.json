@@ -1,0 +1,9 @@
+{
+  "id": "curl-download-rename",
+  "categoryId": "curl",
+  "subcategoryId": "curl-download",
+  "title": "Download with custom name",
+  "command": "curl -o custom-name.zip https://example.com/file.zip",
+  "description": "Download file with custom filename",
+  "tags": ["download", "rename", "save"]
+}

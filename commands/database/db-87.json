@@ -1,0 +1,8 @@
+{
+  "id": "db-87",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Flush logs",
+  "command": "FLUSH LOGS;",
+  "description": "Close and reopen all log files. Used for log rotation."
+}

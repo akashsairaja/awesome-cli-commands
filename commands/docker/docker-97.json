@@ -1,0 +1,8 @@
+{
+  "id": "docker-97",
+  "categoryId": "docker",
+  "subcategoryId": "buildx",
+  "title": "List builders",
+  "command": "docker buildx ls",
+  "description": "List available builder instances."
+}

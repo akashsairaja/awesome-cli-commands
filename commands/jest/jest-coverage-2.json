@@ -1,0 +1,8 @@
+{
+  "id": "jest-coverage-2",
+  "categoryId": "jest",
+  "subcategoryId": "jest-coverage",
+  "title": "Bail on failure",
+  "command": "jest --bail",
+  "description": "Exit immediately on first test failure."
+}

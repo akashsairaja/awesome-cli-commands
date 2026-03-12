@@ -1,0 +1,8 @@
+{
+  "id": "apt-5",
+  "categoryId": "ubuntu",
+  "subcategoryId": "apt-packages",
+  "title": "Purge package with configs",
+  "command": "sudo apt purge <package>",
+  "description": "Remove package including config files."
+}

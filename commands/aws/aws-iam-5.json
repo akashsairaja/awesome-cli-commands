@@ -1,0 +1,8 @@
+{
+  "id": "aws-iam-5",
+  "categoryId": "aws",
+  "subcategoryId": "iam",
+  "title": "List attached policies",
+  "command": "aws iam list-attached-user-policies --user-name myuser",
+  "description": "Show policies attached to user."
+}

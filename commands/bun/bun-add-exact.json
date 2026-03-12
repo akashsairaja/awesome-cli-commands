@@ -1,0 +1,9 @@
+{
+  "id": "bun-add-exact",
+  "categoryId": "bun",
+  "subcategoryId": "bun-package",
+  "title": "Add Exact Version",
+  "command": "bun add <package>@1.2.3 --exact",
+  "description": "Install specific version without range",
+  "tags": ["add", "exact", "version"]
+}

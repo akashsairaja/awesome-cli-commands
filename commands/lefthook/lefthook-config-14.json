@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-config-14",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-config",
+  "title": "Pre-rebase hook",
+  "command": "pre-rebase:\n  commands:\n    check:\n      run: git stash list | head -1",
+  "description": "Run checks before rebasing."
+}

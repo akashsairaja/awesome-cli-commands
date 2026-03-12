@@ -1,0 +1,9 @@
+{
+  "id": "jq-array-first",
+  "categoryId": "jq",
+  "subcategoryId": "jq-arrays",
+  "title": "Get first element",
+  "command": "cat file.json | jq '.[0]'",
+  "description": "Get first element of array",
+  "tags": ["array", "first", "index"]
+}

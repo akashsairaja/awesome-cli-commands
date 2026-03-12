@@ -1,0 +1,8 @@
+{
+  "id": "temporal-workflow-5",
+  "categoryId": "temporal",
+  "subcategoryId": "workflow",
+  "title": "List with query filter",
+  "command": "temporal workflow list --query \"WorkflowType='MyWorkflow' AND ExecutionStatus='Running'\"",
+  "description": "Filter workflows by type, status, or custom search attributes."
+}

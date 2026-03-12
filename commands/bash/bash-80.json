@@ -1,0 +1,8 @@
+{
+  "id": "bash-80",
+  "categoryId": "bash",
+  "subcategoryId": "conditionals",
+  "title": "Modern test",
+  "command": "if [[ \"$str\" == *pattern* ]]; then echo \"match\"; fi",
+  "description": "Use [[ ]] for pattern matching."
+}

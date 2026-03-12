@@ -1,0 +1,8 @@
+{
+  "id": "py-118",
+  "categoryId": "python",
+  "subcategoryId": "python-ruff",
+  "title": "Add noqa comments",
+  "command": "ruff check . --add-noqa",
+  "description": "Add suppression comments for all violations."
+}

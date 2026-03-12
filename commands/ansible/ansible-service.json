@@ -1,0 +1,9 @@
+{
+  "id": "ansible-service",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-adhoc",
+  "title": "Manage Service",
+  "command": "ansible all -m service -a \"name=nginx state=started\" -b",
+  "description": "Start/stop/restart a service",
+  "tags": ["service", "systemd", "manage"]
+}

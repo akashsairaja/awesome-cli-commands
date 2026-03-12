@@ -1,0 +1,8 @@
+{
+  "id": "node-env-2",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-env",
+  "title": "Set NODE_OPTIONS",
+  "command": "NODE_OPTIONS='--inspect --max-old-space-size=4096' node app.js",
+  "description": "Pass CLI flags via environment variable."
+}

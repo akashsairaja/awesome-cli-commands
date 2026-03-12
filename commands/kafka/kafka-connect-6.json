@@ -1,0 +1,8 @@
+{
+  "id": "kafka-connect-6",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-connect",
+  "title": "Pause connector",
+  "command": "curl -X PUT localhost:8083/connectors/my-connector/pause",
+  "description": "Pause a connector."
+}

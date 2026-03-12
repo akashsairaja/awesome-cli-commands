@@ -1,0 +1,8 @@
+{
+  "id": "podman-compose-3",
+  "categoryId": "podman",
+  "subcategoryId": "podman-compose",
+  "title": "Compose logs",
+  "command": "podman compose logs -f",
+  "description": "Follow compose service logs."
+}

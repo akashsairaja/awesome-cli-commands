@@ -1,0 +1,63 @@
+{
+  "id": "git-worktree-parallel",
+  "stackId": "git",
+  "name": "Work on Multiple Branches Simultaneously with Worktrees",
+  "description": "Use Git worktrees to check out multiple branches in separate directories, enabling parallel work without stashing or context switching.",
+  "difficulty": "advanced",
+  "timeMinutes": 8,
+  "trending": false,
+  "tags": ["worktree", "branches", "parallel", "multitasking", "productivity"],
+  "prerequisites": ["Git 2.5 or later", "A repository with at least two branches"],
+  "steps": [
+    {
+      "title": "Create a worktree for an existing branch",
+      "command": "git worktree add ../project-hotfix hotfix/urgent-fix",
+      "description": "Creates a new directory at ../project-hotfix with the hotfix/urgent-fix branch checked out. Your main working tree is unaffected.",
+      "tip": "The directory must not already exist. Git will create it for you."
+    },
+    {
+      "title": "Create a worktree with a new branch",
+      "command": "git worktree add -b feature/new-api ../project-api main",
+      "description": "Creates a new branch feature/new-api based on main and checks it out in ../project-api. Combines branch creation and worktree setup."
+    },
+    {
+      "title": "List all active worktrees",
+      "command": "git worktree list",
+      "description": "Shows all worktrees, their paths, the checked-out branch, and the HEAD commit for each."
+    },
+    {
+      "title": "Work in the new worktree",
+      "command": "cd ../project-hotfix\ngit status\n# Make changes, commit, push as normal",
+      "description": "Navigate to the worktree directory and work as you normally would. Each worktree is a fully independent checkout sharing the same .git objects.",
+      "tip": "You can open each worktree in a separate editor window or terminal tab for true parallel development."
+    },
+    {
+      "title": "Remove a worktree when finished",
+      "command": "git worktree remove ../project-hotfix",
+      "description": "Cleans up the worktree directory and unregisters it. The branch itself is not deleted.",
+      "warning": "If the worktree has uncommitted changes, Git will refuse to remove it. Use --force to override, but you will lose uncommitted work."
+    },
+    {
+      "title": "Prune stale worktree references",
+      "command": "git worktree prune",
+      "description": "Removes worktree metadata for directories that were manually deleted instead of using 'git worktree remove'."
+    }
+  ],
+  "fullScript": "#!/usr/bin/env bash\n# git-worktree-setup.sh — Create and manage worktrees\nset -euo pipefail\n\nACTION=\"${1:-list}\"\nBRANCH=\"${2:-}\"\nDIR=\"${3:-}\"\n\ncase \"$ACTION\" in\n  create)\n    if [ -z \"$BRANCH\" ]; then\n      echo \"Usage: $0 create <branch> [directory]\"\n      exit 1\n    fi\n    DIR=\"${DIR:-../$BRANCH}\"\n    echo \"Creating worktree for branch '$BRANCH' at '$DIR'...\"\n    git worktree add \"$DIR\" \"$BRANCH\"\n    echo \"Done. cd into $DIR to start working.\"\n    ;;\n  new)\n    if [ -z \"$BRANCH\" ]; then\n      echo \"Usage: $0 new <new-branch> [directory] (creates from current HEAD)\"\n      exit 1\n    fi\n    DIR=\"${DIR:-../$BRANCH}\"\n    echo \"Creating new branch '$BRANCH' in worktree '$DIR'...\"\n    git worktree add -b \"$BRANCH\" \"$DIR\"\n    echo \"Done. cd into $DIR to start working.\"\n    ;;\n  remove)\n    if [ -z \"$BRANCH\" ]; then\n      echo \"Usage: $0 remove <directory>\"\n      exit 1\n    fi\n    echo \"Removing worktree at '$BRANCH'...\"\n    git worktree remove \"$BRANCH\"\n    echo \"Done.\"\n    ;;\n  list|*)\n    echo \"=== Active worktrees ===\"\n    git worktree list\n    ;;\nesac",
+  "faq": [
+    {
+      "question": "Can two worktrees check out the same branch?",
+      "answer": "No. Each branch can only be checked out in one worktree at a time. Attempting to check out an already checked-out branch will result in an error."
+    },
+    {
+      "question": "Do worktrees share the same stash and config?",
+      "answer": "Yes. All worktrees share the same .git directory, which means they share stashes, config, remotes, and object storage. However, each worktree has its own index and working tree."
+    },
+    {
+      "question": "How do worktrees differ from git clone?",
+      "answer": "A worktree shares the same repository data (objects, refs) as the main checkout, using almost no extra disk space. A clone creates a complete copy of the repository. Worktrees are faster to create and stay in sync automatically."
+    }
+  ],
+  "relatedRecipes": ["branch-cleanup-automation", "git-stash-mastery", "cherry-pick-workflow"],
+  "lastUpdated": "2026-03-11"
+}

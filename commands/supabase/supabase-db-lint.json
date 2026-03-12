@@ -1,0 +1,9 @@
+{
+  "id": "supabase-db-lint",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-db",
+  "title": "Lint database",
+  "command": "supabase db lint",
+  "description": "Lint database for potential issues",
+  "tags": ["db", "lint", "check"]
+}

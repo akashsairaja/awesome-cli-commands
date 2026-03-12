@@ -1,0 +1,8 @@
+{
+  "id": "kafka-perf-1",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-perf",
+  "title": "Producer perf test",
+  "command": "kafka-producer-perf-test.sh --topic my-topic --num-records 100000 --record-size 1024 --throughput -1 --producer-props bootstrap.servers=localhost:9092",
+  "description": "Benchmark producer throughput."
+}

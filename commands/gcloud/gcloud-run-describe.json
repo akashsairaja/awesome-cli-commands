@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-run-describe",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-run",
+  "title": "Describe Service",
+  "command": "gcloud run services describe <service> --region=<region>",
+  "description": "Get details of a Cloud Run service",
+  "tags": ["run", "describe", "info"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "flux-bootstrap-3",
+  "categoryId": "flux",
+  "subcategoryId": "flux-bootstrap",
+  "title": "Check prerequisites",
+  "command": "flux check --pre",
+  "description": "Check cluster prerequisites before bootstrap."
+}

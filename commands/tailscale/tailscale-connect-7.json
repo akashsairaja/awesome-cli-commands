@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-connect-7",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-connect",
+  "title": "Advertise exit node",
+  "command": "tailscale up --advertise-exit-node",
+  "description": "Offer this device as an exit node."
+}

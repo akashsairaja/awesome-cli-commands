@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-sql-connect",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-sql",
+  "title": "Connect to SQL Instance",
+  "command": "gcloud sql connect <name> --user=<username>",
+  "description": "Connect to a Cloud SQL instance using the Cloud SQL Auth Proxy",
+  "tags": ["sql", "connect", "client"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "nginx-sec-cors",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-security",
+  "title": "CORS headers for API",
+  "command": "add_header Access-Control-Allow-Origin \"https://example.com\" always; add_header Access-Control-Allow-Methods \"GET, POST, OPTIONS\" always;",
+  "description": "Enable cross-origin requests from specific domain",
+  "tags": ["security", "cors", "api", "cross-origin"]
+}

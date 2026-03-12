@@ -1,0 +1,8 @@
+{
+  "id": "apt-43",
+  "categoryId": "ubuntu",
+  "subcategoryId": "systemd-services",
+  "title": "Reload systemd daemon",
+  "command": "sudo systemctl daemon-reload",
+  "description": "Reload systemd manager after editing unit files."
+}

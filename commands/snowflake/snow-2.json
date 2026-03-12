@@ -1,0 +1,8 @@
+{
+  "id": "snow-2",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-connections",
+  "title": "List connections",
+  "command": "snow connection list",
+  "description": "List all configured connections."
+}

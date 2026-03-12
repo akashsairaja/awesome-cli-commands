@@ -1,0 +1,8 @@
+{
+  "id": "py-42",
+  "categoryId": "python",
+  "subcategoryId": "python-uv",
+  "title": "Add dev dependency",
+  "command": "uv add -D pytest ruff",
+  "description": "Add packages as development dependencies."
+}

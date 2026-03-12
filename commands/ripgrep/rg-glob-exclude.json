@@ -1,0 +1,9 @@
+{
+  "id": "rg-glob-exclude",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-files",
+  "title": "Exclude glob pattern",
+  "command": "rg -g \"!*.test.ts\" \"pattern\"",
+  "description": "Exclude files matching glob",
+  "tags": ["glob", "exclude", "filter"]
+}

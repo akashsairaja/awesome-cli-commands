@@ -1,0 +1,8 @@
+{
+  "id": "mongo-transaction-1",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-transactions",
+  "title": "Start session",
+  "command": "session = db.getMongo().startSession()",
+  "description": "Initialize client session for transactions."
+}

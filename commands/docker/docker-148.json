@@ -1,0 +1,8 @@
+{
+  "id": "docker-148",
+  "categoryId": "docker",
+  "subcategoryId": "system",
+  "title": "Create remote context",
+  "command": "docker context create <name> --docker \"host=ssh://user@host\"",
+  "description": "Create Docker context for managing remote Docker hosts via SSH."
+}

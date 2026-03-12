@@ -1,0 +1,8 @@
+{
+  "id": "go-quality-7",
+  "categoryId": "go",
+  "subcategoryId": "go-quality",
+  "title": "Run go generate",
+  "command": "go generate ./...",
+  "description": "Run code generators specified in //go:generate."
+}

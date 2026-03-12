@@ -1,0 +1,8 @@
+{
+  "id": "helm-gs-3",
+  "title": "Add Bitnami repository",
+  "command": "helm repo add bitnami https://charts.bitnami.com/bitnami",
+  "description": "Add the popular Bitnami Helm chart repository",
+  "categoryId": "helm",
+  "subcategoryId": "getting-started"
+}

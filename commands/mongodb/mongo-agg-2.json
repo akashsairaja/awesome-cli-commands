@@ -1,0 +1,8 @@
+{
+  "id": "mongo-agg-2",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-aggregate",
+  "title": "Count by group",
+  "command": "db.users.aggregate([{ $group: { _id: \"$status\", count: { $sum: 1 } } }])",
+  "description": "Count documents per group."
+}

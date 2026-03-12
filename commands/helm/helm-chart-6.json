@@ -1,0 +1,8 @@
+{
+  "id": "helm-chart-6",
+  "categoryId": "helm",
+  "subcategoryId": "helm-chart",
+  "title": "Verify chart",
+  "command": "helm verify ./mychart-1.0.0.tgz",
+  "description": "Verify chart has valid provenance file."
+}

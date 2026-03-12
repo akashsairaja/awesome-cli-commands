@@ -1,0 +1,8 @@
+{
+  "id": "linux-41",
+  "categoryId": "linux",
+  "subcategoryId": "processes",
+  "title": "Kill process by name",
+  "command": "pkill -f <pattern>",
+  "description": "Kill all processes matching a pattern in the full command line."
+}

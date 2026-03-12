@@ -1,0 +1,9 @@
+{
+  "id": "nginx-perf-conn-limit",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-performance",
+  "title": "Limit concurrent connections",
+  "command": "limit_conn_zone $binary_remote_addr zone=addr:10m; limit_conn addr 10;",
+  "description": "Restrict concurrent connections per IP",
+  "tags": ["performance", "connections", "limit", "concurrent"]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "python-uv-fast-deps",
+  "stackId": "python",
+  "name": "Blazing-Fast Dependency Management with uv",
+  "description": "Use uv from Astral as a drop-in replacement for pip and virtualenv with 10-100x faster installs and built-in project management.",
+  "difficulty": "beginner",
+  "timeMinutes": 7,
+  "trending": true,
+  "trendingReason": "uv has rapidly become the fastest Python package manager, replacing pip, pip-tools, and virtualenv in a single Rust-powered binary.",
+  "tags": ["uv", "pip", "fast", "dependencies", "astral"],
+  "prerequisites": ["Python 3.8+ installed"],
+  "steps": [
+    {
+      "title": "Install uv",
+      "command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+      "description": "Install the uv package manager globally. It is a single static binary with no Python dependency required for installation.",
+      "tip": "On Windows, use: powershell -c \"irm https://astral.sh/uv/install.ps1 | iex\" instead."
+    },
+    {
+      "title": "Create a new project",
+      "command": "uv init myproject && cd myproject",
+      "description": "Scaffolds a new Python project with pyproject.toml, a src layout, and a ready-to-use .venv. No manual environment creation needed."
+    },
+    {
+      "title": "Add dependencies",
+      "command": "uv add requests flask sqlalchemy",
+      "description": "Adds packages to pyproject.toml and installs them into the managed virtual environment. The lock file (uv.lock) is updated automatically.",
+      "tip": "Use 'uv add --dev pytest ruff' to add development-only dependencies."
+    },
+    {
+      "title": "Add development dependencies",
+      "command": "uv add --dev pytest ruff mypy",
+      "description": "Adds packages to the dev dependency group. These are installed during development but excluded from production builds."
+    },
+    {
+      "title": "Run a script in the project environment",
+      "command": "uv run python main.py",
+      "description": "Runs the script using the project's managed virtual environment. You do not need to manually activate the venv.",
+      "tip": "uv run automatically syncs dependencies before executing, so you never have a stale environment."
+    },
+    {
+      "title": "Sync and lock dependencies",
+      "command": "uv lock && uv sync",
+      "description": "Regenerate the lock file from pyproject.toml and sync the virtual environment to match. Use this after manually editing pyproject.toml.",
+      "warning": "Always commit uv.lock to version control. It ensures every team member and CI gets the exact same dependency versions."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Fast project setup with uv\nset -e\n\nPROJECT_NAME=${1:-myproject}\n\n# Install uv if not present\nif ! command -v uv &> /dev/null; then\n  curl -LsSf https://astral.sh/uv/install.sh | sh\nfi\n\nuv init \"$PROJECT_NAME\"\ncd \"$PROJECT_NAME\"\n\nuv add requests flask sqlalchemy\nuv add --dev pytest ruff mypy\n\nuv run python -c \"import requests; print('Setup complete. requests version:', requests.__version__)\"\n\necho \"Project '$PROJECT_NAME' ready with uv.\"",
+  "faq": [
+    {
+      "question": "Can uv replace pip entirely?",
+      "answer": "For most use cases, yes. uv supports pip install, pip compile, virtualenv creation, and full project management with dramatically faster performance. It is written in Rust and resolves dependencies in parallel."
+    },
+    {
+      "question": "Does uv work with existing requirements.txt files?",
+      "answer": "Yes. You can run 'uv pip install -r requirements.txt' as a direct drop-in for pip. You can also migrate to pyproject.toml with 'uv add' for better project management."
+    },
+    {
+      "question": "How does uv compare to Poetry?",
+      "answer": "uv is significantly faster than Poetry for dependency resolution and installation. It also manages Python versions directly. Poetry has a more mature plugin ecosystem, but uv is closing that gap rapidly."
+    }
+  ],
+  "relatedRecipes": ["python-venv-project-setup", "python-poetry-workflow", "python-ruff-linting"],
+  "lastUpdated": "2026-03-11"
+}

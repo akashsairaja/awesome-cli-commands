@@ -1,0 +1,8 @@
+{
+  "id": "composer-publish-4",
+  "categoryId": "composer",
+  "subcategoryId": "composer-publish",
+  "title": "Archive package",
+  "command": "composer archive --format=zip",
+  "description": "Create a distributable zip archive."
+}

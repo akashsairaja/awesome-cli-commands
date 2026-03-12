@@ -1,0 +1,8 @@
+{
+  "id": "vault-engine-5",
+  "categoryId": "vault",
+  "subcategoryId": "vault-engine",
+  "title": "Disable engine",
+  "command": "vault secrets disable secret/",
+  "description": "Disable a secrets engine."
+}

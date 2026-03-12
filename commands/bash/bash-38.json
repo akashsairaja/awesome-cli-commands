@@ -1,0 +1,8 @@
+{
+  "id": "bash-38",
+  "categoryId": "bash",
+  "subcategoryId": "loops",
+  "title": "Continue loop",
+  "command": "for i in {1..5}; do [ $i -eq 3 ] && continue; echo $i; done",
+  "description": "Skip iteration with continue."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "linux-62",
+  "categoryId": "linux",
+  "subcategoryId": "disk",
+  "title": "Show inode usage",
+  "command": "df -i",
+  "description": "Display inode usage per filesystem. Running out of inodes prevents file creation."
+}

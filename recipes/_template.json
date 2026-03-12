@@ -1,0 +1,24 @@
+{
+  "id": "recipe-slug",
+  "stackId": "stack-name",
+  "name": "Recipe Title",
+  "description": "What this recipe does.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "tags": ["tag1"],
+  "prerequisites": ["requirement"],
+  "steps": [
+    {
+      "title": "Step title",
+      "command": "command to run",
+      "description": "What this step does."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Common question?",
+      "answer": "Answer."
+    }
+  ],
+  "lastUpdated": "2026-03-12"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "httpie-headers-6",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-headers",
+  "title": "Empty header value",
+  "command": "http GET https://api.example.com X-Empty-Header;",
+  "description": "Send a header with an empty value using ; syntax."
+}

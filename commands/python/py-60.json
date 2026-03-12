@@ -1,0 +1,8 @@
+{
+  "id": "py-60",
+  "categoryId": "python",
+  "subcategoryId": "python-venv",
+  "title": "Create venv",
+  "command": "python -m venv venv",
+  "description": "Create a virtual environment named 'venv'."
+}

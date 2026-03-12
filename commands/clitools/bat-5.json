@@ -1,0 +1,8 @@
+{
+  "id": "bat-5",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-bat",
+  "title": "Show diff",
+  "command": "bat --diff file1 file2",
+  "description": "Show differences between files."
+}

@@ -1,0 +1,59 @@
+{
+  "id": "nodejs-security-audit",
+  "stackId": "nodejs",
+  "name": "npm Audit and Dependency Security",
+  "description": "Scan Node.js dependencies for known vulnerabilities using npm audit and integrate security checks into your workflow.",
+  "difficulty": "beginner",
+  "timeMinutes": 5,
+  "trending": true,
+  "trendingReason": "Supply chain attacks on npm packages are increasing, making automated dependency security scanning essential for all projects.",
+  "tags": ["security", "audit", "vulnerabilities", "npm", "dependencies"],
+  "prerequisites": ["Node.js and npm installed"],
+  "steps": [
+    {
+      "title": "Run npm audit to scan dependencies",
+      "description": "Scan all installed dependencies against the npm advisory database for known vulnerabilities.",
+      "command": "npm audit",
+      "tip": "npm audit checks both direct and transitive dependencies. Run it regularly, not just during installs."
+    },
+    {
+      "title": "Fix vulnerabilities automatically",
+      "description": "Let npm attempt to resolve vulnerabilities by updating to patched versions within your semver range.",
+      "command": "npm audit fix",
+      "warning": "The --force flag can introduce breaking changes by updating major versions. Avoid it unless you can test thoroughly."
+    },
+    {
+      "title": "Review detailed vulnerability information",
+      "description": "Get a JSON report for programmatic analysis or detailed review of each vulnerability.",
+      "command": "npm audit --json | node -e \"const d=require('fs').readFileSync('/dev/stdin','utf8'); const r=JSON.parse(d); console.log('Total:', r.metadata.vulnerabilities.total); console.log('Critical:', r.metadata.vulnerabilities.critical); console.log('High:', r.metadata.vulnerabilities.high);\""
+    },
+    {
+      "title": "Add audit to CI pipeline",
+      "description": "Fail your CI build if high or critical vulnerabilities are found in dependencies.",
+      "command": "npm audit --audit-level=high",
+      "tip": "Use --audit-level to set the minimum severity that causes a non-zero exit code: low, moderate, high, or critical."
+    },
+    {
+      "title": "Check for outdated packages",
+      "description": "List packages that have newer versions available, as outdated packages often have unpatched vulnerabilities.",
+      "command": "npm outdated"
+    }
+  ],
+  "fullScript": "#!/bin/bash\nset -euo pipefail\n\n# Node.js Security Audit Script\n\necho \"==> Running npm audit...\"\nnpm audit 2>&1 | tee /tmp/npm-audit.txt || true\n\necho \"\"\necho \"==> Vulnerability summary:\"\nnpm audit --json 2>/dev/null | node -e \"\n  let data = '';\n  process.stdin.on('data', c => data += c);\n  process.stdin.on('end', () => {\n    try {\n      const r = JSON.parse(data);\n      const v = r.metadata?.vulnerabilities || {};\n      console.log('  Critical:', v.critical || 0);\n      console.log('  High:', v.high || 0);\n      console.log('  Moderate:', v.moderate || 0);\n      console.log('  Low:', v.low || 0);\n      console.log('  Info:', v.info || 0);\n      console.log('  Total:', v.total || 0);\n    } catch(e) {\n      console.log('  Could not parse audit output');\n    }\n  });\n\" || true\n\necho \"\"\necho \"==> Attempting automatic fix...\"\nnpm audit fix --dry-run 2>&1 | tail -5\n\necho \"\"\nread -p \"Apply fixes? (y/n): \" CONFIRM\nif [ \"$CONFIRM\" = \"y\" ]; then\n  npm audit fix\n  echo \"==> Fixes applied. Run 'npm test' to verify nothing broke.\"\nelse\n  echo \"==> Skipped. Review manually with: npm audit\"\nfi\n\necho \"\"\necho \"==> Checking for outdated packages...\"\nnpm outdated 2>/dev/null || echo \"All packages up to date.\"",
+  "faq": [
+    {
+      "question": "What if npm audit fix does not resolve a vulnerability?",
+      "answer": "Some fixes require major version bumps (use --force cautiously) or the maintainer has not released a patch yet. You can use npm overrides in package.json to force a specific transitive dependency version, or find an alternative package."
+    },
+    {
+      "question": "Should I fail CI on moderate vulnerabilities?",
+      "answer": "Start with --audit-level=high to avoid blocking on every moderate issue. Gradually tighten to moderate as you resolve existing vulnerabilities. Critical and high should always fail the build."
+    },
+    {
+      "question": "Are dev dependencies a security risk?",
+      "answer": "Yes, during development and CI. A compromised dev dependency can inject malicious code during the build process. Audit all dependencies, not just production ones."
+    }
+  ],
+  "relatedRecipes": ["nodejs-env-management", "nodejs-test-runner"],
+  "lastUpdated": "2026-03-11"
+}

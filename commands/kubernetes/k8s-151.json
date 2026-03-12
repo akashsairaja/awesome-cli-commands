@@ -1,0 +1,8 @@
+{
+  "id": "k8s-151",
+  "categoryId": "kubernetes",
+  "subcategoryId": "manifests",
+  "title": "Wait for pod condition",
+  "command": "kubectl wait --for=condition=Ready pod/<name> --timeout=60s",
+  "description": "Wait for specific condition to be met before proceeding."
+}

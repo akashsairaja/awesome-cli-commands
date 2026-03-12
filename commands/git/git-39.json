@@ -1,0 +1,8 @@
+{
+  "id": "git-39",
+  "categoryId": "git",
+  "subcategoryId": "branches",
+  "title": "Force delete branch",
+  "command": "git branch -D <name>",
+  "description": "Force delete unmerged branch."
+}

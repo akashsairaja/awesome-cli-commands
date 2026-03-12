@@ -1,0 +1,8 @@
+{
+  "id": "trivy-repo-4",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-repo",
+  "title": "Scan with commit",
+  "command": "trivy repo --commit abc123 https://github.com/user/repo",
+  "description": "Scan at specific commit."
+}

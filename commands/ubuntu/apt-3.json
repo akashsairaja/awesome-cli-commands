@@ -1,0 +1,8 @@
+{
+  "id": "apt-3",
+  "categoryId": "ubuntu",
+  "subcategoryId": "apt-packages",
+  "title": "Install package",
+  "command": "sudo apt install <package>",
+  "description": "Install a package."
+}

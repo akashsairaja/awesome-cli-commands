@@ -1,0 +1,8 @@
+{
+  "id": "db-20",
+  "categoryId": "database",
+  "subcategoryId": "postgresql",
+  "title": "List functions",
+  "command": "\\df",
+  "description": "List all functions in current database."
+}

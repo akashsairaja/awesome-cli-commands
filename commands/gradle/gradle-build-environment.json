@@ -1,0 +1,9 @@
+{
+  "id": "gradle-build-environment",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-dependencies",
+  "title": "Build Environment",
+  "command": "./gradlew buildEnvironment",
+  "description": "Show buildscript dependencies",
+  "tags": ["dependencies", "buildscript", "plugins"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k3s-install-6",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-install",
+  "title": "Install agent node",
+  "command": "curl -sfL https://get.k3s.io | K3S_URL=https://server:6443 K3S_TOKEN=<token> sh -",
+  "description": "Install k3s in agent-only mode joining an existing server."
+}

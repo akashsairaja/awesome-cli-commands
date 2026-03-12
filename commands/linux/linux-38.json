@@ -1,0 +1,8 @@
+{
+  "id": "linux-38",
+  "categoryId": "linux",
+  "subcategoryId": "files",
+  "title": "Pipe output through xargs",
+  "command": "find . -name '*.tmp' -print0 | xargs -0 rm -f",
+  "description": "Safely pass filenames with spaces to rm using null delimiter."
+}

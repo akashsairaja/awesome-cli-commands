@@ -1,0 +1,8 @@
+{
+  "id": "kafka-connect-8",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-connect",
+  "title": "Create connector via REST",
+  "command": "curl -X POST http://localhost:8083/connectors -H \"Content-Type: application/json\" -d @connector-config.json",
+  "description": "Create connector using REST API with config file."
+}

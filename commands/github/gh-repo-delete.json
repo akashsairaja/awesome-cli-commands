@@ -1,0 +1,9 @@
+{
+  "id": "gh-repo-delete",
+  "categoryId": "github",
+  "subcategoryId": "gh-repo",
+  "title": "Delete repository",
+  "command": "gh repo delete <owner>/<repo> --yes",
+  "description": "Delete a GitHub repository (requires confirmation)",
+  "tags": ["repo", "delete", "remove"]
+}

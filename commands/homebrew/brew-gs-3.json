@@ -1,0 +1,8 @@
+{
+  "id": "brew-gs-3",
+  "title": "Update Homebrew",
+  "command": "brew update",
+  "description": "Fetch the latest version of Homebrew and all formulae",
+  "categoryId": "homebrew",
+  "subcategoryId": "getting-started"
+}

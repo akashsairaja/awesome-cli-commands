@@ -1,0 +1,9 @@
+{
+  "id": "firebase-hosting-channel-delete",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-hosting",
+  "title": "Delete preview channel",
+  "command": "firebase hosting:channel:delete <channel-id>",
+  "description": "Delete a preview channel",
+  "tags": ["hosting", "channel", "delete"]
+}

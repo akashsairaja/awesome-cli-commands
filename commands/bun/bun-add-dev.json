@@ -1,0 +1,9 @@
+{
+  "id": "bun-add-dev",
+  "categoryId": "bun",
+  "subcategoryId": "bun-package",
+  "title": "Add Dev Dependency",
+  "command": "bun add -d <package>",
+  "description": "Add package to devDependencies",
+  "tags": ["add", "dev", "dependency"]
+}

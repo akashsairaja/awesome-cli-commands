@@ -1,0 +1,8 @@
+{
+  "id": "apt-10",
+  "categoryId": "ubuntu",
+  "subcategoryId": "systemd-services",
+  "title": "Stop service",
+  "command": "sudo systemctl stop <service>",
+  "description": "Stop a systemd service."
+}

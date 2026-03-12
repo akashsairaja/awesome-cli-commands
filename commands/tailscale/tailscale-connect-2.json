@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-connect-2",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-connect",
+  "title": "Disconnect",
+  "command": "tailscale down",
+  "description": "Disconnect from tailnet."
+}

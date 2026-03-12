@@ -1,0 +1,8 @@
+{
+  "id": "playwright-debug-4",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-debug",
+  "title": "Pause in test",
+  "command": "await page.pause();",
+  "description": "Add breakpoint in test code."
+}

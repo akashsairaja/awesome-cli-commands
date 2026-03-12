@@ -1,0 +1,8 @@
+{
+  "id": "grafana-gs-3",
+  "title": "Check Grafana version",
+  "command": "grafana-server -v",
+  "description": "Verify Grafana installation and display server version",
+  "categoryId": "grafana",
+  "subcategoryId": "getting-started"
+}

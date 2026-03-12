@@ -1,0 +1,8 @@
+{
+  "id": "mongo-crud-7",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-crud",
+  "title": "Update many",
+  "command": "db.users.updateMany({ active: false }, { $set: { status: \"inactive\" } })",
+  "description": "Update all matching documents."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "git-66",
+  "categoryId": "git",
+  "subcategoryId": "rebase",
+  "title": "Rebase onto specific commit",
+  "command": "git rebase --onto <newbase> <oldbase> <branch>",
+  "description": "Transplant commits to new base."
+}

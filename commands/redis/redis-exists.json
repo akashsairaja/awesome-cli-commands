@@ -1,0 +1,9 @@
+{
+  "id": "redis-exists",
+  "categoryId": "redis",
+  "subcategoryId": "redis-server",
+  "title": "Check key exists",
+  "command": "EXISTS key",
+  "description": "Check if key exists",
+  "tags": ["exists", "check"]
+}

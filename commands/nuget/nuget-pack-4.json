@@ -1,0 +1,8 @@
+{
+  "id": "nuget-pack-4",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-pack",
+  "title": "Pack to output dir",
+  "command": "dotnet pack -c Release -o ./nupkgs",
+  "description": "Create package in specific output directory."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "composer-autoload-1",
+  "categoryId": "composer",
+  "subcategoryId": "composer-autoload",
+  "title": "Dump autoload",
+  "command": "composer dump-autoload",
+  "description": "Regenerate autoload files."
+}

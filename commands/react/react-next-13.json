@@ -1,0 +1,8 @@
+{
+  "id": "react-next-13",
+  "categoryId": "react",
+  "subcategoryId": "react-nextjs",
+  "title": "Production with Turbopack",
+  "command": "next start --turbo",
+  "description": "Start production server with Turbopack optimizations."
+}

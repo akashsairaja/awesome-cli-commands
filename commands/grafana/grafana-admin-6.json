@@ -1,0 +1,8 @@
+{
+  "id": "grafana-admin-6",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-admin",
+  "title": "List users via API",
+  "command": "curl -s http://localhost:3000/api/users -H 'Authorization: Bearer TOKEN'",
+  "description": "List all Grafana users."
+}

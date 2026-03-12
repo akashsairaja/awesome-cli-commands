@@ -1,0 +1,9 @@
+{
+  "id": "netlify-deploy",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-deploy",
+  "title": "Deploy to Netlify",
+  "command": "netlify deploy",
+  "description": "Create a draft deploy to Netlify",
+  "tags": ["deploy", "draft", "preview"]
+}

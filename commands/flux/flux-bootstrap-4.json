@@ -1,0 +1,8 @@
+{
+  "id": "flux-bootstrap-4",
+  "categoryId": "flux",
+  "subcategoryId": "flux-bootstrap",
+  "title": "Verify installation",
+  "command": "flux check",
+  "description": "Verify Flux components are running correctly."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tf-prov-4",
+  "categoryId": "terraform",
+  "subcategoryId": "providers",
+  "title": "Apply changes",
+  "command": "terraform apply",
+  "description": "Apply changes with approval prompt."
+}

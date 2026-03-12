@@ -1,0 +1,8 @@
+{
+  "id": "bash-33",
+  "categoryId": "bash",
+  "subcategoryId": "loops",
+  "title": "Read file lines",
+  "command": "while IFS= read -r line; do echo \"$line\"; done < file",
+  "description": "Loop through file lines safely."
+}

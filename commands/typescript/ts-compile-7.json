@@ -1,0 +1,8 @@
+{
+  "id": "ts-compile-7",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-compile",
+  "title": "Target ES version",
+  "command": "tsc --target ES2022",
+  "description": "Set ECMAScript target version (ES5, ES6, ES2020, ES2022, ESNext)."
+}

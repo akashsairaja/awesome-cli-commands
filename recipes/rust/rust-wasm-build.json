@@ -1,0 +1,61 @@
+{
+  "id": "rust-wasm-build",
+  "stackId": "rust",
+  "name": "Compile Rust to WebAssembly with wasm-pack",
+  "description": "Build Rust libraries as WebAssembly modules for use in browsers and Node.js with wasm-pack and wasm-bindgen.",
+  "difficulty": "advanced",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "Rust-to-Wasm is the leading path for high-performance browser computation",
+  "tags": ["wasm", "webassembly", "wasm-pack", "browser", "wasm-bindgen"],
+  "prerequisites": [
+    "Rust toolchain installed via rustup",
+    "wasm-pack installed",
+    "Node.js installed (for testing)"
+  ],
+  "steps": [
+    {
+      "title": "Install wasm-pack",
+      "description": "Install the tool that builds, tests, and publishes Rust-generated WebAssembly.",
+      "command": "cargo install wasm-pack"
+    },
+    {
+      "title": "Create a new wasm library project",
+      "description": "Initialize a library crate configured for WebAssembly output.",
+      "command": "cargo new --lib my-wasm-lib && cd my-wasm-lib && cargo add wasm-bindgen"
+    },
+    {
+      "title": "Configure the crate type",
+      "description": "Set the crate type to cdylib in Cargo.toml for WebAssembly compilation.",
+      "command": "cat >> Cargo.toml << 'EOF'\n\n[lib]\ncrate-type = [\"cdylib\", \"rlib\"]\nEOF"
+    },
+    {
+      "title": "Write a wasm-bindgen function",
+      "description": "Create an exported function that can be called from JavaScript.",
+      "command": "cat > src/lib.rs << 'EOF'\nuse wasm_bindgen::prelude::*;\n\n#[wasm_bindgen]\npub fn greet(name: &str) -> String {\n    format!(\"Hello, {}!\", name)\n}\n\n#[wasm_bindgen]\npub fn fibonacci(n: u32) -> u64 {\n    match n {\n        0 => 0,\n        1 => 1,\n        _ => {\n            let mut a: u64 = 0;\n            let mut b: u64 = 1;\n            for _ in 2..=n {\n                let temp = b;\n                b = a + b;\n                a = temp;\n            }\n            b\n        }\n    }\n}\nEOF"
+    },
+    {
+      "title": "Build the WebAssembly package",
+      "description": "Compile the library to WebAssembly and generate JavaScript bindings.",
+      "command": "wasm-pack build --target web",
+      "tip": "Use --target bundler for webpack/Vite projects, --target nodejs for Node.js, or --target web for direct browser use."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Rust to WebAssembly Build\nset -euo pipefail\n\nTARGET=${1:-\"web\"}\n\necho \"=== Checking wasm-pack ===\"\nwasm-pack --version || { echo \"Install with: cargo install wasm-pack\"; exit 1; }\n\necho \"\"\necho \"=== Building for target: $TARGET ===\"\nwasm-pack build --target \"$TARGET\" --release\n\necho \"\"\necho \"=== Output Files ===\"\nls -lh pkg/\n\necho \"\"\necho \"=== Package Contents ===\"\nls pkg/*.wasm pkg/*.js pkg/*.ts 2>/dev/null || true\n\necho \"\"\necho \"=== wasm-pack Commands ===\"\necho \"Build (web):     wasm-pack build --target web\"\necho \"Build (bundler): wasm-pack build --target bundler\"\necho \"Build (node):    wasm-pack build --target nodejs\"\necho \"Test (browser):  wasm-pack test --chrome --headless\"\necho \"Test (node):     wasm-pack test --node\"\necho \"Publish:         wasm-pack publish\"",
+  "faq": [
+    {
+      "question": "What is the difference between the build targets?",
+      "answer": "Use 'web' for ES modules loaded directly in browsers. Use 'bundler' for webpack or Vite projects. Use 'nodejs' for server-side Node.js usage. Each generates different JavaScript glue code."
+    },
+    {
+      "question": "How large are Rust Wasm binaries?",
+      "answer": "A minimal function compiles to around 20-50KB of Wasm. Use wasm-opt (included in wasm-pack) and the release profile with opt-level 'z' to minimize size. The wee_alloc allocator can save additional kilobytes."
+    },
+    {
+      "question": "Can I use async/await in Wasm?",
+      "answer": "Yes. wasm-bindgen supports async functions that return JavaScript Promises. Use wasm-bindgen-futures to bridge Rust futures with JavaScript Promises."
+    }
+  ],
+  "relatedRecipes": ["rust-release-optimization", "rust-cross-compile"],
+  "lastUpdated": "2026-03-11"
+}

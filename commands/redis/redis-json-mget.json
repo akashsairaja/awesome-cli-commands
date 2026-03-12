@@ -1,0 +1,9 @@
+{
+  "id": "redis-json-mget",
+  "categoryId": "redis",
+  "subcategoryId": "redis-json",
+  "title": "Get field from multiple docs",
+  "command": "JSON.MGET key1 key2 $.field",
+  "description": "Get specific field from multiple JSON documents",
+  "tags": ["json", "mget", "multiple", "redisjson"]
+}

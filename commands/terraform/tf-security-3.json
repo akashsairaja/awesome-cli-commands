@@ -1,0 +1,8 @@
+{
+  "id": "tf-security-3",
+  "categoryId": "terraform",
+  "subcategoryId": "terraform-security",
+  "title": "Force unlock state",
+  "command": "terraform force-unlock LOCK_ID",
+  "description": "Force unlock stuck state (use with extreme caution)."
+}

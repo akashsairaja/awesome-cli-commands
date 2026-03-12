@@ -1,0 +1,8 @@
+{
+  "id": "composer-publish-3",
+  "categoryId": "composer",
+  "subcategoryId": "composer-publish",
+  "title": "Validate composer.json",
+  "command": "composer validate --strict",
+  "description": "Validate composer.json for publishing."
+}

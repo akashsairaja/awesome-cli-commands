@@ -1,0 +1,8 @@
+{
+  "id": "claude-32",
+  "categoryId": "claudecode",
+  "subcategoryId": "context",
+  "title": "View session status",
+  "command": "/status",
+  "description": "View current session metadata."
+}

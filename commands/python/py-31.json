@@ -1,0 +1,8 @@
+{
+  "id": "py-31",
+  "categoryId": "python",
+  "subcategoryId": "python-poetry",
+  "title": "Show dependency tree",
+  "command": "poetry show --tree",
+  "description": "Display dependency tree visualization."
+}

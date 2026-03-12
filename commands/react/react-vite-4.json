@@ -1,0 +1,8 @@
+{
+  "id": "react-vite-4",
+  "categoryId": "react",
+  "subcategoryId": "react-vite",
+  "title": "Dev with custom port",
+  "command": "vite --port 3000",
+  "description": "Start dev server on custom port."
+}

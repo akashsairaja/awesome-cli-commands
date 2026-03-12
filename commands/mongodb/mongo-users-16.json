@@ -1,0 +1,8 @@
+{
+  "id": "mongo-users-16",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-users",
+  "title": "Show built-in roles",
+  "command": "db.getRoles({ showBuiltinRoles: true })",
+  "description": "List all roles including built-in ones (read, readWrite, dbAdmin, userAdmin, etc.)."
+}

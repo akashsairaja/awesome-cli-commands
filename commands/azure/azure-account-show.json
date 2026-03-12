@@ -1,0 +1,9 @@
+{
+  "id": "azure-account-show",
+  "categoryId": "azure",
+  "subcategoryId": "azure-auth",
+  "title": "Show Current Account",
+  "command": "az account show",
+  "description": "Display details of the current subscription",
+  "tags": ["account", "show", "current"]
+}

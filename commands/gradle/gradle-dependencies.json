@@ -1,0 +1,9 @@
+{
+  "id": "gradle-dependencies",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-dependencies",
+  "title": "Show Dependencies",
+  "command": "./gradlew dependencies",
+  "description": "Display project dependency tree",
+  "tags": ["dependencies", "tree", "list"]
+}

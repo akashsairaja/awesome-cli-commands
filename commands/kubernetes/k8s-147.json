@@ -1,0 +1,8 @@
+{
+  "id": "k8s-147",
+  "categoryId": "kubernetes",
+  "subcategoryId": "debugging",
+  "title": "Debug with target container",
+  "command": "kubectl debug <pod> -it --image=busybox --target=<container>",
+  "description": "Debug pod by targeting specific container's namespaces."
+}

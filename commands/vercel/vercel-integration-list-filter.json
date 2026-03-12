@@ -1,0 +1,9 @@
+{
+  "id": "vercel-integration-list-filter",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-integrations",
+  "title": "Filter integrations",
+  "command": "vercel integration list --integration <name>",
+  "description": "List resources for specific integration",
+  "tags": ["integration", "filter", "search"]
+}

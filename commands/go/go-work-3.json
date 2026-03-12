@@ -1,0 +1,8 @@
+{
+  "id": "go-work-3",
+  "categoryId": "go",
+  "subcategoryId": "go-work",
+  "title": "Add all modules recursively",
+  "command": "go work use -r .",
+  "description": "Add all Go modules in subdirectories."
+}

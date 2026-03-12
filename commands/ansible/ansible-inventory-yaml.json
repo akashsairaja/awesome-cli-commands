@@ -1,0 +1,9 @@
+{
+  "id": "ansible-inventory-yaml",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-inventory",
+  "title": "Export to YAML",
+  "command": "ansible-inventory --list --yaml > inventory.yml",
+  "description": "Export inventory to YAML format",
+  "tags": ["inventory", "export", "yaml"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "bun-create",
+  "categoryId": "bun",
+  "subcategoryId": "bun-init",
+  "title": "Create from Template",
+  "command": "bun create <template> <directory>",
+  "description": "Scaffold project from template",
+  "tags": ["create", "template", "scaffold"]
+}

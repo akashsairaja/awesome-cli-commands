@@ -1,0 +1,8 @@
+{
+  "id": "ts-compile-10",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-compile",
+  "title": "Stop on error",
+  "command": "tsc --noEmitOnError",
+  "description": "Don't emit JavaScript if type errors are found."
+}

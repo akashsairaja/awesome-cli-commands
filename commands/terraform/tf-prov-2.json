@@ -1,0 +1,8 @@
+{
+  "id": "tf-prov-2",
+  "categoryId": "terraform",
+  "subcategoryId": "providers",
+  "title": "Plan to file",
+  "command": "terraform plan -out=tfplan",
+  "description": "Save plan to file for later apply."
+}

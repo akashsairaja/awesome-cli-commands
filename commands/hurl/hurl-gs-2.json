@@ -1,0 +1,8 @@
+{
+  "id": "hurl-gs-2",
+  "title": "Install Hurl (Linux)",
+  "command": "sudo apt install hurl -y",
+  "description": "Install Hurl HTTP testing tool using apt on Debian/Ubuntu",
+  "categoryId": "hurl",
+  "subcategoryId": "getting-started"
+}

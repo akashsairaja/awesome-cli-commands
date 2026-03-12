@@ -1,0 +1,8 @@
+{
+  "id": "kafka-topic-1",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-topics",
+  "title": "Create topic",
+  "command": "kafka-topics.sh --create --topic my-topic --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1",
+  "description": "Create topic with partitions and replication."
+}

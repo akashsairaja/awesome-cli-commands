@@ -1,0 +1,8 @@
+{
+  "id": "claude-86",
+  "categoryId": "claudecode",
+  "subcategoryId": "environment",
+  "title": "Set MCP timeout",
+  "command": "export MCP_TIMEOUT=5000",
+  "description": "Set MCP server startup timeout."
+}

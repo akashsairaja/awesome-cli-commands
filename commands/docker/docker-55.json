@@ -1,0 +1,8 @@
+{
+  "id": "docker-55",
+  "categoryId": "docker",
+  "subcategoryId": "volumes",
+  "title": "Create volume",
+  "command": "docker volume create <volume-name>",
+  "description": "Create a named volume."
+}

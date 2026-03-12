@@ -1,0 +1,8 @@
+{
+  "id": "spark-45",
+  "categoryId": "spark",
+  "subcategoryId": "spark-cluster",
+  "title": "Kill application",
+  "command": "spark-submit --kill driver-20240101120000-0001 --master spark://host:7077",
+  "description": "Kill a running application on standalone cluster."
+}

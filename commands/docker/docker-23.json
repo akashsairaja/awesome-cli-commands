@@ -1,0 +1,8 @@
+{
+  "id": "docker-23",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Resource usage snapshot",
+  "command": "docker stats --no-stream",
+  "description": "Show CPU, memory, network I/O snapshot."
+}

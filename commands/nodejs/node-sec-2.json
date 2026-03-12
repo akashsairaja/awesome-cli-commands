@@ -1,0 +1,8 @@
+{
+  "id": "node-sec-2",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-security",
+  "title": "Allow file reads",
+  "command": "node --permission --allow-fs-read=/app/* app.js",
+  "description": "Allow reading files in /app directory only."
+}

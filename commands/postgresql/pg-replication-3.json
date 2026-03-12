@@ -1,0 +1,8 @@
+{
+  "id": "pg-replication-3",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-replication",
+  "title": "Stream WAL logs",
+  "command": "pg_receivewal -D /wal/archive --slot slot_name",
+  "description": "Stream WAL logs to archive directory."
+}

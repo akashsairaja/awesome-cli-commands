@@ -1,0 +1,8 @@
+{
+  "id": "k3s-cluster-8",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-cluster",
+  "title": "Cordon a node",
+  "command": "k3s kubectl cordon <node-name>",
+  "description": "Mark node as unschedulable to prevent new pods."
+}

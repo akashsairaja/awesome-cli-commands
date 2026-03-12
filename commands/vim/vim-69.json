@@ -1,0 +1,8 @@
+{
+  "id": "vim-69",
+  "categoryId": "vim",
+  "subcategoryId": "advanced-editing",
+  "title": "Increment number",
+  "command": "Ctrl+a",
+  "description": "Increase number under cursor."
+}

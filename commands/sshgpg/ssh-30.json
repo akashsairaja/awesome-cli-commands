@@ -1,0 +1,8 @@
+{
+  "id": "ssh-30",
+  "categoryId": "sshgpg",
+  "subcategoryId": "keys",
+  "title": "Send GPG key to keyserver",
+  "command": "gpg --keyserver hkps://keys.openpgp.org --send-keys KEY_ID",
+  "description": "Upload GPG key to public keyserver."
+}

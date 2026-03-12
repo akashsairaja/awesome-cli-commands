@@ -1,0 +1,52 @@
+{
+  "id": "bash-health-checker",
+  "stackId": "bash",
+  "name": "Service Health Check Script with Notifications",
+  "description": "Build a bash script that monitors service endpoints, checks response codes and latency, and sends alerts when services are down.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "trending": false,
+  "tags": ["monitoring", "health-check", "curl", "alerting"],
+  "prerequisites": ["Bash and curl installed", "Services or URLs to monitor"],
+  "steps": [
+    {
+      "title": "Check a single endpoint",
+      "description": "Use curl to verify a service returns HTTP 200 and measure response time.",
+      "command": "curl -s -o /dev/null -w '%{http_code} %{time_total}s' http://localhost:3000/health",
+      "tip": "-s silences progress, -o /dev/null discards body, -w prints status code and timing."
+    },
+    {
+      "title": "Create a multi-service health check script",
+      "description": "Loop through a list of endpoints and check each one.",
+      "command": "cat > healthcheck.sh << 'EOF'\n#!/usr/bin/env bash\nset -euo pipefail\n\nENDPOINTS=(\n  \"http://localhost:3000/health\"\n  \"http://localhost:3001/api/health\"\n  \"https://api.example.com/status\"\n)\n\nfor url in \"${ENDPOINTS[@]}\"; do\n  HTTP_CODE=$(curl -s -o /dev/null -w '%{http_code}' --max-time 5 \"$url\" || echo \"000\")\n  if [[ \"$HTTP_CODE\" -eq 200 ]]; then\n    echo \"[OK]   $url ($HTTP_CODE)\"\n  else\n    echo \"[FAIL] $url ($HTTP_CODE)\" >&2\n  fi\ndone\nEOF\nchmod +x healthcheck.sh"
+    },
+    {
+      "title": "Add response time monitoring",
+      "description": "Track response times and flag slow endpoints above a threshold.",
+      "command": "echo 'RESPONSE_TIME=$(curl -s -o /dev/null -w \"%{time_total}\" --max-time 10 \"$url\")' && echo 'if (( $(echo \"$RESPONSE_TIME > 2.0\" | bc -l) )); then echo \"[SLOW] $url (${RESPONSE_TIME}s)\"; fi'"
+    },
+    {
+      "title": "Add webhook notification on failure",
+      "description": "Send an alert to Slack or Discord when a health check fails.",
+      "command": "echo 'curl -s -X POST -H \"Content-Type: application/json\" -d \"{\\\"text\\\": \\\"ALERT: $url returned $HTTP_CODE\\\"}\" \"$WEBHOOK_URL\"'",
+      "warning": "Store webhook URLs in environment variables, not in the script. Never commit secrets to version control."
+    }
+  ],
+  "fullScript": "#!/usr/bin/env bash\nset -euo pipefail\n\n# Service Health Checker\nENDPOINTS=(\n  \"http://localhost:3000/health\"\n  \"http://localhost:3001/api/health\"\n)\n\nTIMEOUT=5\nSLOW_THRESHOLD=2.0\nWEBHOOK_URL=\"${SLACK_WEBHOOK:-}\"\nFAILURES=0\n\nlog() { echo \"[$(date +'%H:%M:%S')] $*\"; }\n\nfor url in \"${ENDPOINTS[@]}\"; do\n  RESPONSE=$(curl -s -o /dev/null -w '%{http_code} %{time_total}' --max-time \"$TIMEOUT\" \"$url\" 2>/dev/null || echo \"000 0\")\n  HTTP_CODE=$(echo \"$RESPONSE\" | awk '{print $1}')\n  DURATION=$(echo \"$RESPONSE\" | awk '{print $2}')\n\n  if [[ \"$HTTP_CODE\" -eq 200 ]]; then\n    log \"[OK]   $url (${DURATION}s)\"\n  else\n    log \"[FAIL] $url (HTTP $HTTP_CODE)\" >&2\n    ((FAILURES++))\n    if [[ -n \"$WEBHOOK_URL\" ]]; then\n      curl -s -X POST -H 'Content-Type: application/json' \\\n        -d \"{\"text\": \"ALERT: $url returned HTTP $HTTP_CODE\"}\" \\\n        \"$WEBHOOK_URL\" > /dev/null\n    fi\n  fi\ndone\n\nif [[ $FAILURES -gt 0 ]]; then\n  log \"$FAILURES service(s) failing\"\n  exit 1\nfi\nlog \"All services healthy\"",
+  "faq": [
+    {
+      "question": "How often should I run health checks?",
+      "answer": "Every 30-60 seconds for critical services, every 5 minutes for non-critical. Use cron for minute-level checks: '* * * * * /path/to/healthcheck.sh'. For sub-minute intervals, use a loop with sleep inside the script."
+    },
+    {
+      "question": "What should a health endpoint return?",
+      "answer": "Return HTTP 200 with a JSON body like {\"status\":\"ok\",\"db\":\"connected\",\"redis\":\"connected\"}. Check all critical dependencies (database, cache, external APIs) and return 503 if any are unhealthy."
+    },
+    {
+      "question": "Should I use bash or a proper monitoring tool?",
+      "answer": "Bash health checks are great for simple setups and quick monitoring. For production, consider tools like Prometheus + Grafana, Datadog, or UptimeRobot that provide dashboards, alerting, and historical data."
+    }
+  ],
+  "relatedRecipes": ["bash-script-template", "bash-backup-automation"],
+  "lastUpdated": "2026-03-11"
+}

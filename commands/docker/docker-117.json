@@ -1,0 +1,8 @@
+{
+  "id": "docker-117",
+  "categoryId": "docker",
+  "subcategoryId": "security",
+  "title": "Quick vulnerability scan",
+  "command": "docker scout quickview <image>",
+  "description": "Quick vulnerability overview."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "aws-rds-6",
+  "categoryId": "aws",
+  "subcategoryId": "rds",
+  "title": "Get endpoint",
+  "command": "aws rds describe-db-instances --db-instance-identifier mydb --query 'DBInstances[0].Endpoint.Address' --output text",
+  "description": "Get database endpoint."
+}

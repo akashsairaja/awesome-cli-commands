@@ -1,0 +1,8 @@
+{
+  "id": "db-81",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Lock user account",
+  "command": "ALTER USER 'appuser'@'localhost' ACCOUNT LOCK;",
+  "description": "Lock a user account to prevent login without dropping it."
+}

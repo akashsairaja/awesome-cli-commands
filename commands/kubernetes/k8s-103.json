@@ -1,0 +1,8 @@
+{
+  "id": "k8s-103",
+  "categoryId": "kubernetes",
+  "subcategoryId": "rbac",
+  "title": "List roles",
+  "command": "kubectl get roles",
+  "description": "List all roles in namespace."
+}

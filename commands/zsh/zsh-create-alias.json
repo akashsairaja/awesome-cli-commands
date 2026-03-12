@@ -1,0 +1,9 @@
+{
+  "id": "zsh-create-alias",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-aliases",
+  "title": "Create alias",
+  "command": "alias ll='ls -la'",
+  "description": "Create a new alias",
+  "tags": ["alias", "create", "new"]
+}

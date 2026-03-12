@@ -1,0 +1,9 @@
+{
+  "id": "rg-count",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-search",
+  "title": "Count matches",
+  "command": "rg -c \"pattern\"",
+  "description": "Count matches per file",
+  "tags": ["count", "matches", "stats"]
+}

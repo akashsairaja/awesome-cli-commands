@@ -1,0 +1,9 @@
+{
+  "id": "rg-line-number",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-output",
+  "title": "Show line numbers",
+  "command": "rg -n \"pattern\"",
+  "description": "Show line numbers (default)",
+  "tags": ["output", "line", "number"]
+}

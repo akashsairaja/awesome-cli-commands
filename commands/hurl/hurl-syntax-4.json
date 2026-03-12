@@ -1,0 +1,8 @@
+{
+  "id": "hurl-syntax-4",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-syntax",
+  "title": "Use captured value",
+  "command": "GET https://api.example.com/users/{{user_id}}/posts",
+  "description": "Use captured value in request."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "py-90",
+  "categoryId": "python",
+  "subcategoryId": "python-pytest",
+  "title": "Run all tests",
+  "command": "pytest",
+  "description": "Run all tests in current directory."
+}

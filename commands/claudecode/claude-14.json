@@ -1,0 +1,8 @@
+{
+  "id": "claude-14",
+  "categoryId": "claudecode",
+  "subcategoryId": "general",
+  "title": "Fork session for exploration",
+  "command": "claude --fork-session feature-exploration",
+  "description": "Branch conversation for parallel exploration."
+}

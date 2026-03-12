@@ -1,0 +1,8 @@
+{
+  "id": "starship-modules-6",
+  "categoryId": "starship",
+  "subcategoryId": "starship-modules",
+  "title": "Directory truncation",
+  "command": "[directory]\ntruncation_length = 3\ntruncate_to_repo = true",
+  "description": "Limit directory depth shown in prompt."
+}

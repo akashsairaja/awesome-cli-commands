@@ -1,0 +1,8 @@
+{
+  "id": "tf-mod-8",
+  "categoryId": "terraform",
+  "subcategoryId": "modules",
+  "title": "Show as JSON",
+  "command": "terraform show -json",
+  "description": "Output state as JSON."
+}

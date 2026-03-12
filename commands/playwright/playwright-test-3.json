@@ -1,0 +1,8 @@
+{
+  "id": "playwright-test-3",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-test",
+  "title": "Run by grep",
+  "command": "npx playwright test -g 'login'",
+  "description": "Run tests matching a pattern."
+}

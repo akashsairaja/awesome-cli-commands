@@ -1,0 +1,8 @@
+{
+  "id": "db-70",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Create user with host restriction",
+  "command": "CREATE USER 'appuser'@'%' IDENTIFIED BY 'password';",
+  "description": "Create user accessible from any host (% wildcard)."
+}

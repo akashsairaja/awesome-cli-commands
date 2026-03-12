@@ -1,0 +1,8 @@
+{
+  "id": "task-watch-10",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-watch",
+  "title": "Output prefixed mode",
+  "command": "output: prefixed\n\ntasks:\n  build:\n    prefix: BUILD\n    cmds:\n      - go build -o app",
+  "description": "Prefix output lines with task name."
+}

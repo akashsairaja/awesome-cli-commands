@@ -1,0 +1,8 @@
+{
+  "id": "make-run-7",
+  "categoryId": "make",
+  "subcategoryId": "make-run",
+  "title": "Parallel jobs",
+  "command": "make -j4",
+  "description": "Run 4 jobs in parallel."
+}

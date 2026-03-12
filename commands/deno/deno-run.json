@@ -1,0 +1,9 @@
+{
+  "id": "deno-run",
+  "categoryId": "deno",
+  "subcategoryId": "deno-run",
+  "title": "Run Script",
+  "command": "deno run script.ts",
+  "description": "Execute a TypeScript/JavaScript file",
+  "tags": ["run", "execute", "script"]
+}

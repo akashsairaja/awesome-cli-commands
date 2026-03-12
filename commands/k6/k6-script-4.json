@@ -1,0 +1,8 @@
+{
+  "id": "k6-script-4",
+  "categoryId": "k6",
+  "subcategoryId": "k6-script",
+  "title": "Group requests",
+  "command": "import { group } from 'k6';\n\ngroup('user flow', function() {\n  http.get(url + '/login');\n  http.get(url + '/dashboard');\n});",
+  "description": "Group related requests."
+}

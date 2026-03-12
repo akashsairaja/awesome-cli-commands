@@ -1,0 +1,8 @@
+{
+  "id": "jest-debugging-2",
+  "categoryId": "jest",
+  "subcategoryId": "jest-debugging",
+  "title": "Node inspector",
+  "command": "jest --inspect",
+  "description": "Run tests with Node inspector."
+}

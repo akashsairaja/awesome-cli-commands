@@ -1,0 +1,8 @@
+{
+  "id": "supa-gs-3",
+  "title": "Initialize Supabase project",
+  "command": "supabase init",
+  "description": "Initialize a new Supabase project in the current directory",
+  "categoryId": "supabase",
+  "subcategoryId": "getting-started"
+}

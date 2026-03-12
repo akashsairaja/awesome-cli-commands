@@ -1,0 +1,9 @@
+{
+  "id": "deno-run-allow-read",
+  "categoryId": "deno",
+  "subcategoryId": "deno-run",
+  "title": "Allow File Read",
+  "command": "deno run --allow-read script.ts",
+  "description": "Run with file read permission",
+  "tags": ["run", "permissions", "read"]
+}

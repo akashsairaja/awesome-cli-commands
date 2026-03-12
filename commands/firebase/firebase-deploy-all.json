@@ -1,0 +1,9 @@
+{
+  "id": "firebase-deploy-all",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-deploy",
+  "title": "Deploy everything",
+  "command": "firebase deploy",
+  "description": "Deploy all Firebase services",
+  "tags": ["deploy", "all", "ship"]
+}

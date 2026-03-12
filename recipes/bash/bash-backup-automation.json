@@ -1,0 +1,52 @@
+{
+  "id": "bash-backup-automation",
+  "stackId": "bash",
+  "name": "Automated Backup Script with Rotation",
+  "description": "Create a bash script that performs timestamped backups of files and directories with configurable retention and automatic rotation of old backups.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "trending": false,
+  "tags": ["backup", "automation", "rotation", "cron", "archiving"],
+  "prerequisites": ["Bash 4.0+", "tar and gzip installed", "Write access to backup destination"],
+  "steps": [
+    {
+      "title": "Create the backup script",
+      "description": "Write a script that creates timestamped compressed backups of a source directory.",
+      "command": "cat > backup.sh << 'EOF'\n#!/usr/bin/env bash\nset -euo pipefail\n\nSOURCE_DIR=\"${1:?'Usage: backup.sh <source> <dest> [retention_days]'}\"\nBACKUP_DIR=\"${2:?'Usage: backup.sh <source> <dest> [retention_days]'}\"\nRETENTION_DAYS=\"${3:-30}\"\nTIMESTAMP=$(date +'%Y%m%d_%H%M%S')\nBACKUP_NAME=\"backup_${TIMESTAMP}.tar.gz\"\n\nmkdir -p \"$BACKUP_DIR\"\ntar -czf \"$BACKUP_DIR/$BACKUP_NAME\" -C \"$(dirname \"$SOURCE_DIR\")\" \"$(basename \"$SOURCE_DIR\")\"\necho \"Backup created: $BACKUP_DIR/$BACKUP_NAME\"\nEOF\nchmod +x backup.sh"
+    },
+    {
+      "title": "Add backup rotation",
+      "description": "Delete backups older than the retention period to prevent disk space exhaustion.",
+      "command": "cat >> backup.sh << 'EOF'\n\n# Rotate old backups\nDELETED=$(find \"$BACKUP_DIR\" -name 'backup_*.tar.gz' -mtime +\"$RETENTION_DAYS\" -print -delete | wc -l)\necho \"Rotated $DELETED backups older than $RETENTION_DAYS days\"\nEOF",
+      "warning": "Always test the find -delete command with -print first to verify which files would be removed before adding -delete."
+    },
+    {
+      "title": "Add backup verification",
+      "description": "Verify the backup archive is valid and not corrupted after creation.",
+      "command": "echo 'tar -tzf \"$BACKUP_DIR/$BACKUP_NAME\" > /dev/null && echo \"Backup verified successfully\" || { echo \"Backup verification FAILED\" >&2; exit 1; }' >> backup.sh"
+    },
+    {
+      "title": "Schedule with cron",
+      "description": "Add a cron job to run the backup daily at 2 AM.",
+      "command": "(crontab -l 2>/dev/null; echo '0 2 * * * /path/to/backup.sh /data /backups 30 >> /var/log/backup.log 2>&1') | crontab -",
+      "tip": "Use >> to append to the log file and 2>&1 to capture both stdout and stderr."
+    }
+  ],
+  "fullScript": "#!/usr/bin/env bash\nset -euo pipefail\n\n# Automated Backup with Rotation\nSOURCE_DIR=\"${1:?'Usage: backup.sh <source> <dest> [retention_days]'}\"\nBACKUP_DIR=\"${2:?'Usage: backup.sh <source> <dest> [retention_days]'}\"\nRETENTION_DAYS=\"${3:-30}\"\nTIMESTAMP=$(date +'%Y%m%d_%H%M%S')\nBACKUP_NAME=\"backup_${TIMESTAMP}.tar.gz\"\n\nlog() { echo \"[$(date +'%Y-%m-%d %H:%M:%S')] $*\"; }\n\n# Validate source\n[[ ! -d \"$SOURCE_DIR\" ]] && { echo \"Source not found: $SOURCE_DIR\" >&2; exit 1; }\n\n# Create backup directory\nmkdir -p \"$BACKUP_DIR\"\n\n# Create backup\nlog \"Backing up $SOURCE_DIR -> $BACKUP_DIR/$BACKUP_NAME\"\ntar -czf \"$BACKUP_DIR/$BACKUP_NAME\" -C \"$(dirname \"$SOURCE_DIR\")\" \"$(basename \"$SOURCE_DIR\")\"\n\n# Get size\nSIZE=$(du -h \"$BACKUP_DIR/$BACKUP_NAME\" | cut -f1)\nlog \"Backup size: $SIZE\"\n\n# Verify\ntar -tzf \"$BACKUP_DIR/$BACKUP_NAME\" > /dev/null\nlog \"Backup verified successfully\"\n\n# Rotate old backups\nDELETED=$(find \"$BACKUP_DIR\" -name 'backup_*.tar.gz' -mtime +\"$RETENTION_DAYS\" -print -delete | wc -l)\nlog \"Rotated $DELETED old backups (retention: $RETENTION_DAYS days)\"\n\n# Summary\nTOTAL=$(find \"$BACKUP_DIR\" -name 'backup_*.tar.gz' | wc -l)\nlog \"Total backups: $TOTAL\"",
+  "faq": [
+    {
+      "question": "How do I backup a database instead of files?",
+      "answer": "Replace the tar command with a database dump: pg_dump dbname > backup.sql for PostgreSQL, mysqldump dbname > backup.sql for MySQL, or mongodump --out backup/ for MongoDB. Then compress the dump file."
+    },
+    {
+      "question": "Should I use rsync instead of tar?",
+      "answer": "Use tar for full compressed backups with rotation. Use rsync for incremental syncing where only changed files are transferred: rsync -avz --delete source/ backup/. rsync is better for large datasets with small daily changes."
+    },
+    {
+      "question": "How do I send backup notifications on failure?",
+      "answer": "Add a trap that sends an alert on error: trap 'curl -X POST -d \"Backup failed on $(hostname)\" https://hooks.slack.com/your-webhook' ERR. Or use mail: trap 'echo \"Backup failed\" | mail -s \"Alert\" admin@example.com' ERR."
+    }
+  ],
+  "relatedRecipes": ["bash-script-template", "bash-health-checker"],
+  "lastUpdated": "2026-03-11"
+}

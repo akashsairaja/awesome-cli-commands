@@ -1,0 +1,8 @@
+{
+  "id": "git-7",
+  "categoryId": "git",
+  "subcategoryId": "basics",
+  "title": "Add all changes",
+  "command": "git add .",
+  "description": "Stage all changes for commit."
+}

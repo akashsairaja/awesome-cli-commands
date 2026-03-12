@@ -1,0 +1,8 @@
+{
+  "id": "tldr-1",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-tldr",
+  "title": "View tldr page",
+  "command": "tldr tar",
+  "description": "Show practical examples for command."
+}

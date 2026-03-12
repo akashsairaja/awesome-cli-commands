@@ -1,0 +1,9 @@
+{
+  "id": "gradle-build-offline",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-build",
+  "title": "Offline Build",
+  "command": "./gradlew build --offline",
+  "description": "Build using only cached dependencies",
+  "tags": ["build", "offline", "cached"]
+}

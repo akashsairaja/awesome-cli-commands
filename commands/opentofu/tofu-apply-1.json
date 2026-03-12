@@ -1,0 +1,8 @@
+{
+  "id": "tofu-apply-1",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-apply",
+  "title": "Apply changes",
+  "command": "tofu apply",
+  "description": "Apply infrastructure changes."
+}

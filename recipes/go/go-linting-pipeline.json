@@ -1,0 +1,58 @@
+{
+  "id": "go-linting-pipeline",
+  "stackId": "go",
+  "name": "golangci-lint Setup with Custom Rules",
+  "description": "Install and configure golangci-lint with a curated set of linters and custom rules for consistent code quality.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "trending": true,
+  "trendingReason": "golangci-lint is the industry standard for Go static analysis",
+  "tags": ["linting", "static-analysis", "code-quality", "ci"],
+  "prerequisites": ["Go 1.21+ installed"],
+  "steps": [
+    {
+      "title": "Install golangci-lint",
+      "description": "Install the latest version of golangci-lint using the official install script.",
+      "command": "curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin",
+      "tip": "On macOS you can also use: brew install golangci-lint"
+    },
+    {
+      "title": "Run with default settings",
+      "description": "Run golangci-lint against your project to see baseline issues.",
+      "command": "golangci-lint run ./..."
+    },
+    {
+      "title": "Create a configuration file",
+      "description": "Write a .golangci.yml with curated linters and settings for your project.",
+      "command": "cat > .golangci.yml << 'EOF'\nrun:\n  timeout: 5m\n\nlinters:\n  enable:\n    - errcheck\n    - govet\n    - staticcheck\n    - unused\n    - gosimple\n    - ineffassign\n    - misspell\n    - gofmt\n    - revive\n    - gocritic\n\nlinters-settings:\n  revive:\n    rules:\n      - name: exported\n        severity: warning\n  gocritic:\n    enabled-tags:\n      - diagnostic\n      - style\n\nissues:\n  exclude-rules:\n    - path: _test\\.go\n      linters:\n        - errcheck\nEOF"
+    },
+    {
+      "title": "Run with the custom configuration",
+      "description": "Execute the linter using your new config file.",
+      "command": "golangci-lint run --config .golangci.yml ./..."
+    },
+    {
+      "title": "Fix auto-fixable issues",
+      "description": "Apply automatic fixes for issues that golangci-lint can resolve.",
+      "command": "golangci-lint run --fix ./...",
+      "tip": "Review auto-fixed changes before committing. Not all fixes are perfect."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# golangci-lint Setup and Run\nset -euo pipefail\n\necho \"=== Checking golangci-lint ===\"\nif ! command -v golangci-lint &> /dev/null; then\n  echo \"Installing golangci-lint...\"\n  curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b \"$(go env GOPATH)/bin\"\nfi\ngolangci-lint --version\n\necho \"\"\necho \"=== Running Linter ===\"\ngolangci-lint run ./... --out-format colored-line-number || true\n\necho \"\"\necho \"=== Lint Commands ===\"\necho \"Run:       golangci-lint run ./...\"\necho \"Fix:       golangci-lint run --fix ./...\"\necho \"Verbose:   golangci-lint run -v ./...\"\necho \"Specific:  golangci-lint run --enable gocritic ./...\"\necho \"Cache:     golangci-lint cache clean\"",
+  "faq": [
+    {
+      "question": "Which linters should I enable for a new project?",
+      "answer": "Start with errcheck, govet, staticcheck, unused, gosimple, and revive. Add gocritic and misspell once your codebase is clean. Enable stricter linters incrementally."
+    },
+    {
+      "question": "How do I suppress a specific lint warning?",
+      "answer": "Add a //nolint:lintername comment on the line. For entire files, use //nolint at the package line. Prefer fixing the issue over suppressing it."
+    },
+    {
+      "question": "How do I integrate golangci-lint into CI?",
+      "answer": "Use the official GitHub Action: golangci/golangci-lint-action. It caches results between runs and supports config files automatically."
+    }
+  ],
+  "relatedRecipes": ["go-test-coverage", "go-project-setup"],
+  "lastUpdated": "2026-03-11"
+}

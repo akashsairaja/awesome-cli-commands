@@ -1,0 +1,8 @@
+{
+  "id": "kafka-acl-1",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-acl",
+  "title": "List ACLs",
+  "command": "kafka-acls.sh --list --bootstrap-server localhost:9092",
+  "description": "List all ACLs."
+}

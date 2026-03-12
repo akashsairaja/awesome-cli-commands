@@ -1,0 +1,9 @@
+{
+  "id": "gh-run-download",
+  "categoryId": "github",
+  "subcategoryId": "gh-workflow",
+  "title": "Download artifacts",
+  "command": "gh run download <run-id>",
+  "description": "Download artifacts from a workflow run",
+  "tags": ["run", "download", "artifacts"]
+}

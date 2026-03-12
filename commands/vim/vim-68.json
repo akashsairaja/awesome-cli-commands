@@ -1,0 +1,8 @@
+{
+  "id": "vim-68",
+  "categoryId": "vim",
+  "subcategoryId": "advanced-editing",
+  "title": "Sort lines",
+  "command": ":sort",
+  "description": "Sort selected lines alphabetically."
+}

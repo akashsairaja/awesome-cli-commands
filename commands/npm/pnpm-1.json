@@ -1,0 +1,8 @@
+{
+  "id": "pnpm-1",
+  "categoryId": "npm",
+  "subcategoryId": "pnpm",
+  "title": "pnpm store path",
+  "command": "pnpm store path",
+  "description": "Show content-addressable store location."
+}

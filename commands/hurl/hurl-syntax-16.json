@@ -1,0 +1,8 @@
+{
+  "id": "hurl-syntax-16",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-syntax",
+  "title": "Form POST",
+  "command": "POST https://api.example.com/login\n[FormParams]\nusername: admin\npassword: secret\nHTTP 302",
+  "description": "Submit URL-encoded form data."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "bash-gs-3",
+  "title": "Check current shell",
+  "command": "echo $SHELL",
+  "description": "Display the path of the current default login shell",
+  "categoryId": "bash",
+  "subcategoryId": "getting-started"
+}

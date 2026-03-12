@@ -1,0 +1,8 @@
+{
+  "id": "apt-54",
+  "categoryId": "ubuntu",
+  "subcategoryId": "system",
+  "title": "Remove snap package",
+  "command": "sudo snap remove <package>",
+  "description": "Remove an installed snap package."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "task-watch-7",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-watch",
+  "title": "Exclude from sources",
+  "command": "tasks:\n  build:\n    sources:\n      - src/**/*.go\n      - exclude: src/**/*_test.go\n    cmds:\n      - go build -o bin/app",
+  "description": "Exclude specific files from sources."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "claude-15",
+  "categoryId": "claudecode",
+  "subcategoryId": "general",
+  "title": "Create named session",
+  "command": "claude --session-id my-project-session",
+  "description": "Create a reproducible named session."
+}

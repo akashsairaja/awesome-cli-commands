@@ -1,0 +1,8 @@
+{
+  "id": "vault-policy-1",
+  "categoryId": "vault",
+  "subcategoryId": "vault-policy",
+  "title": "Write policy",
+  "command": "vault policy write myapp-policy myapp-policy.hcl",
+  "description": "Create policy from HCL file."
+}

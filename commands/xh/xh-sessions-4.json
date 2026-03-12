@@ -1,0 +1,8 @@
+{
+  "id": "xh-sessions-4",
+  "categoryId": "xh",
+  "subcategoryId": "xh-sessions",
+  "title": "Anonymous session",
+  "command": "xh --session=/tmp/anon-session.json GET https://api.example.com",
+  "description": "Use a file path for an anonymous session."
+}

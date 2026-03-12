@@ -1,0 +1,8 @@
+{
+  "id": "task-syntax-8",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-syntax",
+  "title": "Include taskfiles",
+  "command": "includes:\n  docker: ./docker/Taskfile.yml\n  ci: ./ci/Taskfile.yml",
+  "description": "Include tasks from other files."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-logging-metrics",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-logging",
+  "title": "Create Log Metric",
+  "command": "gcloud logging metrics create <name> --description=\"<desc>\" --log-filter=\"severity>=ERROR\"",
+  "description": "Create a log-based metric for monitoring and alerting",
+  "tags": ["logging", "metrics", "monitoring"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "aws-iam-3",
+  "categoryId": "aws",
+  "subcategoryId": "iam",
+  "title": "List roles",
+  "command": "aws iam list-roles --query 'Roles[*].[RoleName,Arn]' --output table",
+  "description": "List all IAM roles."
+}

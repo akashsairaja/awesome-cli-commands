@@ -1,0 +1,9 @@
+{
+  "id": "gradle-build-cache",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-build",
+  "title": "Build with Cache",
+  "command": "./gradlew build --build-cache",
+  "description": "Use build cache for incremental builds",
+  "tags": ["build", "cache", "incremental"]
+}

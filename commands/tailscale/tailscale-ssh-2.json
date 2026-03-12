@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-ssh-2",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-ssh",
+  "title": "Enable SSH server",
+  "command": "tailscale up --ssh",
+  "description": "Accept incoming Tailscale SSH."
+}

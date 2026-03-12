@@ -1,0 +1,8 @@
+{
+  "id": "docker-14",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Stop all containers",
+  "command": "docker stop $(docker ps -q)",
+  "description": "Stop all running containers."
+}

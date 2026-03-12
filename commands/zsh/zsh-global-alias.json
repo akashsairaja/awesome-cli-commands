@@ -1,0 +1,9 @@
+{
+  "id": "zsh-global-alias",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-aliases",
+  "title": "Global alias",
+  "command": "alias -g G='| grep'",
+  "description": "Create global alias (works anywhere in command)",
+  "tags": ["alias", "global", "pipe"]
+}

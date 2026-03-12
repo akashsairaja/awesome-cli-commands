@@ -1,0 +1,8 @@
+{
+  "id": "git-6",
+  "categoryId": "git",
+  "subcategoryId": "basics",
+  "title": "Short status",
+  "command": "git status -s",
+  "description": "Show status in short format."
+}

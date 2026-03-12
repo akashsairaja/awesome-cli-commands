@@ -1,0 +1,8 @@
+{
+  "id": "git-100",
+  "categoryId": "git",
+  "subcategoryId": "bisect",
+  "title": "Start bisect",
+  "command": "git bisect start",
+  "description": "Begin binary search for bug."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "firebase-use",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-deploy",
+  "title": "Switch project",
+  "command": "firebase use <project-id>",
+  "description": "Switch to a different Firebase project",
+  "tags": ["use", "switch", "project"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-functions-call",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-functions",
+  "title": "Call Function",
+  "command": "gcloud functions call <name> --region=<region> --data='{\"key\":\"value\"}'",
+  "description": "Invoke a Cloud Function",
+  "tags": ["functions", "call", "invoke"]
+}

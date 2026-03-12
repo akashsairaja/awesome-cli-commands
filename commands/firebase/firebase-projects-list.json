@@ -1,0 +1,9 @@
+{
+  "id": "firebase-projects-list",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-deploy",
+  "title": "List projects",
+  "command": "firebase projects:list",
+  "description": "List all Firebase projects",
+  "tags": ["projects", "list", "show"]
+}

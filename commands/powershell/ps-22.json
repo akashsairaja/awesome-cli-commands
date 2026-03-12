@@ -1,0 +1,8 @@
+{
+  "id": "ps-22",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-system",
+  "title": "Get OS version",
+  "command": "[Environment]::OSVersion",
+  "description": "Display OS version."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tsx-2",
+  "categoryId": "typescript",
+  "subcategoryId": "tsx",
+  "title": "tsx watch mode",
+  "command": "tsx watch src/index.ts",
+  "description": "Auto-restart on file changes (built-in hot reload)."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "make-debug-6",
+  "categoryId": "make",
+  "subcategoryId": "make-debug",
+  "title": "Trace execution",
+  "command": "make SHELL='sh -x'",
+  "description": "Trace shell commands."
+}

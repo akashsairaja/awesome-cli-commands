@@ -1,0 +1,9 @@
+{
+  "id": "netlify-functions-create",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-functions",
+  "title": "Create function",
+  "command": "netlify functions:create <name>",
+  "description": "Create a new serverless function",
+  "tags": ["functions", "create", "serverless"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ansible-shell",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-adhoc",
+  "title": "Run Shell with Pipes",
+  "command": "ansible all -m shell -a \"ps aux | grep nginx\"",
+  "description": "Execute shell command with pipes/redirects",
+  "tags": ["shell", "pipes", "execute"]
+}

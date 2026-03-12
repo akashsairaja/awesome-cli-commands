@@ -1,0 +1,8 @@
+{
+  "id": "minikube-addons-4",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-addons",
+  "title": "Enable metrics-server",
+  "command": "minikube addons enable metrics-server",
+  "description": "Enable metrics server for kubectl top."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "tmux-close-window",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-windows",
+  "title": "Close window",
+  "command": "Ctrl+b &",
+  "description": "Close current window",
+  "tags": ["window", "close", "kill"]
+}

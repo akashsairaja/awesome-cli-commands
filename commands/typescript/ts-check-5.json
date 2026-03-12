@@ -1,0 +1,8 @@
+{
+  "id": "ts-check-5",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-check",
+  "title": "Check implicit any",
+  "command": "tsc --noEmit --noImplicitAny",
+  "description": "Error on expressions with implied 'any' type."
+}

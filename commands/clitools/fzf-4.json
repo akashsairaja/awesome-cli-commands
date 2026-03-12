@@ -1,0 +1,8 @@
+{
+  "id": "fzf-4",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-fzf",
+  "title": "Multi-select",
+  "command": "fzf -m",
+  "description": "Select multiple files with Tab."
+}

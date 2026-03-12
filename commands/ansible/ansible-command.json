@@ -1,0 +1,9 @@
+{
+  "id": "ansible-command",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-adhoc",
+  "title": "Run Shell Command",
+  "command": "ansible all -a \"uptime\"",
+  "description": "Execute a command on all hosts",
+  "tags": ["command", "shell", "execute"]
+}

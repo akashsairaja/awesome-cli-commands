@@ -1,0 +1,9 @@
+{
+  "id": "gh-pr-view",
+  "categoryId": "github",
+  "subcategoryId": "gh-pr",
+  "title": "View pull request",
+  "command": "gh pr view <number>",
+  "description": "View pull request details",
+  "tags": ["pr", "view", "show"]
+}

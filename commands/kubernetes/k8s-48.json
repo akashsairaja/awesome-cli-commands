@@ -1,0 +1,8 @@
+{
+  "id": "k8s-48",
+  "categoryId": "kubernetes",
+  "subcategoryId": "services",
+  "title": "Create LoadBalancer service",
+  "command": "kubectl create service loadbalancer <name> --tcp=80:8080",
+  "description": "Create LoadBalancer service."
+}

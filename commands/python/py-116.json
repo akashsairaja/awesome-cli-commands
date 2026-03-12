@@ -1,0 +1,8 @@
+{
+  "id": "py-116",
+  "categoryId": "python",
+  "subcategoryId": "python-ruff",
+  "title": "Select rules",
+  "command": "ruff check . --select E,F,W",
+  "description": "Check only specific rule categories."
+}

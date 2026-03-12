@@ -1,0 +1,8 @@
+{
+  "id": "ubuntu-gs-1",
+  "title": "Check Ubuntu version",
+  "command": "lsb_release -a",
+  "description": "Display detailed Ubuntu version and distribution information",
+  "categoryId": "ubuntu",
+  "subcategoryId": "getting-started"
+}

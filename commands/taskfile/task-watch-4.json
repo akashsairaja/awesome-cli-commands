@@ -1,0 +1,8 @@
+{
+  "id": "task-watch-4",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-watch",
+  "title": "Checksum method",
+  "command": "tasks:\n  build:\n    method: checksum\n    sources:\n      - src/**/*.go\n    cmds:\n      - go build -o bin/app",
+  "description": "Use checksum to detect file changes."
+}

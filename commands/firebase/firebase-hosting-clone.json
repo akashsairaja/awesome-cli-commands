@@ -1,0 +1,9 @@
+{
+  "id": "firebase-hosting-clone",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-hosting",
+  "title": "Clone hosting version",
+  "command": "firebase hosting:clone <source> <target>",
+  "description": "Clone a hosting version to another site",
+  "tags": ["hosting", "clone", "copy"]
+}

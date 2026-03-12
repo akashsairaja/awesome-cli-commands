@@ -1,0 +1,8 @@
+{
+  "id": "k8s-20",
+  "categoryId": "kubernetes",
+  "subcategoryId": "pods",
+  "title": "Execute in specific container",
+  "command": "kubectl exec -it <pod> -c <container> -- /bin/bash",
+  "description": "Execute command in specific container of a pod."
+}

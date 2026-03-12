@@ -1,0 +1,8 @@
+{
+  "id": "mongo-agg-4",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-aggregate",
+  "title": "Unwind array",
+  "command": "db.orders.aggregate([{ $unwind: \"$items\" }, { $group: { _id: \"$items.product\", total: { $sum: \"$items.qty\" } } }])",
+  "description": "Flatten array and aggregate."
+}

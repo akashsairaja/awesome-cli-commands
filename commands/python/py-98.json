@@ -1,0 +1,8 @@
+{
+  "id": "py-98",
+  "categoryId": "python",
+  "subcategoryId": "python-pytest",
+  "title": "Run by marker",
+  "command": "pytest -m slow",
+  "description": "Run only tests with specific marker."
+}

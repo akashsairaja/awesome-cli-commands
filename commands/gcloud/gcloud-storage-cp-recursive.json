@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-storage-cp-recursive",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-storage",
+  "title": "Copy Directory",
+  "command": "gsutil -m cp -r <local-dir> gs://<bucket>/<path>",
+  "description": "Copy directory recursively with parallelism",
+  "tags": ["storage", "copy", "directory"]
+}

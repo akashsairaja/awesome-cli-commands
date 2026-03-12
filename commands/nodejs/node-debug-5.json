@@ -1,0 +1,8 @@
+{
+  "id": "node-debug-5",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-debug",
+  "title": "Trace warnings",
+  "command": "node --trace-warnings app.js",
+  "description": "Show stack traces for all warnings."
+}

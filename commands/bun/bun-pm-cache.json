@@ -1,0 +1,9 @@
+{
+  "id": "bun-pm-cache",
+  "categoryId": "bun",
+  "subcategoryId": "bun-package",
+  "title": "Clear Cache",
+  "command": "bun pm cache rm",
+  "description": "Clear the package cache",
+  "tags": ["cache", "clear", "rm"]
+}

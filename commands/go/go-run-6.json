@@ -1,0 +1,8 @@
+{
+  "id": "go-run-6",
+  "categoryId": "go",
+  "subcategoryId": "go-run",
+  "title": "Clean build cache",
+  "command": "go clean -cache",
+  "description": "Clear build cache."
+}

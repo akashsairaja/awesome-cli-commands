@@ -1,0 +1,8 @@
+{
+  "id": "tf-prov-8",
+  "categoryId": "terraform",
+  "subcategoryId": "providers",
+  "title": "Destroy all",
+  "command": "terraform destroy",
+  "description": "Destroy all managed infrastructure."
+}

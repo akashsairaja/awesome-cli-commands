@@ -1,0 +1,58 @@
+{
+  "id": "nodejs-test-runner",
+  "stackId": "nodejs",
+  "name": "Built-in Node.js Test Runner",
+  "description": "Use the built-in node --test runner for unit and integration testing without installing external test frameworks.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "The built-in test runner (stable since Node 20) eliminates the need for Jest or Mocha in many projects, reducing dependencies.",
+  "tags": ["test", "testing", "built-in", "assert", "runner"],
+  "prerequisites": ["Node.js 20 or later"],
+  "steps": [
+    {
+      "title": "Create a test file",
+      "description": "Write a test file using the built-in node:test module with describe/it syntax.",
+      "command": "cat <<'EOF' > math.test.js\nconst { describe, it } = require('node:test');\nconst assert = require('node:assert/strict');\nconst { add, multiply } = require('./math.js');\n\ndescribe('Math functions', () => {\n  it('should add two numbers', () => {\n    assert.strictEqual(add(2, 3), 5);\n    assert.strictEqual(add(-1, 1), 0);\n  });\n\n  it('should multiply two numbers', () => {\n    assert.strictEqual(multiply(3, 4), 12);\n    assert.strictEqual(multiply(0, 5), 0);\n  });\n});\nEOF"
+    },
+    {
+      "title": "Run tests with the built-in runner",
+      "description": "Execute all test files matching the default pattern using node --test.",
+      "command": "node --test",
+      "tip": "By default, node --test finds files matching **/*.test.{js,mjs,cjs} and **/*-test.{js,mjs,cjs} patterns."
+    },
+    {
+      "title": "Run specific test files or use glob patterns",
+      "description": "Target specific test files or directories instead of running the full suite.",
+      "command": "node --test 'tests/**/*.test.js'"
+    },
+    {
+      "title": "Use mocking capabilities",
+      "description": "Use the built-in mock module to create spies, stubs, and mock functions.",
+      "command": "cat <<'EOF' > api.test.js\nconst { describe, it, mock } = require('node:test');\nconst assert = require('node:assert/strict');\n\ndescribe('API client', () => {\n  it('should call fetch with correct URL', async () => {\n    const mockFetch = mock.fn(async () => ({\n      json: async () => ({ data: 'test' })\n    }));\n\n    // Replace global fetch\n    mock.method(globalThis, 'fetch', mockFetch);\n\n    const { fetchData } = require('./api.js');\n    const result = await fetchData('/users');\n\n    assert.strictEqual(mockFetch.mock.calls.length, 1);\n    assert.ok(mockFetch.mock.calls[0].arguments[0].includes('/users'));\n  });\n});\nEOF"
+    },
+    {
+      "title": "Generate test coverage reports",
+      "description": "Run tests with coverage enabled to see which lines of code are tested.",
+      "command": "node --test --experimental-test-coverage",
+      "tip": "Coverage reports show per-file line, branch, and function coverage percentages directly in the terminal."
+    }
+  ],
+  "fullScript": "#!/bin/bash\nset -euo pipefail\n\n# Node.js Built-in Test Runner Setup\n\necho \"==> Checking Node.js version...\"\nNODE_VERSION=$(node -v | cut -d'.' -f1 | tr -d 'v')\nif [ \"$NODE_VERSION\" -lt 20 ]; then\n  echo \"ERROR: Node.js 20+ required for stable test runner. Current: $(node -v)\"\n  exit 1\nfi\necho \"  Node.js $(node -v) - OK\"\n\necho \"==> Creating sample module...\"\ncat > math.js <<'EOF'\nfunction add(a, b) { return a + b; }\nfunction multiply(a, b) { return a * b; }\nfunction divide(a, b) {\n  if (b === 0) throw new Error('Division by zero');\n  return a / b;\n}\nmodule.exports = { add, multiply, divide };\nEOF\n\necho \"==> Creating test file...\"\nmkdir -p tests\ncat > tests/math.test.js <<'EOF'\nconst { describe, it } = require('node:test');\nconst assert = require('node:assert/strict');\nconst { add, multiply, divide } = require('../math.js');\n\ndescribe('add', () => {\n  it('adds positive numbers', () => {\n    assert.strictEqual(add(2, 3), 5);\n  });\n  it('adds negative numbers', () => {\n    assert.strictEqual(add(-2, -3), -5);\n  });\n});\n\ndescribe('multiply', () => {\n  it('multiplies numbers', () => {\n    assert.strictEqual(multiply(3, 4), 12);\n  });\n  it('handles zero', () => {\n    assert.strictEqual(multiply(5, 0), 0);\n  });\n});\n\ndescribe('divide', () => {\n  it('divides numbers', () => {\n    assert.strictEqual(divide(10, 2), 5);\n  });\n  it('throws on division by zero', () => {\n    assert.throws(() => divide(1, 0), { message: 'Division by zero' });\n  });\n});\nEOF\n\necho \"==> Running tests...\"\nnode --test\n\necho \"\"\necho \"==> Running with coverage...\"\nnode --test --experimental-test-coverage",
+  "faq": [
+    {
+      "question": "Should I switch from Jest to the built-in test runner?",
+      "answer": "For simple projects, the built-in runner eliminates a dependency. For projects needing snapshot testing, complex mocking, or extensive plugin ecosystems, Jest still has advantages. Evaluate based on your needs."
+    },
+    {
+      "question": "Does the built-in runner support watch mode?",
+      "answer": "Yes. Use node --test --watch to automatically re-run tests when files change. Available since Node.js 19."
+    },
+    {
+      "question": "Can I use the built-in runner with TypeScript?",
+      "answer": "Yes. Use a loader: node --test --loader ts-node/esm 'tests/**/*.test.ts'. Or compile TypeScript first and run the JS output."
+    }
+  ],
+  "relatedRecipes": ["nodejs-security-audit", "nodejs-esm-migration"],
+  "lastUpdated": "2026-03-11"
+}

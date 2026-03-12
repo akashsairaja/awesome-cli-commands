@@ -1,0 +1,8 @@
+{
+  "id": "netlify-gs-2",
+  "title": "Check Netlify CLI version",
+  "command": "netlify --version",
+  "description": "Verify Netlify CLI is installed and display version",
+  "categoryId": "netlify",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "bun-pm-bin-global",
+  "categoryId": "bun",
+  "subcategoryId": "bun-tools",
+  "title": "Show Global Bin Path",
+  "command": "bun pm bin -g",
+  "description": "Show global bin folder path",
+  "tags": ["pm", "bin", "global"]
+}

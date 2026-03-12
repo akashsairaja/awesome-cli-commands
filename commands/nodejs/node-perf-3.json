@@ -1,0 +1,8 @@
+{
+  "id": "node-perf-3",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-perf",
+  "title": "Heap profiling",
+  "command": "node --heap-prof app.js",
+  "description": "Generate heap allocation profile."
+}

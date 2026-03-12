@@ -1,0 +1,8 @@
+{
+  "id": "linux-17",
+  "categoryId": "linux",
+  "subcategoryId": "disk",
+  "title": "Check disk space",
+  "command": "df -h",
+  "description": "Show disk usage in human-readable format."
+}

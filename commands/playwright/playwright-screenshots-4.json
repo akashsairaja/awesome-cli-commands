@@ -1,0 +1,8 @@
+{
+  "id": "playwright-screenshots-4",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-screenshots",
+  "title": "Screenshot all tests",
+  "command": "npx playwright test --screenshot=on",
+  "description": "Capture screenshot for all tests."
+}

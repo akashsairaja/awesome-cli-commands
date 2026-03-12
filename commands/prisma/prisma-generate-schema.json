@@ -1,0 +1,9 @@
+{
+  "id": "prisma-generate-schema",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-generate",
+  "title": "Generate from custom schema path",
+  "command": "npx prisma generate --schema ./custom/path/schema.prisma",
+  "description": "Generate client using a schema file at a non-default location",
+  "tags": ["generate", "schema", "path"]
+}

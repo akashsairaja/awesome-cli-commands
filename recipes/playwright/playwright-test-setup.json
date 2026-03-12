@@ -1,0 +1,58 @@
+{
+  "id": "playwright-test-setup",
+  "stackId": "playwright",
+  "name": "Initialize Playwright with TypeScript",
+  "description": "Set up Playwright Test from scratch with TypeScript, configure browsers, create your first test, and run it across multiple browsers.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "Playwright has become the leading E2E testing framework, surpassing Cypress in adoption",
+  "tags": ["setup", "typescript", "configuration", "browsers"],
+  "prerequisites": ["Node.js 18+ installed", "A web application to test"],
+  "steps": [
+    {
+      "title": "Initialize Playwright in your project",
+      "description": "Run the Playwright installer to scaffold config, example tests, and download browsers.",
+      "command": "npm init playwright@latest",
+      "tip": "The installer asks interactive questions. Choose TypeScript, tests/ directory, and yes to GitHub Actions workflow for CI-ready setup."
+    },
+    {
+      "title": "Install specific browsers",
+      "description": "Download only the browsers you need to save disk space.",
+      "command": "npx playwright install chromium firefox"
+    },
+    {
+      "title": "Run the example test",
+      "description": "Execute the scaffolded tests to verify the setup works.",
+      "command": "npx playwright test"
+    },
+    {
+      "title": "Run tests with the UI mode",
+      "description": "Open the interactive test runner for visual debugging.",
+      "command": "npx playwright test --ui",
+      "tip": "UI mode provides a time-travel debugger, live locator picker, and watch mode for rapid test development."
+    },
+    {
+      "title": "View the HTML report",
+      "description": "Open the built-in test report to review results and traces.",
+      "command": "npx playwright show-report"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Playwright Test Setup\nset -euo pipefail\n\nPROJECT_DIR=${1:-.}\n\necho \"=== Initializing Playwright ===\"\ncd \"$PROJECT_DIR\"\n\n# Install Playwright\nnpm install -D @playwright/test\n\n# Install browsers\nnpx playwright install chromium firefox webkit\n\n# Create config if it doesn't exist\nif [ ! -f \"playwright.config.ts\" ]; then\ncat > playwright.config.ts << 'CONFIG'\nimport { defineConfig, devices } from '@playwright/test';\n\nexport default defineConfig({\n  testDir: './tests',\n  fullyParallel: true,\n  forbidOnly: !!process.env.CI,\n  retries: process.env.CI ? 2 : 0,\n  workers: process.env.CI ? 1 : undefined,\n  reporter: 'html',\n  use: {\n    baseURL: 'http://localhost:3000',\n    trace: 'on-first-retry',\n    screenshot: 'only-on-failure',\n  },\n  projects: [\n    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },\n    { name: 'firefox', use: { ...devices['Desktop Firefox'] } },\n    { name: 'webkit', use: { ...devices['Desktop Safari'] } },\n  ],\n});\nCONFIG\nfi\n\n# Create example test\nmkdir -p tests\ncat > tests/example.spec.ts << 'TEST'\nimport { test, expect } from '@playwright/test';\n\ntest('homepage loads successfully', async ({ page }) => {\n  await page.goto('/');\n  await expect(page).toHaveTitle(/.+/);\n});\nTEST\n\necho \"\"\necho \"=== Setup Complete ===\"\necho \"Config:  playwright.config.ts\"\necho \"Tests:   tests/\"\necho \"\"\necho \"=== Commands ===\"\necho \"Run tests:    npx playwright test\"\necho \"UI mode:      npx playwright test --ui\"\necho \"Show report:  npx playwright show-report\"",
+  "faq": [
+    {
+      "question": "Which browsers does Playwright support?",
+      "answer": "Playwright supports Chromium (Chrome, Edge), Firefox, and WebKit (Safari). It ships its own browser binaries to ensure consistent behavior across environments. You can also test against branded browsers like Chrome and Edge."
+    },
+    {
+      "question": "How much disk space do browsers require?",
+      "answer": "Each browser is roughly 150-300 MB. Install only the browsers you need with 'npx playwright install chromium' instead of all three. Use PLAYWRIGHT_BROWSERS_PATH to share browsers across projects."
+    },
+    {
+      "question": "Can I use Playwright with JavaScript instead of TypeScript?",
+      "answer": "Yes. Playwright works with both JavaScript and TypeScript. During init, choose JavaScript when prompted. You can also create .spec.js files alongside TypeScript ones in the same project."
+    }
+  ],
+  "relatedRecipes": ["playwright-codegen", "playwright-ci-setup"],
+  "lastUpdated": "2026-03-11"
+}

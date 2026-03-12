@@ -1,0 +1,8 @@
+{
+  "id": "vim-52",
+  "categoryId": "vim",
+  "subcategoryId": "text-objects",
+  "title": "Delete around parens",
+  "command": "da(",
+  "description": "Delete text and parentheses themselves."
+}

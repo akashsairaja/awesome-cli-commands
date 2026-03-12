@@ -1,0 +1,8 @@
+{
+  "id": "db-26",
+  "categoryId": "database",
+  "subcategoryId": "postgresql",
+  "title": "ANALYZE table",
+  "command": "ANALYZE tablename;",
+  "description": "Update query planner statistics for a table."
+}

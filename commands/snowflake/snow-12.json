@@ -1,0 +1,8 @@
+{
+  "id": "snow-12",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-sql",
+  "title": "SQL with JSON output",
+  "command": "snow sql -q \"SELECT ...\" --format json",
+  "description": "Execute query and output results as JSON."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "volta-config-6",
+  "categoryId": "volta",
+  "subcategoryId": "volta-config",
+  "title": "PowerShell completions",
+  "command": "volta completions powershell",
+  "description": "Generate PowerShell completions."
+}

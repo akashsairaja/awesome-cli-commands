@@ -1,0 +1,8 @@
+{
+  "id": "sops-gs-3",
+  "title": "Install SOPS (Go)",
+  "command": "go install github.com/getsops/sops/v3/cmd/sops@latest",
+  "description": "Install SOPS using Go on any platform with Go installed",
+  "categoryId": "sops",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "trivy-sbom-3",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-sbom",
+  "title": "Scan existing SBOM",
+  "command": "trivy sbom sbom.json",
+  "description": "Scan an existing SBOM for vulnerabilities."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "linux-61",
+  "categoryId": "linux",
+  "subcategoryId": "disk",
+  "title": "Format partition as ext4",
+  "command": "sudo mkfs.ext4 /dev/sdb1",
+  "description": "Create an ext4 filesystem on a partition. Destroys existing data."
+}

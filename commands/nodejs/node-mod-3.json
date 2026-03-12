@@ -1,0 +1,8 @@
+{
+  "id": "node-mod-3",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-modules",
+  "title": "Run as ES module",
+  "command": "node --input-type=module -e \"import fs from 'fs'\"",
+  "description": "Treat eval/stdin as ES module."
+}

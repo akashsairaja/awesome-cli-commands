@@ -1,0 +1,8 @@
+{
+  "id": "grafana-api-7",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-api",
+  "title": "Delete datasource",
+  "command": "curl -X DELETE http://localhost:3000/api/datasources/1 -H 'Authorization: Bearer TOKEN'",
+  "description": "Delete a datasource by ID."
+}

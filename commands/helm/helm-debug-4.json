@@ -1,0 +1,8 @@
+{
+  "id": "helm-debug-4",
+  "categoryId": "helm",
+  "subcategoryId": "helm-debug",
+  "title": "Test release",
+  "command": "helm test my-release",
+  "description": "Run tests defined in chart."
+}

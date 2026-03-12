@@ -1,0 +1,8 @@
+{
+  "id": "packer-hcl-10",
+  "categoryId": "packer",
+  "subcategoryId": "packer-hcl",
+  "title": "Docker source block",
+  "command": "source \"docker\" \"ubuntu\" {\n  image  = \"ubuntu:22.04\"\n  commit = true\n  changes = [\n    \"ENTRYPOINT [\"/app/start.sh\"]\"\n  ]\n}",
+  "description": "HCL2 Docker source for container images."
+}

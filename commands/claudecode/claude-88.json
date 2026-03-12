@@ -1,0 +1,8 @@
+{
+  "id": "claude-88",
+  "categoryId": "claudecode",
+  "subcategoryId": "installation",
+  "title": "Install via Homebrew",
+  "command": "brew install --cask claude-code",
+  "description": "Install Claude Code using Homebrew."
+}

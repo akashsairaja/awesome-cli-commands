@@ -1,0 +1,8 @@
+{
+  "id": "playwright-gs-2",
+  "title": "Install browsers",
+  "command": "npx playwright install",
+  "description": "Download and install Playwright browsers (Chromium, Firefox, WebKit)",
+  "categoryId": "playwright",
+  "subcategoryId": "getting-started"
+}

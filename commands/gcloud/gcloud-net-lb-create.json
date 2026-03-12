@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-net-lb-create",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-networking",
+  "title": "Create HTTP Load Balancer",
+  "command": "gcloud compute url-maps create <name> --default-service=<backend-service>",
+  "description": "Create a URL map for HTTP(S) load balancing",
+  "tags": ["load-balancer", "url-map", "create"]
+}

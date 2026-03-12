@@ -1,0 +1,8 @@
+{
+  "id": "prisma-gs-2",
+  "title": "Initialize Prisma",
+  "command": "npx prisma init",
+  "description": "Initialize Prisma with a default schema and .env file",
+  "categoryId": "prisma",
+  "subcategoryId": "getting-started"
+}

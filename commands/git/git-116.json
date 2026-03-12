@@ -1,0 +1,8 @@
+{
+  "id": "git-116",
+  "categoryId": "git",
+  "subcategoryId": "submodules",
+  "title": "Clone with submodules",
+  "command": "git clone --recurse-submodules <url>",
+  "description": "Clone repo including submodules."
+}

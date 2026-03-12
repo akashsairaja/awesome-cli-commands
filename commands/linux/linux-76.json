@@ -1,0 +1,8 @@
+{
+  "id": "linux-76",
+  "categoryId": "linux",
+  "subcategoryId": "ssh",
+  "title": "Remote port forward",
+  "command": "ssh -R 9090:localhost:3000 user@remote",
+  "description": "Expose local port 3000 on the remote server as port 9090."
+}

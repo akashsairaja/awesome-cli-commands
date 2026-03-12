@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-status-8",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-status",
+  "title": "Whois lookup",
+  "command": "tailscale whois 100.x.y.z",
+  "description": "Identify a device by its Tailscale IP."
+}

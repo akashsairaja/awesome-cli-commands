@@ -1,0 +1,8 @@
+{
+  "id": "minikube-30",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-cluster",
+  "title": "Allocate custom resources",
+  "command": "minikube start --memory 4096 --cpus 4",
+  "description": "Start cluster with 4GB RAM and 4 CPUs."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ssh-12",
+  "categoryId": "sshgpg",
+  "subcategoryId": "connections",
+  "title": "Jump through bastion",
+  "command": "ssh -J jumphost user@target",
+  "description": "Connect via jump host."
+}

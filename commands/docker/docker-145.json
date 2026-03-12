@@ -1,0 +1,8 @@
+{
+  "id": "docker-145",
+  "categoryId": "docker",
+  "subcategoryId": "buildx",
+  "title": "Clean buildx cache",
+  "command": "docker buildx prune",
+  "description": "Remove buildx cache to free up disk space."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k8s-9",
+  "categoryId": "kubernetes",
+  "subcategoryId": "context",
+  "title": "Rename context",
+  "command": "kubectl config rename-context <old> <new>",
+  "description": "Rename a context in kubeconfig."
+}

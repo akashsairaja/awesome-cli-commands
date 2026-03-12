@@ -1,0 +1,8 @@
+{
+  "id": "pg-conn-6",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-connection",
+  "title": "Connection info",
+  "command": "\\conninfo",
+  "description": "Display current connection info (in psql)."
+}

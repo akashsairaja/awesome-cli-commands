@@ -1,0 +1,8 @@
+{
+  "id": "rust-deps-2",
+  "categoryId": "rust",
+  "subcategoryId": "rust-deps",
+  "title": "Update specific dep",
+  "command": "cargo update -p serde",
+  "description": "Update specific package."
+}

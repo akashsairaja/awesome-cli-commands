@@ -1,0 +1,9 @@
+{
+  "id": "nginx-error-log",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-logs",
+  "title": "View error log",
+  "command": "sudo tail -f /var/log/nginx/error.log",
+  "description": "Follow error log in real-time",
+  "tags": ["log", "error", "tail"]
+}

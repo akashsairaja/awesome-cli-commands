@@ -1,0 +1,9 @@
+{
+  "id": "rg-type",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-files",
+  "title": "Search file type",
+  "command": "rg -t js \"pattern\"",
+  "description": "Search only in JavaScript files",
+  "tags": ["type", "filter", "extension"]
+}

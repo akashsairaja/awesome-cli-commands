@@ -1,0 +1,9 @@
+{
+  "id": "ansible-automation-check-diff",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-automation",
+  "title": "Dry Run with Diff",
+  "command": "ansible-playbook playbook.yml --check --diff",
+  "description": "Preview changes in CI/CD before deployment",
+  "tags": ["automation", "check", "diff", "dry-run", "ci-cd"]
+}

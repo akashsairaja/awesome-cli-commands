@@ -1,0 +1,8 @@
+{
+  "id": "git-gs-4",
+  "title": "Initialize repository",
+  "command": "git init",
+  "description": "Create a new Git repository in the current directory",
+  "categoryId": "git",
+  "subcategoryId": "getting-started"
+}

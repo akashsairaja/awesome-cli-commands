@@ -1,0 +1,9 @@
+{
+  "id": "prisma-format",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-generate",
+  "title": "Format schema",
+  "command": "npx prisma format",
+  "description": "Format the Prisma schema file",
+  "tags": ["format", "lint", "schema"]
+}

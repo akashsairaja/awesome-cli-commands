@@ -1,0 +1,8 @@
+{
+  "id": "k3s-config-8",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-config",
+  "title": "Set node name",
+  "command": "curl -sfL https://get.k3s.io | sh -s - --node-name my-node",
+  "description": "Install with a custom node name instead of hostname."
+}

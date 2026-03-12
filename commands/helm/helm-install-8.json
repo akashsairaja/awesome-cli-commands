@@ -1,0 +1,8 @@
+{
+  "id": "helm-install-8",
+  "categoryId": "helm",
+  "subcategoryId": "helm-install",
+  "title": "Wait for ready",
+  "command": "helm install my-release bitnami/nginx --wait --timeout 5m",
+  "description": "Wait for pods to be ready before completing."
+}

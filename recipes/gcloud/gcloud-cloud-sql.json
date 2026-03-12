@@ -1,0 +1,60 @@
+{
+  "id": "gcloud-cloud-sql",
+  "stackId": "gcloud",
+  "name": "Cloud SQL Instance Management",
+  "description": "Create and manage Cloud SQL instances for PostgreSQL, MySQL, or SQL Server with backups, replicas, and connection management.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "tags": ["cloud-sql", "database", "postgresql", "mysql"],
+  "prerequisites": [
+    "gcloud CLI installed",
+    "GCP project with billing enabled",
+    "Cloud SQL Admin API enabled"
+  ],
+  "steps": [
+    {
+      "title": "Enable the Cloud SQL API",
+      "command": "gcloud services enable sqladmin.googleapis.com",
+      "description": "Activates the Cloud SQL Admin API."
+    },
+    {
+      "title": "Create a Cloud SQL instance",
+      "command": "gcloud sql instances create mydb --database-version POSTGRES_15 --tier db-f1-micro --region us-central1 --storage-size 10GB --storage-auto-increase",
+      "description": "Creates a PostgreSQL 15 instance with auto-increasing storage.",
+      "warning": "Instance creation takes 3-5 minutes. The db-f1-micro tier is for dev only."
+    },
+    {
+      "title": "Set the root password",
+      "command": "gcloud sql users set-password postgres --instance mydb --password MY_SECURE_PASSWORD",
+      "description": "Sets the password for the default postgres user."
+    },
+    {
+      "title": "Create a database",
+      "command": "gcloud sql databases create myappdb --instance mydb",
+      "description": "Creates a new database within the Cloud SQL instance."
+    },
+    {
+      "title": "Connect via Cloud SQL Proxy",
+      "command": "gcloud sql connect mydb --user postgres --database myappdb",
+      "description": "Opens an interactive psql session through a secure tunnel without exposing the instance publicly.",
+      "tip": "For application connections, use the Cloud SQL Auth Proxy sidecar or Cloud SQL Connector libraries."
+    }
+  ],
+  "fullScript": "# Cloud SQL instance management\ngcloud services enable sqladmin.googleapis.com\ngcloud sql instances create mydb --database-version POSTGRES_15 --tier db-f1-micro --region us-central1 --storage-size 10GB --storage-auto-increase\ngcloud sql users set-password postgres --instance mydb --password MY_SECURE_PASSWORD\ngcloud sql databases create myappdb --instance mydb\ngcloud sql connect mydb --user postgres --database myappdb",
+  "faq": [
+    {
+      "question": "How do I set up automatic backups?",
+      "answer": "Use 'gcloud sql instances patch mydb --backup-start-time 02:00 --enable-bin-log'. Automated backups run daily and are retained for 7 days by default (configurable up to 365)."
+    },
+    {
+      "question": "How do I connect from Cloud Run or App Engine?",
+      "answer": "Add the --add-cloudsql-instances flag when deploying. The Cloud SQL Auth Proxy is automatically configured. Use the Unix socket path '/cloudsql/PROJECT:REGION:INSTANCE' as the host."
+    },
+    {
+      "question": "Can I create a read replica?",
+      "answer": "Yes. Use 'gcloud sql instances create mydb-replica --master-instance-name mydb --region us-central1'. Read replicas reduce load on the primary and can serve read queries."
+    }
+  ],
+  "relatedRecipes": ["gcloud-iam-management", "gcloud-cloud-run-deploy"],
+  "lastUpdated": "2026-03-11"
+}

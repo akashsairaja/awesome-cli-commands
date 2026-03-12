@@ -1,0 +1,8 @@
+{
+  "id": "trivy-k8s-5",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-k8s",
+  "title": "Scan with context",
+  "command": "trivy k8s --context=prod-cluster all",
+  "description": "Scan using specific kubeconfig context."
+}

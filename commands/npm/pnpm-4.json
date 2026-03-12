@@ -1,0 +1,8 @@
+{
+  "id": "pnpm-4",
+  "categoryId": "npm",
+  "subcategoryId": "pnpm",
+  "title": "pnpm import",
+  "command": "pnpm import",
+  "description": "Generate pnpm-lock.yaml from other lockfiles."
+}

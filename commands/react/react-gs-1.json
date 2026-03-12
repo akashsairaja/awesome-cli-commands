@@ -1,0 +1,8 @@
+{
+  "id": "react-gs-1",
+  "title": "Create React app with Vite",
+  "command": "npm create vite@latest my-app -- --template react-ts",
+  "description": "Scaffold a new React + TypeScript project using Vite",
+  "categoryId": "react",
+  "subcategoryId": "getting-started"
+}

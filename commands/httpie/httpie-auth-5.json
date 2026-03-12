@@ -1,0 +1,8 @@
+{
+  "id": "httpie-auth-5",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-auth",
+  "title": "Prompt for password",
+  "command": "http -a username GET https://api.example.com/protected",
+  "description": "Omit password to get an interactive prompt."
+}

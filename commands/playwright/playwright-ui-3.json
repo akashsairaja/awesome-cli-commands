@@ -1,0 +1,8 @@
+{
+  "id": "playwright-ui-3",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-ui",
+  "title": "UI mode specific file",
+  "command": "npx playwright test --ui tests/checkout.spec.ts",
+  "description": "Open UI mode for specific test file."
+}

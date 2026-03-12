@@ -1,0 +1,8 @@
+{
+  "id": "k8s-129",
+  "categoryId": "kubernetes",
+  "subcategoryId": "manifests",
+  "title": "Diff manifest",
+  "command": "kubectl diff -f manifest.yaml",
+  "description": "Show what would change if applied."
+}

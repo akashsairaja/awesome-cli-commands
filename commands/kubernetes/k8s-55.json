@@ -1,0 +1,8 @@
+{
+  "id": "k8s-55",
+  "categoryId": "kubernetes",
+  "subcategoryId": "namespaces",
+  "title": "Describe namespace",
+  "command": "kubectl describe namespace <name>",
+  "description": "Show namespace details and resource quotas."
+}

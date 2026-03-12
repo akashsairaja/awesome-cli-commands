@@ -1,0 +1,8 @@
+{
+  "id": "k6-script-5",
+  "categoryId": "k6",
+  "subcategoryId": "k6-script",
+  "title": "Sleep between requests",
+  "command": "import { sleep } from 'k6';\n\nexport default function() {\n  http.get('https://api.example.com');\n  sleep(1);\n}",
+  "description": "Add think time between requests."
+}

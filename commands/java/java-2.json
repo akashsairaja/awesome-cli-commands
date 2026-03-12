@@ -1,0 +1,8 @@
+{
+  "id": "java-2",
+  "categoryId": "java",
+  "subcategoryId": "java-compiler",
+  "title": "Compile with classpath",
+  "command": "javac -cp lib/*:. MyClass.java",
+  "description": "Compile with external JARs in the classpath."
+}

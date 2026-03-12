@@ -1,0 +1,9 @@
+{
+  "id": "supabase-projects-list",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-auth",
+  "title": "List projects",
+  "command": "supabase projects list",
+  "description": "List all Supabase projects",
+  "tags": ["projects", "list"]
+}

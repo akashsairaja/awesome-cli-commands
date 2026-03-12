@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-compute-firewall-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-compute",
+  "title": "List Firewall Rules",
+  "command": "gcloud compute firewall-rules list",
+  "description": "List all firewall rules in the project",
+  "tags": ["firewall", "list", "network"]
+}

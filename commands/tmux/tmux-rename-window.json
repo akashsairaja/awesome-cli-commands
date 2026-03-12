@@ -1,0 +1,9 @@
+{
+  "id": "tmux-rename-window",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-windows",
+  "title": "Rename window",
+  "command": "Ctrl+b ,",
+  "description": "Rename current window",
+  "tags": ["window", "rename"]
+}

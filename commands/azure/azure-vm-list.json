@@ -1,0 +1,9 @@
+{
+  "id": "azure-vm-list",
+  "categoryId": "azure",
+  "subcategoryId": "azure-compute",
+  "title": "List Virtual Machines",
+  "command": "az vm list --output table",
+  "description": "List all VMs in the subscription",
+  "tags": ["vm", "list", "inventory"]
+}

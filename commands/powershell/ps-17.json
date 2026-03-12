@@ -1,0 +1,8 @@
+{
+  "id": "ps-17",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-processes",
+  "title": "Start as admin",
+  "command": "Start-Process powershell -Verb RunAs",
+  "description": "Start process with elevation."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "pg-users-14",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-users",
+  "title": "Default privileges for sequences",
+  "command": "ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT USAGE ON SEQUENCES TO appuser;",
+  "description": "Auto-grant sequence usage for new sequences (needed for serial/identity columns)."
+}

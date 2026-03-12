@@ -1,0 +1,8 @@
+{
+  "id": "starship-modules-13",
+  "categoryId": "starship",
+  "subcategoryId": "starship-modules",
+  "title": "Character module",
+  "command": "[character]\nsuccess_symbol = \"[>](bold green)\"\nerror_symbol = \"[x](bold red)\"",
+  "description": "Customize prompt character on success/error."
+}

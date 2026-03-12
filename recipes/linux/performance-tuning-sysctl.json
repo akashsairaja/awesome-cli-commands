@@ -1,0 +1,54 @@
+{
+  "id": "performance-tuning-sysctl",
+  "stackId": "linux",
+  "name": "Performance Tuning with sysctl",
+  "description": "Tune kernel parameters using sysctl to optimize network performance, file descriptor limits, and memory management.",
+  "difficulty": "advanced",
+  "timeMinutes": 15,
+  "trending": false,
+  "tags": ["performance", "sysctl", "tuning", "kernel"],
+  "prerequisites": ["Linux shell access", "Root or sudo access"],
+  "steps": [
+    {
+      "title": "View current kernel parameters",
+      "description": "List all sysctl parameters and their current values.",
+      "command": "sysctl -a 2>/dev/null | grep -E 'net.core.somaxconn|vm.swappiness|fs.file-max|net.ipv4.tcp_max_syn_backlog'"
+    },
+    {
+      "title": "Check current file descriptor limits",
+      "description": "View the maximum number of open file descriptors.",
+      "command": "sysctl fs.file-max && ulimit -n",
+      "tip": "fs.file-max is the system-wide limit. ulimit -n is the per-process limit."
+    },
+    {
+      "title": "Optimize TCP settings for high-traffic servers",
+      "description": "Increase TCP connection backlog and enable TCP optimizations.",
+      "command": "sudo sysctl -w net.core.somaxconn=65535 && sudo sysctl -w net.ipv4.tcp_max_syn_backlog=65535",
+      "warning": "These changes are temporary and lost on reboot. Add them to /etc/sysctl.d/ to persist."
+    },
+    {
+      "title": "Adjust swappiness for server workloads",
+      "description": "Reduce swappiness to prefer keeping application memory in RAM.",
+      "command": "sudo sysctl -w vm.swappiness=10",
+      "tip": "Default is 60. For database servers, 10 is common. For desktops, 60 is fine."
+    },
+    {
+      "title": "Persist sysctl changes across reboots",
+      "description": "Save tuning parameters to a config file so they survive reboots.",
+      "command": "echo 'net.core.somaxconn=65535\nvm.swappiness=10\nfs.file-max=2097152' | sudo tee /etc/sysctl.d/99-performance.conf && sudo sysctl --system"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Performance Tuning Audit\nset -euo pipefail\n\necho \"=== Current Performance Parameters ===\"\necho \"Swappiness:        $(sysctl -n vm.swappiness)\"\necho \"File max:          $(sysctl -n fs.file-max)\"\necho \"Somaxconn:         $(sysctl -n net.core.somaxconn)\"\necho \"TCP backlog:       $(sysctl -n net.ipv4.tcp_max_syn_backlog)\"\necho \"TCP keepalive:     $(sysctl -n net.ipv4.tcp_keepalive_time)s\"\necho \"Ulimit (soft):     $(ulimit -Sn)\"\necho \"Ulimit (hard):     $(ulimit -Hn)\"\n\necho \"\"\necho \"=== Memory ===\"\necho \"Total:    $(free -h | awk '/Mem:/{print $2}')\"\necho \"Used:     $(free -h | awk '/Mem:/{print $3}')\"\necho \"Cache:    $(free -h | awk '/Mem:/{print $6}')\"\necho \"Swap:     $(free -h | awk '/Swap:/{print $3}') used of $(free -h | awk '/Swap:/{print $2}')\"\n\necho \"\"\necho \"=== Recommended Server Tuning ===\"\necho \"sudo sysctl -w vm.swappiness=10\"\necho \"sudo sysctl -w net.core.somaxconn=65535\"\necho \"sudo sysctl -w fs.file-max=2097152\"\necho \"sudo sysctl -w net.ipv4.tcp_max_syn_backlog=65535\"\necho \"\"\necho \"Persist: Add to /etc/sysctl.d/99-performance.conf\"",
+  "faq": [
+    {
+      "question": "Is it safe to change sysctl parameters?",
+      "answer": "Most network and file descriptor limits are safe to increase. Be careful with memory-related parameters (vm.*) on systems with limited RAM. Always test changes in a non-production environment first."
+    },
+    {
+      "question": "How do I revert a sysctl change?",
+      "answer": "Set the parameter back to its original value with 'sysctl -w param=original_value'. To find defaults, check 'sysctl -a' on a fresh system or the kernel documentation."
+    }
+  ],
+  "relatedRecipes": ["system-monitoring-dashboard", "security-hardening-checklist"],
+  "lastUpdated": "2026-03-11"
+}

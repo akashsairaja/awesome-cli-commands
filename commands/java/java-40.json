@@ -1,0 +1,8 @@
+{
+  "id": "java-40",
+  "categoryId": "java",
+  "subcategoryId": "java-diagnostics",
+  "title": "List Java processes",
+  "command": "jps -lv",
+  "description": "List all running Java processes with full details."
+}

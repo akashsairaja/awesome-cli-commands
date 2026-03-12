@@ -1,0 +1,9 @@
+{
+  "id": "nginx-list-enabled",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-config",
+  "title": "List enabled sites",
+  "command": "ls -la /etc/nginx/sites-enabled/",
+  "description": "List all enabled site configurations",
+  "tags": ["list", "sites", "enabled"]
+}

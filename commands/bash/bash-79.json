@@ -1,0 +1,8 @@
+{
+  "id": "bash-79",
+  "categoryId": "bash",
+  "subcategoryId": "conditionals",
+  "title": "If-elif-else",
+  "command": "if [ $x -lt 0 ]; then echo \"neg\"; elif [ $x -gt 0 ]; then echo \"pos\"; else echo \"zero\"; fi",
+  "description": "Multiple condition branches."
+}

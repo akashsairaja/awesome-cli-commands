@@ -1,0 +1,9 @@
+{
+  "id": "vercel-deploy",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-deploy",
+  "title": "Deploy to Vercel",
+  "command": "vercel",
+  "description": "Deploy current directory to Vercel",
+  "tags": ["deploy", "push", "ship"]
+}

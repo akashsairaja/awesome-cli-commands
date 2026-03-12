@@ -1,0 +1,8 @@
+{
+  "id": "bruno-scripts-10",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-scripts",
+  "title": "Assert response body",
+  "command": "assert {\n  res.body.success: eq true\n  res.body.data.id: isNumber\n  res.body.data.name: isString\n}",
+  "description": "Assert response body field types and values."
+}

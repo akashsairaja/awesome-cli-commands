@@ -1,0 +1,8 @@
+{
+  "id": "ai-44",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-api",
+  "title": "Stream completion",
+  "command": "curl https://api.openai.com/v1/chat/completions -H \"Authorization: Bearer $OPENAI_API_KEY\" -H \"Content-Type: application/json\" -d '{\"model\":\"gpt-4\",\"messages\":[{\"role\":\"user\",\"content\":\"Tell me a story\"}],\"stream\":true}'",
+  "description": "Stream chat completion response."
+}

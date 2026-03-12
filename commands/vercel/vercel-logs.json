@@ -1,0 +1,9 @@
+{
+  "id": "vercel-logs",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-deploy",
+  "title": "View deployment logs",
+  "command": "vercel logs <url>",
+  "description": "View logs for a deployment",
+  "tags": ["logs", "debug", "view"]
+}

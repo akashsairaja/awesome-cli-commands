@@ -1,0 +1,8 @@
+{
+  "id": "bash-66",
+  "categoryId": "bash",
+  "subcategoryId": "strings",
+  "title": "Replace first",
+  "command": "echo \"${str/find/replace}\"",
+  "description": "Replace first occurrence."
+}

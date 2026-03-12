@@ -1,0 +1,48 @@
+{
+  "id": "log-aggregation-streaming",
+  "stackId": "kubernetes",
+  "name": "Log Aggregation and Streaming",
+  "description": "Stream and aggregate logs from pods, deployments, and multiple containers using kubectl and label selectors.",
+  "difficulty": "beginner",
+  "timeMinutes": 5,
+  "trending": false,
+  "tags": ["logs", "debugging", "streaming", "monitoring"],
+  "prerequisites": ["kubectl configured"],
+  "steps": [
+    {
+      "title": "Stream logs from a pod",
+      "description": "Follow log output from a specific pod in real time.",
+      "command": "kubectl logs -f <pod-name>"
+    },
+    {
+      "title": "Stream logs from all pods in a deployment",
+      "description": "Follow logs from every pod matching a label selector.",
+      "command": "kubectl logs -f -l app=myapp --all-containers --max-log-requests=10",
+      "tip": "The --max-log-requests flag limits concurrent log streams. Increase it for deployments with many replicas."
+    },
+    {
+      "title": "View logs from a previous container instance",
+      "description": "See logs from a container that crashed and was restarted.",
+      "command": "kubectl logs <pod-name> --previous",
+      "tip": "This is essential for debugging CrashLoopBackOff pods since the current container may not have useful output yet."
+    },
+    {
+      "title": "Filter logs by time range",
+      "description": "Show logs from a specific time window.",
+      "command": "kubectl logs <pod-name> --since=1h --timestamps"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Log Aggregation and Streaming\nset -euo pipefail\n\nSELECTOR=${1:?\"Usage: $0 <label-selector> [namespace]\"}\nNS=${2:-\"default\"}\n\necho \"=== Pods matching selector: $SELECTOR ===\"\nkubectl get pods -n \"$NS\" -l \"$SELECTOR\" -o wide\n\necho \"\"\necho \"=== Recent logs (last 50 lines per pod) ===\"\nkubectl logs -n \"$NS\" -l \"$SELECTOR\" --all-containers --tail=50 --timestamps\n\necho \"\"\necho \"=== Streaming Commands ===\"\necho \"Follow all:    kubectl logs -f -n $NS -l $SELECTOR --all-containers\"\necho \"Since 1h:      kubectl logs -n $NS -l $SELECTOR --since=1h\"\necho \"Previous:      kubectl logs -n $NS <pod-name> --previous\"",
+  "faq": [
+    {
+      "question": "How do I view logs from init containers?",
+      "answer": "Use 'kubectl logs <pod-name> -c <init-container-name>'. List init containers with 'kubectl get pod <pod-name> -o jsonpath={.spec.initContainers[*].name}'."
+    },
+    {
+      "question": "Is there a way to search/grep through logs?",
+      "answer": "Pipe kubectl logs to grep: 'kubectl logs <pod-name> | grep ERROR'. For production, consider a log aggregation system like Loki, Elasticsearch, or CloudWatch Logs."
+    }
+  ],
+  "relatedRecipes": ["pod-debug-ephemeral", "pod-status-analyzer"],
+  "lastUpdated": "2026-03-11"
+}

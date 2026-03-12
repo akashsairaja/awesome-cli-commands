@@ -1,0 +1,8 @@
+{
+  "id": "snyk-container-8",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-container",
+  "title": "Generate container SBOM",
+  "command": "snyk container sbom --format=cyclonedx1.4+json nginx:latest",
+  "description": "Generate a software bill of materials for an image."
+}

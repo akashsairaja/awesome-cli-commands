@@ -1,0 +1,8 @@
+{
+  "id": "brew-6",
+  "categoryId": "homebrew",
+  "subcategoryId": "packages",
+  "title": "List top-level packages",
+  "command": "brew leaves",
+  "description": "Show packages not used as dependencies."
+}

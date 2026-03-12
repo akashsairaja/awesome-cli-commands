@@ -1,0 +1,8 @@
+{
+  "id": "bruno-scripts-3",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-scripts",
+  "title": "Test assertions",
+  "command": "tests {\n  test('status is 200', function() {\n    expect(res.status).to.equal(200);\n  });\n}",
+  "description": "Write test assertions."
+}

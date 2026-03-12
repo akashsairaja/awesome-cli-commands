@@ -1,0 +1,8 @@
+{
+  "id": "snow-20",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-streamlit",
+  "title": "Initialize Streamlit app",
+  "command": "snow streamlit init",
+  "description": "Initialize a new Streamlit in Snowflake project."
+}

@@ -1,0 +1,59 @@
+{
+  "id": "pg-vacuum-maintenance",
+  "stackId": "postgresql",
+  "name": "Autovacuum Tuning and Maintenance",
+  "description": "Configure and monitor PostgreSQL autovacuum to reclaim dead tuples, prevent table bloat, and avoid transaction ID wraparound.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "tags": ["vacuum", "autovacuum", "maintenance", "bloat", "tuning"],
+  "prerequisites": [
+    "PostgreSQL database with write activity",
+    "Superuser access for configuration changes"
+  ],
+  "steps": [
+    {
+      "title": "Check current autovacuum settings",
+      "description": "View the running autovacuum configuration parameters.",
+      "command": "psql -U postgres -c \"SELECT name, setting, short_desc FROM pg_settings WHERE name LIKE 'autovacuum%' ORDER BY name;\""
+    },
+    {
+      "title": "Find tables needing vacuum",
+      "description": "Identify tables with the most dead tuples that are waiting for vacuum.",
+      "command": "psql -U postgres -d mydb -c \"SELECT relname, n_live_tup, n_dead_tup, round(n_dead_tup::numeric / GREATEST(n_live_tup, 1) * 100, 2) AS dead_pct, last_autovacuum FROM pg_stat_user_tables WHERE n_dead_tup > 1000 ORDER BY n_dead_tup DESC LIMIT 10;\""
+    },
+    {
+      "title": "Run manual vacuum with verbose output",
+      "description": "Manually vacuum a specific table and see detailed statistics.",
+      "command": "psql -U postgres -d mydb -c \"VACUUM (VERBOSE, ANALYZE) orders;\"",
+      "tip": "ANALYZE updates table statistics for the query planner. Always combine VACUUM with ANALYZE."
+    },
+    {
+      "title": "Check table bloat",
+      "description": "Estimate wasted space from dead rows in frequently updated tables.",
+      "command": "psql -U postgres -d mydb -c \"SELECT relname, pg_size_pretty(pg_total_relation_size(relid)) AS total_size, n_dead_tup, last_autovacuum, last_autoanalyze FROM pg_stat_user_tables ORDER BY pg_total_relation_size(relid) DESC LIMIT 10;\""
+    },
+    {
+      "title": "Tune autovacuum for a heavy-write table",
+      "description": "Override autovacuum settings at the table level for high-throughput tables.",
+      "command": "psql -U postgres -d mydb -c \"ALTER TABLE orders SET (autovacuum_vacuum_scale_factor = 0.05, autovacuum_analyze_scale_factor = 0.02, autovacuum_vacuum_cost_delay = 10);\"",
+      "tip": "Lower scale factors trigger vacuum sooner. Default is 0.2 (20% dead tuples). Set 0.05 for active tables."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# PostgreSQL Vacuum Maintenance Report\nset -euo pipefail\n\nDB=\"mydb\"\nUSER=\"postgres\"\n\necho \"=== Autovacuum Configuration ===\"\npsql -U \"$USER\" -c \"\nSELECT name, setting\nFROM pg_settings\nWHERE name LIKE 'autovacuum%'\nORDER BY name;\n\"\n\necho \"\"\necho \"=== Tables with most dead tuples ===\"\npsql -U \"$USER\" -d \"$DB\" -c \"\nSELECT relname AS table_name,\n       n_live_tup AS live_rows,\n       n_dead_tup AS dead_rows,\n       round(n_dead_tup::numeric / GREATEST(n_live_tup, 1) * 100, 2) AS dead_pct,\n       pg_size_pretty(pg_total_relation_size(relid)) AS total_size,\n       last_autovacuum,\n       last_autoanalyze\nFROM pg_stat_user_tables\nORDER BY n_dead_tup DESC\nLIMIT 15;\n\"\n\necho \"\"\necho \"=== Transaction ID age (wraparound risk) ===\"\npsql -U \"$USER\" -d \"$DB\" -c \"\nSELECT relname,\n       age(relfrozenxid) AS xid_age,\n       pg_size_pretty(pg_total_relation_size(oid)) AS size\nFROM pg_class\nWHERE relkind = 'r' AND relnamespace = 'public'::regnamespace\nORDER BY age(relfrozenxid) DESC\nLIMIT 10;\n\"\n\necho \"\"\necho \"=== Currently running vacuums ===\"\npsql -U \"$USER\" -c \"\nSELECT pid, datname, query, state, now() - query_start AS duration\nFROM pg_stat_activity\nWHERE query LIKE '%VACUUM%' OR query LIKE '%vacuum%';\n\"",
+  "faq": [
+    {
+      "question": "What is transaction ID wraparound and why should I care?",
+      "answer": "PostgreSQL uses 32-bit transaction IDs that wrap around after ~2 billion transactions. If a table is not vacuumed before the threshold, PostgreSQL shuts down to prevent data corruption. Monitor age(relfrozenxid) and ensure autovacuum runs regularly."
+    },
+    {
+      "question": "Should I run VACUUM FULL?",
+      "answer": "Rarely. VACUUM FULL rewrites the entire table and reclaims disk space but requires an exclusive lock that blocks all reads and writes. Use regular VACUUM for routine maintenance. Reserve VACUUM FULL for one-time space reclamation during maintenance windows."
+    },
+    {
+      "question": "How do I know if autovacuum is keeping up?",
+      "answer": "Check pg_stat_user_tables for tables where n_dead_tup keeps growing and last_autovacuum is old. If dead tuple counts grow faster than autovacuum cleans them, increase autovacuum_max_workers or lower cost_delay."
+    }
+  ],
+  "relatedRecipes": ["pg-performance-tuning", "pg-backup-restore"],
+  "lastUpdated": "2026-03-11"
+}

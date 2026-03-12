@@ -1,0 +1,9 @@
+{
+  "id": "tmux-new-detached",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-sessions",
+  "title": "New detached session",
+  "command": "tmux new -d -s mysession",
+  "description": "Create new session without attaching",
+  "tags": ["session", "new", "detached"]
+}

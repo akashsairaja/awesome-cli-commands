@@ -1,0 +1,8 @@
+{
+  "id": "helm-release-1",
+  "categoryId": "helm",
+  "subcategoryId": "helm-release",
+  "title": "List releases",
+  "command": "helm list",
+  "description": "List all releases in current namespace."
+}

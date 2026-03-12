@@ -1,0 +1,8 @@
+{
+  "id": "bash-49",
+  "categoryId": "bash",
+  "subcategoryId": "arrays",
+  "title": "Declare array",
+  "command": "arr=(one two three)",
+  "description": "Create indexed array."
+}

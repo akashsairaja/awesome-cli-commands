@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-share-10",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-share",
+  "title": "Send file to peer",
+  "command": "tailscale file cp myfile.txt hostname:",
+  "description": "Send a file to another device on your tailnet."
+}

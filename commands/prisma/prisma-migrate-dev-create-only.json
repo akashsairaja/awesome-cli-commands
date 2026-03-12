@@ -1,0 +1,9 @@
+{
+  "id": "prisma-migrate-dev-create-only",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-migrate",
+  "title": "Create migration without applying",
+  "command": "npx prisma migrate dev --name <name> --create-only",
+  "description": "Generate migration SQL file without applying it to the database",
+  "tags": ["migrate", "dev", "create-only"]
+}

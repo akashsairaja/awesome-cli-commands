@@ -1,0 +1,8 @@
+{
+  "id": "k6-run-7",
+  "categoryId": "k6",
+  "subcategoryId": "k6-run",
+  "title": "HTTP debug mode",
+  "command": "k6 run --http-debug=full script.js",
+  "description": "Log all HTTP requests and responses."
+}

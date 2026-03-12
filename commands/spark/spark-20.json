@@ -1,0 +1,8 @@
+{
+  "id": "spark-20",
+  "categoryId": "spark",
+  "subcategoryId": "spark-sql",
+  "title": "Start Spark SQL CLI",
+  "command": "spark-sql",
+  "description": "Launch interactive SQL command line interface."
+}

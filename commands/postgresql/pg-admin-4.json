@@ -1,0 +1,8 @@
+{
+  "id": "pg-admin-4",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-admin",
+  "title": "Active connections",
+  "command": "SELECT * FROM pg_stat_activity;",
+  "description": "View all active connections."
+}

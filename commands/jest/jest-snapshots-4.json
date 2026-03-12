@@ -1,0 +1,8 @@
+{
+  "id": "jest-snapshots-4",
+  "categoryId": "jest",
+  "subcategoryId": "jest-snapshots",
+  "title": "Disable cache",
+  "command": "jest --no-cache",
+  "description": "Run tests without cache."
+}

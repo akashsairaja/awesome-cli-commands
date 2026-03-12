@@ -1,0 +1,8 @@
+{
+  "id": "ps-47",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-objects",
+  "title": "Access property",
+  "command": "$obj.PropertyName",
+  "description": "Access object property."
+}

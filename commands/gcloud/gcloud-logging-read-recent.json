@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-logging-read-recent",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-logging",
+  "title": "Read Recent Logs",
+  "command": "gcloud logging read \"timestamp>=\\\"2024-01-01T00:00:00Z\\\"\" --limit=20",
+  "description": "Read log entries from a specific time period",
+  "tags": ["logging", "read", "recent"]
+}

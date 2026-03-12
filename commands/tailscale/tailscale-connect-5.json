@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-connect-5",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-connect",
+  "title": "Use exit node",
+  "command": "tailscale up --exit-node=exit-node-name",
+  "description": "Route traffic through exit node."
+}

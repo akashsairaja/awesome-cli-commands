@@ -1,0 +1,8 @@
+{
+  "id": "db-78",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Show current user grants",
+  "command": "SHOW GRANTS;",
+  "description": "Display privileges for the currently logged-in user."
+}

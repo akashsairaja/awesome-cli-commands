@@ -1,0 +1,8 @@
+{
+  "id": "make-debug-2",
+  "categoryId": "make",
+  "subcategoryId": "make-debug",
+  "title": "Print database",
+  "command": "make -p",
+  "description": "Print internal database and rules."
+}

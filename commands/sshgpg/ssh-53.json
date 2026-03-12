@@ -1,0 +1,8 @@
+{
+  "id": "ssh-53",
+  "categoryId": "sshgpg",
+  "subcategoryId": "config",
+  "title": "Include directive",
+  "command": "Include ~/.ssh/config.d/*",
+  "description": "Include additional config files."
+}

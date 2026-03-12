@@ -1,0 +1,9 @@
+{
+  "id": "azure-container-create",
+  "categoryId": "azure",
+  "subcategoryId": "azure-storage",
+  "title": "Create Blob Container",
+  "command": "az storage container create --name <container> --account-name <storage-account>",
+  "description": "Create a blob container in storage account",
+  "tags": ["storage", "container", "blob"]
+}

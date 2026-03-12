@@ -1,0 +1,8 @@
+{
+  "id": "claude-68",
+  "categoryId": "claudecode",
+  "subcategoryId": "workflows",
+  "title": "Refactor code",
+  "command": "claude \"refactor this to use async/await\"",
+  "description": "Refactor code with specific improvements."
+}

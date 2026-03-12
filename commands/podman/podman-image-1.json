@@ -1,0 +1,8 @@
+{
+  "id": "podman-image-1",
+  "categoryId": "podman",
+  "subcategoryId": "podman-image",
+  "title": "Pull image",
+  "command": "podman pull docker.io/library/nginx",
+  "description": "Pull image from registry."
+}

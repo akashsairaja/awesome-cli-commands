@@ -1,0 +1,9 @@
+{
+  "id": "tmux-kill-session",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-sessions",
+  "title": "Kill session",
+  "command": "tmux kill-session -t mysession",
+  "description": "Destroy a session",
+  "tags": ["session", "kill", "delete"]
+}

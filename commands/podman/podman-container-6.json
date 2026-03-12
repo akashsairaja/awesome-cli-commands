@@ -1,0 +1,8 @@
+{
+  "id": "podman-container-6",
+  "categoryId": "podman",
+  "subcategoryId": "podman-container",
+  "title": "View logs",
+  "command": "podman logs -f myapp",
+  "description": "Follow container logs."
+}

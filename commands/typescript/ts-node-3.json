@@ -1,0 +1,8 @@
+{
+  "id": "ts-node-3",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-node",
+  "title": "Evaluate code",
+  "command": "ts-node -e \"console.log('Hello')\"",
+  "description": "Evaluate TypeScript code from command line."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "git-93",
+  "categoryId": "git",
+  "subcategoryId": "history",
+  "title": "Diff staged changes",
+  "command": "git diff --staged",
+  "description": "Show staged changes."
+}

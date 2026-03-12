@@ -1,0 +1,8 @@
+{
+  "id": "docker-150",
+  "categoryId": "docker",
+  "subcategoryId": "system",
+  "title": "Switch Docker context",
+  "command": "docker context use <name>",
+  "description": "Switch to a different Docker context to manage remote hosts."
+}

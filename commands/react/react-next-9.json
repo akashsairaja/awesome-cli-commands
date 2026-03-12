@@ -1,0 +1,8 @@
+{
+  "id": "react-next-9",
+  "categoryId": "react",
+  "subcategoryId": "react-nextjs",
+  "title": "Create Next.js 15 with Turbopack",
+  "command": "npx create-next-app@latest --app --turbo",
+  "description": "Create Next.js 15 app with App Router and Turbopack enabled."
+}

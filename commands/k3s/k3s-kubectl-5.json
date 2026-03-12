@@ -1,0 +1,8 @@
+{
+  "id": "k3s-kubectl-5",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-kubectl",
+  "title": "Use ctr",
+  "command": "k3s ctr images ls",
+  "description": "List images using containerd CLI."
+}

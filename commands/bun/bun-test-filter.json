@@ -1,0 +1,9 @@
+{
+  "id": "bun-test-filter",
+  "categoryId": "bun",
+  "subcategoryId": "bun-test",
+  "title": "Filter Tests",
+  "command": "bun test --filter \"test name\"",
+  "description": "Run tests matching pattern",
+  "tags": ["test", "filter", "pattern"]
+}

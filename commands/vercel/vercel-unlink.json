@@ -1,0 +1,9 @@
+{
+  "id": "vercel-unlink",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-projects",
+  "title": "Unlink project",
+  "command": "vercel unlink",
+  "description": "Unlink current directory from Vercel project",
+  "tags": ["unlink", "disconnect"]
+}

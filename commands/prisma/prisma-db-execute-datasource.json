@@ -1,0 +1,9 @@
+{
+  "id": "prisma-db-execute-datasource",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-db",
+  "title": "Execute SQL against specific datasource",
+  "command": "npx prisma db execute --file script.sql --schema prisma/schema.prisma",
+  "description": "Execute raw SQL using the datasource from a specific schema file",
+  "tags": ["db", "execute", "datasource"]
+}

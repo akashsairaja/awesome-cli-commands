@@ -1,0 +1,8 @@
+{
+  "id": "k3s-kubectl-10",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-kubectl",
+  "title": "Apply a manifest",
+  "command": "k3s kubectl apply -f manifest.yaml",
+  "description": "Apply a Kubernetes manifest file."
+}

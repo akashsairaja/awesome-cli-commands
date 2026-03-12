@@ -1,0 +1,8 @@
+{
+  "id": "podman-container-3",
+  "categoryId": "podman",
+  "subcategoryId": "podman-container",
+  "title": "Execute in container",
+  "command": "podman exec -it myapp /bin/bash",
+  "description": "Execute command in running container."
+}

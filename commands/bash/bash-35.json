@@ -1,0 +1,8 @@
+{
+  "id": "bash-35",
+  "categoryId": "bash",
+  "subcategoryId": "loops",
+  "title": "Until loop",
+  "command": "until [ -f file.txt ]; do sleep 1; done",
+  "description": "Loop until condition is true."
+}

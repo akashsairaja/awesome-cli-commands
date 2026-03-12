@@ -1,0 +1,8 @@
+{
+  "id": "claude-1",
+  "categoryId": "claudecode",
+  "subcategoryId": "general",
+  "title": "Start interactive mode",
+  "command": "claude",
+  "description": "Start Claude Code in interactive REPL mode."
+}

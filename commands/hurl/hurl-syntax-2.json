@@ -1,0 +1,8 @@
+{
+  "id": "hurl-syntax-2",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-syntax",
+  "title": "POST with JSON",
+  "command": "POST https://api.example.com/users\nContent-Type: application/json\n{\n  \"name\": \"John\",\n  \"email\": \"john@example.com\"\n}\nHTTP 201",
+  "description": "POST request with JSON body."
+}

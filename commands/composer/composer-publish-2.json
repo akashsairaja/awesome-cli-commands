@@ -1,0 +1,8 @@
+{
+  "id": "composer-publish-2",
+  "categoryId": "composer",
+  "subcategoryId": "composer-publish",
+  "title": "Init new project",
+  "command": "composer init",
+  "description": "Create a new composer.json interactively."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "deno-task",
+  "categoryId": "deno",
+  "subcategoryId": "deno-tasks",
+  "title": "Run Task",
+  "command": "deno task <name>",
+  "description": "Run a task defined in deno.json",
+  "tags": ["task", "run", "script"]
+}

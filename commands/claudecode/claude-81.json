@@ -1,0 +1,8 @@
+{
+  "id": "claude-81",
+  "categoryId": "claudecode",
+  "subcategoryId": "environment",
+  "title": "Disable auto-updates",
+  "command": "export DISABLE_AUTOUPDATER=1",
+  "description": "Prevent automatic updates."
+}

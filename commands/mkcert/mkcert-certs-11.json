@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-certs-11",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-certs",
+  "title": "PKCS#12 with custom name",
+  "command": "mkcert -pkcs12 -p12-file myapp.p12 localhost 127.0.0.1",
+  "description": "Generate PKCS#12 with a custom filename."
+}

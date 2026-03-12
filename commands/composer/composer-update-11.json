@@ -1,0 +1,8 @@
+{
+  "id": "composer-update-11",
+  "categoryId": "composer",
+  "subcategoryId": "composer-update",
+  "title": "Why not a version",
+  "command": "composer why-not vendor/package 3.0",
+  "description": "Show why a version cannot be installed."
+}

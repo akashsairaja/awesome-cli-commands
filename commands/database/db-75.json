@@ -1,0 +1,8 @@
+{
+  "id": "db-75",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Revoke privileges",
+  "command": "REVOKE INSERT, UPDATE ON mydb.* FROM 'appuser'@'localhost';",
+  "description": "Remove specific privileges from a user."
+}

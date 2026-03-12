@@ -1,0 +1,9 @@
+{
+  "id": "gradle-clean-build",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-build",
+  "title": "Clean and Build",
+  "command": "./gradlew clean build",
+  "description": "Clean then rebuild from scratch",
+  "tags": ["clean", "build", "fresh"]
+}

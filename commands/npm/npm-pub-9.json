@@ -1,0 +1,8 @@
+{
+  "id": "npm-pub-9",
+  "categoryId": "npm",
+  "subcategoryId": "npm-publish",
+  "title": "Unpublish version",
+  "command": "npm unpublish <package>@<version>",
+  "description": "Remove specific version (discouraged)."
+}

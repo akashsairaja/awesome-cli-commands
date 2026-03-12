@@ -1,0 +1,8 @@
+{
+  "id": "spark-13",
+  "categoryId": "spark",
+  "subcategoryId": "spark-shell",
+  "title": "Shell with custom master",
+  "command": "spark-shell --master spark://host:7077",
+  "description": "Connect shell to specific Spark master."
+}

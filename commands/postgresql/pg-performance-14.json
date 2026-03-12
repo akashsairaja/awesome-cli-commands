@@ -1,0 +1,8 @@
+{
+  "id": "pg-performance-14",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-performance",
+  "title": "Enable pg_stat_statements",
+  "command": "CREATE EXTENSION IF NOT EXISTS pg_stat_statements;",
+  "description": "Enable the pg_stat_statements extension for detailed query performance tracking."
+}

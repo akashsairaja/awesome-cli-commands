@@ -1,0 +1,8 @@
+{
+  "id": "podman-compose-1",
+  "categoryId": "podman",
+  "subcategoryId": "podman-compose",
+  "title": "Compose up",
+  "command": "podman compose up -d",
+  "description": "Start services from compose file."
+}

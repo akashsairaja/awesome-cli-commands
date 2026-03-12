@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-run-job-create",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-run",
+  "title": "Create Cloud Run Job",
+  "command": "gcloud run jobs create <job> --image=<image> --region=us-central1",
+  "description": "Create a Cloud Run job for batch processing",
+  "tags": ["run", "jobs", "create", "batch"]
+}

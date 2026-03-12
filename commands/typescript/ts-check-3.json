@@ -1,0 +1,8 @@
+{
+  "id": "ts-check-3",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-check",
+  "title": "Enable strict mode",
+  "command": "tsc --noEmit --strict",
+  "description": "Type check with all strict options enabled."
+}

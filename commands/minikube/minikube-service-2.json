@@ -1,0 +1,8 @@
+{
+  "id": "minikube-service-2",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-service",
+  "title": "Get service URL",
+  "command": "minikube service myapp --url",
+  "description": "Get service URL without opening browser."
+}

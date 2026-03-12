@@ -1,0 +1,8 @@
+{
+  "id": "playwright-a11y-4",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-a11y",
+  "title": "Auto-retry flaky tests",
+  "command": "npx playwright test --retries=2",
+  "description": "Retry failed tests automatically."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k8s-85",
+  "categoryId": "kubernetes",
+  "subcategoryId": "jobs",
+  "title": "List jobs",
+  "command": "kubectl get jobs",
+  "description": "List all jobs in namespace."
+}

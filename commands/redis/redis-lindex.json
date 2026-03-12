@@ -1,0 +1,9 @@
+{
+  "id": "redis-lindex",
+  "categoryId": "redis",
+  "subcategoryId": "redis-lists",
+  "title": "Get element by index",
+  "command": "LINDEX key index",
+  "description": "Get element at specific index",
+  "tags": ["lindex", "list", "index"]
+}

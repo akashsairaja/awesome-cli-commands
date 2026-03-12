@@ -1,0 +1,8 @@
+{
+  "id": "ssh-11",
+  "categoryId": "sshgpg",
+  "subcategoryId": "connections",
+  "title": "Connect with key file",
+  "command": "ssh -i key.pem user@host",
+  "description": "Connect using specific key."
+}

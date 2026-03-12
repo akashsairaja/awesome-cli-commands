@@ -1,0 +1,9 @@
+{
+  "id": "azure-func-list",
+  "categoryId": "azure",
+  "subcategoryId": "azure-functions",
+  "title": "List Function Apps",
+  "command": "az functionapp list --output table",
+  "description": "List all function apps in subscription",
+  "tags": ["functions", "list"]
+}

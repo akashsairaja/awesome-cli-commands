@@ -1,0 +1,8 @@
+{
+  "id": "trivy-fs-4",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-fs",
+  "title": "Exit code on findings",
+  "command": "trivy fs --exit-code 1 --severity HIGH,CRITICAL .",
+  "description": "Exit with code 1 if vulnerabilities found."
+}

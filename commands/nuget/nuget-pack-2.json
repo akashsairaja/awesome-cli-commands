@@ -1,0 +1,8 @@
+{
+  "id": "nuget-pack-2",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-pack",
+  "title": "Generate nuspec",
+  "command": "nuget spec MyProject.csproj",
+  "description": "Generate nuspec template from project."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "bash-57",
+  "categoryId": "bash",
+  "subcategoryId": "arrays",
+  "title": "Associative array",
+  "command": "declare -A hash; hash[key]=\"value\"",
+  "description": "Create key-value associative array."
+}

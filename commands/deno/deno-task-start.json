@@ -1,0 +1,9 @@
+{
+  "id": "deno-task-start",
+  "categoryId": "deno",
+  "subcategoryId": "deno-tasks",
+  "title": "Start Task",
+  "command": "deno task start",
+  "description": "Run the start task (commonly defined)",
+  "tags": ["task", "start", "production"]
+}

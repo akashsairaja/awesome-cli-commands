@@ -1,0 +1,9 @@
+{
+  "id": "ansible-galaxy-remove",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-galaxy",
+  "title": "Remove Role",
+  "command": "ansible-galaxy remove <namespace.role>",
+  "description": "Uninstall a role",
+  "tags": ["galaxy", "remove", "uninstall"]
+}

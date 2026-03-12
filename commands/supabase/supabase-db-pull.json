@@ -1,0 +1,9 @@
+{
+  "id": "supabase-db-pull",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-db",
+  "title": "Pull remote schema",
+  "command": "supabase db pull",
+  "description": "Pull schema changes from remote database",
+  "tags": ["db", "pull", "schema"]
+}

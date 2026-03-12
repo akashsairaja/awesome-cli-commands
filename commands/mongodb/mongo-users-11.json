@@ -1,0 +1,8 @@
+{
+  "id": "mongo-users-11",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-users",
+  "title": "Revoke roles from user",
+  "command": "db.revokeRolesFromUser(\"appuser\", [{ role: \"readWrite\", db: \"mydb\" }])",
+  "description": "Remove specific roles from an existing user."
+}

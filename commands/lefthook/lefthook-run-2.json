@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-run-2",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-run",
+  "title": "Run all hooks",
+  "command": "lefthook run --all-files pre-commit",
+  "description": "Run on all files, not just staged."
+}

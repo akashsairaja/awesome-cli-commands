@@ -1,0 +1,8 @@
+{
+  "id": "git-75",
+  "categoryId": "git",
+  "subcategoryId": "remote",
+  "title": "Prune remote branches",
+  "command": "git remote prune origin",
+  "description": "Remove stale remote tracking branches."
+}

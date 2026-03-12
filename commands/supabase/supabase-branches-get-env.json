@@ -1,0 +1,9 @@
+{
+  "id": "supabase-branches-get-env",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-branches",
+  "title": "Export branch credentials",
+  "command": "supabase branches get <name> -o env",
+  "description": "Export branch credentials as env vars",
+  "tags": ["branches", "credentials", "env"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "hurl-run-2",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-run",
+  "title": "Run in test mode",
+  "command": "hurl --test api.hurl",
+  "description": "Run with test output format."
+}

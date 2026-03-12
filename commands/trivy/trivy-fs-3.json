@@ -1,0 +1,8 @@
+{
+  "id": "trivy-fs-3",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-fs",
+  "title": "Scan lock files",
+  "command": "trivy fs --scanners vuln package-lock.json",
+  "description": "Scan specific lock file."
+}

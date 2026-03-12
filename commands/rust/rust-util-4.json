@@ -1,0 +1,8 @@
+{
+  "id": "rust-util-4",
+  "categoryId": "rust",
+  "subcategoryId": "rust-util",
+  "title": "Search crates",
+  "command": "cargo search serde",
+  "description": "Search crates.io for packages."
+}

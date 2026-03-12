@@ -1,0 +1,8 @@
+{
+  "id": "httpie-output-22",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-output",
+  "title": "Compressed request",
+  "command": "http --compress POST https://api.example.com/data name=value",
+  "description": "Compress the request body with Content-Encoding: deflate."
+}

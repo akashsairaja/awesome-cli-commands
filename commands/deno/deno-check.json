@@ -1,0 +1,9 @@
+{
+  "id": "deno-check",
+  "categoryId": "deno",
+  "subcategoryId": "deno-fmt",
+  "title": "Type Check",
+  "command": "deno check script.ts",
+  "description": "Type check without running",
+  "tags": ["check", "types", "typescript"]
+}

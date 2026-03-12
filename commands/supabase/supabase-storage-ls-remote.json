@@ -1,0 +1,9 @@
+{
+  "id": "supabase-storage-ls-remote",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-storage",
+  "title": "List remote storage objects",
+  "command": "supabase storage ls --linked",
+  "description": "List remote storage objects",
+  "tags": ["storage", "list", "remote"]
+}

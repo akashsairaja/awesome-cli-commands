@@ -1,0 +1,8 @@
+{
+  "id": "kafka-group-4",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-groups",
+  "title": "Reset offset to latest",
+  "command": "kafka-consumer-groups.sh --group my-group --topic my-topic --reset-offsets --to-latest --execute --bootstrap-server localhost:9092",
+  "description": "Reset group offset to end."
+}

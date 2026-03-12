@@ -1,0 +1,8 @@
+{
+  "id": "linux-22",
+  "categoryId": "linux",
+  "subcategoryId": "ssh",
+  "title": "SSH tunnel (local port forward)",
+  "command": "ssh -L 8080:localhost:80 user@remote",
+  "description": "Forward local port 8080 to remote's localhost:80."
+}

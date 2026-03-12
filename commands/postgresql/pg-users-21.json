@@ -1,0 +1,8 @@
+{
+  "id": "pg-users-21",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-users",
+  "title": "Show default privileges",
+  "command": "\\ddp",
+  "description": "Display default access privileges configured with ALTER DEFAULT PRIVILEGES."
+}

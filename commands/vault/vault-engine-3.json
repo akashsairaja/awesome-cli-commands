@@ -1,0 +1,8 @@
+{
+  "id": "vault-engine-3",
+  "categoryId": "vault",
+  "subcategoryId": "vault-engine",
+  "title": "Enable transit",
+  "command": "vault secrets enable transit",
+  "description": "Enable transit encryption engine."
+}

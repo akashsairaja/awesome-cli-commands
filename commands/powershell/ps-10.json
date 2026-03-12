@@ -1,0 +1,8 @@
+{
+  "id": "ps-10",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-files",
+  "title": "Find files by pattern",
+  "command": "Get-ChildItem -Recurse -Include *.log",
+  "description": "Find files matching pattern."
+}

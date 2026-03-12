@@ -1,0 +1,8 @@
+{
+  "id": "docker-8",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Run with memory limit",
+  "command": "docker run -d --memory=512m <image>",
+  "description": "Limit container memory to 512MB."
+}

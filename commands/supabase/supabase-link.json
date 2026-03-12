@@ -1,0 +1,9 @@
+{
+  "id": "supabase-link",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-db",
+  "title": "Link to project",
+  "command": "supabase link --project-ref <ref>",
+  "description": "Link local project to remote Supabase project",
+  "tags": ["link", "connect", "project"]
+}

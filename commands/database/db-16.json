@@ -1,0 +1,8 @@
+{
+  "id": "db-16",
+  "categoryId": "database",
+  "subcategoryId": "mongodb",
+  "title": "Connect to MongoDB",
+  "command": "mongosh 'mongodb://localhost:27017/dbname'",
+  "description": "Connect to MongoDB using mongosh."
+}

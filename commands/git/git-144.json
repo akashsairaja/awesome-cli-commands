@@ -1,0 +1,8 @@
+{
+  "id": "git-144",
+  "categoryId": "git",
+  "subcategoryId": "git-config",
+  "title": "Set GPG signing key",
+  "command": "git config --global user.signingkey <key-id>",
+  "description": "Configure GPG key for signing."
+}

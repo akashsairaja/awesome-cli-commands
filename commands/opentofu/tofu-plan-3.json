@@ -1,0 +1,8 @@
+{
+  "id": "tofu-plan-3",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-plan",
+  "title": "Plan with variables",
+  "command": "tofu plan -var 'region=us-west-2'",
+  "description": "Plan with variable override."
+}

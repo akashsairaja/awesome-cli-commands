@@ -1,0 +1,8 @@
+{
+  "id": "kafka-connect-9",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-connect",
+  "title": "Check connector status",
+  "command": "curl http://localhost:8083/connectors/<name>/status",
+  "description": "Check status of specific connector."
+}

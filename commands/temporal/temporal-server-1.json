@@ -1,0 +1,8 @@
+{
+  "id": "temporal-server-1",
+  "categoryId": "temporal",
+  "subcategoryId": "server",
+  "title": "Start dev server",
+  "command": "temporal server start-dev",
+  "description": "Start local Temporal server with Web UI at localhost:8233."
+}

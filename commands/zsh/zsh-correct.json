@@ -1,0 +1,9 @@
+{
+  "id": "zsh-correct",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-config",
+  "title": "Enable correction",
+  "command": "setopt CORRECT",
+  "description": "Enable command spelling correction",
+  "tags": ["correct", "spelling", "typo"]
+}

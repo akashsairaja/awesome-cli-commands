@@ -1,0 +1,9 @@
+{
+  "id": "rg-files-without",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-files",
+  "title": "List non-matching files",
+  "command": "rg --files-without-match \"pattern\"",
+  "description": "List files without matches",
+  "tags": ["files", "without", "exclude"]
+}

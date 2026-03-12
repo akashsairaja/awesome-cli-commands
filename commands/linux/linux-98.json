@@ -1,0 +1,8 @@
+{
+  "id": "linux-98",
+  "categoryId": "linux",
+  "subcategoryId": "processes",
+  "title": "Process tree view",
+  "command": "htop -t",
+  "description": "Launch htop with tree view showing process hierarchy (modern top)."
+}

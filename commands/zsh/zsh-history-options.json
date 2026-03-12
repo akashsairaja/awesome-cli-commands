@@ -1,0 +1,9 @@
+{
+  "id": "zsh-history-options",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-config",
+  "title": "Better history options",
+  "command": "setopt SHARE_HISTORY HIST_IGNORE_DUPS HIST_IGNORE_SPACE",
+  "description": "Enable useful history options",
+  "tags": ["history", "options", "share"]
+}

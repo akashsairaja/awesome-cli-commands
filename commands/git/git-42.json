@@ -1,0 +1,8 @@
+{
+  "id": "git-42",
+  "categoryId": "git",
+  "subcategoryId": "branches",
+  "title": "Abort merge",
+  "command": "git merge --abort",
+  "description": "Abort conflicting merge."
+}

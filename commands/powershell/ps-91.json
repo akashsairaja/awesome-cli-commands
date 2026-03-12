@@ -1,0 +1,8 @@
+{
+  "id": "ps-91",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-remoting",
+  "title": "Parallel execution",
+  "command": "Invoke-Command -ComputerName $servers -ScriptBlock { } -ThrottleLimit 10",
+  "description": "Run in parallel with throttle."
+}

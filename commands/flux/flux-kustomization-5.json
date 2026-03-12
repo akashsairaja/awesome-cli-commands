@@ -1,0 +1,8 @@
+{
+  "id": "flux-kustomization-5",
+  "categoryId": "flux",
+  "subcategoryId": "flux-kustomization",
+  "title": "Resume Kustomization",
+  "command": "flux resume kustomization podinfo",
+  "description": "Resume reconciliation of a Kustomization."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "prisma-init",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-generate",
+  "title": "Initialize Prisma",
+  "command": "npx prisma init",
+  "description": "Initialize Prisma in current project",
+  "tags": ["init", "initialize", "setup"]
+}

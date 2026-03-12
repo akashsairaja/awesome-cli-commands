@@ -1,0 +1,8 @@
+{
+  "id": "tf-mod-3",
+  "categoryId": "terraform",
+  "subcategoryId": "modules",
+  "title": "Check formatting",
+  "command": "terraform fmt -check",
+  "description": "Check if files are formatted (CI/CD)."
+}

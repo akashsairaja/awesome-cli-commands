@@ -1,0 +1,8 @@
+{
+  "id": "checkov-scan-6",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-scan",
+  "title": "Scan Helm chart",
+  "command": "checkov -d ./charts --framework helm",
+  "description": "Scan Helm charts."
+}

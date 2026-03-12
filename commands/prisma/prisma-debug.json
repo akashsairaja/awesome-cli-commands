@@ -1,0 +1,9 @@
+{
+  "id": "prisma-debug",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-studio",
+  "title": "Debug Prisma commands",
+  "command": "DEBUG='*' npx prisma generate",
+  "description": "Run any Prisma command with full debug logging output",
+  "tags": ["debug", "logging", "troubleshoot"]
+}

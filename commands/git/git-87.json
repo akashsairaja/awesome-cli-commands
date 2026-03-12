@@ -1,0 +1,8 @@
+{
+  "id": "git-87",
+  "categoryId": "git",
+  "subcategoryId": "history",
+  "title": "Log by author",
+  "command": "git log --author=\"name\"",
+  "description": "Show commits by specific author."
+}

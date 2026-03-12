@@ -1,0 +1,8 @@
+{
+  "id": "temporal-schedule-12",
+  "categoryId": "temporal",
+  "subcategoryId": "schedule",
+  "title": "Backfill schedule",
+  "command": "temporal schedule backfill --schedule-id my-schedule --start-time '2024-01-01T00:00:00Z' --end-time '2024-01-31T23:59:59Z'",
+  "description": "Execute missed runs for a time period."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "rg-type-not",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-files",
+  "title": "Exclude file type",
+  "command": "rg -T js \"pattern\"",
+  "description": "Exclude JavaScript files from search",
+  "tags": ["type", "exclude", "filter"]
+}

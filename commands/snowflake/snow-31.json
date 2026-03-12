@@ -1,0 +1,8 @@
+{
+  "id": "snow-31",
+  "categoryId": "snowflake",
+  "subcategoryId": "snowflake-cortex",
+  "title": "Summarize text (SQL)",
+  "command": "snow sql -q \"SELECT SNOWFLAKE.CORTEX.SUMMARIZE(content_column) FROM docs\"",
+  "description": "Summarize text content using Cortex."
+}

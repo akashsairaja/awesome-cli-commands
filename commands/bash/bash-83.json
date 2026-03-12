@@ -1,0 +1,8 @@
+{
+  "id": "bash-83",
+  "categoryId": "bash",
+  "subcategoryId": "conditionals",
+  "title": "Case statement",
+  "command": "case \"$var\" in a) echo \"A\";; b|c) echo \"B or C\";; *) echo \"other\";; esac",
+  "description": "Pattern-based case switching."
+}

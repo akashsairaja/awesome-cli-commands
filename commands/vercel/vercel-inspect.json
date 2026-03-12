@@ -1,0 +1,9 @@
+{
+  "id": "vercel-inspect",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-deploy",
+  "title": "Inspect deployment",
+  "command": "vercel inspect <url>",
+  "description": "Inspect the details of a deployment",
+  "tags": ["inspect", "details", "info"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "podman-gs-1",
+  "title": "Install Podman (macOS)",
+  "command": "brew install podman",
+  "description": "Install Podman using Homebrew on macOS",
+  "categoryId": "podman",
+  "subcategoryId": "getting-started"
+}

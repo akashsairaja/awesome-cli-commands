@@ -1,0 +1,8 @@
+{
+  "id": "nats-kv-5",
+  "categoryId": "nats",
+  "subcategoryId": "nats-kv",
+  "title": "Create (exclusive)",
+  "command": "nats kv create my-kv lock-key 'locked'",
+  "description": "Create key only if not exists (semaphore pattern)."
+}

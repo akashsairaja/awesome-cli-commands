@@ -1,0 +1,8 @@
+{
+  "id": "react-rn-2",
+  "categoryId": "react",
+  "subcategoryId": "react-native",
+  "title": "Start Metro bundler",
+  "command": "npx react-native start",
+  "description": "Start Metro bundler (default port 8081)."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "bun-build-compile",
+  "categoryId": "bun",
+  "subcategoryId": "bun-build",
+  "title": "Compile to Binary",
+  "command": "bun build --compile ./src/index.ts",
+  "description": "Create standalone executable",
+  "tags": ["build", "compile", "binary"]
+}

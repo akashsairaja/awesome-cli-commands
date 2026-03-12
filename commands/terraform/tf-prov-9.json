@@ -1,0 +1,8 @@
+{
+  "id": "tf-prov-9",
+  "categoryId": "terraform",
+  "subcategoryId": "providers",
+  "title": "Destroy auto-approve",
+  "command": "terraform destroy -auto-approve",
+  "description": "Destroy without confirmation."
+}

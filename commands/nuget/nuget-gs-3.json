@@ -1,0 +1,8 @@
+{
+  "id": "nuget-gs-3",
+  "title": "Check .NET CLI version",
+  "command": "dotnet --version",
+  "description": "Verify the .NET CLI is installed for dotnet nuget commands",
+  "categoryId": "nuget",
+  "subcategoryId": "getting-started"
+}

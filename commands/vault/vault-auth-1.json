@@ -1,0 +1,8 @@
+{
+  "id": "vault-auth-1",
+  "categoryId": "vault",
+  "subcategoryId": "vault-auth",
+  "title": "Login with token",
+  "command": "vault login hvs.xxxxx",
+  "description": "Authenticate using a Vault token."
+}

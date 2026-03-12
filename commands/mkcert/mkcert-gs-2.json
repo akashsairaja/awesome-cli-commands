@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-gs-2",
+  "title": "Install local CA",
+  "command": "mkcert -install",
+  "description": "Install the local certificate authority into your system trust store",
+  "categoryId": "mkcert",
+  "subcategoryId": "getting-started"
+}

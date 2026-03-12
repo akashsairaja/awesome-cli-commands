@@ -1,0 +1,8 @@
+{
+  "id": "cypress-debug-4",
+  "categoryId": "cypress",
+  "subcategoryId": "cypress-debug",
+  "title": "Print subject",
+  "command": "cy.get('input').then(($el) => { console.log($el); });",
+  "description": "Log element to console."
+}

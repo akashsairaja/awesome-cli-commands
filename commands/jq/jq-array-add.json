@@ -1,0 +1,9 @@
+{
+  "id": "jq-array-add",
+  "categoryId": "jq",
+  "subcategoryId": "jq-arrays",
+  "title": "Add to array",
+  "command": "cat file.json | jq '. + [\"new\"]'",
+  "description": "Add element to array",
+  "tags": ["array", "add", "append"]
+}

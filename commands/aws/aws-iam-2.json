@@ -1,0 +1,8 @@
+{
+  "id": "aws-iam-2",
+  "categoryId": "aws",
+  "subcategoryId": "iam",
+  "title": "List users",
+  "command": "aws iam list-users --output table",
+  "description": "List all IAM users."
+}

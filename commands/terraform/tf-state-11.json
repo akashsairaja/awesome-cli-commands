@@ -1,0 +1,8 @@
+{
+  "id": "tf-state-11",
+  "categoryId": "terraform",
+  "subcategoryId": "state",
+  "title": "Push state",
+  "command": "terraform state push state.json",
+  "description": "Upload local state to remote backend."
+}

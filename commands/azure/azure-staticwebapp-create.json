@@ -1,0 +1,9 @@
+{
+  "id": "azure-staticwebapp-create",
+  "categoryId": "azure",
+  "subcategoryId": "azure-staticwebapp",
+  "title": "Create Static Web App",
+  "command": "az staticwebapp create -n mysite -g rg --source https://github.com/user/repo",
+  "description": "Create a static web app from GitHub repository",
+  "tags": ["staticwebapp", "create", "github"]
+}

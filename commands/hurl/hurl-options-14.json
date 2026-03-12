@@ -1,0 +1,8 @@
+{
+  "id": "hurl-options-14",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-options",
+  "title": "TAP report",
+  "command": "hurl --test --report-tap results.tap api.hurl",
+  "description": "Generate TAP format report."
+}

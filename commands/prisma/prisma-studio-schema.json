@@ -1,0 +1,9 @@
+{
+  "id": "prisma-studio-schema",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-studio",
+  "title": "Studio with custom schema",
+  "command": "npx prisma studio --schema ./custom/schema.prisma",
+  "description": "Open Prisma Studio using a schema file at a non-default path",
+  "tags": ["studio", "schema", "custom"]
+}

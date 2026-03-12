@@ -1,0 +1,8 @@
+{
+  "id": "ts-gs-1",
+  "title": "Install TypeScript globally",
+  "command": "npm install -g typescript",
+  "description": "Install the TypeScript compiler globally via npm",
+  "categoryId": "typescript",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "py-4",
+  "categoryId": "python",
+  "subcategoryId": "python-pip",
+  "title": "Install editable",
+  "command": "pip install -e .",
+  "description": "Install package in editable/development mode."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "py-91",
+  "categoryId": "python",
+  "subcategoryId": "python-pytest",
+  "title": "Run with verbose",
+  "command": "pytest -v",
+  "description": "Run tests with verbose output."
+}

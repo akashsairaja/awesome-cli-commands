@@ -1,0 +1,8 @@
+{
+  "id": "checkov-scan-3",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-scan",
+  "title": "Scan Terraform",
+  "command": "checkov -d . --framework terraform",
+  "description": "Scan Terraform files only."
+}

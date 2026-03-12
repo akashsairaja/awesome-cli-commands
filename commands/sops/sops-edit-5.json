@@ -1,0 +1,8 @@
+{
+  "id": "sops-edit-5",
+  "categoryId": "sops",
+  "subcategoryId": "sops-edit",
+  "title": "Edit with VS Code",
+  "command": "EDITOR='code --wait' sops secrets.enc.yaml",
+  "description": "Edit using VS Code as editor."
+}

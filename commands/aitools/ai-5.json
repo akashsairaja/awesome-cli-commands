@@ -1,0 +1,8 @@
+{
+  "id": "ai-5",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-codex",
+  "title": "Set approval mode",
+  "command": "codex --approval-mode suggest",
+  "description": "Set approval mode (suggest, auto-edit, full-auto)."
+}

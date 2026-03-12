@@ -1,0 +1,8 @@
+{
+  "id": "rust-build-4",
+  "categoryId": "rust",
+  "subcategoryId": "rust-build",
+  "title": "Run project",
+  "command": "cargo run",
+  "description": "Build and run the binary."
+}

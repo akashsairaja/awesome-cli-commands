@@ -1,0 +1,9 @@
+{
+  "id": "redis-xgroup-setid",
+  "categoryId": "redis",
+  "subcategoryId": "redis-streams",
+  "title": "Reset consumer group",
+  "command": "XGROUP SETID stream group $ ENTRIESREAD 0",
+  "description": "Reset consumer group position to start or specific entry",
+  "tags": ["xgroup", "stream", "consumer", "reset"]
+}

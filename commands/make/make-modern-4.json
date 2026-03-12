@@ -1,0 +1,8 @@
+{
+  "id": "make-modern-4",
+  "categoryId": "make",
+  "subcategoryId": "make-modern",
+  "title": "Version from git",
+  "command": "VERSION := $(shell git describe --tags --always)",
+  "description": "Get version from git tags."
+}

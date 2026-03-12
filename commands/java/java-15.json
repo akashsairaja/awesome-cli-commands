@@ -1,0 +1,8 @@
+{
+  "id": "java-15",
+  "categoryId": "java",
+  "subcategoryId": "java-runtime",
+  "title": "Set system property",
+  "command": "java -Dconfig.file=/path/to/config.yml MyApp",
+  "description": "Pass system property to the application."
+}

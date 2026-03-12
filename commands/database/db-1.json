@@ -1,0 +1,8 @@
+{
+  "id": "db-1",
+  "categoryId": "database",
+  "subcategoryId": "postgresql",
+  "title": "Connect to PostgreSQL",
+  "command": "psql -h localhost -U postgres -d dbname",
+  "description": "Connect to PostgreSQL database."
+}

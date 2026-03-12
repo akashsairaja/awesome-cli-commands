@@ -1,0 +1,8 @@
+{
+  "id": "make-modern-7",
+  "categoryId": "make",
+  "subcategoryId": "make-modern",
+  "title": "Environment file",
+  "command": "include .env\nexport",
+  "description": "Load environment from .env file."
+}

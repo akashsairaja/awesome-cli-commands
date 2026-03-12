@@ -1,0 +1,8 @@
+{
+  "id": "kafka-prod-4",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-producer",
+  "title": "Produce with acks",
+  "command": "kafka-console-producer.sh --topic my-topic --bootstrap-server localhost:9092 --producer-property acks=all",
+  "description": "Produce with all replicas acknowledgment."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "xh-auth-4",
+  "categoryId": "xh",
+  "subcategoryId": "xh-auth",
+  "title": "Digest Auth",
+  "command": "xh -A digest -a user:pass GET https://api.example.com/protected",
+  "description": "Use HTTP Digest Authentication."
+}

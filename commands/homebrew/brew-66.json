@@ -1,0 +1,8 @@
+{
+  "id": "brew-66",
+  "categoryId": "homebrew",
+  "subcategoryId": "bundle",
+  "title": "Dump with describe",
+  "command": "brew bundle dump --describe",
+  "description": "Add comments describing each package."
+}

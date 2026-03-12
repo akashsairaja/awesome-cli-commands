@@ -1,0 +1,8 @@
+{
+  "id": "starship-gs-1",
+  "title": "Install Starship (macOS)",
+  "command": "brew install starship",
+  "description": "Install Starship prompt using Homebrew on macOS",
+  "categoryId": "starship",
+  "subcategoryId": "getting-started"
+}

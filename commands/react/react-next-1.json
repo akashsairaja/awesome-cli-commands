@@ -1,0 +1,8 @@
+{
+  "id": "react-next-1",
+  "categoryId": "react",
+  "subcategoryId": "react-nextjs",
+  "title": "Create Next.js app",
+  "command": "npx create-next-app@latest my-app --typescript --tailwind --app",
+  "description": "Create Next.js project with TypeScript and Tailwind."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "bash-29",
+  "categoryId": "bash",
+  "subcategoryId": "variables",
+  "title": "Background PID",
+  "command": "echo $!",
+  "description": "Get PID of last background job."
+}

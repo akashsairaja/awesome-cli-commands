@@ -1,0 +1,8 @@
+{
+  "id": "linux-7",
+  "categoryId": "linux",
+  "subcategoryId": "processes",
+  "title": "Find and kill process by port",
+  "command": "lsof -ti:3000 | xargs kill -9",
+  "description": "Find process using port 3000 and force kill it."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "supabase-test-seed",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-test",
+  "title": "Reset and seed database",
+  "command": "supabase db reset --seed",
+  "description": "Reset database and run seed file",
+  "tags": ["test", "seed", "reset"]
+}

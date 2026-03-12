@@ -1,0 +1,9 @@
+{
+  "id": "rg-follow",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-files",
+  "title": "Follow symlinks",
+  "command": "rg -L \"pattern\"",
+  "description": "Follow symbolic links",
+  "tags": ["symlinks", "follow", "links"]
+}

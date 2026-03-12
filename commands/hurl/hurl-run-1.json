@@ -1,0 +1,8 @@
+{
+  "id": "hurl-run-1",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-run",
+  "title": "Run Hurl file",
+  "command": "hurl api.hurl",
+  "description": "Execute requests in Hurl file."
+}

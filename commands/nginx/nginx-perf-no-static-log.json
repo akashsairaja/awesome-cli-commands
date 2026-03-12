@@ -1,0 +1,9 @@
+{
+  "id": "nginx-perf-no-static-log",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-performance",
+  "title": "Disable logging for static files",
+  "command": "location ~* \\.(jpg|css|js|ico)$ { access_log off; log_not_found off; }",
+  "description": "Reduce I/O by skipping static file logs",
+  "tags": ["performance", "logging", "static", "io"]
+}

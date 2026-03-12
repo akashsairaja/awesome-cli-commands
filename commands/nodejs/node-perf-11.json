@@ -1,0 +1,8 @@
+{
+  "id": "node-perf-11",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-perf",
+  "title": "Heap profile interval",
+  "command": "node --heap-prof --heap-prof-interval=512 app.js",
+  "description": "Set heap profiling sample interval (bytes)."
+}

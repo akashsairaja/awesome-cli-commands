@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-connect-6",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-connect",
+  "title": "Advertise subnet routes",
+  "command": "tailscale up --advertise-routes=192.168.1.0/24",
+  "description": "Act as subnet router for a CIDR range."
+}

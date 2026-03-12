@@ -1,0 +1,9 @@
+{
+  "id": "bun-remove",
+  "categoryId": "bun",
+  "subcategoryId": "bun-package",
+  "title": "Remove Package",
+  "command": "bun remove <package>",
+  "description": "Uninstall a package",
+  "tags": ["remove", "uninstall", "delete"]
+}

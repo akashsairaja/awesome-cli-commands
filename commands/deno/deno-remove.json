@@ -1,0 +1,9 @@
+{
+  "id": "deno-remove",
+  "categoryId": "deno",
+  "subcategoryId": "deno-package",
+  "title": "Remove Package",
+  "command": "deno remove @std/http",
+  "description": "Remove a package from deno.json",
+  "tags": ["remove", "uninstall", "package"]
+}

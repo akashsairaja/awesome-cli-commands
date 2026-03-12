@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-sql-import",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-sql",
+  "title": "Import SQL Dump",
+  "command": "gcloud sql import sql <instance> gs://<bucket>/<file.sql> --database=<db-name>",
+  "description": "Import a SQL dump from Cloud Storage into a database",
+  "tags": ["sql", "import", "restore"]
+}

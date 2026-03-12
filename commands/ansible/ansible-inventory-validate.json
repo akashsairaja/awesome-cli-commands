@@ -1,0 +1,9 @@
+{
+  "id": "ansible-inventory-validate",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-inventory",
+  "title": "Validate Inventory",
+  "command": "ansible-inventory -i inventory.yml --list",
+  "description": "Validate inventory file syntax",
+  "tags": ["inventory", "validate", "check"]
+}

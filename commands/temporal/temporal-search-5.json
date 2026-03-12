@@ -1,0 +1,8 @@
+{
+  "id": "temporal-search-5",
+  "categoryId": "temporal",
+  "subcategoryId": "search-attribute",
+  "title": "Create KeywordList attribute",
+  "command": "temporal operator search-attribute create --name Tags --type KeywordList",
+  "description": "Create multi-value keyword attribute."
+}

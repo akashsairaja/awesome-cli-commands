@@ -1,0 +1,9 @@
+{
+  "id": "vercel-logout",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-projects",
+  "title": "Logout from Vercel",
+  "command": "vercel logout",
+  "description": "Logout from Vercel",
+  "tags": ["logout", "auth"]
+}

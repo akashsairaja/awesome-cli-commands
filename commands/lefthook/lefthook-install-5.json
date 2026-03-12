@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-install-5",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-install",
+  "title": "Install via Go",
+  "command": "go install github.com/evilmartians/lefthook@latest",
+  "description": "Install Lefthook via Go toolchain."
+}

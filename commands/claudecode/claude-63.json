@@ -1,0 +1,8 @@
+{
+  "id": "claude-63",
+  "categoryId": "claudecode",
+  "subcategoryId": "agents",
+  "title": "Move task to background",
+  "command": "Ctrl+B",
+  "description": "Move running task to background."
+}

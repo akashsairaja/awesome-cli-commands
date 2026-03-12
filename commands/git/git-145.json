@@ -1,0 +1,8 @@
+{
+  "id": "git-145",
+  "categoryId": "git",
+  "subcategoryId": "git-config",
+  "title": "Enable auto signing",
+  "command": "git config --global commit.gpgsign true",
+  "description": "Auto-sign all commits with GPG."
+}

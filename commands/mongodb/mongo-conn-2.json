@@ -1,0 +1,8 @@
+{
+  "id": "mongo-conn-2",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-connection",
+  "title": "Connect with auth",
+  "command": "mongosh mongodb://user:pass@localhost:27017/mydb",
+  "description": "Connect with authentication."
+}

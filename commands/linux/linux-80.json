@@ -1,0 +1,8 @@
+{
+  "id": "linux-80",
+  "categoryId": "linux",
+  "subcategoryId": "ssh",
+  "title": "SSH with agent forwarding",
+  "command": "ssh -A user@bastion",
+  "description": "Forward local SSH agent to the remote host for key-based access to other servers."
+}

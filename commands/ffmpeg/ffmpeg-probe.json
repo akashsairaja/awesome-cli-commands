@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-probe",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-streaming",
+  "title": "Show file info",
+  "command": "ffprobe -v quiet -print_format json -show_format -show_streams input.mp4",
+  "description": "Show detailed media file information",
+  "tags": ["probe", "info", "metadata"]
+}

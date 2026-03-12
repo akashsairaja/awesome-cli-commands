@@ -1,0 +1,8 @@
+{
+  "id": "tsx-6",
+  "categoryId": "typescript",
+  "subcategoryId": "tsx",
+  "title": "tsx with env file",
+  "command": "tsx --env-file=.env src/index.ts",
+  "description": "Load environment variables from file."
+}

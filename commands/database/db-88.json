@@ -1,0 +1,8 @@
+{
+  "id": "db-88",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Flush binary logs",
+  "command": "FLUSH BINARY LOGS;",
+  "description": "Close current binary log and open a new one. Used in replication management."
+}

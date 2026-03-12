@@ -1,0 +1,9 @@
+{
+  "id": "zsh-unset-option",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-config",
+  "title": "Disable option",
+  "command": "unsetopt AUTO_CD",
+  "description": "Disable a zsh option",
+  "tags": ["option", "disable", "unset"]
+}

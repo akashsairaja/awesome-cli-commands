@@ -1,0 +1,62 @@
+{
+  "id": "redis-monitoring",
+  "stackId": "redis",
+  "name": "Monitor Redis with INFO, SLOWLOG, and Latency",
+  "description": "Track Redis health, performance bottlenecks, and slow commands using built-in diagnostic tools for production observability.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "tags": ["monitoring", "performance", "slowlog", "diagnostics"],
+  "prerequisites": ["Redis installed and running", "redis-cli available"],
+  "steps": [
+    {
+      "title": "Get a full server overview",
+      "description": "Retrieve comprehensive server stats including memory, clients, and keyspace.",
+      "command": "redis-cli INFO",
+      "tip": "Use 'redis-cli INFO memory' or 'redis-cli INFO stats' to filter to a specific section."
+    },
+    {
+      "title": "Check memory usage breakdown",
+      "description": "Inspect detailed memory allocation and fragmentation ratio.",
+      "command": "redis-cli INFO memory"
+    },
+    {
+      "title": "Review slow commands",
+      "description": "List the most recent commands that exceeded the slow log threshold.",
+      "command": "redis-cli SLOWLOG GET 10",
+      "tip": "Default threshold is 10ms. Lower it with 'CONFIG SET slowlog-log-slower-than 5000' (microseconds)."
+    },
+    {
+      "title": "Enable latency monitoring",
+      "description": "Activate the latency monitor to track spikes over time.",
+      "command": "redis-cli CONFIG SET latency-monitor-threshold 5"
+    },
+    {
+      "title": "View latency history",
+      "description": "Display recorded latency events and their timestamps.",
+      "command": "redis-cli LATENCY LATEST"
+    },
+    {
+      "title": "Monitor commands in real time",
+      "description": "Stream all commands being processed by Redis for live debugging.",
+      "command": "redis-cli MONITOR",
+      "warning": "MONITOR adds overhead and outputs every command. Use briefly for debugging and never in production for extended periods."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Redis Monitoring Dashboard\nset -euo pipefail\n\necho \"=== Server Overview ===\"\nredis-cli INFO server | grep -E \"redis_version|uptime_in_days|connected_clients\"\n\necho \"\"\necho \"=== Memory ===\"\nredis-cli INFO memory | grep -E \"used_memory_human|used_memory_peak_human|mem_fragmentation_ratio\"\n\necho \"\"\necho \"=== Stats ===\"\nredis-cli INFO stats | grep -E \"total_commands_processed|keyspace_hits|keyspace_misses|expired_keys|evicted_keys\"\n\nHITS=$(redis-cli INFO stats | grep keyspace_hits | cut -d: -f2 | tr -d '\\r')\nMISSES=$(redis-cli INFO stats | grep keyspace_misses | cut -d: -f2 | tr -d '\\r')\nif [ \"$((HITS + MISSES))\" -gt 0 ]; then\n  echo \"Cache hit rate: $(echo \"scale=2; $HITS * 100 / ($HITS + $MISSES)\" | bc)%\"\nfi\n\necho \"\"\necho \"=== Slow Log (last 5) ===\"\nredis-cli SLOWLOG GET 5\n\necho \"\"\necho \"=== Latency ===\"\nredis-cli LATENCY LATEST\n\necho \"\"\necho \"=== Connected Clients ===\"\nredis-cli CLIENT LIST | wc -l\necho \"total connections\"\n\necho \"\"\necho \"=== Keyspace ===\"\nredis-cli INFO keyspace",
+  "faq": [
+    {
+      "question": "What is a healthy memory fragmentation ratio?",
+      "answer": "A ratio between 1.0 and 1.5 is normal. Above 1.5 means significant fragmentation and wasted memory. Below 1.0 means Redis is using swap, which severely impacts performance."
+    },
+    {
+      "question": "How do I reduce the number of slow log entries?",
+      "answer": "Identify patterns in SLOWLOG GET output. Common fixes include adding indexes, avoiding O(N) commands like KEYS or SMEMBERS on large sets, and using SCAN instead of KEYS."
+    },
+    {
+      "question": "Can I export Redis metrics to Prometheus?",
+      "answer": "Yes, use the redis_exporter project (oliver006/redis_exporter). It scrapes INFO and exposes metrics at a /metrics endpoint that Prometheus can scrape."
+    }
+  ],
+  "relatedRecipes": ["redis-cache-setup", "redis-lua-scripting"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "rust-quality-7",
+  "categoryId": "rust",
+  "subcategoryId": "rust-quality",
+  "title": "Security audit",
+  "command": "cargo audit",
+  "description": "Check for known vulnerabilities."
+}

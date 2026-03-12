@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-tcp-3",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-tcp",
+  "title": "TCP to localhost database",
+  "command": "ngrok tcp 5432",
+  "description": "Expose PostgreSQL for remote access."
+}

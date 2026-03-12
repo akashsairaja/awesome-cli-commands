@@ -1,0 +1,8 @@
+{
+  "id": "linux-86",
+  "categoryId": "linux",
+  "subcategoryId": "systemd",
+  "title": "Security analysis of service",
+  "command": "systemd-analyze security <service>",
+  "description": "Analyze security and sandboxing settings of a systemd service unit."
+}

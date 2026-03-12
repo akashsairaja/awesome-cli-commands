@@ -1,0 +1,8 @@
+{
+  "id": "cypress-cloud-1",
+  "categoryId": "cypress",
+  "subcategoryId": "cypress-cloud",
+  "title": "Record to Cloud",
+  "command": "npx cypress run --record --key $CYPRESS_RECORD_KEY",
+  "description": "Record test results to Cloud."
+}

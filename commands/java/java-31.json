@@ -1,0 +1,8 @@
+{
+  "id": "java-31",
+  "categoryId": "java",
+  "subcategoryId": "java-tools",
+  "title": "Optimized runtime image",
+  "command": "jlink --strip-debug --compress=2 --no-header-files --no-man-pages --add-modules java.base --output minimal-jre",
+  "description": "Create minimal runtime with optimizations (~25MB)."
+}

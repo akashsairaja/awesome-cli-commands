@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-storage-cp",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-storage",
+  "title": "Copy Files",
+  "command": "gsutil cp <local-file> gs://<bucket>/<path>",
+  "description": "Copy files to/from Cloud Storage",
+  "tags": ["storage", "copy", "upload"]
+}

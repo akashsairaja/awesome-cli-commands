@@ -1,0 +1,9 @@
+{
+  "id": "jq-paths",
+  "categoryId": "jq",
+  "subcategoryId": "jq-objects",
+  "title": "Get all paths",
+  "command": "cat file.json | jq '[paths]'",
+  "description": "Get all paths in JSON structure",
+  "tags": ["paths", "structure", "tree"]
+}

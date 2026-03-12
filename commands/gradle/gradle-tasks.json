@@ -1,0 +1,9 @@
+{
+  "id": "gradle-tasks",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-tasks",
+  "title": "List Tasks",
+  "command": "./gradlew tasks",
+  "description": "Show all available tasks",
+  "tags": ["tasks", "list", "available"]
+}

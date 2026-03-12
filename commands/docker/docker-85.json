@@ -1,0 +1,8 @@
+{
+  "id": "docker-85",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "Pull images",
+  "command": "docker compose pull",
+  "description": "Pull service images."
+}

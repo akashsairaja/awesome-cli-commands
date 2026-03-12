@@ -1,0 +1,8 @@
+{
+  "id": "docker-7",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Run with restart policy",
+  "command": "docker run -d --restart=unless-stopped <image>",
+  "description": "Container restarts unless manually stopped."
+}

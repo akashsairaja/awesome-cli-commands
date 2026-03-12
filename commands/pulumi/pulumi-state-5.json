@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-state-5",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-state",
+  "title": "Rename resource",
+  "command": "pulumi state rename oldUrn newUrn",
+  "description": "Rename a resource in state."
+}

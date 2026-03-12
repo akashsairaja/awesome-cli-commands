@@ -1,0 +1,8 @@
+{
+  "id": "apt-58",
+  "categoryId": "ubuntu",
+  "subcategoryId": "system",
+  "title": "Show system uptime",
+  "command": "uptime",
+  "description": "Show how long the system has been running and load averages."
+}

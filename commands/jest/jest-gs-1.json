@@ -1,0 +1,8 @@
+{
+  "id": "jest-gs-1",
+  "title": "Install Jest",
+  "command": "npm install --save-dev jest",
+  "description": "Install Jest testing framework as a dev dependency",
+  "categoryId": "jest",
+  "subcategoryId": "getting-started"
+}

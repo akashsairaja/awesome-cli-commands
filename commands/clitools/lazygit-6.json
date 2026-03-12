@@ -1,0 +1,8 @@
+{
+  "id": "lazygit-6",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-lazygit",
+  "title": "Push (P)",
+  "command": "P",
+  "description": "Push to remote."
+}

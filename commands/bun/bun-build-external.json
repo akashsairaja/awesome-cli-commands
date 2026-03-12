@@ -1,0 +1,9 @@
+{
+  "id": "bun-build-external",
+  "categoryId": "bun",
+  "subcategoryId": "bun-build",
+  "title": "External Dependencies",
+  "command": "bun build ./src/index.ts --external lodash",
+  "description": "Exclude packages from bundle",
+  "tags": ["build", "external", "exclude"]
+}

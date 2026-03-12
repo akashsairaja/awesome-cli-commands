@@ -1,0 +1,8 @@
+{
+  "id": "pg-users-5",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-users",
+  "title": "Change user password",
+  "command": "ALTER USER appuser WITH PASSWORD 'newpassword';",
+  "description": "Update the password for an existing user."
+}

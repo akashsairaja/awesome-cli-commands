@@ -1,0 +1,8 @@
+{
+  "id": "k6-run-8",
+  "categoryId": "k6",
+  "subcategoryId": "k6-run",
+  "title": "Skip setup/teardown",
+  "command": "k6 run --no-setup --no-teardown script.js",
+  "description": "Skip setup and teardown functions."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "react-gs-2",
+  "title": "Create React app with Next.js",
+  "command": "npx create-next-app@latest",
+  "description": "Scaffold a new Next.js project with interactive setup prompts",
+  "categoryId": "react",
+  "subcategoryId": "getting-started"
+}

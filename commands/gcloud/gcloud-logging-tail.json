@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-logging-tail",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-logging",
+  "title": "Tail Logs Live",
+  "command": "gcloud alpha logging tail \"resource.type=cloud_run_revision\"",
+  "description": "Stream live log entries in real-time (like tail -f)",
+  "tags": ["logging", "tail", "stream", "live"]
+}

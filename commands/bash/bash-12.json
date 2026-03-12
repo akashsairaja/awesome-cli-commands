@@ -1,0 +1,8 @@
+{
+  "id": "bash-12",
+  "categoryId": "bash",
+  "subcategoryId": "scripting",
+  "title": "Exit trap",
+  "command": "trap 'cleanup' EXIT",
+  "description": "Run cleanup function on exit."
+}

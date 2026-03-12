@@ -1,0 +1,8 @@
+{
+  "id": "gh-gs-2",
+  "title": "Check GitHub CLI version",
+  "command": "gh --version",
+  "description": "Verify GitHub CLI is installed and display the current version",
+  "categoryId": "github",
+  "subcategoryId": "getting-started"
+}

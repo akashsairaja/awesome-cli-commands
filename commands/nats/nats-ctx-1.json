@@ -1,0 +1,8 @@
+{
+  "id": "nats-ctx-1",
+  "categoryId": "nats",
+  "subcategoryId": "nats-context",
+  "title": "Add context",
+  "command": "nats context add local --server nats://localhost:4222",
+  "description": "Create named connection configuration."
+}

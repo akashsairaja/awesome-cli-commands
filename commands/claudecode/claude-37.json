@@ -1,0 +1,8 @@
+{
+  "id": "claude-37",
+  "categoryId": "claudecode",
+  "subcategoryId": "sessions",
+  "title": "Rename current session",
+  "command": "/rename my-feature-work",
+  "description": "Give current session a meaningful name."
+}

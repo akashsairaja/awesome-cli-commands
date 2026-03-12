@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-connect-10",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-connect",
+  "title": "Accept DNS settings",
+  "command": "tailscale up --accept-dns",
+  "description": "Accept DNS config from the admin console."
+}

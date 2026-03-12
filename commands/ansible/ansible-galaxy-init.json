@@ -1,0 +1,9 @@
+{
+  "id": "ansible-galaxy-init",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-galaxy",
+  "title": "Create Role Skeleton",
+  "command": "ansible-galaxy init <role-name>",
+  "description": "Create a new role with directory structure",
+  "tags": ["galaxy", "init", "scaffold"]
+}

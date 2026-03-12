@@ -1,0 +1,8 @@
+{
+  "id": "rust-build-6",
+  "categoryId": "rust",
+  "subcategoryId": "rust-build",
+  "title": "Build for target",
+  "command": "cargo build --target x86_64-unknown-linux-gnu",
+  "description": "Cross-compile for specific target."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tofu-plan-1",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-plan",
+  "title": "Create plan",
+  "command": "tofu plan",
+  "description": "Show planned changes."
+}

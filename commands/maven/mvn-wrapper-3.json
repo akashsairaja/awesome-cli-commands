@@ -1,0 +1,8 @@
+{
+  "id": "mvn-wrapper-3",
+  "categoryId": "maven",
+  "subcategoryId": "mvn-wrapper",
+  "title": "Generate with bundled JAR",
+  "command": "mvn wrapper:wrapper -Dtype=bin",
+  "description": "Include maven-wrapper.jar in .mvn/wrapper/ so builds work without wget/curl. Best for CI environments."
+}

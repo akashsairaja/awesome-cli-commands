@@ -1,0 +1,9 @@
+{
+  "id": "zsh-zinit-load",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-plugins",
+  "title": "Load plugin with Zinit",
+  "command": "zinit light zsh-users/zsh-autosuggestions",
+  "description": "Load a plugin using Zinit",
+  "tags": ["zinit", "load", "plugin"]
+}

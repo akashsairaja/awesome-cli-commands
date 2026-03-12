@@ -1,0 +1,9 @@
+{
+  "id": "ansible-inventory-custom",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-inventory",
+  "title": "Use Custom Inventory",
+  "command": "ansible all -i inventory.yml -m ping",
+  "description": "Specify a custom inventory file",
+  "tags": ["inventory", "custom", "file"]
+}

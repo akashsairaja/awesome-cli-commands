@@ -1,0 +1,9 @@
+{
+  "id": "gh-workflow-list",
+  "categoryId": "github",
+  "subcategoryId": "gh-workflow",
+  "title": "List workflows",
+  "command": "gh workflow list",
+  "description": "List GitHub Actions workflows",
+  "tags": ["workflow", "actions", "list"]
+}

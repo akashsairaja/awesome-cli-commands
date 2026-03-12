@@ -1,0 +1,8 @@
+{
+  "id": "git-60",
+  "categoryId": "git",
+  "subcategoryId": "rebase",
+  "title": "Interactive rebase",
+  "command": "git rebase -i HEAD~5",
+  "description": "Interactively rewrite last 5 commits."
+}

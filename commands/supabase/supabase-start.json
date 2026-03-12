@@ -1,0 +1,9 @@
+{
+  "id": "supabase-start",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-db",
+  "title": "Start local Supabase",
+  "command": "supabase start",
+  "description": "Start local Supabase development stack",
+  "tags": ["start", "local", "dev"]
+}

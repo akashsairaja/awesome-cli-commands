@@ -1,0 +1,8 @@
+{
+  "id": "k3s-config-10",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-config",
+  "title": "Use flannel backend",
+  "command": "curl -sfL https://get.k3s.io | sh -s - --flannel-backend wireguard-native",
+  "description": "Install with WireGuard-native as the flannel backend for encrypted networking."
+}

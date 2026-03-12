@@ -1,0 +1,8 @@
+{
+  "id": "spark-47",
+  "categoryId": "spark",
+  "subcategoryId": "spark-cluster",
+  "title": "K8s with service account",
+  "command": "spark-submit --master k8s://https://k8s-api:443 --conf spark.kubernetes.authenticate.driver.serviceAccountName=spark app.py",
+  "description": "Submit to Kubernetes with service account."
+}

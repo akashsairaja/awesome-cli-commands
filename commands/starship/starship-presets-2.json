@@ -1,0 +1,8 @@
+{
+  "id": "starship-presets-2",
+  "categoryId": "starship",
+  "subcategoryId": "starship-presets",
+  "title": "Apply Pastel preset",
+  "command": "starship preset pastel-powerline -o ~/.config/starship.toml",
+  "description": "Apply Pastel Powerline preset."
+}

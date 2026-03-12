@@ -1,0 +1,8 @@
+{
+  "id": "yarn-4",
+  "categoryId": "npm",
+  "subcategoryId": "yarn",
+  "title": "yarn autoclean",
+  "command": "yarn autoclean",
+  "description": "Clean unnecessary files from dependencies."
+}

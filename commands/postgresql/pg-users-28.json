@@ -1,0 +1,8 @@
+{
+  "id": "pg-users-28",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-users",
+  "title": "Grant create on schema",
+  "command": "GRANT CREATE ON SCHEMA public TO appuser;",
+  "description": "Allow user to create new tables and objects in the schema."
+}

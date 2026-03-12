@@ -1,0 +1,8 @@
+{
+  "id": "bat-1",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-bat",
+  "title": "View file",
+  "command": "bat file.js",
+  "description": "Display with syntax highlighting."
+}

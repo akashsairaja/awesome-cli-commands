@@ -1,0 +1,8 @@
+{
+  "id": "nuget-publish-6",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-publish",
+  "title": "Pack with symbols",
+  "command": "dotnet pack -c Release --include-symbols --include-source",
+  "description": "Create package with debug symbols and source."
+}

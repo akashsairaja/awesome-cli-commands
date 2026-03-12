@@ -1,0 +1,9 @@
+{
+  "id": "bunx",
+  "categoryId": "bun",
+  "subcategoryId": "bun-tools",
+  "title": "Run Package",
+  "command": "bunx <package>",
+  "description": "Run npm package without installing",
+  "tags": ["bunx", "npx", "execute"]
+}

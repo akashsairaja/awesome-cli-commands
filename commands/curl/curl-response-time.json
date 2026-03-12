@@ -1,0 +1,9 @@
+{
+  "id": "curl-response-time",
+  "categoryId": "curl",
+  "subcategoryId": "curl-download",
+  "title": "Measure response time",
+  "command": "curl -w \"\\nTime: %{time_total}s\\n\" -o /dev/null -s https://example.com",
+  "description": "Measure total response time",
+  "tags": ["time", "benchmark", "performance"]
+}

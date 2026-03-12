@@ -1,0 +1,9 @@
+{
+  "id": "ansible-galaxy-collection-install",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-galaxy",
+  "title": "Install Collection",
+  "command": "ansible-galaxy collection install <namespace.collection>",
+  "description": "Install a collection from Galaxy",
+  "tags": ["galaxy", "collection", "install"]
+}

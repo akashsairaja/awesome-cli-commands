@@ -1,0 +1,9 @@
+{
+  "id": "firebase-deploy-hosting",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-deploy",
+  "title": "Deploy hosting only",
+  "command": "firebase deploy --only hosting",
+  "description": "Deploy only hosting to Firebase",
+  "tags": ["deploy", "hosting", "only"]
+}

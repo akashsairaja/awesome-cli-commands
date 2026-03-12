@@ -1,0 +1,8 @@
+{
+  "id": "java-gs-1",
+  "title": "Install Java (macOS)",
+  "command": "brew install openjdk",
+  "description": "Install OpenJDK using Homebrew on macOS",
+  "categoryId": "java",
+  "subcategoryId": "getting-started"
+}

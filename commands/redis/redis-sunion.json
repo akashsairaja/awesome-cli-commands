@@ -1,0 +1,9 @@
+{
+  "id": "redis-sunion",
+  "categoryId": "redis",
+  "subcategoryId": "redis-sets",
+  "title": "Union of sets",
+  "command": "SUNION key1 key2",
+  "description": "Get union of multiple sets",
+  "tags": ["sunion", "set", "union"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "node-perf-1",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-perf",
+  "title": "Increase heap size",
+  "command": "node --max-old-space-size=4096 app.js",
+  "description": "Set max V8 heap to 4GB."
+}

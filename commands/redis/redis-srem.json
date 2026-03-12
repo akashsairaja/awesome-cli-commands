@@ -1,0 +1,9 @@
+{
+  "id": "redis-srem",
+  "categoryId": "redis",
+  "subcategoryId": "redis-sets",
+  "title": "Remove from set",
+  "command": "SREM key member",
+  "description": "Remove member from set",
+  "tags": ["srem", "set", "remove"]
+}

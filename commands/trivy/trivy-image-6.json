@@ -1,0 +1,8 @@
+{
+  "id": "trivy-image-6",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-image",
+  "title": "Scan local image",
+  "command": "trivy image --input myapp.tar",
+  "description": "Scan a local image tarball."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k8s-25",
+  "categoryId": "kubernetes",
+  "subcategoryId": "pods",
+  "title": "Pod CPU/memory usage",
+  "command": "kubectl top pods",
+  "description": "Show resource usage for pods."
+}

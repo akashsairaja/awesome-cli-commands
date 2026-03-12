@@ -1,0 +1,9 @@
+{
+  "id": "supabase-inspect-long",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-inspect",
+  "title": "List long-running queries",
+  "command": "supabase inspect db long-running-queries --linked",
+  "description": "List queries running longer than 5 minutes",
+  "tags": ["inspect", "queries", "slow"]
+}

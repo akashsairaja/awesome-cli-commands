@@ -1,0 +1,8 @@
+{
+  "id": "ts-check-12",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-check",
+  "title": "Incremental with cache",
+  "command": "tsc --incremental --tsBuildInfoFile .cache/tsbuildinfo",
+  "description": "Full incremental compilation with custom cache directory."
+}

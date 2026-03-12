@@ -1,0 +1,8 @@
+{
+  "id": "packer-inspect-2",
+  "categoryId": "packer",
+  "subcategoryId": "packer-inspect",
+  "title": "Format templates",
+  "command": "packer fmt .",
+  "description": "Format HCL templates."
+}

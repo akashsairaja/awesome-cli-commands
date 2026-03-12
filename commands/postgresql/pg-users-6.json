@@ -1,0 +1,8 @@
+{
+  "id": "pg-users-6",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-users",
+  "title": "Grant superuser",
+  "command": "ALTER USER appuser WITH SUPERUSER;",
+  "description": "Promote an existing user to superuser status."
+}

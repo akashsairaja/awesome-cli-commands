@@ -1,0 +1,8 @@
+{
+  "id": "db-23",
+  "categoryId": "database",
+  "subcategoryId": "postgresql",
+  "title": "Backup as directory",
+  "command": "pg_dump -Fd -j 4 -h localhost -U postgres dbname -f backup_dir/",
+  "description": "Parallel dump to directory with 4 jobs."
+}

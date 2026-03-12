@@ -1,0 +1,8 @@
+{
+  "id": "tofu-state-9",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-state",
+  "title": "Replace provider",
+  "command": "tofu state replace-provider hashicorp/aws registry.opentofu.org/hashicorp/aws",
+  "description": "Replace provider source in state."
+}

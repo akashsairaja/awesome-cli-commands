@@ -1,0 +1,8 @@
+{
+  "id": "packer-inspect-4",
+  "categoryId": "packer",
+  "subcategoryId": "packer-inspect",
+  "title": "Interactive console",
+  "command": "packer console .",
+  "description": "Open interactive console for testing."
+}

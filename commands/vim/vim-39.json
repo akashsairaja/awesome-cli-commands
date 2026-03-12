@@ -1,0 +1,8 @@
+{
+  "id": "vim-39",
+  "categoryId": "vim",
+  "subcategoryId": "windows-tabs",
+  "title": "Navigate right",
+  "command": "Ctrl+w l",
+  "description": "Move to right window."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-config-create",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-auth",
+  "title": "Create Named Configuration",
+  "command": "gcloud config configurations create <name>",
+  "description": "Create a new named configuration",
+  "tags": ["config", "create", "named"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "claude-82",
+  "categoryId": "claudecode",
+  "subcategoryId": "environment",
+  "title": "Disable telemetry",
+  "command": "export DISABLE_TELEMETRY=1",
+  "description": "Opt out of analytics collection."
+}

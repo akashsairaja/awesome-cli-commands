@@ -1,0 +1,8 @@
+{
+  "id": "k3s-config-1",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-config",
+  "title": "Create config file",
+  "command": "sudo mkdir -p /etc/rancher/k3s && sudo touch /etc/rancher/k3s/config.yaml",
+  "description": "Create k3s configuration file."
+}

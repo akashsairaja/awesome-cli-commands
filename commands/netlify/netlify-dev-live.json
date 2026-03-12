@@ -1,0 +1,9 @@
+{
+  "id": "netlify-dev-live",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-deploy",
+  "title": "Dev with live sharing",
+  "command": "netlify dev --live",
+  "description": "Run dev server with live URL for sharing",
+  "tags": ["dev", "live", "share"]
+}

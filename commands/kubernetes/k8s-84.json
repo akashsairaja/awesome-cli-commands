@@ -1,0 +1,8 @@
+{
+  "id": "k8s-84",
+  "categoryId": "kubernetes",
+  "subcategoryId": "ingress",
+  "title": "Get ingress with class",
+  "command": "kubectl get ingress -o custom-columns='NAME:.metadata.name,CLASS:.spec.ingressClassName'",
+  "description": "List ingresses with their ingress class."
+}

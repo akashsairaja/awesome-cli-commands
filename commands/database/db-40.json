@@ -1,0 +1,8 @@
+{
+  "id": "db-40",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "EXPLAIN query",
+  "command": "EXPLAIN SELECT * FROM tablename WHERE column = 'value';",
+  "description": "Show query execution plan."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "packer-inspect-1",
+  "categoryId": "packer",
+  "subcategoryId": "packer-inspect",
+  "title": "Inspect template",
+  "command": "packer inspect .",
+  "description": "Show template variables and sources."
+}

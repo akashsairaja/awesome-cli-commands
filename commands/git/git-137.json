@@ -1,0 +1,8 @@
+{
+  "id": "git-137",
+  "categoryId": "git",
+  "subcategoryId": "git-config",
+  "title": "Set user email",
+  "command": "git config --global user.email \"email@example.com\"",
+  "description": "Set global git email."
+}

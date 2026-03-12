@@ -1,0 +1,8 @@
+{
+  "id": "jest-config-1",
+  "categoryId": "jest",
+  "subcategoryId": "jest-configuration",
+  "title": "Custom config",
+  "command": "jest -c jest.custom.config.js",
+  "description": "Run with custom config file."
+}

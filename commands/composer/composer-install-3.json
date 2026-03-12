@@ -1,0 +1,8 @@
+{
+  "id": "composer-install-3",
+  "categoryId": "composer",
+  "subcategoryId": "composer-install",
+  "title": "Install prefer dist",
+  "command": "composer install --prefer-dist",
+  "description": "Prefer zip downloads over git clones."
+}

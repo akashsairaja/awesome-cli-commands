@@ -1,0 +1,8 @@
+{
+  "id": "rust-test-5",
+  "categoryId": "rust",
+  "subcategoryId": "rust-test",
+  "title": "Run doc tests",
+  "command": "cargo test --doc",
+  "description": "Run documentation tests."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "jest-snapshots-2",
+  "categoryId": "jest",
+  "subcategoryId": "jest-snapshots",
+  "title": "Update snapshots full",
+  "command": "jest --updateSnapshot",
+  "description": "Update all failing snapshots (full flag)."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "py-51",
+  "categoryId": "python",
+  "subcategoryId": "python-uv",
+  "title": "Install Python",
+  "command": "uv python install 3.12",
+  "description": "Install a Python version (replaces pyenv)."
+}

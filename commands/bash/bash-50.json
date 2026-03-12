@@ -1,0 +1,8 @@
+{
+  "id": "bash-50",
+  "categoryId": "bash",
+  "subcategoryId": "arrays",
+  "title": "Access element",
+  "command": "echo \"${arr[0]}\"",
+  "description": "Get element by index."
+}

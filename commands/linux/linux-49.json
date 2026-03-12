@@ -1,0 +1,8 @@
+{
+  "id": "linux-49",
+  "categoryId": "linux",
+  "subcategoryId": "network",
+  "title": "Show active connections",
+  "command": "ss -tunap",
+  "description": "List all TCP/UDP connections with process info."
+}

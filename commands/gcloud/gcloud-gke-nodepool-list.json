@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-gke-nodepool-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-gke",
+  "title": "List Node Pools",
+  "command": "gcloud container node-pools list --cluster=<cluster> --zone=<zone>",
+  "description": "List all node pools in a GKE cluster",
+  "tags": ["gke", "node-pool", "list"]
+}

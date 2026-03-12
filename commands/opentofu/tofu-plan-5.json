@@ -1,0 +1,8 @@
+{
+  "id": "tofu-plan-5",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-plan",
+  "title": "Plan with var file",
+  "command": "tofu plan -var-file=prod.tfvars",
+  "description": "Plan using a variables file."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "minikube-docker-4",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-docker",
+  "title": "Build in minikube",
+  "command": "minikube image build -t myapp:latest .",
+  "description": "Build image inside minikube."
+}

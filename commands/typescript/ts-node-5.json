@@ -1,0 +1,8 @@
+{
+  "id": "ts-node-5",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-node",
+  "title": "ES modules mode",
+  "command": "ts-node --esm src/index.ts",
+  "description": "Run with ES modules support."
+}

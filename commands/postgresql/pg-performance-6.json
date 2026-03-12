@@ -1,0 +1,8 @@
+{
+  "id": "pg-performance-6",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-performance",
+  "title": "Cache hit ratio",
+  "command": "SELECT round(100.0 * sum(blks_hit) / nullif(sum(blks_hit) + sum(blks_read), 0), 2) AS cache_hit_ratio FROM pg_stat_database;",
+  "description": "Check buffer cache hit ratio. Should be above 99% for optimal performance."
+}

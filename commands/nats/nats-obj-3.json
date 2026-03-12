@@ -1,0 +1,8 @@
+{
+  "id": "nats-obj-3",
+  "categoryId": "nats",
+  "subcategoryId": "nats-object",
+  "title": "Download file",
+  "command": "nats obj get files myfile.pdf",
+  "description": "Download file from object store."
+}

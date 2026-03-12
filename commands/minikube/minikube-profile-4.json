@@ -1,0 +1,8 @@
+{
+  "id": "minikube-profile-4",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-profile",
+  "title": "Delete profile",
+  "command": "minikube delete -p dev-cluster",
+  "description": "Delete a specific profile."
+}

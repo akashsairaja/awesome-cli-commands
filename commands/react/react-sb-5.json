@@ -1,0 +1,8 @@
+{
+  "id": "react-sb-5",
+  "categoryId": "react",
+  "subcategoryId": "react-storybook",
+  "title": "Add addon",
+  "command": "npx storybook add @storybook/addon-a11y",
+  "description": "Add Storybook addon."
+}

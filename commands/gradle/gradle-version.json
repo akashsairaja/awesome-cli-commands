@@ -1,0 +1,9 @@
+{
+  "id": "gradle-version",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-wrapper",
+  "title": "Show Version",
+  "command": "./gradlew --version",
+  "description": "Display Gradle version info",
+  "tags": ["version", "info"]
+}

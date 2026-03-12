@@ -1,0 +1,8 @@
+{
+  "id": "docker-86",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "Build images",
+  "command": "docker compose build",
+  "description": "Build or rebuild service images."
+}

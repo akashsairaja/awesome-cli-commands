@@ -1,0 +1,8 @@
+{
+  "id": "aws-ssm-3",
+  "categoryId": "aws",
+  "subcategoryId": "ssm",
+  "title": "Get parameters by path",
+  "command": "aws ssm get-parameters-by-path --path /app/config/ --recursive --with-decryption --query 'Parameters[*].[Name,Value]' --output table",
+  "description": "Retrieve all parameters under a path hierarchy."
+}

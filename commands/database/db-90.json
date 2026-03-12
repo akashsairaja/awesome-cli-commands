@@ -1,0 +1,8 @@
+{
+  "id": "db-90",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Flush status",
+  "command": "FLUSH STATUS;",
+  "description": "Reset most server status variables to zero."
+}

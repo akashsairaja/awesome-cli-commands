@@ -1,0 +1,9 @@
+{
+  "id": "redis-json-set",
+  "categoryId": "redis",
+  "subcategoryId": "redis-json",
+  "title": "Set JSON document",
+  "command": "JSON.SET key $ '{\"field\":\"value\"}'",
+  "description": "Set JSON document at path using JSONPath syntax",
+  "tags": ["json", "set", "document", "redisjson"]
+}

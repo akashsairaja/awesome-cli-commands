@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-compute-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-compute",
+  "title": "List VM Instances",
+  "command": "gcloud compute instances list",
+  "description": "List all VM instances",
+  "tags": ["vm", "list", "instances"]
+}

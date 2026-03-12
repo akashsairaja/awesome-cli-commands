@@ -1,0 +1,8 @@
+{
+  "id": "react-test-5",
+  "categoryId": "react",
+  "subcategoryId": "react-testing",
+  "title": "Run Vitest",
+  "command": "vitest",
+  "description": "Run Vitest in watch mode (Vite projects)."
+}

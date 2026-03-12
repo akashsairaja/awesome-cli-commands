@@ -1,0 +1,8 @@
+{
+  "id": "git-69",
+  "categoryId": "git",
+  "subcategoryId": "remote",
+  "title": "Remove remote",
+  "command": "git remote remove <name>",
+  "description": "Remove a remote."
+}

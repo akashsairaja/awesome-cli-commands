@@ -1,0 +1,8 @@
+{
+  "id": "linux-1",
+  "categoryId": "linux",
+  "subcategoryId": "files",
+  "title": "Find large files",
+  "command": "find / -type f -size +100M 2>/dev/null | head -20",
+  "description": "Find files larger than 100MB anywhere on the system."
+}

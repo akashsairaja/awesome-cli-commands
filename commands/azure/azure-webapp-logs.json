@@ -1,0 +1,9 @@
+{
+  "id": "azure-webapp-logs",
+  "categoryId": "azure",
+  "subcategoryId": "azure-webapp",
+  "title": "Stream Logs",
+  "command": "az webapp log tail --resource-group <rg> --name <app-name>",
+  "description": "Stream live logs from web app",
+  "tags": ["webapp", "logs", "stream"]
+}

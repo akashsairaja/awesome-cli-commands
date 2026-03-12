@@ -1,0 +1,9 @@
+{
+  "id": "ansible-automation-vars-json",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-automation",
+  "title": "Load Variables from JSON",
+  "command": "ansible-playbook playbook.yml --extra-vars '@vars.json'",
+  "description": "Pass JSON variables for automated deployments",
+  "tags": ["automation", "variables", "json", "ci-cd"]
+}

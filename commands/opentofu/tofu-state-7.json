@@ -1,0 +1,8 @@
+{
+  "id": "tofu-state-7",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-state",
+  "title": "Push state",
+  "command": "tofu state push errored.tfstate",
+  "description": "Upload a local state file to remote backend."
+}

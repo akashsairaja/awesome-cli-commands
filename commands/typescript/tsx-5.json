@@ -1,0 +1,8 @@
+{
+  "id": "tsx-5",
+  "categoryId": "typescript",
+  "subcategoryId": "tsx",
+  "title": "tsx with Node flags",
+  "command": "tsx --inspect src/index.ts",
+  "description": "Pass Node.js flags through (debugging, env, etc.)."
+}

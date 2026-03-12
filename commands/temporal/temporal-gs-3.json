@@ -1,0 +1,8 @@
+{
+  "id": "temporal-gs-3",
+  "title": "Start local dev server",
+  "command": "temporal server start-dev",
+  "description": "Start Temporal development server locally (runs at localhost:7233, UI at localhost:8233)",
+  "categoryId": "temporal",
+  "subcategoryId": "getting-started"
+}

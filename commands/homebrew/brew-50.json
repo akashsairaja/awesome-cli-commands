@@ -1,0 +1,8 @@
+{
+  "id": "brew-50",
+  "categoryId": "homebrew",
+  "subcategoryId": "taps",
+  "title": "Tap info",
+  "command": "brew tap-info user/repo",
+  "description": "Show info about a tap."
+}

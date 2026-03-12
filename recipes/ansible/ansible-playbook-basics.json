@@ -1,0 +1,58 @@
+{
+  "id": "ansible-playbook-basics",
+  "stackId": "ansible",
+  "name": "Write and Run Your First Playbook",
+  "description": "Create a basic Ansible playbook to install packages, configure services, and deploy changes across multiple hosts.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "Ansible remains the most popular agentless automation tool for infrastructure configuration.",
+  "tags": ["playbook", "automation", "configuration", "yaml"],
+  "prerequisites": ["Ansible installed", "SSH access to target hosts", "Inventory file configured"],
+  "steps": [
+    {
+      "title": "Create a playbook file",
+      "command": "cat > site.yml << 'EOF'\n---\n- name: Configure web servers\n  hosts: webservers\n  become: true\n  tasks:\n    - name: Install nginx\n      apt:\n        name: nginx\n        state: present\n        update_cache: true\n\n    - name: Start nginx service\n      service:\n        name: nginx\n        state: started\n        enabled: true\nEOF",
+      "description": "Creates a YAML playbook that installs and starts nginx on all hosts in the webservers group.",
+      "tip": "Always use 'become: true' when tasks require root privileges."
+    },
+    {
+      "title": "Run the playbook in check mode",
+      "command": "ansible-playbook site.yml --check --diff",
+      "description": "Performs a dry run showing what changes would be made without actually applying them.",
+      "tip": "Always run --check first on production systems to preview changes safely."
+    },
+    {
+      "title": "Run the playbook",
+      "command": "ansible-playbook site.yml",
+      "description": "Executes the playbook against all hosts defined in the webservers group."
+    },
+    {
+      "title": "Run with verbose output",
+      "command": "ansible-playbook site.yml -v",
+      "description": "Shows detailed task output. Use -vv or -vvv for even more debugging information."
+    },
+    {
+      "title": "Limit to specific hosts",
+      "command": "ansible-playbook site.yml --limit web01.example.com",
+      "description": "Runs the playbook only against a single host for targeted deployment."
+    }
+  ],
+  "fullScript": "# Write and run an Ansible playbook\ncat > site.yml << 'EOF'\n---\n- name: Configure web servers\n  hosts: webservers\n  become: true\n  tasks:\n    - name: Install nginx\n      apt:\n        name: nginx\n        state: present\n        update_cache: true\n\n    - name: Start nginx service\n      service:\n        name: nginx\n        state: started\n        enabled: true\nEOF\nansible-playbook site.yml --check --diff\nansible-playbook site.yml",
+  "faq": [
+    {
+      "question": "What is the difference between a playbook and a role?",
+      "answer": "A playbook is a YAML file containing plays and tasks. A role is a reusable, self-contained unit of tasks, handlers, variables, and templates organized in a standard directory structure. Roles are imported into playbooks."
+    },
+    {
+      "question": "How do I pass variables to a playbook?",
+      "answer": "Use --extra-vars 'key=value' on the command line, define them in group_vars/ or host_vars/ directories, or set them in the playbook under 'vars:' at the play or task level."
+    },
+    {
+      "question": "Do I need to install anything on managed hosts?",
+      "answer": "No. Ansible is agentless and only requires SSH access and Python on the target hosts. Most Linux distributions include Python by default."
+    }
+  ],
+  "relatedRecipes": ["ansible-inventory-management", "ansible-role-creation"],
+  "lastUpdated": "2026-03-11"
+}

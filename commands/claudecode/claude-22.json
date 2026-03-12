@@ -1,0 +1,8 @@
+{
+  "id": "claude-22",
+  "categoryId": "claudecode",
+  "subcategoryId": "permissions",
+  "title": "Enable sandbox mode",
+  "command": "claude --sandbox",
+  "description": "Enable filesystem and network isolation."
+}

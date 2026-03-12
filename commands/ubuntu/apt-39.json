@@ -1,0 +1,8 @@
+{
+  "id": "apt-39",
+  "categoryId": "ubuntu",
+  "subcategoryId": "systemd-services",
+  "title": "View service logs",
+  "command": "journalctl -u <service> --since '1 hour ago'",
+  "description": "Show recent logs for a specific service."
+}

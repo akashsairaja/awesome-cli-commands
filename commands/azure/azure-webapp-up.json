@@ -1,0 +1,9 @@
+{
+  "id": "azure-webapp-up",
+  "categoryId": "azure",
+  "subcategoryId": "azure-webapp",
+  "title": "Quick Deploy",
+  "command": "az webapp up --name <app-name> --resource-group <rg> --runtime 'PYTHON:3.11'",
+  "description": "Create and deploy app from current directory",
+  "tags": ["webapp", "deploy", "quick"]
+}

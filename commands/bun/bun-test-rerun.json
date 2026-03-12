@@ -1,0 +1,9 @@
+{
+  "id": "bun-test-rerun",
+  "categoryId": "bun",
+  "subcategoryId": "bun-test",
+  "title": "Rerun Failed Tests",
+  "command": "bun test --rerun-each 3",
+  "description": "Rerun each test multiple times",
+  "tags": ["test", "rerun", "flaky"]
+}

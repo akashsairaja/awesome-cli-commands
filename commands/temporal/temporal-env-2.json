@@ -1,0 +1,8 @@
+{
+  "id": "temporal-env-2",
+  "categoryId": "temporal",
+  "subcategoryId": "env",
+  "title": "Get environment config",
+  "command": "temporal env get --env production",
+  "description": "Show all properties for an environment."
+}

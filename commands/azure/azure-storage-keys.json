@@ -1,0 +1,9 @@
+{
+  "id": "azure-storage-keys",
+  "categoryId": "azure",
+  "subcategoryId": "azure-storage",
+  "title": "Get Storage Keys",
+  "command": "az storage account keys list --account-name <storage> --resource-group <rg>",
+  "description": "Get access keys for storage account",
+  "tags": ["storage", "keys", "access"]
+}

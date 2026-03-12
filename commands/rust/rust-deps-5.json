@@ -1,0 +1,8 @@
+{
+  "id": "rust-deps-5",
+  "categoryId": "rust",
+  "subcategoryId": "rust-deps",
+  "title": "Reverse dependencies",
+  "command": "cargo tree -i syn",
+  "description": "Show what depends on a package."
+}

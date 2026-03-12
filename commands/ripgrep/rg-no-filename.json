@@ -1,0 +1,9 @@
+{
+  "id": "rg-no-filename",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-output",
+  "title": "Hide filenames",
+  "command": "rg -I \"pattern\"",
+  "description": "Don't show filenames",
+  "tags": ["output", "filename", "hide"]
+}

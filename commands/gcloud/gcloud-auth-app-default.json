@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-auth-app-default",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-auth",
+  "title": "Application Default Credentials",
+  "command": "gcloud auth application-default login",
+  "description": "Set up ADC for local development",
+  "tags": ["auth", "adc", "development"]
+}

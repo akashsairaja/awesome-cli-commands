@@ -1,0 +1,8 @@
+{
+  "id": "py-83",
+  "categoryId": "python",
+  "subcategoryId": "python-pipx",
+  "title": "Upgrade tool",
+  "command": "pipx upgrade black",
+  "description": "Upgrade a specific tool to latest version."
+}

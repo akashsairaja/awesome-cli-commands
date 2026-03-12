@@ -1,0 +1,8 @@
+{
+  "id": "mvn-profile-7",
+  "categoryId": "maven",
+  "subcategoryId": "profiles",
+  "title": "Build with deps",
+  "command": "mvn -pl module-name -am install",
+  "description": "Build module with dependencies."
+}

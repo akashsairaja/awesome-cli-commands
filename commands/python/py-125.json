@@ -1,0 +1,8 @@
+{
+  "id": "py-125",
+  "categoryId": "python",
+  "subcategoryId": "python-mypy",
+  "title": "Show error codes",
+  "command": "mypy --show-error-codes src/",
+  "description": "Display error codes for easier suppression."
+}

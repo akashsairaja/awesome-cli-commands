@@ -1,0 +1,8 @@
+{
+  "id": "aws-gs-3",
+  "title": "Verify configuration",
+  "command": "aws sts get-caller-identity",
+  "description": "Verify AWS credentials by getting current user identity",
+  "categoryId": "aws",
+  "subcategoryId": "getting-started"
+}

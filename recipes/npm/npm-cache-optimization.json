@@ -1,0 +1,48 @@
+{
+  "id": "npm-cache-optimization",
+  "stackId": "npm",
+  "name": "Cache Management for Faster Installs",
+  "description": "Optimize npm install times by understanding, managing, and leveraging the npm cache for local development and CI pipelines.",
+  "difficulty": "beginner",
+  "timeMinutes": 6,
+  "tags": ["cache", "performance", "ci", "optimization"],
+  "prerequisites": ["Node.js and npm installed"],
+  "steps": [
+    {
+      "title": "View cache location and info",
+      "description": "Find where npm stores its cache and check its current size.",
+      "command": "npm cache ls 2>/dev/null; echo 'Cache path:' && npm config get cache && du -sh $(npm config get cache) 2>/dev/null || echo 'Cache size unavailable'"
+    },
+    {
+      "title": "Verify cache integrity",
+      "description": "Check that cached packages are not corrupted.",
+      "command": "npm cache verify",
+      "tip": "This also garbage-collects unused cache entries, freeing disk space."
+    },
+    {
+      "title": "Clean the cache entirely",
+      "description": "Remove all data from the npm cache when troubleshooting install issues.",
+      "command": "npm cache clean --force",
+      "warning": "Only clean the cache when debugging install problems. Clearing it means all packages must be re-downloaded on next install."
+    },
+    {
+      "title": "Configure cache for CI",
+      "description": "Set a custom cache directory for CI pipeline caching.",
+      "command": "npm ci --cache .npm-cache",
+      "tip": "Point npm at a project-local cache directory that your CI system can persist between builds. This avoids re-downloading packages on every run."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# npm Cache Optimization\nset -euo pipefail\n\necho \"=== Cache Info ===\"\nCACHE_DIR=$(npm config get cache)\necho \"Location: $CACHE_DIR\"\n\nif [ -d \"$CACHE_DIR\" ]; then\n  SIZE=$(du -sh \"$CACHE_DIR\" 2>/dev/null | cut -f1)\n  echo \"Size: $SIZE\"\n  ENTRIES=$(find \"$CACHE_DIR\" -name '*.tgz' 2>/dev/null | wc -l)\n  echo \"Cached packages: $ENTRIES\"\nelse\n  echo \"Cache directory does not exist yet\"\nfi\n\necho \"\"\necho \"=== Verifying Cache Integrity ===\"\nnpm cache verify\n\necho \"\"\necho \"=== Install Speed Test ===\"\necho \"With cache (warm):\"\ntime npm install --prefer-offline 2>/dev/null || echo \"Install completed\"\n\necho \"\"\necho \"=== CI Optimization Tips ===\"\necho \"1. Use 'npm ci' instead of 'npm install' in CI\"\necho \"2. Cache the npm cache directory between builds\"\necho \"3. Use '--prefer-offline' for faster installs with warm cache\"\necho \"4. Set a local cache: npm ci --cache .npm-cache\"",
+  "faq": [
+    {
+      "question": "Does npm cache speed up installs automatically?",
+      "answer": "Yes. npm checks its cache before downloading from the registry. If a package version exists in the cache and passes integrity checks, it is used directly without a network request. Use --prefer-offline to prioritize cached packages."
+    },
+    {
+      "question": "How do I cache npm packages in GitHub Actions?",
+      "answer": "Use the setup-node action with cache enabled: 'uses: actions/setup-node@v4' with 'cache: npm'. This automatically caches and restores the npm cache directory between workflow runs."
+    }
+  ],
+  "relatedRecipes": ["npm-lockfile-management", "npm-security-audit"],
+  "lastUpdated": "2026-03-11"
+}

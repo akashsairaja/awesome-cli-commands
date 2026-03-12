@@ -1,0 +1,9 @@
+{
+  "id": "azure-deployment-operations",
+  "categoryId": "azure",
+  "subcategoryId": "azure-deployment",
+  "title": "Show Deployment Operations",
+  "command": "az deployment operation group list -g rg -n deployment-name",
+  "description": "Show detailed operations for a specific deployment",
+  "tags": ["deployment", "operations", "debug"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ps-83",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-remoting",
+  "title": "Run on multiple computers",
+  "command": "Invoke-Command -ComputerName Server01,Server02 -ScriptBlock { hostname }",
+  "description": "Run command on multiple hosts."
+}

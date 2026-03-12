@@ -1,0 +1,8 @@
+{
+  "id": "rust-quality-3",
+  "categoryId": "rust",
+  "subcategoryId": "rust-quality",
+  "title": "Run clippy",
+  "command": "cargo clippy",
+  "description": "Run Clippy linter."
+}

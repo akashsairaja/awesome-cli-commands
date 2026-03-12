@@ -1,0 +1,8 @@
+{
+  "id": "apt-24",
+  "categoryId": "ubuntu",
+  "subcategoryId": "apt-packages",
+  "title": "Full system upgrade",
+  "command": "sudo apt full-upgrade",
+  "description": "Upgrade packages, handling dependency changes and removing obsolete packages."
+}

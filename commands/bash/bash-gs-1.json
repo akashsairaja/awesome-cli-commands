@@ -1,0 +1,8 @@
+{
+  "id": "bash-gs-1",
+  "title": "Check Bash version",
+  "command": "bash --version",
+  "description": "Display the current Bash shell version information",
+  "categoryId": "bash",
+  "subcategoryId": "getting-started"
+}

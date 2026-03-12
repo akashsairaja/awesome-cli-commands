@@ -1,0 +1,8 @@
+{
+  "id": "go-test-4",
+  "categoryId": "go",
+  "subcategoryId": "go-test",
+  "title": "Run with coverage",
+  "command": "go test -cover ./...",
+  "description": "Display coverage percentage."
+}

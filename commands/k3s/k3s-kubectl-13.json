@@ -1,0 +1,8 @@
+{
+  "id": "k3s-kubectl-13",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-kubectl",
+  "title": "View resource usage",
+  "command": "k3s kubectl top nodes",
+  "description": "Show CPU and memory usage for nodes."
+}

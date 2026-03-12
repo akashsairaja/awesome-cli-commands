@@ -1,0 +1,8 @@
+{
+  "id": "bash-43",
+  "categoryId": "bash",
+  "subcategoryId": "functions",
+  "title": "Function with args",
+  "command": "greet() { echo \"Hello, $1\"; }",
+  "description": "Function with positional arguments."
+}

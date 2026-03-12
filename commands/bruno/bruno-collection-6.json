@@ -1,0 +1,8 @@
+{
+  "id": "bruno-collection-6",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-collection",
+  "title": "GraphQL request",
+  "command": "post {\n  url: {{baseUrl}}/graphql\n  body: graphql\n}\n\nbody:graphql {\n  query {\n    users {\n      id\n      name\n      email\n    }\n  }\n}",
+  "description": "Send a GraphQL query request."
+}

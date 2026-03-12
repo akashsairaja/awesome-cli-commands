@@ -1,0 +1,8 @@
+{
+  "id": "task-run-13",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-run",
+  "title": "Silent mode",
+  "command": "task --silent build",
+  "description": "Suppress task header output."
+}

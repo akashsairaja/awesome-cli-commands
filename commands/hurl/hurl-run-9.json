@@ -1,0 +1,8 @@
+{
+  "id": "hurl-run-9",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-run",
+  "title": "Use proxy",
+  "command": "hurl --proxy http://proxy:8080 api.hurl",
+  "description": "Route requests through proxy."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "playwright-codegen-4",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-codegen",
+  "title": "Save auth state",
+  "command": "npx playwright codegen --save-storage=auth.json example.com",
+  "description": "Save authentication state."
+}

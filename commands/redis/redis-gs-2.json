@@ -1,0 +1,8 @@
+{
+  "id": "redis-gs-2",
+  "title": "Connect to Redis CLI",
+  "command": "docker exec -it redis redis-cli",
+  "description": "Open interactive Redis CLI in the running container",
+  "categoryId": "redis",
+  "subcategoryId": "getting-started"
+}

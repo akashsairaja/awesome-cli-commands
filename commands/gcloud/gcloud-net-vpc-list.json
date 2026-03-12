@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-net-vpc-list",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-networking",
+  "title": "List VPC Networks",
+  "command": "gcloud compute networks list",
+  "description": "List all VPC networks in the project",
+  "tags": ["vpc", "network", "list"]
+}

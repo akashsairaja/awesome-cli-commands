@@ -1,0 +1,8 @@
+{
+  "id": "k3s-config-2",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-config",
+  "title": "View k3s check-config",
+  "command": "k3s check-config",
+  "description": "Check system requirements."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "redis-type",
+  "categoryId": "redis",
+  "subcategoryId": "redis-server",
+  "title": "Get key type",
+  "command": "TYPE key",
+  "description": "Get the type of value stored at key",
+  "tags": ["type", "check"]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "namespace-management",
+  "stackId": "kubernetes",
+  "name": "Namespace Management",
+  "description": "Create, organize, and manage Kubernetes namespaces with resource quotas and limit ranges for multi-tenant clusters.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": false,
+  "tags": ["namespaces", "multi-tenant", "quotas", "organization"],
+  "prerequisites": ["kubectl configured"],
+  "steps": [
+    {
+      "title": "List all namespaces with status",
+      "description": "View all namespaces and their current status.",
+      "command": "kubectl get namespaces -o custom-columns='NAME:.metadata.name,STATUS:.status.phase,AGE:.metadata.creationTimestamp'"
+    },
+    {
+      "title": "Create a namespace with labels",
+      "description": "Create a new namespace and label it for organization.",
+      "command": "kubectl create namespace staging && kubectl label namespace staging environment=staging team=platform"
+    },
+    {
+      "title": "Set a resource quota on a namespace",
+      "description": "Limit the total resources that can be consumed in a namespace.",
+      "command": "kubectl create quota team-quota --namespace=staging --hard=cpu=4,memory=8Gi,pods=20,services=10",
+      "tip": "Resource quotas prevent a single team from consuming all cluster resources."
+    },
+    {
+      "title": "View resource usage in a namespace",
+      "description": "Check current resource consumption against quotas.",
+      "command": "kubectl describe quota --namespace=staging"
+    },
+    {
+      "title": "Set the default namespace for kubectl",
+      "description": "Change the default namespace so you do not need to specify -n on every command.",
+      "command": "kubectl config set-context --current --namespace=staging"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Namespace Management\nset -euo pipefail\n\necho \"=== All Namespaces ===\"\nkubectl get namespaces\n\necho \"\"\necho \"=== Resource Quotas ===\"\nfor ns in $(kubectl get namespaces -o jsonpath='{.items[*].metadata.name}'); do\n  quota=$(kubectl describe quota -n \"$ns\" 2>/dev/null)\n  if [ -n \"$quota\" ]; then\n    echo \"--- $ns ---\"\n    echo \"$quota\" | grep -E 'Name:|Used|Hard' | head -5\n    echo \"\"\n  fi\ndone\n\necho \"\"\necho \"=== Current Context Namespace ===\"\nkubectl config view --minify -o jsonpath='{.contexts[0].context.namespace}' && echo \"\" || echo \"default\"",
+  "faq": [
+    {
+      "question": "Can I move resources between namespaces?",
+      "answer": "No, Kubernetes does not support moving resources between namespaces. You need to delete and recreate the resource in the new namespace."
+    },
+    {
+      "question": "What is a LimitRange vs ResourceQuota?",
+      "answer": "ResourceQuota sets total limits for the entire namespace. LimitRange sets default and maximum limits per individual pod or container. Use both together for comprehensive resource management."
+    }
+  ],
+  "relatedRecipes": ["resource-optimization-audit", "rbac-auditing-workflow"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "docker-82",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "Execute in service",
+  "command": "docker compose exec <service> /bin/bash",
+  "description": "Execute command in running service."
+}

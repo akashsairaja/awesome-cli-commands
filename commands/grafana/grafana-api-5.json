@@ -1,0 +1,8 @@
+{
+  "id": "grafana-api-5",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-api",
+  "title": "List datasources",
+  "command": "curl -s http://localhost:3000/api/datasources -H 'Authorization: Bearer TOKEN'",
+  "description": "List all configured datasources."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "starship-presets-4",
+  "categoryId": "starship",
+  "subcategoryId": "starship-presets",
+  "title": "List presets",
+  "command": "starship preset --list",
+  "description": "List available presets."
+}

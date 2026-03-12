@@ -1,0 +1,8 @@
+{
+  "id": "ps-31",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-system",
+  "title": "Get event logs",
+  "command": "Get-EventLog -LogName System -Newest 10",
+  "description": "View recent system events."
+}

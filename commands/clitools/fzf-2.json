@@ -1,0 +1,8 @@
+{
+  "id": "fzf-2",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-fzf",
+  "title": "Search with preview",
+  "command": "fzf --preview 'cat {}'",
+  "description": "Show file content preview."
+}

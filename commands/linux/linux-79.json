@@ -1,0 +1,8 @@
+{
+  "id": "linux-79",
+  "categoryId": "linux",
+  "subcategoryId": "ssh",
+  "title": "Run remote command",
+  "command": "ssh user@host 'df -h && free -m'",
+  "description": "Execute commands on a remote server without interactive session."
+}

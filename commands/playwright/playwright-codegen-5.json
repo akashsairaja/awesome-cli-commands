@@ -1,0 +1,8 @@
+{
+  "id": "playwright-codegen-5",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-codegen",
+  "title": "Load auth state",
+  "command": "npx playwright codegen --load-storage=auth.json example.com",
+  "description": "Record with existing auth."
+}

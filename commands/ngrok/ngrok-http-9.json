@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-http-9",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-http",
+  "title": "Circuit breaker",
+  "command": "ngrok http --circuit-breaker=0.8 3000",
+  "description": "Trip circuit breaker at 80% 5xx error rate."
+}

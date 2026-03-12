@@ -1,0 +1,8 @@
+{
+  "id": "db-86",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Flush tables",
+  "command": "FLUSH TABLES;",
+  "description": "Close all open tables and flush query cache. Forces table re-read on next access."
+}

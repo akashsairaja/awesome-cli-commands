@@ -1,0 +1,8 @@
+{
+  "id": "java-16",
+  "categoryId": "java",
+  "subcategoryId": "java-runtime",
+  "title": "Enable GC logging",
+  "command": "java -Xlog:gc*:file=gc.log:time,level,tags MyApp",
+  "description": "Log garbage collection events to file (Java 9+)."
+}

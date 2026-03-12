@@ -1,0 +1,8 @@
+{
+  "id": "bash-69",
+  "categoryId": "bash",
+  "subcategoryId": "strings",
+  "title": "Remove prefix greedy",
+  "command": "echo \"${str##*/}\"",
+  "description": "Remove longest prefix (basename)."
+}

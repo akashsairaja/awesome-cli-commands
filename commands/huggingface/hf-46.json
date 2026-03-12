@@ -1,0 +1,8 @@
+{
+  "id": "hf-46",
+  "categoryId": "huggingface",
+  "subcategoryId": "hf-api",
+  "title": "Check disk usage",
+  "command": "huggingface-cli repo-info my-org/my-model --disk-usage",
+  "description": "Show repository storage usage."
+}

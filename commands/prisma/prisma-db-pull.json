@@ -1,0 +1,9 @@
+{
+  "id": "prisma-db-pull",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-db",
+  "title": "Pull schema from database",
+  "command": "npx prisma db pull",
+  "description": "Introspect database and update schema",
+  "tags": ["db", "pull", "introspect"]
+}

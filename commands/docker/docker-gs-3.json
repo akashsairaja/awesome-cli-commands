@@ -1,0 +1,8 @@
+{
+  "id": "docker-gs-3",
+  "title": "List running containers",
+  "command": "docker ps",
+  "description": "Show all currently running Docker containers",
+  "categoryId": "docker",
+  "subcategoryId": "getting-started"
+}

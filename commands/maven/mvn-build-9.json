@@ -1,0 +1,8 @@
+{
+  "id": "mvn-build-9",
+  "categoryId": "maven",
+  "subcategoryId": "build",
+  "title": "Offline build",
+  "command": "mvn install -o",
+  "description": "Build using only local repository."
+}

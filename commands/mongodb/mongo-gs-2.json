@@ -1,0 +1,8 @@
+{
+  "id": "mongo-gs-2",
+  "title": "Connect with mongosh",
+  "command": "docker exec -it mongodb mongosh",
+  "description": "Open interactive MongoDB shell in the running container",
+  "categoryId": "mongodb",
+  "subcategoryId": "getting-started"
+}

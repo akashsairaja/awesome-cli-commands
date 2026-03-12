@@ -1,0 +1,8 @@
+{
+  "id": "nats-stream-5",
+  "categoryId": "nats",
+  "subcategoryId": "nats-stream",
+  "title": "View messages",
+  "command": "nats stream view ORDERS",
+  "description": "Browse messages in stream."
+}

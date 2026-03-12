@@ -1,0 +1,8 @@
+{
+  "id": "hf-34",
+  "categoryId": "huggingface",
+  "subcategoryId": "hf-cache",
+  "title": "Disable cache",
+  "command": "export HF_HUB_OFFLINE=1",
+  "description": "Force offline mode using only cached files."
+}

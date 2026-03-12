@@ -1,0 +1,8 @@
+{
+  "id": "scoop-config-3",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-config",
+  "title": "Set SCOOP env var",
+  "command": "setx SCOOP D:\\Scoop",
+  "description": "Set custom Scoop install directory."
+}

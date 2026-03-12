@@ -1,0 +1,8 @@
+{
+  "id": "jest-execution-10",
+  "categoryId": "jest",
+  "subcategoryId": "jest-execution",
+  "title": "Serial execution",
+  "command": "jest --runInBand",
+  "description": "Run tests serially in current process."
+}

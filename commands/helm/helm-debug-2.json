@@ -1,0 +1,8 @@
+{
+  "id": "helm-debug-2",
+  "categoryId": "helm",
+  "subcategoryId": "helm-debug",
+  "title": "Get hooks",
+  "command": "helm get hooks my-release",
+  "description": "Get hooks for a release."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "py-122",
+  "categoryId": "python",
+  "subcategoryId": "python-mypy",
+  "title": "Strict mode",
+  "command": "mypy --strict src/",
+  "description": "Enable all strict type checking options."
+}

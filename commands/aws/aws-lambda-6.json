@@ -1,0 +1,8 @@
+{
+  "id": "aws-lambda-6",
+  "categoryId": "aws",
+  "subcategoryId": "lambda",
+  "title": "Tail logs",
+  "command": "aws logs tail /aws/lambda/myfunction --follow",
+  "description": "Stream CloudWatch logs."
+}

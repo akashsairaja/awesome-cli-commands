@@ -1,0 +1,8 @@
+{
+  "id": "checkov-scan-8",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-scan",
+  "title": "Scan ARM templates",
+  "command": "checkov -d . --framework arm",
+  "description": "Scan Azure ARM templates."
+}

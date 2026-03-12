@@ -1,0 +1,9 @@
+{
+  "id": "gradle-test-rerun",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-testing",
+  "title": "Rerun Tests",
+  "command": "./gradlew test --rerun-tasks",
+  "description": "Force rerun all tests even if up-to-date",
+  "tags": ["test", "rerun", "force"]
+}

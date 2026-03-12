@@ -1,0 +1,8 @@
+{
+  "id": "ps-66",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-pipeline",
+  "title": "Export to CSV",
+  "command": "Get-Process | Export-Csv -Path processes.csv -NoTypeInformation",
+  "description": "Export pipeline to CSV."
+}

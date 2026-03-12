@@ -1,0 +1,8 @@
+{
+  "id": "brew-51",
+  "categoryId": "homebrew",
+  "subcategoryId": "taps",
+  "title": "All tap info",
+  "command": "brew tap-info --installed",
+  "description": "Show info about all installed taps."
+}

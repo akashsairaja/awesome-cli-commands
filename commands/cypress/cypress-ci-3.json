@@ -1,0 +1,8 @@
+{
+  "id": "cypress-ci-3",
+  "categoryId": "cypress",
+  "subcategoryId": "cypress-ci",
+  "title": "CI build ID",
+  "command": "npx cypress run --record --ci-build-id $BUILD_ID",
+  "description": "Group runs with build ID."
+}

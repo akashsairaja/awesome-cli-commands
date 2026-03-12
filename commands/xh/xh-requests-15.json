@@ -1,0 +1,8 @@
+{
+  "id": "xh-requests-15",
+  "categoryId": "xh",
+  "subcategoryId": "xh-requests",
+  "title": "Follow redirects",
+  "command": "xh --follow GET https://example.com/old-page",
+  "description": "Automatically follow HTTP redirects."
+}

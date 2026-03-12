@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-dash",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-streaming",
+  "title": "Create DASH stream",
+  "command": "ffmpeg -i input.mp4 -codec: copy -f dash output.mpd",
+  "description": "Convert video to DASH streaming format",
+  "tags": ["dash", "stream", "mpd"]
+}

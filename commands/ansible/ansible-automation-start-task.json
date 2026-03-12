@@ -1,0 +1,9 @@
+{
+  "id": "ansible-automation-start-task",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-automation",
+  "title": "Start at Specific Task",
+  "command": "ansible-playbook playbook.yml --start-at-task='Install packages'",
+  "description": "Resume playbook execution from specific task",
+  "tags": ["automation", "start", "resume", "ci-cd"]
+}

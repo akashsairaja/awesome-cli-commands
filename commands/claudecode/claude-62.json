@@ -1,0 +1,8 @@
+{
+  "id": "claude-62",
+  "categoryId": "claudecode",
+  "subcategoryId": "agents",
+  "title": "Send task to cloud",
+  "command": "& (at end of prompt)",
+  "description": "Send task to run in cloud (Remote execution)."
+}

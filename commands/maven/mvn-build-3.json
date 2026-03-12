@@ -1,0 +1,8 @@
+{
+  "id": "mvn-build-3",
+  "categoryId": "maven",
+  "subcategoryId": "build",
+  "title": "Install to local repo",
+  "command": "mvn clean install",
+  "description": "Build and install to local repository."
+}

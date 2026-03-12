@@ -1,0 +1,69 @@
+{
+  "id": "branch-cleanup-automation",
+  "stackId": "git",
+  "name": "Automate Cleanup of Stale Merged Branches",
+  "description": "Remove local and remote branches that have already been merged, keeping your repository clean and navigable.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "Teams adopting trunk-based development need automated branch hygiene to manage high-frequency merges.",
+  "tags": ["branches", "cleanup", "automation", "maintenance", "housekeeping"],
+  "prerequisites": [
+    "Git installed",
+    "A repository with multiple merged branches",
+    "Push access to the remote"
+  ],
+  "steps": [
+    {
+      "title": "Fetch and prune remote tracking branches",
+      "command": "git fetch --prune",
+      "description": "Sync with the remote and remove local references to branches that no longer exist on the remote.",
+      "tip": "Run this regularly or add it to your git config with `git config --global fetch.prune true` to auto-prune on every fetch."
+    },
+    {
+      "title": "List all merged local branches",
+      "command": "git branch --merged main | grep -v 'main\\|master\\|\\*'",
+      "description": "Show local branches that have been fully merged into main. The grep excludes main, master, and the current branch.",
+      "warning": "Always verify the list before deleting. Some long-lived branches like release or develop may appear as merged."
+    },
+    {
+      "title": "Delete merged local branches",
+      "command": "git branch --merged main | grep -v 'main\\|master\\|\\*' | xargs -r git branch -d",
+      "description": "Pipe the merged branch list into xargs to delete each one. The -d flag only deletes fully merged branches, so it is safe.",
+      "tip": "The -r flag on xargs prevents an error when there are no branches to delete."
+    },
+    {
+      "title": "List merged remote branches",
+      "command": "git branch -r --merged main | grep -v 'main\\|master\\|HEAD' | sed 's/origin\\///'",
+      "description": "Show remote tracking branches that have been merged into main, stripping the origin/ prefix for readability."
+    },
+    {
+      "title": "Delete merged remote branches",
+      "command": "git branch -r --merged main | grep -v 'main\\|master\\|HEAD' | sed 's/origin\\///' | xargs -r -I {} git push origin --delete {}",
+      "description": "Delete each merged remote branch. The -I {} placeholder passes each branch name to the push --delete command.",
+      "warning": "This is irreversible on the remote. Make sure no one else is working on these branches before deleting."
+    },
+    {
+      "title": "Verify cleanup results",
+      "command": "git branch -a",
+      "description": "List all remaining local and remote branches to confirm the stale ones have been removed."
+    }
+  ],
+  "fullScript": "#!/usr/bin/env bash\n# branch-cleanup.sh — Remove merged local and remote branches\nset -euo pipefail\n\nBASE_BRANCH=\"${1:-main}\"\n\necho \"Fetching and pruning remote references...\"\ngit fetch --prune\n\necho \"\"\necho \"=== Merged local branches ===\"\nMERGED_LOCAL=$(git branch --merged \"$BASE_BRANCH\" | grep -v \"main\\|master\\|\\*\" || true)\nif [ -z \"$MERGED_LOCAL\" ]; then\n  echo \"No merged local branches to clean up.\"\nelse\n  echo \"$MERGED_LOCAL\"\n  echo \"\"\n  read -rp \"Delete these local branches? (y/N) \" confirm\n  if [[ \"$confirm\" =~ ^[Yy]$ ]]; then\n    echo \"$MERGED_LOCAL\" | xargs -r git branch -d\n    echo \"Local branches deleted.\"\n  fi\nfi\n\necho \"\"\necho \"=== Merged remote branches ===\"\nMERGED_REMOTE=$(git branch -r --merged \"$BASE_BRANCH\" | grep -v \"main\\|master\\|HEAD\" | sed 's/origin\\///' || true)\nif [ -z \"$MERGED_REMOTE\" ]; then\n  echo \"No merged remote branches to clean up.\"\nelse\n  echo \"$MERGED_REMOTE\"\n  echo \"\"\n  read -rp \"Delete these remote branches? (y/N) \" confirm\n  if [[ \"$confirm\" =~ ^[Yy]$ ]]; then\n    echo \"$MERGED_REMOTE\" | xargs -r -I {} git push origin --delete {}\n    echo \"Remote branches deleted.\"\n  fi\nfi\n\necho \"\"\necho \"Cleanup complete. Remaining branches:\"\ngit branch -a",
+  "faq": [
+    {
+      "question": "Will this delete branches that are open in a pull request?",
+      "answer": "It only deletes branches merged into the base branch. If a PR is open but not yet merged, its branch will not appear in the --merged list and will be safe."
+    },
+    {
+      "question": "How can I protect specific branches from being deleted?",
+      "answer": "Add them to the grep exclusion pattern. For example, add '\\|develop\\|release' to the grep -v filter to protect those branches."
+    },
+    {
+      "question": "Can I schedule this to run automatically?",
+      "answer": "Yes. Add the script as a cron job, a CI/CD scheduled pipeline, or a GitHub Action that runs weekly. Use the non-interactive version by removing the read prompts and adding a --force flag."
+    }
+  ],
+  "relatedRecipes": ["git-hooks-automation", "git-worktree-parallel", "conventional-commits-setup"],
+  "lastUpdated": "2026-03-11"
+}

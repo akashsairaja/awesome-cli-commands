@@ -1,0 +1,58 @@
+{
+  "id": "redis-data-backup",
+  "stackId": "redis",
+  "name": "RDB and AOF Backup and Restore",
+  "description": "Protect your Redis data with point-in-time RDB snapshots and append-only file (AOF) persistence for disaster recovery.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "tags": ["backup", "restore", "rdb", "aof", "persistence"],
+  "prerequisites": ["Redis installed and running", "Write access to Redis data directory"],
+  "steps": [
+    {
+      "title": "Trigger an RDB snapshot",
+      "description": "Force Redis to create a point-in-time dump file immediately.",
+      "command": "redis-cli BGSAVE",
+      "tip": "BGSAVE forks a child process so the server stays responsive. Use LASTSAVE to check when it completed."
+    },
+    {
+      "title": "Check last save timestamp",
+      "description": "Verify when the most recent RDB snapshot was completed.",
+      "command": "redis-cli LASTSAVE"
+    },
+    {
+      "title": "Locate the dump file",
+      "description": "Find the path to the RDB dump file on disk.",
+      "command": "redis-cli CONFIG GET dir && redis-cli CONFIG GET dbfilename"
+    },
+    {
+      "title": "Enable AOF persistence",
+      "description": "Turn on append-only file logging for near-realtime durability.",
+      "command": "redis-cli CONFIG SET appendonly yes",
+      "warning": "Enabling AOF on a running server triggers a rewrite. Ensure you have sufficient disk space."
+    },
+    {
+      "title": "Copy backup files to safe storage",
+      "description": "Copy the RDB and AOF files to an external backup location.",
+      "command": "cp /var/lib/redis/dump.rdb /backups/redis/dump-$(date +%Y%m%d-%H%M%S).rdb"
+    },
+    {
+      "title": "Restore from an RDB backup",
+      "description": "Stop Redis, replace the dump file, and restart to restore data.",
+      "command": "sudo systemctl stop redis && cp /backups/redis/dump-latest.rdb /var/lib/redis/dump.rdb && sudo systemctl start redis",
+      "warning": "Restoring replaces ALL current data. Make a backup of the current dump before restoring."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Redis Backup Script\nset -euo pipefail\n\nBACKUP_DIR=\"/backups/redis\"\nTIMESTAMP=$(date +%Y%m%d-%H%M%S)\nmkdir -p \"$BACKUP_DIR\"\n\necho \"=== Triggering RDB snapshot ===\"\nredis-cli BGSAVE\nsleep 2\n\necho \"\"\necho \"=== Locating data files ===\"\nREDIS_DIR=$(redis-cli CONFIG GET dir | tail -1)\nREDIS_DB=$(redis-cli CONFIG GET dbfilename | tail -1)\n\necho \"Data directory: $REDIS_DIR\"\necho \"Dump file: $REDIS_DB\"\n\necho \"\"\necho \"=== Copying backup files ===\"\nif [ -f \"$REDIS_DIR/$REDIS_DB\" ]; then\n  cp \"$REDIS_DIR/$REDIS_DB\" \"$BACKUP_DIR/dump-$TIMESTAMP.rdb\"\n  echo \"RDB backup: $BACKUP_DIR/dump-$TIMESTAMP.rdb\"\nfi\n\nif [ -f \"$REDIS_DIR/appendonly.aof\" ]; then\n  cp \"$REDIS_DIR/appendonly.aof\" \"$BACKUP_DIR/appendonly-$TIMESTAMP.aof\"\n  echo \"AOF backup: $BACKUP_DIR/appendonly-$TIMESTAMP.aof\"\nfi\n\necho \"\"\necho \"=== Backup complete ===\"\nls -lh \"$BACKUP_DIR\"/*$TIMESTAMP* 2>/dev/null",
+  "faq": [
+    {
+      "question": "RDB vs AOF: which should I use?",
+      "answer": "Use both for best durability. RDB provides compact point-in-time snapshots for fast restores. AOF logs every write for minimal data loss (down to 1 second with appendfsync everysec)."
+    },
+    {
+      "question": "Does BGSAVE block the server?",
+      "answer": "No, BGSAVE forks a child process to write the dump file. The parent process continues serving requests. However, the fork itself can cause a brief latency spike on servers with large datasets."
+    }
+  ],
+  "relatedRecipes": ["redis-cluster-setup", "redis-monitoring"],
+  "lastUpdated": "2026-03-11"
+}

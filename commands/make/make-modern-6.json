@@ -1,0 +1,8 @@
+{
+  "id": "make-modern-6",
+  "categoryId": "make",
+  "subcategoryId": "make-modern",
+  "title": "Check dependencies",
+  "command": "check-deps:\n\t@which docker > /dev/null || (echo \"Docker required\" && exit 1)",
+  "description": "Verify required tools installed."
+}

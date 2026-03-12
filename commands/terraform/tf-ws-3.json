@@ -1,0 +1,8 @@
+{
+  "id": "tf-ws-3",
+  "categoryId": "terraform",
+  "subcategoryId": "workspace",
+  "title": "Create workspace",
+  "command": "terraform workspace new dev",
+  "description": "Create and switch to new workspace."
+}

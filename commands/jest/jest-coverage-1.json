@@ -1,0 +1,8 @@
+{
+  "id": "jest-coverage-1",
+  "categoryId": "jest",
+  "subcategoryId": "jest-coverage",
+  "title": "CI mode",
+  "command": "jest --ci",
+  "description": "Run in continuous integration mode."
+}

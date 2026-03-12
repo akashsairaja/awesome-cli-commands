@@ -1,0 +1,8 @@
+{
+  "id": "ssh-21",
+  "categoryId": "sshgpg",
+  "subcategoryId": "config",
+  "title": "Fix key permissions",
+  "command": "chmod 600 ~/.ssh/id_*",
+  "description": "Set correct key file permissions."
+}

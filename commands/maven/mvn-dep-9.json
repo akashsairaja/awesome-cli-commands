@@ -1,0 +1,8 @@
+{
+  "id": "mvn-dep-9",
+  "categoryId": "maven",
+  "subcategoryId": "dependencies",
+  "title": "Go offline",
+  "command": "mvn dependency:go-offline",
+  "description": "Download everything for offline use."
+}

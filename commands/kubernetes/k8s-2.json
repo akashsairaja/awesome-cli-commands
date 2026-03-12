@@ -1,0 +1,8 @@
+{
+  "id": "k8s-2",
+  "categoryId": "kubernetes",
+  "subcategoryId": "context",
+  "title": "List all contexts",
+  "command": "kubectl config get-contexts",
+  "description": "List all available contexts."
+}

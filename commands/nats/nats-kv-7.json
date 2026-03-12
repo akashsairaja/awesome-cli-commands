@@ -1,0 +1,8 @@
+{
+  "id": "nats-kv-7",
+  "categoryId": "nats",
+  "subcategoryId": "nats-kv",
+  "title": "Watch bucket",
+  "command": "nats kv watch my-kv",
+  "description": "Watch for real-time changes to all keys."
+}

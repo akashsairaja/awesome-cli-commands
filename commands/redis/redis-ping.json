@@ -1,0 +1,9 @@
+{
+  "id": "redis-ping",
+  "categoryId": "redis",
+  "subcategoryId": "redis-server",
+  "title": "Ping server",
+  "command": "PING",
+  "description": "Test if server is responding",
+  "tags": ["ping", "test", "health"]
+}

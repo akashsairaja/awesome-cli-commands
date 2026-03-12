@@ -1,0 +1,8 @@
+{
+  "id": "vim-19",
+  "categoryId": "vim",
+  "subcategoryId": "search",
+  "title": "Replace all",
+  "command": ":%s/old/new/g",
+  "description": "Replace all occurrences in file."
+}

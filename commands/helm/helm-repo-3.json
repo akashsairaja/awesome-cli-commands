@@ -1,0 +1,8 @@
+{
+  "id": "helm-repo-3",
+  "categoryId": "helm",
+  "subcategoryId": "helm-repo",
+  "title": "List repositories",
+  "command": "helm repo list",
+  "description": "List configured repositories."
+}

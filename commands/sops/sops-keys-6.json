@@ -1,0 +1,8 @@
+{
+  "id": "sops-keys-6",
+  "categoryId": "sops",
+  "subcategoryId": "sops-keys",
+  "title": "Remove KMS key from file",
+  "command": "sops updatekeys --rm-kms arn:aws:kms:us-east-1:123:key/xxx secrets.enc.yaml",
+  "description": "Remove an AWS KMS key from file."
+}

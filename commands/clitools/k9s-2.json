@@ -1,0 +1,8 @@
+{
+  "id": "k9s-2",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-k9s",
+  "title": "Specific namespace",
+  "command": "k9s -n production",
+  "description": "Start in specific namespace."
+}

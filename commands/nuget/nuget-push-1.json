@@ -1,0 +1,8 @@
+{
+  "id": "nuget-push-1",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-push",
+  "title": "Push all packages",
+  "command": "dotnet nuget push *.nupkg -s https://api.nuget.org/v3/index.json -k API_KEY",
+  "description": "Push all .nupkg files in directory."
+}

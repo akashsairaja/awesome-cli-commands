@@ -1,0 +1,53 @@
+{
+  "id": "process-management-systemd",
+  "stackId": "linux",
+  "name": "Process Management with systemd",
+  "description": "Manage services and processes using systemd, including starting, stopping, enabling, and debugging service units.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": false,
+  "tags": ["systemd", "services", "processes", "management"],
+  "prerequisites": ["Linux with systemd", "Root or sudo access"],
+  "steps": [
+    {
+      "title": "List running services",
+      "description": "View all active services and their status.",
+      "command": "systemctl list-units --type=service --state=running"
+    },
+    {
+      "title": "Check a specific service status",
+      "description": "View detailed status including PID, memory usage, and recent logs.",
+      "command": "systemctl status nginx"
+    },
+    {
+      "title": "View failed services",
+      "description": "List all services that have failed to start.",
+      "command": "systemctl list-units --type=service --state=failed",
+      "tip": "Use 'systemctl reset-failed' to clear the failed state after investigating."
+    },
+    {
+      "title": "Enable a service to start on boot",
+      "description": "Configure a service to start automatically when the system boots.",
+      "command": "sudo systemctl enable --now nginx",
+      "tip": "The --now flag starts the service immediately in addition to enabling it for boot."
+    },
+    {
+      "title": "View service dependencies",
+      "description": "See what a service depends on and what depends on it.",
+      "command": "systemctl list-dependencies nginx"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Process Management with systemd\nset -euo pipefail\n\necho \"=== System State ===\"\nsystemctl is-system-running\n\necho \"\"\necho \"=== Failed Services ===\"\nsystemctl list-units --type=service --state=failed --no-legend || echo \"No failed services\"\n\necho \"\"\necho \"=== Running Services ===\"\nsystemctl list-units --type=service --state=running --no-pager | head -20\n\necho \"\"\necho \"=== Service Commands ===\"\necho \"Status:      systemctl status <service>\"\necho \"Start:       sudo systemctl start <service>\"\necho \"Stop:        sudo systemctl stop <service>\"\necho \"Restart:     sudo systemctl restart <service>\"\necho \"Enable:      sudo systemctl enable --now <service>\"\necho \"Disable:     sudo systemctl disable --now <service>\"\necho \"Logs:        journalctl -u <service> -f\"\necho \"Reload:      sudo systemctl daemon-reload\"",
+  "faq": [
+    {
+      "question": "What is the difference between restart and reload?",
+      "answer": "Restart stops and starts the service, causing a brief interruption. Reload tells the service to re-read its configuration without stopping, which is supported by some services like Nginx."
+    },
+    {
+      "question": "How do I create a custom systemd service?",
+      "answer": "Create a unit file in /etc/systemd/system/myapp.service with [Unit], [Service], and [Install] sections. Then run 'systemctl daemon-reload' and 'systemctl enable --now myapp'."
+    }
+  ],
+  "relatedRecipes": ["log-analysis-journalctl", "system-monitoring-dashboard"],
+  "lastUpdated": "2026-03-11"
+}

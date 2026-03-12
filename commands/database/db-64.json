@@ -1,0 +1,8 @@
+{
+  "id": "db-64",
+  "categoryId": "database",
+  "subcategoryId": "mongodb",
+  "title": "Drop collection",
+  "command": "db.collection.drop()",
+  "description": "Delete an entire collection."
+}

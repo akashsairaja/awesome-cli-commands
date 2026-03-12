@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-gs-1",
+  "title": "Install Lefthook (macOS)",
+  "command": "brew install lefthook",
+  "description": "Install Lefthook git hooks manager using Homebrew on macOS",
+  "categoryId": "lefthook",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "bash-63",
+  "categoryId": "bash",
+  "subcategoryId": "strings",
+  "title": "String length",
+  "command": "echo \"${#str}\"",
+  "description": "Get length of string."
+}

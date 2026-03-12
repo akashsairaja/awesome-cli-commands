@@ -1,0 +1,52 @@
+{
+  "id": "react-a11y-audit",
+  "stackId": "react",
+  "name": "Accessibility Testing with axe-core",
+  "description": "Audit React components for WCAG accessibility violations using axe-core in tests, CI, and browser DevTools.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "Accessibility lawsuits are increasing and WCAG compliance is now a requirement for many organizations",
+  "tags": ["accessibility", "a11y", "axe-core", "wcag", "testing"],
+  "prerequisites": ["React project", "Testing setup (Vitest or Jest)"],
+  "steps": [
+    {
+      "title": "Install axe-core testing utilities",
+      "description": "Add jest-axe (or vitest-axe) to run accessibility checks in your test suite.",
+      "command": "pnpm add -D axe-core vitest-axe"
+    },
+    {
+      "title": "Write an accessibility test",
+      "description": "Create a test that renders a component and checks for WCAG violations.",
+      "command": "cat > src/components/__tests__/Form.a11y.test.tsx << 'EOF'\nimport { render } from '@testing-library/react';\nimport { axe, toHaveNoViolations } from 'vitest-axe';\nimport { expect } from 'vitest';\nimport { ContactForm } from '../ContactForm';\n\nexpect.extend(toHaveNoViolations);\n\nit('ContactForm has no accessibility violations', async () => {\n  const { container } = render(<ContactForm />);\n  const results = await axe(container);\n  expect(results).toHaveNoViolations();\n});\nEOF",
+      "tip": "Run axe checks on every component to catch missing labels, low contrast, and incorrect ARIA attributes."
+    },
+    {
+      "title": "Add eslint-plugin-jsx-a11y for static analysis",
+      "description": "Catch accessibility issues at lint time before they reach tests or production.",
+      "command": "pnpm add -D eslint-plugin-jsx-a11y"
+    },
+    {
+      "title": "Run a full-page accessibility audit with Lighthouse",
+      "description": "Use Lighthouse specifically for the accessibility category.",
+      "command": "npx lighthouse http://localhost:3000 --only-categories=accessibility --output=html --output-path=./a11y-report.html --chrome-flags='--headless=new'"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# React Accessibility Audit\nset -euo pipefail\n\necho \"=== Installing a11y testing tools ===\"\npnpm add -D axe-core vitest-axe eslint-plugin-jsx-a11y\n\necho \"\"\necho \"=== Running Lighthouse accessibility audit ===\"\nURL=${1:-http://localhost:3000}\nnpx lighthouse \"$URL\" \\\n  --only-categories=accessibility \\\n  --output=html \\\n  --output-path=./a11y-report.html \\\n  --chrome-flags='--headless=new'\n\necho \"\"\necho \"=== Accessibility report saved to a11y-report.html ===\"\necho \"\"\necho \"Common issues to check:\"\necho \"  - Missing alt text on images\"\necho \"  - Form inputs without labels\"\necho \"  - Insufficient color contrast (4.5:1 minimum)\"\necho \"  - Missing ARIA landmarks\"\necho \"  - Keyboard navigation not working\"",
+  "faq": [
+    {
+      "question": "What WCAG level should I target?",
+      "answer": "Target WCAG 2.1 Level AA as a minimum. It covers the most impactful requirements including color contrast, keyboard navigation, and screen reader compatibility. Level AAA is aspirational but not typically required."
+    },
+    {
+      "question": "Can axe-core catch all accessibility issues?",
+      "answer": "No. Automated tools catch about 30-40% of WCAG issues. Manual testing with a screen reader (VoiceOver, NVDA) and keyboard-only navigation is essential to catch the rest."
+    },
+    {
+      "question": "How do I fix color contrast violations?",
+      "answer": "Use a contrast checker tool to ensure text has at least 4.5:1 contrast ratio against its background (3:1 for large text). Chrome DevTools shows contrast ratios in the color picker."
+    }
+  ],
+  "relatedRecipes": ["react-component-testing", "react-performance-audit"],
+  "lastUpdated": "2026-03-11"
+}

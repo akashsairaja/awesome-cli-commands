@@ -1,0 +1,8 @@
+{
+  "id": "mongo-idx-5",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-index",
+  "title": "List indexes",
+  "command": "db.users.getIndexes()",
+  "description": "Show all indexes on collection."
+}

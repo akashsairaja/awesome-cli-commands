@@ -1,0 +1,9 @@
+{
+  "id": "bun-test-file",
+  "categoryId": "bun",
+  "subcategoryId": "bun-test",
+  "title": "Run Specific Test File",
+  "command": "bun test <file.test.ts>",
+  "description": "Run tests in specific file",
+  "tags": ["test", "file", "specific"]
+}

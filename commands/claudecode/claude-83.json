@@ -1,0 +1,8 @@
+{
+  "id": "claude-83",
+  "categoryId": "claudecode",
+  "subcategoryId": "environment",
+  "title": "Set extended thinking tokens",
+  "command": "export MAX_THINKING_TOKENS=10000",
+  "description": "Increase thinking token budget."
+}

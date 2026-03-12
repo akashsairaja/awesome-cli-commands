@@ -1,0 +1,8 @@
+{
+  "id": "hurl-options-4",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-options",
+  "title": "HTML report",
+  "command": "hurl --test --report-html report/ api.hurl",
+  "description": "Generate HTML test report."
+}

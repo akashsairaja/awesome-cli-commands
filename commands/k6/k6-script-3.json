@@ -1,0 +1,8 @@
+{
+  "id": "k6-script-3",
+  "categoryId": "k6",
+  "subcategoryId": "k6-script",
+  "title": "Multiple checks",
+  "command": "check(res, {\n  'status is 200': (r) => r.status === 200,\n  'response time < 200ms': (r) => r.timings.duration < 200,\n  'has body': (r) => r.body.length > 0,\n});",
+  "description": "Multiple response checks."
+}

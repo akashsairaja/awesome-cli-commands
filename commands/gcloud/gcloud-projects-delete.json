@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-projects-delete",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-projects",
+  "title": "Delete Project",
+  "command": "gcloud projects delete <project-id>",
+  "description": "Schedule project for deletion",
+  "tags": ["projects", "delete", "cleanup"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ansible-config-list",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-config",
+  "title": "List All Settings",
+  "command": "ansible-config list",
+  "description": "Show all configuration options",
+  "tags": ["config", "list", "settings"]
+}

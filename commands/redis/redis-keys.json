@@ -1,0 +1,9 @@
+{
+  "id": "redis-keys",
+  "categoryId": "redis",
+  "subcategoryId": "redis-server",
+  "title": "Find keys by pattern",
+  "command": "KEYS pattern*",
+  "description": "Find keys matching pattern (use SCAN in production)",
+  "tags": ["keys", "pattern", "find"]
+}

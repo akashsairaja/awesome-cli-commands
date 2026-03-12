@@ -1,0 +1,8 @@
+{
+  "id": "bash-86",
+  "categoryId": "bash",
+  "subcategoryId": "conditionals",
+  "title": "Is directory",
+  "command": "[ -d path ] && echo \"is directory\"",
+  "description": "Check if path is a directory."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ssh-42",
+  "categoryId": "sshgpg",
+  "subcategoryId": "connections",
+  "title": "GPG encrypt with armor",
+  "command": "gpg --armor --encrypt --recipient user@example.com file.txt",
+  "description": "Encrypt file as ASCII-armored output."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "rg-basic-search",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-search",
+  "title": "Basic search",
+  "command": "rg \"pattern\"",
+  "description": "Search for pattern in current directory",
+  "tags": ["search", "find", "grep"]
+}

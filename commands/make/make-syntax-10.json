@@ -1,0 +1,8 @@
+{
+  "id": "make-syntax-10",
+  "categoryId": "make",
+  "subcategoryId": "make-syntax",
+  "title": "Substitution",
+  "command": "OBJS := $(SRCS:.c=.o)",
+  "description": "Replace .c with .o extension."
+}

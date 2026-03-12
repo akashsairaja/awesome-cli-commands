@@ -1,0 +1,8 @@
+{
+  "id": "volta-install-6",
+  "categoryId": "volta",
+  "subcategoryId": "volta-install",
+  "title": "Install global package",
+  "command": "volta install typescript",
+  "description": "Install global npm package."
+}

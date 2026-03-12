@@ -1,0 +1,9 @@
+{
+  "id": "redis-llen",
+  "categoryId": "redis",
+  "subcategoryId": "redis-lists",
+  "title": "Get list length",
+  "command": "LLEN key",
+  "description": "Get number of elements in list",
+  "tags": ["llen", "list", "length"]
+}

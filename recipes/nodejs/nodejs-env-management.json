@@ -1,0 +1,52 @@
+{
+  "id": "nodejs-env-management",
+  "stackId": "nodejs",
+  "name": "Environment Variable Management",
+  "description": "Manage environment variables securely with dotenv, validation, and type-safe configuration for Node.js applications.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "tags": ["env", "dotenv", "configuration", "environment", "validation"],
+  "prerequisites": ["Node.js installed"],
+  "steps": [
+    {
+      "title": "Install and configure dotenv",
+      "description": "Set up dotenv to load environment variables from a .env file during development.",
+      "command": "npm install dotenv\necho 'require(\"dotenv\").config();' | cat - app.js > /tmp/app.js && mv /tmp/app.js app.js",
+      "tip": "Load dotenv as early as possible in your entry file, before importing any modules that use env vars."
+    },
+    {
+      "title": "Create .env and .env.example files",
+      "description": "Create the environment file for local development and a template for team onboarding.",
+      "command": "cat <<'EOF' > .env\nNODE_ENV=development\nPORT=3000\nDATABASE_URL=postgresql://localhost:5432/mydb\nJWT_SECRET=dev-secret-change-in-production\nREDIS_URL=redis://localhost:6379\nEOF\n\n# Create template without secret values\nsed 's/=.*/=/' .env > .env.example",
+      "warning": "Never commit .env to version control. Always commit .env.example as a template for other developers."
+    },
+    {
+      "title": "Add .env to .gitignore",
+      "description": "Ensure the .env file with real values is never committed to the repository.",
+      "command": "echo '.env' >> .gitignore && echo '.env.local' >> .gitignore"
+    },
+    {
+      "title": "Validate environment variables at startup",
+      "description": "Add runtime validation to fail fast if required environment variables are missing.",
+      "command": "cat <<'EOF' > config.js\nrequire('dotenv').config();\n\nconst required = ['DATABASE_URL', 'JWT_SECRET'];\nconst missing = required.filter(key => !process.env[key]);\n\nif (missing.length > 0) {\n  console.error('Missing required env vars:', missing.join(', '));\n  process.exit(1);\n}\n\nmodule.exports = {\n  port: parseInt(process.env.PORT || '3000', 10),\n  nodeEnv: process.env.NODE_ENV || 'development',\n  databaseUrl: process.env.DATABASE_URL,\n  jwtSecret: process.env.JWT_SECRET,\n  redisUrl: process.env.REDIS_URL || 'redis://localhost:6379',\n  isDev: process.env.NODE_ENV !== 'production'\n};\nEOF",
+      "tip": "Parse numbers and booleans from env vars immediately in the config module. Never parse process.env values inline throughout your code."
+    }
+  ],
+  "fullScript": "#!/bin/bash\nset -euo pipefail\n\n# Node.js Environment Variable Setup\n\necho \"==> Installing dotenv...\"\nnpm install dotenv 2>/dev/null || echo \"dotenv already installed\"\n\necho \"==> Creating .env file...\"\nif [ ! -f .env ]; then\n  cat > .env <<'EOF'\nNODE_ENV=development\nPORT=3000\nDATABASE_URL=postgresql://localhost:5432/mydb\nJWT_SECRET=change-this-in-production\nREDIS_URL=redis://localhost:6379\nLOG_LEVEL=debug\nEOF\n  echo \"  Created .env\"\nelse\n  echo \"  .env already exists, skipping\"\nfi\n\necho \"==> Creating .env.example...\"\nsed 's/=.*/=/' .env > .env.example\necho \"  Created .env.example\"\n\necho \"==> Updating .gitignore...\"\nfor PATTERN in \".env\" \".env.local\" \".env.production\"; do\n  if ! grep -q \"^${PATTERN}$\" .gitignore 2>/dev/null; then\n    echo \"${PATTERN}\" >> .gitignore\n    echo \"  Added ${PATTERN} to .gitignore\"\n  fi\ndone\n\necho \"==> Creating config module...\"\ncat > config.js <<'EOF'\nrequire('dotenv').config();\n\nconst required = ['DATABASE_URL', 'JWT_SECRET'];\nconst missing = required.filter(key => !process.env[key]);\n\nif (missing.length > 0) {\n  console.error('FATAL: Missing required env vars:', missing.join(', '));\n  console.error('Copy .env.example to .env and fill in values.');\n  process.exit(1);\n}\n\nmodule.exports = {\n  port: parseInt(process.env.PORT || '3000', 10),\n  nodeEnv: process.env.NODE_ENV || 'development',\n  databaseUrl: process.env.DATABASE_URL,\n  jwtSecret: process.env.JWT_SECRET,\n  redisUrl: process.env.REDIS_URL || 'redis://localhost:6379',\n  logLevel: process.env.LOG_LEVEL || 'info',\n  isDev: process.env.NODE_ENV !== 'production',\n  isProd: process.env.NODE_ENV === 'production'\n};\nEOF\n\necho \"\"\necho \"==> Setup complete. Usage:\"\necho \"  const config = require('./config');\"\necho \"  console.log(config.port); // 3000\"",
+  "faq": [
+    {
+      "question": "Should I use dotenv in production?",
+      "answer": "Generally no. In production, set environment variables through your deployment platform (Docker, Kubernetes, AWS, etc.). Dotenv is primarily for local development convenience."
+    },
+    {
+      "question": "What is the difference between .env and .env.local?",
+      "answer": "By convention, .env contains defaults, .env.local contains overrides for your local machine. Frameworks like Next.js and Vite support this hierarchy automatically, loading .env.local with higher priority."
+    },
+    {
+      "question": "How do I use different env files per environment?",
+      "answer": "Create .env.development, .env.staging, .env.production files and load the right one: require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` }). Most frameworks handle this automatically."
+    }
+  ],
+  "relatedRecipes": ["nodejs-docker-optimization", "nodejs-security-audit"],
+  "lastUpdated": "2026-03-11"
+}

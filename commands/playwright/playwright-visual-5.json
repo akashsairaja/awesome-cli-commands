@@ -1,0 +1,8 @@
+{
+  "id": "playwright-visual-5",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-visual",
+  "title": "Threshold config",
+  "command": "await expect(page).toHaveScreenshot({ maxDiffPixelRatio: 0.1 });",
+  "description": "Allow 10% pixel difference."
+}

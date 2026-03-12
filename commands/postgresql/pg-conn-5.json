@@ -1,0 +1,8 @@
+{
+  "id": "pg-conn-5",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-connection",
+  "title": "Run SQL file",
+  "command": "psql -f script.sql -d mydb",
+  "description": "Execute SQL file against database."
+}

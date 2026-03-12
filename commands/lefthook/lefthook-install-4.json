@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-install-4",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-install",
+  "title": "Install via npm",
+  "command": "npm install lefthook --save-dev",
+  "description": "Install Lefthook as npm dev dependency."
+}

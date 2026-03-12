@@ -1,0 +1,8 @@
+{
+  "id": "git-64",
+  "categoryId": "git",
+  "subcategoryId": "rebase",
+  "title": "Abort rebase",
+  "command": "git rebase --abort",
+  "description": "Cancel rebase and restore state."
+}

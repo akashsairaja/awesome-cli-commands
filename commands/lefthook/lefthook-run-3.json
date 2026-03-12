@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-run-3",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-run",
+  "title": "Run specific command",
+  "command": "lefthook run pre-commit --commands lint",
+  "description": "Run specific command only."
+}

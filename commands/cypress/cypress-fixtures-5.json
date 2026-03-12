@@ -1,0 +1,8 @@
+{
+  "id": "cypress-fixtures-5",
+  "categoryId": "cypress",
+  "subcategoryId": "cypress-fixtures",
+  "title": "Import fixture directly",
+  "command": "import users from '../fixtures/users.json';",
+  "description": "ES6 import fixture file."
+}

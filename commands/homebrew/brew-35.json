@@ -1,0 +1,8 @@
+{
+  "id": "brew-35",
+  "categoryId": "homebrew",
+  "subcategoryId": "brew-services",
+  "title": "Restart all services",
+  "command": "brew services restart --all",
+  "description": "Restart all managed services."
+}

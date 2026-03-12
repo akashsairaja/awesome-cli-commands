@@ -1,0 +1,9 @@
+{
+  "id": "ansible-vault-view",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-vault",
+  "title": "View Encrypted File",
+  "command": "ansible-vault view secrets.yml",
+  "description": "View contents of encrypted file",
+  "tags": ["vault", "view", "read"]
+}

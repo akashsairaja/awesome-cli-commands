@@ -1,0 +1,9 @@
+{
+  "id": "tmux-copy-mode",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-config",
+  "title": "Enter copy mode",
+  "command": "Ctrl+b [",
+  "description": "Enter copy mode for scrolling",
+  "tags": ["copy", "scroll", "mode"]
+}

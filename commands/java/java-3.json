@@ -1,0 +1,8 @@
+{
+  "id": "java-3",
+  "categoryId": "java",
+  "subcategoryId": "java-compiler",
+  "title": "Compile to output directory",
+  "command": "javac -d target/classes src/*.java",
+  "description": "Compile sources and output class files to a directory."
+}

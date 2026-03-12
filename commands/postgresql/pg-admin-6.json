@@ -1,0 +1,8 @@
+{
+  "id": "pg-admin-6",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-admin",
+  "title": "Database size",
+  "command": "SELECT pg_size_pretty(pg_database_size('mydb'));",
+  "description": "Get database size in human-readable format."
+}

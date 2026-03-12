@@ -1,0 +1,57 @@
+{
+  "id": "gcloud-logging-monitoring",
+  "stackId": "gcloud",
+  "name": "Cloud Logging and Monitoring Queries",
+  "description": "Query application logs, create log-based metrics, set up alerting policies, and build dashboards using gcloud CLI.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "trending": true,
+  "trendingReason": "Observability is essential for production reliability, and Cloud Logging integrates with all GCP services.",
+  "tags": ["logging", "monitoring", "observability", "alerts", "metrics"],
+  "prerequisites": ["gcloud CLI installed", "Cloud Logging and Monitoring APIs enabled"],
+  "steps": [
+    {
+      "title": "Read recent logs",
+      "command": "gcloud logging read \"resource.type=cloud_run_revision AND severity>=ERROR\" --limit 25 --format json --freshness 1h",
+      "description": "Fetches the 25 most recent error-level logs from Cloud Run within the last hour."
+    },
+    {
+      "title": "Stream logs in real time",
+      "command": "gcloud alpha logging tail \"resource.type=cloud_run_revision\" --format \"value(textPayload)\"",
+      "description": "Streams live logs similar to 'tail -f' for quick debugging."
+    },
+    {
+      "title": "Create a log-based metric",
+      "command": "gcloud logging metrics create error_count --description \"Count of error logs\" --log-filter \"severity>=ERROR\"",
+      "description": "Creates a custom metric that counts error log entries, usable in dashboards and alerts."
+    },
+    {
+      "title": "Create an alerting policy",
+      "command": "gcloud alpha monitoring policies create --notification-channels projects/my-project-id/notificationChannels/12345 --condition-display-name \"High error rate\" --condition-filter \"metric.type=\\\"logging.googleapis.com/user/error_count\\\"\" --duration 300s --if \"> 10\"",
+      "description": "Triggers an alert when the error count exceeds 10 in a 5-minute window.",
+      "tip": "Set up notification channels (email, Slack, PagerDuty) first via the Console or API."
+    },
+    {
+      "title": "Export logs to Cloud Storage",
+      "command": "gcloud logging sinks create my-log-sink storage.googleapis.com/my-log-bucket --log-filter \"severity>=WARNING\"",
+      "description": "Creates a log sink that exports warning and error logs to a Cloud Storage bucket for long-term retention."
+    }
+  ],
+  "fullScript": "# Cloud Logging and Monitoring\ngcloud logging read \"resource.type=cloud_run_revision AND severity>=ERROR\" --limit 25 --format json --freshness 1h\ngcloud alpha logging tail \"resource.type=cloud_run_revision\" --format \"value(textPayload)\"\ngcloud logging metrics create error_count --description \"Count of error logs\" --log-filter \"severity>=ERROR\"\ngcloud logging sinks create my-log-sink storage.googleapis.com/my-log-bucket --log-filter \"severity>=WARNING\"",
+  "faq": [
+    {
+      "question": "How long are logs retained by default?",
+      "answer": "Admin Activity logs are retained for 400 days. Data Access logs and all other logs are retained for 30 days. Use log sinks to export to Cloud Storage for longer retention."
+    },
+    {
+      "question": "How do I filter logs by a specific service?",
+      "answer": "Use resource.type and resource.labels in the filter. For example: 'resource.type=cloud_run_revision AND resource.labels.service_name=myservice'."
+    },
+    {
+      "question": "What is the cost of Cloud Logging?",
+      "answer": "The first 50 GiB of logs per project per month is free. Beyond that, ingestion costs $0.50/GiB. You can use exclusion filters to reduce volume."
+    }
+  ],
+  "relatedRecipes": ["gcloud-cloud-run-deploy", "gcloud-iam-management"],
+  "lastUpdated": "2026-03-11"
+}

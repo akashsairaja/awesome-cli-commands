@@ -1,0 +1,8 @@
+{
+  "id": "trivy-fs-1",
+  "categoryId": "trivy",
+  "subcategoryId": "trivy-fs",
+  "title": "Scan directory",
+  "command": "trivy fs .",
+  "description": "Scan current directory for vulnerabilities."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "playwright-config-4",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-config",
+  "title": "Global setup",
+  "command": "npx playwright test --global-setup=./global-setup.ts",
+  "description": "Run global setup script."
+}

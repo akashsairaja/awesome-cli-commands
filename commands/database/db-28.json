@@ -1,0 +1,8 @@
+{
+  "id": "db-28",
+  "categoryId": "database",
+  "subcategoryId": "postgresql",
+  "title": "EXPLAIN query plan",
+  "command": "EXPLAIN ANALYZE SELECT * FROM tablename WHERE column = 'value';",
+  "description": "Show execution plan with actual timings."
+}

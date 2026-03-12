@@ -1,0 +1,9 @@
+{
+  "id": "azure-account-set",
+  "categoryId": "azure",
+  "subcategoryId": "azure-auth",
+  "title": "Set Active Subscription",
+  "command": "az account set --subscription <name-or-id>",
+  "description": "Change the current active subscription",
+  "tags": ["subscription", "switch", "default"]
+}

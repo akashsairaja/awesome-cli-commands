@@ -1,0 +1,8 @@
+{
+  "id": "playwright-component-4",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-component",
+  "title": "Repeat each test",
+  "command": "npx playwright test --repeat-each=3",
+  "description": "Run each test multiple times."
+}

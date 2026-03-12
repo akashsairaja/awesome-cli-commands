@@ -1,0 +1,8 @@
+{
+  "id": "starship-config-8",
+  "categoryId": "starship",
+  "subcategoryId": "starship-config",
+  "title": "Fish completions",
+  "command": "starship completions fish > ~/.config/fish/completions/starship.fish",
+  "description": "Generate shell completions for Fish."
+}

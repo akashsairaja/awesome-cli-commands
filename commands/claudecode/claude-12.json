@@ -1,0 +1,8 @@
+{
+  "id": "claude-12",
+  "categoryId": "claudecode",
+  "subcategoryId": "general",
+  "title": "Streaming JSON output",
+  "command": "claude --output-format stream-json",
+  "description": "Get streaming JSON responses."
+}

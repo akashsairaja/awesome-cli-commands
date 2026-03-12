@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-certs-10",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-certs",
+  "title": "Generate client certificate",
+  "command": "mkcert -client localhost",
+  "description": "Generate a client certificate for mutual TLS."
+}

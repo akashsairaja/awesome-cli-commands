@@ -1,0 +1,9 @@
+{
+  "id": "redis-ttl",
+  "categoryId": "redis",
+  "subcategoryId": "redis-server",
+  "title": "Get time to live",
+  "command": "TTL key",
+  "description": "Get remaining time to live of key",
+  "tags": ["ttl", "expire", "time"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "checkov-checks-10",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-checks",
+  "title": "Scan with baseline",
+  "command": "checkov -d . --baseline .checkov.baseline",
+  "description": "Skip findings already in baseline."
+}

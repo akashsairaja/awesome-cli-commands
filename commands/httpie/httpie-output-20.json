@@ -1,0 +1,8 @@
+{
+  "id": "httpie-output-20",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-output",
+  "title": "Set timeout",
+  "command": "http --timeout=30 GET https://slow-api.example.com/data",
+  "description": "Set request timeout in seconds (default is 30)."
+}

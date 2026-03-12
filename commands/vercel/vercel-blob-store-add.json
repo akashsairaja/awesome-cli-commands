@@ -1,0 +1,9 @@
+{
+  "id": "vercel-blob-store-add",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-storage",
+  "title": "Create Blob store",
+  "command": "vercel blob store add <name>",
+  "description": "Create new Blob storage store",
+  "tags": ["blob", "create", "store"]
+}

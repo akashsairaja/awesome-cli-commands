@@ -1,0 +1,8 @@
+{
+  "id": "go-mod-9",
+  "categoryId": "go",
+  "subcategoryId": "go-mod",
+  "title": "Add specific version",
+  "command": "go get github.com/pkg/errors@v0.9.1",
+  "description": "Add package at specific version."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "bash-77",
+  "categoryId": "bash",
+  "subcategoryId": "conditionals",
+  "title": "If statement",
+  "command": "if [ \"$a\" = \"$b\" ]; then echo \"equal\"; fi",
+  "description": "Basic if conditional."
+}

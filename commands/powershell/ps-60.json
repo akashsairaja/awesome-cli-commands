@@ -1,0 +1,8 @@
+{
+  "id": "ps-60",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-pipeline",
+  "title": "Sort objects",
+  "command": "Get-Process | Sort-Object CPU -Descending",
+  "description": "Sort by property."
+}

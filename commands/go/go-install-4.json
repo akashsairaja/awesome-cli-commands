@@ -1,0 +1,8 @@
+{
+  "id": "go-install-4",
+  "categoryId": "go",
+  "subcategoryId": "go-install",
+  "title": "List installed",
+  "command": "ls $(go env GOPATH)/bin",
+  "description": "List installed Go binaries."
+}

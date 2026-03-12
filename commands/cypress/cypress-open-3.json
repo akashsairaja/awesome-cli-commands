@@ -1,0 +1,8 @@
+{
+  "id": "cypress-open-3",
+  "categoryId": "cypress",
+  "subcategoryId": "cypress-open",
+  "title": "Open with browser",
+  "command": "npx cypress open --browser chrome",
+  "description": "Open in specific browser."
+}

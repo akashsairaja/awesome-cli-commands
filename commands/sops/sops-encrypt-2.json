@@ -1,0 +1,8 @@
+{
+  "id": "sops-encrypt-2",
+  "categoryId": "sops",
+  "subcategoryId": "sops-encrypt",
+  "title": "Encrypt in place",
+  "command": "sops -e -i secrets.yaml",
+  "description": "Encrypt file in place."
+}

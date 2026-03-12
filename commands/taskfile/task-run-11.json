@@ -1,0 +1,8 @@
+{
+  "id": "task-run-11",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-run",
+  "title": "Set output mode",
+  "command": "task --output group build",
+  "description": "Group output per task."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "mongo-query-8",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-query",
+  "title": "Sort and limit",
+  "command": "db.users.find().sort({ age: -1 }).limit(10)",
+  "description": "Sort descending and limit results."
+}

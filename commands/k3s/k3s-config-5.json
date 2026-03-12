@@ -1,0 +1,8 @@
+{
+  "id": "k3s-config-5",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-config",
+  "title": "Disable multiple components",
+  "command": "curl -sfL https://get.k3s.io | sh -s - --disable traefik --disable servicelb --disable metrics-server",
+  "description": "Install k3s with multiple built-in components disabled."
+}

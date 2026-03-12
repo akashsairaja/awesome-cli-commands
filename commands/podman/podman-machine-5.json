@@ -1,0 +1,8 @@
+{
+  "id": "podman-machine-5",
+  "categoryId": "podman",
+  "subcategoryId": "podman-machine",
+  "title": "SSH into machine",
+  "command": "podman machine ssh",
+  "description": "SSH into Podman machine."
+}

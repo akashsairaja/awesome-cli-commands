@@ -1,0 +1,8 @@
+{
+  "id": "xh-requests-4",
+  "categoryId": "xh",
+  "subcategoryId": "xh-requests",
+  "title": "Query parameters",
+  "command": "xh GET https://api.example.com/search q==search page==1",
+  "description": "Add query parameters."
+}

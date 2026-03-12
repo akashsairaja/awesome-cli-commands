@@ -1,0 +1,8 @@
+{
+  "id": "mvn-plugin-8",
+  "categoryId": "maven",
+  "subcategoryId": "plugins",
+  "title": "Source JAR",
+  "command": "mvn source:jar",
+  "description": "Create sources JAR."
+}

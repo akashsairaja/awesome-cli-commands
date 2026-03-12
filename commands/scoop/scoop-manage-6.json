@@ -1,0 +1,8 @@
+{
+  "id": "scoop-manage-6",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-manage",
+  "title": "Reset app",
+  "command": "scoop reset python",
+  "description": "Reset app shims and environment."
+}

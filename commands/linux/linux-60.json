@@ -1,0 +1,8 @@
+{
+  "id": "linux-60",
+  "categoryId": "linux",
+  "subcategoryId": "disk",
+  "title": "Check filesystem integrity",
+  "command": "sudo fsck /dev/sdb1",
+  "description": "Run filesystem check and repair. Partition must be unmounted."
+}

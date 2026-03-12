@@ -1,0 +1,8 @@
+{
+  "id": "pg-query-3",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-query",
+  "title": "Index usage",
+  "command": "SELECT indexrelname, idx_scan, idx_tup_read FROM pg_stat_user_indexes ORDER BY idx_scan DESC;",
+  "description": "View index usage statistics."
+}

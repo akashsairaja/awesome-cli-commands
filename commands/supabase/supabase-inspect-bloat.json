@@ -1,0 +1,9 @@
+{
+  "id": "supabase-inspect-bloat",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-inspect",
+  "title": "Show table and index bloat",
+  "command": "supabase inspect db bloat --linked",
+  "description": "Show table and index bloat estimation",
+  "tags": ["inspect", "bloat", "performance"]
+}

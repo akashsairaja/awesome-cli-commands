@@ -1,0 +1,9 @@
+{
+  "id": "tmux-find-window",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-windows",
+  "title": "Find window",
+  "command": "Ctrl+b f",
+  "description": "Find window by name",
+  "tags": ["window", "find", "search"]
+}

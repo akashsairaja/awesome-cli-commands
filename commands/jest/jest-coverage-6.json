@@ -1,0 +1,8 @@
+{
+  "id": "jest-coverage-6",
+  "categoryId": "jest",
+  "subcategoryId": "jest-coverage",
+  "title": "Tests since branch",
+  "command": "jest --changedSince main",
+  "description": "Run tests changed since git branch."
+}

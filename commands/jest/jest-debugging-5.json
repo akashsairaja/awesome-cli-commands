@@ -1,0 +1,8 @@
+{
+  "id": "jest-debugging-5",
+  "categoryId": "jest",
+  "subcategoryId": "jest-debugging",
+  "title": "Skip coverage",
+  "command": "jest --no-coverage",
+  "description": "Run tests without coverage collection."
+}

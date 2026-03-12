@@ -1,0 +1,8 @@
+{
+  "id": "playwright-screenshots-2",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-screenshots",
+  "title": "Element screenshot",
+  "command": "await page.locator('.header').screenshot({ path: 'header.png' });",
+  "description": "Screenshot specific element."
+}

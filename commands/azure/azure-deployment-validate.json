@@ -1,0 +1,9 @@
+{
+  "id": "azure-deployment-validate",
+  "categoryId": "azure",
+  "subcategoryId": "azure-deployment",
+  "title": "Validate Template",
+  "command": "az deployment group validate -g rg --template-file main.bicep",
+  "description": "Validate Bicep/ARM template without deploying",
+  "tags": ["deployment", "validate", "template"]
+}

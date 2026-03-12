@@ -1,0 +1,8 @@
+{
+  "id": "starship-modules-3",
+  "categoryId": "starship",
+  "subcategoryId": "starship-modules",
+  "title": "Custom format",
+  "command": "format = '''\n[┌───────────────────>](bold green)\n[│](bold green)$directory$rust$package\n[└─>](bold green) '''",
+  "description": "Custom prompt format."
+}

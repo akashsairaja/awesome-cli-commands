@@ -1,0 +1,9 @@
+{
+  "id": "zsh-rprompt",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-prompt",
+  "title": "Right-side prompt",
+  "command": "RPROMPT='%F{cyan}%*%f'",
+  "description": "Set right-side prompt (shows time)",
+  "tags": ["prompt", "rprompt", "right"]
+}

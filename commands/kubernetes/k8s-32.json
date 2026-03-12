@@ -1,0 +1,8 @@
+{
+  "id": "k8s-32",
+  "categoryId": "kubernetes",
+  "subcategoryId": "deployments",
+  "title": "List deployments",
+  "command": "kubectl get deployments",
+  "description": "List all deployments in namespace."
+}

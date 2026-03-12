@@ -1,0 +1,8 @@
+{
+  "id": "ts-check-9",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-check",
+  "title": "Custom build info file",
+  "command": "tsc --tsBuildInfoFile .tsbuildinfo",
+  "description": "Specify custom location for incremental compilation cache file."
+}

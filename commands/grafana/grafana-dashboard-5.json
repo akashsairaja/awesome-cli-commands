@@ -1,0 +1,8 @@
+{
+  "id": "grafana-dashboard-5",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-dashboard",
+  "title": "Search dashboards by query",
+  "command": "curl -s 'http://localhost:3000/api/search?query=cpu' -H 'Authorization: Bearer TOKEN'",
+  "description": "Search dashboards by keyword."
+}

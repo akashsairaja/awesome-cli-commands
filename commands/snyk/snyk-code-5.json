@@ -1,0 +1,8 @@
+{
+  "id": "snyk-code-5",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-code",
+  "title": "Code severity threshold",
+  "command": "snyk code test --severity-threshold=high",
+  "description": "Only report high or critical code issues."
+}

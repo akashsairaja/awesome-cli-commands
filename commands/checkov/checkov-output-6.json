@@ -1,0 +1,8 @@
+{
+  "id": "checkov-output-6",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-output",
+  "title": "Output to file",
+  "command": "checkov -d . -o json --output-file-path results/",
+  "description": "Write output to a directory."
+}

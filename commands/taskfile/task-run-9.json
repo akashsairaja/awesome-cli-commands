@@ -1,0 +1,8 @@
+{
+  "id": "task-run-9",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-run",
+  "title": "Check task status",
+  "command": "task --status build",
+  "description": "Check if a task is up to date."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "git-147",
+  "categoryId": "git",
+  "subcategoryId": "worktree",
+  "title": "Unlock worktree",
+  "command": "git worktree unlock <path>",
+  "description": "Allow worktree to be removed."
+}

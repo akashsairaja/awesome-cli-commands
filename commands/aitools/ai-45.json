@@ -1,0 +1,8 @@
+{
+  "id": "ai-45",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-api",
+  "title": "Check API key",
+  "command": "curl https://api.openai.com/v1/models -H \"Authorization: Bearer $OPENAI_API_KEY\" | jq '.data[0].id'",
+  "description": "Verify API key is valid by listing a model."
+}

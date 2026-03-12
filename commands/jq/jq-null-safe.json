@@ -1,0 +1,9 @@
+{
+  "id": "jq-null-safe",
+  "categoryId": "jq",
+  "subcategoryId": "jq-basics",
+  "title": "Null-safe access",
+  "command": "cat file.json | jq '.key?'",
+  "description": "Access key without error if missing",
+  "tags": ["null", "safe", "optional"]
+}

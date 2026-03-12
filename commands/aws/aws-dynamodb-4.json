@@ -1,0 +1,8 @@
+{
+  "id": "aws-dynamodb-4",
+  "categoryId": "aws",
+  "subcategoryId": "dynamodb",
+  "title": "Transact write items",
+  "command": "aws dynamodb transact-write-items --transact-items file://transaction.json --return-consumed-capacity TOTAL",
+  "description": "Execute ACID transactions across items."
+}

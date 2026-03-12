@@ -1,0 +1,8 @@
+{
+  "id": "minikube-38",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-cache",
+  "title": "List cached images",
+  "command": "minikube cache list",
+  "description": "Show all cached images."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "sops-decrypt-3",
+  "categoryId": "sops",
+  "subcategoryId": "sops-decrypt",
+  "title": "Extract specific key",
+  "command": "sops -d --extract '[\"db\"][\"password\"]' secrets.enc.yaml",
+  "description": "Extract single value from encrypted file."
+}

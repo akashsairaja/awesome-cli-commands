@@ -1,0 +1,8 @@
+{
+  "id": "db-106",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Show slave status",
+  "command": "SHOW SLAVE STATUS\\G",
+  "description": "Display replication status on a replica server."
+}

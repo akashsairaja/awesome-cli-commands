@@ -1,0 +1,8 @@
+{
+  "id": "databricks-6",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-clusters",
+  "title": "Restart cluster",
+  "command": "databricks clusters restart --cluster-id <cluster-id>",
+  "description": "Restart a running cluster."
+}

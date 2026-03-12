@@ -1,0 +1,8 @@
+{
+  "id": "ts-compile-8",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-compile",
+  "title": "Set module system",
+  "command": "tsc --module NodeNext",
+  "description": "Specify module system (CommonJS, ES2015, ESNext, NodeNext)."
+}

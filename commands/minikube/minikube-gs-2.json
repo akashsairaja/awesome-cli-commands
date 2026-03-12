@@ -1,0 +1,8 @@
+{
+  "id": "minikube-gs-2",
+  "title": "Start cluster",
+  "command": "minikube start",
+  "description": "Start a local Kubernetes cluster with minikube",
+  "categoryId": "minikube",
+  "subcategoryId": "getting-started"
+}

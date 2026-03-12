@@ -1,0 +1,9 @@
+{
+  "id": "bun-run-file",
+  "categoryId": "bun",
+  "subcategoryId": "bun-run",
+  "title": "Run Script",
+  "command": "bun run script.ts",
+  "description": "Execute a TypeScript/JavaScript file",
+  "tags": ["run", "execute", "script"]
+}

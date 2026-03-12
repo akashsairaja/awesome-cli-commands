@@ -1,0 +1,9 @@
+{
+  "id": "supabase-functions-delete",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-functions",
+  "title": "Delete function",
+  "command": "supabase functions delete <name>",
+  "description": "Delete an Edge Function",
+  "tags": ["functions", "delete", "remove"]
+}

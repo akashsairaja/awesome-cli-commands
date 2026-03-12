@@ -1,0 +1,8 @@
+{
+  "id": "git-82",
+  "categoryId": "git",
+  "subcategoryId": "history",
+  "title": "Log with stats",
+  "command": "git log --stat",
+  "description": "Show files changed in each commit."
+}

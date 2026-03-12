@@ -1,0 +1,8 @@
+{
+  "id": "nats-stream-6",
+  "categoryId": "nats",
+  "subcategoryId": "nats-stream",
+  "title": "Purge stream",
+  "command": "nats stream purge ORDERS",
+  "description": "Remove all messages without deleting stream."
+}

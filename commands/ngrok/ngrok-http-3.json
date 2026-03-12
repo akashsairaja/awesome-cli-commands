@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-http-3",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-http",
+  "title": "Custom domain",
+  "command": "ngrok http --domain=myapp.ngrok.dev 3000",
+  "description": "Use custom subdomain (paid feature)."
+}

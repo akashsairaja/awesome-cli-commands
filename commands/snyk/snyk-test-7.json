@@ -1,0 +1,8 @@
+{
+  "id": "snyk-test-7",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-test",
+  "title": "Include dev dependencies",
+  "command": "snyk test --dev",
+  "description": "Include devDependencies in the scan."
+}

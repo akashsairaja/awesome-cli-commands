@@ -1,0 +1,8 @@
+{
+  "id": "packer-validate-2",
+  "categoryId": "packer",
+  "subcategoryId": "packer-validate",
+  "title": "Validate with vars",
+  "command": "packer validate -var 'region=us-west-2' .",
+  "description": "Validate with variable values."
+}

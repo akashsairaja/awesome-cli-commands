@@ -1,0 +1,49 @@
+{
+  "id": "pod-status-analyzer",
+  "stackId": "kubernetes",
+  "name": "Pod Status Analyzer",
+  "description": "Quickly diagnose common pod failure states including CrashLoopBackOff, ImagePullBackOff, Pending, and OOMKilled.",
+  "difficulty": "beginner",
+  "timeMinutes": 5,
+  "trending": false,
+  "tags": ["pods", "debugging", "status", "errors"],
+  "prerequisites": ["kubectl configured"],
+  "steps": [
+    {
+      "title": "Get pod status with restart count",
+      "description": "View the current status and restart count for pods.",
+      "command": "kubectl get pods -o custom-columns='NAME:.metadata.name,STATUS:.status.phase,RESTARTS:.status.containerStatuses[0].restartCount,REASON:.status.containerStatuses[0].state.waiting.reason'"
+    },
+    {
+      "title": "Check why a pod is Pending",
+      "description": "View scheduling events to understand why a pod cannot be placed on a node.",
+      "command": "kubectl describe pod <pod-name> | grep -A10 'Events:'",
+      "tip": "Common causes: insufficient resources, node affinity/taint issues, or PVC binding failures."
+    },
+    {
+      "title": "Diagnose CrashLoopBackOff",
+      "description": "View logs from the crashed container to understand the failure.",
+      "command": "kubectl logs <pod-name> --previous",
+      "tip": "The --previous flag shows logs from the last crashed instance, which is where the error usually is."
+    },
+    {
+      "title": "Check for OOMKilled containers",
+      "description": "Find containers that were killed due to exceeding their memory limit.",
+      "command": "kubectl get pods -o json | jq -r '.items[] | select(.status.containerStatuses[]?.lastState.terminated.reason==\"OOMKilled\") | .metadata.name'",
+      "warning": "OOMKilled means the container exceeded its memory limit. Increase the limit or optimize memory usage."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Pod Status Analyzer\nset -euo pipefail\n\nNS=${1:-\"default\"}\n\necho \"=== Pod Status Summary ($NS) ===\"\nkubectl get pods -n \"$NS\" -o custom-columns='NAME:.metadata.name,READY:.status.containerStatuses[0].ready,STATUS:.status.phase,RESTARTS:.status.containerStatuses[0].restartCount,AGE:.metadata.creationTimestamp'\n\necho \"\"\necho \"=== Problem Pods ===\"\necho \"--- CrashLoopBackOff ---\"\nkubectl get pods -n \"$NS\" -o json | jq -r '.items[] | select(.status.containerStatuses[]?.state.waiting.reason==\"CrashLoopBackOff\") | .metadata.name' 2>/dev/null || echo \"None\"\n\necho \"--- ImagePullBackOff ---\"\nkubectl get pods -n \"$NS\" -o json | jq -r '.items[] | select(.status.containerStatuses[]?.state.waiting.reason==\"ImagePullBackOff\" or .status.containerStatuses[]?.state.waiting.reason==\"ErrImagePull\") | .metadata.name' 2>/dev/null || echo \"None\"\n\necho \"--- Pending ---\"\nkubectl get pods -n \"$NS\" --field-selector=status.phase=Pending -o name 2>/dev/null || echo \"None\"\n\necho \"--- OOMKilled ---\"\nkubectl get pods -n \"$NS\" -o json | jq -r '.items[] | select(.status.containerStatuses[]?.lastState.terminated.reason==\"OOMKilled\") | .metadata.name' 2>/dev/null || echo \"None\"",
+  "faq": [
+    {
+      "question": "What is the difference between Pending and ContainerCreating?",
+      "answer": "Pending means the pod is waiting to be scheduled to a node. ContainerCreating means it is scheduled but the container runtime is still pulling the image or setting up volumes."
+    },
+    {
+      "question": "How do I fix ImagePullBackOff?",
+      "answer": "Check: (1) the image name and tag are correct, (2) the image exists in the registry, (3) image pull secrets are configured if the registry requires authentication."
+    }
+  ],
+  "relatedRecipes": ["pod-debug-ephemeral", "log-aggregation-streaming"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "snyk-container-1",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-container",
+  "title": "Test container image",
+  "command": "snyk container test nginx:latest",
+  "description": "Scan container image for vulnerabilities."
+}

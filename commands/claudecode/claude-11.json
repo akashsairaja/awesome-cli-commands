@@ -1,0 +1,8 @@
+{
+  "id": "claude-11",
+  "categoryId": "claudecode",
+  "subcategoryId": "general",
+  "title": "JSON output format",
+  "command": "claude --output-format json",
+  "description": "Get responses in JSON format for scripting."
+}

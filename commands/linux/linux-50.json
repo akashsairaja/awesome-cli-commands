@@ -1,0 +1,8 @@
+{
+  "id": "linux-50",
+  "categoryId": "linux",
+  "subcategoryId": "network",
+  "title": "Download file with wget",
+  "command": "wget -c <url>",
+  "description": "Download a file with resume support on interruption."
+}

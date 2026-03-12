@@ -1,0 +1,8 @@
+{
+  "id": "playwright-trace-2",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-trace",
+  "title": "Trace on retry",
+  "command": "npx playwright test --trace=on-first-retry",
+  "description": "Record trace only on retries."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "claude-26",
+  "categoryId": "claudecode",
+  "subcategoryId": "context",
+  "title": "Compact conversation",
+  "command": "/compact",
+  "description": "Condense conversation history to save tokens."
+}

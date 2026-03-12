@@ -1,0 +1,8 @@
+{
+  "id": "make-syntax-5",
+  "categoryId": "make",
+  "subcategoryId": "make-syntax",
+  "title": "Conditional",
+  "command": "ifeq ($(DEBUG),1)\n\tCFLAGS += -g\nendif",
+  "description": "Conditional variable setting."
+}

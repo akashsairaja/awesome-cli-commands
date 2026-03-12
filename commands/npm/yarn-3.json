@@ -1,0 +1,8 @@
+{
+  "id": "yarn-3",
+  "categoryId": "npm",
+  "subcategoryId": "yarn",
+  "title": "yarn constraints",
+  "command": "yarn constraints",
+  "description": "Validate workspace dependency constraints."
+}

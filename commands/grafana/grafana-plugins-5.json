@@ -1,0 +1,8 @@
+{
+  "id": "grafana-plugins-5",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-plugins",
+  "title": "List available plugins",
+  "command": "grafana-cli plugins list-remote",
+  "description": "List available plugins."
+}

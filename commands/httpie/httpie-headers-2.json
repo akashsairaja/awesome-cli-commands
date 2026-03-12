@@ -1,0 +1,8 @@
+{
+  "id": "httpie-headers-2",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-headers",
+  "title": "Content-Type",
+  "command": "http POST https://api.example.com Content-Type:application/xml < data.xml",
+  "description": "Set Content-Type header."
+}

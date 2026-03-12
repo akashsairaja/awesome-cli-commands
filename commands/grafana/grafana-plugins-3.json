@@ -1,0 +1,8 @@
+{
+  "id": "grafana-plugins-3",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-plugins",
+  "title": "Update plugins",
+  "command": "grafana-cli plugins update-all",
+  "description": "Update all plugins."
+}

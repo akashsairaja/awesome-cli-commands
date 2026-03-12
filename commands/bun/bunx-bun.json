@@ -1,0 +1,9 @@
+{
+  "id": "bunx-bun",
+  "categoryId": "bun",
+  "subcategoryId": "bun-tools",
+  "title": "Force Bun Runtime",
+  "command": "bunx --bun <package>",
+  "description": "Run package with Bun runtime",
+  "tags": ["bunx", "bun", "runtime"]
+}

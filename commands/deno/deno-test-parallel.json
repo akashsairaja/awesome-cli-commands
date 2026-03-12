@@ -1,0 +1,9 @@
+{
+  "id": "deno-test-parallel",
+  "categoryId": "deno",
+  "subcategoryId": "deno-test",
+  "title": "Parallel Tests",
+  "command": "deno test --parallel",
+  "description": "Run tests in parallel",
+  "tags": ["test", "parallel", "fast"]
+}

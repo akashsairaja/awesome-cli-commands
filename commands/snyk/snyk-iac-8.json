@@ -1,0 +1,8 @@
+{
+  "id": "snyk-iac-8",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-iac",
+  "title": "Describe cloud resources",
+  "command": "snyk iac describe --from=tfstate://terraform.tfstate",
+  "description": "Compare cloud state with Terraform state for drift."
+}

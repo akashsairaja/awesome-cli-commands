@@ -1,0 +1,8 @@
+{
+  "id": "npm-pub-7",
+  "categoryId": "npm",
+  "subcategoryId": "npm-publish",
+  "title": "Bump major version",
+  "command": "npm version major",
+  "description": "Bump major version (1.0.0 -> 2.0.0)."
+}

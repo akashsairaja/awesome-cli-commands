@@ -1,0 +1,8 @@
+{
+  "id": "pg-meta-8",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-meta",
+  "title": "List functions",
+  "command": "\\df",
+  "description": "List functions."
+}

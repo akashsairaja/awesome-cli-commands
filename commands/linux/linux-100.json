@@ -1,0 +1,8 @@
+{
+  "id": "linux-100",
+  "categoryId": "linux",
+  "subcategoryId": "processes",
+  "title": "Show kernel errors with timestamps",
+  "command": "dmesg -T -l err,warn",
+  "description": "Display kernel ring buffer errors and warnings with human-readable timestamps."
+}

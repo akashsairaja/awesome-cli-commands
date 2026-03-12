@@ -1,0 +1,8 @@
+{
+  "id": "py-96",
+  "categoryId": "python",
+  "subcategoryId": "python-pytest",
+  "title": "Show print output",
+  "command": "pytest -s",
+  "description": "Don't capture stdout (show print statements)."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "aws-ssm-4",
+  "categoryId": "aws",
+  "subcategoryId": "ssm",
+  "title": "Delete parameter",
+  "command": "aws ssm delete-parameter --name /app/deprecated/old-key",
+  "description": "Remove parameter from Parameter Store."
+}

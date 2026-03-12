@@ -1,0 +1,8 @@
+{
+  "id": "npm-pkg-9",
+  "categoryId": "npm",
+  "subcategoryId": "npm-packages",
+  "title": "View package info",
+  "command": "npm view <package>",
+  "description": "Show package registry information."
+}

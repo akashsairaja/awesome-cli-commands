@@ -1,0 +1,9 @@
+{
+  "id": "gh-pr-view-web",
+  "categoryId": "github",
+  "subcategoryId": "gh-pr",
+  "title": "Open PR in browser",
+  "command": "gh pr view <number> --web",
+  "description": "Open pull request in web browser",
+  "tags": ["pr", "view", "web", "browser"]
+}

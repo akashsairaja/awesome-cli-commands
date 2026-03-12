@@ -1,0 +1,8 @@
+{
+  "id": "git-86",
+  "categoryId": "git",
+  "subcategoryId": "history",
+  "title": "Search commits by content",
+  "command": "git log -S \"code\"",
+  "description": "Find commits that added/removed code."
+}

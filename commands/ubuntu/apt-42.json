@@ -1,0 +1,8 @@
+{
+  "id": "apt-42",
+  "categoryId": "ubuntu",
+  "subcategoryId": "systemd-services",
+  "title": "Mask a service",
+  "command": "sudo systemctl mask <service>",
+  "description": "Completely prevent a service from starting, even manually."
+}

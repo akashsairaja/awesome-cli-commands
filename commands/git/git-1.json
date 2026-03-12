@@ -1,0 +1,8 @@
+{
+  "id": "git-1",
+  "categoryId": "git",
+  "subcategoryId": "basics",
+  "title": "Initialize repository",
+  "command": "git init",
+  "description": "Create a new Git repository."
+}

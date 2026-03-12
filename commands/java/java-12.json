@@ -1,0 +1,8 @@
+{
+  "id": "java-12",
+  "categoryId": "java",
+  "subcategoryId": "java-runtime",
+  "title": "Set heap memory",
+  "command": "java -Xms512m -Xmx4g MyApp",
+  "description": "Set initial (512MB) and max (4GB) heap memory."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "py-100",
+  "categoryId": "python",
+  "subcategoryId": "python-pytest",
+  "title": "Show slowest tests",
+  "command": "pytest --durations=10",
+  "description": "Show 10 slowest tests."
+}

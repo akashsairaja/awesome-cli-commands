@@ -1,0 +1,8 @@
+{
+  "id": "pg-admin-5",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-admin",
+  "title": "Kill connection",
+  "command": "SELECT pg_terminate_backend(pid);",
+  "description": "Terminate a backend process by PID."
+}

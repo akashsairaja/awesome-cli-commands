@@ -1,0 +1,42 @@
+{
+  "id": "compose-dependency-ordering",
+  "stackId": "docker",
+  "name": "Compose Dependency Ordering",
+  "description": "Configure service startup order in Docker Compose using depends_on with health check conditions to prevent race conditions.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": false,
+  "tags": ["compose", "dependencies", "startup", "ordering"],
+  "prerequisites": ["Docker Compose installed"],
+  "steps": [
+    {
+      "title": "Define health checks for dependency services",
+      "description": "Ensure database and cache services have health checks so dependent services know when they are ready.",
+      "command": "cat <<'EOF'\nservices:\n  db:\n    image: postgres:16-alpine\n    healthcheck:\n      test: [\"CMD-SHELL\", \"pg_isready -U postgres\"]\n      interval: 5s\n      timeout: 5s\n      retries: 5\nEOF"
+    },
+    {
+      "title": "Configure depends_on with conditions",
+      "description": "Make the API service wait until the database is healthy before starting.",
+      "command": "cat <<'EOF'\nservices:\n  api:\n    image: myapp:latest\n    depends_on:\n      db:\n        condition: service_healthy\n      redis:\n        condition: service_healthy\nEOF",
+      "tip": "Without the condition, depends_on only waits for the container to start, not for the service inside to be ready."
+    },
+    {
+      "title": "Verify startup order",
+      "description": "Start the stack and verify services come up in the correct order.",
+      "command": "docker compose up -d && docker compose ps"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Compose Dependency Ordering Check\nset -euo pipefail\n\necho \"=== Service Status and Dependencies ===\"\ndocker compose ps --format 'table {{.Name}}\\t{{.Status}}'\n\necho \"\"\necho \"=== Compose Config Validation ===\"\ndocker compose config --quiet && echo \"Config is valid\" || echo \"Config has errors\"\n\necho \"\"\necho \"=== Startup Order Tips ===\"\necho \"1. Add healthcheck to every database/cache service\"\necho \"2. Use depends_on with condition: service_healthy\"\necho \"3. Set appropriate start_period for slow-starting services\"\necho \"4. Consider retry logic in application code as a fallback\"",
+  "faq": [
+    {
+      "question": "Should I rely only on depends_on for ordering?",
+      "answer": "No. Always implement connection retry logic in your application as well. depends_on helps with initial startup, but services can become temporarily unavailable at any time."
+    },
+    {
+      "question": "What is the difference between service_started and service_healthy?",
+      "answer": "service_started only waits for the container to be running. service_healthy waits until the health check passes, meaning the service inside is actually ready."
+    }
+  ],
+  "relatedRecipes": ["health-check-setup", "compose-networking-debug"],
+  "lastUpdated": "2026-03-11"
+}

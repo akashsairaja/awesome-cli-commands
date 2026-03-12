@@ -1,0 +1,9 @@
+{
+  "id": "nginx-sec-hide-version",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-security",
+  "title": "Hide server version",
+  "command": "server_tokens off;",
+  "description": "Remove Nginx version from headers and error pages",
+  "tags": ["security", "version", "hide", "tokens"]
+}

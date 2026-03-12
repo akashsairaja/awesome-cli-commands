@@ -1,0 +1,8 @@
+{
+  "id": "git-136",
+  "categoryId": "git",
+  "subcategoryId": "git-config",
+  "title": "Set user name",
+  "command": "git config --global user.name \"Your Name\"",
+  "description": "Set global git username."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "minikube-addons-1",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-addons",
+  "title": "List addons",
+  "command": "minikube addons list",
+  "description": "List available addons."
+}

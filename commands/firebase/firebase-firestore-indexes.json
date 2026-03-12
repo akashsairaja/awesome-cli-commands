@@ -1,0 +1,9 @@
+{
+  "id": "firebase-firestore-indexes",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-firestore",
+  "title": "Deploy Firestore indexes",
+  "command": "firebase deploy --only firestore:indexes",
+  "description": "Deploy only Firestore indexes",
+  "tags": ["firestore", "indexes", "deploy"]
+}

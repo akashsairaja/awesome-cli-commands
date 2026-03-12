@@ -1,0 +1,9 @@
+{
+  "id": "redis-setex",
+  "categoryId": "redis",
+  "subcategoryId": "redis-strings",
+  "title": "Set with expiry (seconds)",
+  "command": "SETEX key seconds value",
+  "description": "Set value with expiration in seconds",
+  "tags": ["setex", "expire", "ttl"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "task-run-12",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-run",
+  "title": "Verbose output",
+  "command": "task --verbose build",
+  "description": "Run with verbose logging."
+}

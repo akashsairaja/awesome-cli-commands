@@ -1,0 +1,8 @@
+{
+  "id": "bruno-gs-1",
+  "title": "Install Bruno (macOS)",
+  "command": "brew install bruno",
+  "description": "Install Bruno API client using Homebrew on macOS",
+  "categoryId": "bruno",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "vim-58",
+  "categoryId": "vim",
+  "subcategoryId": "macros",
+  "title": "Run macro N times",
+  "command": "10@a",
+  "description": "Execute macro a ten times."
+}

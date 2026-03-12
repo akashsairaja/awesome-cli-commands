@@ -1,0 +1,8 @@
+{
+  "id": "linux-6",
+  "categoryId": "linux",
+  "subcategoryId": "files",
+  "title": "Find files modified today",
+  "command": "find . -type f -mtime 0",
+  "description": "List files modified in the last 24 hours."
+}

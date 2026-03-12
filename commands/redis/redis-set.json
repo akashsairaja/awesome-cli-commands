@@ -1,0 +1,9 @@
+{
+  "id": "redis-set",
+  "categoryId": "redis",
+  "subcategoryId": "redis-strings",
+  "title": "Set key value",
+  "command": "SET key value",
+  "description": "Set string value for a key",
+  "tags": ["set", "string", "write"]
+}

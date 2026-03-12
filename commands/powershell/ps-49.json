@@ -1,0 +1,8 @@
+{
+  "id": "ps-49",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-objects",
+  "title": "Create array",
+  "command": "$arr = @(1, 2, 3, 4, 5)",
+  "description": "Create array of values."
+}

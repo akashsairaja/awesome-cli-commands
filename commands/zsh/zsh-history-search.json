@@ -1,0 +1,9 @@
+{
+  "id": "zsh-history-search",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-prompt",
+  "title": "History substring search",
+  "command": "bindkey '^[[A' history-substring-search-up",
+  "description": "Search history with up arrow",
+  "tags": ["history", "search", "keybind"]
+}

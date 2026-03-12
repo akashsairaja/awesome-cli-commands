@@ -1,0 +1,8 @@
+{
+  "id": "git-33",
+  "categoryId": "git",
+  "subcategoryId": "branches",
+  "title": "Switch branch",
+  "command": "git checkout <branch>",
+  "description": "Switch to existing branch."
+}

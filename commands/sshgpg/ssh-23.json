@@ -1,0 +1,8 @@
+{
+  "id": "ssh-23",
+  "categoryId": "sshgpg",
+  "subcategoryId": "keys",
+  "title": "Change SSH key passphrase",
+  "command": "ssh-keygen -p -f ~/.ssh/id_ed25519",
+  "description": "Change passphrase on existing key."
+}

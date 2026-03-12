@@ -1,0 +1,47 @@
+{
+  "id": "ts-type-checking-ci",
+  "stackId": "typescript",
+  "name": "Add TypeScript Type Checking to CI/CD",
+  "description": "Configure continuous integration to run TypeScript type checking on every pull request, catching type errors before they reach production.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "trending": false,
+  "tags": ["ci", "type-checking", "github-actions", "automation"],
+  "prerequisites": ["TypeScript project", "GitHub repository (or other CI platform)"],
+  "steps": [
+    {
+      "title": "Create a GitHub Actions workflow",
+      "description": "Add a workflow that runs type checking on every push and pull request.",
+      "command": "mkdir -p .github/workflows && cat > .github/workflows/typecheck.yml << 'EOF'\nname: Type Check\non:\n  push:\n    branches: [main]\n  pull_request:\n    branches: [main]\njobs:\n  typecheck:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v4\n        with:\n          version: 9\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 20\n          cache: pnpm\n      - run: pnpm install --frozen-lockfile\n      - run: pnpm tsc --noEmit\nEOF"
+    },
+    {
+      "title": "Add a type-check npm script",
+      "description": "Add a dedicated script that CI and developers can use consistently.",
+      "command": "npm pkg set scripts.typecheck='tsc --noEmit'"
+    },
+    {
+      "title": "Add a pre-commit hook with Husky",
+      "description": "Run type checking locally before commits reach CI.",
+      "command": "pnpm add -D husky && npx husky init && echo 'pnpm typecheck' > .husky/pre-commit",
+      "tip": "For faster local feedback, use lint-staged to only type-check changed files, though tsc --noEmit checks the whole project regardless."
+    },
+    {
+      "title": "Verify the CI workflow runs correctly",
+      "description": "Push the workflow file and check that it triggers on the next PR.",
+      "command": "git add .github/workflows/typecheck.yml && git status"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# TypeScript CI Type Checking Setup\nset -euo pipefail\n\necho \"=== Creating GitHub Actions workflow ===\"\nmkdir -p .github/workflows\n\ncat > .github/workflows/typecheck.yml << 'EOF'\nname: Type Check & Lint\non:\n  push:\n    branches: [main]\n  pull_request:\n    branches: [main]\njobs:\n  quality:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v4\n        with:\n          version: 9\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 20\n          cache: pnpm\n      - run: pnpm install --frozen-lockfile\n      - name: Type Check\n        run: pnpm tsc --noEmit\n      - name: Lint\n        run: pnpm eslint .\nEOF\n\necho \"=== Adding scripts ===\"\nnpm pkg set scripts.typecheck=\"tsc --noEmit\"\nnpm pkg set scripts.ci=\"pnpm typecheck && pnpm eslint .\"\n\necho \"=== Workflow created at .github/workflows/typecheck.yml ===\"",
+  "faq": [
+    {
+      "question": "Should I run tsc --noEmit or tsc --build in CI?",
+      "answer": "Use tsc --noEmit for single-package projects (fastest). Use tsc --build for monorepos with project references, as it type-checks packages in dependency order and supports incremental compilation."
+    },
+    {
+      "question": "How can I speed up type checking in CI?",
+      "answer": "Cache node_modules and .tsbuildinfo files between runs. Use incremental: true in tsconfig.json. For monorepos, use tsc --build which only rechecks changed packages."
+    }
+  ],
+  "relatedRecipes": ["ts-eslint-setup", "ts-config-optimization"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-gs-2",
+  "title": "Install Pulumi (Linux/macOS)",
+  "command": "curl -fsSL https://get.pulumi.com | sh",
+  "description": "Install Pulumi CLI using the official installer script",
+  "categoryId": "pulumi",
+  "subcategoryId": "getting-started"
+}

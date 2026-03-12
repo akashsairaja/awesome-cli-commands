@@ -1,0 +1,56 @@
+{
+  "id": "go-docker-build",
+  "stackId": "go",
+  "name": "Multi-Stage Docker Build for Go Binaries",
+  "description": "Create a minimal Docker image for Go applications using multi-stage builds with scratch or distroless base images.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "tags": ["docker", "container", "multi-stage", "deployment"],
+  "prerequisites": ["Go 1.21+ installed", "Docker installed"],
+  "steps": [
+    {
+      "title": "Create a multi-stage Dockerfile",
+      "description": "Write a Dockerfile that compiles the Go binary in one stage and copies it to a minimal runtime image.",
+      "command": "cat > Dockerfile << 'EOF'\n# Build stage\nFROM golang:1.23-alpine AS builder\nWORKDIR /app\nCOPY go.mod go.sum ./\nRUN go mod download\nCOPY . .\nRUN CGO_ENABLED=0 GOOS=linux go build -ldflags=\"-s -w\" -o /app/bin/server ./cmd/myapp\n\n# Runtime stage\nFROM gcr.io/distroless/static-debian12\nCOPY --from=builder /app/bin/server /server\nEXPOSE 8080\nENTRYPOINT [\"/server\"]\nEOF",
+      "tip": "Using distroless gives you a minimal image with no shell or package manager, reducing attack surface."
+    },
+    {
+      "title": "Add a .dockerignore file",
+      "description": "Exclude unnecessary files from the Docker build context for faster builds.",
+      "command": "cat > .dockerignore << 'EOF'\n.git\nbin/\n*.md\n*.test\ncoverage.*\n.golangci.yml\nEOF"
+    },
+    {
+      "title": "Build the Docker image",
+      "description": "Build the image and tag it with a version.",
+      "command": "docker build -t myapp:latest -t myapp:1.0.0 ."
+    },
+    {
+      "title": "Check the image size",
+      "description": "Verify the final image is small, typically under 20MB for a Go binary.",
+      "command": "docker images myapp",
+      "tip": "Distroless images typically produce 10-20MB images. Using scratch gives even smaller images but has no CA certificates or timezone data."
+    },
+    {
+      "title": "Run and test the container",
+      "description": "Start the container and verify the application is working.",
+      "command": "docker run --rm -p 8080:8080 myapp:latest"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Go Multi-Stage Docker Build\nset -euo pipefail\n\nAPP=${1:-\"myapp\"}\nTAG=${2:-\"latest\"}\n\necho \"=== Building Docker Image ===\"\ndocker build -t \"$APP:$TAG\" .\n\necho \"\"\necho \"=== Image Size ===\"\ndocker images \"$APP\" --format \"table {{.Repository}}\t{{.Tag}}\t{{.Size}}\"\n\necho \"\"\necho \"=== Docker Commands ===\"\necho \"Build:   docker build -t $APP:$TAG .\"\necho \"Run:     docker run --rm -p 8080:8080 $APP:$TAG\"\necho \"Shell:   docker run --rm -it --entrypoint sh $APP:$TAG\"\necho \"Push:    docker push $APP:$TAG\"\necho \"Inspect: docker inspect $APP:$TAG\"",
+  "faq": [
+    {
+      "question": "Should I use scratch or distroless as the base image?",
+      "answer": "Use distroless/static for most applications. It includes CA certificates and timezone data. Use scratch only if you embed those into your binary or do not need them."
+    },
+    {
+      "question": "Why set CGO_ENABLED=0?",
+      "answer": "Disabling CGO produces a statically linked binary that runs on scratch or distroless without libc. If you need CGO, use alpine as the runtime base instead."
+    },
+    {
+      "question": "How do I cache Go module downloads in Docker?",
+      "answer": "Copy go.mod and go.sum first and run 'go mod download' before copying the source code. Docker will cache the module download layer as long as the dependency files do not change."
+    }
+  ],
+  "relatedRecipes": ["go-cross-compile", "go-release-automation"],
+  "lastUpdated": "2026-03-11"
+}

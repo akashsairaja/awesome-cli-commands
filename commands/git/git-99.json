@@ -1,0 +1,8 @@
+{
+  "id": "git-99",
+  "categoryId": "git",
+  "subcategoryId": "reflog",
+  "title": "Reset to reflog entry",
+  "command": "git reset --hard HEAD@{5}",
+  "description": "Reset to previous HEAD state."
+}

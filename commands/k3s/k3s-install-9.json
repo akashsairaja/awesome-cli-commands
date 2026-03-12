@@ -1,0 +1,8 @@
+{
+  "id": "k3s-install-9",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-install",
+  "title": "Install with external database",
+  "command": "curl -sfL https://get.k3s.io | sh -s - server --datastore-endpoint=\"postgres://user:pass@host:5432/k3s\"",
+  "description": "Install using an external PostgreSQL or MySQL datastore."
+}

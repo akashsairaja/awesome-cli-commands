@@ -1,0 +1,8 @@
+{
+  "id": "linux-52",
+  "categoryId": "linux",
+  "subcategoryId": "network",
+  "title": "Trace route to host",
+  "command": "traceroute <host>",
+  "description": "Show the network path and hops to reach a destination."
+}

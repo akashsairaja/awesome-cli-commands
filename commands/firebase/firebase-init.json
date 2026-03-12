@@ -1,0 +1,9 @@
+{
+  "id": "firebase-init",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-deploy",
+  "title": "Initialize Firebase",
+  "command": "firebase init",
+  "description": "Initialize Firebase in current directory",
+  "tags": ["init", "initialize", "setup"]
+}

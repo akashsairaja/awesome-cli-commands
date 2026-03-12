@@ -1,0 +1,8 @@
+{
+  "id": "nuget-cache-5",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-cache",
+  "title": "Clear temp cache",
+  "command": "dotnet nuget locals temp -c",
+  "description": "Clear temporary cache folder."
+}

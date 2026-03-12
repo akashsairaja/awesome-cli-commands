@@ -1,0 +1,8 @@
+{
+  "id": "vim-62",
+  "categoryId": "vim",
+  "subcategoryId": "advanced-editing",
+  "title": "Indent line",
+  "command": ">>",
+  "description": "Shift current line right."
+}

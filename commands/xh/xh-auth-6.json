@@ -1,0 +1,8 @@
+{
+  "id": "xh-auth-6",
+  "categoryId": "xh",
+  "subcategoryId": "xh-auth",
+  "title": "Prompt for password",
+  "command": "xh -a username GET https://api.example.com/protected",
+  "description": "Prompt for password interactively."
+}

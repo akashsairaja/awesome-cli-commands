@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-api-2",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-api",
+  "title": "Get public URL",
+  "command": "curl -s http://localhost:4040/api/tunnels | jq '.tunnels[0].public_url'",
+  "description": "Extract public URL from API."
+}

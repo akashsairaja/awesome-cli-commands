@@ -1,0 +1,8 @@
+{
+  "id": "brew-60",
+  "categoryId": "homebrew",
+  "subcategoryId": "bundle",
+  "title": "Dump global",
+  "command": "brew bundle dump --global --force",
+  "description": "Save all packages to ~/.Brewfile."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "pg-users-27",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-users",
+  "title": "Set connection limit",
+  "command": "ALTER USER appuser WITH CONNECTION LIMIT 10;",
+  "description": "Limit the number of concurrent connections for a user."
+}

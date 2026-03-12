@@ -1,0 +1,9 @@
+{
+  "id": "zsh-completion-style",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-prompt",
+  "title": "Menu-style completion",
+  "command": "zstyle ':completion:*' menu select",
+  "description": "Enable menu-style tab completion",
+  "tags": ["completion", "menu", "style"]
+}

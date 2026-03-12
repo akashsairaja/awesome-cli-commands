@@ -1,0 +1,8 @@
+{
+  "id": "minikube-45",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-maintenance",
+  "title": "View cluster logs",
+  "command": "minikube logs",
+  "description": "View cluster component logs."
+}

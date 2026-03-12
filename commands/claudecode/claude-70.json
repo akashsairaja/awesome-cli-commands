@@ -1,0 +1,8 @@
+{
+  "id": "claude-70",
+  "categoryId": "claudecode",
+  "subcategoryId": "workflows",
+  "title": "Review code for issues",
+  "command": "claude \"review this code for security issues\"",
+  "description": "Get code review with specific focus."
+}

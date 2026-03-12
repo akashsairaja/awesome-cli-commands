@@ -1,0 +1,8 @@
+{
+  "id": "eza-5",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-eza",
+  "title": "With icons",
+  "command": "eza --icons",
+  "description": "Display file type icons."
+}

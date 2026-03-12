@@ -1,0 +1,8 @@
+{
+  "id": "git-62",
+  "categoryId": "git",
+  "subcategoryId": "rebase",
+  "title": "Rebase with autosquash",
+  "command": "git rebase -i --autosquash HEAD~5",
+  "description": "Auto-reorder fixup/squash commits."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-stack-3",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-stack",
+  "title": "List stacks",
+  "command": "pulumi stack ls",
+  "description": "List all stacks."
+}

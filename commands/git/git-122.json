@@ -1,0 +1,8 @@
+{
+  "id": "git-122",
+  "categoryId": "git",
+  "subcategoryId": "tags",
+  "title": "Create signed tag",
+  "command": "git tag -s <tagname> -m \"message\"",
+  "description": "Create GPG-signed tag."
+}

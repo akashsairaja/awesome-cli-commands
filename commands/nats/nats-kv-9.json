@@ -1,0 +1,8 @@
+{
+  "id": "nats-kv-9",
+  "categoryId": "nats",
+  "subcategoryId": "nats-kv",
+  "title": "Delete key",
+  "command": "nats kv del my-kv key1",
+  "description": "Remove key from bucket."
+}

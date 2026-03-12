@@ -1,0 +1,8 @@
+{
+  "id": "brew-67",
+  "categoryId": "homebrew",
+  "subcategoryId": "bundle",
+  "title": "Include taps",
+  "command": "brew bundle dump --all",
+  "description": "Include taps in Brewfile."
+}

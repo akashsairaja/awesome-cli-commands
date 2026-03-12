@@ -1,0 +1,8 @@
+{
+  "id": "db-92",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Show engine status",
+  "command": "SHOW ENGINE INNODB STATUS\\G",
+  "description": "Display detailed InnoDB engine status including locks, transactions, and buffer pool."
+}

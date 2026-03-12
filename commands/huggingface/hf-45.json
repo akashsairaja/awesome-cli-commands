@@ -1,0 +1,8 @@
+{
+  "id": "hf-45",
+  "categoryId": "huggingface",
+  "subcategoryId": "hf-api",
+  "title": "Get model tags",
+  "command": "python -c \"from huggingface_hub import model_info; print(model_info('bert-base-uncased').tags)\"",
+  "description": "Retrieve model tags and metadata."
+}

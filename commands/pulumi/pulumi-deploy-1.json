@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-deploy-1",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-deploy",
+  "title": "Preview changes",
+  "command": "pulumi preview",
+  "description": "Preview infrastructure changes."
+}

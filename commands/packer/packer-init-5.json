@@ -1,0 +1,8 @@
+{
+  "id": "packer-init-5",
+  "categoryId": "packer",
+  "subcategoryId": "packer-init",
+  "title": "Remove plugin",
+  "command": "packer plugins remove github.com/hashicorp/docker",
+  "description": "Remove an installed plugin."
+}

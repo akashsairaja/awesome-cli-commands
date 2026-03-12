@@ -1,0 +1,9 @@
+{
+  "id": "vercel-env-rm",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-env",
+  "title": "Remove env variable",
+  "command": "vercel env rm <name> production",
+  "description": "Remove an environment variable",
+  "tags": ["env", "remove", "delete"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tofu-apply-6",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-apply",
+  "title": "Set parallelism",
+  "command": "tofu apply -parallelism=20",
+  "description": "Apply with custom parallelism limit."
+}

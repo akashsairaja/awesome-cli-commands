@@ -1,0 +1,8 @@
+{
+  "id": "apt-15",
+  "categoryId": "ubuntu",
+  "subcategoryId": "users",
+  "title": "Delete user",
+  "command": "sudo deluser --remove-home <username>",
+  "description": "Delete a user and remove their home directory."
+}

@@ -1,0 +1,48 @@
+{
+  "id": "resource-optimization-audit",
+  "stackId": "kubernetes",
+  "name": "Resource Optimization Audit",
+  "description": "Audit resource requests and limits across your cluster to find over-provisioned or under-provisioned workloads.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "Right-sizing resources directly reduces cloud costs",
+  "tags": ["resources", "optimization", "cost", "capacity"],
+  "prerequisites": ["kubectl configured", "Metrics server installed"],
+  "steps": [
+    {
+      "title": "View actual resource usage vs requests",
+      "description": "Compare real CPU and memory consumption against what was requested.",
+      "command": "kubectl top pods --all-namespaces --sort-by=memory",
+      "tip": "If this fails, ensure metrics-server is installed: kubectl get deployment metrics-server -n kube-system."
+    },
+    {
+      "title": "Find pods without resource limits",
+      "description": "Identify pods that do not have resource limits set, which can cause noisy neighbor problems.",
+      "command": "kubectl get pods --all-namespaces -o json | jq -r '.items[] | select(.spec.containers[].resources.limits == null) | .metadata.namespace + \"/\" + .metadata.name'"
+    },
+    {
+      "title": "View node resource allocation",
+      "description": "See how much of each node's capacity is allocated to pods.",
+      "command": "kubectl describe nodes | grep -A5 'Allocated resources'"
+    },
+    {
+      "title": "List resource requests and limits for all pods",
+      "description": "Get a summary of CPU and memory requests/limits across all pods.",
+      "command": "kubectl get pods --all-namespaces -o custom-columns='NAMESPACE:.metadata.namespace,POD:.metadata.name,CPU_REQ:.spec.containers[*].resources.requests.cpu,MEM_REQ:.spec.containers[*].resources.requests.memory,CPU_LIM:.spec.containers[*].resources.limits.cpu,MEM_LIM:.spec.containers[*].resources.limits.memory'"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Resource Optimization Audit\nset -euo pipefail\n\necho \"=== Node Resource Usage ===\"\nkubectl top nodes 2>/dev/null || echo \"Metrics server not available\"\n\necho \"\"\necho \"=== Top Memory-Consuming Pods ===\"\nkubectl top pods --all-namespaces --sort-by=memory 2>/dev/null | head -15 || echo \"Metrics server not available\"\n\necho \"\"\necho \"=== Pods Without Resource Limits ===\"\nkubectl get pods --all-namespaces -o json | jq -r '.items[] | select(.spec.containers[].resources.limits == null) | .metadata.namespace + \"/\" + .metadata.name' 2>/dev/null | head -20\n\necho \"\"\necho \"=== Node Allocation Summary ===\"\nkubectl describe nodes | grep -A5 'Allocated resources'",
+  "faq": [
+    {
+      "question": "What happens if I do not set resource limits?",
+      "answer": "Pods without limits can consume all available resources on a node, potentially starving other pods. Always set both requests and limits for production workloads."
+    },
+    {
+      "question": "How do I right-size my resource requests?",
+      "answer": "Monitor actual usage over several days with metrics-server or Prometheus. Set requests to the P95 usage and limits to 150-200% of requests to handle spikes."
+    }
+  ],
+  "relatedRecipes": ["cluster-health-checks", "namespace-management"],
+  "lastUpdated": "2026-03-11"
+}

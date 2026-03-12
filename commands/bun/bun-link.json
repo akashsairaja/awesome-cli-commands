@@ -1,0 +1,9 @@
+{
+  "id": "bun-link",
+  "categoryId": "bun",
+  "subcategoryId": "bun-tools",
+  "title": "Link Package",
+  "command": "bun link",
+  "description": "Register package as linkable",
+  "tags": ["link", "develop", "local"]
+}

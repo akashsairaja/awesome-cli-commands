@@ -1,0 +1,8 @@
+{
+  "id": "git-150",
+  "categoryId": "git",
+  "subcategoryId": "maintenance",
+  "title": "Stop background maintenance",
+  "command": "git maintenance stop",
+  "description": "Disable automatic background maintenance."
+}

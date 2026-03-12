@@ -1,0 +1,8 @@
+{
+  "id": "helm-install-4",
+  "categoryId": "helm",
+  "subcategoryId": "helm-install",
+  "title": "Install in namespace",
+  "command": "helm install my-release bitnami/nginx -n prod --create-namespace",
+  "description": "Install in specific namespace, creating if needed."
+}

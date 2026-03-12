@@ -1,0 +1,8 @@
+{
+  "id": "task-run-5",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-run",
+  "title": "Run with variables",
+  "command": "task build ENV=production",
+  "description": "Run task with variable override."
+}

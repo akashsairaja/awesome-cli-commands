@@ -1,0 +1,52 @@
+{
+  "id": "ts-config-optimization",
+  "stackId": "typescript",
+  "name": "Optimize tsconfig for Modern Projects",
+  "description": "Configure tsconfig.json with the best compiler options for modern TypeScript projects targeting Node.js, React, or library development.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "trending": true,
+  "trendingReason": "New moduleResolution and module options in TypeScript 5+ require updated configs",
+  "tags": ["tsconfig", "configuration", "compiler-options", "optimization"],
+  "prerequisites": ["TypeScript 5.0+ installed"],
+  "steps": [
+    {
+      "title": "Generate a starting tsconfig",
+      "description": "Use tsc --init to create a tsconfig.json with all options documented.",
+      "command": "npx tsc --init"
+    },
+    {
+      "title": "Apply modern recommended settings",
+      "description": "Set the target, module, and resolution options for a modern Node.js or Next.js project.",
+      "command": "cat > tsconfig.json << 'EOF'\n{\n  \"compilerOptions\": {\n    \"target\": \"ES2022\",\n    \"lib\": [\"ES2022\", \"DOM\", \"DOM.Iterable\"],\n    \"module\": \"ESNext\",\n    \"moduleResolution\": \"bundler\",\n    \"resolveJsonModule\": true,\n    \"isolatedModules\": true,\n    \"strict\": true,\n    \"noUncheckedIndexedAccess\": true,\n    \"noEmit\": true,\n    \"jsx\": \"react-jsx\",\n    \"incremental\": true,\n    \"skipLibCheck\": true,\n    \"paths\": {\n      \"@/*\": [\"./src/*\"]\n    }\n  },\n  \"include\": [\"src\", \"next-env.d.ts\"],\n  \"exclude\": [\"node_modules\", \"dist\"]\n}\nEOF",
+      "tip": "Use moduleResolution: 'bundler' for projects bundled with Vite, Webpack, or Next.js. Use 'nodenext' for pure Node.js projects."
+    },
+    {
+      "title": "Enable stricter optional checks",
+      "description": "Add extra type safety options that go beyond strict: true.",
+      "command": "echo 'Add these to compilerOptions for maximum safety:' && echo '  \"noUncheckedIndexedAccess\": true' && echo '  \"exactOptionalPropertyTypes\": true' && echo '  \"noPropertyAccessFromIndexSignature\": true'"
+    },
+    {
+      "title": "Verify the configuration",
+      "description": "Run the compiler to check for any configuration issues.",
+      "command": "npx tsc --noEmit --pretty"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# TypeScript Config Optimization\nset -euo pipefail\n\necho \"=== TypeScript Version ===\"\nnpx tsc --version\n\necho \"\"\necho \"=== Recommended tsconfig.json ===\"\ncat << 'EOF'\n{\n  \"compilerOptions\": {\n    // Language & Environment\n    \"target\": \"ES2022\",\n    \"lib\": [\"ES2022\", \"DOM\", \"DOM.Iterable\"],\n    \"jsx\": \"react-jsx\",\n\n    // Modules\n    \"module\": \"ESNext\",\n    \"moduleResolution\": \"bundler\",\n    \"resolveJsonModule\": true,\n    \"isolatedModules\": true,\n\n    // Strictness\n    \"strict\": true,\n    \"noUncheckedIndexedAccess\": true,\n    \"noImplicitOverride\": true,\n\n    // Output\n    \"noEmit\": true,\n    \"incremental\": true,\n\n    // Interop\n    \"esModuleInterop\": true,\n    \"skipLibCheck\": true,\n    \"forceConsistentCasingInFileNames\": true,\n\n    // Paths\n    \"baseUrl\": \".\",\n    \"paths\": { \"@/*\": [\"./src/*\"] }\n  },\n  \"include\": [\"src\"],\n  \"exclude\": [\"node_modules\", \"dist\"]\n}\nEOF\n\necho \"\"\necho \"=== Verifying config ===\"\nnpx tsc --noEmit",
+  "faq": [
+    {
+      "question": "What is the difference between moduleResolution bundler and nodenext?",
+      "answer": "Use 'bundler' when your code is processed by a bundler like Vite, Webpack, or Next.js, as it allows extensionless imports and condition-based resolution. Use 'nodenext' for pure Node.js projects that run directly without a bundler, which requires file extensions in imports."
+    },
+    {
+      "question": "Should I use noEmit or emit declaration files?",
+      "answer": "Use noEmit: true when your bundler (Vite, Next.js, etc.) handles transpilation. Only emit when building a library that needs .js and .d.ts output files. For libraries, use declaration: true and declarationMap: true."
+    },
+    {
+      "question": "What does isolatedModules do?",
+      "answer": "isolatedModules ensures each file can be transpiled independently, which is required by tools like esbuild, SWC, and Babel that process files one at a time. It disallows const enums and namespace merging across files."
+    }
+  ],
+  "relatedRecipes": ["ts-strict-migration", "ts-eslint-setup"],
+  "lastUpdated": "2026-03-11"
+}

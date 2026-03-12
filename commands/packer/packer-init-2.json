@@ -1,0 +1,8 @@
+{
+  "id": "packer-init-2",
+  "categoryId": "packer",
+  "subcategoryId": "packer-init",
+  "title": "Upgrade plugins",
+  "command": "packer init -upgrade .",
+  "description": "Upgrade plugins to latest versions."
+}

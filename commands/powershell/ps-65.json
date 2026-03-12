@@ -1,0 +1,8 @@
+{
+  "id": "ps-65",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-pipeline",
+  "title": "Unique items",
+  "command": "Get-Process | Select-Object ProcessName -Unique",
+  "description": "Get unique values."
+}

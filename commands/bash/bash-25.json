@@ -1,0 +1,8 @@
+{
+  "id": "bash-25",
+  "categoryId": "bash",
+  "subcategoryId": "variables",
+  "title": "Positional parameters",
+  "command": "echo \"$1 $2 $@\"",
+  "description": "Access script arguments."
+}

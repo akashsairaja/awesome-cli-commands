@@ -1,0 +1,8 @@
+{
+  "id": "apt-8",
+  "categoryId": "ubuntu",
+  "subcategoryId": "apt-packages",
+  "title": "List installed packages",
+  "command": "apt list --installed",
+  "description": "Show all installed packages."
+}

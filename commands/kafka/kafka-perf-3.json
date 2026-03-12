@@ -1,0 +1,8 @@
+{
+  "id": "kafka-perf-3",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-perf",
+  "title": "End-to-end latency",
+  "command": "kafka-run-class.sh kafka.tools.EndToEndLatency localhost:9092 my-topic 10000 all 1024",
+  "description": "Measure end-to-end message latency."
+}

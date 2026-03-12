@@ -1,0 +1,8 @@
+{
+  "id": "claude-38",
+  "categoryId": "claudecode",
+  "subcategoryId": "sessions",
+  "title": "Fork current session",
+  "command": "/fork",
+  "description": "Branch session for parallel exploration."
+}

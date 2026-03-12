@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-compute-images",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-compute",
+  "title": "List Images",
+  "command": "gcloud compute images list --filter=\"family~ubuntu\"",
+  "description": "List available VM images",
+  "tags": ["vm", "images", "list"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "azure-vm-sizes",
+  "categoryId": "azure",
+  "subcategoryId": "azure-compute",
+  "title": "List VM Sizes",
+  "command": "az vm list-sizes --location <region> --output table",
+  "description": "Show available VM sizes in a region",
+  "tags": ["vm", "sizes", "sku"]
+}

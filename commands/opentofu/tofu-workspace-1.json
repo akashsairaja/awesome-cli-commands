@@ -1,0 +1,8 @@
+{
+  "id": "tofu-workspace-1",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-workspace",
+  "title": "List workspaces",
+  "command": "tofu workspace list",
+  "description": "List all available workspaces."
+}

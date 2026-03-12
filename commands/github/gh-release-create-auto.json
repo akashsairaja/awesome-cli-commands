@@ -1,0 +1,9 @@
+{
+  "id": "gh-release-create-auto",
+  "categoryId": "github",
+  "subcategoryId": "gh-release",
+  "title": "Create release with auto notes",
+  "command": "gh release create <tag> --generate-notes",
+  "description": "Create release with auto-generated notes",
+  "tags": ["release", "create", "auto", "notes"]
+}

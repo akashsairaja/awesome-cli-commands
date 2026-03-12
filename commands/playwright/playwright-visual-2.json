@@ -1,0 +1,8 @@
+{
+  "id": "playwright-visual-2",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-visual",
+  "title": "Update snapshots",
+  "command": "npx playwright test --update-snapshots",
+  "description": "Update baseline screenshots."
+}

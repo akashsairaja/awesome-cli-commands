@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-install-7",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-install",
+  "title": "Check CA expiry",
+  "command": "openssl x509 -in \"$(mkcert -CAROOT)/rootCA.pem\" -enddate -noout",
+  "description": "Check when the CA root certificate expires."
+}

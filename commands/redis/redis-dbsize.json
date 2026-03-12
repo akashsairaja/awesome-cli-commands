@@ -1,0 +1,9 @@
+{
+  "id": "redis-dbsize",
+  "categoryId": "redis",
+  "subcategoryId": "redis-server",
+  "title": "Database size",
+  "command": "DBSIZE",
+  "description": "Get number of keys in current database",
+  "tags": ["dbsize", "keys", "count"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "hf-3",
+  "categoryId": "huggingface",
+  "subcategoryId": "hf-auth",
+  "title": "Check login status",
+  "command": "huggingface-cli whoami",
+  "description": "Display current authenticated user."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "node-repl-1",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-repl",
+  "title": "Start REPL",
+  "command": "node",
+  "description": "Start interactive Node.js REPL."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "claude-18",
+  "categoryId": "claudecode",
+  "subcategoryId": "permissions",
+  "title": "Accept edits permission mode",
+  "command": "claude --permission-mode acceptEdits",
+  "description": "Auto-accept file edits without prompting."
+}

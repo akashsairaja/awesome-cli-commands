@@ -1,0 +1,9 @@
+{
+  "id": "vercel-bisect-path",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-testing",
+  "title": "Bisect specific path",
+  "command": "vercel bisect --path /blog/first-post",
+  "description": "Bisect testing specific URL path",
+  "tags": ["bisect", "path", "route"]
+}

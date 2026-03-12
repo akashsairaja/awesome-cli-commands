@@ -1,0 +1,8 @@
+{
+  "id": "vim-44",
+  "categoryId": "vim",
+  "subcategoryId": "windows-tabs",
+  "title": "New tab",
+  "command": ":tabnew",
+  "description": "Open new tab page."
+}

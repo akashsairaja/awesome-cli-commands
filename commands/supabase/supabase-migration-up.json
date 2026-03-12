@@ -1,0 +1,9 @@
+{
+  "id": "supabase-migration-up",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-migrations",
+  "title": "Apply migrations",
+  "command": "supabase migration up",
+  "description": "Apply pending migrations to local database",
+  "tags": ["migration", "up", "apply"]
+}

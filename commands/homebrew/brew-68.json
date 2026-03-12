@@ -1,0 +1,8 @@
+{
+  "id": "brew-68",
+  "categoryId": "homebrew",
+  "subcategoryId": "bundle",
+  "title": "VS Code extensions",
+  "command": "brew bundle dump --vscode",
+  "description": "Include VS Code extensions."
+}

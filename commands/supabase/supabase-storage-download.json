@@ -1,0 +1,9 @@
+{
+  "id": "supabase-storage-download",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-storage",
+  "title": "Download file from storage",
+  "command": "supabase storage cp supabase://bucket/file.png ./downloads/ --linked",
+  "description": "Download file from remote storage",
+  "tags": ["storage", "download", "copy"]
+}

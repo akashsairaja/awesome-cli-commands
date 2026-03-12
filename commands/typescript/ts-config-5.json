@@ -1,0 +1,8 @@
+{
+  "id": "ts-config-5",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-config",
+  "title": "Trace module resolution",
+  "command": "tsc --traceResolution",
+  "description": "Show detailed module resolution process for debugging."
+}

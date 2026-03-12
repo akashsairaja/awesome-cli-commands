@@ -1,0 +1,8 @@
+{
+  "id": "go-test-1",
+  "categoryId": "go",
+  "subcategoryId": "go-test",
+  "title": "Run all tests",
+  "command": "go test ./...",
+  "description": "Run tests in all packages recursively."
+}

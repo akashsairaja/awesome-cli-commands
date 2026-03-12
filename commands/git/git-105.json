@@ -1,0 +1,8 @@
+{
+  "id": "git-105",
+  "categoryId": "git",
+  "subcategoryId": "bisect",
+  "title": "Skip bisect commit",
+  "command": "git bisect skip",
+  "description": "Skip untestable commit."
+}

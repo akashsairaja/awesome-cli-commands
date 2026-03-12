@@ -1,0 +1,8 @@
+{
+  "id": "brew-7",
+  "categoryId": "homebrew",
+  "subcategoryId": "packages",
+  "title": "Search packages",
+  "command": "brew search <query>",
+  "description": "Search for packages."
+}

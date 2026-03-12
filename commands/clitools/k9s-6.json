@@ -1,0 +1,8 @@
+{
+  "id": "k9s-6",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-k9s",
+  "title": "Show pods (:pod)",
+  "command": ":pod",
+  "description": "Navigate to pods view."
+}

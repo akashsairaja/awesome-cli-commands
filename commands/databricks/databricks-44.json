@@ -1,0 +1,8 @@
+{
+  "id": "databricks-44",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-mlflow",
+  "title": "Get model details",
+  "command": "databricks registered-models get --name <model-name>",
+  "description": "Get details of a registered model."
+}

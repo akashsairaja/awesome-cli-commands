@@ -1,0 +1,8 @@
+{
+  "id": "docker-102",
+  "categoryId": "docker",
+  "subcategoryId": "buildx",
+  "title": "Build with cache export",
+  "command": "docker buildx build --cache-to type=local,dest=./cache -t <image> .",
+  "description": "Export build cache to directory."
+}

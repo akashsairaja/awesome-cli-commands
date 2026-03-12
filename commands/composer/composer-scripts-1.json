@@ -1,0 +1,8 @@
+{
+  "id": "composer-scripts-1",
+  "categoryId": "composer",
+  "subcategoryId": "composer-scripts",
+  "title": "Run script",
+  "command": "composer run-script test",
+  "description": "Run a defined script."
+}

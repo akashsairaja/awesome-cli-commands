@@ -1,0 +1,8 @@
+{
+  "id": "apt-11",
+  "categoryId": "ubuntu",
+  "subcategoryId": "systemd-services",
+  "title": "Restart service",
+  "command": "sudo systemctl restart <service>",
+  "description": "Restart a service."
+}

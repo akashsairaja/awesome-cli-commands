@@ -1,0 +1,8 @@
+{
+  "id": "flux-debug-5",
+  "categoryId": "flux",
+  "subcategoryId": "flux-debug",
+  "title": "Get all resources",
+  "command": "flux get all --all-namespaces",
+  "description": "List all Flux resources cluster-wide."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tf-prov-5",
+  "categoryId": "terraform",
+  "subcategoryId": "providers",
+  "title": "Apply auto-approve",
+  "command": "terraform apply -auto-approve",
+  "description": "Apply without confirmation (CI/CD)."
+}

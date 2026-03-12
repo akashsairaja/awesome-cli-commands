@@ -1,0 +1,8 @@
+{
+  "id": "nuget-publish-3",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-publish",
+  "title": "Push to private feed",
+  "command": "dotnet nuget push MyPackage.1.0.0.nupkg -s MyFeed -k az",
+  "description": "Push to private feed."
+}

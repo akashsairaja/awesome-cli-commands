@@ -1,0 +1,9 @@
+{
+  "id": "ansible-playbook-tags",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-playbook",
+  "title": "Run Specific Tags",
+  "command": "ansible-playbook playbook.yml --tags \"config,deploy\"",
+  "description": "Run only tasks with specific tags",
+  "tags": ["playbook", "tags", "filter"]
+}

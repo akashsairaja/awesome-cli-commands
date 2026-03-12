@@ -1,0 +1,9 @@
+{
+  "id": "supabase-test-new",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-test",
+  "title": "Create new test file",
+  "command": "supabase test new <name>",
+  "description": "Create new pgTAP test file",
+  "tags": ["test", "create", "pgtap"]
+}

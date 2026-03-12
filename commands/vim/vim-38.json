@@ -1,0 +1,8 @@
+{
+  "id": "vim-38",
+  "categoryId": "vim",
+  "subcategoryId": "windows-tabs",
+  "title": "Navigate left",
+  "command": "Ctrl+w h",
+  "description": "Move to left window."
+}

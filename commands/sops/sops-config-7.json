@@ -1,0 +1,8 @@
+{
+  "id": "sops-config-7",
+  "categoryId": "sops",
+  "subcategoryId": "sops-config",
+  "title": "Publish to Vault",
+  "command": "sops publish --vault vault://secret/data/myapp secrets.enc.yaml",
+  "description": "Publish decrypted secrets to HashiCorp Vault."
+}

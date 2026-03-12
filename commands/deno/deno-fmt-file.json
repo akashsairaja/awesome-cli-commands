@@ -1,0 +1,9 @@
+{
+  "id": "deno-fmt-file",
+  "categoryId": "deno",
+  "subcategoryId": "deno-fmt",
+  "title": "Format Specific Files",
+  "command": "deno fmt src/main.ts src/utils.ts",
+  "description": "Format specific files",
+  "tags": ["fmt", "file", "specific"]
+}

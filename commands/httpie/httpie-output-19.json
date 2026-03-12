@@ -1,0 +1,8 @@
+{
+  "id": "httpie-output-19",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-output",
+  "title": "Client certificate",
+  "command": "http --cert=client.pem --cert-key=client-key.pem GET https://api.example.com",
+  "description": "Use a client SSL certificate for mutual TLS."
+}

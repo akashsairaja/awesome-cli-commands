@@ -1,0 +1,8 @@
+{
+  "id": "db-89",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Flush hosts",
+  "command": "FLUSH HOSTS;",
+  "description": "Clear host cache. Fixes 'Host is blocked' errors from too many failed connections."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "flux-notification-2",
+  "categoryId": "flux",
+  "subcategoryId": "flux-notification",
+  "title": "Create alert",
+  "command": "flux create alert slack-alert --provider-ref=slack --event-sources='Kustomization/*'",
+  "description": "Create alert for Kustomization events."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k8s-97",
+  "categoryId": "kubernetes",
+  "subcategoryId": "daemonsets",
+  "title": "Rollout status daemonset",
+  "command": "kubectl rollout status daemonset/<name>",
+  "description": "Monitor daemonset rollout progress."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "py-23",
+  "categoryId": "python",
+  "subcategoryId": "python-poetry",
+  "title": "Add dev dependency",
+  "command": "poetry add -D pytest black",
+  "description": "Add packages to development dependencies."
+}

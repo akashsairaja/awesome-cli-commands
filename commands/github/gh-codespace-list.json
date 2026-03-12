@@ -1,0 +1,9 @@
+{
+  "id": "gh-codespace-list",
+  "categoryId": "github",
+  "subcategoryId": "gh-codespace",
+  "title": "List codespaces",
+  "command": "gh codespace list",
+  "description": "List your codespaces",
+  "tags": ["codespace", "list", "show"]
+}

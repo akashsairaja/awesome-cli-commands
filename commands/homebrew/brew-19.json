@@ -1,0 +1,8 @@
+{
+  "id": "brew-19",
+  "categoryId": "homebrew",
+  "subcategoryId": "casks",
+  "title": "Install cask app",
+  "command": "brew install --cask <app>",
+  "description": "Install macOS application."
+}

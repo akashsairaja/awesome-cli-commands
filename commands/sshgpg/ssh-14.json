@@ -1,0 +1,8 @@
+{
+  "id": "ssh-14",
+  "categoryId": "sshgpg",
+  "subcategoryId": "connections",
+  "title": "Copy from remote",
+  "command": "scp user@host:/path file",
+  "description": "Copy file from remote server."
+}

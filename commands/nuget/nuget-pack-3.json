@@ -1,0 +1,8 @@
+{
+  "id": "nuget-pack-3",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-pack",
+  "title": "Pack snupkg symbols",
+  "command": "dotnet pack -c Release /p:SymbolPackageFormat=snupkg",
+  "description": "Create .snupkg symbol package for NuGet.org."
+}

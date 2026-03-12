@@ -1,0 +1,8 @@
+{
+  "id": "git-58",
+  "categoryId": "git",
+  "subcategoryId": "stash",
+  "title": "Create branch from stash",
+  "command": "git stash branch <branch> stash@{0}",
+  "description": "Create branch and apply stash."
+}

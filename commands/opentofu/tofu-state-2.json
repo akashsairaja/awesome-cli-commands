@@ -1,0 +1,8 @@
+{
+  "id": "tofu-state-2",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-state",
+  "title": "Show resource",
+  "command": "tofu state show aws_instance.web",
+  "description": "Show resource details."
+}

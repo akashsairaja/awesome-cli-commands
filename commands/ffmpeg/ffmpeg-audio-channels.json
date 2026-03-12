@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-audio-channels",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-audio",
+  "title": "Convert to mono",
+  "command": "ffmpeg -i input.mp3 -ac 1 output.mp3",
+  "description": "Convert stereo audio to mono",
+  "tags": ["audio", "mono", "channels"]
+}

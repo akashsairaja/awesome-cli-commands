@@ -1,0 +1,8 @@
+{
+  "id": "starship-modules-12",
+  "categoryId": "starship",
+  "subcategoryId": "starship-modules",
+  "title": "Command duration",
+  "command": "[cmd_duration]\nmin_time = 2_000\nformat = \"took [$duration]($style) \"",
+  "description": "Show elapsed time for long commands."
+}

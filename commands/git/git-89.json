@@ -1,0 +1,8 @@
+{
+  "id": "git-89",
+  "categoryId": "git",
+  "subcategoryId": "history",
+  "title": "Blame file",
+  "command": "git blame <file>",
+  "description": "Show who changed each line."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "prisma-studio",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-studio",
+  "title": "Open Prisma Studio",
+  "command": "npx prisma studio",
+  "description": "Open visual database browser",
+  "tags": ["studio", "gui", "browser"]
+}

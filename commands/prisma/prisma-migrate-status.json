@@ -1,0 +1,9 @@
+{
+  "id": "prisma-migrate-status",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-migrate",
+  "title": "Migration status",
+  "command": "npx prisma migrate status",
+  "description": "Check the status of migrations",
+  "tags": ["migrate", "status", "check"]
+}

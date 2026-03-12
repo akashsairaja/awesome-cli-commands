@@ -1,0 +1,8 @@
+{
+  "id": "claude-34",
+  "categoryId": "claudecode",
+  "subcategoryId": "context",
+  "title": "Rewind to checkpoint",
+  "command": "/rewind",
+  "description": "Return to previous checkpoint (or press Esc twice)."
+}

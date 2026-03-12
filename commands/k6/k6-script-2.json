@@ -1,0 +1,8 @@
+{
+  "id": "k6-script-2",
+  "categoryId": "k6",
+  "subcategoryId": "k6-script",
+  "title": "POST request",
+  "command": "const payload = JSON.stringify({ username: 'test' });\nconst res = http.post(url, payload, { headers: { 'Content-Type': 'application/json' } });",
+  "description": "POST JSON data."
+}

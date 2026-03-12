@@ -1,0 +1,9 @@
+{
+  "id": "supabase-status",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-db",
+  "title": "Check status",
+  "command": "supabase status",
+  "description": "Show status of local Supabase services",
+  "tags": ["status", "info"]
+}

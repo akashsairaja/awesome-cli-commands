@@ -1,0 +1,8 @@
+{
+  "id": "aws-rds-5",
+  "categoryId": "aws",
+  "subcategoryId": "rds",
+  "title": "List snapshots",
+  "command": "aws rds describe-db-snapshots --db-instance-identifier mydb",
+  "description": "List snapshots for instance."
+}

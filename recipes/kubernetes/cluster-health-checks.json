@@ -1,0 +1,52 @@
+{
+  "id": "cluster-health-checks",
+  "stackId": "kubernetes",
+  "name": "Cluster Health Checks",
+  "description": "Run comprehensive health checks on your Kubernetes cluster to verify node status, component health, and system pod readiness.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": false,
+  "tags": ["health", "monitoring", "cluster", "nodes"],
+  "prerequisites": ["kubectl configured"],
+  "steps": [
+    {
+      "title": "Check node status",
+      "description": "Verify all nodes are in Ready state.",
+      "command": "kubectl get nodes -o wide"
+    },
+    {
+      "title": "Check component status",
+      "description": "Verify core Kubernetes components are healthy.",
+      "command": "kubectl get componentstatuses 2>/dev/null; kubectl get pods -n kube-system",
+      "tip": "componentstatuses is deprecated in newer versions. Check kube-system pods instead."
+    },
+    {
+      "title": "Check for pods in error states",
+      "description": "Find pods that are not running correctly across all namespaces.",
+      "command": "kubectl get pods --all-namespaces --field-selector=status.phase!=Running,status.phase!=Succeeded"
+    },
+    {
+      "title": "Check node conditions and pressure",
+      "description": "Look for nodes experiencing memory, disk, or PID pressure.",
+      "command": "kubectl get nodes -o json | jq -r '.items[] | .metadata.name + \": \" + ([.status.conditions[] | select(.status==\"True\") | .type] | join(\", \"))'"
+    },
+    {
+      "title": "Verify DNS is working",
+      "description": "Test that cluster DNS resolves service names correctly.",
+      "command": "kubectl run dns-test --rm -it --restart=Never --image=busybox -- nslookup kubernetes.default"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Cluster Health Checks\nset -euo pipefail\n\necho \"=== Node Status ===\"\nkubectl get nodes -o wide\n\necho \"\"\necho \"=== System Pods ===\"\nkubectl get pods -n kube-system -o custom-columns='NAME:.metadata.name,STATUS:.status.phase,RESTARTS:.status.containerStatuses[0].restartCount,NODE:.spec.nodeName'\n\necho \"\"\necho \"=== Pods Not Running ===\"\nkubectl get pods --all-namespaces --field-selector=status.phase!=Running,status.phase!=Succeeded 2>/dev/null || echo \"All pods healthy\"\n\necho \"\"\necho \"=== Node Conditions ===\"\nkubectl get nodes -o json | jq -r '.items[] | .metadata.name + \": \" + ([.status.conditions[] | select(.status==\"True\") | .type] | join(\", \"))'\n\necho \"\"\necho \"=== Cluster Events (Warnings) ===\"\nkubectl get events --all-namespaces --field-selector type=Warning --sort-by='.lastTimestamp' 2>/dev/null | tail -10",
+  "faq": [
+    {
+      "question": "What does NotReady node status mean?",
+      "answer": "The kubelet on that node is not communicating with the API server. Causes include network issues, kubelet crashes, or resource exhaustion. Check node events and kubelet logs."
+    },
+    {
+      "question": "How often should I run health checks?",
+      "answer": "Set up automated monitoring with Prometheus and alerting. Manual health checks are useful for incident response and during maintenance windows."
+    }
+  ],
+  "relatedRecipes": ["resource-optimization-audit", "rollout-management"],
+  "lastUpdated": "2026-03-11"
+}

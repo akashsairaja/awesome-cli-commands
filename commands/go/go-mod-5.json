@@ -1,0 +1,8 @@
+{
+  "id": "go-mod-5",
+  "categoryId": "go",
+  "subcategoryId": "go-mod",
+  "title": "Verify dependencies",
+  "command": "go mod verify",
+  "description": "Verify dependencies match go.sum checksums."
+}

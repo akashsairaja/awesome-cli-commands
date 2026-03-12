@@ -1,0 +1,70 @@
+{
+  "id": "python-venv-project-setup",
+  "stackId": "python",
+  "name": "Set Up a Python Project with Virtual Environment",
+  "description": "Create an isolated Python environment with dependencies, linting, and a reproducible project structure ready for collaboration.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "trending": true,
+  "trendingReason": "Virtual environments remain the foundation of every Python project and are required knowledge for any Python developer.",
+  "tags": ["venv", "virtualenv", "setup", "dependencies", "pip"],
+  "prerequisites": ["Python 3.8+ installed"],
+  "steps": [
+    {
+      "title": "Create the project directory",
+      "command": "mkdir myproject && cd myproject",
+      "description": "Create a new directory for your project and navigate into it.",
+      "tip": "Use a descriptive name that matches your package or application name."
+    },
+    {
+      "title": "Create a virtual environment",
+      "command": "python -m venv .venv",
+      "description": "Creates an isolated Python environment in the .venv directory. This keeps project dependencies separate from your system Python.",
+      "tip": "The .venv name is a widely adopted convention. Most editors and tools auto-detect it."
+    },
+    {
+      "title": "Activate the environment",
+      "command": "source .venv/bin/activate  # Windows: .venv\\Scripts\\activate",
+      "description": "Activates the virtual environment so pip and python commands use the isolated copy. Your shell prompt will change to indicate the active environment.",
+      "warning": "You must activate the environment in every new terminal session. Forgetting to activate is the most common cause of 'module not found' errors."
+    },
+    {
+      "title": "Upgrade pip and install dependencies",
+      "command": "pip install --upgrade pip && pip install requests flask",
+      "description": "Upgrade pip to the latest version and install your project dependencies. Always upgrade pip first to avoid compatibility warnings."
+    },
+    {
+      "title": "Freeze dependencies to requirements.txt",
+      "command": "pip freeze > requirements.txt",
+      "description": "Lock all installed packages and their exact versions into a requirements file. This ensures reproducible installs across machines and CI.",
+      "tip": "Run this command every time you add or update a dependency to keep the file current."
+    },
+    {
+      "title": "Add .venv to .gitignore",
+      "command": "echo '.venv/' >> .gitignore",
+      "description": "Exclude the virtual environment directory from version control. Each developer should create their own .venv from requirements.txt.",
+      "warning": "Never commit the .venv directory. It contains platform-specific binaries that will not work on other machines."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Python project setup with virtual environment\nset -e\n\nPROJECT_NAME=${1:-myproject}\nmkdir -p \"$PROJECT_NAME\" && cd \"$PROJECT_NAME\"\n\npython -m venv .venv\nsource .venv/bin/activate\n\npip install --upgrade pip\npip install requests flask pytest ruff\n\npip freeze > requirements.txt\n\necho '.venv/' > .gitignore\necho '__pycache__/' >> .gitignore\necho '*.pyc' >> .gitignore\necho '.pytest_cache/' >> .gitignore\n\nmkdir -p src tests\ntouch src/__init__.py tests/__init__.py\n\necho \"Project '$PROJECT_NAME' created and ready.\"",
+  "faq": [
+    {
+      "question": "Should I commit .venv to Git?",
+      "answer": "No. Add .venv to .gitignore and commit requirements.txt instead. Each developer creates their own .venv locally using pip install -r requirements.txt."
+    },
+    {
+      "question": "What is the difference between venv and virtualenv?",
+      "answer": "venv is built into Python 3.3+ and is the recommended tool. virtualenv is a third-party package with extra features like support for Python 2, but for most projects venv is sufficient."
+    },
+    {
+      "question": "How do I deactivate the virtual environment?",
+      "answer": "Run the 'deactivate' command in your terminal. This restores your shell to use the system Python and pip."
+    }
+  ],
+  "relatedRecipes": [
+    "python-uv-fast-deps",
+    "python-poetry-workflow",
+    "python-pyenv-version-management"
+  ],
+  "lastUpdated": "2026-03-11"
+}

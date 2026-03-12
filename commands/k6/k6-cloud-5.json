@@ -1,0 +1,8 @@
+{
+  "id": "k6-cloud-5",
+  "categoryId": "k6",
+  "subcategoryId": "k6-cloud",
+  "title": "List cloud tests",
+  "command": "k6 cloud list",
+  "description": "List recent cloud test runs."
+}

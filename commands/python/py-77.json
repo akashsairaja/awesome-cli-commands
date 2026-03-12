@@ -1,0 +1,8 @@
+{
+  "id": "py-77",
+  "categoryId": "python",
+  "subcategoryId": "python-pyenv",
+  "title": "Uninstall version",
+  "command": "pyenv uninstall 3.9.0",
+  "description": "Remove an installed Python version."
+}

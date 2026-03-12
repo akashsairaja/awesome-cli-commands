@@ -1,0 +1,8 @@
+{
+  "id": "bruno-scripts-14",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-scripts",
+  "title": "Dynamic request body",
+  "command": "script:pre-request {\n  const timestamp = Date.now();\n  const id = Math.random().toString(36).slice(2);\n  bru.setVar('uniqueId', `${id}-${timestamp}`);\n}",
+  "description": "Generate dynamic values before request."
+}

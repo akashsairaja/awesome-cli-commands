@@ -1,0 +1,8 @@
+{
+  "id": "ps-27",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-system",
+  "title": "Stop service",
+  "command": "Stop-Service -Name ServiceName",
+  "description": "Stop a Windows service."
+}

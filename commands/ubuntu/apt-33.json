@@ -1,0 +1,8 @@
+{
+  "id": "apt-33",
+  "categoryId": "ubuntu",
+  "subcategoryId": "apt-packages",
+  "title": "Clean package cache",
+  "command": "sudo apt clean && sudo apt autoclean",
+  "description": "Remove cached package files to free disk space."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "mvn-wrapper-11",
+  "categoryId": "maven",
+  "subcategoryId": "mvn-wrapper",
+  "title": "Run tests with wrapper",
+  "command": "./mvnw test",
+  "description": "Execute unit tests using the wrapper."
+}

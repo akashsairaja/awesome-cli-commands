@@ -1,0 +1,8 @@
+{
+  "id": "flux-helm-2",
+  "categoryId": "flux",
+  "subcategoryId": "flux-helm",
+  "title": "List HelmReleases",
+  "command": "flux get helmreleases",
+  "description": "List all HelmReleases."
+}

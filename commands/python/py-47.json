@@ -1,0 +1,8 @@
+{
+  "id": "py-47",
+  "categoryId": "python",
+  "subcategoryId": "python-uv",
+  "title": "pip sync requirements",
+  "command": "uv pip sync requirements.txt",
+  "description": "Sync environment with requirements file."
+}

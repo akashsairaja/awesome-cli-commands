@@ -1,0 +1,57 @@
+{
+  "id": "vim-plugin-management",
+  "stackId": "vim",
+  "name": "Plugin Management with lazy.nvim",
+  "description": "Install, configure, update, and lazy-load Neovim plugins efficiently using the lazy.nvim package manager.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "tags": ["plugins", "lazy-nvim", "package-manager", "configuration"],
+  "prerequisites": ["Neovim 0.9+ installed", "lazy.nvim bootstrapped in init.lua"],
+  "steps": [
+    {
+      "title": "Add a new plugin",
+      "description": "Create a plugin spec file to install and configure a new plugin.",
+      "command": "cat > ~/.config/nvim/lua/plugins/explorer.lua << 'EOF'\nreturn {\n  \"nvim-neo-tree/neo-tree.nvim\",\n  branch = \"v3.x\",\n  dependencies = {\n    \"nvim-lua/plenary.nvim\",\n    \"MunifTanjim/nui.nvim\",\n  },\n  keys = {\n    { \"<leader>e\", \":Neotree toggle<CR>\", desc = \"Toggle file explorer\" },\n  },\n  config = function()\n    require(\"neo-tree\").setup({\n      filesystem = { follow_current_file = { enabled = true } },\n    })\n  end,\n}\nEOF",
+      "tip": "Each file in lua/plugins/ can return one spec table or a list of specs. lazy.nvim auto-discovers them."
+    },
+    {
+      "title": "Sync plugins after changes",
+      "description": "Tell lazy.nvim to install new plugins and update existing ones.",
+      "command": ":Lazy sync"
+    },
+    {
+      "title": "Configure lazy-loading triggers",
+      "description": "Set up plugins to load only when needed to keep startup fast.",
+      "command": "cat > ~/.config/nvim/lua/plugins/git.lua << 'EOF'\nreturn {\n  { \"lewis6991/gitsigns.nvim\",\n    event = { \"BufReadPre\", \"BufNewFile\" },\n    config = true },\n  { \"tpope/vim-fugitive\",\n    cmd = { \"Git\", \"Gvdiffsplit\", \"Gblame\" } },\n}\nEOF",
+      "tip": "Use 'event' to load on buffer events, 'cmd' to load on command use, 'keys' to load on keybinding, or 'ft' to load on filetype."
+    },
+    {
+      "title": "Check plugin load times",
+      "description": "Profile startup to see how long each plugin takes to load.",
+      "command": ":Lazy profile"
+    },
+    {
+      "title": "Pin plugin versions with the lockfile",
+      "description": "Commit the lockfile to ensure reproducible plugin versions across machines.",
+      "command": "cat ~/.config/nvim/lazy-lock.json | head -20",
+      "tip": "The lockfile is updated automatically on :Lazy sync. Commit it to version control and run :Lazy restore on another machine."
+    }
+  ],
+  "fullScript": "# lazy.nvim Plugin Management Quick Reference\n# (Run these commands inside Neovim)\n\n# Open lazy.nvim UI\n:Lazy\n\n# Install/update all plugins\n:Lazy sync\n\n# Update plugins only\n:Lazy update\n\n# Restore from lockfile\n:Lazy restore\n\n# View startup profile\n:Lazy profile\n\n# Check for issues\n:Lazy health\n\n# Clean unused plugins\n:Lazy clean\n\n# View plugin logs\n:Lazy log\n\n# Lazy-loading triggers:\n# event = \"BufReadPre\"     Load on buffer read\n# cmd = \"Telescope\"        Load on command use\n# keys = \"<leader>ff\"      Load on keybinding\n# ft = \"python\"            Load on filetype",
+  "faq": [
+    {
+      "question": "How do I organize plugin specs across multiple files?",
+      "answer": "Put each plugin or group of related plugins in a separate file under lua/plugins/. lazy.nvim automatically loads all files in that directory when you call require('lazy').setup('plugins')."
+    },
+    {
+      "question": "How do I disable a plugin temporarily?",
+      "answer": "Add 'enabled = false' to the plugin spec: { 'plugin/name', enabled = false }. The plugin stays in the lockfile but is not loaded or updated."
+    },
+    {
+      "question": "What if two plugins conflict with each other?",
+      "answer": "Use the 'priority' field to control load order (higher loads first, default is 50). Use the 'dependencies' field to ensure one plugin loads before another. Check :Lazy log for errors."
+    }
+  ],
+  "relatedRecipes": ["vim-config-setup", "vim-lsp-setup"],
+  "lastUpdated": "2026-03-11"
+}

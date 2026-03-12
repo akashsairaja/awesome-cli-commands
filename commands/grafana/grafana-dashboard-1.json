@@ -1,0 +1,8 @@
+{
+  "id": "grafana-dashboard-1",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-dashboard",
+  "title": "Export dashboard",
+  "command": "curl -s http://localhost:3000/api/dashboards/uid/DASHBOARD_UID -H 'Authorization: Bearer TOKEN' | jq '.dashboard' > dashboard.json",
+  "description": "Export dashboard to JSON."
+}

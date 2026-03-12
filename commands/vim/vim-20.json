@@ -1,0 +1,8 @@
+{
+  "id": "vim-20",
+  "categoryId": "vim",
+  "subcategoryId": "search",
+  "title": "Replace with confirm",
+  "command": ":%s/old/new/gc",
+  "description": "Replace with confirmation."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "db-107",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Set global variable",
+  "command": "SET GLOBAL max_connections = 200;",
+  "description": "Change a server variable at runtime (resets on restart)."
+}

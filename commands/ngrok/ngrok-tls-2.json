@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-tls-2",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-tls",
+  "title": "TLS with custom domain",
+  "command": "ngrok tls --domain=secure.example.com 443",
+  "description": "TLS tunnel on a custom domain."
+}

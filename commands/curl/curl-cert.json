@@ -1,0 +1,9 @@
+{
+  "id": "curl-cert",
+  "categoryId": "curl",
+  "subcategoryId": "curl-auth",
+  "title": "Client certificate",
+  "command": "curl --cert cert.pem --key key.pem https://api.example.com",
+  "description": "Make request with client certificate",
+  "tags": ["cert", "ssl", "tls", "mtls"]
+}

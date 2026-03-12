@@ -1,0 +1,8 @@
+{
+  "id": "docker-137",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "Alpha watch features",
+  "command": "docker compose alpha watch",
+  "description": "Use experimental watch features for development workflow."
+}

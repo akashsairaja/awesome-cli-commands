@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-connect-9",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-connect",
+  "title": "Shields up mode",
+  "command": "tailscale up --shields-up",
+  "description": "Block all incoming connections."
+}

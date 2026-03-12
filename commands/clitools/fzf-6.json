@@ -1,0 +1,8 @@
+{
+  "id": "fzf-6",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-fzf",
+  "title": "History search",
+  "command": "history | fzf",
+  "description": "Search command history."
+}

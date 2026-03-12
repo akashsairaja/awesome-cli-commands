@@ -1,0 +1,8 @@
+{
+  "id": "git-84",
+  "categoryId": "git",
+  "subcategoryId": "history",
+  "title": "Log for file",
+  "command": "git log --follow <file>",
+  "description": "Show history for file (track renames)."
+}

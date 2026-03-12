@@ -1,0 +1,8 @@
+{
+  "id": "task-gs-2",
+  "title": "Install Task (Linux/macOS script)",
+  "command": "sh -c \"$(curl --location https://taskfile.dev/install.sh)\" -- -d -b /usr/local/bin",
+  "description": "Install Task runner using the official install script on Linux or macOS",
+  "categoryId": "taskfile",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ps-50",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-objects",
+  "title": "Add to array",
+  "command": "$arr += 6",
+  "description": "Append to array."
+}

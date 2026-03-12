@@ -1,0 +1,8 @@
+{
+  "id": "k3s-config-12",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-config",
+  "title": "Disable cloud controller",
+  "command": "curl -sfL https://get.k3s.io | sh -s - --disable-cloud-controller",
+  "description": "Disable the built-in cloud controller manager."
+}

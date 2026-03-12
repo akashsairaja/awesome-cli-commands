@@ -1,0 +1,8 @@
+{
+  "id": "k3s-kubectl-12",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-kubectl",
+  "title": "Port-forward a service",
+  "command": "k3s kubectl port-forward svc/<service-name> 8080:80 -n <namespace>",
+  "description": "Forward local port to a service in the cluster."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "docker-63",
+  "categoryId": "docker",
+  "subcategoryId": "networks",
+  "title": "List networks",
+  "command": "docker network ls",
+  "description": "Show all Docker networks."
+}

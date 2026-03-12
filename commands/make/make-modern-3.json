@@ -1,0 +1,8 @@
+{
+  "id": "make-modern-3",
+  "categoryId": "make",
+  "subcategoryId": "make-modern",
+  "title": "Default goal",
+  "command": ".DEFAULT_GOAL := help",
+  "description": "Set default target to help."
+}

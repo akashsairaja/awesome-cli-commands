@@ -1,0 +1,8 @@
+{
+  "id": "git-83",
+  "categoryId": "git",
+  "subcategoryId": "history",
+  "title": "Log with diff",
+  "command": "git log -p",
+  "description": "Show full diff for each commit."
+}

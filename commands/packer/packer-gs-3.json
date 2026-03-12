@@ -1,0 +1,8 @@
+{
+  "id": "packer-gs-3",
+  "title": "Initialize Packer template",
+  "command": "packer init .",
+  "description": "Initialize a Packer template and download required plugins",
+  "categoryId": "packer",
+  "subcategoryId": "getting-started"
+}

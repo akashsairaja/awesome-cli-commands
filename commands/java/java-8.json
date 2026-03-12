@@ -1,0 +1,8 @@
+{
+  "id": "java-8",
+  "categoryId": "java",
+  "subcategoryId": "java-compiler",
+  "title": "Show deprecation warnings",
+  "command": "javac -deprecation MyClass.java",
+  "description": "Show detailed deprecation warnings during compilation."
+}

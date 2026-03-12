@@ -1,0 +1,8 @@
+{
+  "id": "py-75",
+  "categoryId": "python",
+  "subcategoryId": "python-pyenv",
+  "title": "Set shell version",
+  "command": "pyenv shell 3.10.0",
+  "description": "Set Python version for current shell session."
+}

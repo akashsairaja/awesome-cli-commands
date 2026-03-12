@@ -1,0 +1,8 @@
+{
+  "id": "docker-116",
+  "categoryId": "docker",
+  "subcategoryId": "security",
+  "title": "Scan image for vulnerabilities",
+  "command": "docker scout cves <image>",
+  "description": "Display CVEs in image."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "bash-32",
+  "categoryId": "bash",
+  "subcategoryId": "loops",
+  "title": "File loop",
+  "command": "for f in *.txt; do echo \"$f\"; done",
+  "description": "Loop through files."
+}

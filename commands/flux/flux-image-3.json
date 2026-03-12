@@ -1,0 +1,8 @@
+{
+  "id": "flux-image-3",
+  "categoryId": "flux",
+  "subcategoryId": "flux-image",
+  "title": "Create image update",
+  "command": "flux create image update flux-system --git-repo-ref=flux-system --git-repo-path=./clusters/prod",
+  "description": "Create ImageUpdateAutomation."
+}

@@ -1,0 +1,48 @@
+{
+  "id": "repo-maintenance-cleanup",
+  "stackId": "github",
+  "name": "Repository Maintenance Cleanup",
+  "description": "Clean up stale branches, close abandoned PRs, and maintain a healthy repository using GitHub CLI automation.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": false,
+  "tags": ["maintenance", "cleanup", "branches", "hygiene"],
+  "prerequisites": ["GitHub CLI (gh) installed and authenticated"],
+  "steps": [
+    {
+      "title": "List stale PRs with no recent activity",
+      "description": "Find pull requests that have not been updated recently.",
+      "command": "gh pr list --state open --json number,title,updatedAt --jq '.[] | select(.updatedAt < (now - 2592000 | todate)) | \"#\\(.number) \\(.title) (updated: \\(.updatedAt))\"'",
+      "tip": "2592000 seconds is 30 days. Adjust the number for different staleness thresholds."
+    },
+    {
+      "title": "Close stale PRs with a comment",
+      "description": "Close abandoned PRs with a polite explanation.",
+      "command": "gh pr close 42 --comment 'Closing due to inactivity. Feel free to reopen if you want to continue this work.'"
+    },
+    {
+      "title": "Delete merged remote branches",
+      "description": "Remove remote branches that have already been merged.",
+      "command": "gh api repos/{owner}/{repo}/branches --paginate --jq '.[].name' | while read branch; do gh api repos/{owner}/{repo}/pulls --jq \".[] | select(.head.ref==\\\"$branch\\\" and .merged_at!=null) | .head.ref\" 2>/dev/null; done | sort -u",
+      "tip": "Enable 'Automatically delete head branches' in repository settings for future PRs."
+    },
+    {
+      "title": "View repository statistics",
+      "description": "Get an overview of repository activity and health.",
+      "command": "gh repo view --json name,stargazerCount,forkCount,openIssues,pullRequests --jq '{name, stars: .stargazerCount, forks: .forkCount}'"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Repository Maintenance Cleanup\nset -euo pipefail\n\necho \"=== Repository Overview ===\"\ngh repo view --json name,stargazerCount,forkCount --jq '\"Stars: \\(.stargazerCount) | Forks: \\(.forkCount)\"'\n\necho \"\"\necho \"=== Open PRs ===\"\ngh pr list --state open --limit 10\n\necho \"\"\necho \"=== Open Issues ===\"\ngh issue list --state open --limit 10\n\necho \"\"\necho \"=== Maintenance Commands ===\"\necho \"Close stale PR:     gh pr close <number> --comment 'reason'\"\necho \"Close stale issue:  gh issue close <number> --comment 'reason'\"\necho \"Delete branch:      git push origin --delete <branch>\"\necho \"Archive repo:       gh repo archive\"",
+  "faq": [
+    {
+      "question": "How do I enable automatic branch deletion after merge?",
+      "answer": "Go to repository Settings > General and enable 'Automatically delete head branches'. Or use: gh api -X PATCH repos/{owner}/{repo} -f delete_branch_on_merge=true"
+    },
+    {
+      "question": "Should I archive old repositories?",
+      "answer": "Yes. Archiving makes a repo read-only, preventing accidental changes. Use 'gh repo archive' for repos that are no longer actively maintained."
+    }
+  ],
+  "relatedRecipes": ["issue-triage-automation", "pr-workflow-automation"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "deno-gs-2",
+  "title": "Install Deno (Linux/macOS)",
+  "command": "curl -fsSL https://deno.land/install.sh | sh",
+  "description": "Install Deno using the official installer script",
+  "categoryId": "deno",
+  "subcategoryId": "getting-started"
+}

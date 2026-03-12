@@ -1,0 +1,8 @@
+{
+  "id": "vault-token-3",
+  "categoryId": "vault",
+  "subcategoryId": "vault-token",
+  "title": "Renew token",
+  "command": "vault token renew",
+  "description": "Renew current token's lease."
+}

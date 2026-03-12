@@ -1,0 +1,8 @@
+{
+  "id": "linux-21",
+  "categoryId": "linux",
+  "subcategoryId": "text",
+  "title": "Monitor file changes",
+  "command": "tail -F /var/log/app.log | grep --line-buffered 'ERROR'",
+  "description": "Follow log file and filter for errors."
+}

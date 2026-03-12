@@ -1,0 +1,8 @@
+{
+  "id": "nuget-sources-9",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-sources",
+  "title": "List trusted signers",
+  "command": "dotnet nuget trust list",
+  "description": "List all configured trusted signers."
+}

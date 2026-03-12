@@ -1,0 +1,9 @@
+{
+  "id": "bun-update-package",
+  "categoryId": "bun",
+  "subcategoryId": "bun-package",
+  "title": "Update Specific Package",
+  "command": "bun update <package>",
+  "description": "Update a specific package",
+  "tags": ["update", "package", "specific"]
+}

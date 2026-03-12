@@ -1,0 +1,8 @@
+{
+  "id": "git-63",
+  "categoryId": "git",
+  "subcategoryId": "rebase",
+  "title": "Continue rebase",
+  "command": "git rebase --continue",
+  "description": "Continue after resolving conflicts."
+}

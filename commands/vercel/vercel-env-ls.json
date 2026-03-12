@@ -1,0 +1,9 @@
+{
+  "id": "vercel-env-ls",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-env",
+  "title": "List env variables",
+  "command": "vercel env ls",
+  "description": "List all environment variables",
+  "tags": ["env", "list", "show"]
+}

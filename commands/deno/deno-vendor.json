@@ -1,0 +1,9 @@
+{
+  "id": "deno-vendor",
+  "categoryId": "deno",
+  "subcategoryId": "deno-package",
+  "title": "Vendor Dependencies",
+  "command": "deno vendor script.ts",
+  "description": "Copy remote dependencies to local folder",
+  "tags": ["vendor", "offline", "local"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "httpie-output-18",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-output",
+  "title": "Skip TLS verification",
+  "command": "http --verify=no GET https://self-signed.example.com/api",
+  "description": "Disable TLS certificate verification for self-signed certs."
+}

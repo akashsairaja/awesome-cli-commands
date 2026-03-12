@@ -1,0 +1,8 @@
+{
+  "id": "kafka-connect-5",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-connect",
+  "title": "Restart connector",
+  "command": "curl -X POST localhost:8083/connectors/my-connector/restart",
+  "description": "Restart a connector."
+}

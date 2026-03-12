@@ -1,0 +1,8 @@
+{
+  "id": "db-25",
+  "categoryId": "database",
+  "subcategoryId": "postgresql",
+  "title": "VACUUM database",
+  "command": "VACUUM (VERBOSE, ANALYZE);",
+  "description": "Reclaim storage and update planner statistics."
+}

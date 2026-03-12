@@ -1,0 +1,8 @@
+{
+  "id": "make-syntax-4",
+  "categoryId": "make",
+  "subcategoryId": "make-syntax",
+  "title": "Include file",
+  "command": "include config.mk",
+  "description": "Include another Makefile."
+}

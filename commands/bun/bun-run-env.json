@@ -1,0 +1,9 @@
+{
+  "id": "bun-run-env",
+  "categoryId": "bun",
+  "subcategoryId": "bun-run",
+  "title": "Run with Env File",
+  "command": "bun --env-file=.env.local run script.ts",
+  "description": "Load specific env file",
+  "tags": ["run", "env", "environment"]
+}

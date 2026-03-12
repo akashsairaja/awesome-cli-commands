@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-api-9",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-api",
+  "title": "List edge routes",
+  "command": "ngrok api edges https list",
+  "description": "List all HTTPS edges configured in your account."
+}

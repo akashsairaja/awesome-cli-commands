@@ -1,0 +1,8 @@
+{
+  "id": "helm-install-6",
+  "categoryId": "helm",
+  "subcategoryId": "helm-install",
+  "title": "Install or upgrade",
+  "command": "helm upgrade --install my-release bitnami/nginx",
+  "description": "Install if not exists, upgrade if exists."
+}

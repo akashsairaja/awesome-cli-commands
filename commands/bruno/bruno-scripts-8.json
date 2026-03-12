@@ -1,0 +1,8 @@
+{
+  "id": "bruno-scripts-8",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-scripts",
+  "title": "Multiple test blocks",
+  "command": "tests {\n  test('status is 200', function() {\n    expect(res.status).to.equal(200);\n  });\n  test('has users array', function() {\n    expect(res.body.users).to.be.an('array');\n  });\n  test('returns 10 users', function() {\n    expect(res.body.users).to.have.length(10);\n  });\n}",
+  "description": "Multiple Chai assertions in tests block."
+}

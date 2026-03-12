@@ -1,0 +1,8 @@
+{
+  "id": "bash-84",
+  "categoryId": "bash",
+  "subcategoryId": "conditionals",
+  "title": "File exists",
+  "command": "[ -e file ] && echo \"exists\"",
+  "description": "Check if file/directory exists."
+}

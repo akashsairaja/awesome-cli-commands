@@ -1,0 +1,8 @@
+{
+  "id": "brew-44",
+  "categoryId": "homebrew",
+  "subcategoryId": "cleanup",
+  "title": "Missing files",
+  "command": "brew missing",
+  "description": "Check for missing dependencies."
+}

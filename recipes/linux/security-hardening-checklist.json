@@ -1,0 +1,55 @@
+{
+  "id": "security-hardening-checklist",
+  "stackId": "linux",
+  "name": "Security Hardening Checklist",
+  "description": "Audit and harden a Linux server by checking SSH configuration, open ports, running services, and filesystem permissions.",
+  "difficulty": "advanced",
+  "timeMinutes": 15,
+  "trending": true,
+  "trendingReason": "Server security is critical with increasing supply chain and cloud attacks",
+  "tags": ["security", "hardening", "audit", "ssh"],
+  "prerequisites": ["Linux shell access", "Root or sudo access"],
+  "steps": [
+    {
+      "title": "Audit SSH configuration",
+      "description": "Check for insecure SSH settings.",
+      "command": "sudo sshd -T 2>/dev/null | grep -E 'permitrootlogin|passwordauthentication|pubkeyauthentication|port '",
+      "tip": "Best practice: PermitRootLogin no, PasswordAuthentication no, PubkeyAuthentication yes."
+    },
+    {
+      "title": "Check for open ports",
+      "description": "See all ports listening for incoming connections.",
+      "command": "ss -tlnp",
+      "warning": "Close any ports you do not recognize or need. Each open port is a potential attack vector."
+    },
+    {
+      "title": "Find world-writable files",
+      "description": "Locate files that any user can modify, which can be a security risk.",
+      "command": "sudo find / -xdev -type f -perm -o+w -not -path '/proc/*' -not -path '/sys/*' 2>/dev/null | head -20"
+    },
+    {
+      "title": "Check for users with empty passwords",
+      "description": "Find accounts that have no password set.",
+      "command": "sudo awk -F: '($2 == \"\") {print $1}' /etc/shadow",
+      "warning": "Accounts with empty passwords are a critical security risk. Set a password or lock these accounts immediately."
+    },
+    {
+      "title": "Check for pending security updates",
+      "description": "See if there are security patches available.",
+      "command": "apt list --upgradable 2>/dev/null | grep -i security || yum check-update --security 2>/dev/null || echo 'Check your package manager'"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Security Hardening Checklist\nset -euo pipefail\n\necho \"=========================================\"\necho \"  Security Hardening Audit\"\necho \"=========================================\"\n\necho \"\"\necho \"--- SSH Configuration ---\"\nsudo sshd -T 2>/dev/null | grep -E 'permitrootlogin|passwordauthentication|pubkeyauthentication|maxauthtries' || echo \"sshd not found\"\n\necho \"\"\necho \"--- Open Ports ---\"\nss -tlnp\n\necho \"\"\necho \"--- Users with UID 0 (root equivalent) ---\"\nawk -F: '($3 == 0) {print $1}' /etc/passwd\n\necho \"\"\necho \"--- Users with Empty Passwords ---\"\nsudo awk -F: '($2 == \"\") {print $1}' /etc/shadow 2>/dev/null || echo \"Cannot read shadow file\"\n\necho \"\"\necho \"--- SUID Binaries ---\"\nsudo find / -xdev -type f -perm -4000 2>/dev/null | head -15\n\necho \"\"\necho \"--- Failed Login Attempts ---\"\nsudo lastb 2>/dev/null | head -10 || journalctl -u sshd --since '24 hours ago' 2>/dev/null | grep -i 'failed' | tail -10\n\necho \"\"\necho \"--- Firewall Status ---\"\nsudo ufw status 2>/dev/null || sudo iptables -L -n 2>/dev/null | head -10 || sudo nft list ruleset 2>/dev/null | head -10 || echo \"No firewall detected\"\n\necho \"\"\necho \"=========================================\"",
+  "faq": [
+    {
+      "question": "What is the most important SSH hardening step?",
+      "answer": "Disable password authentication and use SSH keys only. Set 'PasswordAuthentication no' and 'PubkeyAuthentication yes' in /etc/ssh/sshd_config, then restart sshd."
+    },
+    {
+      "question": "Should I change the default SSH port?",
+      "answer": "Changing from port 22 reduces automated scanning noise but is not a real security measure. Focus on key-based auth, fail2ban, and firewall rules instead."
+    }
+  ],
+  "relatedRecipes": ["firewall-nftables-config", "user-management-sudo"],
+  "lastUpdated": "2026-03-11"
+}

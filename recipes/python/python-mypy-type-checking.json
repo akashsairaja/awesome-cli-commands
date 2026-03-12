@@ -1,0 +1,58 @@
+{
+  "id": "python-mypy-type-checking",
+  "stackId": "python",
+  "name": "Static Type Checking with mypy",
+  "description": "Add static type checking to your Python project with mypy to catch type errors before runtime and improve code documentation.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": false,
+  "tags": ["mypy", "types", "static-analysis", "type-checking"],
+  "prerequisites": ["Python 3.8+ installed", "Basic understanding of Python type hints"],
+  "steps": [
+    {
+      "title": "Install mypy",
+      "command": "pip install mypy",
+      "description": "Install the mypy static type checker. It analyzes your code's type annotations without running it."
+    },
+    {
+      "title": "Run mypy on your project",
+      "command": "mypy src/",
+      "description": "Check all Python files in the src/ directory for type errors. mypy reads type annotations and reports inconsistencies.",
+      "tip": "Start with a single module and gradually expand. Running mypy on an untyped codebase will produce many errors at first."
+    },
+    {
+      "title": "Run mypy in strict mode",
+      "command": "mypy --strict src/",
+      "description": "Enable all optional type checking flags. Strict mode requires type annotations on all functions and disallows implicit Any types.",
+      "warning": "Strict mode is very rigorous. It is best suited for new projects or well-typed codebases. For legacy code, use incremental strictness."
+    },
+    {
+      "title": "Install type stubs for third-party libraries",
+      "command": "mypy --install-types",
+      "description": "Automatically download and install missing type stub packages for third-party libraries like requests, flask, and sqlalchemy."
+    },
+    {
+      "title": "Generate a mypy report",
+      "command": "mypy src/ --html-report mypy-report",
+      "description": "Generate an HTML coverage report showing which files and lines are type-checked. Open mypy-report/index.html in your browser to review.",
+      "tip": "Install lxml first with 'pip install lxml' for HTML report generation to work."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# mypy type checking setup\nset -e\n\npip install mypy\n\n# Add mypy config to pyproject.toml\nif [ -f pyproject.toml ]; then\n  cat >> pyproject.toml << 'TOMLEOF'\n\n[tool.mypy]\npython_version = \"3.11\"\nwarn_return_any = true\nwarn_unused_configs = true\ndisallow_untyped_defs = true\ncheck_untyped_defs = true\n\n[[tool.mypy.overrides]]\nmodule = \"tests.*\"\ndisallow_untyped_defs = false\nTOMLEOF\n  echo \"mypy config added to pyproject.toml\"\nfi\n\nmypy --install-types --non-interactive\nmypy src/ || echo \"Type errors found. Review and fix the issues above.\"\n\necho \"mypy setup complete.\"",
+  "faq": [
+    {
+      "question": "What is the difference between mypy and pyright?",
+      "answer": "Both are static type checkers. mypy is the original Python type checker written in Python. pyright (from Microsoft) is written in TypeScript and is faster. They have slightly different strictness defaults but cover the same PEP standards."
+    },
+    {
+      "question": "How do I ignore a specific mypy error?",
+      "answer": "Add a '# type: ignore[error-code]' comment on the offending line. For example: x = some_untyped_func()  # type: ignore[no-untyped-call]. Always include the error code so the ignore is specific."
+    },
+    {
+      "question": "Do I need type annotations on every function?",
+      "answer": "Not necessarily. Start by annotating public API functions and gradually increase coverage. Use mypy's --disallow-untyped-defs flag per-module in pyproject.toml to enforce annotations incrementally."
+    }
+  ],
+  "relatedRecipes": ["python-ruff-linting", "python-pytest-testing", "python-ci-pipeline"],
+  "lastUpdated": "2026-03-11"
+}

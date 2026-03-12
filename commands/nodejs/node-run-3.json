@@ -1,0 +1,8 @@
+{
+  "id": "node-run-3",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-run",
+  "title": "Print expression",
+  "command": "node -p \"1 + 2\"",
+  "description": "Evaluate and print result."
+}

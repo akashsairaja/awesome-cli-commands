@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-auth-revoke",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-auth",
+  "title": "Revoke Credentials",
+  "command": "gcloud auth revoke",
+  "description": "Remove cached credentials",
+  "tags": ["auth", "revoke", "logout"]
+}

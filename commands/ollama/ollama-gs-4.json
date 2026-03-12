@@ -1,0 +1,8 @@
+{
+  "id": "ollama-gs-4",
+  "title": "Run chat",
+  "command": "ollama run llama2",
+  "description": "Start an interactive chat with Llama 2",
+  "categoryId": "ollama",
+  "subcategoryId": "getting-started"
+}

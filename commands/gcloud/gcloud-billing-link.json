@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-billing-link",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-projects",
+  "title": "Link Billing Account",
+  "command": "gcloud billing projects link <project-id> --billing-account=<billing-account-id>",
+  "description": "Link a billing account to project",
+  "tags": ["billing", "link", "account"]
+}

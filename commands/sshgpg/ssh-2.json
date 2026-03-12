@@ -1,0 +1,8 @@
+{
+  "id": "ssh-2",
+  "categoryId": "sshgpg",
+  "subcategoryId": "keys",
+  "title": "Generate RSA key",
+  "command": "ssh-keygen -t rsa -b 4096",
+  "description": "Generate RSA SSH key."
+}

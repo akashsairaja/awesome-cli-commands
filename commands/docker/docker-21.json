@@ -1,0 +1,8 @@
+{
+  "id": "docker-21",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Follow container logs",
+  "command": "docker logs -f --tail 100 --timestamps <container>",
+  "description": "Stream last 100 logs with timestamps."
+}

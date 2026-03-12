@@ -1,0 +1,8 @@
+{
+  "id": "git-45",
+  "categoryId": "git",
+  "subcategoryId": "branches",
+  "title": "Track remote branch",
+  "command": "git checkout --track origin/<branch>",
+  "description": "Create local branch tracking remote."
+}

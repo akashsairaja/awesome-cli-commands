@@ -1,0 +1,9 @@
+{
+  "id": "gradle-jar",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-build",
+  "title": "Create JAR",
+  "command": "./gradlew jar",
+  "description": "Build the main JAR file",
+  "tags": ["jar", "package", "archive"]
+}

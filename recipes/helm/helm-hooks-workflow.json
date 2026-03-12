@@ -1,0 +1,60 @@
+{
+  "id": "helm-hooks-workflow",
+  "stackId": "helm",
+  "name": "Pre/Post Install Hooks for Migrations and Setup",
+  "description": "Use Helm lifecycle hooks to run database migrations, seed data, send notifications, and perform cleanup tasks during chart install and upgrade operations.",
+  "difficulty": "advanced",
+  "timeMinutes": 18,
+  "tags": ["hooks", "migrations", "lifecycle", "jobs", "automation"],
+  "prerequisites": [
+    "Helm 3 installed",
+    "Understanding of Kubernetes Jobs",
+    "An existing Helm chart"
+  ],
+  "steps": [
+    {
+      "title": "Create a pre-install hook for database migration",
+      "description": "Define a Job that runs before the main application is deployed.",
+      "command": "cat > myapp/templates/pre-install-migration.yaml << 'EOF'\napiVersion: batch/v1\nkind: Job\nmetadata:\n  name: {{ include \"myapp.fullname\" . }}-migrate\n  annotations:\n    \"helm.sh/hook\": pre-install,pre-upgrade\n    \"helm.sh/hook-weight\": \"0\"\n    \"helm.sh/hook-delete-policy\": hook-succeeded\nspec:\n  template:\n    spec:\n      restartPolicy: Never\n      containers:\n        - name: migrate\n          image: \"{{ .Values.image.repository }}:{{ .Values.image.tag }}\"\n          command: [\"npm\", \"run\", \"db:migrate\"]\n          envFrom:\n            - secretRef:\n                name: {{ include \"myapp.fullname\" . }}-db-secret\nEOF",
+      "tip": "hook-weight controls execution order when multiple hooks exist. Lower weights run first."
+    },
+    {
+      "title": "Add a post-install notification hook",
+      "description": "Send a Slack notification after a successful deployment.",
+      "command": "cat > myapp/templates/post-install-notify.yaml << 'EOF'\napiVersion: batch/v1\nkind: Job\nmetadata:\n  name: {{ include \"myapp.fullname\" . }}-notify\n  annotations:\n    \"helm.sh/hook\": post-install,post-upgrade\n    \"helm.sh/hook-weight\": \"10\"\n    \"helm.sh/hook-delete-policy\": hook-succeeded,hook-failed\nspec:\n  template:\n    spec:\n      restartPolicy: Never\n      containers:\n        - name: notify\n          image: curlimages/curl:latest\n          command:\n            - sh\n            - -c\n            - |\n              curl -X POST \"$SLACK_WEBHOOK\" -H 'Content-type: application/json' \\\n                -d '{\"text\": \"Deployed {{ include \"myapp.fullname\" . }} v{{ .Chart.AppVersion }}\"}'\n          env:\n            - name: SLACK_WEBHOOK\n              valueFrom:\n                secretKeyRef:\n                  name: slack-webhook\n                  key: url\nEOF"
+    },
+    {
+      "title": "Verify hook annotations",
+      "description": "Render templates to confirm hooks are correctly annotated.",
+      "command": "helm template myapp/ | grep -A5 'helm.sh/hook'"
+    },
+    {
+      "title": "Test hooks with a dry run",
+      "description": "Simulate the install to see hook execution order.",
+      "command": "helm install test myapp/ --dry-run --debug 2>&1 | grep -E '(hook|HOOK|Job)'",
+      "warning": "Hooks with 'hook-delete-policy: hook-succeeded' are automatically deleted after success. Use 'before-hook-creation' to delete the previous hook resource before creating a new one on upgrade."
+    },
+    {
+      "title": "Debug a failed hook",
+      "description": "Inspect hook Job logs when a deployment is stuck.",
+      "command": "kubectl get jobs -n production -l 'app.kubernetes.io/managed-by=Helm' && kubectl logs job/<release>-migrate -n production"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Helm Hooks Debugging Workflow\nset -euo pipefail\n\nRELEASE=${1:?\"Usage: $0 <release-name> <namespace>\"}\nNAMESPACE=${2:-\"default\"}\n\necho \"=== Hook Jobs ===\"\nkubectl get jobs -n \"$NAMESPACE\" -l \"app.kubernetes.io/instance=$RELEASE\" \\\n  -o custom-columns='NAME:.metadata.name,STATUS:.status.conditions[0].type,COMPLETIONS:.status.succeeded'\n\necho \"\"\necho \"=== Hook Events ===\"\nkubectl get events -n \"$NAMESPACE\" --sort-by='.lastTimestamp' \\\n  --field-selector reason=Created | grep -i \"$RELEASE\" | tail -10\n\necho \"\"\necho \"=== Failed Hook Logs ===\"\nfor job in $(kubectl get jobs -n \"$NAMESPACE\" -l \"app.kubernetes.io/instance=$RELEASE\" \\\n  -o jsonpath='{.items[?(@.status.failed)].metadata.name}'); do\n  echo \"--- Logs for $job ---\"\n  kubectl logs \"job/$job\" -n \"$NAMESPACE\" --tail=50\ndone\n\necho \"\"\necho \"=== Tips ===\"\necho \"Force delete stuck hooks: kubectl delete job <job-name> -n $NAMESPACE\"\necho \"Skip hooks on upgrade:    helm upgrade $RELEASE <chart> --no-hooks\"",
+  "faq": [
+    {
+      "question": "What hook types are available in Helm?",
+      "answer": "Helm supports: pre-install, post-install, pre-delete, post-delete, pre-upgrade, post-upgrade, pre-rollback, post-rollback, and test. Each runs at the corresponding point in the release lifecycle."
+    },
+    {
+      "question": "What happens if a pre-install hook fails?",
+      "answer": "If a pre-install or pre-upgrade hook fails, Helm aborts the entire operation. The release status is set to 'failed' and the main resources are not deployed. Fix the hook and retry the install."
+    },
+    {
+      "question": "How do I control the order of multiple hooks?",
+      "answer": "Use the 'helm.sh/hook-weight' annotation. Hooks are sorted by weight in ascending order and executed sequentially. Use negative weights to run hooks before those with weight 0."
+    }
+  ],
+  "relatedRecipes": ["helm-chart-creation", "helm-chart-testing"],
+  "lastUpdated": "2026-03-11"
+}

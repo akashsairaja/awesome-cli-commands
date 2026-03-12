@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-http-1",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-http",
+  "title": "Basic HTTP tunnel",
+  "command": "ngrok http 3000",
+  "description": "Expose local port 3000 via HTTP."
+}

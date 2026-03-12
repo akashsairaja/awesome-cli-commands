@@ -1,0 +1,9 @@
+{
+  "id": "redis-publish",
+  "categoryId": "redis",
+  "subcategoryId": "redis-pubsub",
+  "title": "Publish message",
+  "command": "PUBLISH channel message",
+  "description": "Publish message to channel",
+  "tags": ["publish", "pubsub", "message"]
+}

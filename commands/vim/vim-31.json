@@ -1,0 +1,8 @@
+{
+  "id": "vim-31",
+  "categoryId": "vim",
+  "subcategoryId": "visual-mode",
+  "title": "Indent selection right",
+  "command": ">",
+  "description": "Shift selected lines right (visual mode)."
+}

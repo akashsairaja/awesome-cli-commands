@@ -1,0 +1,8 @@
+{
+  "id": "hurl-gs-3",
+  "title": "Check Hurl version",
+  "command": "hurl --version",
+  "description": "Verify Hurl is installed and display the current version",
+  "categoryId": "hurl",
+  "subcategoryId": "getting-started"
+}

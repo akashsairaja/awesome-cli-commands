@@ -1,0 +1,9 @@
+{
+  "id": "deno-task-list",
+  "categoryId": "deno",
+  "subcategoryId": "deno-tasks",
+  "title": "List Tasks",
+  "command": "deno task",
+  "description": "Show all available tasks",
+  "tags": ["task", "list", "show"]
+}

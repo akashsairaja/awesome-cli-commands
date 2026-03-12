@@ -1,0 +1,9 @@
+{
+  "id": "ansible-config-changed",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-config",
+  "title": "Show Changed Settings",
+  "command": "ansible-config dump --only-changed",
+  "description": "Show only non-default settings",
+  "tags": ["config", "changed", "custom"]
+}

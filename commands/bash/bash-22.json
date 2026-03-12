@@ -1,0 +1,8 @@
+{
+  "id": "bash-22",
+  "categoryId": "bash",
+  "subcategoryId": "variables",
+  "title": "Unset variable",
+  "command": "unset VAR",
+  "description": "Remove variable definition."
+}

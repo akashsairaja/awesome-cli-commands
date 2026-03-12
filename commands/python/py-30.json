@@ -1,0 +1,8 @@
+{
+  "id": "py-30",
+  "categoryId": "python",
+  "subcategoryId": "python-poetry",
+  "title": "Run command",
+  "command": "poetry run python script.py",
+  "description": "Execute command in the virtual environment."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "git-141",
+  "categoryId": "git",
+  "subcategoryId": "git-config",
+  "title": "Set pull to rebase",
+  "command": "git config --global pull.rebase true",
+  "description": "Default pull to rebase instead of merge."
+}

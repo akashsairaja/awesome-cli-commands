@@ -1,0 +1,8 @@
+{
+  "id": "spark-35",
+  "categoryId": "spark",
+  "subcategoryId": "spark-config",
+  "title": "Set driver memory",
+  "command": "spark-submit --driver-memory 8g --driver-cores 4 app.py",
+  "description": "Configure driver resource allocation."
+}

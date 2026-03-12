@@ -1,0 +1,9 @@
+{
+  "id": "nginx-sec-basic-auth",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-security",
+  "title": "Enable basic authentication",
+  "command": "auth_basic \"Restricted\"; auth_basic_user_file /etc/nginx/.htpasswd;",
+  "description": "Require password for protected areas",
+  "tags": ["security", "basic-auth", "password", "restrict"]
+}

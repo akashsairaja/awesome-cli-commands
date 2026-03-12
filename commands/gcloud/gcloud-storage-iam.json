@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-storage-iam",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-storage",
+  "title": "Get Bucket IAM",
+  "command": "gsutil iam get gs://<bucket-name>",
+  "description": "Get IAM policy for bucket",
+  "tags": ["storage", "iam", "permissions"]
+}

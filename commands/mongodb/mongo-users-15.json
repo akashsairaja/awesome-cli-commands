@@ -1,0 +1,8 @@
+{
+  "id": "mongo-users-15",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-users",
+  "title": "Create custom role",
+  "command": "db.createRole({ role: \"analyticsReader\", privileges: [{ resource: { db: \"mydb\", collection: \"events\" }, actions: [\"find\"] }], roles: [] })",
+  "description": "Create a custom role with fine-grained privileges on specific collections."
+}

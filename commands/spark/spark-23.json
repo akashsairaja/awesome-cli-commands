@@ -1,0 +1,8 @@
+{
+  "id": "spark-23",
+  "categoryId": "spark",
+  "subcategoryId": "spark-sql",
+  "title": "Connect to Hive metastore",
+  "command": "spark-sql --conf spark.sql.catalogImplementation=hive",
+  "description": "Enable Hive metastore support for table metadata."
+}

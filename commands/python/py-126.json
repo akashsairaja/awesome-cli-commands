@@ -1,0 +1,8 @@
+{
+  "id": "py-126",
+  "categoryId": "python",
+  "subcategoryId": "python-mypy",
+  "title": "Pretty output",
+  "command": "mypy --pretty src/",
+  "description": "Show errors with context and formatting."
+}

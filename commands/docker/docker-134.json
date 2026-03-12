@@ -1,0 +1,8 @@
+{
+  "id": "docker-134",
+  "categoryId": "docker",
+  "subcategoryId": "swarm",
+  "title": "List stacks",
+  "command": "docker stack ls",
+  "description": "List deployed stacks."
+}

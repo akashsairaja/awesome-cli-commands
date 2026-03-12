@@ -1,0 +1,8 @@
+{
+  "id": "checkov-output-10",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-output",
+  "title": "Hard fail on severity",
+  "command": "checkov -d . --hard-fail-on CRITICAL,HIGH",
+  "description": "Fail only on critical/high findings."
+}

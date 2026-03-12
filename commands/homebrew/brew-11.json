@@ -1,0 +1,8 @@
+{
+  "id": "brew-11",
+  "categoryId": "homebrew",
+  "subcategoryId": "packages",
+  "title": "Unpin package",
+  "command": "brew unpin <package>",
+  "description": "Allow package to be upgraded again."
+}

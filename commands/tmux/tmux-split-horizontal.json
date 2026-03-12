@@ -1,0 +1,9 @@
+{
+  "id": "tmux-split-horizontal",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-panes",
+  "title": "Split horizontally",
+  "command": "Ctrl+b \"",
+  "description": "Split pane horizontally (top/bottom)",
+  "tags": ["pane", "split", "horizontal"]
+}

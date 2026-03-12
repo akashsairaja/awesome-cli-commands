@@ -1,0 +1,8 @@
+{
+  "id": "db-31",
+  "categoryId": "database",
+  "subcategoryId": "postgresql",
+  "title": "Show active queries",
+  "command": "SELECT pid, query, state FROM pg_stat_activity WHERE state = 'active';",
+  "description": "List currently running queries."
+}

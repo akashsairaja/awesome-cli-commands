@@ -1,0 +1,8 @@
+{
+  "id": "mvn-profile-10",
+  "categoryId": "maven",
+  "subcategoryId": "profiles",
+  "title": "Deploy to repo",
+  "command": "mvn deploy",
+  "description": "Deploy artifact to remote repository."
+}

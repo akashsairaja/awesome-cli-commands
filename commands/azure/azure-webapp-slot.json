@@ -1,0 +1,9 @@
+{
+  "id": "azure-webapp-slot",
+  "categoryId": "azure",
+  "subcategoryId": "azure-webapp",
+  "title": "Create Deployment Slot",
+  "command": "az webapp deployment slot create --resource-group <rg> --name <app-name> --slot staging",
+  "description": "Create a deployment slot for testing",
+  "tags": ["webapp", "slot", "staging"]
+}

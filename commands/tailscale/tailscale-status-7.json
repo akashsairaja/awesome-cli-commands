@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-status-7",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-status",
+  "title": "Show peers only",
+  "command": "tailscale status --peers",
+  "description": "List only connected peers."
+}

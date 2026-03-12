@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-artifacts-delete",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-artifacts",
+  "title": "Delete Artifact Repository",
+  "command": "gcloud artifacts repositories delete <repo> --location=us",
+  "description": "Delete an Artifact Registry repository",
+  "tags": ["artifacts", "repository", "delete", "cleanup"]
+}

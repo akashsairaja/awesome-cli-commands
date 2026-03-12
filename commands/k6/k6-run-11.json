@@ -1,0 +1,8 @@
+{
+  "id": "k6-run-11",
+  "categoryId": "k6",
+  "subcategoryId": "k6-run",
+  "title": "Multiple env variables",
+  "command": "k6 run -e URL=https://api.example.com -e TOKEN=abc123 script.js",
+  "description": "Pass multiple environment variables."
+}

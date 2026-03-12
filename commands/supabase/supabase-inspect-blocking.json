@@ -1,0 +1,9 @@
+{
+  "id": "supabase-inspect-blocking",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-inspect",
+  "title": "Show blocking queries",
+  "command": "supabase inspect db blocking --local",
+  "description": "Show queries holding locks and blocking others",
+  "tags": ["inspect", "locks", "blocking"]
+}

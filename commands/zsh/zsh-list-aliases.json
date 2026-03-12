@@ -1,0 +1,9 @@
+{
+  "id": "zsh-list-aliases",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-aliases",
+  "title": "List all aliases",
+  "command": "alias",
+  "description": "Show all defined aliases",
+  "tags": ["alias", "list", "show"]
+}

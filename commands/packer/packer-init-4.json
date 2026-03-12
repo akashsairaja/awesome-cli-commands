@@ -1,0 +1,8 @@
+{
+  "id": "packer-init-4",
+  "categoryId": "packer",
+  "subcategoryId": "packer-init",
+  "title": "List installed plugins",
+  "command": "packer plugins installed",
+  "description": "List all installed Packer plugins."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "temporal-activity-3",
+  "categoryId": "temporal",
+  "subcategoryId": "activity",
+  "title": "Fail activity",
+  "command": "temporal activity fail --workflow-id my-wf --activity-id my-activity",
+  "description": "Manually mark activity as failed."
+}

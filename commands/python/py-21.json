@@ -1,0 +1,8 @@
+{
+  "id": "py-21",
+  "categoryId": "python",
+  "subcategoryId": "python-poetry",
+  "title": "Initialize in existing project",
+  "command": "poetry init",
+  "description": "Initialize Poetry in an existing directory."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ansible-playbook-vars-file",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-playbook",
+  "title": "Variables from File",
+  "command": "ansible-playbook playbook.yml -e \"@vars.yml\"",
+  "description": "Load variables from a file",
+  "tags": ["playbook", "variables", "file"]
+}

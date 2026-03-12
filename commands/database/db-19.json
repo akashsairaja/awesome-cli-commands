@@ -1,0 +1,8 @@
+{
+  "id": "db-19",
+  "categoryId": "database",
+  "subcategoryId": "postgresql",
+  "title": "List indexes",
+  "command": "\\di",
+  "description": "List all indexes in current database."
+}

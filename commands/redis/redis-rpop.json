@@ -1,0 +1,9 @@
+{
+  "id": "redis-rpop",
+  "categoryId": "redis",
+  "subcategoryId": "redis-lists",
+  "title": "Pop from list tail",
+  "command": "RPOP key",
+  "description": "Remove and return last element",
+  "tags": ["rpop", "list", "tail"]
+}

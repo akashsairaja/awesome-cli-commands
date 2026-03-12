@@ -1,0 +1,8 @@
+{
+  "id": "apt-4",
+  "categoryId": "ubuntu",
+  "subcategoryId": "apt-packages",
+  "title": "Remove package",
+  "command": "sudo apt remove <package>",
+  "description": "Remove a package."
+}

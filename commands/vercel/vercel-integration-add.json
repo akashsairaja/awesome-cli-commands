@@ -1,0 +1,9 @@
+{
+  "id": "vercel-integration-add",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-integrations",
+  "title": "Add integration",
+  "command": "vercel integration add <name>",
+  "description": "Install integration resource",
+  "tags": ["integration", "add", "install"]
+}

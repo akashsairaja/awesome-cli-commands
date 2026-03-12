@@ -1,0 +1,8 @@
+{
+  "id": "gradle-gs-1",
+  "title": "Install Gradle (macOS)",
+  "command": "brew install gradle",
+  "description": "Install Gradle using Homebrew on macOS",
+  "categoryId": "gradle",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-certs-5",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-certs",
+  "title": "Generate PKCS#12",
+  "command": "mkcert -pkcs12 localhost",
+  "description": "Generate .p12 file instead of PEM."
+}

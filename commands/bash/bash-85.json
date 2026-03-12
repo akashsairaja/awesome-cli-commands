@@ -1,0 +1,8 @@
+{
+  "id": "bash-85",
+  "categoryId": "bash",
+  "subcategoryId": "conditionals",
+  "title": "Is regular file",
+  "command": "[ -f file ] && echo \"is file\"",
+  "description": "Check if path is a regular file."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "composer-gs-2",
+  "title": "Check Composer version",
+  "command": "composer --version",
+  "description": "Display the installed Composer version",
+  "categoryId": "composer",
+  "subcategoryId": "getting-started"
+}

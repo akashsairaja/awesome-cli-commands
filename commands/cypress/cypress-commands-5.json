@@ -1,0 +1,8 @@
+{
+  "id": "cypress-commands-5",
+  "categoryId": "cypress",
+  "subcategoryId": "cypress-commands",
+  "title": "TypeScript types",
+  "command": "declare namespace Cypress { interface Chainable { login(email: string): Chainable; } }",
+  "description": "Add TypeScript definitions."
+}

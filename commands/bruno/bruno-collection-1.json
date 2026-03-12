@@ -1,0 +1,8 @@
+{
+  "id": "bruno-collection-1",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-collection",
+  "title": "Initialize collection",
+  "command": "bru init my-api",
+  "description": "Create new Bruno collection."
+}

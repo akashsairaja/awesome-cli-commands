@@ -1,0 +1,8 @@
+{
+  "id": "snyk-test-12",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-test",
+  "title": "SARIF output",
+  "command": "snyk test --sarif > results.sarif",
+  "description": "Output results in SARIF format for CI integration."
+}

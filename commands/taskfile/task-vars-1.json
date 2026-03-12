@@ -1,0 +1,8 @@
+{
+  "id": "task-vars-1",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-vars",
+  "title": "Global variables",
+  "command": "vars:\n  NAME: myapp\n  VERSION: 1.0.0\n\ntasks:\n  build:\n    cmds:\n      - go build -o {{.NAME}}",
+  "description": "Define global variables."
+}

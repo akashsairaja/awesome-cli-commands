@@ -1,0 +1,8 @@
+{
+  "id": "snow-gs-2",
+  "title": "Check SnowSQL version",
+  "command": "snowsql --version",
+  "description": "Display the installed SnowSQL version",
+  "categoryId": "snowflake",
+  "subcategoryId": "getting-started"
+}

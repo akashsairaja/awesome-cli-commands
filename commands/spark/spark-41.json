@@ -1,0 +1,8 @@
+{
+  "id": "spark-41",
+  "categoryId": "spark",
+  "subcategoryId": "spark-cluster",
+  "title": "Start worker",
+  "command": "$SPARK_HOME/sbin/start-worker.sh spark://master:7077",
+  "description": "Start worker and connect to master."
+}

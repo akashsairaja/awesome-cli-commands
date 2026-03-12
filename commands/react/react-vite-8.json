@@ -1,0 +1,8 @@
+{
+  "id": "react-vite-8",
+  "categoryId": "react",
+  "subcategoryId": "react-vite",
+  "title": "Open browser",
+  "command": "vite --open",
+  "description": "Auto-open browser on server start."
+}

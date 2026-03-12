@@ -1,0 +1,8 @@
+{
+  "id": "bruno-collection-2",
+  "categoryId": "bruno",
+  "subcategoryId": "bruno-collection",
+  "title": "Bru file structure",
+  "command": "meta {\n  name: Get Users\n  type: http\n  seq: 1\n}\n\nget {\n  url: {{baseUrl}}/users\n}\n\nassert {\n  res.status: eq 200\n}",
+  "description": "Example .bru request file."
+}

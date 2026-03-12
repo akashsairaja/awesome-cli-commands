@@ -1,0 +1,8 @@
+{
+  "id": "claude-67",
+  "categoryId": "claudecode",
+  "subcategoryId": "workflows",
+  "title": "Write tests for code",
+  "command": "claude \"write tests for this function\"",
+  "description": "Generate tests for existing code."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "grafana-api-3",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-api",
+  "title": "Health check",
+  "command": "curl http://localhost:3000/api/health",
+  "description": "Check Grafana health."
+}

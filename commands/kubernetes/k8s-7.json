@@ -1,0 +1,8 @@
+{
+  "id": "k8s-7",
+  "categoryId": "kubernetes",
+  "subcategoryId": "context",
+  "title": "Get current namespace",
+  "command": "kubectl config view --minify -o jsonpath='{..namespace}'",
+  "description": "Show the current default namespace."
+}

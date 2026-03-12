@@ -1,0 +1,8 @@
+{
+  "id": "sops-encrypt-10",
+  "categoryId": "sops",
+  "subcategoryId": "sops-encrypt",
+  "title": "Encrypt .env file",
+  "command": "sops -e --input-type dotenv --output-type dotenv .env > .env.enc",
+  "description": "Encrypt a dotenv file."
+}

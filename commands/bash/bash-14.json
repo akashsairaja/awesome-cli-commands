@@ -1,0 +1,8 @@
+{
+  "id": "bash-14",
+  "categoryId": "bash",
+  "subcategoryId": "scripting",
+  "title": "Signal trap",
+  "command": "trap 'echo Interrupted; exit 1' INT TERM",
+  "description": "Handle interrupt and terminate signals."
+}

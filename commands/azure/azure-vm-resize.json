@@ -1,0 +1,9 @@
+{
+  "id": "azure-vm-resize",
+  "categoryId": "azure",
+  "subcategoryId": "azure-compute",
+  "title": "Resize VM",
+  "command": "az vm resize --resource-group <rg> --name <vm-name> --size Standard_DS2_v2",
+  "description": "Change the size of an existing VM",
+  "tags": ["vm", "resize", "scale"]
+}

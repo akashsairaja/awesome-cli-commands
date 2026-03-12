@@ -1,0 +1,8 @@
+{
+  "id": "fd-2",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-fd",
+  "title": "Find by extension",
+  "command": "fd -e js",
+  "description": "Find all .js files."
+}

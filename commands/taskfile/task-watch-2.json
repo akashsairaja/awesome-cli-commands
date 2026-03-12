@@ -1,0 +1,8 @@
+{
+  "id": "task-watch-2",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-watch",
+  "title": "Define sources",
+  "command": "tasks:\n  build:\n    sources:\n      - src/**/*.go\n    generates:\n      - bin/app\n    cmds:\n      - go build -o bin/app",
+  "description": "Define sources for smart rebuilds."
+}

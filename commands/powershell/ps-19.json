@@ -1,0 +1,8 @@
+{
+  "id": "ps-19",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-processes",
+  "title": "Top memory processes",
+  "command": "Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 10",
+  "description": "Show top memory-consuming processes."
+}

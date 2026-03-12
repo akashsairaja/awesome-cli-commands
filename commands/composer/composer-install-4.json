@@ -1,0 +1,8 @@
+{
+  "id": "composer-install-4",
+  "categoryId": "composer",
+  "subcategoryId": "composer-install",
+  "title": "Install prefer source",
+  "command": "composer install --prefer-source",
+  "description": "Prefer git clones for development."
+}

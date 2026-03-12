@@ -1,0 +1,8 @@
+{
+  "id": "fd-1",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-fd",
+  "title": "Find by name",
+  "command": "fd pattern",
+  "description": "Find files matching pattern."
+}

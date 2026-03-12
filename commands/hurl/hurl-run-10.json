@@ -1,0 +1,8 @@
+{
+  "id": "hurl-run-10",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-run",
+  "title": "Insecure SSL",
+  "command": "hurl --insecure api.hurl",
+  "description": "Skip SSL certificate verification."
+}

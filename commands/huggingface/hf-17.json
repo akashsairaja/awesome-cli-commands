@@ -1,0 +1,8 @@
+{
+  "id": "hf-17",
+  "categoryId": "huggingface",
+  "subcategoryId": "hf-download",
+  "title": "Download single file",
+  "command": "huggingface-cli download meta-llama/Llama-2-7b-hf config.json",
+  "description": "Download only a specific file from a repo."
+}

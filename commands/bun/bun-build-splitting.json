@@ -1,0 +1,9 @@
+{
+  "id": "bun-build-splitting",
+  "categoryId": "bun",
+  "subcategoryId": "bun-build",
+  "title": "Code Splitting",
+  "command": "bun build ./src/index.ts --outdir ./dist --splitting",
+  "description": "Enable code splitting",
+  "tags": ["build", "splitting", "chunks"]
+}

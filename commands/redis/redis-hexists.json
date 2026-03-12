@@ -1,0 +1,9 @@
+{
+  "id": "redis-hexists",
+  "categoryId": "redis",
+  "subcategoryId": "redis-hashes",
+  "title": "Check field exists",
+  "command": "HEXISTS key field",
+  "description": "Check if field exists in hash",
+  "tags": ["hexists", "hash", "check"]
+}

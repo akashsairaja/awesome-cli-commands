@@ -1,0 +1,8 @@
+{
+  "id": "py-80",
+  "categoryId": "python",
+  "subcategoryId": "python-pipx",
+  "title": "Install tool",
+  "command": "pipx install black",
+  "description": "Install a CLI tool in isolated environment."
+}

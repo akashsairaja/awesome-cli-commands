@@ -1,0 +1,9 @@
+{
+  "id": "netlify-sites-create",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-sites",
+  "title": "Create new site",
+  "command": "netlify sites:create",
+  "description": "Create a new empty site",
+  "tags": ["sites", "create", "new"]
+}

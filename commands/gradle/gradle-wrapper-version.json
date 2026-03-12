@@ -1,0 +1,9 @@
+{
+  "id": "gradle-wrapper-version",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-wrapper",
+  "title": "Set Wrapper Version",
+  "command": "./gradlew wrapper --gradle-version 8.5",
+  "description": "Update wrapper to specific Gradle version",
+  "tags": ["wrapper", "upgrade", "version"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-functions-delete-force",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-functions",
+  "title": "Delete Function Forcefully",
+  "command": "gcloud functions delete <name> --region=us-central1",
+  "description": "Remove a Cloud Function from specified region",
+  "tags": ["functions", "delete", "cleanup", "remove"]
+}

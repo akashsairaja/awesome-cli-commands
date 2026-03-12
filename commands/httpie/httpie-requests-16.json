@@ -1,0 +1,8 @@
+{
+  "id": "httpie-requests-16",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-requests",
+  "title": "Multipart with fields",
+  "command": "http -f POST https://api.example.com/upload file@report.pdf title=Report tags=important",
+  "description": "Multipart upload with additional form fields."
+}

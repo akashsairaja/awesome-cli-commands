@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-certs-13",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-certs",
+  "title": "Inspect generated cert",
+  "command": "openssl x509 -in localhost.pem -text -noout",
+  "description": "View details of a generated certificate."
+}

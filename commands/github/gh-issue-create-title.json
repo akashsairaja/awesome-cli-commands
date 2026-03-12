@@ -1,0 +1,9 @@
+{
+  "id": "gh-issue-create-title",
+  "categoryId": "github",
+  "subcategoryId": "gh-issue",
+  "title": "Create issue with title",
+  "command": "gh issue create --title \"<title>\" --body \"<body>\"",
+  "description": "Create issue with specified title and body",
+  "tags": ["issue", "create", "title", "body"]
+}

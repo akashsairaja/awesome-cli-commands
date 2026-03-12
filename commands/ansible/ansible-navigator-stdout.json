@@ -1,0 +1,9 @@
+{
+  "id": "ansible-navigator-stdout",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-navigator",
+  "title": "Run in Stdout Mode",
+  "command": "ansible-navigator run playbook.yml --mode stdout",
+  "description": "Run playbook with standard output (no TUI)",
+  "tags": ["navigator", "stdout", "playbook", "run"]
+}

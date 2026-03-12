@@ -1,0 +1,8 @@
+{
+  "id": "checkov-custom-6",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-custom",
+  "title": "Connection policy",
+  "command": "metadata:\n  id: CUSTOM_3\n  name: SG attached to resource\ndefinition:\n  cond_type: connection\n  resource_types:\n    - aws_security_group\n  connected_resource_types:\n    - aws_instance\n  operator: exists",
+  "description": "Check resource connections."
+}

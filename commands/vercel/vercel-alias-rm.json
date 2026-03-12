@@ -1,0 +1,9 @@
+{
+  "id": "vercel-alias-rm",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-domains",
+  "title": "Remove alias",
+  "command": "vercel alias rm <alias>",
+  "description": "Remove a domain alias",
+  "tags": ["alias", "remove", "delete"]
+}

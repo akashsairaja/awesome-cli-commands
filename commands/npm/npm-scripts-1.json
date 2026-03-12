@@ -1,0 +1,8 @@
+{
+  "id": "npm-scripts-1",
+  "categoryId": "npm",
+  "subcategoryId": "npm-scripts",
+  "title": "Run script",
+  "command": "npm run <script>",
+  "description": "Run script defined in package.json."
+}

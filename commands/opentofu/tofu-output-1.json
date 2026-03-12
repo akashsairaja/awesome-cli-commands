@@ -1,0 +1,8 @@
+{
+  "id": "tofu-output-1",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-output",
+  "title": "List all outputs",
+  "command": "tofu output",
+  "description": "Show all output values from state."
+}

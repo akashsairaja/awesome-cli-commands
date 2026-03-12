@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-compute-snapshot-create",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-compute",
+  "title": "Create Disk Snapshot",
+  "command": "gcloud compute disks snapshot <disk-name> --snapshot-names=<snapshot-name> --zone=<zone>",
+  "description": "Create a snapshot of a persistent disk for backup",
+  "tags": ["snapshot", "backup", "disk"]
+}

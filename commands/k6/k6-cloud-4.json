@@ -1,0 +1,8 @@
+{
+  "id": "k6-cloud-4",
+  "categoryId": "k6",
+  "subcategoryId": "k6-cloud",
+  "title": "Cloud with env token",
+  "command": "K6_CLOUD_TOKEN=your_token k6 cloud script.js",
+  "description": "Authenticate via environment variable."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "nats-consumer-7",
+  "categoryId": "nats",
+  "subcategoryId": "nats-consumer",
+  "title": "Resume consumer",
+  "command": "nats consumer resume ORDERS DISPATCH",
+  "description": "Resume paused consumer."
+}

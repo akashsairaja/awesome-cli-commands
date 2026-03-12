@@ -1,0 +1,8 @@
+{
+  "id": "k8s-152",
+  "categoryId": "kubernetes",
+  "subcategoryId": "manifests",
+  "title": "Explain resource recursively",
+  "command": "kubectl explain <resource> --recursive",
+  "description": "Show complete resource schema documentation with all fields."
+}

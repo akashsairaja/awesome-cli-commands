@@ -1,0 +1,8 @@
+{
+  "id": "claude-7",
+  "categoryId": "claudecode",
+  "subcategoryId": "general",
+  "title": "Use Sonnet with extended context",
+  "command": "claude --model sonnet[1m]",
+  "description": "Use Sonnet with 1M token extended context window."
+}

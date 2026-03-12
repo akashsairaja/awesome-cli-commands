@@ -1,0 +1,8 @@
+{
+  "id": "react-next-8",
+  "categoryId": "react",
+  "subcategoryId": "react-nextjs",
+  "title": "Analyze bundle",
+  "command": "next experimental-analyze",
+  "description": "Analyze bundle sizes with Turbopack."
+}

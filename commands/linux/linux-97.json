@@ -1,0 +1,8 @@
+{
+  "id": "linux-97",
+  "categoryId": "linux",
+  "subcategoryId": "journald",
+  "title": "Show journal disk usage",
+  "command": "journalctl --disk-usage",
+  "description": "Display total disk space used by systemd journal logs."
+}

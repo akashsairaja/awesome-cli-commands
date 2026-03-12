@@ -1,0 +1,8 @@
+{
+  "id": "databricks-1",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-clusters",
+  "title": "List all clusters",
+  "command": "databricks clusters list",
+  "description": "List all clusters in the workspace."
+}

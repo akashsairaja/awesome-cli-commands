@@ -1,0 +1,8 @@
+{
+  "id": "flux-source-2",
+  "categoryId": "flux",
+  "subcategoryId": "flux-source",
+  "title": "Create Helm repository",
+  "command": "flux create source helm bitnami --url=https://charts.bitnami.com/bitnami --interval=1h",
+  "description": "Create a HelmRepository source."
+}

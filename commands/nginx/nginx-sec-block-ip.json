@@ -1,0 +1,9 @@
+{
+  "id": "nginx-sec-block-ip",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-security",
+  "title": "Block IP address",
+  "command": "deny 192.168.1.100; allow all;",
+  "description": "Block specific IP from accessing site",
+  "tags": ["security", "block", "deny", "ip"]
+}

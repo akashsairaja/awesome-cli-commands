@@ -1,0 +1,8 @@
+{
+  "id": "snyk-gs-1",
+  "title": "Install Snyk CLI",
+  "command": "npm install -g snyk",
+  "description": "Install Snyk security scanner globally using npm",
+  "categoryId": "snyk",
+  "subcategoryId": "getting-started"
+}

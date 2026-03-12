@@ -1,0 +1,9 @@
+{
+  "id": "gh-api-post",
+  "categoryId": "github",
+  "subcategoryId": "gh-api",
+  "title": "API POST request",
+  "command": "gh api <endpoint> --method POST -f key=value",
+  "description": "Make POST request to GitHub API",
+  "tags": ["api", "post", "request"]
+}

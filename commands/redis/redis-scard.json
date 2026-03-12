@@ -1,0 +1,9 @@
+{
+  "id": "redis-scard",
+  "categoryId": "redis",
+  "subcategoryId": "redis-sets",
+  "title": "Get set size",
+  "command": "SCARD key",
+  "description": "Get number of members in set",
+  "tags": ["scard", "set", "count"]
+}

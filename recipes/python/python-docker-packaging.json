@@ -1,0 +1,57 @@
+{
+  "id": "python-docker-packaging",
+  "stackId": "python",
+  "name": "Package Python Apps in Docker with Multi-Stage Builds",
+  "description": "Containerize Python applications using Docker multi-stage builds for small, secure, production-ready images.",
+  "difficulty": "intermediate",
+  "timeMinutes": 15,
+  "trending": false,
+  "tags": ["docker", "container", "multi-stage", "production", "deployment"],
+  "prerequisites": ["Docker installed", "A Python project with requirements.txt or pyproject.toml"],
+  "steps": [
+    {
+      "title": "Create a Dockerfile with multi-stage build",
+      "command": "cat > Dockerfile << 'EOF'\n# Build stage\nFROM python:3.12-slim AS builder\nWORKDIR /app\nCOPY requirements.txt .\nRUN pip install --no-cache-dir --prefix=/install -r requirements.txt\n\n# Production stage\nFROM python:3.12-slim\nWORKDIR /app\nCOPY --from=builder /install /usr/local\nCOPY src/ ./src/\nEXPOSE 8000\nCMD [\"python\", \"-m\", \"src.main\"]\nEOF",
+      "description": "Create a multi-stage Dockerfile. The builder stage installs dependencies, and the production stage copies only the installed packages, keeping the final image small.",
+      "tip": "Using python:3.12-slim instead of python:3.12 reduces the base image size from ~1GB to ~150MB."
+    },
+    {
+      "title": "Create a .dockerignore file",
+      "command": "echo -e '.venv\\n__pycache__\\n*.pyc\\n.git\\n.pytest_cache\\n.mypy_cache\\n.ruff_cache' > .dockerignore",
+      "description": "Exclude unnecessary files from the Docker build context. This speeds up builds and prevents sensitive files from being included in the image."
+    },
+    {
+      "title": "Build the Docker image",
+      "command": "docker build -t myapp:latest .",
+      "description": "Build the Docker image from the Dockerfile in the current directory. Docker caches each layer, so subsequent builds with unchanged requirements are fast."
+    },
+    {
+      "title": "Run the container",
+      "command": "docker run -d -p 8000:8000 --name myapp myapp:latest",
+      "description": "Start a container from the image in detached mode, mapping port 8000 on the host to port 8000 in the container."
+    },
+    {
+      "title": "Check the image size",
+      "command": "docker images myapp --format 'table {{.Repository}}\\t{{.Tag}}\\t{{.Size}}'",
+      "description": "Verify the final image size. A well-optimized Python image with slim base should be under 200MB for most applications.",
+      "tip": "If you need an even smaller image, consider python:3.12-alpine, but be aware that some Python packages with C extensions may require additional build dependencies."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Docker packaging workflow for Python apps\nset -e\n\n# Create Dockerfile\ncat > Dockerfile << 'DOCKERFILE'\n# Build stage - install dependencies\nFROM python:3.12-slim AS builder\nWORKDIR /build\nCOPY requirements.txt .\nRUN pip install --no-cache-dir --prefix=/install -r requirements.txt\n\n# Production stage - copy only what's needed\nFROM python:3.12-slim\nRUN useradd --create-home appuser\nWORKDIR /app\n\nCOPY --from=builder /install /usr/local\nCOPY src/ ./src/\n\nUSER appuser\nEXPOSE 8000\nHEALTHCHECK --interval=30s --timeout=3s CMD python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/health')\"\nCMD [\"python\", \"-m\", \"src.main\"]\nDOCKERFILE\n\n# Create .dockerignore\ncat > .dockerignore << 'IGNORE'\n.venv\n__pycache__\n*.pyc\n.git\n.pytest_cache\n.mypy_cache\n.ruff_cache\n*.egg-info\ndist\nbuild\nIGNORE\n\ndocker build -t myapp:latest .\ndocker images myapp\n\necho \"Docker image built successfully.\"",
+  "faq": [
+    {
+      "question": "Why use multi-stage builds for Python?",
+      "answer": "Multi-stage builds let you install build tools and compile dependencies in a temporary stage, then copy only the installed packages to a clean final image. This reduces image size and removes build-time tools that could be security risks."
+    },
+    {
+      "question": "Should I use Alpine or Slim as the base image?",
+      "answer": "Use python:slim (Debian-based) as the default. Alpine uses musl instead of glibc, which can cause compatibility issues with compiled Python packages like numpy, pandas, and cryptography. Alpine images are smaller but often require more build dependencies."
+    },
+    {
+      "question": "How do I handle Python packages that need system libraries?",
+      "answer": "Install system dependencies with apt-get in the builder stage. For the production stage, copy only the runtime libraries (not build tools). For example: RUN apt-get update && apt-get install -y --no-install-recommends libpq5 for PostgreSQL support."
+    }
+  ],
+  "relatedRecipes": ["python-venv-project-setup", "python-ci-pipeline", "python-uv-fast-deps"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "snyk-iac-3",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-iac",
+  "title": "Test with rules",
+  "command": "snyk iac test --rules=./custom-rules/",
+  "description": "Apply custom IaC rules."
+}

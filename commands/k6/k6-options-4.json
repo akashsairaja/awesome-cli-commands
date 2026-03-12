@@ -1,0 +1,8 @@
+{
+  "id": "k6-options-4",
+  "categoryId": "k6",
+  "subcategoryId": "k6-options",
+  "title": "Graceful stop",
+  "command": "export const options = {\n  vus: 50,\n  duration: '1m',\n  gracefulStop: '10s',\n};",
+  "description": "Allow time for iterations to finish."
+}

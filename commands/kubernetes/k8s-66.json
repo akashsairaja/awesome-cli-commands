@@ -1,0 +1,8 @@
+{
+  "id": "k8s-66",
+  "categoryId": "kubernetes",
+  "subcategoryId": "configmaps",
+  "title": "Create configmap from literal",
+  "command": "kubectl create configmap <name> --from-literal=key=value",
+  "description": "Create configmap with key-value pair."
+}

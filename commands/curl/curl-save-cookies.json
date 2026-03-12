@@ -1,0 +1,9 @@
+{
+  "id": "curl-save-cookies",
+  "categoryId": "curl",
+  "subcategoryId": "curl-auth",
+  "title": "Save cookies to file",
+  "command": "curl -c cookies.txt https://example.com/login",
+  "description": "Save response cookies to file",
+  "tags": ["cookie", "save", "jar"]
+}

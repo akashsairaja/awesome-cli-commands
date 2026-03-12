@@ -1,0 +1,8 @@
+{
+  "id": "mongo-idx-2",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-index",
+  "title": "Unique index",
+  "command": "db.users.createIndex({ email: 1 }, { unique: true })",
+  "description": "Create unique constraint index."
+}

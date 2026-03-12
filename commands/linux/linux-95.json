@@ -1,0 +1,8 @@
+{
+  "id": "linux-95",
+  "categoryId": "linux",
+  "subcategoryId": "journald",
+  "title": "Time-based log query",
+  "command": "journalctl --since '2 hours ago' --until '1 hour ago'",
+  "description": "Display logs from a specific time range using natural language."
+}

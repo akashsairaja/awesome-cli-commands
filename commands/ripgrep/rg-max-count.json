@@ -1,0 +1,9 @@
+{
+  "id": "rg-max-count",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-output",
+  "title": "Limit matches per file",
+  "command": "rg -m 5 \"pattern\"",
+  "description": "Show only first 5 matches per file",
+  "tags": ["limit", "max", "count"]
+}

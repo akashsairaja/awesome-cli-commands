@@ -1,0 +1,9 @@
+{
+  "id": "ansible-galaxy-list",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-galaxy",
+  "title": "List Installed Roles",
+  "command": "ansible-galaxy list",
+  "description": "Show installed roles",
+  "tags": ["galaxy", "list", "roles"]
+}

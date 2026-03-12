@@ -1,0 +1,8 @@
+{
+  "id": "node-debug-8",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-debug",
+  "title": "Built-in CLI debugger",
+  "command": "node inspect app.js",
+  "description": "Start built-in command-line debugger (95K+ searches)."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k6-script-7",
+  "categoryId": "k6",
+  "subcategoryId": "k6-script",
+  "title": "Custom metrics",
+  "command": "import { Trend, Counter, Rate } from 'k6/metrics';\n\nconst myTrend = new Trend('my_api_duration');\nconst myCounter = new Counter('my_api_calls');\nconst myRate = new Rate('my_api_success');\n\nexport default function() {\n  const res = http.get(url);\n  myTrend.add(res.timings.duration);\n  myCounter.add(1);\n  myRate.add(res.status === 200);\n}",
+  "description": "Define custom metric types."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "jest-coverage-7",
+  "categoryId": "jest",
+  "subcategoryId": "jest-coverage",
+  "title": "List all tests",
+  "command": "jest --listTests",
+  "description": "List all test files Jest will run."
+}

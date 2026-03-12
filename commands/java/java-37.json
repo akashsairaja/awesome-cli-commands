@@ -1,0 +1,8 @@
+{
+  "id": "java-37",
+  "categoryId": "java",
+  "subcategoryId": "java-tools",
+  "title": "List JDK modules",
+  "command": "java --list-modules",
+  "description": "Display all modules available in the JDK."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "bun-gs-3",
+  "title": "Create new project",
+  "command": "bun init",
+  "description": "Initialize a new Bun project with package.json",
+  "categoryId": "bun",
+  "subcategoryId": "getting-started"
+}

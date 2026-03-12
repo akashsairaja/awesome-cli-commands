@@ -1,0 +1,56 @@
+{
+  "id": "rust-test-workflow",
+  "stackId": "rust",
+  "name": "Testing with cargo test, Doc Tests, Integration Tests",
+  "description": "Write and run unit tests, doc tests, and integration tests using Cargo's built-in testing framework.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "tags": ["testing", "cargo-test", "doc-tests", "integration"],
+  "prerequisites": ["Rust toolchain installed", "A Cargo project"],
+  "steps": [
+    {
+      "title": "Run all tests",
+      "description": "Execute the full test suite including unit, doc, and integration tests.",
+      "command": "cargo test",
+      "tip": "Use 'cargo test -- --nocapture' to see println! output from passing tests."
+    },
+    {
+      "title": "Run a specific test by name",
+      "description": "Filter tests by name pattern to run only matching tests.",
+      "command": "cargo test test_parse_config -- --exact"
+    },
+    {
+      "title": "Create an integration test file",
+      "description": "Add an integration test in the tests/ directory that tests your crate as an external consumer.",
+      "command": "mkdir -p tests && cat > tests/integration_test.rs << 'EOF'\nuse myapp::process;\n\n#[test]\nfn test_full_pipeline() {\n    let result = process(\"input\");\n    assert!(result.is_ok());\n    assert_eq!(result.unwrap(), \"expected output\");\n}\nEOF"
+    },
+    {
+      "title": "Run tests with coverage using cargo-llvm-cov",
+      "description": "Generate code coverage reports using the LLVM-based coverage tool.",
+      "command": "cargo install cargo-llvm-cov && cargo llvm-cov --html",
+      "tip": "The HTML report is generated in target/llvm-cov/html/. Open index.html in your browser."
+    },
+    {
+      "title": "Run doc tests only",
+      "description": "Execute only the documentation examples embedded in your code comments.",
+      "command": "cargo test --doc"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Rust Test Workflow\nset -euo pipefail\n\necho \"=== Running All Tests ===\"\ncargo test 2>&1\n\necho \"\"\necho \"=== Test with Output ===\"\ncargo test -- --nocapture 2>&1 | tail -20\n\necho \"\"\necho \"=== Doc Tests ===\"\ncargo test --doc 2>&1\n\necho \"\"\necho \"=== Test Commands ===\"\necho \"All tests:      cargo test\"\necho \"Specific:       cargo test test_name -- --exact\"\necho \"Doc tests:      cargo test --doc\"\necho \"Integration:    cargo test --test integration_test\"\necho \"With output:    cargo test -- --nocapture\"\necho \"Coverage:       cargo llvm-cov --html\"\necho \"Ignored tests:  cargo test -- --ignored\"",
+  "faq": [
+    {
+      "question": "Where do I put unit tests vs integration tests?",
+      "answer": "Unit tests go in the same file as the code they test, inside a #[cfg(test)] mod tests block. Integration tests go in the tests/ directory and test your crate as an external user would."
+    },
+    {
+      "question": "How do doc tests work?",
+      "answer": "Code blocks in /// doc comments are compiled and executed as tests by 'cargo test --doc'. They serve as both documentation and tests. Mark non-runnable examples with ```no_run or ```ignore."
+    },
+    {
+      "question": "How do I run tests in parallel vs sequentially?",
+      "answer": "Tests run in parallel by default. Use 'cargo test -- --test-threads=1' for sequential execution, which is needed when tests share state like a database."
+    }
+  ],
+  "relatedRecipes": ["rust-clippy-fmt", "rust-project-setup"],
+  "lastUpdated": "2026-03-11"
+}

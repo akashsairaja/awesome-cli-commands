@@ -1,0 +1,8 @@
+{
+  "id": "hf-21",
+  "categoryId": "huggingface",
+  "subcategoryId": "hf-upload",
+  "title": "Upload single file",
+  "command": "huggingface-cli upload my-org/my-model ./model.safetensors",
+  "description": "Upload a single file to a repository."
+}

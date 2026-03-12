@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-run-6",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-run",
+  "title": "Run pre-push hook",
+  "command": "lefthook run pre-push",
+  "description": "Manually trigger pre-push hook."
+}

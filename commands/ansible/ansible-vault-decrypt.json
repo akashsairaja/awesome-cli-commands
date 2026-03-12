@@ -1,0 +1,9 @@
+{
+  "id": "ansible-vault-decrypt",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-vault",
+  "title": "Decrypt File",
+  "command": "ansible-vault decrypt secrets.yml",
+  "description": "Decrypt an encrypted file",
+  "tags": ["vault", "decrypt", "file"]
+}

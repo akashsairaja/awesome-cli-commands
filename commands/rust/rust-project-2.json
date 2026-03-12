@@ -1,0 +1,8 @@
+{
+  "id": "rust-project-2",
+  "categoryId": "rust",
+  "subcategoryId": "rust-project",
+  "title": "Create library",
+  "command": "cargo new my-lib --lib",
+  "description": "Create new Cargo library project."
+}

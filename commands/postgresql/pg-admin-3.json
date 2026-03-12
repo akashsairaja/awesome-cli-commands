@@ -1,0 +1,8 @@
+{
+  "id": "pg-admin-3",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-admin",
+  "title": "Grant privileges",
+  "command": "GRANT ALL PRIVILEGES ON DATABASE mydb TO appuser;",
+  "description": "Grant database privileges to user."
+}

@@ -1,0 +1,58 @@
+{
+  "id": "bash-log-processor",
+  "stackId": "bash",
+  "name": "Process and Analyze Log Files with awk/sed/grep",
+  "description": "Build a log processing pipeline to extract, filter, aggregate, and summarize information from application and server logs.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "trending": true,
+  "trendingReason": "CLI log processing is 10-100x faster than loading logs into a GUI tool for quick analysis",
+  "tags": ["logs", "awk", "grep", "sed", "analysis"],
+  "prerequisites": ["Bash with GNU coreutils", "Sample log files to process"],
+  "steps": [
+    {
+      "title": "Filter log lines by level or pattern",
+      "description": "Use grep to extract only error or warning lines from a log file.",
+      "command": "grep -E '(ERROR|WARN)' /var/log/app.log | tail -20",
+      "tip": "Use grep -i for case-insensitive matching or grep -c to count matches."
+    },
+    {
+      "title": "Extract specific fields with awk",
+      "description": "Parse structured log lines to extract timestamps, status codes, or response times.",
+      "command": "awk '{print $1, $2, $NF}' /var/log/access.log | head -20",
+      "tip": "$1 is the first field, $NF is the last field. Change the delimiter with -F: awk -F',' for CSV logs."
+    },
+    {
+      "title": "Count occurrences and find top errors",
+      "description": "Aggregate log entries to find the most frequent errors or status codes.",
+      "command": "grep 'ERROR' /var/log/app.log | awk '{print $NF}' | sort | uniq -c | sort -rn | head -10"
+    },
+    {
+      "title": "Extract log entries in a time range",
+      "description": "Filter logs between two timestamps using awk comparison.",
+      "command": "awk '$1\" \"$2 >= \"2026-03-11 10:00:00\" && $1\" \"$2 <= \"2026-03-11 12:00:00\"' /var/log/app.log"
+    },
+    {
+      "title": "Generate a summary report",
+      "description": "Create a one-liner that produces a complete log summary with counts by level.",
+      "command": "awk '/ERROR/{e++} /WARN/{w++} /INFO/{i++} END{printf \"Errors: %d\\nWarnings: %d\\nInfo: %d\\nTotal: %d\\n\", e, w, i, NR}' /var/log/app.log"
+    }
+  ],
+  "fullScript": "#!/usr/bin/env bash\nset -euo pipefail\n\nLOG_FILE=${1:?'Usage: $0 <logfile>'}\n\n[[ ! -f \"$LOG_FILE\" ]] && { echo \"File not found: $LOG_FILE\" >&2; exit 1; }\n\necho \"=== Log Summary: $LOG_FILE ===\"\necho \"Total lines: $(wc -l < \"$LOG_FILE\")\"\necho \"\"\n\necho \"=== Entries by Level ===\"\nawk '/ERROR/{e++} /WARN/{w++} /INFO/{i++} /DEBUG/{d++}\n  END{\n    printf \"  ERROR:  %d\\n  WARN:   %d\\n  INFO:   %d\\n  DEBUG:  %d\\n\", e+0, w+0, i+0, d+0\n  }' \"$LOG_FILE\"\n\necho \"\"\necho \"=== Top 10 Errors ===\"\ngrep 'ERROR' \"$LOG_FILE\" | sed 's/.*ERROR//' | sort | uniq -c | sort -rn | head -10\n\necho \"\"\necho \"=== Errors per Hour ===\"\ngrep 'ERROR' \"$LOG_FILE\" | awk '{print substr($2,1,13)}' | sort | uniq -c\n\necho \"\"\necho \"=== Last 5 Errors ===\"\ngrep 'ERROR' \"$LOG_FILE\" | tail -5",
+  "faq": [
+    {
+      "question": "When should I use grep vs awk vs sed?",
+      "answer": "Use grep for finding lines that match a pattern. Use awk for extracting and processing fields from structured text. Use sed for transforming or replacing text in-place. For complex processing, pipe them together: grep to filter, awk to extract, sort/uniq to aggregate."
+    },
+    {
+      "question": "How do I process compressed log files?",
+      "answer": "Use zgrep, zcat, and zless for .gz files. For example: zgrep 'ERROR' /var/log/app.log.gz | awk '{print $NF}' | sort | uniq -c. This avoids decompressing the entire file."
+    },
+    {
+      "question": "How do I handle multi-line log entries like stack traces?",
+      "answer": "Use awk with a record separator: awk 'BEGIN{RS=\"\\n[0-9]{4}-\"} /ERROR/' to treat each log entry as a record. Or use grep -A 10 'ERROR' to show 10 lines after each match."
+    }
+  ],
+  "relatedRecipes": ["bash-text-processing", "bash-script-template"],
+  "lastUpdated": "2026-03-11"
+}

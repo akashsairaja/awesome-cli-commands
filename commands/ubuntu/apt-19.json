@@ -1,0 +1,8 @@
+{
+  "id": "apt-19",
+  "categoryId": "ubuntu",
+  "subcategoryId": "system",
+  "title": "Show system info",
+  "command": "uname -a",
+  "description": "Display system information."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "git-41",
+  "categoryId": "git",
+  "subcategoryId": "branches",
+  "title": "Merge without fast-forward",
+  "command": "git merge --no-ff <branch>",
+  "description": "Create merge commit even if fast-forward."
+}

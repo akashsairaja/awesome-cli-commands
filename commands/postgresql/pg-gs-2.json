@@ -1,0 +1,8 @@
+{
+  "id": "pg-gs-2",
+  "title": "Connect to PostgreSQL",
+  "command": "docker exec -it postgres psql -U postgres",
+  "description": "Open interactive psql session in the running container",
+  "categoryId": "postgresql",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "jest-config-4",
+  "categoryId": "jest",
+  "subcategoryId": "jest-configuration",
+  "title": "Node environment",
+  "command": "jest --env node",
+  "description": "Use Node environment instead of jsdom."
+}

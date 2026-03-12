@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-certs-12",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-certs",
+  "title": "Generate ECDSA certificate",
+  "command": "mkcert -ecdsa localhost 127.0.0.1",
+  "description": "Generate cert using ECDSA instead of RSA."
+}

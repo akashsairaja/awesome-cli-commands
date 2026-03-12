@@ -1,0 +1,8 @@
+{
+  "id": "temporal-gs-1",
+  "title": "Install Temporal CLI (macOS)",
+  "command": "brew install temporal",
+  "description": "Install Temporal CLI using Homebrew on macOS",
+  "categoryId": "temporal",
+  "subcategoryId": "getting-started"
+}

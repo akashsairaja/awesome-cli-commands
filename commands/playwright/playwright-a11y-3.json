@@ -1,0 +1,8 @@
+{
+  "id": "playwright-a11y-3",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-a11y",
+  "title": "Axe accessibility tests",
+  "command": "npx @axe-core/playwright test",
+  "description": "Run automated accessibility checks."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "httpie-requests-19",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-requests",
+  "title": "Offline mode (dry run)",
+  "command": "http --offline POST https://api.example.com/users name=Test",
+  "description": "Build and print the request without actually sending it."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "vercel-promote",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-cache",
+  "title": "Promote to production",
+  "command": "vercel promote <deployment-url>",
+  "description": "Promote deployment to production",
+  "tags": ["promote", "production", "deploy"]
+}

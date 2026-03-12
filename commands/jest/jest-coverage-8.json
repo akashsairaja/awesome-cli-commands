@@ -1,0 +1,8 @@
+{
+  "id": "jest-coverage-8",
+  "categoryId": "jest",
+  "subcategoryId": "jest-coverage",
+  "title": "Show configuration",
+  "command": "jest --showConfig",
+  "description": "Display resolved Jest configuration."
+}

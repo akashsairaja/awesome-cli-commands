@@ -1,0 +1,8 @@
+{
+  "id": "composer-update-7",
+  "categoryId": "composer",
+  "subcategoryId": "composer-update",
+  "title": "Check platform reqs",
+  "command": "composer check-platform-reqs",
+  "description": "Check PHP and extension requirements."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "nuget-sources-1",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-sources",
+  "title": "List sources",
+  "command": "dotnet nuget list source",
+  "description": "List configured package sources."
+}

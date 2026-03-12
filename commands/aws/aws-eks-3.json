@@ -1,0 +1,8 @@
+{
+  "id": "aws-eks-3",
+  "categoryId": "aws",
+  "subcategoryId": "eks",
+  "title": "Update kubeconfig",
+  "command": "aws eks update-kubeconfig --name production-cluster --region us-east-1 --alias prod-eks",
+  "description": "Configure kubectl to access EKS cluster."
+}

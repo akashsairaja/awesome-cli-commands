@@ -1,0 +1,8 @@
+{
+  "id": "curl-gs-3",
+  "title": "Test a request with curl",
+  "command": "curl -I https://example.com",
+  "description": "Send a HEAD request to verify curl is working",
+  "categoryId": "curl",
+  "subcategoryId": "getting-started"
+}

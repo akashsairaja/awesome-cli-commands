@@ -1,0 +1,9 @@
+{
+  "id": "supabase-db-push",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-db",
+  "title": "Push schema changes",
+  "command": "supabase db push",
+  "description": "Push local schema changes to remote database",
+  "tags": ["db", "push", "schema"]
+}

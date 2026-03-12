@@ -1,0 +1,8 @@
+{
+  "id": "db-60",
+  "categoryId": "database",
+  "subcategoryId": "mongodb",
+  "title": "Backup with mongodump",
+  "command": "mongodump --uri='mongodb://localhost:27017/dbname' --out=backup/",
+  "description": "Export database to BSON dump files."
+}

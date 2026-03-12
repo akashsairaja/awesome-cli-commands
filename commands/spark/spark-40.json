@@ -1,0 +1,8 @@
+{
+  "id": "spark-40",
+  "categoryId": "spark",
+  "subcategoryId": "spark-cluster",
+  "title": "Start standalone master",
+  "command": "$SPARK_HOME/sbin/start-master.sh",
+  "description": "Start Spark standalone cluster master."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "azure-storage-create",
+  "categoryId": "azure",
+  "subcategoryId": "azure-storage",
+  "title": "Create Storage Account",
+  "command": "az storage account create --name <name> --resource-group <rg> --location <region> --sku Standard_LRS",
+  "description": "Create a new storage account",
+  "tags": ["storage", "create", "account"]
+}

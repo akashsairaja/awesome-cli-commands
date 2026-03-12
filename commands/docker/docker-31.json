@@ -1,0 +1,8 @@
+{
+  "id": "docker-31",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Attach to container",
+  "command": "docker attach <container>",
+  "description": "Attach to running container's STDIN/STDOUT."
+}

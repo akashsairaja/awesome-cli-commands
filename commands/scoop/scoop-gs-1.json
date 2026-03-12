@@ -1,0 +1,8 @@
+{
+  "id": "scoop-gs-1",
+  "title": "Install Scoop (Windows)",
+  "command": "irm get.scoop.sh | iex",
+  "description": "Install Scoop package manager on Windows via PowerShell",
+  "categoryId": "scoop",
+  "subcategoryId": "getting-started"
+}

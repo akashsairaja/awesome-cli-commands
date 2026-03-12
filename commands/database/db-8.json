@@ -1,0 +1,8 @@
+{
+  "id": "db-8",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Backup MySQL database",
+  "command": "mysqldump -u root -p dbname > backup.sql",
+  "description": "Export MySQL database to SQL file."
+}

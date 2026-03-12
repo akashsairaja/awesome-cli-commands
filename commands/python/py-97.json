@@ -1,0 +1,8 @@
+{
+  "id": "py-97",
+  "categoryId": "python",
+  "subcategoryId": "python-pytest",
+  "title": "Run with coverage",
+  "command": "pytest --cov=myapp --cov-report=term-missing",
+  "description": "Generate coverage report with missing lines."
+}

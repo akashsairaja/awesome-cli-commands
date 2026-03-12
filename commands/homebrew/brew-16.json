@@ -1,0 +1,8 @@
+{
+  "id": "brew-16",
+  "categoryId": "homebrew",
+  "subcategoryId": "packages",
+  "title": "Link package",
+  "command": "brew link <package>",
+  "description": "Create symlinks for package."
+}

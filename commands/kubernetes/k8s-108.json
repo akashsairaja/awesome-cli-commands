@@ -1,0 +1,8 @@
+{
+  "id": "k8s-108",
+  "categoryId": "kubernetes",
+  "subcategoryId": "rbac",
+  "title": "Check permissions",
+  "command": "kubectl auth can-i get pods",
+  "description": "Check if you can perform an action."
+}

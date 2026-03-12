@@ -1,0 +1,8 @@
+{
+  "id": "bash-21",
+  "categoryId": "bash",
+  "subcategoryId": "variables",
+  "title": "Read-only variable",
+  "command": "readonly VAR=\"value\"",
+  "description": "Create read-only variable."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k8s-133",
+  "categoryId": "kubernetes",
+  "subcategoryId": "manifests",
+  "title": "Delete from manifest",
+  "command": "kubectl delete -f manifest.yaml",
+  "description": "Delete resources defined in manifest."
+}

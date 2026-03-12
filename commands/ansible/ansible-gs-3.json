@@ -1,0 +1,8 @@
+{
+  "id": "ansible-gs-3",
+  "title": "Check Ansible version",
+  "command": "ansible --version",
+  "description": "Verify Ansible installation and display version info",
+  "categoryId": "ansible",
+  "subcategoryId": "getting-started"
+}

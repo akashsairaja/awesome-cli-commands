@@ -1,0 +1,8 @@
+{
+  "id": "ssh-40",
+  "categoryId": "sshgpg",
+  "subcategoryId": "connections",
+  "title": "GPG clearsign file",
+  "command": "gpg --clearsign message.txt",
+  "description": "Create readable clear-text signature."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "vim-15",
+  "categoryId": "vim",
+  "subcategoryId": "editing",
+  "title": "Repeat last command",
+  "command": ".",
+  "description": "Repeat last change."
+}

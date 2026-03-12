@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-install-6",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-install",
+  "title": "Verify CA is trusted",
+  "command": "openssl verify -CAfile \"$(mkcert -CAROOT)/rootCA.pem\" cert.pem",
+  "description": "Verify a certificate against the local CA."
+}

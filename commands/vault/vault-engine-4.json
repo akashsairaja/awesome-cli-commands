@@ -1,0 +1,8 @@
+{
+  "id": "vault-engine-4",
+  "categoryId": "vault",
+  "subcategoryId": "vault-engine",
+  "title": "Enable PKI",
+  "command": "vault secrets enable pki",
+  "description": "Enable PKI secrets engine."
+}

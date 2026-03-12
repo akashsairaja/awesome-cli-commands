@@ -1,0 +1,8 @@
+{
+  "id": "ollama-21",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-server",
+  "title": "Bind to all interfaces",
+  "command": "OLLAMA_HOST=0.0.0.0:11434 ollama serve",
+  "description": "Allow connections from other machines."
+}

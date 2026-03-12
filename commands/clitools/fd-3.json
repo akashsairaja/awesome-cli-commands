@@ -1,0 +1,8 @@
+{
+  "id": "fd-3",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-fd",
+  "title": "Find in directory",
+  "command": "fd pattern src/",
+  "description": "Search in specific directory."
+}

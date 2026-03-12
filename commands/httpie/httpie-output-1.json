@@ -1,0 +1,8 @@
+{
+  "id": "httpie-output-1",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-output",
+  "title": "Headers only",
+  "command": "http --headers GET https://api.example.com",
+  "description": "Show only response headers."
+}

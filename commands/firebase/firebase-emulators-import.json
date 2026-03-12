@@ -1,0 +1,9 @@
+{
+  "id": "firebase-emulators-import",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-emulators",
+  "title": "Start with data import",
+  "command": "firebase emulators:start --import=./data",
+  "description": "Start emulators and import saved data",
+  "tags": ["emulators", "import", "data"]
+}

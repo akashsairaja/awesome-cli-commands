@@ -1,0 +1,8 @@
+{
+  "id": "db-102",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Dump schema only",
+  "command": "mysqldump -u root -p --no-data mydb > schema.sql",
+  "description": "Export table structures without data."
+}

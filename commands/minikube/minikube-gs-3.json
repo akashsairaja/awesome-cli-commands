@@ -1,0 +1,8 @@
+{
+  "id": "minikube-gs-3",
+  "title": "Open dashboard",
+  "command": "minikube dashboard",
+  "description": "Launch the Kubernetes dashboard in your browser",
+  "categoryId": "minikube",
+  "subcategoryId": "getting-started"
+}

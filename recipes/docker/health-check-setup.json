@@ -1,0 +1,51 @@
+{
+  "id": "health-check-setup",
+  "stackId": "docker",
+  "name": "Health Check Setup",
+  "description": "Configure container health checks so Docker can automatically detect unhealthy containers and orchestrators can restart them.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": false,
+  "tags": ["healthcheck", "monitoring", "reliability", "containers"],
+  "prerequisites": ["Docker installed"],
+  "steps": [
+    {
+      "title": "Add HEALTHCHECK to a Dockerfile",
+      "description": "Define a health check command that Docker runs periodically to determine if the container is healthy.",
+      "command": "echo 'HEALTHCHECK --interval=30s --timeout=10s --retries=3 CMD curl -f http://localhost:3000/health || exit 1'",
+      "tip": "Adjust interval and timeout based on your application's startup time and response characteristics."
+    },
+    {
+      "title": "Add health check in Docker Compose",
+      "description": "Configure health checks in your compose file for each service.",
+      "command": "cat <<'EOF'\nservices:\n  api:\n    image: myapp:latest\n    healthcheck:\n      test: [\"CMD\", \"curl\", \"-f\", \"http://localhost:3000/health\"]\n      interval: 30s\n      timeout: 10s\n      retries: 3\n      start_period: 40s\nEOF"
+    },
+    {
+      "title": "Check container health status",
+      "description": "View the health status and recent health check results.",
+      "command": "docker inspect <container-name> --format '{{.State.Health.Status}}: {{range .State.Health.Log}}{{.Output}}{{end}}'"
+    },
+    {
+      "title": "View health check history",
+      "description": "See the last few health check results including timestamps and output.",
+      "command": "docker inspect <container-name> --format '{{json .State.Health}}' | jq '.Log[-3:]'"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Health Check Setup and Verification\nset -euo pipefail\n\necho \"=== Container Health Status ===\"\ndocker ps --format 'table {{.Names}}\\t{{.Status}}'\n\necho \"\"\necho \"=== Detailed Health for All Containers ===\"\nfor container in $(docker ps -q); do\n  name=$(docker inspect \"$container\" --format '{{.Name}}' | sed 's/\\///')\n  health=$(docker inspect \"$container\" --format '{{if .State.Health}}{{.State.Health.Status}}{{else}}no healthcheck{{end}}')\n  echo \"$name: $health\"\ndone",
+  "faq": [
+    {
+      "question": "What is a good health check endpoint?",
+      "answer": "A /health endpoint that returns 200 OK when the app is ready to serve traffic. It should check critical dependencies (database, cache) but not be too expensive to run every 30 seconds."
+    },
+    {
+      "question": "What does start_period do?",
+      "answer": "start_period gives the container time to initialize before health checks count. Failed checks during this period do not count toward the retry limit."
+    },
+    {
+      "question": "How do I use health checks without curl?",
+      "answer": "Use 'wget -qO- http://localhost:3000/health' or for non-HTTP checks, write a small script that tests the service (e.g., pg_isready for PostgreSQL)."
+    }
+  ],
+  "relatedRecipes": ["compose-dependency-ordering", "container-performance-monitoring"],
+  "lastUpdated": "2026-03-11"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "aws-iam-6",
+  "categoryId": "aws",
+  "subcategoryId": "iam",
+  "title": "Create access key",
+  "command": "aws iam create-access-key --user-name myuser",
+  "description": "Create new access key for user."
+}

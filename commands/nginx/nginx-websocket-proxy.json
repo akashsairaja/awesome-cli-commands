@@ -1,0 +1,9 @@
+{
+  "id": "nginx-websocket-proxy",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-reverse-proxy",
+  "title": "WebSocket proxy",
+  "command": "proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection \"upgrade\";",
+  "description": "Enable WebSocket connections through proxy",
+  "tags": ["proxy", "websocket", "upgrade", "realtime"]
+}

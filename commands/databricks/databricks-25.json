@@ -1,0 +1,8 @@
+{
+  "id": "databricks-25",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-workspace",
+  "title": "Delete item",
+  "command": "databricks workspace rm /path/to/item --recursive",
+  "description": "Delete a workspace item (add --recursive for folders)."
+}

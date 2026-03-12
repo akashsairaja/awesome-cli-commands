@@ -1,0 +1,8 @@
+{
+  "id": "db-49",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Check database size",
+  "command": "SELECT table_schema, ROUND(SUM(data_length+index_length)/1024/1024,2) AS 'MB' FROM information_schema.tables GROUP BY table_schema;",
+  "description": "Show size of all databases in megabytes."
+}

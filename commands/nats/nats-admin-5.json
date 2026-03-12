@@ -1,0 +1,8 @@
+{
+  "id": "nats-admin-5",
+  "categoryId": "nats",
+  "subcategoryId": "nats-admin",
+  "title": "Check stream health",
+  "command": "nats server check stream ORDERS",
+  "description": "Monitor stream health status."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-iam-sa-keys",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-iam",
+  "title": "Create Service Account Key",
+  "command": "gcloud iam service-accounts keys create key.json --iam-account=<sa-email>",
+  "description": "Generate a key file for service account",
+  "tags": ["iam", "key", "service-account"]
+}

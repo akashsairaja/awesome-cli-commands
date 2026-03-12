@@ -1,0 +1,50 @@
+{
+  "id": "gcloud-artifact-registry",
+  "stackId": "gcloud",
+  "name": "Container and Package Registry Management",
+  "description": "Create Artifact Registry repositories, push and pull container images, and manage npm and Python packages in a private registry.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "tags": ["artifact-registry", "containers", "registry", "packages"],
+  "prerequisites": ["gcloud CLI installed", "Docker installed", "Artifact Registry API enabled"],
+  "steps": [
+    {
+      "title": "Enable the Artifact Registry API",
+      "command": "gcloud services enable artifactregistry.googleapis.com",
+      "description": "Activates the Artifact Registry API for the project."
+    },
+    {
+      "title": "Create a Docker repository",
+      "command": "gcloud artifacts repositories create my-docker-repo --repository-format docker --location us-central1 --description \"Docker images for my apps\"",
+      "description": "Creates a Docker repository in the specified region."
+    },
+    {
+      "title": "Configure Docker authentication",
+      "command": "gcloud auth configure-docker us-central1-docker.pkg.dev",
+      "description": "Registers the Artifact Registry domain with Docker so you can push and pull images."
+    },
+    {
+      "title": "Tag and push an image",
+      "command": "docker tag myapp:latest us-central1-docker.pkg.dev/my-project-id/my-docker-repo/myapp:v1.0 && docker push us-central1-docker.pkg.dev/my-project-id/my-docker-repo/myapp:v1.0",
+      "description": "Tags a local image with the Artifact Registry path and pushes it."
+    },
+    {
+      "title": "List images in the repository",
+      "command": "gcloud artifacts docker images list us-central1-docker.pkg.dev/my-project-id/my-docker-repo --format \"table(package, version, createTime)\"",
+      "description": "Shows all images in the repository with version tags and creation dates."
+    }
+  ],
+  "fullScript": "# Artifact Registry management\ngcloud services enable artifactregistry.googleapis.com\ngcloud artifacts repositories create my-docker-repo --repository-format docker --location us-central1 --description \"Docker images for my apps\"\ngcloud auth configure-docker us-central1-docker.pkg.dev\ndocker tag myapp:latest us-central1-docker.pkg.dev/my-project-id/my-docker-repo/myapp:v1.0\ndocker push us-central1-docker.pkg.dev/my-project-id/my-docker-repo/myapp:v1.0\ngcloud artifacts docker images list us-central1-docker.pkg.dev/my-project-id/my-docker-repo --format \"table(package, version, createTime)\"",
+  "faq": [
+    {
+      "question": "What package formats does Artifact Registry support?",
+      "answer": "Docker, Maven, npm, Python (PyPI), Go, Apt (Debian), Yum (RPM), and Helm. Each format has its own repository type."
+    },
+    {
+      "question": "How do I clean up old images?",
+      "answer": "Use cleanup policies: 'gcloud artifacts repositories set-cleanup-policies my-docker-repo --location us-central1 --policy=policy.json' to automatically delete images older than a specified age or keep only the N most recent tags."
+    }
+  ],
+  "relatedRecipes": ["gcloud-cloud-run-deploy", "gcloud-gke-cluster"],
+  "lastUpdated": "2026-03-11"
+}

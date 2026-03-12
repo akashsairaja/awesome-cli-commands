@@ -1,0 +1,55 @@
+{
+  "id": "ansible-ad-hoc-commands",
+  "stackId": "ansible",
+  "name": "Run Quick Tasks Without Playbooks",
+  "description": "Execute one-off commands across multiple hosts using ansible ad-hoc commands for quick checks, updates, and troubleshooting.",
+  "difficulty": "beginner",
+  "timeMinutes": 5,
+  "tags": ["ad-hoc", "quick-tasks", "modules", "one-liners"],
+  "prerequisites": ["Ansible installed", "Inventory file configured", "SSH access to hosts"],
+  "steps": [
+    {
+      "title": "Ping all hosts",
+      "command": "ansible all -m ping",
+      "description": "Verifies SSH connectivity and Python availability on all managed hosts."
+    },
+    {
+      "title": "Run a shell command",
+      "command": "ansible webservers -m shell -a \"df -h / | tail -1\"",
+      "description": "Checks disk usage on the root filesystem across all webservers.",
+      "tip": "Use the 'shell' module for commands with pipes or redirects. Use 'command' for simple commands."
+    },
+    {
+      "title": "Copy a file to all hosts",
+      "command": "ansible all -m copy -a \"src=./motd.txt dest=/etc/motd\" --become",
+      "description": "Distributes a file to all hosts with root privileges."
+    },
+    {
+      "title": "Install a package",
+      "command": "ansible webservers -m apt -a \"name=htop state=present update_cache=true\" --become",
+      "description": "Installs htop on all webservers using the apt module."
+    },
+    {
+      "title": "Gather system facts",
+      "command": "ansible web01 -m setup -a \"filter=ansible_distribution*\"",
+      "description": "Retrieves distribution-related facts (OS name, version, release) from a single host."
+    }
+  ],
+  "fullScript": "# Ansible ad-hoc commands\nansible all -m ping\nansible webservers -m shell -a \"df -h / | tail -1\"\nansible all -m copy -a \"src=./motd.txt dest=/etc/motd\" --become\nansible webservers -m apt -a \"name=htop state=present update_cache=true\" --become\nansible web01 -m setup -a \"filter=ansible_distribution*\"",
+  "faq": [
+    {
+      "question": "When should I use ad-hoc commands vs playbooks?",
+      "answer": "Ad-hoc commands are ideal for one-off tasks like checking uptime, restarting a service, or quick file copies. Use playbooks for repeatable, multi-step workflows that should be version-controlled."
+    },
+    {
+      "question": "How do I run an ad-hoc command with sudo?",
+      "answer": "Add the --become flag (or -b). To specify a different sudo user, add --become-user=username. For a sudo password prompt, add --ask-become-pass."
+    },
+    {
+      "question": "Can I limit ad-hoc commands to specific hosts?",
+      "answer": "Yes. Use --limit 'host1,host2' or patterns like --limit 'web*' to target specific hosts. You can also use -l as a shorthand."
+    }
+  ],
+  "relatedRecipes": ["ansible-playbook-basics", "ansible-inventory-management"],
+  "lastUpdated": "2026-03-11"
+}

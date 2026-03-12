@@ -1,0 +1,8 @@
+{
+  "id": "go-mod-4",
+  "categoryId": "go",
+  "subcategoryId": "go-mod",
+  "title": "Vendor dependencies",
+  "command": "go mod vendor",
+  "description": "Copy dependencies to vendor directory."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "db-77",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Show user grants",
+  "command": "SHOW GRANTS FOR 'appuser'@'localhost';",
+  "description": "Display all privileges granted to a specific user."
+}

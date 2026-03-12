@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-http-11",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-http",
+  "title": "Add response header",
+  "command": "ngrok http --response-header-add='X-Frame-Options:DENY' 3000",
+  "description": "Add a custom header to responses."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "tmux-list-keys",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-config",
+  "title": "List key bindings",
+  "command": "tmux list-keys",
+  "description": "Show all key bindings",
+  "tags": ["keys", "bindings", "list"]
+}

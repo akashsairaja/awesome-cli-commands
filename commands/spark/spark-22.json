@@ -1,0 +1,8 @@
+{
+  "id": "spark-22",
+  "categoryId": "spark",
+  "subcategoryId": "spark-sql",
+  "title": "Execute inline SQL",
+  "command": "spark-sql -e \"SELECT count(*) FROM mydb.mytable\"",
+  "description": "Execute a SQL statement directly."
+}

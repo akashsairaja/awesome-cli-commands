@@ -1,0 +1,8 @@
+{
+  "id": "starship-modules-18",
+  "categoryId": "starship",
+  "subcategoryId": "starship-modules",
+  "title": "Continuation prompt",
+  "command": "continuation_prompt = '[>](bright-black) '",
+  "description": "Set the multi-line continuation prompt."
+}

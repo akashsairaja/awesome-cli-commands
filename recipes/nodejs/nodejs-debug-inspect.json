@@ -1,0 +1,60 @@
+{
+  "id": "nodejs-debug-inspect",
+  "stackId": "nodejs",
+  "name": "Debug Node.js with Chrome DevTools",
+  "description": "Attach Chrome DevTools debugger to a Node.js process for breakpoints, stepping, profiling, and live memory inspection.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": true,
+  "trendingReason": "DevTools integration is the fastest way to debug complex async flows, replacing console.log-driven debugging workflows.",
+  "tags": ["debug", "inspect", "chrome", "devtools", "breakpoints"],
+  "prerequisites": ["Node.js installed", "Chrome browser"],
+  "steps": [
+    {
+      "title": "Start Node.js with the inspect flag",
+      "description": "Launch your application with the --inspect flag to start the V8 debugger listening on port 9229.",
+      "command": "node --inspect app.js",
+      "tip": "Use --inspect-brk to pause execution on the very first line, useful for debugging startup issues."
+    },
+    {
+      "title": "Open Chrome DevTools for Node",
+      "description": "Navigate to the dedicated Node.js debugging page in Chrome to connect to the running process.",
+      "command": "# Open in Chrome browser:\nchrome://inspect",
+      "tip": "Click 'Open dedicated DevTools for Node' for a persistent connection that auto-reconnects on restart."
+    },
+    {
+      "title": "Set breakpoints in source code",
+      "description": "Add debugger statements in your code or set breakpoints directly in the DevTools Sources panel.",
+      "command": "// Add this line where you want to pause:\ndebugger;"
+    },
+    {
+      "title": "Debug with VS Code instead of Chrome",
+      "description": "Use VS Code's built-in debugger by attaching to the inspect port for an integrated experience.",
+      "command": "cat <<'EOF' > .vscode/launch.json\n{\n  \"version\": \"0.2.0\",\n  \"configurations\": [\n    {\n      \"type\": \"node\",\n      \"request\": \"attach\",\n      \"name\": \"Attach to Node\",\n      \"port\": 9229,\n      \"restart\": true\n    }\n  ]\n}\nEOF",
+      "tip": "Set restart: true so the debugger reconnects automatically when you restart the Node process."
+    },
+    {
+      "title": "Debug a running process by PID",
+      "description": "Attach the debugger to an already-running Node.js process without restarting it.",
+      "command": "kill -USR1 $(pgrep -f 'node app.js')",
+      "warning": "This sends SIGUSR1 which enables the debugger. On Windows, use: node -e \"process._debugProcess(PID)\" instead."
+    }
+  ],
+  "fullScript": "#!/bin/bash\nset -euo pipefail\n\n# Node.js Debug Setup Script\n# Configures debugging for development\n\nAPP_FILE=\"${1:-app.js}\"\nDEBUG_PORT=\"${2:-9229}\"\n\necho \"==> Checking for Node.js...\"\nnode --version || { echo \"Node.js not found. Install it first.\"; exit 1; }\n\necho \"==> Creating VS Code debug configuration...\"\nmkdir -p .vscode\ncat > .vscode/launch.json <<EOF\n{\n  \"version\": \"0.2.0\",\n  \"configurations\": [\n    {\n      \"type\": \"node\",\n      \"request\": \"launch\",\n      \"name\": \"Debug App\",\n      \"program\": \"${workspaceFolder}/${APP_FILE}\",\n      \"console\": \"integratedTerminal\"\n    },\n    {\n      \"type\": \"node\",\n      \"request\": \"attach\",\n      \"name\": \"Attach to Running\",\n      \"port\": ${DEBUG_PORT},\n      \"restart\": true\n    }\n  ]\n}\nEOF\n\necho \"==> Starting Node.js with debugger...\"\necho \"    Open chrome://inspect or attach VS Code debugger\"\necho \"\"\nnode --inspect=${DEBUG_PORT} \"${APP_FILE}\"",
+  "faq": [
+    {
+      "question": "Can I debug TypeScript directly with --inspect?",
+      "answer": "Yes. Use ts-node with --inspect (node --inspect -r ts-node/register app.ts) or compile with source maps enabled. DevTools and VS Code will map back to your TypeScript source files."
+    },
+    {
+      "question": "How do I debug a specific test file?",
+      "answer": "Run: node --inspect-brk node_modules/.bin/jest --testPathPattern=mytest.test.js --runInBand. The --runInBand flag is important to run tests in the same process as the debugger."
+    },
+    {
+      "question": "Why does my breakpoint not hit?",
+      "answer": "Common causes: the code path is not executed, source maps are missing or misconfigured, or the file was loaded before the debugger attached. Use --inspect-brk to ensure the debugger is connected before any code runs."
+    }
+  ],
+  "relatedRecipes": ["nodejs-memory-leak-detection", "nodejs-performance-profiling"],
+  "lastUpdated": "2026-03-11"
+}

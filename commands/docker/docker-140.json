@@ -1,0 +1,8 @@
+{
+  "id": "docker-140",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "List service images",
+  "command": "docker compose images",
+  "description": "List images used by services in compose stack."
+}

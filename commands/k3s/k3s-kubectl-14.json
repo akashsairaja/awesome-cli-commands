@@ -1,0 +1,8 @@
+{
+  "id": "k3s-kubectl-14",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-kubectl",
+  "title": "Rollout restart",
+  "command": "k3s kubectl rollout restart deployment/<name> -n <namespace>",
+  "description": "Restart a deployment by triggering a rolling update."
+}

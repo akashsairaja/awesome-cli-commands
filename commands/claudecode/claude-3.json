@@ -1,0 +1,8 @@
+{
+  "id": "claude-3",
+  "categoryId": "claudecode",
+  "subcategoryId": "general",
+  "title": "Print mode (non-interactive)",
+  "command": "claude -p \"prompt\"",
+  "description": "Execute single query and exit immediately."
+}

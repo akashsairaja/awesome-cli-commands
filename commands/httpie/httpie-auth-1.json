@@ -1,0 +1,8 @@
+{
+  "id": "httpie-auth-1",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-auth",
+  "title": "Basic Auth",
+  "command": "http -a username:password GET https://api.example.com/protected",
+  "description": "Use Basic Authentication."
+}

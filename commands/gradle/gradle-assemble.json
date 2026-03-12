@@ -1,0 +1,9 @@
+{
+  "id": "gradle-assemble",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-build",
+  "title": "Assemble",
+  "command": "./gradlew assemble",
+  "description": "Compile and package without tests",
+  "tags": ["assemble", "package", "jar"]
+}

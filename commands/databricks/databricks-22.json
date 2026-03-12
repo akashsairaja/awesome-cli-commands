@@ -1,0 +1,8 @@
+{
+  "id": "databricks-22",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-workspace",
+  "title": "Import notebook",
+  "command": "databricks workspace import local-file.py /path/to/notebook",
+  "description": "Import a local file as a notebook."
+}

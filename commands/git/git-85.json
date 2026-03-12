@@ -1,0 +1,8 @@
+{
+  "id": "git-85",
+  "categoryId": "git",
+  "subcategoryId": "history",
+  "title": "Search commits by message",
+  "command": "git log --grep=\"keyword\"",
+  "description": "Find commits with keyword in message."
+}

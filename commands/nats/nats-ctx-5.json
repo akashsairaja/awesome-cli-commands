@@ -1,0 +1,8 @@
+{
+  "id": "nats-ctx-5",
+  "categoryId": "nats",
+  "subcategoryId": "nats-context",
+  "title": "Account info",
+  "command": "nats account info",
+  "description": "View account limits and JetStream details."
+}

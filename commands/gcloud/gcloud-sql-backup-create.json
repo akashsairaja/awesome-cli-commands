@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-sql-backup-create",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-sql",
+  "title": "Create On-Demand Backup",
+  "command": "gcloud sql backups create --instance=<instance>",
+  "description": "Create an on-demand backup of a Cloud SQL instance",
+  "tags": ["sql", "backup", "create"]
+}

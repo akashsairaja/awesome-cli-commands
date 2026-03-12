@@ -1,0 +1,8 @@
+{
+  "id": "hurl-asserts-13",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-asserts",
+  "title": "Bytes assertion",
+  "command": "[Asserts]\nbytes count > 0",
+  "description": "Assert response body byte count."
+}

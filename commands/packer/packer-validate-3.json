@@ -1,0 +1,8 @@
+{
+  "id": "packer-validate-3",
+  "categoryId": "packer",
+  "subcategoryId": "packer-validate",
+  "title": "Syntax only check",
+  "command": "packer validate -syntax-only .",
+  "description": "Check syntax without validating config."
+}

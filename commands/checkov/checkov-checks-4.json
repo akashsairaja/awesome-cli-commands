@@ -1,0 +1,8 @@
+{
+  "id": "checkov-checks-4",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-checks",
+  "title": "Skip via comment",
+  "command": "# checkov:skip=CKV_AWS_1:Reason for skipping",
+  "description": "Skip check via inline comment."
+}

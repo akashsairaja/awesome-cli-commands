@@ -1,0 +1,9 @@
+{
+  "id": "ansible-vault-encrypt-string",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-vault",
+  "title": "Encrypt String",
+  "command": "ansible-vault encrypt_string 'secret_value' --name 'my_secret'",
+  "description": "Encrypt a single variable value",
+  "tags": ["vault", "encrypt", "string"]
+}

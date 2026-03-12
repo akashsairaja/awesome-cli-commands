@@ -1,0 +1,9 @@
+{
+  "id": "supabase-storage-delete",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-storage",
+  "title": "Delete file from storage",
+  "command": "supabase storage rm supabase://bucket/file.png --linked",
+  "description": "Delete file from remote storage",
+  "tags": ["storage", "delete", "remove"]
+}

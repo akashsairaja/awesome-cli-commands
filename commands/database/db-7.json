@@ -1,0 +1,8 @@
+{
+  "id": "db-7",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Connect to MySQL",
+  "command": "mysql -h localhost -u root -p dbname",
+  "description": "Connect to MySQL database (prompts for password)."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "py-12",
+  "categoryId": "python",
+  "subcategoryId": "python-pip",
+  "title": "Clear pip cache",
+  "command": "pip cache purge",
+  "description": "Remove all cached package files."
+}

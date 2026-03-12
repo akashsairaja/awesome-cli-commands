@@ -1,0 +1,8 @@
+{
+  "id": "mongo-gs-1",
+  "title": "Run MongoDB with Docker",
+  "command": "docker run -d -p 27017:27017 --name mongodb mongo:latest",
+  "description": "Start MongoDB server in a Docker container on port 27017",
+  "categoryId": "mongodb",
+  "subcategoryId": "getting-started"
+}

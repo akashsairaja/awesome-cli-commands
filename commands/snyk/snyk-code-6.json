@@ -1,0 +1,8 @@
+{
+  "id": "snyk-code-6",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-code",
+  "title": "Exclude paths",
+  "command": "snyk code test --exclude=test,dist,node_modules",
+  "description": "Exclude directories from code analysis."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "make-targets-5",
+  "categoryId": "make",
+  "subcategoryId": "make-targets",
+  "title": "Run tests",
+  "command": "make test",
+  "description": "Run test suite."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "git-53",
+  "categoryId": "git",
+  "subcategoryId": "stash",
+  "title": "Apply stash",
+  "command": "git stash apply",
+  "description": "Apply latest stash, keep in list."
+}

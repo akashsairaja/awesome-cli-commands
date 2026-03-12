@@ -1,0 +1,8 @@
+{
+  "id": "nats-consumer-6",
+  "categoryId": "nats",
+  "subcategoryId": "nats-consumer",
+  "title": "Pause consumer",
+  "command": "nats consumer pause ORDERS DISPATCH",
+  "description": "Temporarily suspend consumer (NATS 2.11+)."
+}

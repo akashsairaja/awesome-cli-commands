@@ -1,0 +1,8 @@
+{
+  "id": "claude-55",
+  "categoryId": "claudecode",
+  "subcategoryId": "mcp",
+  "title": "View MCP status in session",
+  "command": "/mcp list",
+  "description": "View MCP server status in interactive mode."
+}

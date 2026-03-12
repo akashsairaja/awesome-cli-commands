@@ -1,0 +1,8 @@
+{
+  "id": "git-67",
+  "categoryId": "git",
+  "subcategoryId": "remote",
+  "title": "List remotes",
+  "command": "git remote -v",
+  "description": "Show remote repositories with URLs."
+}

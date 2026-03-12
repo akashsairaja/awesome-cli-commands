@@ -1,0 +1,8 @@
+{
+  "id": "flux-helm-4",
+  "categoryId": "flux",
+  "subcategoryId": "flux-helm",
+  "title": "Export HelmRelease",
+  "command": "flux export helmrelease nginx > nginx-helmrelease.yaml",
+  "description": "Export HelmRelease to YAML."
+}

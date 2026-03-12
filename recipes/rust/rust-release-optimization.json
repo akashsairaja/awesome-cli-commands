@@ -1,0 +1,56 @@
+{
+  "id": "rust-release-optimization",
+  "stackId": "rust",
+  "name": "Optimize Release Builds for Size and Speed",
+  "description": "Tune Cargo release profiles to produce smaller, faster binaries using LTO, codegen units, and stripping.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "tags": ["optimization", "release", "binary-size", "performance"],
+  "prerequisites": ["Rust toolchain installed", "A Cargo project"],
+  "steps": [
+    {
+      "title": "Configure release profile in Cargo.toml",
+      "description": "Add optimization settings to the release profile for smaller and faster builds.",
+      "command": "cat >> Cargo.toml << 'EOF'\n\n[profile.release]\nopt-level = 3\nlto = true\ncodegen-units = 1\npanic = \"abort\"\nstrip = true\nEOF",
+      "tip": "codegen-units = 1 produces better optimized code but increases compile time."
+    },
+    {
+      "title": "Build the optimized release binary",
+      "description": "Compile with the release profile to apply all optimizations.",
+      "command": "cargo build --release"
+    },
+    {
+      "title": "Compare debug vs release binary size",
+      "description": "Check the size difference between debug and release builds.",
+      "command": "cargo build 2>/dev/null && cargo build --release 2>/dev/null && ls -lh target/debug/myapp target/release/myapp"
+    },
+    {
+      "title": "Optimize for size instead of speed",
+      "description": "Use opt-level 's' or 'z' when binary size matters more than raw speed.",
+      "command": "cat > Cargo.toml.size-opt << 'EOF'\n[profile.release]\nopt-level = \"z\"\nlto = true\ncodegen-units = 1\npanic = \"abort\"\nstrip = true\nEOF\necho 'Append the above to Cargo.toml for size-optimized builds'",
+      "tip": "opt-level 'z' optimizes aggressively for size. 's' is a balance between size and speed."
+    },
+    {
+      "title": "Analyze binary size with cargo-bloat",
+      "description": "Find which functions and crates contribute most to the binary size.",
+      "command": "cargo install cargo-bloat && cargo bloat --release -n 20"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Rust Release Optimization\nset -euo pipefail\n\necho \"=== Debug Build ===\"\ncargo build 2>&1 | tail -1\nDEBUG_SIZE=$(stat -f%z target/debug/myapp 2>/dev/null || stat -c%s target/debug/myapp 2>/dev/null || echo \"0\")\n\necho \"\"\necho \"=== Release Build ===\"\ncargo build --release 2>&1 | tail -1\nRELEASE_SIZE=$(stat -f%z target/release/myapp 2>/dev/null || stat -c%s target/release/myapp 2>/dev/null || echo \"0\")\n\necho \"\"\necho \"=== Size Comparison ===\"\necho \"Debug:   $(numfmt --to=iec $DEBUG_SIZE 2>/dev/null || echo \"${DEBUG_SIZE} bytes\")\"\necho \"Release: $(numfmt --to=iec $RELEASE_SIZE 2>/dev/null || echo \"${RELEASE_SIZE} bytes\")\"\n\necho \"\"\necho \"=== Optimization Profile ===\"\necho \"[profile.release]\"\necho \"opt-level = 3        # Max speed (use 'z' for min size)\"\necho \"lto = true           # Link-time optimization\"\necho \"codegen-units = 1    # Better optimization, slower compile\"\necho \"panic = \"abort\"      # Smaller binary, no unwinding\"\necho \"strip = true         # Remove debug symbols\"",
+  "faq": [
+    {
+      "question": "What does LTO do and why does it slow compilation?",
+      "answer": "Link-Time Optimization (LTO) performs optimizations across all crates at link time, producing faster and smaller binaries. It is slow because it processes the entire program as one unit instead of per-crate."
+    },
+    {
+      "question": "Should I always use panic = abort?",
+      "answer": "panic = abort reduces binary size and slightly improves performance, but you lose the ability to catch panics. Do not use it if your code relies on catch_unwind or if you need stack unwinding for cleanup."
+    },
+    {
+      "question": "What is the typical size reduction from these optimizations?",
+      "answer": "A typical Rust binary can shrink 50-80% from debug to optimized release. LTO and strip contribute the most. A 50MB debug binary might become 5-10MB after full optimization."
+    }
+  ],
+  "relatedRecipes": ["rust-cross-compile", "rust-publish-crate"],
+  "lastUpdated": "2026-03-11"
+}

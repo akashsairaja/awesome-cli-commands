@@ -1,0 +1,8 @@
+{
+  "id": "databricks-23",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-workspace",
+  "title": "Export directory",
+  "command": "databricks workspace export-dir /remote/path ./local/path",
+  "description": "Export entire workspace directory recursively."
+}

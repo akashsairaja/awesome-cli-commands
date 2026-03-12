@@ -1,0 +1,8 @@
+{
+  "id": "jest-gs-4",
+  "title": "Initialize Jest config",
+  "command": "npx jest --init",
+  "description": "Generate a jest.config.js file with interactive prompts",
+  "categoryId": "jest",
+  "subcategoryId": "getting-started"
+}

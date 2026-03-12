@@ -1,0 +1,8 @@
+{
+  "id": "kafka-trouble-2",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-troubleshooting",
+  "title": "Inspect cluster metadata",
+  "command": "kafka-metadata-shell.sh --snapshot /tmp/metadata/__cluster_metadata-0/*.log",
+  "description": "Examine KRaft cluster metadata logs."
+}

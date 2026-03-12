@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-run-logs",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-run",
+  "title": "View Service Logs",
+  "command": "gcloud run services logs read <service> --region=<region>",
+  "description": "Read logs from Cloud Run service",
+  "tags": ["run", "logs", "debug"]
+}

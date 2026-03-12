@@ -1,0 +1,54 @@
+{
+  "id": "log-analysis-journalctl",
+  "stackId": "linux",
+  "name": "Log Analysis with journalctl",
+  "description": "Search, filter, and analyze systemd journal logs to diagnose service failures, boot issues, and system errors.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": false,
+  "tags": ["logs", "journalctl", "debugging", "systemd"],
+  "prerequisites": ["Linux with systemd"],
+  "steps": [
+    {
+      "title": "View logs for a specific service",
+      "description": "Show all logs from a specific systemd service.",
+      "command": "journalctl -u nginx --no-pager -n 50"
+    },
+    {
+      "title": "Follow logs in real time",
+      "description": "Stream new log entries as they are written.",
+      "command": "journalctl -u nginx -f"
+    },
+    {
+      "title": "Filter logs by time range",
+      "description": "View logs from a specific time period.",
+      "command": "journalctl --since '1 hour ago' --until 'now' --priority=err",
+      "tip": "Priority levels: emerg, alert, crit, err, warning, notice, info, debug. Use --priority=err to see only errors and above."
+    },
+    {
+      "title": "View boot logs",
+      "description": "Show logs from the current or a previous boot.",
+      "command": "journalctl -b -1 --priority=warning",
+      "tip": "-b 0 is the current boot, -b -1 is the previous boot. Use --list-boots to see available boot IDs."
+    },
+    {
+      "title": "Check journal disk usage",
+      "description": "See how much disk space the journal logs are consuming.",
+      "command": "journalctl --disk-usage",
+      "tip": "Use 'sudo journalctl --vacuum-size=500M' to reduce journal size to 500MB."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Log Analysis with journalctl\nset -euo pipefail\n\necho \"=== Journal Disk Usage ===\"\njournalctl --disk-usage\n\necho \"\"\necho \"=== Recent Errors (last hour) ===\"\njournalctl --since '1 hour ago' --priority=err --no-pager -n 20 2>/dev/null || echo \"No errors\"\n\necho \"\"\necho \"=== Available Boots ===\"\njournalctl --list-boots | tail -5\n\necho \"\"\necho \"=== Failed Services Logs ===\"\nfor service in $(systemctl list-units --type=service --state=failed --no-legend | awk '{print $1}'); do\n  echo \"--- $service ---\"\n  journalctl -u \"$service\" --no-pager -n 10\n  echo \"\"\ndone\n\necho \"\"\necho \"=== Log Commands ===\"\necho \"Service:    journalctl -u <service> -f\"\necho \"Errors:     journalctl --priority=err --since '1h ago'\"\necho \"Boot:       journalctl -b -1\"\necho \"Kernel:     journalctl -k\"\necho \"Vacuum:     sudo journalctl --vacuum-size=500M\"",
+  "faq": [
+    {
+      "question": "How do I make journal logs persistent across reboots?",
+      "answer": "Create the persistent storage directory: 'sudo mkdir -p /var/log/journal'. Then restart journald: 'sudo systemctl restart systemd-journald'. Logs will persist across reboots."
+    },
+    {
+      "question": "Can I export journal logs to a file?",
+      "answer": "Yes. Use 'journalctl -u nginx --since today > nginx.log' for text, or 'journalctl -u nginx -o json > nginx.json' for structured JSON output."
+    }
+  ],
+  "relatedRecipes": ["process-management-systemd", "system-monitoring-dashboard"],
+  "lastUpdated": "2026-03-11"
+}

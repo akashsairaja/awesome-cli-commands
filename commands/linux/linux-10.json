@@ -1,0 +1,8 @@
+{
+  "id": "linux-10",
+  "categoryId": "linux",
+  "subcategoryId": "processes",
+  "title": "Background process with nohup",
+  "command": "nohup ./script.sh > output.log 2>&1 &",
+  "description": "Run script in background, survives logout."
+}

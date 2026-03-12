@@ -1,0 +1,8 @@
+{
+  "id": "go-work-1",
+  "categoryId": "go",
+  "subcategoryId": "go-work",
+  "title": "Initialize workspace",
+  "command": "go work init ./module1 ./module2",
+  "description": "Create go.work file for multi-module development."
+}

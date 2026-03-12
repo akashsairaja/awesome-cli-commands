@@ -1,0 +1,8 @@
+{
+  "id": "java-gs-2",
+  "title": "Check Java version",
+  "command": "java --version",
+  "description": "Display the installed Java runtime version",
+  "categoryId": "java",
+  "subcategoryId": "getting-started"
+}

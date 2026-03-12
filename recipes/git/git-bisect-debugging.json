@@ -1,0 +1,73 @@
+{
+  "id": "git-bisect-debugging",
+  "stackId": "git",
+  "name": "Binary Search for Bug-Introducing Commits with Bisect",
+  "description": "Use git bisect to perform an efficient binary search through commit history and pinpoint the exact commit that introduced a bug.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "trending": true,
+  "trendingReason": "As codebases grow, bisect is increasingly used in CI pipelines to auto-detect regressions across hundreds of commits.",
+  "tags": ["bisect", "debugging", "binary-search", "regression", "testing"],
+  "prerequisites": [
+    "Git installed",
+    "A known good commit where the bug did not exist",
+    "A way to test whether the bug is present (manual or script)"
+  ],
+  "steps": [
+    {
+      "title": "Start the bisect session",
+      "command": "git bisect start",
+      "description": "Initialize bisect mode. Git will guide you through a binary search of commits between a known good and bad state."
+    },
+    {
+      "title": "Mark the current commit as bad",
+      "command": "git bisect bad",
+      "description": "Tell Git that the current HEAD contains the bug. This sets the upper bound of the search range.",
+      "tip": "You can also specify a commit hash: 'git bisect bad <hash>' if HEAD is not the bad commit."
+    },
+    {
+      "title": "Mark a known good commit",
+      "command": "git bisect good v2.1.0",
+      "description": "Provide a tag, branch, or commit hash where the bug was not present. Git will now check out the midpoint between good and bad.",
+      "tip": "If unsure which commit was good, try a commit from a few weeks ago and narrow down from there."
+    },
+    {
+      "title": "Test and mark each bisect step",
+      "command": "# Run your test, then mark:\ngit bisect good\n# or if the bug is present:\ngit bisect bad",
+      "description": "Git checks out a commit halfway between good and bad. Test it, then mark it. Git halves the range each time, finding the culprit in O(log n) steps.",
+      "warning": "If a commit cannot be tested (e.g., it does not build), use 'git bisect skip' to skip it. Git will try a nearby commit instead."
+    },
+    {
+      "title": "Automate bisect with a test script",
+      "command": "git bisect run npm test",
+      "description": "Provide a command that exits 0 for good and non-zero for bad. Git will run it at each step automatically until it finds the first bad commit.",
+      "tip": "You can use any script: 'git bisect run ./test-bug.sh'. The script must be in the working tree or an absolute path."
+    },
+    {
+      "title": "End the bisect session",
+      "command": "git bisect reset",
+      "description": "Return to the original HEAD and end bisect mode. Git will output the first bad commit hash before resetting."
+    }
+  ],
+  "fullScript": "#!/usr/bin/env bash\n# git-bisect-debug.sh — Automated bisect with a test command\nset -euo pipefail\n\nGOOD_REF=\"${1:?Usage: $0 <good-ref> <bad-ref> <test-command>}\"\nBAD_REF=\"${2:?Usage: $0 <good-ref> <bad-ref> <test-command>}\"\nTEST_CMD=\"${3:?Usage: $0 <good-ref> <bad-ref> <test-command>}\"\n\necho \"Starting bisect...\"\necho \"  Good: $GOOD_REF\"\necho \"  Bad:  $BAD_REF\"\necho \"  Test: $TEST_CMD\"\necho \"\"\n\ngit bisect start\ngit bisect bad \"$BAD_REF\"\ngit bisect good \"$GOOD_REF\"\n\necho \"\"\necho \"Running automated bisect with: $TEST_CMD\"\necho \"=========================================\"\ngit bisect run $TEST_CMD\n\necho \"\"\necho \"=== Bisect result ===\"\ngit bisect log | tail -5\n\necho \"\"\necho \"Resetting to original HEAD...\"\ngit bisect reset\necho \"Done.\"",
+  "faq": [
+    {
+      "question": "How many steps does bisect take to find the bad commit?",
+      "answer": "Bisect uses binary search, so it takes approximately log2(n) steps where n is the number of commits in the range. For 1000 commits, that is roughly 10 steps."
+    },
+    {
+      "question": "What if a commit in the range cannot be tested?",
+      "answer": "Use 'git bisect skip' to tell Git to try a different nearby commit. If too many commits are skipped, Git may not be able to pinpoint the exact first bad commit but will narrow the range."
+    },
+    {
+      "question": "Can I bisect for a fix instead of a bug (find the first good commit)?",
+      "answer": "Yes. Swap the meanings: mark the commit where the fix is present as 'good' and where it is absent as 'bad'. Alternatively, use 'git bisect terms' to define custom terms like 'old' and 'new'."
+    }
+  ],
+  "relatedRecipes": [
+    "git-blame-archaeology",
+    "interactive-rebase-workflow",
+    "git-hooks-automation"
+  ],
+  "lastUpdated": "2026-03-11"
+}

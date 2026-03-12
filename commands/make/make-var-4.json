@@ -1,0 +1,8 @@
+{
+  "id": "make-var-4",
+  "categoryId": "make",
+  "subcategoryId": "make-variables",
+  "title": "Conditional set",
+  "command": "CC ?= gcc",
+  "description": "Set only if not already defined."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tf-state-14",
+  "categoryId": "terraform",
+  "subcategoryId": "state",
+  "title": "Import resource",
+  "command": "terraform import aws_instance.example i-1234567890abcdef0",
+  "description": "Import existing infrastructure into state."
+}

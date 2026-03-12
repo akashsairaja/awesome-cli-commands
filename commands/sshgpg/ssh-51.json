@@ -1,0 +1,8 @@
+{
+  "id": "ssh-51",
+  "categoryId": "sshgpg",
+  "subcategoryId": "config",
+  "title": "AddKeysToAgent config",
+  "command": "Host *\n  AddKeysToAgent yes\n  IdentityFile ~/.ssh/id_ed25519",
+  "description": "Auto-add keys to agent on first use."
+}

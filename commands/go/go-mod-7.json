@@ -1,0 +1,8 @@
+{
+  "id": "go-mod-7",
+  "categoryId": "go",
+  "subcategoryId": "go-mod",
+  "title": "Explain why needed",
+  "command": "go mod why golang.org/x/sync",
+  "description": "Explain why a package/module is needed."
+}

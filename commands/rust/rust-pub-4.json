@@ -1,0 +1,8 @@
+{
+  "id": "rust-pub-4",
+  "categoryId": "rust",
+  "subcategoryId": "rust-publish",
+  "title": "Publish to crates.io",
+  "command": "cargo publish",
+  "description": "Publish crate to registry."
+}

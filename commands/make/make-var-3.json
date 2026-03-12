@@ -1,0 +1,8 @@
+{
+  "id": "make-var-3",
+  "categoryId": "make",
+  "subcategoryId": "make-variables",
+  "title": "Append to variable",
+  "command": "CFLAGS += -O2",
+  "description": "Add to existing value."
+}

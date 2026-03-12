@@ -1,0 +1,8 @@
+{
+  "id": "go-test-8",
+  "categoryId": "go",
+  "subcategoryId": "go-test",
+  "title": "Disable test caching",
+  "command": "go test -count=1 ./...",
+  "description": "Force re-run tests (bypass cache)."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "task-syntax-1",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-syntax",
+  "title": "Basic task",
+  "command": "tasks:\n  build:\n    cmds:\n      - go build -o app .",
+  "description": "Basic task definition."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ps-86",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-remoting",
+  "title": "Close session",
+  "command": "Remove-PSSession -Session $session",
+  "description": "Close remote session."
+}

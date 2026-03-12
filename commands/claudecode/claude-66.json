@@ -1,0 +1,8 @@
+{
+  "id": "claude-66",
+  "categoryId": "claudecode",
+  "subcategoryId": "workflows",
+  "title": "Fix failing tests",
+  "command": "claude \"fix the failing tests\"",
+  "description": "Analyze and fix test failures."
+}

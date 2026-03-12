@@ -1,0 +1,9 @@
+{
+  "id": "curl-upload-put",
+  "categoryId": "curl",
+  "subcategoryId": "curl-download",
+  "title": "Upload with PUT",
+  "command": "curl -T file.txt https://api.example.com/upload",
+  "description": "Upload file using PUT method",
+  "tags": ["upload", "put", "file"]
+}

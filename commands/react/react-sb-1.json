@@ -1,0 +1,8 @@
+{
+  "id": "react-sb-1",
+  "categoryId": "react",
+  "subcategoryId": "react-storybook",
+  "title": "Initialize Storybook",
+  "command": "npx storybook@latest init",
+  "description": "Add Storybook to existing project (auto-detects)."
+}

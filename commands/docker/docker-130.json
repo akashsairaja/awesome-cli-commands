@@ -1,0 +1,8 @@
+{
+  "id": "docker-130",
+  "categoryId": "docker",
+  "subcategoryId": "swarm",
+  "title": "Update service image",
+  "command": "docker service update --image <image>:<tag> <service>",
+  "description": "Rolling update service image."
+}

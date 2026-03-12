@@ -1,0 +1,8 @@
+{
+  "id": "hurl-options-5",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-options",
+  "title": "Retry on failure",
+  "command": "hurl --retry 3 api.hurl",
+  "description": "Retry failed requests."
+}

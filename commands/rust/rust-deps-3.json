@@ -1,0 +1,8 @@
+{
+  "id": "rust-deps-3",
+  "categoryId": "rust",
+  "subcategoryId": "rust-deps",
+  "title": "Show dependency tree",
+  "command": "cargo tree",
+  "description": "Display dependency tree."
+}

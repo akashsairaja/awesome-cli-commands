@@ -1,0 +1,8 @@
+{
+  "id": "pg-admin-1",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-admin",
+  "title": "Create database",
+  "command": "CREATE DATABASE mydb;",
+  "description": "Create a new database."
+}

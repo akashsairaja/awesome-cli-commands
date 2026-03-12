@@ -1,0 +1,9 @@
+{
+  "id": "netlify-sites-delete",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-sites",
+  "title": "Delete site",
+  "command": "netlify sites:delete <site-id>",
+  "description": "Delete a site from Netlify",
+  "tags": ["sites", "delete", "remove"]
+}

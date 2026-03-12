@@ -1,0 +1,8 @@
+{
+  "id": "git-130",
+  "categoryId": "git",
+  "subcategoryId": "cleanup",
+  "title": "Clean including ignored",
+  "command": "git clean -f -d -x",
+  "description": "Remove untracked and ignored files."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "vim-22",
+  "categoryId": "vim",
+  "subcategoryId": "buffers",
+  "title": "Open file",
+  "command": ":e file",
+  "description": "Open file in buffer."
+}

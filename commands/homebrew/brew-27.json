@@ -1,0 +1,8 @@
+{
+  "id": "brew-27",
+  "categoryId": "homebrew",
+  "subcategoryId": "casks",
+  "title": "Force cask upgrade",
+  "command": "brew upgrade --cask <app> --greedy",
+  "description": "Upgrade even without version change."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "pg-conn-2",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-connection",
+  "title": "Connect with URL",
+  "command": "psql postgresql://user:pass@localhost:5432/mydb",
+  "description": "Connect using connection string."
+}

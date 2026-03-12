@@ -1,0 +1,8 @@
+{
+  "id": "vim-35",
+  "categoryId": "vim",
+  "subcategoryId": "visual-mode",
+  "title": "Block insert at start",
+  "command": "I",
+  "description": "Insert text at start of each line (block mode)."
+}

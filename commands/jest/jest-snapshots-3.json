@@ -1,0 +1,8 @@
+{
+  "id": "jest-snapshots-3",
+  "categoryId": "jest",
+  "subcategoryId": "jest-snapshots",
+  "title": "Clear cache",
+  "command": "jest --clearCache",
+  "description": "Delete Jest cache directory."
+}

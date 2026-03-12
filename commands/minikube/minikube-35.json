@@ -1,0 +1,8 @@
+{
+  "id": "minikube-35",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-image",
+  "title": "Load image to cluster",
+  "command": "minikube image load <image>",
+  "description": "Load local Docker image into cluster."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "fd-5",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-fd",
+  "title": "Exclude pattern",
+  "command": "fd -E node_modules pattern",
+  "description": "Exclude directories from search."
+}

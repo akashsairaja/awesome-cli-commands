@@ -1,0 +1,9 @@
+{
+  "id": "curl-insecure",
+  "categoryId": "curl",
+  "subcategoryId": "curl-auth",
+  "title": "Ignore SSL errors",
+  "command": "curl -k https://self-signed.example.com",
+  "description": "Allow insecure SSL connections",
+  "tags": ["ssl", "insecure", "skip"]
+}

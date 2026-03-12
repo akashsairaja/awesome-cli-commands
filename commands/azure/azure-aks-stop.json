@@ -1,0 +1,9 @@
+{
+  "id": "azure-aks-stop",
+  "categoryId": "azure",
+  "subcategoryId": "azure-aks",
+  "title": "Stop AKS Cluster",
+  "command": "az aks stop --resource-group <rg> --name <cluster>",
+  "description": "Stop AKS cluster to save costs",
+  "tags": ["aks", "stop", "cost"]
+}

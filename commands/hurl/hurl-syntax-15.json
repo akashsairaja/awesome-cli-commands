@@ -1,0 +1,8 @@
+{
+  "id": "hurl-syntax-15",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-syntax",
+  "title": "Capture cookie",
+  "command": "GET https://api.example.com/login\nHTTP 200\n[Captures]\nsession_id: cookie \"JSESSIONID\"",
+  "description": "Capture a cookie value."
+}

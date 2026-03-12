@@ -1,0 +1,8 @@
+{
+  "id": "az-gs-4",
+  "title": "Login to Azure",
+  "command": "az login",
+  "description": "Authenticate with Azure using interactive browser login",
+  "categoryId": "azure",
+  "subcategoryId": "getting-started"
+}

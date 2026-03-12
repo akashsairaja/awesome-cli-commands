@@ -1,0 +1,8 @@
+{
+  "id": "vault-policy-4",
+  "categoryId": "vault",
+  "subcategoryId": "vault-policy",
+  "title": "Delete policy",
+  "command": "vault policy delete myapp-policy",
+  "description": "Delete a policy."
+}

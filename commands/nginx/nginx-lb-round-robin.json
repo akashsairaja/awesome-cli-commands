@@ -1,0 +1,9 @@
+{
+  "id": "nginx-lb-round-robin",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-reverse-proxy",
+  "title": "Load balance round-robin",
+  "command": "upstream backend { server 127.0.0.1:3001; server 127.0.0.1:3002; }",
+  "description": "Distribute traffic across multiple backends",
+  "tags": ["proxy", "load-balance", "round-robin", "upstream"]
+}

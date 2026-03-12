@@ -1,0 +1,9 @@
+{
+  "id": "redis-select",
+  "categoryId": "redis",
+  "subcategoryId": "redis-server",
+  "title": "Select database",
+  "command": "SELECT index",
+  "description": "Switch to different database (0-15)",
+  "tags": ["select", "database", "switch"]
+}

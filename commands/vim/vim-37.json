@@ -1,0 +1,8 @@
+{
+  "id": "vim-37",
+  "categoryId": "vim",
+  "subcategoryId": "windows-tabs",
+  "title": "Vertical split",
+  "command": ":vsplit",
+  "description": "Split window vertically."
+}

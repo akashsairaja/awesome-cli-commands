@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-gke-upgrade",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-gke",
+  "title": "Upgrade GKE Cluster",
+  "command": "gcloud container clusters upgrade <name> --zone=<zone> --master",
+  "description": "Upgrade cluster control plane",
+  "tags": ["gke", "upgrade", "version"]
+}

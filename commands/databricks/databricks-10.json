@@ -1,0 +1,8 @@
+{
+  "id": "databricks-10",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-jobs",
+  "title": "List all jobs",
+  "command": "databricks jobs list",
+  "description": "List all jobs in the workspace."
+}

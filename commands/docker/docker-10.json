@@ -1,0 +1,8 @@
+{
+  "id": "docker-10",
+  "categoryId": "docker",
+  "subcategoryId": "containers",
+  "title": "Run with health check",
+  "command": "docker run -d --health-cmd='curl -f http://localhost/' --health-interval=30s <image>",
+  "description": "Run container with custom health check."
+}

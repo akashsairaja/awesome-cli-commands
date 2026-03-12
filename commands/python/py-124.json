@@ -1,0 +1,8 @@
+{
+  "id": "py-124",
+  "categoryId": "python",
+  "subcategoryId": "python-mypy",
+  "title": "Disallow untyped defs",
+  "command": "mypy --disallow-untyped-defs src/",
+  "description": "Error on functions without type annotations."
+}

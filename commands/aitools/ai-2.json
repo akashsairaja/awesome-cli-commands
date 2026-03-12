@@ -1,0 +1,8 @@
+{
+  "id": "ai-2",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-codex",
+  "title": "Dry run mode",
+  "command": "codex --dry-run \"delete all .tmp files\"",
+  "description": "Preview commands without executing them."
+}

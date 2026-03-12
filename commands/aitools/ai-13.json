@@ -1,0 +1,8 @@
+{
+  "id": "ai-13",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-shellgpt",
+  "title": "Execute generated command",
+  "command": "sgpt --shell --execute \"list all running docker containers\"",
+  "description": "Generate and execute a shell command."
+}

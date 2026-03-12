@@ -1,0 +1,8 @@
+{
+  "id": "bash-23",
+  "categoryId": "bash",
+  "subcategoryId": "variables",
+  "title": "Command substitution",
+  "command": "result=$(command)",
+  "description": "Capture command output in variable."
+}

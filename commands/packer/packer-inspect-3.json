@@ -1,0 +1,8 @@
+{
+  "id": "packer-inspect-3",
+  "categoryId": "packer",
+  "subcategoryId": "packer-inspect",
+  "title": "Check formatting",
+  "command": "packer fmt -check .",
+  "description": "Check if templates are formatted."
+}

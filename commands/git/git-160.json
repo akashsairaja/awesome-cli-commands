@@ -1,0 +1,8 @@
+{
+  "id": "git-160",
+  "categoryId": "git",
+  "subcategoryId": "sparse-checkout",
+  "title": "Reapply sparse checkout",
+  "command": "git sparse-checkout reapply",
+  "description": "Reapply sparse checkout rules to working tree."
+}

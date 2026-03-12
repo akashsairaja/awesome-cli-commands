@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-run-delete",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-run",
+  "title": "Delete Cloud Run Service",
+  "command": "gcloud run services delete <service> --region=<region>",
+  "description": "Delete a Cloud Run service",
+  "tags": ["run", "delete", "cleanup"]
+}

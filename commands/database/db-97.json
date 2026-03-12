@@ -1,0 +1,8 @@
+{
+  "id": "db-97",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Check table for errors",
+  "command": "CHECK TABLE tablename;",
+  "description": "Check a table for storage engine errors."
+}

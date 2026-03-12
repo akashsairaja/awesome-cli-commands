@@ -1,0 +1,8 @@
+{
+  "id": "aws-ecs-4",
+  "categoryId": "aws",
+  "subcategoryId": "ecs",
+  "title": "Force deployment",
+  "command": "aws ecs update-service --cluster mycluster --service myservice --force-new-deployment",
+  "description": "Force new deployment."
+}

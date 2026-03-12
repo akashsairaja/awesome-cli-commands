@@ -1,0 +1,8 @@
+{
+  "id": "apt-48",
+  "categoryId": "ubuntu",
+  "subcategoryId": "users",
+  "title": "Change user login shell",
+  "command": "sudo usermod -s /bin/zsh <username>",
+  "description": "Change the default login shell for a user."
+}

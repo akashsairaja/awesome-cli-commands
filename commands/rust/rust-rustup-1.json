@@ -1,0 +1,8 @@
+{
+  "id": "rust-rustup-1",
+  "categoryId": "rust",
+  "subcategoryId": "rust-rustup",
+  "title": "Update toolchains",
+  "command": "rustup update",
+  "description": "Update all installed toolchains."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "claude-28",
+  "categoryId": "claudecode",
+  "subcategoryId": "context",
+  "title": "Clear conversation",
+  "command": "/clear",
+  "description": "Clear conversation history completely."
+}

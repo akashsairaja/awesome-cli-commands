@@ -1,0 +1,8 @@
+{
+  "id": "ai-23",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-aider",
+  "title": "Drop file (in session)",
+  "command": "/drop filename.py",
+  "description": "Remove a file from the chat context."
+}

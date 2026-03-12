@@ -1,0 +1,9 @@
+{
+  "id": "supabase-db-diff",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-db",
+  "title": "Show schema diff",
+  "command": "supabase db diff",
+  "description": "Show differences between local and remote schema",
+  "tags": ["db", "diff", "schema"]
+}

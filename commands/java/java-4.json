@@ -1,0 +1,8 @@
+{
+  "id": "java-4",
+  "categoryId": "java",
+  "subcategoryId": "java-compiler",
+  "title": "Compile with all warnings",
+  "command": "javac -Xlint:all MyClass.java",
+  "description": "Enable all compiler warnings for better code quality."
+}

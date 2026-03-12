@@ -1,0 +1,9 @@
+{
+  "id": "curl-get-verbose",
+  "categoryId": "curl",
+  "subcategoryId": "curl-requests",
+  "title": "GET with verbose output",
+  "command": "curl -v https://api.example.com/resource",
+  "description": "GET request with detailed output",
+  "tags": ["get", "verbose", "debug"]
+}

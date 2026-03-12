@@ -1,0 +1,8 @@
+{
+  "id": "bash-70",
+  "categoryId": "bash",
+  "subcategoryId": "strings",
+  "title": "Remove suffix",
+  "command": "echo \"${str%suffix}\"",
+  "description": "Remove shortest suffix match."
+}

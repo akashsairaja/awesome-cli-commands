@@ -1,0 +1,8 @@
+{
+  "id": "go-mod-2",
+  "categoryId": "go",
+  "subcategoryId": "go-mod",
+  "title": "Tidy dependencies",
+  "command": "go mod tidy",
+  "description": "Add missing and remove unused dependencies."
+}

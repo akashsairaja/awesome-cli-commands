@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-uninstall-1",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-uninstall",
+  "title": "Uninstall CA",
+  "command": "mkcert -uninstall",
+  "description": "Remove CA from trust stores."
+}

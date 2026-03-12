@@ -1,0 +1,8 @@
+{
+  "id": "make-targets-1",
+  "categoryId": "make",
+  "subcategoryId": "make-targets",
+  "title": "Build all",
+  "command": "make all",
+  "description": "Build all targets (convention)."
+}

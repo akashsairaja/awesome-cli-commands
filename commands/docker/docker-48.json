@@ -1,0 +1,8 @@
+{
+  "id": "docker-48",
+  "categoryId": "docker",
+  "subcategoryId": "images",
+  "title": "List dangling images",
+  "command": "docker images -f dangling=true",
+  "description": "Show untagged images."
+}

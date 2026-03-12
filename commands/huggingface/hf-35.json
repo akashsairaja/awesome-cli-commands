@@ -1,0 +1,8 @@
+{
+  "id": "hf-35",
+  "categoryId": "huggingface",
+  "subcategoryId": "hf-cache",
+  "title": "Show cache path",
+  "command": "python -c \"from huggingface_hub import HfFolder; print(HfFolder.cache_dir)\"",
+  "description": "Display the current cache directory path."
+}

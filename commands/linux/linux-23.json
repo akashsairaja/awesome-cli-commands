@@ -1,0 +1,8 @@
+{
+  "id": "linux-23",
+  "categoryId": "linux",
+  "subcategoryId": "ssh",
+  "title": "SSH with key file",
+  "command": "ssh -i ~/.ssh/key.pem user@host",
+  "description": "Connect using a specific private key."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "claude-76",
+  "categoryId": "claudecode",
+  "subcategoryId": "utilities",
+  "title": "Manage plugins",
+  "command": "/plugin",
+  "description": "Plugin management interface."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "nats-gs-3",
+  "title": "Start NATS server",
+  "command": "nats-server",
+  "description": "Start a local NATS server with default settings",
+  "categoryId": "nats",
+  "subcategoryId": "getting-started"
+}

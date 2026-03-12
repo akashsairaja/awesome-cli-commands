@@ -1,0 +1,8 @@
+{
+  "id": "mongo-timeseries-3",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-timeseries",
+  "title": "Validate collection",
+  "command": "db.collection.validate({full: true})",
+  "description": "Perform full integrity check on collection."
+}

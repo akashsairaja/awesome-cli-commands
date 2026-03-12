@@ -1,0 +1,8 @@
+{
+  "id": "packer-build-8",
+  "categoryId": "packer",
+  "subcategoryId": "packer-build",
+  "title": "Build with timestamp UI",
+  "command": "packer build -timestamp-ui .",
+  "description": "Show timestamps on each output line."
+}

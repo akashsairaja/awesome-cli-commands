@@ -1,0 +1,8 @@
+{
+  "id": "jest-execution-1",
+  "categoryId": "jest",
+  "subcategoryId": "jest-execution",
+  "title": "Run all tests",
+  "command": "jest",
+  "description": "Run all test files."
+}

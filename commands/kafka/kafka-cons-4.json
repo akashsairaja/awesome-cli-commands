@@ -1,0 +1,8 @@
+{
+  "id": "kafka-cons-4",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-consumer",
+  "title": "With timestamps",
+  "command": "kafka-console-consumer.sh --topic my-topic --bootstrap-server localhost:9092 --property print.timestamp=true",
+  "description": "Show message timestamps."
+}

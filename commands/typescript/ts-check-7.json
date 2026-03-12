@@ -1,0 +1,8 @@
+{
+  "id": "ts-check-7",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-check",
+  "title": "Incremental type checking",
+  "command": "tsc --noEmit --incremental",
+  "description": "Fast type-check only with incremental compilation cache."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ps-71",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-modules",
+  "title": "Find module",
+  "command": "Find-Module -Name Az*",
+  "description": "Search PowerShell Gallery."
+}

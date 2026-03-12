@@ -1,0 +1,8 @@
+{
+  "id": "brew-61",
+  "categoryId": "homebrew",
+  "subcategoryId": "bundle",
+  "title": "Check Brewfile",
+  "command": "brew bundle check",
+  "description": "Check if all deps are installed."
+}

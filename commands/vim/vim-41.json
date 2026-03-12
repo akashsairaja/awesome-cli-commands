@@ -1,0 +1,8 @@
+{
+  "id": "vim-41",
+  "categoryId": "vim",
+  "subcategoryId": "windows-tabs",
+  "title": "Navigate up",
+  "command": "Ctrl+w k",
+  "description": "Move to window above."
+}

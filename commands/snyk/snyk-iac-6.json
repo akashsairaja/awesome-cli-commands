@@ -1,0 +1,8 @@
+{
+  "id": "snyk-iac-6",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-iac",
+  "title": "IaC report to Snyk",
+  "command": "snyk iac test --report",
+  "description": "Send IaC scan results to Snyk dashboard."
+}

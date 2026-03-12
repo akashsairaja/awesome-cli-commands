@@ -1,0 +1,8 @@
+{
+  "id": "ssh-27",
+  "categoryId": "sshgpg",
+  "subcategoryId": "keys",
+  "title": "List GPG secret keys",
+  "command": "gpg --list-secret-keys --keyid-format long",
+  "description": "List GPG private keys with long IDs."
+}

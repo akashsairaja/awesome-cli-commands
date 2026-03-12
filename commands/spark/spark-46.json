@@ -1,0 +1,8 @@
+{
+  "id": "spark-46",
+  "categoryId": "spark",
+  "subcategoryId": "spark-cluster",
+  "title": "YARN queue submission",
+  "command": "spark-submit --master yarn --queue production --deploy-mode cluster app.py",
+  "description": "Submit to specific YARN queue."
+}

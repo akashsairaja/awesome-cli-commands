@@ -1,0 +1,9 @@
+{
+  "id": "supabase-migration-repair",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-migrations",
+  "title": "Repair migrations",
+  "command": "supabase migration repair --status applied <version>",
+  "description": "Repair migration history",
+  "tags": ["migration", "repair", "fix"]
+}

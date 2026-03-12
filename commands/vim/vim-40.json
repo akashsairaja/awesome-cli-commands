@@ -1,0 +1,8 @@
+{
+  "id": "vim-40",
+  "categoryId": "vim",
+  "subcategoryId": "windows-tabs",
+  "title": "Navigate down",
+  "command": "Ctrl+w j",
+  "description": "Move to window below."
+}

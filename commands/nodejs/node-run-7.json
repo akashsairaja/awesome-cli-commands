@@ -1,0 +1,8 @@
+{
+  "id": "node-run-7",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-run",
+  "title": "Run package script",
+  "command": "node --run dev",
+  "description": "Run package.json script (faster than npm run)."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "starship-presets-5",
+  "categoryId": "starship",
+  "subcategoryId": "starship-presets",
+  "title": "Apply Tokyo Night preset",
+  "command": "starship preset tokyo-night -o ~/.config/starship.toml",
+  "description": "Apply Tokyo Night color scheme."
+}

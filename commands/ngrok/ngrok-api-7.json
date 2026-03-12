@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-api-7",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-api",
+  "title": "Replay captured request",
+  "command": "curl -X POST http://localhost:4040/api/requests/http/req_abc123/replay",
+  "description": "Replay a captured request from the inspector."
+}

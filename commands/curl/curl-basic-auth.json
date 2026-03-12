@@ -1,0 +1,9 @@
+{
+  "id": "curl-basic-auth",
+  "categoryId": "curl",
+  "subcategoryId": "curl-auth",
+  "title": "Basic authentication",
+  "command": "curl -u username:password https://api.example.com/resource",
+  "description": "Make request with basic auth",
+  "tags": ["auth", "basic", "login"]
+}

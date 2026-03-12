@@ -1,0 +1,8 @@
+{
+  "id": "task-run-8",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-run",
+  "title": "Show task summary",
+  "command": "task --summary build",
+  "description": "Display task description and details."
+}

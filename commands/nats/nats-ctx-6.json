@@ -1,0 +1,8 @@
+{
+  "id": "nats-ctx-6",
+  "categoryId": "nats",
+  "subcategoryId": "nats-context",
+  "title": "Check RTT",
+  "command": "nats rtt",
+  "description": "Check round-trip time to server."
+}

@@ -1,0 +1,63 @@
+{
+  "id": "python-debug-profiling",
+  "stackId": "python",
+  "name": "Debug and Profile Python Apps from the CLI",
+  "description": "Use Python's built-in debugger (pdb), profiling tools (cProfile), and memory analysis to find bugs and performance bottlenecks from the command line.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "trending": false,
+  "tags": ["debugging", "profiling", "pdb", "cProfile", "performance"],
+  "prerequisites": ["Python 3.8+ installed"],
+  "steps": [
+    {
+      "title": "Run a script with the debugger",
+      "command": "python -m pdb script.py",
+      "description": "Start the script under the Python debugger. Execution pauses at the first line, letting you step through code, set breakpoints, and inspect variables.",
+      "tip": "Use breakpoint() in your code to set inline breakpoints instead of running the entire script under pdb."
+    },
+    {
+      "title": "Run with post-mortem debugging on crash",
+      "command": "python -c \"import pdb; import script; pdb.pm()\"",
+      "description": "If a script crashes, use pdb.pm() to open the debugger at the point of the exception. You can inspect the traceback, local variables, and call stack.",
+      "warning": "The simpler approach is to add 'breakpoint()' on the line before the crash and run normally, which drops you into pdb at that exact location."
+    },
+    {
+      "title": "Profile a script with cProfile",
+      "command": "python -m cProfile -s cumulative script.py",
+      "description": "Run the script with the built-in profiler and sort results by cumulative time. This shows which functions consume the most total time including their callees."
+    },
+    {
+      "title": "Save profiling data and analyze it",
+      "command": "python -m cProfile -o profile.prof script.py && python -m pstats profile.prof",
+      "description": "Save profiling data to a binary file and open the interactive pstats browser. You can sort, filter, and drill into call trees.",
+      "tip": "Use 'snakeviz profile.prof' for a visual flame graph in your browser. Install with pip install snakeviz."
+    },
+    {
+      "title": "Measure memory usage with tracemalloc",
+      "command": "python -c \"import tracemalloc; tracemalloc.start(); exec(open('script.py').read()); snapshot = tracemalloc.take_snapshot(); [print(s) for s in snapshot.statistics('lineno')[:10]]\"",
+      "description": "Trace memory allocations and display the top 10 lines by memory consumption. This helps identify memory leaks and excessive allocations."
+    },
+    {
+      "title": "Time a specific code snippet",
+      "command": "python -m timeit -n 1000 -s 'data = list(range(10000))' 'sorted(data)'",
+      "description": "Benchmark a code snippet by running it 1000 times and reporting the average execution time. The -s flag runs setup code once before timing begins."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Debug and profiling workflow\nset -e\n\n# Create a sample script to debug/profile\ncat > sample_script.py << 'PYEOF'\nimport time\n\ndef slow_function(n):\n    \"\"\"Deliberately slow function for profiling demo.\"\"\"\n    total = 0\n    for i in range(n):\n        total += sum(range(i))\n    return total\n\ndef fast_function(n):\n    \"\"\"Optimized version using math.\"\"\"\n    return sum(i * (i - 1) // 2 for i in range(n))\n\nif __name__ == \"__main__\":\n    n = 500\n    print(f\"Running slow_function({n})...\")\n    result1 = slow_function(n)\n    print(f\"Result: {result1}\")\n\n    print(f\"Running fast_function({n})...\")\n    result2 = fast_function(n)\n    print(f\"Result: {result2}\")\n\n    assert result1 == result2, \"Results should match\"\n    print(\"Both functions produce the same result.\")\nPYEOF\n\necho \"=== Profiling with cProfile ===\"\npython -m cProfile -s cumulative sample_script.py\n\necho \"\"\necho \"=== Timing comparison ===\"\npython -m timeit -n 100 -s 'from sample_script import slow_function' 'slow_function(100)'\npython -m timeit -n 100 -s 'from sample_script import fast_function' 'fast_function(100)'\n\necho \"\"\necho \"Profiling complete. Review the output above to identify bottlenecks.\"",
+  "faq": [
+    {
+      "question": "What are the most useful pdb commands?",
+      "answer": "The essentials: n (next line), s (step into function), c (continue to next breakpoint), p variable (print value), l (list source), w (show call stack), q (quit). Use h for the full command list."
+    },
+    {
+      "question": "How is cProfile different from profile?",
+      "answer": "cProfile is a C extension and has much lower overhead than the pure-Python profile module. Always use cProfile for real profiling. The profile module exists mainly for extending the profiler's functionality."
+    },
+    {
+      "question": "What tools give a visual view of profiling data?",
+      "answer": "snakeviz renders cProfile data as an interactive flame graph in your browser. py-spy is a sampling profiler that can attach to running processes and generate flame graphs without modifying code. Both install via pip."
+    }
+  ],
+  "relatedRecipes": ["python-pytest-testing", "python-mypy-type-checking", "python-ci-pipeline"],
+  "lastUpdated": "2026-03-11"
+}

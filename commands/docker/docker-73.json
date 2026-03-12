@@ -1,0 +1,8 @@
+{
+  "id": "docker-73",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "Start services",
+  "command": "docker compose up",
+  "description": "Create and start all services."
+}

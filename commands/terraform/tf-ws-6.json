@@ -1,0 +1,8 @@
+{
+  "id": "tf-ws-6",
+  "categoryId": "terraform",
+  "subcategoryId": "workspace",
+  "title": "Use in config",
+  "command": "terraform.workspace",
+  "description": "Reference workspace name in configuration."
+}

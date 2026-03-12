@@ -1,0 +1,8 @@
+{
+  "id": "k6-cloud-3",
+  "categoryId": "k6",
+  "subcategoryId": "k6-cloud",
+  "title": "Stream to cloud",
+  "command": "k6 run --out cloud script.js",
+  "description": "Run locally, stream to cloud."
+}

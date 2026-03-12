@@ -1,0 +1,9 @@
+{
+  "id": "jq-keys",
+  "categoryId": "jq",
+  "subcategoryId": "jq-basics",
+  "title": "List all keys",
+  "command": "cat file.json | jq 'keys'",
+  "description": "Get all keys from object",
+  "tags": ["keys", "list"]
+}

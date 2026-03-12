@@ -1,0 +1,9 @@
+{
+  "id": "azure-func-create",
+  "categoryId": "azure",
+  "subcategoryId": "azure-functions",
+  "title": "Create Function App",
+  "command": "az functionapp create --resource-group <rg> --consumption-plan-location <region> --runtime node --functions-version 4 --name <name> --storage-account <storage>",
+  "description": "Create a new serverless function app",
+  "tags": ["functions", "create", "serverless"]
+}

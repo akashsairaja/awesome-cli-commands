@@ -1,0 +1,9 @@
+{
+  "id": "netlify-functions-list",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-functions",
+  "title": "List functions",
+  "command": "netlify functions:list",
+  "description": "List deployed functions",
+  "tags": ["functions", "list", "show"]
+}

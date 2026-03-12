@@ -1,0 +1,8 @@
+{
+  "id": "docker-68",
+  "categoryId": "docker",
+  "subcategoryId": "networks",
+  "title": "Disconnect from network",
+  "command": "docker network disconnect <network> <container>",
+  "description": "Disconnect container from network."
+}

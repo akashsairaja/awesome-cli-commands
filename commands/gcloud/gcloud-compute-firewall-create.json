@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-compute-firewall-create",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-compute",
+  "title": "Create Firewall Rule",
+  "command": "gcloud compute firewall-rules create <name> --allow=tcp:80,tcp:443 --source-ranges=0.0.0.0/0",
+  "description": "Create a firewall rule to allow incoming traffic",
+  "tags": ["firewall", "create", "network"]
+}

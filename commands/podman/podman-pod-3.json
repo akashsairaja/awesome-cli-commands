@@ -1,0 +1,8 @@
+{
+  "id": "podman-pod-3",
+  "categoryId": "podman",
+  "subcategoryId": "podman-pod",
+  "title": "Run in pod",
+  "command": "podman run -d --pod mypod nginx",
+  "description": "Run container in existing pod."
+}

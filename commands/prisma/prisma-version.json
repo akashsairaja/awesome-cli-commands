@@ -1,0 +1,9 @@
+{
+  "id": "prisma-version",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-studio",
+  "title": "Check Prisma version",
+  "command": "npx prisma version",
+  "description": "Show installed Prisma version info",
+  "tags": ["version", "info"]
+}

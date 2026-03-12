@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-status-4",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-status",
+  "title": "Ping peer",
+  "command": "tailscale ping hostname",
+  "description": "Ping a device on tailnet."
+}

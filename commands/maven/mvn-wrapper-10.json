@@ -1,0 +1,8 @@
+{
+  "id": "mvn-wrapper-10",
+  "categoryId": "maven",
+  "subcategoryId": "mvn-wrapper",
+  "title": "Package with wrapper",
+  "command": "./mvnw package",
+  "description": "Create JAR/WAR package using the wrapper."
+}

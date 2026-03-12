@@ -1,0 +1,9 @@
+{
+  "id": "bun-build-target",
+  "categoryId": "bun",
+  "subcategoryId": "bun-build",
+  "title": "Build for Target",
+  "command": "bun build ./src/index.ts --target browser",
+  "description": "Build for specific target (browser/node/bun)",
+  "tags": ["build", "target", "platform"]
+}

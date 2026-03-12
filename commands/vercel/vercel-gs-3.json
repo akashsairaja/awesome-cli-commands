@@ -1,0 +1,8 @@
+{
+  "id": "vercel-gs-3",
+  "title": "Login to Vercel",
+  "command": "vercel login",
+  "description": "Authenticate the Vercel CLI with your account",
+  "categoryId": "vercel",
+  "subcategoryId": "getting-started"
+}

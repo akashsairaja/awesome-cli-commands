@@ -1,0 +1,8 @@
+{
+  "id": "docker-131",
+  "categoryId": "docker",
+  "subcategoryId": "swarm",
+  "title": "View service logs",
+  "command": "docker service logs -f <service>",
+  "description": "Stream service logs."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k3s-cluster-2",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-cluster",
+  "title": "Join agent to cluster",
+  "command": "curl -sfL https://get.k3s.io | K3S_URL=https://server:6443 K3S_TOKEN=xxx sh -",
+  "description": "Join worker node to cluster."
+}

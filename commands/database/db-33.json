@@ -1,0 +1,8 @@
+{
+  "id": "db-33",
+  "categoryId": "database",
+  "subcategoryId": "postgresql",
+  "title": "Check database size",
+  "command": "SELECT pg_size_pretty(pg_database_size('dbname'));",
+  "description": "Show database size in human-readable format."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ansible-facts-filter",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-adhoc",
+  "title": "Gather Filtered Facts",
+  "command": "ansible all -m setup -a \"filter=ansible_distribution*\"",
+  "description": "Collect specific facts from hosts",
+  "tags": ["facts", "filter", "info"]
+}

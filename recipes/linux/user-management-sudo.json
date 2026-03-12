@@ -1,0 +1,48 @@
+{
+  "id": "user-management-sudo",
+  "stackId": "linux",
+  "name": "User Management and sudo",
+  "description": "Create, manage, and configure user accounts with proper sudo access and security settings.",
+  "difficulty": "beginner",
+  "timeMinutes": 5,
+  "trending": false,
+  "tags": ["users", "sudo", "security", "permissions"],
+  "prerequisites": ["Linux shell access", "Root or sudo access"],
+  "steps": [
+    {
+      "title": "List all users with login shells",
+      "description": "View system users that can actually log in.",
+      "command": "grep -v '/nologin\\|/false' /etc/passwd | cut -d: -f1,6,7"
+    },
+    {
+      "title": "Create a new user with home directory",
+      "description": "Add a new user account with a home directory and default shell.",
+      "command": "sudo useradd -m -s /bin/bash -c 'Deploy User' deploy",
+      "tip": "Use -G to add the user to supplementary groups: -G docker,sudo"
+    },
+    {
+      "title": "Grant sudo access to a user",
+      "description": "Add a user to the sudo group for administrative access.",
+      "command": "sudo usermod -aG sudo deploy",
+      "warning": "Always use -aG (append to group). Using -G without -a replaces all groups."
+    },
+    {
+      "title": "Check sudo permissions for a user",
+      "description": "Verify what sudo commands a user is allowed to run.",
+      "command": "sudo -l -U deploy"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# User Management Overview\nset -euo pipefail\n\necho \"=== Users with Login Shells ===\"\ngrep -v '/nologin|/false' /etc/passwd | cut -d: -f1,6,7\n\necho \"\"\necho \"=== Users in sudo Group ===\"\ngetent group sudo 2>/dev/null || getent group wheel 2>/dev/null || echo \"No sudo/wheel group found\"\n\necho \"\"\necho \"=== Recent Login Activity ===\"\nlast -n 10 2>/dev/null || echo \"last command not available\"\n\necho \"\"\necho \"=== User Commands ===\"\necho \"Create:     sudo useradd -m -s /bin/bash <username>\"\necho \"Delete:     sudo userdel -r <username>\"\necho \"Add sudo:   sudo usermod -aG sudo <username>\"\necho \"Set passwd: sudo passwd <username>\"\necho \"Lock:       sudo usermod -L <username>\"\necho \"Unlock:     sudo usermod -U <username>\"",
+  "faq": [
+    {
+      "question": "How do I set up passwordless sudo?",
+      "answer": "Add a line to /etc/sudoers using visudo: 'username ALL=(ALL) NOPASSWD:ALL'. For more security, limit to specific commands: 'username ALL=(ALL) NOPASSWD:/usr/bin/systemctl restart nginx'."
+    },
+    {
+      "question": "Should I use sudo group or edit sudoers directly?",
+      "answer": "Using the sudo (or wheel) group is simpler and recommended. Edit sudoers directly only when you need fine-grained command restrictions. Always use visudo to edit."
+    }
+  ],
+  "relatedRecipes": ["security-hardening-checklist", "process-management-systemd"],
+  "lastUpdated": "2026-03-11"
+}

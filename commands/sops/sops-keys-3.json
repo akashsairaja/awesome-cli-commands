@@ -1,0 +1,8 @@
+{
+  "id": "sops-keys-3",
+  "categoryId": "sops",
+  "subcategoryId": "sops-keys",
+  "title": "Remove key",
+  "command": "sops updatekeys --rm-age age1oldkey secrets.enc.yaml",
+  "description": "Remove an age key from file."
+}

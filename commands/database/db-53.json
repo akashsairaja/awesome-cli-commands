@@ -1,0 +1,8 @@
+{
+  "id": "db-53",
+  "categoryId": "database",
+  "subcategoryId": "mongodb",
+  "title": "Insert many documents",
+  "command": "db.collection.insertMany([{ name: 'a' }, { name: 'b' }])",
+  "description": "Insert multiple documents at once."
+}

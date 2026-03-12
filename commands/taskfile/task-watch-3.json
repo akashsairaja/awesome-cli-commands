@@ -1,0 +1,8 @@
+{
+  "id": "task-watch-3",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-watch",
+  "title": "Watch interval",
+  "command": "task --watch --interval 500ms build",
+  "description": "Set watch polling interval."
+}

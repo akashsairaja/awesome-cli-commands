@@ -1,0 +1,8 @@
+{
+  "id": "databricks-45",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-mlflow",
+  "title": "Transition model stage",
+  "command": "databricks model-versions transition-stage --name <model> --version 1 --stage Production",
+  "description": "Transition a model version to a new stage."
+}

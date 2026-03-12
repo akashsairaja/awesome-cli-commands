@@ -1,0 +1,9 @@
+{
+  "id": "deno-test-file",
+  "categoryId": "deno",
+  "subcategoryId": "deno-test",
+  "title": "Test Specific File",
+  "command": "deno test tests/my_test.ts",
+  "description": "Run tests in a specific file",
+  "tags": ["test", "file", "specific"]
+}

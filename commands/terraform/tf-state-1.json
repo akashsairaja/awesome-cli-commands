@@ -1,0 +1,8 @@
+{
+  "id": "tf-state-1",
+  "categoryId": "terraform",
+  "subcategoryId": "state",
+  "title": "Initialize",
+  "command": "terraform init",
+  "description": "Initialize working directory with providers."
+}

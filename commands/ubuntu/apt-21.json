@@ -1,0 +1,8 @@
+{
+  "id": "apt-21",
+  "categoryId": "ubuntu",
+  "subcategoryId": "system",
+  "title": "Show disk usage",
+  "command": "df -h",
+  "description": "Display disk usage."
+}

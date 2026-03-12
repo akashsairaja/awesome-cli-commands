@@ -1,0 +1,8 @@
+{
+  "id": "grafana-dashboard-6",
+  "categoryId": "grafana",
+  "subcategoryId": "grafana-dashboard",
+  "title": "Get dashboard versions",
+  "command": "curl -s http://localhost:3000/api/dashboards/id/1/versions -H 'Authorization: Bearer TOKEN'",
+  "description": "List version history of a dashboard."
+}

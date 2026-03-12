@@ -1,0 +1,8 @@
+{
+  "id": "ai-28",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-aider",
+  "title": "Show diff",
+  "command": "/diff",
+  "description": "Show diff of pending changes."
+}

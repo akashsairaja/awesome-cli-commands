@@ -1,0 +1,9 @@
+{
+  "id": "curl-user-agent",
+  "categoryId": "curl",
+  "subcategoryId": "curl-headers",
+  "title": "Set User-Agent",
+  "command": "curl -A \"Mozilla/5.0\" https://example.com",
+  "description": "Set User-Agent header",
+  "tags": ["header", "useragent", "browser"]
+}

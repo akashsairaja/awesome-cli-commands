@@ -1,0 +1,8 @@
+{
+  "id": "k8s-120",
+  "categoryId": "kubernetes",
+  "subcategoryId": "debugging",
+  "title": "Cluster info dump",
+  "command": "kubectl cluster-info dump",
+  "description": "Dump cluster state for debugging."
+}

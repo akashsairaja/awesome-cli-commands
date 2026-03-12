@@ -1,0 +1,57 @@
+{
+  "id": "npm-script-automation",
+  "stackId": "npm",
+  "name": "Advanced npm Scripts with Pre/Post Hooks",
+  "description": "Automate build, test, and deployment workflows using npm scripts with lifecycle hooks, cross-platform commands, and script composition.",
+  "difficulty": "beginner",
+  "timeMinutes": 10,
+  "tags": ["scripts", "automation", "lifecycle", "hooks", "workflow"],
+  "prerequisites": ["Node.js and npm installed"],
+  "steps": [
+    {
+      "title": "Define common scripts",
+      "description": "Set up build, test, and development scripts in package.json.",
+      "command": "npm pkg set scripts.dev='next dev' scripts.build='next build' scripts.start='next start' scripts.test='jest --coverage' scripts.lint='eslint . --fix'"
+    },
+    {
+      "title": "Add pre and post lifecycle hooks",
+      "description": "Run tasks automatically before or after standard scripts.",
+      "command": "npm pkg set scripts.prebuild='npm run lint && npm run test' scripts.postbuild='echo Build completed at $(date)'",
+      "tip": "Pre/post hooks run automatically. 'prebuild' runs before 'build', 'postbuild' runs after. This works for any script name."
+    },
+    {
+      "title": "Compose scripts with npm-run-all",
+      "description": "Run multiple scripts in parallel or sequentially.",
+      "command": "npm install -D npm-run-all2 && npm pkg set scripts.validate='run-s lint test build' scripts.dev:all='run-p dev:api dev:web'",
+      "tip": "run-s runs scripts sequentially (stops on failure). run-p runs them in parallel."
+    },
+    {
+      "title": "Use environment variables in scripts",
+      "description": "Pass configuration to scripts via environment variables.",
+      "command": "npm pkg set scripts.build:prod='NODE_ENV=production npm run build' scripts.test:ci='CI=true npm test -- --reporters=default --reporters=jest-junit'",
+      "warning": "Setting env vars inline like NODE_ENV=production works on macOS/Linux but not Windows. Use cross-env for cross-platform compatibility."
+    },
+    {
+      "title": "List and run available scripts",
+      "description": "View all defined scripts and understand what is available.",
+      "command": "npm run"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# npm Script Automation Setup\nset -euo pipefail\n\necho \"=== Current Scripts ===\"\nnpm run 2>/dev/null || echo \"No scripts defined\"\n\necho \"\"\necho \"=== Setting Up Standard Scripts ===\"\n\n# Core scripts\nnpm pkg set scripts.dev='next dev'\nnpm pkg set scripts.build='next build'\nnpm pkg set scripts.start='next start'\nnpm pkg set scripts.lint='eslint . --ext .ts,.tsx --fix'\nnpm pkg set scripts.test='jest --coverage'\nnpm pkg set scripts.typecheck='tsc --noEmit'\n\n# Lifecycle hooks\nnpm pkg set scripts.prebuild='npm run typecheck'\nnpm pkg set scripts.pretest='npm run lint'\n\n# Composite scripts\nnpm pkg set scripts.validate='npm run lint && npm run typecheck && npm run test && npm run build'\nnpm pkg set scripts.clean='rm -rf .next node_modules/.cache dist'\n\necho \"\"\necho \"=== Updated Scripts ===\"\nnpm run",
+  "faq": [
+    {
+      "question": "What lifecycle hooks does npm support?",
+      "answer": "npm supports pre and post hooks for any script. For 'npm run build', it runs prescripts in order: prebuild then build then postbuild. Built-in scripts like install, publish, and test also have lifecycle hooks like preinstall and postinstall."
+    },
+    {
+      "question": "How do I pass arguments to npm scripts?",
+      "answer": "Use -- to pass arguments through: 'npm test -- --watch --verbose'. Everything after -- is appended to the script command. This works with any npm script."
+    },
+    {
+      "question": "How do I make scripts cross-platform?",
+      "answer": "Install cross-env for environment variables and shx for shell commands. Use 'cross-env NODE_ENV=production' instead of 'NODE_ENV=production' and 'shx rm -rf dist' instead of 'rm -rf dist'."
+    }
+  ],
+  "relatedRecipes": ["npm-workspace-setup", "npm-version-management"],
+  "lastUpdated": "2026-03-11"
+}

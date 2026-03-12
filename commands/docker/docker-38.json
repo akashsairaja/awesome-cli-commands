@@ -1,0 +1,8 @@
+{
+  "id": "docker-38",
+  "categoryId": "docker",
+  "subcategoryId": "images",
+  "title": "Pull specific platform",
+  "command": "docker pull --platform linux/amd64 <image>",
+  "description": "Pull image for specific architecture."
+}

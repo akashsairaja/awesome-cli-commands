@@ -1,0 +1,8 @@
+{
+  "id": "xh-requests-16",
+  "categoryId": "xh",
+  "subcategoryId": "xh-requests",
+  "title": "Offline mode",
+  "command": "xh --offline POST https://api.example.com/users name=Test",
+  "description": "Preview the request without sending it."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "docker-125",
+  "categoryId": "docker",
+  "subcategoryId": "swarm",
+  "title": "Leave swarm",
+  "command": "docker swarm leave --force",
+  "description": "Leave the swarm."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "httpie-requests-3",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-requests",
+  "title": "POST raw JSON",
+  "command": "http POST https://api.example.com/users count:=5 active:=true",
+  "description": "POST with raw JSON values (:= syntax)."
+}

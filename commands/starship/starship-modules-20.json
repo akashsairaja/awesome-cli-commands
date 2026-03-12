@@ -1,0 +1,8 @@
+{
+  "id": "starship-modules-20",
+  "categoryId": "starship",
+  "subcategoryId": "starship-modules",
+  "title": "Memory usage module",
+  "command": "[memory_usage]\ndisabled = false\nthreshold = 75\nformat = '$symbol[$ram_pct]($style) '",
+  "description": "Show RAM usage when above threshold."
+}

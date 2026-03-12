@@ -1,0 +1,8 @@
+{
+  "id": "aws-rds-1",
+  "categoryId": "aws",
+  "subcategoryId": "rds",
+  "title": "List instances",
+  "command": "aws rds describe-db-instances --query 'DBInstances[*].[DBInstanceIdentifier,DBInstanceStatus,Engine]' --output table",
+  "description": "List RDS instances with status."
+}

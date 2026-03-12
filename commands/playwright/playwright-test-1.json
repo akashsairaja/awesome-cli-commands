@@ -1,0 +1,8 @@
+{
+  "id": "playwright-test-1",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-test",
+  "title": "Run all tests",
+  "command": "npx playwright test",
+  "description": "Run all Playwright tests."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "zsh-which-alias",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-aliases",
+  "title": "Check alias definition",
+  "command": "which ll",
+  "description": "Show what an alias expands to",
+  "tags": ["alias", "which", "check"]
+}

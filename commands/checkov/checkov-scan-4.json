@@ -1,0 +1,8 @@
+{
+  "id": "checkov-scan-4",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-scan",
+  "title": "Scan Kubernetes",
+  "command": "checkov -d ./k8s --framework kubernetes",
+  "description": "Scan Kubernetes manifests."
+}

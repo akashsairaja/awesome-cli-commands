@@ -1,0 +1,8 @@
+{
+  "id": "npm-pkg-5",
+  "categoryId": "npm",
+  "subcategoryId": "npm-packages",
+  "title": "List dependencies",
+  "command": "npm ls --depth=0",
+  "description": "List top-level installed packages."
+}

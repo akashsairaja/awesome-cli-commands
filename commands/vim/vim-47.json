@@ -1,0 +1,8 @@
+{
+  "id": "vim-47",
+  "categoryId": "vim",
+  "subcategoryId": "text-objects",
+  "title": "Change inside parens",
+  "command": "ci(",
+  "description": "Replace text inside parentheses."
+}

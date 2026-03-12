@@ -1,0 +1,8 @@
+{
+  "id": "rust-build-1",
+  "categoryId": "rust",
+  "subcategoryId": "rust-build",
+  "title": "Build debug",
+  "command": "cargo build",
+  "description": "Compile project in debug mode."
+}

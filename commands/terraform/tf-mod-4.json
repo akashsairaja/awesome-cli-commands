@@ -1,0 +1,8 @@
+{
+  "id": "tf-mod-4",
+  "categoryId": "terraform",
+  "subcategoryId": "modules",
+  "title": "Show outputs",
+  "command": "terraform output",
+  "description": "Display all output values."
+}

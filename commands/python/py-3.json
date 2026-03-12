@@ -1,0 +1,8 @@
+{
+  "id": "py-3",
+  "categoryId": "python",
+  "subcategoryId": "python-pip",
+  "title": "Install from requirements",
+  "command": "pip install -r requirements.txt",
+  "description": "Install all packages from requirements file."
+}

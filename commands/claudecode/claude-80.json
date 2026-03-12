@@ -1,0 +1,8 @@
+{
+  "id": "claude-80",
+  "categoryId": "claudecode",
+  "subcategoryId": "environment",
+  "title": "Use Google Vertex AI",
+  "command": "export CLAUDE_CODE_USE_VERTEX=1",
+  "description": "Use Claude via Google Vertex AI."
+}

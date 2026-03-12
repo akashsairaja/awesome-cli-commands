@@ -1,0 +1,8 @@
+{
+  "id": "k8s-56",
+  "categoryId": "kubernetes",
+  "subcategoryId": "namespaces",
+  "title": "Delete namespace",
+  "command": "kubectl delete namespace <name>",
+  "description": "Delete namespace and all its resources."
+}

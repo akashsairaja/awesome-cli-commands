@@ -1,0 +1,8 @@
+{
+  "id": "kafka-prod-1",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-producer",
+  "title": "Console producer",
+  "command": "kafka-console-producer.sh --topic my-topic --bootstrap-server localhost:9092",
+  "description": "Start interactive producer."
+}

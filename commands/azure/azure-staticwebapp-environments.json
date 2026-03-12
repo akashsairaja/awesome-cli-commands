@@ -1,0 +1,9 @@
+{
+  "id": "azure-staticwebapp-environments",
+  "categoryId": "azure",
+  "subcategoryId": "azure-staticwebapp",
+  "title": "List Deployment Environments",
+  "command": "az staticwebapp environment list -n mysite -g rg",
+  "description": "List all deployment environments for static web app",
+  "tags": ["staticwebapp", "environments", "staging"]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "vim-config-setup",
+  "stackId": "vim",
+  "name": "Modern Neovim Config with lazy.nvim",
+  "description": "Set up a modern Neovim configuration from scratch using lazy.nvim as the plugin manager with a clean directory structure.",
+  "difficulty": "beginner",
+  "timeMinutes": 15,
+  "tags": ["neovim", "config", "lazy-nvim", "setup"],
+  "prerequisites": ["Neovim 0.9+ installed", "Git installed"],
+  "steps": [
+    {
+      "title": "Back up existing config and create directory structure",
+      "description": "Save any existing Neovim config and set up the standard directory layout.",
+      "command": "mv ~/.config/nvim ~/.config/nvim.bak 2>/dev/null; mkdir -p ~/.config/nvim/lua/plugins",
+      "tip": "Neovim reads init.lua from ~/.config/nvim/ on Linux/macOS or ~/AppData/Local/nvim/ on Windows."
+    },
+    {
+      "title": "Bootstrap lazy.nvim in init.lua",
+      "description": "Create the init.lua with the lazy.nvim bootstrap code that auto-installs the plugin manager.",
+      "command": "cat > ~/.config/nvim/init.lua << 'EOF'\n-- Bootstrap lazy.nvim\nlocal lazypath = vim.fn.stdpath(\"data\") .. \"/lazy/lazy.nvim\"\nif not vim.loop.fs_stat(lazypath) then\n  vim.fn.system({ \"git\", \"clone\", \"--filter=blob:none\",\n    \"https://github.com/folke/lazy.nvim.git\", \"--branch=stable\", lazypath })\nend\nvim.opt.rtp:prepend(lazypath)\n\n-- Leader key (must be before lazy)\nvim.g.mapleader = \" \"\nvim.g.maplocalleader = \" \"\n\n-- Core options\nvim.opt.number = true\nvim.opt.relativenumber = true\nvim.opt.tabstop = 4\nvim.opt.shiftwidth = 4\nvim.opt.expandtab = true\nvim.opt.smartindent = true\nvim.opt.termguicolors = true\nvim.opt.signcolumn = \"yes\"\nvim.opt.clipboard = \"unnamedplus\"\n\n-- Load plugins\nrequire(\"lazy\").setup(\"plugins\")\nEOF"
+    },
+    {
+      "title": "Add a starter plugin spec",
+      "description": "Create a plugin spec file that installs a colorscheme and essential plugins.",
+      "command": "cat > ~/.config/nvim/lua/plugins/init.lua << 'EOF'\nreturn {\n  { \"catppuccin/nvim\", name = \"catppuccin\", priority = 1000,\n    config = function() vim.cmd.colorscheme(\"catppuccin\") end },\n  { \"nvim-treesitter/nvim-treesitter\", build = \":TSUpdate\" },\n  { \"nvim-telescope/telescope.nvim\", dependencies = { \"nvim-lua/plenary.nvim\" } },\n}\nEOF"
+    },
+    {
+      "title": "Launch Neovim and install plugins",
+      "description": "Open Neovim to trigger lazy.nvim's automatic plugin installation.",
+      "command": "nvim --headless '+Lazy sync' +qa",
+      "tip": "Run :Lazy inside Neovim to see the plugin manager UI, update plugins, and check health."
+    },
+    {
+      "title": "Verify the setup",
+      "description": "Check that Neovim starts cleanly with no errors.",
+      "command": "nvim +checkhealth"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Neovim Config Setup with lazy.nvim\nset -euo pipefail\n\nNVIM_DIR=\"${XDG_CONFIG_HOME:-$HOME/.config}/nvim\"\n\necho \"=== Setting Up Neovim Config ===\"\n\n# Backup existing config\nif [ -d \"$NVIM_DIR\" ]; then\n  echo \"Backing up existing config to $NVIM_DIR.bak\"\n  mv \"$NVIM_DIR\" \"$NVIM_DIR.bak\"\nfi\n\nmkdir -p \"$NVIM_DIR/lua/plugins\"\n\necho \"Created directory structure:\"\nfind \"$NVIM_DIR\" -type d\n\necho \"\"\necho \"=== Next Steps ===\"\necho \"1. Create $NVIM_DIR/init.lua with lazy.nvim bootstrap\"\necho \"2. Add plugin specs in $NVIM_DIR/lua/plugins/\"\necho \"3. Run 'nvim' to auto-install plugins\"\necho \"\"\necho \"=== Useful Commands ===\"\necho \":Lazy          Open plugin manager\"\necho \":Lazy sync     Install/update plugins\"\necho \":Lazy health   Check plugin status\"\necho \":checkhealth   Run Neovim health checks\"",
+  "faq": [
+    {
+      "question": "What is the difference between lazy.nvim and packer.nvim?",
+      "answer": "lazy.nvim is the successor to packer. It offers lazy-loading by default, a modern UI, automatic dependency resolution, and lockfile support. packer is no longer maintained."
+    },
+    {
+      "question": "Where does Neovim store plugin data?",
+      "answer": "Plugins are stored in ~/.local/share/nvim/lazy/ on Linux/macOS. The lazy-lock.json file in your config directory pins plugin versions for reproducible setups."
+    },
+    {
+      "question": "How do I migrate from an existing Vim config?",
+      "answer": "Start fresh with init.lua rather than converting vimrc. Neovim's Lua API is more powerful. You can still source a .vim file with vim.cmd('source ~/.vimrc') during migration."
+    }
+  ],
+  "relatedRecipes": ["vim-plugin-management", "vim-lsp-setup"],
+  "lastUpdated": "2026-03-11"
+}

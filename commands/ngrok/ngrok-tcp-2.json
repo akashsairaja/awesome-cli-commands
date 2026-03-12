@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-tcp-2",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-tcp",
+  "title": "Remote address",
+  "command": "ngrok tcp --remote-addr=1.tcp.ngrok.io:12345 22",
+  "description": "Use specific remote address (paid)."
+}

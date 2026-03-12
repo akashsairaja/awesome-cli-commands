@@ -1,0 +1,9 @@
+{
+  "id": "supabase-inspect-index",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-inspect",
+  "title": "Show index stats",
+  "command": "supabase inspect db index-stats --linked",
+  "description": "Show index performance and usage stats",
+  "tags": ["inspect", "index", "performance"]
+}

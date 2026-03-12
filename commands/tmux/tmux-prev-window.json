@@ -1,0 +1,9 @@
+{
+  "id": "tmux-prev-window",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-windows",
+  "title": "Previous window",
+  "command": "Ctrl+b p",
+  "description": "Switch to previous window",
+  "tags": ["window", "previous", "switch"]
+}

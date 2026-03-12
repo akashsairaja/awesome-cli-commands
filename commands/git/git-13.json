@@ -1,0 +1,8 @@
+{
+  "id": "git-13",
+  "categoryId": "git",
+  "subcategoryId": "basics",
+  "title": "Pull with rebase",
+  "command": "git pull --rebase",
+  "description": "Fetch and rebase local commits on top."
+}

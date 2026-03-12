@@ -1,0 +1,8 @@
+{
+  "id": "apt-71",
+  "categoryId": "ubuntu",
+  "subcategoryId": "ubuntu-network",
+  "title": "Test netplan config",
+  "command": "sudo netplan try",
+  "description": "Test netplan configuration with automatic rollback on failure."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "git-94",
+  "categoryId": "git",
+  "subcategoryId": "history",
+  "title": "Shortlog",
+  "command": "git shortlog -sn",
+  "description": "Summarize commits by author."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "docker-39",
+  "categoryId": "docker",
+  "subcategoryId": "images",
+  "title": "Build image",
+  "command": "docker build -t <name>:<tag> .",
+  "description": "Build image from Dockerfile."
+}

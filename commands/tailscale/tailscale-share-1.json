@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-share-1",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-share",
+  "title": "Serve local port",
+  "command": "tailscale serve https / http://localhost:3000",
+  "description": "Expose local service to tailnet."
+}

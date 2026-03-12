@@ -1,0 +1,8 @@
+{
+  "id": "k6-options-11",
+  "categoryId": "k6",
+  "subcategoryId": "k6-options",
+  "title": "Constant VUs scenario",
+  "command": "export const options = {\n  scenarios: {\n    contacts: {\n      executor: 'constant-vus',\n      vus: 50,\n      duration: '2m',\n    },\n  },\n};",
+  "description": "Constant virtual users scenario."
+}

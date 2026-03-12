@@ -1,0 +1,9 @@
+{
+  "id": "supabase-storage-ls",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-storage",
+  "title": "List local storage objects",
+  "command": "supabase storage ls --local",
+  "description": "List all storage objects locally",
+  "tags": ["storage", "list", "objects"]
+}

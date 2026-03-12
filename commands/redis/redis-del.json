@@ -1,0 +1,9 @@
+{
+  "id": "redis-del",
+  "categoryId": "redis",
+  "subcategoryId": "redis-server",
+  "title": "Delete key",
+  "command": "DEL key",
+  "description": "Delete one or more keys",
+  "tags": ["del", "delete", "remove"]
+}

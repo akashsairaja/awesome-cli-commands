@@ -1,0 +1,8 @@
+{
+  "id": "tofu-gs-3",
+  "title": "Initialize a new project",
+  "command": "tofu init",
+  "description": "Initialize a new OpenTofu working directory with providers",
+  "categoryId": "opentofu",
+  "subcategoryId": "getting-started"
+}

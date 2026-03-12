@@ -1,0 +1,9 @@
+{
+  "id": "netlify-env-clone",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-env",
+  "title": "Clone env from site",
+  "command": "netlify env:clone --from <site-id>",
+  "description": "Clone env variables from another site",
+  "tags": ["env", "clone", "copy"]
+}

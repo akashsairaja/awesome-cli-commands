@@ -1,0 +1,8 @@
+{
+  "id": "brew-18",
+  "categoryId": "homebrew",
+  "subcategoryId": "packages",
+  "title": "Switch package version",
+  "command": "brew link --overwrite <package>@version",
+  "description": "Switch to different version."
+}

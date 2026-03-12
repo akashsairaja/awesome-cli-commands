@@ -1,0 +1,8 @@
+{
+  "id": "linux-71",
+  "categoryId": "linux",
+  "subcategoryId": "text",
+  "title": "Compare two files",
+  "command": "diff -u file1.txt file2.txt",
+  "description": "Show unified diff between two files."
+}

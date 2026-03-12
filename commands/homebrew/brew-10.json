@@ -1,0 +1,8 @@
+{
+  "id": "brew-10",
+  "categoryId": "homebrew",
+  "subcategoryId": "packages",
+  "title": "Pin package",
+  "command": "brew pin <package>",
+  "description": "Prevent package from being upgraded."
+}

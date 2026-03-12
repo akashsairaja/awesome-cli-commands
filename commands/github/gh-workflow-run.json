@@ -1,0 +1,9 @@
+{
+  "id": "gh-workflow-run",
+  "categoryId": "github",
+  "subcategoryId": "gh-workflow",
+  "title": "Run workflow",
+  "command": "gh workflow run <workflow>",
+  "description": "Trigger a workflow dispatch event",
+  "tags": ["workflow", "run", "trigger"]
+}

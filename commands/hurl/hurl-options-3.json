@@ -1,0 +1,8 @@
+{
+  "id": "hurl-options-3",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-options",
+  "title": "JSON output",
+  "command": "hurl --json api.hurl",
+  "description": "Output results as JSON."
+}

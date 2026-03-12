@@ -1,0 +1,8 @@
+{
+  "id": "brew-57",
+  "categoryId": "homebrew",
+  "subcategoryId": "bundle",
+  "title": "Install from path",
+  "command": "brew bundle --file=path/to/Brewfile",
+  "description": "Install from specific Brewfile."
+}

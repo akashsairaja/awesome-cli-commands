@@ -1,0 +1,8 @@
+{
+  "id": "spark-8",
+  "categoryId": "spark",
+  "subcategoryId": "spark-submit",
+  "title": "Enable dynamic allocation",
+  "command": "spark-submit --conf spark.dynamicAllocation.enabled=true --conf spark.dynamicAllocation.minExecutors=2 app.py",
+  "description": "Auto-scale executors based on workload."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "tf-security-4",
+  "categoryId": "terraform",
+  "subcategoryId": "terraform-security",
+  "title": "Refresh without lock",
+  "command": "terraform refresh -lock=false",
+  "description": "Refresh state without acquiring state lock."
+}

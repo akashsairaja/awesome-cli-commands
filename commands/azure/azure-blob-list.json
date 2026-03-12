@@ -1,0 +1,9 @@
+{
+  "id": "azure-blob-list",
+  "categoryId": "azure",
+  "subcategoryId": "azure-storage",
+  "title": "List Blobs",
+  "command": "az storage blob list --account-name <storage> --container-name <container> --output table",
+  "description": "List all blobs in a container",
+  "tags": ["storage", "blob", "list"]
+}

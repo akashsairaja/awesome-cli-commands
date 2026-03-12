@@ -1,0 +1,8 @@
+{
+  "id": "kafka-prod-2",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-producer",
+  "title": "Produce with key",
+  "command": "kafka-console-producer.sh --topic my-topic --bootstrap-server localhost:9092 --property parse.key=true --property key.separator=:",
+  "description": "Produce key:value messages."
+}

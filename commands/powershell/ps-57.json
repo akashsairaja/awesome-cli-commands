@@ -1,0 +1,8 @@
+{
+  "id": "ps-57",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-pipeline",
+  "title": "Calculated property",
+  "command": "Get-Process | Select-Object Name, @{N='Memory(MB)'; E={$_.WorkingSet/1MB}}",
+  "description": "Create calculated property."
+}

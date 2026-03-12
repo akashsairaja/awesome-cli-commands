@@ -1,0 +1,9 @@
+{
+  "id": "curl-ftp-download",
+  "categoryId": "curl",
+  "subcategoryId": "curl-download",
+  "title": "FTP download",
+  "command": "curl -u user:pass ftp://ftp.example.com/file.txt -o file.txt",
+  "description": "Download file from FTP server",
+  "tags": ["ftp", "download"]
+}

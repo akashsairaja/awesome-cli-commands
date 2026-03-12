@@ -1,0 +1,8 @@
+{
+  "id": "packer-hcl-2",
+  "categoryId": "packer",
+  "subcategoryId": "packer-hcl",
+  "title": "Build block",
+  "command": "build {\n  sources = [\"source.amazon-ebs.ubuntu\"]\n  provisioner \"shell\" {\n    inline = [\"sudo apt-get update\"]\n  }\n}",
+  "description": "HCL2 build block example."
+}

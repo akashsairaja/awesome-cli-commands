@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-gs-1",
+  "title": "Install mkcert (macOS)",
+  "command": "brew install mkcert",
+  "description": "Install mkcert local CA tool using Homebrew on macOS",
+  "categoryId": "mkcert",
+  "subcategoryId": "getting-started"
+}

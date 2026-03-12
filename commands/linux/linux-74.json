@@ -1,0 +1,8 @@
+{
+  "id": "linux-74",
+  "categoryId": "linux",
+  "subcategoryId": "text",
+  "title": "Grep with regex pattern",
+  "command": "grep -E '^[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}' access.log",
+  "description": "Search for lines matching an IP address pattern using extended regex."
+}

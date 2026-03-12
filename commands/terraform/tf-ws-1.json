@@ -1,0 +1,8 @@
+{
+  "id": "tf-ws-1",
+  "categoryId": "terraform",
+  "subcategoryId": "workspace",
+  "title": "List workspaces",
+  "command": "terraform workspace list",
+  "description": "Show all workspaces."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "vault-engine-1",
+  "categoryId": "vault",
+  "subcategoryId": "vault-engine",
+  "title": "Enable KV v2",
+  "command": "vault secrets enable -path=secret -version=2 kv",
+  "description": "Enable KV v2 secrets engine."
+}

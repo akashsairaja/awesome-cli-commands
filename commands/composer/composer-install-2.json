@@ -1,0 +1,8 @@
+{
+  "id": "composer-install-2",
+  "categoryId": "composer",
+  "subcategoryId": "composer-install",
+  "title": "Install production only",
+  "command": "composer install --no-dev",
+  "description": "Install without dev dependencies."
+}

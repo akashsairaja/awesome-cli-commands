@@ -1,0 +1,8 @@
+{
+  "id": "ps-4",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-files",
+  "title": "Remove files",
+  "command": "Remove-Item -Path file -Recurse -Force",
+  "description": "Delete files or directories."
+}

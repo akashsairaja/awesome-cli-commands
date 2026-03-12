@@ -1,0 +1,9 @@
+{
+  "id": "nginx-proxy-timeouts",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-reverse-proxy",
+  "title": "Proxy timeouts",
+  "command": "proxy_connect_timeout 60s; proxy_send_timeout 60s; proxy_read_timeout 60s;",
+  "description": "Set connection and read timeouts for backend",
+  "tags": ["proxy", "timeout", "connect", "read"]
+}

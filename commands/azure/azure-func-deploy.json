@@ -1,0 +1,9 @@
+{
+  "id": "azure-func-deploy",
+  "categoryId": "azure",
+  "subcategoryId": "azure-functions",
+  "title": "Deploy Functions",
+  "command": "az functionapp deployment source config-zip --resource-group <rg> --name <name> --src <zip-file>",
+  "description": "Deploy function app from ZIP file",
+  "tags": ["functions", "deploy", "zip"]
+}

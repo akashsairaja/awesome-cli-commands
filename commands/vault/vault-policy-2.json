@@ -1,0 +1,8 @@
+{
+  "id": "vault-policy-2",
+  "categoryId": "vault",
+  "subcategoryId": "vault-policy",
+  "title": "List policies",
+  "command": "vault policy list",
+  "description": "List all policies."
+}

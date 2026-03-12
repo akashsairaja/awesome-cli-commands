@@ -1,0 +1,8 @@
+{
+  "id": "k8s-112",
+  "categoryId": "kubernetes",
+  "subcategoryId": "rbac",
+  "title": "Create service account",
+  "command": "kubectl create serviceaccount <name>",
+  "description": "Create a new service account."
+}

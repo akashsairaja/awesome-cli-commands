@@ -1,0 +1,8 @@
+{
+  "id": "go-test-7",
+  "categoryId": "go",
+  "subcategoryId": "go-test",
+  "title": "Run with race detector",
+  "command": "go test -race ./...",
+  "description": "Enable race detection during tests."
+}

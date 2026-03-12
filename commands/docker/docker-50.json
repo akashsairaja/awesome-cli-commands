@@ -1,0 +1,8 @@
+{
+  "id": "docker-50",
+  "categoryId": "docker",
+  "subcategoryId": "images",
+  "title": "Load image from file",
+  "command": "docker load -i image.tar",
+  "description": "Load image from tar archive."
+}

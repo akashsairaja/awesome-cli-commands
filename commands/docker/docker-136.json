@@ -1,0 +1,8 @@
+{
+  "id": "docker-136",
+  "categoryId": "docker",
+  "subcategoryId": "compose",
+  "title": "Watch and sync code changes",
+  "command": "docker compose watch",
+  "description": "Automatically sync code changes to services for live development."
+}

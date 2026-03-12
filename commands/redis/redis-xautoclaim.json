@@ -1,0 +1,9 @@
+{
+  "id": "redis-xautoclaim",
+  "categoryId": "redis",
+  "subcategoryId": "redis-streams",
+  "title": "Claim abandoned messages",
+  "command": "XAUTOCLAIM stream group consumer min-idle-time start",
+  "description": "Automatically claim pending messages from other consumers",
+  "tags": ["xautoclaim", "stream", "consumer", "claim"]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "netlify-functions-invoke",
+  "categoryId": "netlify",
+  "subcategoryId": "netlify-functions",
+  "title": "Invoke function locally",
+  "command": "netlify functions:invoke <name>",
+  "description": "Invoke a function locally for testing",
+  "tags": ["functions", "invoke", "test"]
+}

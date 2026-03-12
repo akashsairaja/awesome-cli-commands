@@ -1,0 +1,8 @@
+{
+  "id": "starship-modules-8",
+  "categoryId": "starship",
+  "subcategoryId": "starship-modules",
+  "title": "Rust module config",
+  "command": "[rust]\nformat = \"via [$symbol$version]($style) \"",
+  "description": "Customize Rust toolchain display."
+}

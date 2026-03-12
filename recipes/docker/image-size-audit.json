@@ -1,0 +1,52 @@
+{
+  "id": "image-size-audit",
+  "stackId": "docker",
+  "name": "Image Size Audit",
+  "description": "Analyze Docker image layers to understand what is taking up space and identify optimization opportunities.",
+  "difficulty": "intermediate",
+  "timeMinutes": 10,
+  "trending": false,
+  "tags": ["images", "optimization", "size", "layers"],
+  "prerequisites": ["Docker installed"],
+  "steps": [
+    {
+      "title": "List images sorted by size",
+      "description": "See all images and their sizes, largest first.",
+      "command": "docker images --format '{{.Size}}\\t{{.Repository}}:{{.Tag}}' | sort -hr | head -20"
+    },
+    {
+      "title": "Inspect image layer sizes",
+      "description": "Break down an image into its constituent layers to see what each adds.",
+      "command": "docker history myapp:latest --format 'table {{.Size}}\\t{{.CreatedBy}}' --no-trunc"
+    },
+    {
+      "title": "Use dive for interactive layer analysis",
+      "description": "Run dive to explore each layer's filesystem changes interactively.",
+      "command": "docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive myapp:latest",
+      "tip": "Dive shows wasted space, efficiency scores, and lets you browse each layer's file tree."
+    },
+    {
+      "title": "Find dangling images consuming space",
+      "description": "Identify untagged images that are using disk space.",
+      "command": "docker images -f 'dangling=true' --format 'table {{.ID}}\\t{{.Size}}\\t{{.CreatedSince}}'"
+    },
+    {
+      "title": "Check total Docker disk usage",
+      "description": "See a summary of disk space used by images, containers, volumes, and build cache.",
+      "command": "docker system df -v"
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Image Size Audit\nset -euo pipefail\n\necho \"=== Docker Disk Usage Summary ===\"\ndocker system df\n\necho \"\"\necho \"=== Top 10 Largest Images ===\"\ndocker images --format '{{.Size}}\\t{{.Repository}}:{{.Tag}}' | sort -hr | head -10\n\necho \"\"\necho \"=== Dangling Images ===\"\ndocker images -f 'dangling=true' --format '{{.ID}}\\t{{.Size}}' | head -10 || echo \"None\"\n\necho \"\"\necho \"=== Optimization Tips ===\"\necho \"1. Use multi-stage builds\"\necho \"2. Choose smaller base images (alpine, slim, distroless)\"\necho \"3. Combine RUN commands with &&\"\necho \"4. Clean package caches in the same layer: rm -rf /var/cache/apt/*\"\necho \"5. Use .dockerignore to exclude build artifacts\"",
+  "faq": [
+    {
+      "question": "What is a good target image size?",
+      "answer": "It depends on the application, but aim for under 200MB for most services. Go and Rust apps can be under 20MB with scratch/distroless bases."
+    },
+    {
+      "question": "Why does combining RUN commands reduce size?",
+      "answer": "Each RUN creates a new layer. If you install and then delete files in separate RUN commands, the deleted files still exist in the earlier layer. Combining them in one RUN avoids this."
+    }
+  ],
+  "relatedRecipes": ["multi-stage-build-optimizer", "dockerfile-linting-security"],
+  "lastUpdated": "2026-03-11"
+}

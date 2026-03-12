@@ -1,0 +1,8 @@
+{
+  "id": "hurl-syntax-10",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-syntax",
+  "title": "Set cookies",
+  "command": "GET https://api.example.com/protected\n[Cookies]\nsession: abc123\nHTTP 200",
+  "description": "Send request with cookies."
+}

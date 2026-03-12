@@ -1,0 +1,8 @@
+{
+  "id": "git-71",
+  "categoryId": "git",
+  "subcategoryId": "remote",
+  "title": "Change remote URL",
+  "command": "git remote set-url origin <new-url>",
+  "description": "Update remote repository URL."
+}

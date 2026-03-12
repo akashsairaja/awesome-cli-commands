@@ -1,0 +1,8 @@
+{
+  "id": "aws-gs-1",
+  "title": "Install AWS CLI (macOS)",
+  "command": "brew install awscli",
+  "description": "Install AWS CLI using Homebrew on macOS",
+  "categoryId": "aws",
+  "subcategoryId": "getting-started"
+}

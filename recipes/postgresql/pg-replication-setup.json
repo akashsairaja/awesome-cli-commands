@@ -1,0 +1,66 @@
+{
+  "id": "pg-replication-setup",
+  "stackId": "postgresql",
+  "name": "Streaming Replication Setup",
+  "description": "Configure PostgreSQL streaming replication with a primary and standby server for high availability and read scaling.",
+  "difficulty": "advanced",
+  "timeMinutes": 20,
+  "tags": ["replication", "high-availability", "streaming", "standby"],
+  "prerequisites": [
+    "Two PostgreSQL instances (primary and standby)",
+    "Network connectivity between instances",
+    "PostgreSQL 14+"
+  ],
+  "steps": [
+    {
+      "title": "Create a replication role on the primary",
+      "description": "Create a dedicated user with replication privileges on the primary server.",
+      "command": "psql -U postgres -c \"CREATE ROLE replicator WITH REPLICATION LOGIN PASSWORD 'repl_secure_pass';\""
+    },
+    {
+      "title": "Configure primary for replication",
+      "description": "Set the required WAL and replication parameters on the primary.",
+      "command": "psql -U postgres -c \"ALTER SYSTEM SET wal_level = 'replica'; ALTER SYSTEM SET max_wal_senders = 5; ALTER SYSTEM SET wal_keep_size = '1GB';\"",
+      "tip": "These changes require a PostgreSQL restart to take effect."
+    },
+    {
+      "title": "Add replication entry to pg_hba.conf",
+      "description": "Allow the standby server to connect for replication.",
+      "command": "echo 'host replication replicator 10.0.0.0/24 scram-sha-256' | sudo tee -a /etc/postgresql/16/main/pg_hba.conf",
+      "warning": "Replace 10.0.0.0/24 with the actual IP range of your standby server. Restart PostgreSQL after this change."
+    },
+    {
+      "title": "Create a base backup on the standby",
+      "description": "Clone the primary database to the standby server using pg_basebackup.",
+      "command": "pg_basebackup -h primary-host -U replicator -D /var/lib/postgresql/16/main -Fp -Xs -P -R",
+      "tip": "The -R flag creates standby.signal and sets primary_conninfo in postgresql.auto.conf automatically."
+    },
+    {
+      "title": "Start the standby and verify replication",
+      "description": "Start PostgreSQL on the standby and confirm it is receiving WAL from the primary.",
+      "command": "sudo systemctl start postgresql && psql -U postgres -c \"SELECT pg_is_in_recovery();\""
+    },
+    {
+      "title": "Check replication status on the primary",
+      "description": "Monitor replication lag and standby connection status from the primary.",
+      "command": "psql -U postgres -c \"SELECT client_addr, state, sent_lsn, write_lsn, flush_lsn, replay_lsn, replay_lag FROM pg_stat_replication;\""
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# PostgreSQL Streaming Replication Status Check\nset -euo pipefail\n\nUSER=\"postgres\"\n\necho \"=== Server Role ===\"\nIS_STANDBY=$(psql -U \"$USER\" -tAc \"SELECT pg_is_in_recovery();\")\nif [ \"$IS_STANDBY\" = \"t\" ]; then\n  echo \"This server is a STANDBY (replica)\"\n  echo \"\"\n  echo \"=== Replication status (standby) ===\"\n  psql -U \"$USER\" -c \"\n  SELECT pg_last_wal_receive_lsn() AS received_lsn,\n         pg_last_wal_replay_lsn() AS replayed_lsn,\n         pg_last_xact_replay_timestamp() AS last_replay_time,\n         now() - pg_last_xact_replay_timestamp() AS replay_lag;\n  \"\nelse\n  echo \"This server is the PRIMARY\"\n  echo \"\"\n  echo \"=== Connected standbys ===\"\n  psql -U \"$USER\" -c \"\n  SELECT client_addr,\n         state,\n         sent_lsn,\n         write_lsn,\n         flush_lsn,\n         replay_lsn,\n         replay_lag\n  FROM pg_stat_replication;\n  \"\n  echo \"\"\n  echo \"=== WAL settings ===\"\n  psql -U \"$USER\" -c \"\n  SELECT name, setting\n  FROM pg_settings\n  WHERE name IN ('wal_level', 'max_wal_senders', 'wal_keep_size', 'synchronous_commit');\n  \"\nfi\n\necho \"\"\necho \"=== Replication slots ===\"\npsql -U \"$USER\" -c \"\nSELECT slot_name, slot_type, active, restart_lsn\nFROM pg_replication_slots;\n\"",
+  "faq": [
+    {
+      "question": "What is the difference between synchronous and asynchronous replication?",
+      "answer": "Asynchronous replication (default) lets the primary commit without waiting for the standby. Synchronous replication waits for the standby to confirm the write, guaranteeing zero data loss but adding latency."
+    },
+    {
+      "question": "How do I promote a standby to primary?",
+      "answer": "Run 'pg_ctl promote -D /var/lib/postgresql/16/main' or 'SELECT pg_promote();' in psql. The standby exits recovery mode and becomes a read-write primary. This is irreversible."
+    },
+    {
+      "question": "Can I read from a standby?",
+      "answer": "Yes, standbys accept read-only queries by default (hot_standby = on). This is commonly used to offload reporting queries and read-heavy workloads from the primary."
+    }
+  ],
+  "relatedRecipes": ["pg-backup-restore", "pg-connection-pooling"],
+  "lastUpdated": "2026-03-11"
+}

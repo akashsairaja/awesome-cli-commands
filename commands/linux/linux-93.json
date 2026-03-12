@@ -1,0 +1,8 @@
+{
+  "id": "linux-93",
+  "categoryId": "linux",
+  "subcategoryId": "network",
+  "title": "Display nftables rules",
+  "command": "sudo nft list ruleset",
+  "description": "Show all configured nftables firewall rules (modern iptables)."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "packer-build-1",
+  "categoryId": "packer",
+  "subcategoryId": "packer-build",
+  "title": "Build image",
+  "command": "packer build .",
+  "description": "Build image from current directory."
+}

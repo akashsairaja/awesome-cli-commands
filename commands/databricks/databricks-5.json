@@ -1,0 +1,8 @@
+{
+  "id": "databricks-5",
+  "categoryId": "databricks",
+  "subcategoryId": "databricks-clusters",
+  "title": "Create cluster from JSON",
+  "command": "databricks clusters create --json-file cluster-config.json",
+  "description": "Create a new cluster from a JSON configuration file."
+}

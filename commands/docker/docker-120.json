@@ -1,0 +1,8 @@
+{
+  "id": "docker-120",
+  "categoryId": "docker",
+  "subcategoryId": "swarm",
+  "title": "Initialize swarm",
+  "command": "docker swarm init",
+  "description": "Initialize a swarm on this node."
+}

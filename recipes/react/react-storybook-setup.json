@@ -1,0 +1,48 @@
+{
+  "id": "react-storybook-setup",
+  "stackId": "react",
+  "name": "Set Up Storybook for Component-Driven Development",
+  "description": "Install and configure Storybook to develop, document, and visually test React components in isolation.",
+  "difficulty": "intermediate",
+  "timeMinutes": 12,
+  "trending": false,
+  "tags": ["storybook", "components", "documentation", "visual-testing"],
+  "prerequisites": ["React or Next.js project", "Node.js 18+"],
+  "steps": [
+    {
+      "title": "Initialize Storybook",
+      "description": "Run the Storybook initializer which auto-detects your framework and sets everything up.",
+      "command": "npx storybook@latest init",
+      "tip": "Storybook auto-detects React, Next.js, Vite, or Webpack and installs the correct addons."
+    },
+    {
+      "title": "Start Storybook dev server",
+      "description": "Launch the Storybook UI in the browser to view and interact with components.",
+      "command": "pnpm storybook"
+    },
+    {
+      "title": "Create a story for a component",
+      "description": "Write a .stories.tsx file next to your component with different variants.",
+      "command": "cat > src/components/Button.stories.tsx << 'EOF'\nimport type { Meta, StoryObj } from '@storybook/react';\nimport { Button } from './Button';\n\nconst meta: Meta<typeof Button> = {\n  title: 'UI/Button',\n  component: Button,\n  tags: ['autodocs'],\n};\nexport default meta;\n\ntype Story = StoryObj<typeof Button>;\n\nexport const Primary: Story = { args: { variant: 'primary', children: 'Click me' } };\nexport const Secondary: Story = { args: { variant: 'secondary', children: 'Cancel' } };\nexport const Disabled: Story = { args: { disabled: true, children: 'Disabled' } };\nEOF"
+    },
+    {
+      "title": "Build static Storybook for deployment",
+      "description": "Generate a static site that can be deployed to any hosting provider.",
+      "command": "pnpm build-storybook",
+      "tip": "Deploy the storybook-static/ directory to Vercel, Netlify, or Chromatic for team review."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Storybook Setup for React\nset -euo pipefail\n\necho \"=== Initializing Storybook ===\"\nnpx storybook@latest init --skip-install\npnpm install\n\necho \"=== Verifying Storybook configuration ===\"\nls -la .storybook/\n\necho \"\"\necho \"=== Storybook Commands ===\"\necho \"Dev:   pnpm storybook\"\necho \"Build: pnpm build-storybook\"\necho \"Test:  pnpm test-storybook\"\necho \"\"\necho \"Create stories next to components:\"\necho \"  src/components/Button.tsx\"\necho \"  src/components/Button.stories.tsx\"",
+  "faq": [
+    {
+      "question": "Does Storybook work with Next.js App Router?",
+      "answer": "Yes. Storybook 8+ has first-class Next.js support including App Router, next/image, next/font, and server actions mocking via the @storybook/nextjs framework."
+    },
+    {
+      "question": "How do I add visual regression testing?",
+      "answer": "Use Chromatic (by the Storybook team) for cloud-based visual diffs, or install @storybook/test-runner for local Playwright-based screenshot tests."
+    }
+  ],
+  "relatedRecipes": ["react-component-testing", "react-a11y-audit"],
+  "lastUpdated": "2026-03-11"
+}

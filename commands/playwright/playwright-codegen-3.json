@@ -1,0 +1,8 @@
+{
+  "id": "playwright-codegen-3",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-codegen",
+  "title": "Record Python tests",
+  "command": "npx playwright codegen --target=python example.com",
+  "description": "Generate Python test code."
+}

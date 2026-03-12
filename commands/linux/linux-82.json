@@ -1,0 +1,8 @@
+{
+  "id": "linux-82",
+  "categoryId": "linux",
+  "subcategoryId": "systemd",
+  "title": "List services by startup time",
+  "command": "systemd-analyze blame",
+  "description": "Show which services took the longest to start during boot."
+}

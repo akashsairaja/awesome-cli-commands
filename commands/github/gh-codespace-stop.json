@@ -1,0 +1,9 @@
+{
+  "id": "gh-codespace-stop",
+  "categoryId": "github",
+  "subcategoryId": "gh-codespace",
+  "title": "Stop codespace",
+  "command": "gh codespace stop",
+  "description": "Stop a running codespace",
+  "tags": ["codespace", "stop", "pause"]
+}

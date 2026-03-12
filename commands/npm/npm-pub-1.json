@@ -1,0 +1,8 @@
+{
+  "id": "npm-pub-1",
+  "categoryId": "npm",
+  "subcategoryId": "npm-publish",
+  "title": "Publish package",
+  "command": "npm publish",
+  "description": "Publish package to registry."
+}

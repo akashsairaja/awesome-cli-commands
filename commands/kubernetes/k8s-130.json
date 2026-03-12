@@ -1,0 +1,8 @@
+{
+  "id": "k8s-130",
+  "categoryId": "kubernetes",
+  "subcategoryId": "manifests",
+  "title": "Generate YAML from command",
+  "command": "kubectl create deployment nginx --image=nginx --dry-run=client -o yaml",
+  "description": "Generate YAML manifest from command."
+}

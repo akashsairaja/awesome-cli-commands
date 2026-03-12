@@ -1,0 +1,8 @@
+{
+  "id": "playwright-a11y-2",
+  "categoryId": "playwright",
+  "subcategoryId": "playwright-a11y",
+  "title": "Get accessibility tree",
+  "command": "await page.accessibility.snapshot()",
+  "description": "Capture accessibility tree snapshot."
+}

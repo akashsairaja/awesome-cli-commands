@@ -1,0 +1,8 @@
+{
+  "id": "py-33",
+  "categoryId": "python",
+  "subcategoryId": "python-poetry",
+  "title": "Publish to PyPI",
+  "command": "poetry publish --build",
+  "description": "Build and publish package to PyPI."
+}

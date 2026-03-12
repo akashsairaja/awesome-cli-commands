@@ -1,0 +1,8 @@
+{
+  "id": "go-work-2",
+  "categoryId": "go",
+  "subcategoryId": "go-work",
+  "title": "Add module to workspace",
+  "command": "go work use ./new-module",
+  "description": "Add module directory to workspace."
+}

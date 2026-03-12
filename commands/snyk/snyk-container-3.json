@@ -1,0 +1,8 @@
+{
+  "id": "snyk-container-3",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-container",
+  "title": "Monitor container",
+  "command": "snyk container monitor nginx:latest",
+  "description": "Continuously monitor container image."
+}

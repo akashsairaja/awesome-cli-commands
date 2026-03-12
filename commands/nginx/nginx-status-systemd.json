@@ -1,0 +1,9 @@
+{
+  "id": "nginx-status-systemd",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-control",
+  "title": "Check status (systemd)",
+  "command": "sudo systemctl status nginx",
+  "description": "Check Nginx service status",
+  "tags": ["status", "systemd", "service"]
+}

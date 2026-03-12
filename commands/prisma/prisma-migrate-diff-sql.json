@@ -1,0 +1,9 @@
+{
+  "id": "prisma-migrate-diff-sql",
+  "categoryId": "prisma",
+  "subcategoryId": "prisma-migrate",
+  "title": "Diff between two schemas",
+  "command": "npx prisma migrate diff --from-schema-datamodel prisma/old.prisma --to-schema-datamodel prisma/schema.prisma --script",
+  "description": "Generate SQL script of differences between two schema files",
+  "tags": ["migrate", "diff", "sql", "script"]
+}

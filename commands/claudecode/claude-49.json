@@ -1,0 +1,8 @@
+{
+  "id": "claude-49",
+  "categoryId": "claudecode",
+  "subcategoryId": "mcp",
+  "title": "List MCP servers",
+  "command": "claude mcp list",
+  "description": "List all configured MCP servers."
+}

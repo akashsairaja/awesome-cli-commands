@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-certs-14",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-certs",
+  "title": "Check cert expiration",
+  "command": "openssl x509 -in cert.pem -enddate -noout",
+  "description": "Check when a generated cert expires."
+}

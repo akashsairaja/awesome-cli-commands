@@ -1,0 +1,8 @@
+{
+  "id": "helm-oci-3",
+  "categoryId": "helm",
+  "subcategoryId": "helm-oci",
+  "title": "Login to OCI registry",
+  "command": "helm registry login registry.example.com -u user",
+  "description": "Authenticate to OCI registry for push/pull operations."
+}

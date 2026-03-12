@@ -1,0 +1,8 @@
+{
+  "id": "tofu-init-3",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-init",
+  "title": "Reconfigure backend",
+  "command": "tofu init -reconfigure",
+  "description": "Reconfigure backend settings."
+}

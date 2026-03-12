@@ -1,0 +1,8 @@
+{
+  "id": "sops-gs-1",
+  "title": "Install SOPS (macOS)",
+  "command": "brew install sops",
+  "description": "Install SOPS secrets manager using Homebrew on macOS",
+  "categoryId": "sops",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "minikube-cluster-4",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-cluster",
+  "title": "Stop cluster",
+  "command": "minikube stop",
+  "description": "Stop the cluster."
+}

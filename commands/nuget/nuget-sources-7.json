@@ -1,0 +1,8 @@
+{
+  "id": "nuget-sources-7",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-sources",
+  "title": "Disable source",
+  "command": "dotnet nuget disable source MyFeed",
+  "description": "Disable a package source without removing."
+}

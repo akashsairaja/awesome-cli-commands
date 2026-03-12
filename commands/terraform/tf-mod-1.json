@@ -1,0 +1,8 @@
+{
+  "id": "tf-mod-1",
+  "categoryId": "terraform",
+  "subcategoryId": "modules",
+  "title": "Format files",
+  "command": "terraform fmt",
+  "description": "Format .tf files in current directory."
+}

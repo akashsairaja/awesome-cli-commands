@@ -1,0 +1,8 @@
+{
+  "id": "hurl-syntax-1",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-syntax",
+  "title": "GET request",
+  "command": "GET https://api.example.com/users\nHTTP 200",
+  "description": "Basic GET request."
+}

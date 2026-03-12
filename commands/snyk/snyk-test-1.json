@@ -1,0 +1,8 @@
+{
+  "id": "snyk-test-1",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-test",
+  "title": "Test project",
+  "command": "snyk test",
+  "description": "Test current project for vulnerabilities."
+}

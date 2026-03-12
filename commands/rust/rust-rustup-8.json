@@ -1,0 +1,8 @@
+{
+  "id": "rust-rustup-8",
+  "categoryId": "rust",
+  "subcategoryId": "rust-rustup",
+  "title": "Run with toolchain",
+  "command": "cargo +nightly build",
+  "description": "Use specific toolchain for one command."
+}

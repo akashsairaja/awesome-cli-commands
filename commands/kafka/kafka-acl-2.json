@@ -1,0 +1,8 @@
+{
+  "id": "kafka-acl-2",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-acl",
+  "title": "Add producer ACL",
+  "command": "kafka-acls.sh --add --allow-principal User:producer --producer --topic my-topic --bootstrap-server localhost:9092",
+  "description": "Grant producer access to topic."
+}

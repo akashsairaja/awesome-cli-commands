@@ -1,0 +1,9 @@
+{
+  "id": "vercel-domains-inspect",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-domains",
+  "title": "Inspect domain",
+  "command": "vercel domains inspect <domain>",
+  "description": "Inspect domain configuration and DNS records",
+  "tags": ["domains", "inspect", "dns"]
+}

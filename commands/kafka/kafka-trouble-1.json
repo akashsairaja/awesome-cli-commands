@@ -1,0 +1,8 @@
+{
+  "id": "kafka-trouble-1",
+  "categoryId": "kafka",
+  "subcategoryId": "kafka-troubleshooting",
+  "title": "Check broker API versions",
+  "command": "kafka-broker-api-versions.sh --bootstrap-server localhost:9092",
+  "description": "Display supported API versions per broker."
+}

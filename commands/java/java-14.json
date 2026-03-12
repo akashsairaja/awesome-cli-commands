@@ -1,0 +1,8 @@
+{
+  "id": "java-14",
+  "categoryId": "java",
+  "subcategoryId": "java-runtime",
+  "title": "Enable heap dump on OOM",
+  "command": "java -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp MyApp",
+  "description": "Automatically create heap dump when OutOfMemoryError occurs."
+}

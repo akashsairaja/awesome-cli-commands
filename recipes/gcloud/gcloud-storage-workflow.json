@@ -1,0 +1,52 @@
+{
+  "id": "gcloud-storage-workflow",
+  "stackId": "gcloud",
+  "name": "GCS Bucket Operations and Lifecycle",
+  "description": "Create Cloud Storage buckets, upload and download objects, configure lifecycle rules, and manage access controls.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "tags": ["storage", "gcs", "buckets", "lifecycle"],
+  "prerequisites": ["gcloud CLI installed", "GCP project with billing enabled"],
+  "steps": [
+    {
+      "title": "Create a bucket",
+      "command": "gcloud storage buckets create gs://my-unique-bucket-name --location us-central1 --default-storage-class standard",
+      "description": "Creates a regional bucket with standard storage class.",
+      "tip": "Bucket names are globally unique. Use your project ID as a prefix to avoid conflicts."
+    },
+    {
+      "title": "Upload files",
+      "command": "gcloud storage cp ./data/*.csv gs://my-unique-bucket-name/imports/",
+      "description": "Uploads all CSV files from the local data directory to the imports/ prefix in the bucket."
+    },
+    {
+      "title": "List objects",
+      "command": "gcloud storage ls gs://my-unique-bucket-name/imports/ --long",
+      "description": "Lists objects with size, storage class, and creation time."
+    },
+    {
+      "title": "Download objects",
+      "command": "gcloud storage cp gs://my-unique-bucket-name/imports/report.csv ./downloads/",
+      "description": "Downloads a specific object to a local directory."
+    },
+    {
+      "title": "Set a lifecycle rule",
+      "command": "gcloud storage buckets update gs://my-unique-bucket-name --lifecycle-file=lifecycle.json",
+      "description": "Applies lifecycle rules such as automatically deleting objects older than 90 days or transitioning to Nearline storage.",
+      "tip": "Create a lifecycle.json with rules like: {\"rule\": [{\"action\": {\"type\": \"Delete\"}, \"condition\": {\"age\": 90}}]}"
+    }
+  ],
+  "fullScript": "# GCS bucket operations and lifecycle\ngcloud storage buckets create gs://my-unique-bucket-name --location us-central1 --default-storage-class standard\ngcloud storage cp ./data/*.csv gs://my-unique-bucket-name/imports/\ngcloud storage ls gs://my-unique-bucket-name/imports/ --long\ngcloud storage cp gs://my-unique-bucket-name/imports/report.csv ./downloads/\n# Create lifecycle.json then apply\ngcloud storage buckets update gs://my-unique-bucket-name --lifecycle-file=lifecycle.json",
+  "faq": [
+    {
+      "question": "What storage classes are available?",
+      "answer": "Standard (frequent access), Nearline (once a month), Coldline (once a quarter), and Archive (once a year). Each has lower storage costs but higher retrieval costs."
+    },
+    {
+      "question": "How do I make a bucket publicly readable?",
+      "answer": "Use 'gcloud storage buckets add-iam-policy-binding gs://my-bucket --member=allUsers --role=roles/storage.objectViewer'. This grants public read access to all objects."
+    }
+  ],
+  "relatedRecipes": ["gcloud-cloud-functions", "gcloud-iam-management"],
+  "lastUpdated": "2026-03-11"
+}

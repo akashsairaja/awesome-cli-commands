@@ -1,0 +1,9 @@
+{
+  "id": "azure-vm-ssh",
+  "categoryId": "azure",
+  "subcategoryId": "azure-compute",
+  "title": "SSH to VM",
+  "command": "az ssh vm --resource-group <rg> --name <vm-name>",
+  "description": "Connect to VM via SSH using Azure CLI",
+  "tags": ["vm", "ssh", "connect"]
+}

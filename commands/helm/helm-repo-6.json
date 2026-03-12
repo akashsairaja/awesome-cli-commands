@@ -1,0 +1,8 @@
+{
+  "id": "helm-repo-6",
+  "categoryId": "helm",
+  "subcategoryId": "helm-repo",
+  "title": "Search hub",
+  "command": "helm search hub wordpress",
+  "description": "Search Artifact Hub for charts."
+}

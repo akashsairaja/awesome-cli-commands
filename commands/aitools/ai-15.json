@@ -1,0 +1,8 @@
+{
+  "id": "ai-15",
+  "categoryId": "aitools",
+  "subcategoryId": "ai-shellgpt",
+  "title": "Create custom role",
+  "command": "sgpt --create-role security_expert",
+  "description": "Create a new custom role interactively."
+}

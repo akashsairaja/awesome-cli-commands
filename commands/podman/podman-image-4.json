@@ -1,0 +1,8 @@
+{
+  "id": "podman-image-4",
+  "categoryId": "podman",
+  "subcategoryId": "podman-image",
+  "title": "Push image",
+  "command": "podman push myapp:latest registry.example.com/myapp:latest",
+  "description": "Push image to registry."
+}

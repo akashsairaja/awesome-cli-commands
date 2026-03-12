@@ -1,0 +1,8 @@
+{
+  "id": "hurl-syntax-8",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-syntax",
+  "title": "Multipart form data",
+  "command": "POST https://api.example.com/upload\n[MultipartFormData]\nfield1: value1\nfile1: file,photo.jpg;",
+  "description": "Send multipart form with file upload."
+}

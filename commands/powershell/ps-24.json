@@ -1,0 +1,8 @@
+{
+  "id": "ps-24",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-system",
+  "title": "Set execution policy",
+  "command": "Set-ExecutionPolicy RemoteSigned -Scope CurrentUser",
+  "description": "Set script execution policy."
+}

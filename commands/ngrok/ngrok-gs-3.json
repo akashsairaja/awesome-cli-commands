@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-gs-3",
+  "title": "Expose local port",
+  "command": "ngrok http 3000",
+  "description": "Create a public tunnel to your local port 3000",
+  "categoryId": "ngrok",
+  "subcategoryId": "getting-started"
+}

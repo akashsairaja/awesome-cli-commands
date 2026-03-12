@@ -1,0 +1,9 @@
+{
+  "id": "rg-hidden",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-files",
+  "title": "Search hidden files",
+  "command": "rg --hidden \"pattern\"",
+  "description": "Include hidden files in search",
+  "tags": ["hidden", "dotfiles", "include"]
+}

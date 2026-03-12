@@ -1,0 +1,9 @@
+{
+  "id": "vercel-httpstat",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-testing",
+  "title": "HTTP timing stats",
+  "command": "vercel httpstat /api/hello",
+  "description": "Visualize HTTP request timing phases",
+  "tags": ["httpstat", "timing", "performance"]
+}

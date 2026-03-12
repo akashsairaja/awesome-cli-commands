@@ -1,0 +1,8 @@
+{
+  "id": "vercel-gs-2",
+  "title": "Check Vercel CLI version",
+  "command": "vercel --version",
+  "description": "Verify Vercel CLI is installed and display version",
+  "categoryId": "vercel",
+  "subcategoryId": "getting-started"
+}

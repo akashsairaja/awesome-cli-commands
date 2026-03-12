@@ -1,0 +1,8 @@
+{
+  "id": "nats-stream-2",
+  "categoryId": "nats",
+  "subcategoryId": "nats-stream",
+  "title": "Create stream (interactive)",
+  "command": "nats stream add",
+  "description": "Create stream with interactive prompts."
+}

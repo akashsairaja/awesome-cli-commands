@@ -1,0 +1,9 @@
+{
+  "id": "redis-xlen",
+  "categoryId": "redis",
+  "subcategoryId": "redis-streams",
+  "title": "Get stream length",
+  "command": "XLEN stream",
+  "description": "Get number of entries in stream",
+  "tags": ["xlen", "stream", "length"]
+}

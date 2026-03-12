@@ -1,0 +1,8 @@
+{
+  "id": "vim-49",
+  "categoryId": "vim",
+  "subcategoryId": "text-objects",
+  "title": "Change inside brackets",
+  "command": "ci[",
+  "description": "Replace text inside square brackets."
+}

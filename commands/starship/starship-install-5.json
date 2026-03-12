@@ -1,0 +1,8 @@
+{
+  "id": "starship-install-5",
+  "categoryId": "starship",
+  "subcategoryId": "starship-install",
+  "title": "Install (curl)",
+  "command": "curl -sS https://starship.rs/install.sh | sh",
+  "description": "Install Starship via script."
+}

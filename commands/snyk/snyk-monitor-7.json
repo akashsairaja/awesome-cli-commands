@@ -1,0 +1,8 @@
+{
+  "id": "snyk-monitor-7",
+  "categoryId": "snyk",
+  "subcategoryId": "snyk-monitor",
+  "title": "Monitor all projects",
+  "command": "snyk monitor --all-projects",
+  "description": "Monitor all detected projects in a directory."
+}

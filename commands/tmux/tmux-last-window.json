@@ -1,0 +1,9 @@
+{
+  "id": "tmux-last-window",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-windows",
+  "title": "Last active window",
+  "command": "Ctrl+b l",
+  "description": "Switch to last active window",
+  "tags": ["window", "last", "toggle"]
+}

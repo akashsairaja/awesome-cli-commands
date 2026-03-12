@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-status-13",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-status",
+  "title": "Show preferences",
+  "command": "tailscale debug prefs",
+  "description": "Display current daemon preferences."
+}

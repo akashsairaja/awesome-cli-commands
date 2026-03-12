@@ -1,0 +1,8 @@
+{
+  "id": "mongo-timeseries-1",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-timeseries",
+  "title": "Create time series collection",
+  "command": "db.createCollection(\"metrics\", {timeseries: {timeField: \"timestamp\", metaField: \"metadata\"}})",
+  "description": "Create optimized collection for time-stamped data."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ansible-playbook-check",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-playbook",
+  "title": "Dry Run (Check Mode)",
+  "command": "ansible-playbook playbook.yml --check --diff",
+  "description": "Preview changes without applying",
+  "tags": ["playbook", "check", "dry-run"]
+}

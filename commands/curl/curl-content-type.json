@@ -1,0 +1,9 @@
+{
+  "id": "curl-content-type",
+  "categoryId": "curl",
+  "subcategoryId": "curl-headers",
+  "title": "Set Content-Type",
+  "command": "curl -H \"Content-Type: application/json\" https://api.example.com",
+  "description": "Set Content-Type header",
+  "tags": ["header", "content-type"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "minikube-cluster-3",
+  "categoryId": "minikube",
+  "subcategoryId": "minikube-cluster",
+  "title": "Start with resources",
+  "command": "minikube start --cpus=4 --memory=8192",
+  "description": "Start with custom resources."
+}

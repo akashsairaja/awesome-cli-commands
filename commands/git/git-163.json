@@ -1,0 +1,8 @@
+{
+  "id": "git-163",
+  "categoryId": "git",
+  "subcategoryId": "advanced",
+  "title": "Restore from specific commit",
+  "command": "git restore --source=<commit> <file>",
+  "description": "Restore file from specific commit."
+}

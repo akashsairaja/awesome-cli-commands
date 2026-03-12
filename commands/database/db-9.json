@@ -1,0 +1,8 @@
+{
+  "id": "db-9",
+  "categoryId": "database",
+  "subcategoryId": "mysql",
+  "title": "Create user",
+  "command": "CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';",
+  "description": "Create new MySQL user."
+}

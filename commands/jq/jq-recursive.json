@@ -1,0 +1,9 @@
+{
+  "id": "jq-recursive",
+  "categoryId": "jq",
+  "subcategoryId": "jq-objects",
+  "title": "Recursive descent",
+  "command": "cat file.json | jq '.. | .name? // empty'",
+  "description": "Find all name fields recursively",
+  "tags": ["recursive", "find", "deep"]
+}

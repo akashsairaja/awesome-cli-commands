@@ -1,0 +1,9 @@
+{
+  "id": "vercel-bisect-auto",
+  "categoryId": "vercel",
+  "subcategoryId": "vercel-testing",
+  "title": "Automated bisect",
+  "command": "vercel bisect --run ./test.sh",
+  "description": "Automated bisect with test script",
+  "tags": ["bisect", "automated", "test"]
+}

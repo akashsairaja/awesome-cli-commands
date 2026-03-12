@@ -1,0 +1,8 @@
+{
+  "id": "sops-config-5",
+  "categoryId": "sops",
+  "subcategoryId": "sops-config",
+  "title": "Key groups with threshold",
+  "command": "creation_rules:\n  - path_regex: .*\\.yaml$\n    shamir_threshold: 2\n    key_groups:\n      - age:\n          - age1key1\n      - age:\n          - age1key2",
+  "description": "Require N of M keys to decrypt."
+}

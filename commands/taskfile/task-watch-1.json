@@ -1,0 +1,8 @@
+{
+  "id": "task-watch-1",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-watch",
+  "title": "Watch mode",
+  "command": "task --watch build",
+  "description": "Run task on file changes."
+}

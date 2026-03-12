@@ -1,0 +1,8 @@
+{
+  "id": "mvn-profile-5",
+  "categoryId": "maven",
+  "subcategoryId": "profiles",
+  "title": "All profiles",
+  "command": "mvn help:all-profiles",
+  "description": "List all available profiles."
+}

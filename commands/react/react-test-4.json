@@ -1,0 +1,8 @@
+{
+  "id": "react-test-4",
+  "categoryId": "react",
+  "subcategoryId": "react-testing",
+  "title": "Update snapshots",
+  "command": "jest --updateSnapshot",
+  "description": "Update Jest snapshots."
+}

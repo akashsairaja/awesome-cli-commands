@@ -1,0 +1,8 @@
+{
+  "id": "mongo-crud-4",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-crud",
+  "title": "Find with filter",
+  "command": "db.users.find({ age: { $gt: 25 } })",
+  "description": "Find documents matching criteria."
+}

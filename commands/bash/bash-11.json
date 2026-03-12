@@ -1,0 +1,8 @@
+{
+  "id": "bash-11",
+  "categoryId": "bash",
+  "subcategoryId": "scripting",
+  "title": "Source another script",
+  "command": "source ./lib.sh",
+  "description": "Include another script file."
+}

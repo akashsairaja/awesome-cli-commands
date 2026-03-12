@@ -1,0 +1,8 @@
+{
+  "id": "k8s-121",
+  "categoryId": "kubernetes",
+  "subcategoryId": "debugging",
+  "title": "API resources",
+  "command": "kubectl api-resources",
+  "description": "List all available API resources."
+}

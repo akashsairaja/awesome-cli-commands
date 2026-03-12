@@ -1,0 +1,8 @@
+{
+  "id": "linux-5",
+  "categoryId": "linux",
+  "subcategoryId": "files",
+  "title": "Count lines in codebase",
+  "command": "find . -name '*.ts' | xargs wc -l | tail -1",
+  "description": "Count total lines of TypeScript code."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k8s-139",
+  "categoryId": "kubernetes",
+  "subcategoryId": "helm",
+  "title": "Upgrade release",
+  "command": "helm upgrade <release> <chart>",
+  "description": "Upgrade a Helm release."
+}

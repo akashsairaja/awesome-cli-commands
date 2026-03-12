@@ -1,0 +1,9 @@
+{
+  "id": "redis-info",
+  "categoryId": "redis",
+  "subcategoryId": "redis-server",
+  "title": "Server info",
+  "command": "INFO",
+  "description": "Get server information and statistics",
+  "tags": ["info", "stats", "server"]
+}

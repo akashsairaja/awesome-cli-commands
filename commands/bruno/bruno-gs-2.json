@@ -1,0 +1,8 @@
+{
+  "id": "bruno-gs-2",
+  "title": "Install Bruno CLI (npm)",
+  "command": "npm install -g @usebruno/cli",
+  "description": "Install the Bruno CLI globally using npm",
+  "categoryId": "bruno",
+  "subcategoryId": "getting-started"
+}

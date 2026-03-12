@@ -1,0 +1,8 @@
+{
+  "id": "react-ui-4",
+  "categoryId": "react",
+  "subcategoryId": "react-ui",
+  "title": "Install Tailwind",
+  "command": "npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p",
+  "description": "Install and initialize Tailwind CSS."
+}

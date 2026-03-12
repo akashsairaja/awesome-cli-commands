@@ -1,0 +1,8 @@
+{
+  "id": "kafka-gs-2",
+  "title": "Create a topic",
+  "command": "kafka-topics.sh --create --topic test --bootstrap-server localhost:9092",
+  "description": "Create a new Kafka topic named 'test'",
+  "categoryId": "kafka",
+  "subcategoryId": "getting-started"
+}

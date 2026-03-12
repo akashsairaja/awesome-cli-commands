@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-iam-binding-add",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-iam",
+  "title": "Add IAM Binding",
+  "command": "gcloud projects add-iam-policy-binding <project> --member=<member> --role=<role>",
+  "description": "Grant a role to a member on project",
+  "tags": ["iam", "binding", "role"]
+}

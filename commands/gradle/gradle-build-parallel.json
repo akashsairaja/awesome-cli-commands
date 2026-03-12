@@ -1,0 +1,9 @@
+{
+  "id": "gradle-build-parallel",
+  "categoryId": "gradle",
+  "subcategoryId": "gradle-build",
+  "title": "Parallel Build",
+  "command": "./gradlew build --parallel",
+  "description": "Build subprojects in parallel",
+  "tags": ["build", "parallel", "fast"]
+}

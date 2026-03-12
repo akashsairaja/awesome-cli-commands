@@ -1,0 +1,8 @@
+{
+  "id": "apt-7",
+  "categoryId": "ubuntu",
+  "subcategoryId": "apt-packages",
+  "title": "Show package details",
+  "command": "apt show <package>",
+  "description": "Display package information."
+}

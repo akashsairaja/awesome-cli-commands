@@ -1,0 +1,9 @@
+{
+  "id": "gh-repo-create",
+  "categoryId": "github",
+  "subcategoryId": "gh-repo",
+  "title": "Create new repository",
+  "command": "gh repo create <name> --public",
+  "description": "Create a new public GitHub repository",
+  "tags": ["repo", "create", "new", "public"]
+}

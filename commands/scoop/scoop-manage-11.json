@@ -1,0 +1,8 @@
+{
+  "id": "scoop-manage-11",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-manage",
+  "title": "VirusTotal check",
+  "command": "scoop virustotal git",
+  "description": "Check app hash against VirusTotal."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "git-73",
+  "categoryId": "git",
+  "subcategoryId": "remote",
+  "title": "Force push safely",
+  "command": "git push --force-with-lease",
+  "description": "Force push, abort if remote changed."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "gradle-gs-3",
+  "title": "Initialize a new Gradle project",
+  "command": "gradle init",
+  "description": "Create a new Gradle project with interactive setup wizard",
+  "categoryId": "gradle",
+  "subcategoryId": "getting-started"
+}

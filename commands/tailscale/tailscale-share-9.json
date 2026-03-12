@@ -1,0 +1,8 @@
+{
+  "id": "tailscale-share-9",
+  "categoryId": "tailscale",
+  "subcategoryId": "tailscale-share",
+  "title": "Funnel on port 8443",
+  "command": "tailscale funnel --https=8443 / http://localhost:3000",
+  "description": "Funnel on a custom HTTPS port."
+}

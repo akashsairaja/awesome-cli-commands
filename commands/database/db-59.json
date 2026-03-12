@@ -1,0 +1,8 @@
+{
+  "id": "db-59",
+  "categoryId": "database",
+  "subcategoryId": "mongodb",
+  "title": "Database stats",
+  "command": "db.stats()",
+  "description": "Show current database statistics."
+}

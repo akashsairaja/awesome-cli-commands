@@ -1,0 +1,8 @@
+{
+  "id": "rust-test-3",
+  "categoryId": "rust",
+  "subcategoryId": "rust-test",
+  "title": "Run with output",
+  "command": "cargo test -- --nocapture",
+  "description": "Run tests showing println! output."
+}

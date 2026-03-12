@@ -1,0 +1,8 @@
+{
+  "id": "react-bundle-3",
+  "categoryId": "react",
+  "subcategoryId": "react-bundle",
+  "title": "Next.js bundle analyzer",
+  "command": "ANALYZE=true npm run build",
+  "description": "Analyze Next.js bundle (requires @next/bundle-analyzer)."
+}

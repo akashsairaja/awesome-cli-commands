@@ -1,0 +1,9 @@
+{
+  "id": "nginx-ssl-modern-tls",
+  "categoryId": "nginx",
+  "subcategoryId": "nginx-ssl",
+  "title": "Modern TLS protocols only",
+  "command": "ssl_protocols TLSv1.2 TLSv1.3; ssl_prefer_server_ciphers on;",
+  "description": "Disable outdated SSL versions",
+  "tags": ["ssl", "tls", "protocols", "security"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "task-syntax-4",
+  "categoryId": "taskfile",
+  "subcategoryId": "task-syntax",
+  "title": "Init taskfile",
+  "command": "task --init",
+  "description": "Create initial Taskfile.yml."
+}

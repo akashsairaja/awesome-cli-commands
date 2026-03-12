@@ -1,0 +1,8 @@
+{
+  "id": "java-32",
+  "categoryId": "java",
+  "subcategoryId": "java-tools",
+  "title": "Create native installer (jpackage)",
+  "command": "jpackage --input lib --main-jar app.jar --main-class com.example.Main --name MyApp --type dmg",
+  "description": "Create native installer (.msi, .dmg, .deb) for distribution."
+}

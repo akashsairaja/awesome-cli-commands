@@ -1,0 +1,8 @@
+{
+  "id": "sops-edit-3",
+  "categoryId": "sops",
+  "subcategoryId": "sops-edit",
+  "title": "Set single value",
+  "command": "sops set secrets.enc.yaml '[\"db\"][\"password\"]' '\"newpassword\"'",
+  "description": "Set a specific value without opening editor."
+}

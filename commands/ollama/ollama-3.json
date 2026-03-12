@@ -1,0 +1,8 @@
+{
+  "id": "ollama-3",
+  "categoryId": "ollama",
+  "subcategoryId": "ollama-models",
+  "title": "List installed models",
+  "command": "ollama list",
+  "description": "Show all locally available models with sizes."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "go-build-9",
+  "categoryId": "go",
+  "subcategoryId": "go-build",
+  "title": "Build with version info",
+  "command": "go build -ldflags=\"-X main.version=v1.0.0\"",
+  "description": "Inject version at build time via ldflags."
+}

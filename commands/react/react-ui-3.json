@@ -1,0 +1,8 @@
+{
+  "id": "react-ui-3",
+  "categoryId": "react",
+  "subcategoryId": "react-ui",
+  "title": "Add all shadcn components",
+  "command": "npx shadcn@latest add --all",
+  "description": "Add all available shadcn/ui components."
+}

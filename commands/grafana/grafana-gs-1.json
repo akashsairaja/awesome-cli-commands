@@ -1,0 +1,8 @@
+{
+  "id": "grafana-gs-1",
+  "title": "Install Grafana (macOS)",
+  "command": "brew install grafana",
+  "description": "Install Grafana using Homebrew on macOS",
+  "categoryId": "grafana",
+  "subcategoryId": "getting-started"
+}

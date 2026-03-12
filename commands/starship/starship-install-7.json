@@ -1,0 +1,8 @@
+{
+  "id": "starship-install-7",
+  "categoryId": "starship",
+  "subcategoryId": "starship-install",
+  "title": "Init Cmd",
+  "command": "starship init cmd",
+  "description": "Show init instructions for Windows Cmd via Clink."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "delta-3",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-delta",
+  "title": "Line numbers",
+  "command": "git diff | delta --line-numbers",
+  "description": "Show line numbers in diff."
+}

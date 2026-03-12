@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-screen-record",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-streaming",
+  "title": "Screen recording (Linux)",
+  "command": "ffmpeg -f x11grab -s 1920x1080 -i :0.0 output.mp4",
+  "description": "Record screen on Linux",
+  "tags": ["screen", "record", "capture"]
+}

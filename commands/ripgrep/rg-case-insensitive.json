@@ -1,0 +1,9 @@
+{
+  "id": "rg-case-insensitive",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-search",
+  "title": "Case insensitive search",
+  "command": "rg -i \"pattern\"",
+  "description": "Search ignoring case",
+  "tags": ["search", "case", "insensitive"]
+}

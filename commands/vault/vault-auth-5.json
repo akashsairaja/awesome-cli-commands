@@ -1,0 +1,8 @@
+{
+  "id": "vault-auth-5",
+  "categoryId": "vault",
+  "subcategoryId": "vault-auth",
+  "title": "Configure K8s auth",
+  "command": "vault write auth/kubernetes/config kubernetes_host=\"https://kubernetes.default.svc\"",
+  "description": "Configure Kubernetes auth method."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "linux-46",
+  "categoryId": "linux",
+  "subcategoryId": "processes",
+  "title": "Trace system calls",
+  "command": "strace -f -e trace=network -p <pid>",
+  "description": "Trace network-related system calls of a running process."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "rg-max-depth",
+  "categoryId": "ripgrep",
+  "subcategoryId": "rg-files",
+  "title": "Limit directory depth",
+  "command": "rg --max-depth 2 \"pattern\"",
+  "description": "Limit search to 2 levels deep",
+  "tags": ["depth", "limit", "recursive"]
+}

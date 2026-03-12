@@ -1,0 +1,8 @@
+{
+  "id": "mvn-profile-11",
+  "categoryId": "maven",
+  "subcategoryId": "profiles",
+  "title": "Release prepare",
+  "command": "mvn release:prepare",
+  "description": "Prepare for release (update versions, tag)."
+}

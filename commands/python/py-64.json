@@ -1,0 +1,8 @@
+{
+  "id": "py-64",
+  "categoryId": "python",
+  "subcategoryId": "python-venv",
+  "title": "Activate (PowerShell)",
+  "command": "venv\\Scripts\\Activate.ps1",
+  "description": "Activate virtual environment in PowerShell."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ffmpeg-images-to-video",
+  "categoryId": "ffmpeg",
+  "subcategoryId": "ffmpeg-convert",
+  "title": "Images to video",
+  "command": "ffmpeg -framerate 24 -i img%03d.png -c:v libx264 output.mp4",
+  "description": "Create video from image sequence",
+  "tags": ["images", "video", "slideshow"]
+}

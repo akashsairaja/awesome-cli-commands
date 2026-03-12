@@ -1,0 +1,52 @@
+{
+  "id": "redis-session-store",
+  "stackId": "redis",
+  "name": "Use Redis as a Session Store",
+  "description": "Store and manage user sessions in Redis for fast, centralized session handling across multiple application instances.",
+  "difficulty": "beginner",
+  "timeMinutes": 8,
+  "tags": ["sessions", "web", "authentication", "ttl"],
+  "prerequisites": ["Redis installed and running", "redis-cli available"],
+  "steps": [
+    {
+      "title": "Create a session key with user data",
+      "description": "Store session data as a hash with a unique session ID and set a TTL for automatic expiration.",
+      "command": "redis-cli HSET session:abc123 userId 1001 username alice role admin createdAt '2026-03-11T10:00:00Z'"
+    },
+    {
+      "title": "Set session expiration",
+      "description": "Automatically expire the session after 30 minutes of inactivity.",
+      "command": "redis-cli EXPIRE session:abc123 1800",
+      "tip": "Call EXPIRE again on each request to implement sliding session windows."
+    },
+    {
+      "title": "Retrieve session data",
+      "description": "Fetch all fields from a session hash to validate the user.",
+      "command": "redis-cli HGETALL session:abc123"
+    },
+    {
+      "title": "Destroy a session on logout",
+      "description": "Remove the session key entirely when the user logs out.",
+      "command": "redis-cli DEL session:abc123"
+    },
+    {
+      "title": "Count active sessions",
+      "description": "Use SCAN to count all active session keys without blocking.",
+      "command": "redis-cli --scan --pattern 'session:*' | wc -l",
+      "warning": "Avoid KEYS in production as it blocks the server. Always use SCAN for pattern matching on live instances."
+    }
+  ],
+  "fullScript": "#!/bin/bash\n# Redis Session Store Management\nset -euo pipefail\n\nSESSION_ID=\"sess_$(openssl rand -hex 16)\"\necho \"=== Creating session: $SESSION_ID ===\"\nredis-cli HSET \"session:$SESSION_ID\" userId 1001 username alice role admin createdAt \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"\nredis-cli EXPIRE \"session:$SESSION_ID\" 1800\n\necho \"\"\necho \"=== Session data ===\"\nredis-cli HGETALL \"session:$SESSION_ID\"\n\necho \"\"\necho \"=== TTL remaining ===\"\nredis-cli TTL \"session:$SESSION_ID\"\n\necho \"\"\necho \"=== Active sessions ===\"\nredis-cli --scan --pattern 'session:*' | wc -l\n\necho \"\"\necho \"=== Destroying session ===\"\nredis-cli DEL \"session:$SESSION_ID\"\necho \"Session destroyed.\"",
+  "faq": [
+    {
+      "question": "Hash vs string for session data?",
+      "answer": "Hashes let you read or update individual fields (e.g., HGET session:id username) without deserializing the entire session. Strings with JSON are simpler but require full read/write cycles."
+    },
+    {
+      "question": "How do I implement sliding session expiration?",
+      "answer": "Call EXPIRE on the session key with each authenticated request. This resets the TTL so sessions only expire after a period of inactivity, not a fixed time from creation."
+    }
+  ],
+  "relatedRecipes": ["redis-cache-setup", "redis-rate-limiting"],
+  "lastUpdated": "2026-03-11"
+}

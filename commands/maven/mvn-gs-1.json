@@ -1,0 +1,8 @@
+{
+  "id": "mvn-gs-1",
+  "title": "Install Maven (macOS)",
+  "command": "brew install maven",
+  "description": "Install Apache Maven build tool using Homebrew on macOS",
+  "categoryId": "maven",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-config-9",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-config",
+  "title": "Interactive mode",
+  "command": "prepare-commit-msg:\n  commands:\n    commitizen:\n      interactive: true\n      run: npx cz",
+  "description": "Enable interactive terminal for a command."
+}

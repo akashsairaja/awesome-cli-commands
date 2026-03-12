@@ -1,0 +1,9 @@
+{
+  "id": "azure-sp-create",
+  "categoryId": "azure",
+  "subcategoryId": "azure-auth",
+  "title": "Create Service Principal",
+  "command": "az ad sp create-for-rbac --name <name> --role Contributor --scopes /subscriptions/<sub-id>",
+  "description": "Create a service principal with role assignment",
+  "tags": ["service-principal", "create", "rbac"]
+}

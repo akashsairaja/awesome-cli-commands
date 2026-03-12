@@ -1,0 +1,8 @@
+{
+  "id": "starship-config-5",
+  "categoryId": "starship",
+  "subcategoryId": "starship-config",
+  "title": "Show module timings",
+  "command": "starship timings",
+  "description": "Display render time per module."
+}

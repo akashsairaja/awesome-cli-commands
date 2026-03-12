@@ -1,0 +1,8 @@
+{
+  "id": "tofu-state-1",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-state",
+  "title": "List state",
+  "command": "tofu state list",
+  "description": "List resources in state."
+}

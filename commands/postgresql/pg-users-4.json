@@ -1,0 +1,8 @@
+{
+  "id": "pg-users-4",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-users",
+  "title": "Create role with options",
+  "command": "CREATE ROLE devuser WITH LOGIN PASSWORD 'pass' CREATEDB VALID UNTIL '2027-01-01';",
+  "description": "Create role with login, database creation rights, and expiry date."
+}

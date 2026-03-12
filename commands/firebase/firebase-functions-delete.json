@@ -1,0 +1,9 @@
+{
+  "id": "firebase-functions-delete",
+  "categoryId": "firebase",
+  "subcategoryId": "firebase-functions",
+  "title": "Delete function",
+  "command": "firebase functions:delete <functionName>",
+  "description": "Delete a deployed Cloud Function",
+  "tags": ["functions", "delete", "remove"]
+}

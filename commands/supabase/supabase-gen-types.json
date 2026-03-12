@@ -1,0 +1,9 @@
+{
+  "id": "supabase-gen-types",
+  "categoryId": "supabase",
+  "subcategoryId": "supabase-auth",
+  "title": "Generate TypeScript types",
+  "command": "supabase gen types typescript --local > types/supabase.ts",
+  "description": "Generate TypeScript types from database schema",
+  "tags": ["gen", "types", "typescript"]
+}

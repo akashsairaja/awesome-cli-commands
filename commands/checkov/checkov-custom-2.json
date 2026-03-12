@@ -1,0 +1,8 @@
+{
+  "id": "checkov-custom-2",
+  "categoryId": "checkov",
+  "subcategoryId": "checkov-custom",
+  "title": "YAML policy",
+  "command": "metadata:\n  id: CUSTOM_1\n  name: Custom check\ndefinition:\n  cond_type: attribute\n  resource_types:\n    - aws_s3_bucket\n  attribute: versioning.enabled\n  operator: is_true",
+  "description": "Example YAML custom policy."
+}

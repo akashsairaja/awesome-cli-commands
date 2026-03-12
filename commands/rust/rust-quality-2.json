@@ -1,0 +1,8 @@
+{
+  "id": "rust-quality-2",
+  "categoryId": "rust",
+  "subcategoryId": "rust-quality",
+  "title": "Check formatting",
+  "command": "cargo fmt -- --check",
+  "description": "Check formatting without modifying."
+}

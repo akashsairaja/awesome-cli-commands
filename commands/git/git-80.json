@@ -1,0 +1,8 @@
+{
+  "id": "git-80",
+  "categoryId": "git",
+  "subcategoryId": "history",
+  "title": "Oneline log",
+  "command": "git log --oneline",
+  "description": "Show compact commit history."
+}

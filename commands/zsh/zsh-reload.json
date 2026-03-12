@@ -1,0 +1,9 @@
+{
+  "id": "zsh-reload",
+  "categoryId": "zsh",
+  "subcategoryId": "zsh-config",
+  "title": "Reload zsh config",
+  "command": "source ~/.zshrc",
+  "description": "Reload .zshrc configuration",
+  "tags": ["reload", "config", "source"]
+}

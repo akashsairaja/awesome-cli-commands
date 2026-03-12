@@ -1,0 +1,8 @@
+{
+  "id": "ssh-34",
+  "categoryId": "sshgpg",
+  "subcategoryId": "connections",
+  "title": "Run remote command",
+  "command": "ssh user@host 'ls -la /var/log'",
+  "description": "Execute command on remote without shell."
+}

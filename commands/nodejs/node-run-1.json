@@ -1,0 +1,8 @@
+{
+  "id": "node-run-1",
+  "categoryId": "nodejs",
+  "subcategoryId": "node-run",
+  "title": "Run script",
+  "command": "node app.js",
+  "description": "Execute JavaScript file."
+}

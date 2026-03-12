@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-state-1",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-state",
+  "title": "Export state",
+  "command": "pulumi stack export --file state.json",
+  "description": "Export stack state to file."
+}

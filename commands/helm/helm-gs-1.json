@@ -1,0 +1,8 @@
+{
+  "id": "helm-gs-1",
+  "title": "Install Helm (macOS)",
+  "command": "brew install helm",
+  "description": "Install Helm using Homebrew on macOS",
+  "categoryId": "helm",
+  "subcategoryId": "getting-started"
+}

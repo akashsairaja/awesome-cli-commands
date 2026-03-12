@@ -1,0 +1,8 @@
+{
+  "id": "ssh-26",
+  "categoryId": "sshgpg",
+  "subcategoryId": "keys",
+  "title": "Delete GPG public key",
+  "command": "gpg --delete-keys user@example.com",
+  "description": "Remove a GPG public key."
+}

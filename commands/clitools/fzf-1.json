@@ -1,0 +1,8 @@
+{
+  "id": "fzf-1",
+  "categoryId": "clitools",
+  "subcategoryId": "cli-fzf",
+  "title": "Interactive file search",
+  "command": "fzf",
+  "description": "Launch fuzzy finder for files."
+}

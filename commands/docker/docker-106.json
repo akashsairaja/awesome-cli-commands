@@ -1,0 +1,8 @@
+{
+  "id": "docker-106",
+  "categoryId": "docker",
+  "subcategoryId": "buildx",
+  "title": "Use default builder",
+  "command": "docker buildx use default",
+  "description": "Switch to default builder."
+}

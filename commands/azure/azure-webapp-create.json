@@ -1,0 +1,9 @@
+{
+  "id": "azure-webapp-create",
+  "categoryId": "azure",
+  "subcategoryId": "azure-webapp",
+  "title": "Create Web App",
+  "command": "az webapp create --resource-group <rg> --plan <plan> --name <app-name> --runtime 'NODE:18-lts'",
+  "description": "Create a new App Service web app",
+  "tags": ["webapp", "create", "app-service"]
+}

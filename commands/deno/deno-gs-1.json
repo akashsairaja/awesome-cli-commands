@@ -1,0 +1,8 @@
+{
+  "id": "deno-gs-1",
+  "title": "Install Deno (macOS)",
+  "command": "brew install deno",
+  "description": "Install Deno using Homebrew on macOS",
+  "categoryId": "deno",
+  "subcategoryId": "getting-started"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "hurl-run-8",
+  "categoryId": "hurl",
+  "subcategoryId": "hurl-run",
+  "title": "No output body",
+  "command": "hurl --no-output api.hurl",
+  "description": "Suppress response body output."
+}

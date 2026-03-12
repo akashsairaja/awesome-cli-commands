@@ -1,0 +1,8 @@
+{
+  "id": "mkcert-uninstall-5",
+  "categoryId": "mkcert",
+  "subcategoryId": "mkcert-uninstall",
+  "title": "Remove all PEM files",
+  "command": "rm -f *.pem *.p12",
+  "description": "Delete all certificate and key files in directory."
+}

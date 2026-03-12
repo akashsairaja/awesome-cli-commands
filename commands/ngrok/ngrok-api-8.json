@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-api-8",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-api",
+  "title": "Update ngrok",
+  "command": "ngrok update",
+  "description": "Update ngrok to the latest version."
+}

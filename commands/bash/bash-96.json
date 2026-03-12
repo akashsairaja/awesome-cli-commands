@@ -1,0 +1,8 @@
+{
+  "id": "bash-96",
+  "categoryId": "bash",
+  "subcategoryId": "conditionals",
+  "title": "NOT condition",
+  "command": "[ ! -f file ] && echo \"file does not exist\"",
+  "description": "Negate a condition."
+}

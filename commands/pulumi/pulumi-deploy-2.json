@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-deploy-2",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-deploy",
+  "title": "Deploy changes",
+  "command": "pulumi up",
+  "description": "Deploy infrastructure changes."
+}

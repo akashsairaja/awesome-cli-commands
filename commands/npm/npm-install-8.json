@@ -1,0 +1,8 @@
+{
+  "id": "npm-install-8",
+  "categoryId": "npm",
+  "subcategoryId": "npm-install",
+  "title": "pnpm add",
+  "command": "pnpm add <package>",
+  "description": "Add package with pnpm."
+}

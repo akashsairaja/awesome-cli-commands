@@ -1,0 +1,8 @@
+{
+  "id": "flux-gs-3",
+  "title": "Bootstrap Flux with GitHub",
+  "command": "flux bootstrap github --owner=<user> --repository=<repo> --path=clusters/my-cluster",
+  "description": "Bootstrap Flux on a cluster using a GitHub repository",
+  "categoryId": "flux",
+  "subcategoryId": "getting-started"
+}

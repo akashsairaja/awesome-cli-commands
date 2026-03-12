@@ -1,0 +1,8 @@
+{
+  "id": "scoop-bucket-8",
+  "categoryId": "scoop",
+  "subcategoryId": "scoop-bucket",
+  "title": "Add nerd-fonts bucket",
+  "command": "scoop bucket add nerd-fonts",
+  "description": "Add bucket for Nerd Font patched fonts."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "k8s-94",
+  "categoryId": "kubernetes",
+  "subcategoryId": "statefulsets",
+  "title": "Rollout status statefulset",
+  "command": "kubectl rollout status statefulset/<name>",
+  "description": "Monitor statefulset rollout progress."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "temporal-schedule-4",
+  "categoryId": "temporal",
+  "subcategoryId": "schedule",
+  "title": "Create with overlap policy",
+  "command": "temporal schedule create --schedule-id my-schedule --interval 30m --overlap-policy BufferAll --workflow-id wf --type MyWorkflow --task-queue my-queue",
+  "description": "Set policy for overlapping executions (Skip, BufferOne, BufferAll, CancelOther, TerminateOther, AllowAll)."
+}

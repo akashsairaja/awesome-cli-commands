@@ -1,0 +1,8 @@
+{
+  "id": "py-111",
+  "categoryId": "python",
+  "subcategoryId": "python-ruff",
+  "title": "Check and fix",
+  "command": "ruff check . --fix",
+  "description": "Lint and auto-fix all safe issues."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "spark-31",
+  "categoryId": "spark",
+  "subcategoryId": "spark-config",
+  "title": "Use properties file",
+  "command": "spark-submit --properties-file spark-defaults.conf app.py",
+  "description": "Load configuration from a properties file."
+}

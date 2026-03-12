@@ -1,0 +1,8 @@
+{
+  "id": "ngrok-tcp-1",
+  "categoryId": "ngrok",
+  "subcategoryId": "ngrok-tcp",
+  "title": "TCP tunnel",
+  "command": "ngrok tcp 22",
+  "description": "Expose TCP port (e.g., SSH)."
+}

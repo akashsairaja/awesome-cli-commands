@@ -1,0 +1,8 @@
+{
+  "id": "ts-build-9",
+  "categoryId": "typescript",
+  "subcategoryId": "ts-build",
+  "title": "Preview build plan",
+  "command": "tsc --build --dry --verbose",
+  "description": "Show detailed build plan without executing (useful for debugging)."
+}

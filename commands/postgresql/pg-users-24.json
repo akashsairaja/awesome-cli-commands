@@ -1,0 +1,8 @@
+{
+  "id": "pg-users-24",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-users",
+  "title": "Drop user safely",
+  "command": "REASSIGN OWNED BY appuser TO postgres; DROP OWNED BY appuser; DROP USER appuser;",
+  "description": "Safely remove a user by reassigning objects, dropping owned items, then the role."
+}

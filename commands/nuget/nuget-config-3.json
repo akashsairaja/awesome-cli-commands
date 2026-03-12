@@ -1,0 +1,8 @@
+{
+  "id": "nuget-config-3",
+  "categoryId": "nuget",
+  "subcategoryId": "nuget-config",
+  "title": "Set NUGET_PACKAGES env",
+  "command": "set NUGET_PACKAGES=D:\\custom\\packages",
+  "description": "Override global packages folder location."
+}

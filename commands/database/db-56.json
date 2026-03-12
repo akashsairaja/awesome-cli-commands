@@ -1,0 +1,8 @@
+{
+  "id": "db-56",
+  "categoryId": "database",
+  "subcategoryId": "mongodb",
+  "title": "Create index",
+  "command": "db.collection.createIndex({ field: 1 })",
+  "description": "Create an ascending index on a field."
+}

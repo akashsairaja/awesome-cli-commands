@@ -1,0 +1,8 @@
+{
+  "id": "k3s-install-8",
+  "categoryId": "k3s",
+  "subcategoryId": "k3s-install",
+  "title": "Install with embedded etcd",
+  "command": "curl -sfL https://get.k3s.io | sh -s - server --cluster-init",
+  "description": "Initialize HA cluster with embedded etcd datastore."
+}

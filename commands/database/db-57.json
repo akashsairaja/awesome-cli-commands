@@ -1,0 +1,8 @@
+{
+  "id": "db-57",
+  "categoryId": "database",
+  "subcategoryId": "mongodb",
+  "title": "List indexes",
+  "command": "db.collection.getIndexes()",
+  "description": "Show all indexes on a collection."
+}

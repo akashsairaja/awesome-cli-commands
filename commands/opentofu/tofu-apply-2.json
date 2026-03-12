@@ -1,0 +1,8 @@
+{
+  "id": "tofu-apply-2",
+  "categoryId": "opentofu",
+  "subcategoryId": "tofu-apply",
+  "title": "Apply saved plan",
+  "command": "tofu apply tfplan",
+  "description": "Apply from saved plan file."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "lefthook-manage-6",
+  "categoryId": "lefthook",
+  "subcategoryId": "lefthook-manage",
+  "title": "Upgrade via npm",
+  "command": "npm update lefthook",
+  "description": "Upgrade Lefthook to latest version."
+}

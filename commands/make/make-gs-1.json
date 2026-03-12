@@ -1,0 +1,8 @@
+{
+  "id": "make-gs-1",
+  "title": "Check Make version",
+  "command": "make --version",
+  "description": "Display the installed GNU Make version",
+  "categoryId": "make",
+  "subcategoryId": "getting-started"
+}

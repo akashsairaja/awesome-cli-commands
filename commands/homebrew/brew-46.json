@@ -1,0 +1,8 @@
+{
+  "id": "brew-46",
+  "categoryId": "homebrew",
+  "subcategoryId": "cleanup",
+  "title": "Clear cache",
+  "command": "rm -rf $(brew --cache)",
+  "description": "Delete all cached downloads."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "curl-download-progress",
+  "categoryId": "curl",
+  "subcategoryId": "curl-download",
+  "title": "Download with progress bar",
+  "command": "curl -# -O https://example.com/file.zip",
+  "description": "Download showing progress bar",
+  "tags": ["download", "progress", "bar"]
+}

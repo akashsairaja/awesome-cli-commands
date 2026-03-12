@@ -1,0 +1,8 @@
+{
+  "id": "brew-32",
+  "categoryId": "homebrew",
+  "subcategoryId": "brew-services",
+  "title": "Run once",
+  "command": "brew services run <service>",
+  "description": "Run service without registering."
+}

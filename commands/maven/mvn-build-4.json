@@ -1,0 +1,8 @@
+{
+  "id": "mvn-build-4",
+  "categoryId": "maven",
+  "subcategoryId": "build",
+  "title": "Skip tests",
+  "command": "mvn clean install -DskipTests",
+  "description": "Build without running tests."
+}

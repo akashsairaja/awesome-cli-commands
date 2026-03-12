@@ -1,0 +1,8 @@
+{
+  "id": "composer-install-5",
+  "categoryId": "composer",
+  "subcategoryId": "composer-install",
+  "title": "Install optimized",
+  "command": "composer install --optimize-autoloader --no-dev",
+  "description": "Production install with optimized autoloader."
+}

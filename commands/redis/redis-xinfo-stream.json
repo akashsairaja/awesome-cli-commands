@@ -1,0 +1,9 @@
+{
+  "id": "redis-xinfo-stream",
+  "categoryId": "redis",
+  "subcategoryId": "redis-streams",
+  "title": "Detailed stream info",
+  "command": "XINFO STREAM mystream FULL",
+  "description": "Get comprehensive stream information including entries and groups",
+  "tags": ["xinfo", "stream", "info", "metadata"]
+}

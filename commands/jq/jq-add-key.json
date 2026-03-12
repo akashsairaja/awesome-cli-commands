@@ -1,0 +1,9 @@
+{
+  "id": "jq-add-key",
+  "categoryId": "jq",
+  "subcategoryId": "jq-objects",
+  "title": "Add key to object",
+  "command": "cat file.json | jq '. + {newKey: \"value\"}'",
+  "description": "Add new key-value pair to object",
+  "tags": ["object", "add", "key"]
+}

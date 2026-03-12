@@ -1,0 +1,9 @@
+{
+  "id": "redis-hincrby",
+  "categoryId": "redis",
+  "subcategoryId": "redis-hashes",
+  "title": "Increment hash field",
+  "command": "HINCRBY key field increment",
+  "description": "Increment hash field by integer",
+  "tags": ["hincrby", "hash", "increment"]
+}

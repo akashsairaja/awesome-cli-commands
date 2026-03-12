@@ -1,0 +1,8 @@
+{
+  "id": "spark-14",
+  "categoryId": "spark",
+  "subcategoryId": "spark-shell",
+  "title": "Shell with packages",
+  "command": "pyspark --packages org.apache.spark:spark-avro_2.12:3.5.0",
+  "description": "Start shell with additional Maven dependencies."
+}

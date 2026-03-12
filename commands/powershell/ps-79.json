@@ -1,0 +1,8 @@
+{
+  "id": "ps-79",
+  "categoryId": "powershell",
+  "subcategoryId": "ps-remoting",
+  "title": "Enable remoting",
+  "command": "Enable-PSRemoting -Force",
+  "description": "Enable PowerShell remoting."
+}

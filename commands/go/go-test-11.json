@@ -1,0 +1,8 @@
+{
+  "id": "go-test-11",
+  "categoryId": "go",
+  "subcategoryId": "go-test",
+  "title": "Benchmarks with memory",
+  "command": "go test -bench=. -benchmem ./...",
+  "description": "Show memory allocation statistics."
+}

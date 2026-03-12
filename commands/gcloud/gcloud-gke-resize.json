@@ -1,0 +1,9 @@
+{
+  "id": "gcloud-gke-resize",
+  "categoryId": "gcloud",
+  "subcategoryId": "gcloud-gke",
+  "title": "Resize Node Pool",
+  "command": "gcloud container clusters resize <name> --zone=<zone> --num-nodes=5",
+  "description": "Change the number of nodes in default pool",
+  "tags": ["gke", "resize", "scale"]
+}

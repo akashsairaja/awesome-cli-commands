@@ -1,0 +1,8 @@
+{
+  "id": "brew-48",
+  "categoryId": "homebrew",
+  "subcategoryId": "taps",
+  "title": "Add tap",
+  "command": "brew tap user/repo",
+  "description": "Add a third-party tap."
+}

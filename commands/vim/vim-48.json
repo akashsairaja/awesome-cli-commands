@@ -1,0 +1,8 @@
+{
+  "id": "vim-48",
+  "categoryId": "vim",
+  "subcategoryId": "text-objects",
+  "title": "Change inside braces",
+  "command": "ci{",
+  "description": "Replace text inside curly braces."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "podman-pod-1",
+  "categoryId": "podman",
+  "subcategoryId": "podman-pod",
+  "title": "Create pod",
+  "command": "podman pod create --name mypod -p 8080:80",
+  "description": "Create a new pod."
+}

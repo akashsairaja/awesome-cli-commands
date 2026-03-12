@@ -1,0 +1,9 @@
+{
+  "id": "ansible-navigator-inventory",
+  "categoryId": "ansible",
+  "subcategoryId": "ansible-navigator",
+  "title": "Inspect Inventory",
+  "command": "ansible-navigator inventory -i hosts --host server1",
+  "description": "Explore inventory with navigator interface",
+  "tags": ["navigator", "inventory", "inspect", "host"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "pulumi-config-5",
+  "categoryId": "pulumi",
+  "subcategoryId": "pulumi-config",
+  "title": "Remove config",
+  "command": "pulumi config rm myapp:feature-flag",
+  "description": "Remove a configuration value."
+}

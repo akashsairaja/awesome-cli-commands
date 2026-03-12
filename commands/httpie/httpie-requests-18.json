@@ -1,0 +1,8 @@
+{
+  "id": "httpie-requests-18",
+  "categoryId": "httpie",
+  "subcategoryId": "httpie-requests",
+  "title": "Raw JSON array body",
+  "command": "http POST https://api.example.com/items < items.json",
+  "description": "Send a raw JSON array or complex body from a file."
+}

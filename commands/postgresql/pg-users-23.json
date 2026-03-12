@@ -1,0 +1,8 @@
+{
+  "id": "pg-users-23",
+  "categoryId": "postgresql",
+  "subcategoryId": "pg-users",
+  "title": "Reassign all objects",
+  "command": "REASSIGN OWNED BY olduser TO newuser;",
+  "description": "Transfer ownership of all objects from one role to another."
+}

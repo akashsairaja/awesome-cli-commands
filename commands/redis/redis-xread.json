@@ -1,0 +1,9 @@
+{
+  "id": "redis-xread",
+  "categoryId": "redis",
+  "subcategoryId": "redis-streams",
+  "title": "Read from stream",
+  "command": "XREAD STREAMS stream 0",
+  "description": "Read entries from stream",
+  "tags": ["xread", "stream", "read"]
+}

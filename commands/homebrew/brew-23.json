@@ -1,0 +1,8 @@
+{
+  "id": "brew-23",
+  "categoryId": "homebrew",
+  "subcategoryId": "casks",
+  "title": "Search casks",
+  "command": "brew search --casks <query>",
+  "description": "Search for cask applications."
+}

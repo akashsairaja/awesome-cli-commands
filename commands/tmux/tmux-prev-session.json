@@ -1,0 +1,9 @@
+{
+  "id": "tmux-prev-session",
+  "categoryId": "tmux",
+  "subcategoryId": "tmux-sessions",
+  "title": "Previous session",
+  "command": "Ctrl+b (",
+  "description": "Switch to previous session",
+  "tags": ["session", "previous", "switch"]
+}

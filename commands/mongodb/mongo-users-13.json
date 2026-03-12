@@ -1,0 +1,8 @@
+{
+  "id": "mongo-users-13",
+  "categoryId": "mongodb",
+  "subcategoryId": "mongo-users",
+  "title": "Enable authentication",
+  "command": "mongod --auth --port 27017 --dbpath /data/db",
+  "description": "Start MongoDB with authentication enabled (requires users created first)."
+}

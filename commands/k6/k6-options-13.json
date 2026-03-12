@@ -1,0 +1,8 @@
+{
+  "id": "k6-options-13",
+  "categoryId": "k6",
+  "subcategoryId": "k6-options",
+  "title": "Constant arrival rate",
+  "command": "export const options = {\n  scenarios: {\n    constant_rate: {\n      executor: 'constant-arrival-rate',\n      rate: 100,\n      timeUnit: '1s',\n      duration: '2m',\n      preAllocatedVUs: 50,\n      maxVUs: 200,\n    },\n  },\n};",
+  "description": "Fixed request rate per time unit."
+}

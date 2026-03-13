@@ -4,8 +4,8 @@ stackId: git
 type: skill
 name: TDD Green Phase (Make Tests Pass)
 description: >-
-  Implement the minimal code needed to make failing tests pass in the TDD
-  green phase.
+  Implement the minimal code needed to make failing tests pass in the TDD green
+  phase.
 difficulty: intermediate
 tags:
   - git
@@ -19,17 +19,17 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the TDD Green Phase (Make Tests Pass) skill?"
+  - question: When should I use the TDD Green Phase (Make Tests Pass) skill?
     answer: >-
       Implement the minimal code needed to make failing tests pass in the TDD
       green phase. It includes practical examples for version control
       development.
-  - question: "What tools and setup does TDD Green Phase (Make Tests Pass) require?"
+  - question: What tools and setup does TDD Green Phase (Make Tests Pass) require?
     answer: >-
       Works with standard Git tooling (Git CLI, git hooks). No special setup
       required beyond a working version control environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Green Phase: Simple function
@@ -97,6 +97,3 @@ app.post('/api/users',
 - Avoid bypassing tests to make them pass.
 - Keep changes scoped to the failing behavior only.
 
-## Resources
-
-- `resources/implementation-playbook.md` for detailed patterns and examples.

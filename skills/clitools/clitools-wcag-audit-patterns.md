@@ -15,17 +15,17 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the WCAG Audit Patterns skill?"
+  - question: When should I use the WCAG Audit Patterns skill?
     answer: >-
       Comprehensive guide to auditing web content against WCAG 2.2 guidelines
       with actionable remediation strategies.
-  - question: "What tools and setup does WCAG Audit Patterns require?"
+  - question: What tools and setup does WCAG Audit Patterns require?
     answer: >-
       Works with standard CLI & Dev Tools tooling (various CLI tools, code
-      generators). No special setup required beyond a working developer
-      tooling environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+      generators). No special setup required beyond a working developer tooling
+      environment.
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # WCAG Audit Patterns
@@ -54,13 +54,9 @@ Comprehensive guide to auditing web content against WCAG 2.2 guidelines with act
 3. Map each issue to a WCAG criterion, severity, and remediation guidance.
 4. Re-test after fixes and document residual risk and compliance status.
 
-Refer to `resources/implementation-playbook.md` for detailed patterns, checklists, and templates.
 
 ## Safety
 
 - Avoid claiming legal compliance without expert review.
 - Keep evidence of test steps and results for audit trails.
 
-## Resources
-
-- `resources/implementation-playbook.md` for detailed patterns, checklists, and templates.

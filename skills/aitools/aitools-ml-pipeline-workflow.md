@@ -4,8 +4,8 @@ stackId: aitools
 type: skill
 name: Ml Pipeline Workflow
 description: >-
-  Build end-to-end MLOps pipelines from data preparation through model
-  training, validation, and production deployment.
+  Build end-to-end MLOps pipelines from data preparation through model training,
+  validation, and production deployment.
 difficulty: beginner
 tags:
   - aitools
@@ -19,35 +19,24 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Ml Pipeline Workflow skill?"
+  - question: When should I use the Ml Pipeline Workflow skill?
     answer: >-
       Build end-to-end MLOps pipelines from data preparation through model
       training, validation, and production deployment. This skill provides a
-      structured workflow for prompt engineering, RAG pipelines, LLM
-      application development, and AI agent building.
-  - question: "What tools and setup does Ml Pipeline Workflow require?"
+      structured workflow for prompt engineering, RAG pipelines, LLM application
+      development, and AI agent building.
+  - question: What tools and setup does Ml Pipeline Workflow require?
     answer: >-
       Requires pip/poetry installed. Works with AI & ML Tools projects. Review
       the configuration section for project-specific setup.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # ML Pipeline Workflow
 
 Complete end-to-end MLOps pipeline orchestration from data preparation through model deployment.
 
-## Do not use this skill when
-
-- The task is unrelated to ml pipeline workflow
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 ## Overview
 

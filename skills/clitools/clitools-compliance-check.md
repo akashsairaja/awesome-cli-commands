@@ -19,19 +19,19 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Security Compliance Checking skill?"
+  - question: When should I use the Security Compliance Checking skill?
     answer: >-
       You are a compliance expert specializing in regulatory requirements for
-      software systems including GDPR, HIPAA, SOC2, PCI-DSS, and other
-      industry standards. It includes practical examples for developer tooling
+      software systems including GDPR, HIPAA, SOC2, PCI-DSS, and other industry
+      standards. It includes practical examples for developer tooling
       development.
-  - question: "What tools and setup does Security Compliance Checking require?"
+  - question: What tools and setup does Security Compliance Checking require?
     answer: >-
       Works with standard CLI & Dev Tools tooling (various CLI tools, code
-      generators). No special setup required beyond a working developer
-      tooling environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+      generators). No special setup required beyond a working developer tooling
+      environment.
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Regulatory Compliance Check
@@ -56,12 +56,6 @@ The user needs to ensure their application meets regulatory requirements and ind
 ## Requirements
 $ARGUMENTS
 
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 ## Safety
 
@@ -81,6 +75,3 @@ $ARGUMENTS
 
 Focus on practical implementation that balances compliance requirements with business operations and user experience.
 
-## Resources
-
-- `resources/implementation-playbook.md` for detailed patterns and examples.

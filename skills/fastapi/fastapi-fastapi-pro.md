@@ -3,8 +3,7 @@ id: fastapi-fastapi-pro
 stackId: fastapi
 type: skill
 name: FastAPI Pro
-description: >-
-  Build high-performance async APIs with FastAPI, SQLAlchemy 2.
+description: 'Build high-performance async APIs with FastAPI, SQLAlchemy 2.'
 difficulty: intermediate
 tags:
   - fastapi
@@ -19,35 +18,19 @@ compatibility:
   - claude-code
   - cursor
 faq:
-  - question: "When should I use the FastAPI Pro skill?"
+  - question: When should I use the FastAPI Pro skill?
     answer: >-
       Build high-performance async APIs with FastAPI, SQLAlchemy 2. This skill
       provides a structured workflow for API endpoint design, async request
       handling, Pydantic validation, and OpenAPI generation.
-  - question: "What tools and setup does FastAPI Pro require?"
+  - question: What tools and setup does FastAPI Pro require?
     answer: >-
       Works with standard FastAPI tooling (FastAPI, Uvicorn). Review the setup
       section in the skill content for specific configuration steps.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
-## Use this skill when
-
-- Working on fastapi pro tasks or workflows
-- Needing guidance, best practices, or checklists for fastapi pro
-
-## Do not use this skill when
-
-- The task is unrelated to fastapi pro
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 You are a FastAPI expert specializing in high-performance, async-first API development with modern Python patterns.
 

@@ -15,34 +15,23 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Terraform Module Library skill?"
+  - question: When should I use the Terraform Module Library skill?
     answer: >-
       Build reusable Terraform modules for AWS, Azure, and GCP infrastructure
       following infrastructure-as-code best practices. It includes practical
       examples for infrastructure as code development.
-  - question: "What tools and setup does Terraform Module Library require?"
+  - question: What tools and setup does Terraform Module Library require?
     answer: >-
       Requires Terraform CLI installed. Works with Terraform projects. No
       additional configuration needed beyond standard tooling.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Terraform Module Library
 
 Production-ready Terraform module patterns for AWS, Azure, and GCP infrastructure.
 
-## Do not use this skill when
-
-- The task is unrelated to terraform module library
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 ## Purpose
 

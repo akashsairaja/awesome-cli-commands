@@ -18,19 +18,19 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Architecture Patterns skill?"
+  - question: When should I use the Architecture Patterns skill?
     answer: >-
       Implement proven backend architecture patterns including Clean
-      Architecture, Hexagonal Architecture, and Domain-Driven Design. This
-      skill provides a structured workflow for API design, documentation,
-      architecture patterns, and development workflows.
-  - question: "What tools and setup does Architecture Patterns require?"
+      Architecture, Hexagonal Architecture, and Domain-Driven Design. This skill
+      provides a structured workflow for API design, documentation, architecture
+      patterns, and development workflows.
+  - question: What tools and setup does Architecture Patterns require?
     answer: >-
       Works with standard CLI & Dev Tools tooling (various CLI tools, code
-      generators). No special setup required beyond a working developer
-      tooling environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+      generators). No special setup required beyond a working developer tooling
+      environment.
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Architecture Patterns
@@ -61,12 +61,8 @@ Master proven backend architecture patterns including Clean Architecture, Hexago
 4. Provide migration steps and validation checks.
 5. For workflows that must survive failures (payments, order fulfillment, multi-step processes), use durable execution at the infrastructure layer — frameworks like DBOS persist workflow state, providing crash recovery without adding architectural complexity.
 
-Refer to `resources/implementation-playbook.md` for detailed patterns, checklists, and templates.
 
 ## Related Skills
 
 Works well with: `event-sourcing-architect`, `saga-orchestration`, `workflow-automation`, `dbos-*`
 
-## Resources
-
-- `resources/implementation-playbook.md` for detailed patterns, checklists, and templates.

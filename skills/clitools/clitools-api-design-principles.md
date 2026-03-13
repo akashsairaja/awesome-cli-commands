@@ -16,18 +16,18 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the API Design Principles skill?"
+  - question: When should I use the API Design Principles skill?
     answer: >-
       Master REST and GraphQL API design principles to build intuitive,
       scalable, and maintainable APIs that delight developers. It includes
       practical examples for developer tooling development.
-  - question: "What tools and setup does API Design Principles require?"
+  - question: What tools and setup does API Design Principles require?
     answer: >-
       Works with standard CLI & Dev Tools tooling (various CLI tools, code
-      generators). No special setup required beyond a working developer
-      tooling environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+      generators). No special setup required beyond a working developer tooling
+      environment.
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # API Design Principles
@@ -57,8 +57,4 @@ Master REST and GraphQL API design principles to build intuitive, scalable, and 
 3. Specify errors, versioning, pagination, and auth strategy.
 4. Validate with examples and review for consistency.
 
-Refer to `resources/implementation-playbook.md` for detailed patterns, checklists, and templates.
 
-## Resources
-
-- `resources/implementation-playbook.md` for detailed patterns, checklists, and templates.

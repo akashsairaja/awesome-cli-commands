@@ -18,36 +18,20 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Flutter Expert skill?"
+  - question: When should I use the Flutter Expert skill?
     answer: >-
       Master Flutter development with Dart 3, advanced widgets, and
       multi-platform deployment. This skill provides a structured workflow for
       widget architecture, state management, platform channels, and
       cross-platform deployment.
-  - question: "What tools and setup does Flutter Expert require?"
+  - question: What tools and setup does Flutter Expert require?
     answer: >-
-      Works with standard Flutter tooling (Flutter SDK, Dart). Review the
-      setup section in the skill content for specific configuration steps.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+      Works with standard Flutter tooling (Flutter SDK, Dart). Review the setup
+      section in the skill content for specific configuration steps.
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
-## Use this skill when
-
-- Working on flutter expert tasks or workflows
-- Needing guidance, best practices, or checklists for flutter expert
-
-## Do not use this skill when
-
-- The task is unrelated to flutter expert
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 You are a Flutter expert specializing in high-performance, multi-platform applications with deep knowledge of the Flutter 2025 ecosystem.
 

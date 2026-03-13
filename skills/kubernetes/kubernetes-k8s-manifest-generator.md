@@ -18,18 +18,18 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the K8S Manifest Generator skill?"
+  - question: When should I use the K8S Manifest Generator skill?
     answer: >-
       Create production-ready Kubernetes manifests for Deployments, Services,
       ConfigMaps, and Secrets following best practices and security standards.
       This skill provides a structured workflow for pod management, deployment
       strategies, security policies, and resource optimization.
-  - question: "What tools and setup does K8S Manifest Generator require?"
+  - question: What tools and setup does K8S Manifest Generator require?
     answer: >-
       Works with standard Kubernetes tooling (kubectl, Helm). Review the setup
       section in the skill content for specific configuration steps.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Kubernetes Manifest Generator
@@ -47,18 +47,9 @@ Use this skill when you need to:
 - Implement resource limits, health checks, and security contexts
 - Design manifests for multi-environment deployments
 
-## Do not use this skill when
-
-- The task is unrelated to kubernetes manifest generator
-- You need a different domain or tool outside this scope
-
 ## Instructions
 
 - Clarify goals, constraints, and required inputs.
 - Apply relevant best practices and validate outcomes.
 - Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
-## Resources
-
-- `resources/implementation-playbook.md` for detailed patterns and examples.

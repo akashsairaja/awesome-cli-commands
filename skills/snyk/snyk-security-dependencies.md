@@ -17,17 +17,17 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Dependency Security Scanning skill?"
+  - question: When should I use the Dependency Security Scanning skill?
     answer: >-
       You are a security expert specializing in dependency vulnerability
       analysis, SBOM generation, and supply chain security. It includes
       practical examples for security scanning development.
-  - question: "What tools and setup does Dependency Security Scanning require?"
+  - question: What tools and setup does Dependency Security Scanning require?
     answer: >-
       Works with standard Snyk tooling (Snyk CLI, Snyk API). No special setup
       required beyond a working security scanning environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Dependency Vulnerability Scanning
@@ -53,18 +53,9 @@ The user needs comprehensive dependency security analysis to identify vulnerable
 ## Requirements
 $ARGUMENTS
 
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 ## Safety
 
 - Avoid running auto-fix or upgrade steps without approval.
 - Treat dependency changes as release-impacting and test accordingly.
 
-## Resources
-
-- `resources/implementation-playbook.md` for detailed patterns and examples.

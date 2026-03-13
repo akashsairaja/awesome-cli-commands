@@ -19,36 +19,25 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Prompt Engineering Patterns skill?"
+  - question: When should I use the Prompt Engineering Patterns skill?
     answer: >-
-      Master advanced prompt engineering techniques to maximize LLM
-      performance, reliability, and controllability in production. This skill
-      provides a structured workflow for prompt engineering, RAG pipelines,
-      LLM application development, and AI agent building.
-  - question: "What tools and setup does Prompt Engineering Patterns require?"
+      Master advanced prompt engineering techniques to maximize LLM performance,
+      reliability, and controllability in production. This skill provides a
+      structured workflow for prompt engineering, RAG pipelines, LLM application
+      development, and AI agent building.
+  - question: What tools and setup does Prompt Engineering Patterns require?
     answer: >-
       Works with standard AI & ML Tools tooling (LLM APIs, embedding models).
       Review the setup section in the skill content for specific configuration
       steps.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Prompt Engineering Patterns
 
 Master advanced prompt engineering techniques to maximize LLM performance, reliability, and controllability.
 
-## Do not use this skill when
-
-- The task is unrelated to prompt engineering patterns
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 ## Use this skill when
 

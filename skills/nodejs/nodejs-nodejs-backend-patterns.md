@@ -18,18 +18,18 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Nodejs Backend Patterns skill?"
+  - question: When should I use the Nodejs Backend Patterns skill?
     answer: >-
       Comprehensive guidance for building scalable, maintainable, and
       production-ready Node.js backend applications with modern frameworks,
-      architectural patterns, and best practices. It includes practical
-      examples for Node.js backend development.
-  - question: "What tools and setup does Nodejs Backend Patterns require?"
+      architectural patterns, and best practices. It includes practical examples
+      for Node.js backend development.
+  - question: What tools and setup does Nodejs Backend Patterns require?
     answer: >-
       Works with standard Node.js tooling (Node.js runtime, npm/yarn/pnpm). No
       special setup required beyond a working Node.js backend environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Node.js Backend Patterns
@@ -47,18 +47,9 @@ Comprehensive guidance for building scalable, maintainable, and production-ready
 - Building real-time applications with WebSockets
 - Implementing background job processing
 
-## Do not use this skill when
-
-- The task is unrelated to node.js backend patterns
-- You need a different domain or tool outside this scope
-
 ## Instructions
 
 - Clarify goals, constraints, and required inputs.
 - Apply relevant best practices and validate outcomes.
 - Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
-## Resources
-
-- `resources/implementation-playbook.md` for detailed patterns and examples.

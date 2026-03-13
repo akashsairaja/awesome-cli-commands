@@ -3,8 +3,7 @@ id: git-tdd-refactor
 stackId: git
 type: skill
 name: TDD Refactor Phase
-description: >-
-  Use when working with tdd workflows tdd refactor.
+description: Use when working with tdd workflows tdd refactor.
 difficulty: intermediate
 tags:
   - git
@@ -18,35 +17,19 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the TDD Refactor Phase skill?"
+  - question: When should I use the TDD Refactor Phase skill?
     answer: >-
       Use when working with tdd workflows tdd refactor. This skill provides a
       structured workflow for branching strategies, workflow automation, hook
       scripts, and repository maintenance.
-  - question: "What tools and setup does TDD Refactor Phase require?"
+  - question: What tools and setup does TDD Refactor Phase require?
     answer: >-
       Works with standard Git tooling (Git CLI, git hooks). No special setup
       required beyond a working version control environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
-## Use this skill when
-
-- Working on tdd workflows tdd refactor tasks or workflows
-- Needing guidance, best practices, or checklists for tdd workflows tdd refactor
-
-## Do not use this skill when
-
-- The task is unrelated to tdd workflows tdd refactor
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 Refactor code with confidence using comprehensive test safety net:
 

@@ -4,9 +4,9 @@ stackId: aitools
 type: skill
 name: Notion Spec to Implementation
 description: >-
-  Turn Notion specs into implementation plans, tasks, and progress tracking;
-  use when implementing PRDs/feature specs and creating Notion plans + tasks
-  from them.
+  Turn Notion specs into implementation plans, tasks, and progress tracking; use
+  when implementing PRDs/feature specs and creating Notion plans + tasks from
+  them.
 difficulty: beginner
 tags:
   - aitools
@@ -18,20 +18,20 @@ tags:
 compatibility:
   - codex
 faq:
-  - question: "When should I use the Notion Spec to Implementation skill?"
+  - question: When should I use the Notion Spec to Implementation skill?
     answer: >-
-      Turn Notion specs into implementation plans, tasks, and progress
-      tracking; use when implementing PRDs/feature specs and creating Notion
-      plans + tasks from them. This skill provides a structured workflow for
-      prompt engineering, RAG pipelines, LLM application development, and AI
-      agent building.
-  - question: "What tools and setup does Notion Spec to Implementation require?"
+      Turn Notion specs into implementation plans, tasks, and progress tracking;
+      use when implementing PRDs/feature specs and creating Notion plans + tasks
+      from them. This skill provides a structured workflow for prompt
+      engineering, RAG pipelines, LLM application development, and AI agent
+      building.
+  - question: What tools and setup does Notion Spec to Implementation require?
     answer: >-
       Works with standard AI & ML Tools tooling (LLM APIs, embedding models).
       Review the setup section in the skill content for specific configuration
       steps.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Spec to Implementation
@@ -83,5 +83,4 @@ After successful login, the user will have to restart codex. You should finish y
 - Keep checklists and status fields in plan/tasks in sync; note blockers and decisions.
 
 ## References and examples
-- `reference/` — parsing patterns, plan/task templates, progress cadence (e.g., `spec-parsing.md`, `standard-implementation-plan.md`, `task-creation.md`, `progress-tracking.md`).
 - `examples/` — end-to-end walkthroughs (e.g., `ui-component.md`, `api-feature.md`, `database-migration.md`).

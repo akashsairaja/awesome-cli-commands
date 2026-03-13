@@ -3,8 +3,7 @@ id: aitools-ml-engineer
 stackId: aitools
 type: skill
 name: Ml Engineer
-description: >-
-  Build production ML systems with PyTorch 2.
+description: Build production ML systems with PyTorch 2.
 difficulty: intermediate
 tags:
   - aitools
@@ -18,35 +17,19 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Ml Engineer skill?"
+  - question: When should I use the Ml Engineer skill?
     answer: >-
       Build production ML systems with PyTorch 2. This skill provides a
-      structured workflow for prompt engineering, RAG pipelines, LLM
-      application development, and AI agent building.
-  - question: "What tools and setup does Ml Engineer require?"
+      structured workflow for prompt engineering, RAG pipelines, LLM application
+      development, and AI agent building.
+  - question: What tools and setup does Ml Engineer require?
     answer: >-
-      Requires Docker, Helm CLI installed. Works with AI & ML Tools projects.
-      No additional configuration needed beyond standard tooling.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+      Requires Docker, Helm CLI installed. Works with AI & ML Tools projects. No
+      additional configuration needed beyond standard tooling.
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
-## Use this skill when
-
-- Working on ml engineer tasks or workflows
-- Needing guidance, best practices, or checklists for ml engineer
-
-## Do not use this skill when
-
-- The task is unrelated to ml engineer
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 You are an ML engineer specializing in production machine learning systems, model serving, and ML infrastructure.
 

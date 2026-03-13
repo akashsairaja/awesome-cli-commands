@@ -4,9 +4,9 @@ stackId: aitools
 type: skill
 name: Notion Research Documentation
 description: >-
-  Research across Notion and synthesize into structured documentation; use
-  when gathering info from multiple Notion sources to produce briefs,
-  comparisons, or reports with citations.
+  Research across Notion and synthesize into structured documentation; use when
+  gathering info from multiple Notion sources to produce briefs, comparisons, or
+  reports with citations.
 difficulty: beginner
 tags:
   - aitools
@@ -17,20 +17,20 @@ tags:
 compatibility:
   - codex
 faq:
-  - question: "When should I use the Notion Research Documentation skill?"
+  - question: When should I use the Notion Research Documentation skill?
     answer: >-
       Research across Notion and synthesize into structured documentation; use
       when gathering info from multiple Notion sources to produce briefs,
       comparisons, or reports with citations. This skill provides a structured
       workflow for prompt engineering, RAG pipelines, LLM application
       development, and AI agent building.
-  - question: "What tools and setup does Notion Research Documentation require?"
+  - question: What tools and setup does Notion Research Documentation require?
     answer: >-
       Works with standard AI & ML Tools tooling (LLM APIs, embedding models).
       Review the setup section in the skill content for specific configuration
       steps.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Research & Documentation
@@ -83,5 +83,4 @@ After successful login, the user will have to restart codex. You should finish y
 - Share a short changelog or status using `Notion:notion-update-page` when updating.
 
 ## References and examples
-- `reference/` — search tactics, format selection, templates, and citation rules (e.g., `advanced-search.md`, `format-selection-guide.md`, `research-summary-template.md`, `comparison-template.md`, `citations.md`).
 - `examples/` — end-to-end walkthroughs (e.g., `competitor-analysis.md`, `technical-investigation.md`, `market-research.md`, `trip-planning.md`).

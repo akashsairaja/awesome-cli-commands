@@ -3,9 +3,7 @@ id: database-cqrs-implementation
 stackId: database
 type: skill
 name: CQRS Implementation
-description: >-
-  Implement Command Query Responsibility Segregation for scalable
-  architectures.
+description: Implement Command Query Responsibility Segregation for scalable architectures.
 difficulty: beginner
 tags:
   - database
@@ -15,16 +13,16 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the CQRS Implementation skill?"
+  - question: When should I use the CQRS Implementation skill?
     answer: >-
       Implement Command Query Responsibility Segregation for scalable
       architectures.
-  - question: "What tools and setup does CQRS Implementation require?"
+  - question: What tools and setup does CQRS Implementation require?
     answer: >-
-      Works with standard Database tooling (SQL clients, ORM tools). No
-      special setup required beyond a working database environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+      Works with standard Database tooling (SQL clients, ORM tools). No special
+      setup required beyond a working database environment.
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # CQRS Implementation
@@ -52,8 +50,4 @@ Comprehensive guide to implementing CQRS (Command Query Responsibility Segregati
 - Define command and query models with clear boundaries.
 - Implement read model projections and synchronization.
 - Validate performance, recovery, and failure modes.
-- If detailed patterns are required, open `resources/implementation-playbook.md`.
 
-## Resources
-
-- `resources/implementation-playbook.md` for detailed CQRS patterns and templates.

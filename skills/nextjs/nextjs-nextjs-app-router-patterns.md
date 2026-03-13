@@ -17,17 +17,17 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Next.js App Router Patterns skill?"
+  - question: When should I use the Next.js App Router Patterns skill?
     answer: >-
       Comprehensive patterns for Next.js 14+ App Router architecture, Server
-      Components, and modern full-stack React development. It includes
-      practical examples for Next.js full-stack development.
-  - question: "What tools and setup does Next.js App Router Patterns require?"
+      Components, and modern full-stack React development. It includes practical
+      examples for Next.js full-stack development.
+  - question: What tools and setup does Next.js App Router Patterns require?
     answer: >-
-      Works with standard Next.js tooling (Next.js CLI, App Router). No
-      special setup required beyond a working Next.js full-stack environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+      Works with standard Next.js tooling (Next.js CLI, App Router). No special
+      setup required beyond a working Next.js full-stack environment.
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Next.js App Router Patterns
@@ -43,18 +43,9 @@ Comprehensive patterns for Next.js 14+ App Router architecture, Server Component
 - Optimizing data fetching and caching
 - Building full-stack features with Server Actions
 
-## Do not use this skill when
-
-- The task is unrelated to next.js app router patterns
-- You need a different domain or tool outside this scope
-
 ## Instructions
 
 - Clarify goals, constraints, and required inputs.
 - Apply relevant best practices and validate outcomes.
 - Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
-## Resources
-
-- `resources/implementation-playbook.md` for detailed patterns and examples.

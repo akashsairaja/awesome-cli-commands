@@ -16,18 +16,18 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Database Cost Optimization skill?"
+  - question: When should I use the Database Cost Optimization skill?
     answer: >-
       You are a cloud cost optimization expert specializing in reducing
       infrastructure expenses while maintaining performance and reliability.
       This skill provides a structured workflow for schema design, query
       optimization, migration strategies, and data modeling.
-  - question: "What tools and setup does Database Cost Optimization require?"
+  - question: What tools and setup does Database Cost Optimization require?
     answer: >-
-      Works with standard Database tooling (SQL clients, ORM tools). No
-      special setup required beyond a working database environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+      Works with standard Database tooling (SQL clients, ORM tools). No special
+      setup required beyond a working database environment.
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Cloud Cost Optimization
@@ -59,13 +59,9 @@ $ARGUMENTS
 - Identify waste and quick wins with estimated savings.
 - Propose changes with risk assessment and rollback plan.
 - Implement budgets, alerts, and ongoing optimization cadence.
-- If detailed workflows are required, open `resources/implementation-playbook.md`.
 
 ## Safety
 
 - Validate changes in staging before production rollout.
 - Ensure backups and rollback paths before resizing or deletion.
 
-## Resources
-
-- `resources/implementation-playbook.md` for detailed cost analysis and tooling.

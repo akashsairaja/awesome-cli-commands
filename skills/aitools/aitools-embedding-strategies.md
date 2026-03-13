@@ -3,9 +3,7 @@ id: aitools-embedding-strategies
 stackId: aitools
 type: skill
 name: Embedding Strategies
-description: >-
-  Select and optimize embedding models for semantic search and RAG
-  applications.
+description: Select and optimize embedding models for semantic search and RAG applications.
 difficulty: intermediate
 tags:
   - aitools
@@ -18,34 +16,23 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Embedding Strategies skill?"
+  - question: When should I use the Embedding Strategies skill?
     answer: >-
       Select and optimize embedding models for semantic search and RAG
       applications. It includes practical examples for AI/ML development
       development.
-  - question: "What tools and setup does Embedding Strategies require?"
+  - question: What tools and setup does Embedding Strategies require?
     answer: >-
       Requires pip/poetry installed. Works with AI & ML Tools projects. No
       additional configuration needed beyond standard tooling.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Embedding Strategies
 
 Guide to selecting and optimizing embedding models for vector search applications.
 
-## Do not use this skill when
-
-- The task is unrelated to embedding strategies
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 ## Use this skill when
 

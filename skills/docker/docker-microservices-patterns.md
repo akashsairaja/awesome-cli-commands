@@ -17,17 +17,17 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Microservices Patterns skill?"
+  - question: When should I use the Microservices Patterns skill?
     answer: >-
       Design microservices architectures with service boundaries, event-driven
-      communication, and resilience patterns. It includes practical examples
-      for container development.
-  - question: "What tools and setup does Microservices Patterns require?"
+      communication, and resilience patterns. It includes practical examples for
+      container development.
+  - question: What tools and setup does Microservices Patterns require?
     answer: >-
       Works with standard Docker tooling (Docker CLI, Docker Compose). No
       special setup required beyond a working container environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Microservices Patterns
@@ -57,6 +57,3 @@ Master microservices architecture patterns including service boundaries, inter-s
 3. Plan resilience, observability, and deployment strategy.
 4. Provide migration steps and operational guardrails.
 
-## Resources
-
-- `resources/implementation-playbook.md` for detailed patterns and examples.

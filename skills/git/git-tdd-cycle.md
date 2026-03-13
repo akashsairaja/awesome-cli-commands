@@ -3,8 +3,7 @@ id: git-tdd-cycle
 stackId: git
 type: skill
 name: TDD Red-Green-Refactor Cycle
-description: >-
-  Use when working with tdd workflows tdd cycle.
+description: Use when working with tdd workflows tdd cycle.
 difficulty: intermediate
 tags:
   - git
@@ -18,35 +17,19 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the TDD Red-Green-Refactor Cycle skill?"
+  - question: When should I use the TDD Red-Green-Refactor Cycle skill?
     answer: >-
       Use when working with tdd workflows tdd cycle. This skill provides a
       structured workflow for branching strategies, workflow automation, hook
       scripts, and repository maintenance.
-  - question: "What tools and setup does TDD Red-Green-Refactor Cycle require?"
+  - question: What tools and setup does TDD Red-Green-Refactor Cycle require?
     answer: >-
       Works with standard Git tooling (Git CLI, git hooks). Review the setup
       section in the skill content for specific configuration steps.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
-## Use this skill when
-
-- Working on tdd workflows tdd cycle tasks or workflows
-- Needing guidance, best practices, or checklists for tdd workflows tdd cycle
-
-## Do not use this skill when
-
-- The task is unrelated to tdd workflows tdd cycle
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 Execute a comprehensive Test-Driven Development (TDD) workflow with strict red-green-refactor discipline:
 

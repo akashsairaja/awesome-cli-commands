@@ -3,8 +3,7 @@ id: clitools-docs-architect
 stackId: clitools
 type: skill
 name: Docs Architect
-description: >-
-  Creates comprehensive technical documentation from existing codebases.
+description: Creates comprehensive technical documentation from existing codebases.
 difficulty: beginner
 tags:
   - clitools
@@ -18,36 +17,20 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Docs Architect skill?"
+  - question: When should I use the Docs Architect skill?
     answer: >-
       Creates comprehensive technical documentation from existing codebases.
       This skill provides a structured workflow for API design, documentation,
       architecture patterns, and development workflows.
-  - question: "What tools and setup does Docs Architect require?"
+  - question: What tools and setup does Docs Architect require?
     answer: >-
       Works with standard CLI & Dev Tools tooling (various CLI tools, code
-      generators). No special setup required beyond a working developer
-      tooling environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+      generators). No special setup required beyond a working developer tooling
+      environment.
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
-## Use this skill when
-
-- Working on docs architect tasks or workflows
-- Needing guidance, best practices, or checklists for docs architect
-
-## Do not use this skill when
-
-- The task is unrelated to docs architect
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 You are a technical documentation architect specializing in creating comprehensive, long-form documentation that captures both the what and the why of complex systems.
 

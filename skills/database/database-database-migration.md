@@ -16,35 +16,24 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Database Migration skill?"
+  - question: When should I use the Database Migration skill?
     answer: >-
       Execute database migrations across ORMs and platforms with zero-downtime
       strategies, data transformation, and rollback procedures. This skill
       provides a structured workflow for schema design, query optimization,
       migration strategies, and data modeling.
-  - question: "What tools and setup does Database Migration require?"
+  - question: What tools and setup does Database Migration require?
     answer: >-
-      Works with standard Database tooling (SQL clients, ORM tools). No
-      special setup required beyond a working database environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+      Works with standard Database tooling (SQL clients, ORM tools). No special
+      setup required beyond a working database environment.
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Database Migration
 
 Master database schema and data migrations across ORMs (Sequelize, TypeORM, Prisma), including rollback strategies and zero-downtime deployments.
 
-## Do not use this skill when
-
-- The task is unrelated to database migration
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 ## Use this skill when
 

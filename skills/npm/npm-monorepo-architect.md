@@ -18,35 +18,24 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Monorepo Architect skill?"
+  - question: When should I use the Monorepo Architect skill?
     answer: >-
-      Expert in monorepo architecture, build systems, and dependency
-      management at scale. This skill provides a structured workflow for
-      dependency management, monorepo architecture, script automation, and
-      package publishing.
-  - question: "What tools and setup does Monorepo Architect require?"
+      Expert in monorepo architecture, build systems, and dependency management
+      at scale. This skill provides a structured workflow for dependency
+      management, monorepo architecture, script automation, and package
+      publishing.
+  - question: What tools and setup does Monorepo Architect require?
     answer: >-
       Requires pip/poetry installed. Works with npm/pnpm/yarn projects. Review
       the configuration section for project-specific setup.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Monorepo Architect
 
 Expert in monorepo architecture, build systems, and dependency management at scale. Masters Nx, Turborepo, Bazel, and Lerna for efficient multi-project development. Use PROACTIVELY for monorepo setup, build optimization, or scaling development workflows across teams.
 
-## Do not use this skill when
-
-- The task is unrelated to monorepo architect
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 ## Capabilities
 

@@ -4,9 +4,8 @@ stackId: clitools
 type: skill
 name: Code Review Excellence
 description: >-
-  Master effective code review practices to provide constructive feedback,
-  catch bugs early, and foster knowledge sharing while maintaining team
-  morale.
+  Master effective code review practices to provide constructive feedback, catch
+  bugs early, and foster knowledge sharing while maintaining team morale.
 difficulty: beginner
 tags:
   - clitools
@@ -19,18 +18,18 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Code Review Excellence skill?"
+  - question: When should I use the Code Review Excellence skill?
     answer: >-
       Master effective code review practices to provide constructive feedback,
       catch bugs early, and foster knowledge sharing while maintaining team
       morale.
-  - question: "What tools and setup does Code Review Excellence require?"
+  - question: What tools and setup does Code Review Excellence require?
     answer: >-
       Works with standard CLI & Dev Tools tooling (various CLI tools, code
-      generators). No special setup required beyond a working developer
-      tooling environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+      generators). No special setup required beyond a working developer tooling
+      environment.
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Code Review Excellence
@@ -56,7 +55,6 @@ Transform code reviews from gatekeeping to knowledge sharing through constructiv
 - Review for correctness, security, performance, and maintainability.
 - Provide actionable feedback with severity and rationale.
 - Ask clarifying questions when intent is unclear.
-- If detailed checklists are required, open `resources/implementation-playbook.md`.
 
 ## Output Format
 
@@ -65,6 +63,3 @@ Transform code reviews from gatekeeping to knowledge sharing through constructiv
 - Suggestions and questions
 - Test and coverage notes
 
-## Resources
-
-- `resources/implementation-playbook.md` for detailed review patterns and templates.

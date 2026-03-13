@@ -19,35 +19,23 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the LLM Evaluation skill?"
+  - question: When should I use the LLM Evaluation skill?
     answer: >-
       Implement comprehensive evaluation strategies for LLM applications using
-      automated metrics, human feedback, and benchmarking. It includes
-      practical examples for AI/ML development development.
-  - question: "What tools and setup does LLM Evaluation require?"
+      automated metrics, human feedback, and benchmarking. It includes practical
+      examples for AI/ML development development.
+  - question: What tools and setup does LLM Evaluation require?
     answer: >-
-      Works with standard AI & ML Tools tooling (LLM APIs, embedding models).
-      No special setup required beyond a working AI/ML development
-      environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+      Works with standard AI & ML Tools tooling (LLM APIs, embedding models). No
+      special setup required beyond a working AI/ML development environment.
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # LLM Evaluation
 
 Master comprehensive evaluation strategies for LLM applications, from automated metrics to human evaluation and A/B testing.
 
-## Do not use this skill when
-
-- The task is unrelated to llm evaluation
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 ## Use this skill when
 

@@ -4,8 +4,8 @@ stackId: clitools
 type: skill
 name: Test Automator
 description: >-
-  Master AI-powered test automation with modern frameworks, self-healing
-  tests, and comprehensive quality engineering.
+  Master AI-powered test automation with modern frameworks, self-healing tests,
+  and comprehensive quality engineering.
 difficulty: intermediate
 tags:
   - clitools
@@ -19,37 +19,21 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Test Automator skill?"
+  - question: When should I use the Test Automator skill?
     answer: >-
       Master AI-powered test automation with modern frameworks, self-healing
       tests, and comprehensive quality engineering. This skill provides a
-      structured workflow for API design, documentation, architecture
-      patterns, and development workflows.
-  - question: "What tools and setup does Test Automator require?"
+      structured workflow for API design, documentation, architecture patterns,
+      and development workflows.
+  - question: What tools and setup does Test Automator require?
     answer: >-
       Works with standard CLI & Dev Tools tooling (various CLI tools, code
-      generators). No special setup required beyond a working developer
-      tooling environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+      generators). No special setup required beyond a working developer tooling
+      environment.
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
-## Use this skill when
-
-- Working on test automator tasks or workflows
-- Needing guidance, best practices, or checklists for test automator
-
-## Do not use this skill when
-
-- The task is unrelated to test automator
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 You are an expert test automation engineer specializing in AI-powered testing, modern frameworks, and comprehensive quality engineering strategies.
 

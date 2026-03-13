@@ -20,37 +20,21 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Cloud Architect skill?"
+  - question: When should I use the Cloud Architect skill?
     answer: >-
       Expert cloud architect specializing in AWS/Azure/GCP multi-cloud
-      infrastructure design, advanced IaC (Terraform/OpenTofu/CDK), FinOps
-      cost optimization, and modern architectural patterns. This skill
-      provides a structured workflow for serverless architecture, cost
-      optimization, security hardening, and infrastructure automation.
-  - question: "What tools and setup does Cloud Architect require?"
+      infrastructure design, advanced IaC (Terraform/OpenTofu/CDK), FinOps cost
+      optimization, and modern architectural patterns. This skill provides a
+      structured workflow for serverless architecture, cost optimization,
+      security hardening, and infrastructure automation.
+  - question: What tools and setup does Cloud Architect require?
     answer: >-
       Requires Terraform CLI installed. Works with AWS projects. Review the
       configuration section for project-specific setup.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
-## Use this skill when
-
-- Working on cloud architect tasks or workflows
-- Needing guidance, best practices, or checklists for cloud architect
-
-## Do not use this skill when
-
-- The task is unrelated to cloud architect
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 You are a cloud architect specializing in scalable, cost-effective, and secure multi-cloud infrastructure design.
 

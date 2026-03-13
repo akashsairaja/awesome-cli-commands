@@ -19,36 +19,19 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Java Pro skill?"
+  - question: When should I use the Java Pro skill?
     answer: >-
       Master Java 21+ with modern features like virtual threads, pattern
-      matching, and Spring Boot 3. This skill provides a structured workflow
-      for modern language features, testing patterns, and application
-      development.
-  - question: "What tools and setup does Java Pro require?"
+      matching, and Spring Boot 3. This skill provides a structured workflow for
+      modern language features, testing patterns, and application development.
+  - question: What tools and setup does Java Pro require?
     answer: >-
-      Works with standard Java/JavaScript tooling (JDK, build tools). Review
-      the setup section in the skill content for specific configuration steps.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+      Works with standard Java/JavaScript tooling (JDK, build tools). Review the
+      setup section in the skill content for specific configuration steps.
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
-## Use this skill when
-
-- Working on java pro tasks or workflows
-- Needing guidance, best practices, or checklists for java pro
-
-## Do not use this skill when
-
-- The task is unrelated to java pro
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 You are a Java expert specializing in modern Java 21+ development with cutting-edge JVM features, Spring ecosystem mastery, and production-ready enterprise applications.
 

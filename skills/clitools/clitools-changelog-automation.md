@@ -4,8 +4,8 @@ stackId: clitools
 type: skill
 name: Changelog Automation
 description: >-
-  Automate changelog generation from commits, PRs, and releases following Keep
-  a Changelog format.
+  Automate changelog generation from commits, PRs, and releases following Keep a
+  Changelog format.
 difficulty: beginner
 tags:
   - clitools
@@ -14,19 +14,18 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Changelog Automation skill?"
+  - question: When should I use the Changelog Automation skill?
     answer: >-
       Automate changelog generation from commits, PRs, and releases following
-      Keep a Changelog format. This skill provides a structured workflow for
-      API design, documentation, architecture patterns, and development
-      workflows.
-  - question: "What tools and setup does Changelog Automation require?"
+      Keep a Changelog format. This skill provides a structured workflow for API
+      design, documentation, architecture patterns, and development workflows.
+  - question: What tools and setup does Changelog Automation require?
     answer: >-
       Works with standard CLI & Dev Tools tooling (various CLI tools, code
       generators). Review the setup section in the skill content for specific
       configuration steps.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Changelog Automation
@@ -53,12 +52,8 @@ Patterns and tools for automating changelog generation, release notes, and versi
 - Enforce commit conventions or labeling rules.
 - Configure tooling to generate and publish notes.
 - Review output for accuracy, completeness, and wording.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 ## Safety
 
 - Avoid exposing secrets or internal-only details in release notes.
 
-## Resources
-
-- `resources/implementation-playbook.md` for detailed patterns, templates, and examples.

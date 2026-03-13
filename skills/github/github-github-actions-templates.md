@@ -19,35 +19,24 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Github Actions Templates skill?"
+  - question: When should I use the Github Actions Templates skill?
     answer: >-
       Create production-ready GitHub Actions workflows for automated testing,
       building, and deploying applications. This skill provides a structured
       workflow for CI/CD workflows, PR automation, issue management, and
       repository configuration.
-  - question: "What tools and setup does Github Actions Templates require?"
+  - question: What tools and setup does Github Actions Templates require?
     answer: >-
       Requires npm/yarn/pnpm, Docker installed. Works with GitHub projects.
       Review the configuration section for project-specific setup.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # GitHub Actions Templates
 
 Production-ready GitHub Actions workflow patterns for testing, building, and deploying applications.
 
-## Do not use this skill when
-
-- The task is unrelated to github actions templates
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 ## Purpose
 

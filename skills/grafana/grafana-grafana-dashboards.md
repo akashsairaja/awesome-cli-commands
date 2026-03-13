@@ -4,8 +4,8 @@ stackId: grafana
 type: skill
 name: Grafana Dashboards
 description: >-
-  Create and manage production Grafana dashboards for real-time visualization
-  of system and application metrics.
+  Create and manage production Grafana dashboards for real-time visualization of
+  system and application metrics.
 difficulty: advanced
 tags:
   - grafana
@@ -16,34 +16,23 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Grafana Dashboards skill?"
+  - question: When should I use the Grafana Dashboards skill?
     answer: >-
       Create and manage production Grafana dashboards for real-time
       visualization of system and application metrics. It includes practical
       examples for observability development.
-  - question: "What tools and setup does Grafana Dashboards require?"
+  - question: What tools and setup does Grafana Dashboards require?
     answer: >-
-      Works with standard Grafana tooling (Grafana CLI, Grafana API). Review
-      the setup section in the skill content for specific configuration steps.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+      Works with standard Grafana tooling (Grafana CLI, Grafana API). Review the
+      setup section in the skill content for specific configuration steps.
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Grafana Dashboards
 
 Create and manage production-ready Grafana dashboards for comprehensive system observability.
 
-## Do not use this skill when
-
-- The task is unrelated to grafana dashboards
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 ## Purpose
 

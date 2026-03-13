@@ -18,20 +18,20 @@ tags:
 compatibility:
   - codex
 faq:
-  - question: "When should I use the Notion Meeting Intelligence skill?"
+  - question: When should I use the Notion Meeting Intelligence skill?
     answer: >-
-      Prepare meeting materials with Notion context and Codex research; use
-      when gathering context, drafting agendas/pre-reads, and tailoring
-      materials to attendees. This skill provides a structured workflow for
-      prompt engineering, RAG pipelines, LLM application development, and AI
-      agent building.
-  - question: "What tools and setup does Notion Meeting Intelligence require?"
+      Prepare meeting materials with Notion context and Codex research; use when
+      gathering context, drafting agendas/pre-reads, and tailoring materials to
+      attendees. This skill provides a structured workflow for prompt
+      engineering, RAG pipelines, LLM application development, and AI agent
+      building.
+  - question: What tools and setup does Notion Meeting Intelligence require?
     answer: >-
       Works with standard AI & ML Tools tooling (LLM APIs, embedding models).
       Review the setup section in the skill content for specific configuration
       steps.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Meeting Intelligence
@@ -85,5 +85,4 @@ After successful login, the user will have to restart codex. You should finish y
 - Update the page via `Notion:notion-update-page` when details change; keep a brief changelog if multiple edits.
 
 ## References and examples
-- `reference/` — template picker and meeting templates (e.g., `template-selection-guide.md`, `status-update-template.md`, `decision-meeting-template.md`, `sprint-planning-template.md`, `one-on-one-template.md`, `retrospective-template.md`, `brainstorming-template.md`).
 - `examples/` — end-to-end meeting preps (e.g., `executive-review.md`, `project-decision.md`, `sprint-planning.md`, `customer-meeting.md`).

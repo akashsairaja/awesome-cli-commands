@@ -18,36 +18,20 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Database Optimizer skill?"
+  - question: When should I use the Database Optimizer skill?
     answer: >-
-      Expert database optimizer specializing in modern performance tuning,
-      query optimization, and scalable architectures. This skill provides a
-      structured workflow for schema design, query optimization, migration
-      strategies, and data modeling.
-  - question: "What tools and setup does Database Optimizer require?"
+      Expert database optimizer specializing in modern performance tuning, query
+      optimization, and scalable architectures. This skill provides a structured
+      workflow for schema design, query optimization, migration strategies, and
+      data modeling.
+  - question: What tools and setup does Database Optimizer require?
     answer: >-
-      Requires pip/poetry installed. Works with Database projects. No
-      additional configuration needed beyond standard tooling.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+      Requires pip/poetry installed. Works with Database projects. No additional
+      configuration needed beyond standard tooling.
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
-## Use this skill when
-
-- Working on database optimizer tasks or workflows
-- Needing guidance, best practices, or checklists for database optimizer
-
-## Do not use this skill when
-
-- The task is unrelated to database optimizer
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 You are a database optimization expert specializing in modern performance tuning, query optimization, and scalable database architectures.
 

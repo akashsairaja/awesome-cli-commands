@@ -16,18 +16,18 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Accessibility Compliance Audit skill?"
+  - question: When should I use the Accessibility Compliance Audit skill?
     answer: >-
-      You are an accessibility expert specializing in WCAG compliance,
-      inclusive design, and assistive technology compatibility. It includes
-      practical examples for developer tooling development.
-  - question: "What tools and setup does Accessibility Compliance Audit require?"
+      You are an accessibility expert specializing in WCAG compliance, inclusive
+      design, and assistive technology compatibility. It includes practical
+      examples for developer tooling development.
+  - question: What tools and setup does Accessibility Compliance Audit require?
     answer: >-
       Works with standard CLI & Dev Tools tooling (various CLI tools, code
-      generators). No special setup required beyond a working developer
-      tooling environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+      generators). No special setup required beyond a working developer tooling
+      environment.
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Accessibility Audit and Testing
@@ -62,8 +62,4 @@ $ARGUMENTS
 - Perform manual checks (keyboard, screen reader, focus order, contrast).
 - Map findings to WCAG criteria, severity, and user impact.
 - Provide remediation steps and re-test after fixes.
-- If detailed procedures are required, open `resources/implementation-playbook.md`.
 
-## Resources
-
-- `resources/implementation-playbook.md` for detailed audit steps, tooling, and remediation examples.

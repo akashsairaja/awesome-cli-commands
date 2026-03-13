@@ -16,34 +16,23 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the React State Management skill?"
+  - question: When should I use the React State Management skill?
     answer: >-
       Master modern React state management with Redux Toolkit, Zustand, Jotai,
       and React Query. It includes practical examples for React frontend
       development.
-  - question: "What tools and setup does React State Management require?"
+  - question: What tools and setup does React State Management require?
     answer: >-
       Works with standard React tooling (React 19+, JSX/TSX). Review the setup
       section in the skill content for specific configuration steps.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # React State Management
 
 Comprehensive guide to modern React state management patterns, from local component state to global stores and server state synchronization.
 
-## Do not use this skill when
-
-- The task is unrelated to react state management
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 ## Use this skill when
 

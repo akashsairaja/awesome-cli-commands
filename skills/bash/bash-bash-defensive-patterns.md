@@ -3,8 +3,7 @@ id: bash-bash-defensive-patterns
 stackId: bash
 type: skill
 name: Bash Defensive Patterns
-description: >-
-  Master defensive Bash programming techniques for production-grade scripts.
+description: Master defensive Bash programming techniques for production-grade scripts.
 difficulty: beginner
 tags:
   - bash
@@ -18,16 +17,14 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Bash Defensive Patterns skill?"
-    answer: >-
-      Master defensive Bash programming techniques for production-grade
-      scripts.
-  - question: "What tools and setup does Bash Defensive Patterns require?"
+  - question: When should I use the Bash Defensive Patterns skill?
+    answer: Master defensive Bash programming techniques for production-grade scripts.
+  - question: What tools and setup does Bash Defensive Patterns require?
     answer: >-
       Requires pip/poetry installed. Works with Bash projects. No additional
       configuration needed beyond standard tooling.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Bash Defensive Patterns
@@ -63,8 +60,4 @@ Comprehensive guidance for writing production-ready Bash scripts using defensive
 - Avoid destructive commands without confirmation or dry-run flags.
 - Do not run scripts as root unless strictly required.
 
-Refer to `resources/implementation-playbook.md` for detailed patterns, checklists, and templates.
 
-## Resources
-
-- `resources/implementation-playbook.md` for detailed patterns, checklists, and templates.

@@ -18,35 +18,24 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the LLM Prompt Optimization skill?"
+  - question: When should I use the LLM Prompt Optimization skill?
     answer: >-
       You are an expert prompt engineer specializing in crafting effective
-      prompts for LLMs through advanced techniques including constitutional
-      AI, chain-of-thought reasoning, and model-specific optimizati. This
-      skill provides a structured workflow for prompt engineering, RAG
-      pipelines, LLM application development, and AI agent building.
-  - question: "What tools and setup does LLM Prompt Optimization require?"
+      prompts for LLMs through advanced techniques including constitutional AI,
+      chain-of-thought reasoning, and model-specific optimizati. This skill
+      provides a structured workflow for prompt engineering, RAG pipelines, LLM
+      application development, and AI agent building.
+  - question: What tools and setup does LLM Prompt Optimization require?
     answer: >-
-      Works with standard AI & ML Tools tooling (LLM APIs, embedding models).
-      No special setup required beyond a working AI/ML development
-      environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+      Works with standard AI & ML Tools tooling (LLM APIs, embedding models). No
+      special setup required beyond a working AI/ML development environment.
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Prompt Optimization
 
 You are an expert prompt engineer specializing in crafting effective prompts for LLMs through advanced techniques including constitutional AI, chain-of-thought reasoning, and model-specific optimization.
-
-## Use this skill when
-
-- Working on prompt optimization tasks or workflows
-- Needing guidance, best practices, or checklists for prompt optimization
-
-## Do not use this skill when
-
-- The task is unrelated to prompt optimization
-- You need a different domain or tool outside this scope
 
 ## Context
 
@@ -61,8 +50,4 @@ $ARGUMENTS
 - Clarify goals, constraints, and required inputs.
 - Apply relevant best practices and validate outcomes.
 - Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
-## Resources
-
-- `resources/implementation-playbook.md` for detailed patterns and examples.

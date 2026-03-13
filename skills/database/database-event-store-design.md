@@ -3,8 +3,7 @@ id: database-event-store-design
 stackId: database
 type: skill
 name: Event Store Design
-description: >-
-  Design and implement event stores for event-sourced systems.
+description: Design and implement event stores for event-sourced systems.
 difficulty: advanced
 tags:
   - database
@@ -17,33 +16,22 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Event Store Design skill?"
+  - question: When should I use the Event Store Design skill?
     answer: >-
       Design and implement event stores for event-sourced systems. It includes
       practical examples for database development.
-  - question: "What tools and setup does Event Store Design require?"
+  - question: What tools and setup does Event Store Design require?
     answer: >-
-      Works with standard Database tooling (SQL clients, ORM tools). No
-      special setup required beyond a working database environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+      Works with standard Database tooling (SQL clients, ORM tools). No special
+      setup required beyond a working database environment.
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Event Store Design
 
 Comprehensive guide to designing event stores for event-sourced applications.
 
-## Do not use this skill when
-
-- The task is unrelated to event store design
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 ## Use this skill when
 

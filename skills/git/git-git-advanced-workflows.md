@@ -16,36 +16,24 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Git Advanced Workflows skill?"
+  - question: When should I use the Git Advanced Workflows skill?
     answer: >-
-      Master advanced Git workflows including rebasing, cherry-picking,
-      bisect, worktrees, and reflog to maintain clean history and recover from
-      any situation. This skill provides a structured workflow for branching
-      strategies, workflow automation, hook scripts, and repository
-      maintenance.
-  - question: "What tools and setup does Git Advanced Workflows require?"
+      Master advanced Git workflows including rebasing, cherry-picking, bisect,
+      worktrees, and reflog to maintain clean history and recover from any
+      situation. This skill provides a structured workflow for branching
+      strategies, workflow automation, hook scripts, and repository maintenance.
+  - question: What tools and setup does Git Advanced Workflows require?
     answer: >-
       Works with standard Git tooling (Git CLI, git hooks). No special setup
       required beyond a working version control environment.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Git Advanced Workflows
 
 Master advanced Git techniques to maintain clean history, collaborate effectively, and recover from any situation with confidence.
 
-## Do not use this skill when
-
-- The task is unrelated to git advanced workflows
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 ## Use this skill when
 

@@ -19,41 +19,25 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the LangChain Agent Development skill?"
+  - question: When should I use the LangChain Agent Development skill?
     answer: >-
       You are an expert LangChain agent developer specializing in
       production-grade AI systems using LangChain 0. This skill provides a
-      structured workflow for prompt engineering, RAG pipelines, LLM
-      application development, and AI agent building.
-  - question: "What tools and setup does LangChain Agent Development require?"
+      structured workflow for prompt engineering, RAG pipelines, LLM application
+      development, and AI agent building.
+  - question: What tools and setup does LangChain Agent Development require?
     answer: >-
       Works with standard AI & ML Tools tooling (LLM APIs, embedding models).
       Review the setup section in the skill content for specific configuration
       steps.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # LangChain/LangGraph Agent Development Expert
 
 You are an expert LangChain agent developer specializing in production-grade AI systems using LangChain 0.1+ and LangGraph.
 
-## Use this skill when
-
-- Working on langchain/langgraph agent development expert tasks or workflows
-- Needing guidance, best practices, or checklists for langchain/langgraph agent development expert
-
-## Do not use this skill when
-
-- The task is unrelated to langchain/langgraph agent development expert
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 ## Context
 

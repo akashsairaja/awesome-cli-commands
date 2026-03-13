@@ -4,9 +4,9 @@ stackId: git
 type: skill
 name: Git Pr Workflows Git Workflow
 description: >-
-  Orchestrate a comprehensive git workflow from code review through PR
-  creation, leveraging specialized agents for quality assurance, testing, and
-  deployment readiness.
+  Orchestrate a comprehensive git workflow from code review through PR creation,
+  leveraging specialized agents for quality assurance, testing, and deployment
+  readiness.
 difficulty: intermediate
 tags:
   - git
@@ -20,19 +20,19 @@ tags:
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the Git Pr Workflows Git Workflow skill?"
+  - question: When should I use the Git Pr Workflows Git Workflow skill?
     answer: >-
       Orchestrate a comprehensive git workflow from code review through PR
       creation, leveraging specialized agents for quality assurance, testing,
       and deployment readiness. This skill provides a structured workflow for
       branching strategies, workflow automation, hook scripts, and repository
       maintenance.
-  - question: "What tools and setup does Git Pr Workflows Git Workflow require?"
+  - question: What tools and setup does Git Pr Workflows Git Workflow require?
     answer: >-
       Works with standard Git tooling (Git CLI, git hooks). Review the setup
       section in the skill content for specific configuration steps.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Complete Git Workflow with Multi-Agent Orchestration
@@ -41,22 +41,6 @@ Orchestrate a comprehensive git workflow from code review through PR creation, l
 
 [Extended thinking: This workflow coordinates multiple specialized agents to ensure code quality before commits are made. The code-reviewer agent performs initial quality checks, test-automator ensures all tests pass, and deployment-engineer verifies production readiness. By orchestrating these agents sequentially with context passing, we prevent broken code from entering the repository while maintaining high velocity. The workflow supports both trunk-based and feature-branch strategies with configurable options for different team needs.]
 
-## Use this skill when
-
-- Working on complete git workflow with multi-agent orchestration tasks or workflows
-- Needing guidance, best practices, or checklists for complete git workflow with multi-agent orchestration
-
-## Do not use this skill when
-
-- The task is unrelated to complete git workflow with multi-agent orchestration
-- You need a different domain or tool outside this scope
-
-## Instructions
-
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 ## Configuration
 

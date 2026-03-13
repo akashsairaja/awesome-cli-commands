@@ -5,8 +5,8 @@ type: skill
 name: Notion Knowledge Capture
 description: >-
   Capture conversations and decisions into structured Notion pages; use when
-  turning chats/notes into wiki entries, how-tos, decisions, or FAQs with
-  proper linking.
+  turning chats/notes into wiki entries, how-tos, decisions, or FAQs with proper
+  linking.
 difficulty: beginner
 tags:
   - aitools
@@ -18,20 +18,20 @@ tags:
 compatibility:
   - codex
 faq:
-  - question: "When should I use the Notion Knowledge Capture skill?"
+  - question: When should I use the Notion Knowledge Capture skill?
     answer: >-
-      Capture conversations and decisions into structured Notion pages; use
-      when turning chats/notes into wiki entries, how-tos, decisions, or FAQs
-      with proper linking. This skill provides a structured workflow for
-      prompt engineering, RAG pipelines, LLM application development, and AI
-      agent building.
-  - question: "What tools and setup does Notion Knowledge Capture require?"
+      Capture conversations and decisions into structured Notion pages; use when
+      turning chats/notes into wiki entries, how-tos, decisions, or FAQs with
+      proper linking. This skill provides a structured workflow for prompt
+      engineering, RAG pipelines, LLM application development, and AI agent
+      building.
+  - question: What tools and setup does Notion Knowledge Capture require?
     answer: >-
       Works with standard AI & ML Tools tooling (LLM APIs, embedding models).
       Review the setup section in the skill content for specific configuration
       steps.
-version: "1.0.0"
-lastUpdated: "2026-03-12"
+version: 1.0.0
+lastUpdated: '2026-03-12'
 ---
 
 # Knowledge Capture
@@ -81,5 +81,4 @@ After successful login, the user will have to restart codex. You should finish y
 - If follow-up tasks exist, create tasks in the relevant database and link them.
 
 ## References and examples
-- `reference/` — database schemas and templates (e.g., `team-wiki-database.md`, `how-to-guide-database.md`, `faq-database.md`, `decision-log-database.md`, `documentation-database.md`, `learning-database.md`, `database-best-practices.md`).
 - `examples/` — capture patterns in practice (e.g., `decision-capture.md`, `how-to-guide.md`, `conversation-to-faq.md`).

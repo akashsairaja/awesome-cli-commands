@@ -7,13 +7,15 @@ description: >-
   Replace traditional SSH key management with Tailscale SSH — identity-based
   access, ACL-controlled permissions, session recording, and automatic key
   rotation.
-difficulty: intermediate
+difficulty: advanced
 tags:
   - tailscale
+  - configure
   - ssh
   - keyless
-  - access-control
-  - session-recording
+  - access
+  - prompting
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,35 +23,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Tailscale installed on both client and server
-  - SSO configured for Tailscale
 faq:
-  - question: How does Tailscale SSH work without SSH keys?
+  - question: "When should I use the Configure Tailscale SSH for Keyless Access skill?"
     answer: >-
-      Tailscale SSH uses your Tailscale identity (authenticated via SSO) instead
-      of SSH keys. When you SSH to a Tailscale-enabled server, Tailscale
-      verifies your identity against ACL policies. The server trusts Tailscale's
-      authentication instead of checking authorized_keys. No key files are
-      needed.
-  - question: What is check mode in Tailscale SSH?
+      Replace traditional SSH key management with Tailscale SSH —
+      identity-based access, ACL-controlled permissions, session recording,
+      and automatic key rotation. This skill provides a structured workflow
+      for development tasks.
+  - question: "What tools and setup does Configure Tailscale SSH for Keyless Access require?"
     answer: >-
-      Check mode requires explicit approval before granting SSH access. When a
-      user tries to SSH, a notification is sent to approvers who can accept or
-      deny the request. Use it for sensitive access like production root. The
-      checkPeriod setting defines how long approval lasts before re-approval is
-      needed.
-  - question: Can I still use traditional SSH with Tailscale?
-    answer: >-
-      Yes, Tailscale SSH and traditional SSH can coexist. Tailscale SSH runs on
-      a separate listener. However, for maximum security, disable traditional
-      SSH on port 22 after confirming Tailscale SSH works. This eliminates the
-      entire class of SSH key management vulnerabilities.
-relatedItems:
-  - tailscale-network-architect
-  - tailscale-acl-design
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard tailscale tooling (relevant CLI tools and
+      frameworks). Review the setup section in the skill content for specific
+      configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Configure Tailscale SSH for Keyless Access

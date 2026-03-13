@@ -7,14 +7,16 @@ description: >-
   Run Bruno collections in CI/CD pipelines with the CLI runner — environment
   selection, JUnit output, exit codes for build gating, and GitHub Actions
   integration.
-difficulty: intermediate
+difficulty: beginner
 tags:
-  - cli-runner
-  - ci-cd
-  - github-actions
-  - junit
   - bruno
-  - automation
+  - cli
+  - runner
+  - cicd
+  - testing
+  - deployment
+  - debugging
+  - api
 compatibility:
   - claude-code
   - cursor
@@ -22,33 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - '@usebruno/cli installed'
-  - Bruno collection with assertions
-  - GitHub Actions or equivalent CI
 faq:
-  - question: How do I run Bruno tests in CI/CD?
+  - question: "When should I use the Bruno CLI Runner for CI/CD skill?"
     answer: >-
-      Install @usebruno/cli, then run 'bru run --env ci --output junit
-      --output-file results.xml'. The CLI executes all requests in the
-      collection, runs assertions, and exits with non-zero code on failures.
-      Upload the JUnit XML as an artifact for CI dashboard reporting.
-  - question: How do I pass secrets to Bruno in CI?
+      Run Bruno collections in CI/CD pipelines with the CLI runner —
+      environment selection, JUnit output, exit codes for build gating, and
+      GitHub Actions integration. This skill provides a structured workflow
+      for development tasks.
+  - question: "What tools and setup does Bruno CLI Runner for CI/CD require?"
     answer: >-
-      Use the --env-var flag: 'bru run --env ci --env-var "API_TOKEN=$SECRET"'.
-      This overrides environment variables without committing them to files. In
-      GitHub Actions, reference secrets with ${{ secrets.NAME }}.
-  - question: Can Bruno CLI run a subset of collection requests?
-    answer: >-
-      Yes. Use --folder to run a specific folder (e.g., --folder Auth), or
-      --file to run a single request file. This is useful for running only smoke
-      tests in PR pipelines and full suites on main branch.
-relatedItems:
-  - bruno-collection-design
-  - bruno-scripting-assertions
-  - bruno-api-testing-specialist
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm, Docker, pip/poetry installed. Works with bruno
+      projects. Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Bruno CLI Runner for CI/CD

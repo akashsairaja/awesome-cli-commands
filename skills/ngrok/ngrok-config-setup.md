@@ -6,13 +6,16 @@ name: Configure Ngrok for Team Development
 description: >-
   Set up ngrok configuration files — multiple tunnels, custom domains, OAuth
   authentication, traffic policies, and team-shared development environments.
-difficulty: intermediate
+difficulty: advanced
 tags:
   - ngrok
-  - configuration
-  - tunnels
-  - oauth
-  - team-development
+  - configure
+  - team
+  - development
+  - architecture
+  - api
+  - microservices
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -20,33 +23,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - ngrok installed
-  - ngrok paid plan (for custom domains and OAuth)
 faq:
-  - question: Where is the ngrok configuration file located?
+  - question: "When should I use the Configure Ngrok for Team Development skill?"
     answer: >-
-      On macOS/Linux: ~/.config/ngrok/ngrok.yml. On Windows:
-      %USERPROFILE%/.config/ngrok/ngrok.yml. You can also specify a custom path
-      with 'ngrok start --config ./my-config.yml'. Use 'ngrok config check' to
-      validate your configuration file.
-  - question: How do I run multiple ngrok tunnels simultaneously?
+      Set up ngrok configuration files — multiple tunnels, custom domains,
+      OAuth authentication, traffic policies, and team-shared development
+      environments. This skill provides a structured workflow for development
+      tasks.
+  - question: "What tools and setup does Configure Ngrok for Team Development require?"
     answer: >-
-      Define multiple tunnels in ngrok.yml under the 'tunnels' section, each
-      with a unique name and port. Start them with 'ngrok start --all' for all
-      tunnels, or 'ngrok start frontend api' for specific ones. Each tunnel gets
-      its own URL and shows in the inspection UI.
-  - question: Can I add authentication to an ngrok tunnel?
-    answer: >-
-      Yes. Use ngrok's built-in OAuth integration (Google, GitHub, Microsoft) to
-      require login before accessing the tunnel. Configure it in ngrok.yml with
-      the 'oauth' section. You can restrict access to specific email domains for
-      team-only access.
-relatedItems:
-  - ngrok-tunnel-architect
-  - ngrok-webhook-testing
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard ngrok tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Configure Ngrok for Team Development

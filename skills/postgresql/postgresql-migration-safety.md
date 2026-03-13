@@ -7,14 +7,12 @@ description: >-
   Execute safe schema migrations on production PostgreSQL databases — adding
   columns, creating indexes concurrently, renaming tables, and avoiding locks
   that block reads and writes.
-difficulty: advanced
+difficulty: intermediate
 tags:
-  - migrations
+  - postgresql
   - zero-downtime
-  - schema-changes
-  - locking
-  - production
-  - alter-table
+  - migrations
+  - migration
 compatibility:
   - claude-code
   - cursor
@@ -22,38 +20,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-languages:
-  - sql
-prerequisites:
-  - PostgreSQL 14+
-  - Understanding of database locks
-  - Production deployment experience
 faq:
-  - question: How do I add a column to a large PostgreSQL table without downtime?
+  - question: "When should I use the Zero-Downtime PostgreSQL Migrations skill?"
     answer: >-
-      On PostgreSQL 11+, adding a column with a non-volatile DEFAULT is instant
-      and safe. For older versions or volatile defaults, add the column as
-      nullable first (instant), backfill in batches using UPDATE with ID ranges,
-      then add the NOT NULL constraint separately.
-  - question: Why does CREATE INDEX block writes and how do I avoid it?
+      Execute safe schema migrations on production PostgreSQL databases —
+      adding columns, creating indexes concurrently, renaming tables, and
+      avoiding locks that block reads and writes. This skill provides a
+      structured workflow for query optimization, index strategy, connection
+      pooling, and migration safety.
+  - question: "What tools and setup does Zero-Downtime PostgreSQL Migrations require?"
     answer: >-
-      Regular CREATE INDEX acquires a SHARE lock that blocks all INSERT, UPDATE,
-      and DELETE operations for the entire index build duration. Use CREATE
-      INDEX CONCURRENTLY instead — it builds the index in the background without
-      blocking writes, though it takes longer and cannot run inside a
-      transaction.
-  - question: What is the safest way to add a foreign key constraint in production?
-    answer: >-
-      Add the constraint with NOT VALID first (instant, no table scan), then run
-      ALTER TABLE VALIDATE CONSTRAINT separately. The validation takes a weaker
-      lock that allows concurrent reads and writes. This two-step approach
-      avoids blocking your application.
-relatedItems:
-  - postgresql-index-strategy
-  - postgresql-database-architect
-  - database-migration-patterns
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard PostgreSQL tooling (psql, pg_dump). No special setup
+      required beyond a working PostgreSQL database environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Zero-Downtime PostgreSQL Migrations

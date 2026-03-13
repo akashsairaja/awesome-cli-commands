@@ -5,15 +5,14 @@ type: skill
 name: Implement Firebase Authentication
 description: >-
   Set up Firebase Authentication with multiple providers — email/password,
-  Google, GitHub OAuth, custom tokens, and role-based access control with custom
-  claims.
-difficulty: beginner
+  Google, GitHub OAuth, custom tokens, and role-based access control with
+  custom claims.
+difficulty: intermediate
 tags:
+  - firebase
+  - implement
   - authentication
-  - firebase-auth
-  - oauth
-  - custom-claims
-  - rbac
+  - security
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +21,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Firebase project
-  - Firebase SDK installed
 faq:
-  - question: How do Firebase custom claims work for role-based access?
+  - question: "When should I use the Implement Firebase Authentication skill?"
     answer: >-
-      Custom claims are key-value pairs embedded in the Firebase auth token
-      (JWT). Set them with Admin SDK (setCustomUserClaims) via Cloud Functions.
-      They are available in Security Rules (request.auth.token.admin) and client
-      code (getIdTokenResult). Claims propagate on next token refresh (up to 1
-      hour).
-  - question: Should I store user roles in Firestore or custom claims?
+      Set up Firebase Authentication with multiple providers — email/password,
+      Google, GitHub OAuth, custom tokens, and role-based access control with
+      custom claims. This skill provides a structured workflow for
+      authentication, Firestore modeling, hosting, and cloud functions.
+  - question: "What tools and setup does Implement Firebase Authentication require?"
     answer: >-
-      Use custom claims for roles used in Security Rules (admin, moderator) —
-      they are included in every auth token without extra database reads. Use
-      Firestore for complex profile data (preferences, settings). Custom claims
-      are limited to 1000 bytes total, so keep them minimal.
-  - question: How do I handle auth state in a React Firebase app?
-    answer: >-
-      Use onAuthStateChanged in a React context provider. Create an AuthContext
-      that wraps your app, observes auth state changes, and provides the current
-      user and loading state to all components. This ensures your UI reacts to
-      login, logout, and token refresh events.
-relatedItems:
-  - firebase-security-architect
-  - firebase-firestore-modeling
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Firebase tooling (Firebase CLI, Firebase Console).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Implement Firebase Authentication

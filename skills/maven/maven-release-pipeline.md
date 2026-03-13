@@ -6,13 +6,15 @@ name: Automated Maven Release Pipeline
 description: >-
   Set up the Maven Release Plugin for automated version bumping, tagging,
   artifact deployment, and changelog generation in CI/CD pipelines.
-difficulty: advanced
+difficulty: intermediate
 tags:
-  - maven-release
-  - version-management
-  - artifact-deployment
+  - maven
+  - automated
+  - release
+  - pipeline
+  - deployment
   - ci-cd
-  - automated-release
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -20,29 +22,18 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Maven project with SCM configured
-  - 'Artifact repository (Nexus, Artifactory, Maven Central)'
-  - Git write access
 faq:
-  - question: How does the Maven Release Plugin work?
+  - question: "When should I use the Automated Maven Release Pipeline skill?"
     answer: >-
-      The release plugin has two phases: prepare (removes SNAPSHOT, commits,
-      tags, bumps to next SNAPSHOT, commits) and perform (checks out the tag,
-      builds, deploys artifacts). It automates the entire release process that
-      would otherwise require manual version editing and tagging.
-  - question: Can I undo a Maven release preparation?
+      Set up the Maven Release Plugin for automated version bumping, tagging,
+      artifact deployment, and changelog generation in CI/CD pipelines. This
+      skill provides a structured workflow for development tasks.
+  - question: "What tools and setup does Automated Maven Release Pipeline require?"
     answer: >-
-      Yes. Run 'mvn release:rollback' to undo a release:prepare. This reverts
-      the version changes and deletes the Git tag. If artifacts were already
-      deployed (release:perform), you must manually delete them from the
-      repository.
-relatedItems:
-  - maven-multi-module-setup
-  - maven-project-architect
-  - maven-dependency-resolver
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires pip/poetry installed. Works with maven projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Automated Maven Release Pipeline

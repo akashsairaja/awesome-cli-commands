@@ -2,19 +2,21 @@
 id: opentofu-workspace-envs
 stackId: opentofu
 type: skill
-name: Workspaces & Multi-Environment Deployments
+name: >-
+  Workspaces & Multi-Environment Deployments
 description: >-
   Deploy to multiple environments with OpenTofu — workspaces, directory-based
   environments, variable files per environment, and designing scalable
   multi-environment infrastructure strategies.
-difficulty: advanced
+difficulty: intermediate
 tags:
+  - opentofu
   - workspaces
-  - environments
   - multi-environment
-  - isolation
-  - variable-files
-  - production-safety
+  - deployments
+  - deployment
+  - monitoring
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - OpenTofu CLI installed
-  - Cloud provider credentials
 faq:
-  - question: Should I use workspaces or directories for environments?
+  - question: "When should I use the Workspaces & Multi-Environment Deployments skill?"
     answer: >-
-      Directories for prod/staging/dev (separate state backends, strongest
-      isolation). Workspaces for similar environments like feature branches or
-      per-developer sandboxes. Many teams use both: directories for environment
-      tiers, workspaces for parallel deployments within a tier.
-  - question: How do I prevent accidental changes to production?
+      Deploy to multiple environments with OpenTofu — workspaces,
+      directory-based environments, variable files per environment, and
+      designing scalable multi-environment infrastructure strategies. This
+      skill provides a structured workflow for development tasks.
+  - question: "What tools and setup does Workspaces & Multi-Environment Deployments require?"
     answer: >-
-      1) Separate state backend for production. 2) prevent_destroy lifecycle
-      rule on critical resources. 3) Variable validation requiring safety flags.
-      4) CI/CD with manual approval gate for production. 5) Different IAM roles
-      for prod access.
-  - question: How do I share modules across environments?
-    answer: >-
-      Store modules in a modules/ directory or separate git repo. Reference with
-      source = '../modules/vpc' or source = 'git::url?ref=v1.0'. Each
-      environment calls the same modules with different variable values. Pin
-      module versions in production with ref= tags.
-relatedItems:
-  - opentofu-state-management
-  - opentofu-variables-outputs
-  - opentofu-infra-architect
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Requires Terraform CLI installed. Works with opentofu projects. Review
+      the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Workspaces & Multi-Environment Deployments

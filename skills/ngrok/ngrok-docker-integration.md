@@ -4,16 +4,17 @@ stackId: ngrok
 type: skill
 name: Use Ngrok with Docker and Docker Compose
 description: >-
-  Integrate ngrok with Docker Compose — expose containerized services, configure
-  tunnels as containers, and set up development environments with automatic
-  tunnel creation.
+  Integrate ngrok with Docker Compose — expose containerized services,
+  configure tunnels as containers, and set up development environments with
+  automatic tunnel creation.
 difficulty: intermediate
 tags:
   - ngrok
   - docker
-  - docker-compose
-  - containers
-  - development-environment
+  - compose
+  - api
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,27 +22,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Docker and Docker Compose installed
-  - ngrok account
 faq:
-  - question: How do I use ngrok with Docker Compose?
+  - question: "When should I use the Use Ngrok with Docker and Docker Compose skill?"
     answer: >-
-      Add ngrok as a service in docker-compose.yml using the ngrok/ngrok:latest
-      image. Mount your ngrok.yml configuration and reference other services by
-      their Docker Compose service name (e.g., app:3000 instead of
-      localhost:3000). Start everything with 'docker compose up'.
-  - question: Why does ngrok use service names instead of localhost in Docker?
+      Integrate ngrok with Docker Compose — expose containerized services,
+      configure tunnels as containers, and set up development environments
+      with automatic tunnel creation. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Use Ngrok with Docker and Docker Compose require?"
     answer: >-
-      In Docker Compose, each service runs in its own container with its own
-      network namespace. 'localhost' inside the ngrok container refers to ngrok
-      itself, not your app. Docker Compose creates a shared network where
-      services are accessible by their service name (app, db, api).
-relatedItems:
-  - ngrok-tunnel-architect
-  - ngrok-config-setup
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker installed. Works with ngrok projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Use Ngrok with Docker and Docker Compose

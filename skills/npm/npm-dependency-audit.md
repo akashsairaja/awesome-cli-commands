@@ -2,18 +2,21 @@
 id: npm-dependency-audit
 stackId: npm
 type: skill
-name: NPM Dependency Auditing & Security
+name: >-
+  NPM Dependency Auditing & Security
 description: >-
   Audit npm dependencies for security vulnerabilities — npm audit workflows,
   automated fixing, CI/CD integration, and evaluating dependency health before
   adoption.
-difficulty: beginner
+difficulty: advanced
 tags:
+  - npm
+  - dependency
+  - auditing
   - security
-  - npm-audit
-  - dependency-management
-  - supply-chain
-  - vulnerability
+  - ci-cd
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,37 +25,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - javascript
-  - typescript
-prerequisites:
-  - npm 9+
 faq:
-  - question: How often should I run npm audit?
+  - question: "When should I use the NPM Dependency Auditing & Security skill?"
     answer: >-
-      Run npm audit on every CI/CD build to catch new vulnerabilities
-      immediately. Schedule weekly dependency update reviews. Use automated
-      tools like Dependabot or Renovate to create PRs for updates. Address high
-      and critical vulnerabilities within 48 hours of discovery.
-  - question: What is the difference between npm audit fix and npm audit fix --force?
+      Audit npm dependencies for security vulnerabilities — npm audit
+      workflows, automated fixing, CI/CD integration, and evaluating
+      dependency health before adoption. This skill provides a structured
+      workflow for dependency management, monorepo architecture, script
+      automation, and package publishing.
+  - question: "What tools and setup does NPM Dependency Auditing & Security require?"
     answer: >-
-      npm audit fix updates packages within their semver range (safe,
-      non-breaking). npm audit fix --force may install major version updates
-      that include breaking changes. Always review the changes after --force —
-      run tests, check changelogs, and verify your application still works
-      correctly.
-  - question: How do I fix vulnerabilities in transitive dependencies?
-    answer: >-
-      Use the 'overrides' field in package.json to force a specific version of a
-      transitive dependency. If the parent package hasn't updated, file an issue
-      or PR on their repository. As a last resort, consider finding an
-      alternative package that doesn't have the vulnerable dependency chain.
-relatedItems:
-  - npm-workspaces-monorepo
-  - npm-scripts-automation
-  - nodejs-security-hardening
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm installed. Works with npm/pnpm/yarn projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # NPM Dependency Auditing & Security

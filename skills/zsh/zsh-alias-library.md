@@ -4,15 +4,18 @@ stackId: zsh
 type: skill
 name: Productive Zsh Alias Library
 description: >-
-  Build a comprehensive Zsh alias library for Git, Docker, npm, navigation, and
-  system commands — with suffix aliases, global aliases, and naming conventions.
-difficulty: beginner
+  Build a comprehensive Zsh alias library for Git, Docker, npm, navigation,
+  and system commands — with suffix aliases, global aliases, and naming
+  conventions.
+difficulty: intermediate
 tags:
-  - aliases
-  - git-aliases
-  - docker-aliases
-  - global-aliases
-  - productivity
+  - zsh
+  - productive
+  - alias
+  - library
+  - docker
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,33 +24,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Zsh 5.8+
 faq:
-  - question: What are Zsh global aliases?
+  - question: "When should I use the Productive Zsh Alias Library skill?"
     answer: >-
-      Global aliases (alias -g) expand anywhere in a command line, not just at
-      the beginning. For example, 'alias -g G="| grep"' lets you type 'docker ps
-      G nginx' which expands to 'docker ps | grep nginx'. They're a
-      Zsh-exclusive feature not available in Bash.
-  - question: What are Zsh suffix aliases?
+      Build a comprehensive Zsh alias library for Git, Docker, npm,
+      navigation, and system commands — with suffix aliases, global aliases,
+      and naming conventions. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Productive Zsh Alias Library require?"
     answer: >-
-      Suffix aliases (alias -s) auto-execute commands based on file extension.
-      'alias -s md=code' means typing './README.md' opens it in VS Code. 'alias
-      -s json="jq . <"' pipes JSON files through jq automatically. Another
-      Zsh-exclusive feature.
-  - question: How many aliases should I define in Zsh?
-    answer: >-
-      Keep 20-30 aliases for commands you type daily. Organize by tool prefix
-      (g=git, d=docker, k=kubectl). If you can't remember an alias, you type it
-      fully anyway — so only alias truly frequent commands. Use 'alias | grep
-      keyword' to find forgotten aliases.
-relatedItems:
-  - zsh-config-specialist
-  - zsh-custom-functions
-  - zsh-completion-config
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker installed. Works with zsh projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Productive Zsh Alias Library

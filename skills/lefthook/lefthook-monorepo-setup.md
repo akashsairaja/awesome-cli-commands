@@ -4,16 +4,18 @@ stackId: lefthook
 type: skill
 name: Monorepo Hook Configuration
 description: >-
-  Configure Lefthook for monorepo projects with multiple languages and packages
-  — root-scoped commands, per-package hooks, and selective execution based on
-  changed directories.
+  Configure Lefthook for monorepo projects with multiple languages and
+  packages — root-scoped commands, per-package hooks, and selective execution
+  based on changed directories.
 difficulty: intermediate
 tags:
-  - monorepo
-  - multi-package
-  - polyglot
-  - root-scoping
   - lefthook
+  - monorepo
+  - hook
+  - configuration
+  - machine-learning
+  - best-practices
+  - type-safety
 compatibility:
   - claude-code
   - cursor
@@ -21,33 +23,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Lefthook installed
-  - Monorepo with multiple packages
 faq:
-  - question: How do I configure Lefthook for a monorepo?
+  - question: "When should I use the Monorepo Hook Configuration skill?"
     answer: >-
-      Use the 'root' directive to scope commands to specific package
-      directories. Each command gets its own root, glob, and run configuration.
-      Use parallel: true to run all package checks simultaneously. Files are
-      filtered relative to the root directory.
-  - question: Does Lefthook only check changed files in a monorepo?
+      Configure Lefthook for monorepo projects with multiple languages and
+      packages — root-scoped commands, per-package hooks, and selective
+      execution based on changed directories. It includes practical examples
+      for lefthook development.
+  - question: "What tools and setup does Monorepo Hook Configuration require?"
     answer: >-
-      Yes, when you use {staged_files} with the root directive. Lefthook filters
-      staged files to those matching the glob pattern within the root directory.
-      If no matching files are staged in a package, that command is skipped
-      entirely.
-  - question: Can individual developers customize Lefthook hooks?
-    answer: >-
-      Yes. Create lefthook-local.yml (add it to .gitignore) for personal
-      overrides. Developers can skip specific commands, add debugging flags, or
-      adjust timeouts without affecting the team's shared configuration.
-relatedItems:
-  - lefthook-config-patterns
-  - lefthook-remote-hooks
-  - lefthook-hook-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm, Playwright installed. Works with lefthook
+      projects. Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Monorepo Hook Configuration

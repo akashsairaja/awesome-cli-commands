@@ -2,20 +2,21 @@
 id: linux-systemd-services
 stackId: linux
 type: skill
-name: Creating & Managing systemd Services
+name: >-
+  Creating & Managing systemd Services
 description: >-
   Create production-ready systemd services — unit file structure, security
-  directives, dependency management, automatic restarts, logging with journald,
-  and timer-based scheduling.
-difficulty: intermediate
+  directives, dependency management, automatic restarts, logging with
+  journald, and timer-based scheduling.
+difficulty: advanced
 tags:
+  - linux
+  - creating
+  - managing
   - systemd
   - services
-  - unit-files
-  - journald
-  - timers
-  - process-management
-  - linux
+  - security
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -24,36 +25,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Linux basics
-  - Root or sudo access
 faq:
-  - question: What is systemd and why should I use it for my applications?
+  - question: "When should I use the Creating & Managing systemd Services skill?"
     answer: >-
-      systemd is the standard service manager on modern Linux. It provides
-      automatic process restart on crash, boot-time startup with dependency
-      ordering, resource limits (memory, CPU), security sandboxing, and
-      centralized logging via journald. Every production application should run
-      as a systemd service instead of using nohup, screen, or pm2.
-  - question: How do I view logs for a systemd service?
+      Create production-ready systemd services — unit file structure, security
+      directives, dependency management, automatic restarts, logging with
+      journald, and timer-based scheduling. This skill provides a structured
+      workflow for shell scripting, process management, file permissions, and
+      system troubleshooting.
+  - question: "What tools and setup does Creating & Managing systemd Services require?"
     answer: >-
-      Use journalctl: 'journalctl -u myapp.service -f' for live logs, '-n 100'
-      for last 100 lines, '--since' and '--until' for time ranges, '-b' for
-      current boot. Output formats include text (default), json, and
-      short-precise. Logs are persisted across reboots if /var/log/journal
-      exists.
-  - question: What is the difference between systemd timers and cron?
-    answer: >-
-      systemd timers offer: journald logging (cron uses mail), dependency
-      management, persistent scheduling (runs missed jobs after downtime),
-      randomized delays (avoid thundering herd), resource limits, and
-      calendar-based or monotonic scheduling. Cron is simpler for basic tasks
-      but lacks these production features.
-relatedItems:
-  - linux-system-administrator
-  - linux-process-management
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Linux tooling (Bash, coreutils). No special setup
+      required beyond a working Linux system administration environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Creating & Managing systemd Services

@@ -4,16 +4,18 @@ stackId: snyk
 type: skill
 name: Automated Fix PR Workflow
 description: >-
-  Manage Snyk automated fix pull requests — review upgrade recommendations, test
-  fixes, handle breaking changes, and use .snyk policies for deferred
+  Manage Snyk automated fix pull requests — review upgrade recommendations,
+  test fixes, handle breaking changes, and use .snyk policies for deferred
   vulnerabilities.
 difficulty: intermediate
 tags:
-  - fix-prs
-  - automated-remediation
-  - dependency-upgrades
   - snyk
-  - patching
+  - automated
+  - fix
+  - workflow
+  - security
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,35 +23,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Snyk account with GitHub integration
-  - Project monitored by Snyk
 faq:
-  - question: How do Snyk automated fix PRs work?
+  - question: "When should I use the Automated Fix PR Workflow skill?"
     answer: >-
-      When Snyk detects a vulnerability with an available fix, it creates a pull
-      request that upgrades the affected dependency to the minimum version that
-      resolves the issue. The PR includes CVE details, the dependency path, and
-      release notes. It targets the smallest version bump to minimize breaking
-      changes.
-  - question: Should I auto-merge Snyk fix PRs?
+      Manage Snyk automated fix pull requests — review upgrade
+      recommendations, test fixes, handle breaking changes, and use .snyk
+      policies for deferred vulnerabilities. This skill provides a structured
+      workflow for dependency scanning, SAST analysis, container scanning, and
+      vulnerability remediation.
+  - question: "What tools and setup does Automated Fix PR Workflow require?"
     answer: >-
-      No. Run your test suite first. Even minor version bumps can introduce
-      breaking changes or behavioral differences. Review the PR, check that
-      tests pass, and verify the vulnerability is resolved. Auto-merge is only
-      safe if you have comprehensive test coverage and a rollback strategy.
-  - question: How do I defer a Snyk vulnerability fix?
-    answer: >-
-      Add an ignore entry to the .snyk policy file with a reason and expiration
-      date: 'snyk ignore --id=SNYK-JS-EXAMPLE-123 --reason="No fix available,
-      mitigated by WAF" --expiry=2026-06-01'. The vulnerability will reappear
-      after the expiry date for re-evaluation.
-relatedItems:
-  - snyk-dependency-scanning
-  - snyk-ci-integration
-  - snyk-remediation-advisor
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Snyk tooling (Snyk CLI, Snyk API). Review the setup
+      section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Automated Fix PR Workflow

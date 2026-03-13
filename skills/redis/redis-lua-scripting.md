@@ -7,47 +7,32 @@ description: >-
   Write Redis Lua scripts for atomic multi-step operations — rate limiters,
   distributed locks, conditional updates, and complex transactions that cannot
   be interrupted.
-difficulty: advanced
+difficulty: intermediate
 tags:
-  - lua-scripting
-  - atomic-operations
-  - rate-limiting
-  - distributed-lock
-  - transactions
   - redis
+  - lua
+  - scripting
+  - atomic
+  - operations
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-languages:
-  - lua
-  - typescript
-  - python
-prerequisites:
-  - Redis 7.0+
-  - Basic Lua syntax
-  - Redis data structures
 faq:
-  - question: Why use Lua scripts in Redis instead of transactions (MULTI/EXEC)?
+  - question: "When should I use the Redis Lua Scripting for Atomic Operations skill?"
     answer: >-
-      MULTI/EXEC transactions cannot read a value and use it in a subsequent
-      write within the same transaction — they only batch commands. Lua scripts
-      can read, compute, and write atomically. For example, a rate limiter needs
-      to read the current count and conditionally increment — only Lua can do
-      this atomically.
-  - question: Are Redis Lua scripts atomic?
+      Write Redis Lua scripts for atomic multi-step operations — rate
+      limiters, distributed locks, conditional updates, and complex
+      transactions that cannot be interrupted. This skill provides a
+      structured workflow for development tasks.
+  - question: "What tools and setup does Redis Lua Scripting for Atomic Operations require?"
     answer: >-
-      Yes. Redis executes Lua scripts atomically — no other command from any
-      client can run between the script's operations. This is because Redis is
-      single-threaded. However, this also means long-running scripts block all
-      other clients, so keep scripts fast (under 5ms ideally).
-relatedItems:
-  - redis-data-structures
-  - redis-caching-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard redis tooling (relevant CLI tools and frameworks).
+      No special setup required beyond a working redis environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Redis Lua Scripting for Atomic Operations

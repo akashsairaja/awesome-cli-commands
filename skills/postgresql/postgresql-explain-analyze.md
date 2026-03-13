@@ -7,13 +7,14 @@ description: >-
   Decode PostgreSQL EXPLAIN ANALYZE output — understand node types, costs,
   buffer usage, timing breakdowns, and common performance patterns to diagnose
   slow queries.
-difficulty: intermediate
+difficulty: beginner
 tags:
-  - explain-analyze
-  - query-plans
-  - performance
-  - diagnostics
   - postgresql
+  - reading
+  - explain
+  - analyze
+  - like
+  - pro
 compatibility:
   - claude-code
   - cursor
@@ -22,36 +23,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - sql
-prerequisites:
-  - PostgreSQL 14+
-  - Basic SQL knowledge
 faq:
-  - question: What is the difference between EXPLAIN and EXPLAIN ANALYZE in PostgreSQL?
+  - question: "When should I use the Reading EXPLAIN ANALYZE Like a Pro skill?"
     answer: >-
-      EXPLAIN shows the query planner's estimated execution plan without running
-      the query. EXPLAIN ANALYZE actually executes the query and shows real
-      timing, row counts, and buffer usage. Always use ANALYZE for performance
-      tuning — estimates can be wildly inaccurate.
-  - question: What does Seq Scan mean in PostgreSQL EXPLAIN output?
+      Decode PostgreSQL EXPLAIN ANALYZE output — understand node types, costs,
+      buffer usage, timing breakdowns, and common performance patterns to
+      diagnose slow queries. This skill provides a structured workflow for
+      query optimization, index strategy, connection pooling, and migration
+      safety.
+  - question: "What tools and setup does Reading EXPLAIN ANALYZE Like a Pro require?"
     answer: >-
-      Seq Scan (Sequential Scan) means PostgreSQL is reading every row in the
-      table. On small tables (< 10K rows) this is normal and efficient. On large
-      tables it usually indicates a missing index. Check the Filter line — if
-      'Rows Removed by Filter' is high, an index on the filter column would
-      help.
-  - question: How do I tell if my PostgreSQL statistics are stale from EXPLAIN ANALYZE?
-    answer: >-
-      Compare the 'rows' estimate in the cost section with 'rows' in the actual
-      section. If the estimate says rows=100 but actual shows rows=100000,
-      statistics are stale. Run ANALYZE on the table to update them. Stale
-      statistics cause the planner to choose bad join and scan strategies.
-relatedItems:
-  - postgresql-query-optimizer
-  - postgresql-index-strategy
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard PostgreSQL tooling (psql, pg_dump). No special setup
+      required beyond a working PostgreSQL database environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Reading EXPLAIN ANALYZE Like a Pro

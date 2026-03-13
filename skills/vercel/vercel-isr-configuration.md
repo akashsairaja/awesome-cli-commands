@@ -9,11 +9,14 @@ description: >-
   dynamic content.
 difficulty: intermediate
 tags:
+  - vercel
+  - implement
   - isr
+  - on-demand
   - revalidation
-  - caching
-  - static-generation
-  - next-js
+  - performance
+  - api
+  - serverless
 compatibility:
   - claude-code
   - cursor
@@ -21,35 +24,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Next.js 13+ with App Router
-  - Vercel deployment
 faq:
-  - question: What is Incremental Static Regeneration (ISR) on Vercel?
+  - question: "When should I use the Implement ISR with On-Demand Revalidation skill?"
     answer: >-
-      ISR lets you update static pages after build time without redeploying.
-      Pages are served from the CDN and revalidated in the background either on
-      a time interval (e.g., every hour) or on-demand via API calls. This
-      combines static performance with dynamic content freshness.
-  - question: What is the difference between time-based and on-demand revalidation?
+      Master Incremental Static Regeneration on Vercel — time-based and
+      on-demand revalidation, stale-while-revalidate patterns, and cache
+      management for dynamic content. This skill provides a structured
+      workflow for deployment automation, edge functions, analytics, and
+      monorepo configuration.
+  - question: "What tools and setup does Implement ISR with On-Demand Revalidation require?"
     answer: >-
-      Time-based revalidation regenerates pages after a set interval (e.g.,
-      every 3600 seconds). On-demand revalidation triggers regeneration
-      immediately via an API call — typically from a CMS webhook. On-demand is
-      faster for content updates but requires webhook integration.
-  - question: How do cache tags work with ISR on Vercel?
-    answer: >-
-      Cache tags label fetch requests with identifiers like 'posts' or
-      'post-my-slug'. When content changes, calling
-      revalidateTag('post-my-slug') invalidates all cached responses with that
-      tag. This enables granular cache control without knowing every URL that
-      uses the data.
-relatedItems:
-  - vercel-deployment-architect
-  - vercel-edge-functions
-  - vercel-monorepo-setup
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Vercel tooling (Vercel CLI, Vercel Dashboard). No
+      special setup required beyond a working Vercel deployment environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Implement ISR with On-Demand Revalidation

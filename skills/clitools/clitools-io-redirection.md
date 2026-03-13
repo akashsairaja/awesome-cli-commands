@@ -2,19 +2,19 @@
 id: clitools-io-redirection
 stackId: clitools
 type: skill
-name: I/O Redirection & File Descriptors
+name: >-
+  I/O Redirection & File Descriptors
 description: >-
   Master Unix I/O redirection — stdout/stderr control, file descriptors, here
   documents, process substitution, and designing robust data flow in shell
   scripts and pipelines.
-difficulty: intermediate
+difficulty: beginner
 tags:
+  - clitools
   - redirection
-  - file-descriptors
-  - stdout
-  - stderr
-  - heredoc
-  - tee
+  - file
+  - descriptors
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,32 +22,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Bash or Zsh shell
 faq:
-  - question: What is the difference between > and >> in bash?
+  - question: "When should I use the I/O Redirection & File Descriptors skill?"
     answer: >-
-      > overwrites the file (creates if it doesn't exist). >> appends to the
-      file. Use > for fresh output files, >> for log files that accumulate data.
-      Common pattern: > file at script start to clear, then >> file for
-      subsequent writes.
-  - question: How do I redirect stderr and stdout to different files?
+      Master Unix I/O redirection — stdout/stderr control, file descriptors,
+      here documents, process substitution, and designing robust data flow in
+      shell scripts and pipelines. This skill provides a structured workflow
+      for API design, documentation, architecture patterns, and development
+      workflows.
+  - question: "What tools and setup does I/O Redirection & File Descriptors require?"
     answer: >-
-      command > stdout.txt 2> stderr.txt. To merge both: command > combined.txt
-      2>&1 (order matters — 2>&1 must come after >). Bash shorthand for both:
-      command &> combined.txt.
-  - question: 'What are file descriptors 0, 1, and 2?'
-    answer: >-
-      0 = stdin (input), 1 = stdout (normal output), 2 = stderr (error output).
-      You can create custom descriptors 3-9 with exec: exec 3> myfile.txt. Write
-      to them with >&3. This is useful for logging to multiple destinations
-      simultaneously.
-relatedItems:
-  - clitools-text-processing
-  - clitools-xargs-parallel
-  - clitools-pipeline-architect
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Requires pip/poetry installed. Works with CLI & Dev Tools projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # I/O Redirection & File Descriptors

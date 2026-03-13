@@ -6,13 +6,16 @@ name: Master Netlify Redirects and Rewrites
 description: >-
   Configure Netlify redirects and rewrites for SPA routing, URL migrations,
   proxy rules, and geo-based routing using netlify.toml and _redirects file.
-difficulty: beginner
+difficulty: intermediate
 tags:
+  - netlify
+  - master
   - redirects
   - rewrites
-  - spa-routing
-  - url-migration
-  - proxy
+  - migration
+  - api
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,32 +24,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Netlify site deployed
 faq:
-  - question: How do I set up SPA routing on Netlify?
+  - question: "When should I use the Master Netlify Redirects and Rewrites skill?"
     answer: >-
-      Add a catch-all redirect rule: from '/*' to '/index.html' with status 200.
-      This tells Netlify to serve index.html for all routes that don't match a
-      static file, allowing your client-side router (React Router, Vue Router)
-      to handle the URL.
-  - question: What is the difference between a redirect and a rewrite on Netlify?
+      Configure Netlify redirects and rewrites for SPA routing, URL
+      migrations, proxy rules, and geo-based routing using netlify.toml and
+      _redirects file. This skill provides a structured workflow for
+      deployment automation, serverless functions, build plugins, and redirect
+      configuration.
+  - question: "What tools and setup does Master Netlify Redirects and Rewrites require?"
     answer: >-
-      A redirect (301/302) changes the URL in the browser and sends a new HTTP
-      response. A rewrite (200 status) serves different content without changing
-      the URL. Rewrites are used for SPA routing and API proxying where you want
-      to mask the actual content source.
-  - question: Should I use _redirects or netlify.toml for redirect rules?
-    answer: >-
-      Use netlify.toml — it supports more features (conditions, headers, force),
-      is easier to read, and keeps all configuration in one file. The _redirects
-      file is simpler but limited. If you use both, netlify.toml rules take
-      precedence.
-relatedItems:
-  - netlify-deployment-specialist
-  - netlify-functions-setup
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Netlify tooling (Netlify CLI, Netlify Dashboard). No
+      special setup required beyond a working Netlify deployment environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Master Netlify Redirects and Rewrites

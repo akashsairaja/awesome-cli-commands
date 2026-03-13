@@ -7,13 +7,16 @@ description: >-
   Scan container images for OS and application vulnerabilities with Trivy —
   configure severity filters, output formats, and registry authentication for
   comprehensive image security.
-difficulty: beginner
+difficulty: advanced
 tags:
-  - container-scanning
-  - docker
-  - vulnerability
-  - image-security
   - trivy
+  - container
+  - image
+  - vulnerability
+  - scanning
+  - security
+  - deployment
+  - docker
 compatibility:
   - claude-code
   - cursor
@@ -22,35 +25,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Trivy installed
-  - Docker
-  - Container images to scan
 faq:
-  - question: How do I scan a Docker image with Trivy?
+  - question: "When should I use the Container Image Vulnerability Scanning skill?"
     answer: >-
-      Run 'trivy image <image-name>' to scan any local or remote container
-      image. Use '--severity CRITICAL,HIGH' to filter results and '--exit-code
-      1' to fail CI builds when vulnerabilities are found. Trivy automatically
-      detects OS packages and application dependencies.
-  - question: What output formats does Trivy support?
+      Scan container images for OS and application vulnerabilities with Trivy
+      — configure severity filters, output formats, and registry
+      authentication for comprehensive image security. This skill provides a
+      structured workflow for container scanning, filesystem scanning, IaC
+      scanning, and SBOM generation.
+  - question: "What tools and setup does Container Image Vulnerability Scanning require?"
     answer: >-
-      Trivy supports table (human-readable), JSON (programmatic), SARIF (GitHub
-      Security tab), JUnit XML (CI test reports), and custom templates (HTML
-      reports). Use '--format json --output results.json' for machine-readable
-      output.
-  - question: How do I reduce vulnerabilities in my container images?
-    answer: >-
-      Use minimal base images (Alpine, Distroless), keep base images updated,
-      use multi-stage builds to exclude build-time dependencies, run 'npm ci
-      --production' to skip dev dependencies, and pin specific base image
-      versions instead of 'latest'.
-relatedItems:
-  - trivy-iac-scanning
-  - trivy-ci-pipeline
-  - trivy-security-scanner
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm, Docker, pip/poetry installed. Works with Trivy
+      projects. No additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Container Image Vulnerability Scanning

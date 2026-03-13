@@ -4,15 +4,18 @@ stackId: jest
 type: skill
 name: Snapshot Testing Best Practices
 description: >-
-  Use Jest snapshot testing effectively — when to snapshot, how to review diffs,
-  inline snapshots vs file snapshots, and avoiding snapshot fatigue.
+  Use Jest snapshot testing effectively — when to snapshot, how to review
+  diffs, inline snapshots vs file snapshots, and avoiding snapshot fatigue.
 difficulty: beginner
 tags:
-  - snapshot-testing
-  - inline-snapshots
-  - regression
   - jest
+  - snapshot
   - testing
+  - best
+  - practices
+  - api
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,34 +24,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Jest 29+
-  - Basic testing knowledge
 faq:
-  - question: What is Jest snapshot testing?
+  - question: "When should I use the Snapshot Testing Best Practices skill?"
     answer: >-
-      Snapshot testing captures a serialized version of output (JSON, HTML,
-      strings) and compares it against a stored reference file. If the output
-      changes unexpectedly, the test fails. You review the diff and either fix
-      the code or update the snapshot.
-  - question: When should I use inline snapshots vs file snapshots?
+      Use Jest snapshot testing effectively — when to snapshot, how to review
+      diffs, inline snapshots vs file snapshots, and avoiding snapshot
+      fatigue. It includes practical examples for JavaScript testing
+      development.
+  - question: "What tools and setup does Snapshot Testing Best Practices require?"
     answer: >-
-      Use inline snapshots for small outputs (under 10 lines) — they keep the
-      expected value visible in the test file. Use file snapshots for larger
-      outputs. File snapshots are stored in __snapshots__ directories and should
-      be committed alongside tests.
-  - question: Are snapshot tests a replacement for unit tests?
-    answer: >-
-      No. Snapshots catch unintended changes but do not validate correctness. A
-      snapshot of wrong output is still wrong. Use explicit assertions for
-      business logic and behavior. Use snapshots for output format,
-      serialization, and rendering regression detection.
-relatedItems:
-  - jest-mocking-mastery
-  - jest-testing-strategist
-  - jest-custom-matchers
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Jest installed. Works with Jest projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Snapshot Testing Best Practices

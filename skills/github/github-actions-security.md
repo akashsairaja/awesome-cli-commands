@@ -7,49 +7,37 @@ description: >-
   Secure your GitHub Actions workflows against supply chain attacks — pin
   actions to SHA, configure least-privilege permissions, protect secrets, and
   enable OpenID Connect.
-difficulty: advanced
+difficulty: intermediate
 tags:
+  - github
+  - harden
+  - actions
   - security
-  - supply-chain
-  - oidc
-  - permissions
-  - hardening
-  - github-actions
+  - api
+  - ci-cd
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-prerequisites:
-  - GitHub repository with admin access
-  - Existing GitHub Actions workflows
-  - Understanding of CI/CD security risks
 faq:
-  - question: Why should I pin GitHub Actions to SHA instead of version tags?
+  - question: "When should I use the Harden GitHub Actions Security skill?"
     answer: >-
-      Version tags (v4, v4.1) can be reassigned to point to different code,
-      enabling supply chain attacks. SHA references are immutable — they always
-      point to the exact code you reviewed. Use Dependabot to automatically
-      update SHA references when new versions are released.
-  - question: What is OIDC authentication in GitHub Actions?
+      Secure your GitHub Actions workflows against supply chain attacks — pin
+      actions to SHA, configure least-privilege permissions, protect secrets,
+      and enable OpenID Connect. This skill provides a structured workflow for
+      CI/CD workflows, PR automation, issue management, and repository
+      configuration.
+  - question: "What tools and setup does Harden GitHub Actions Security require?"
     answer: >-
-      OpenID Connect (OIDC) lets GitHub Actions authenticate to cloud providers
-      (AWS, GCP, Azure) using short-lived tokens instead of stored secrets.
-      GitHub generates a signed JWT token that the cloud provider validates,
-      eliminating the need for long-lived access keys.
-  - question: What is the difference between pull_request and pull_request_target?
-    answer: >-
-      pull_request runs in the context of the PR branch with read-only access —
-      safe for untrusted code. pull_request_target runs in the context of the
-      base branch with full secrets access. Never checkout PR code when using
-      pull_request_target, as it could exfiltrate secrets.
-relatedItems:
-  - github-security-scanner
-  - github-actions-architect
-  - github-actions-workflow-ci
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard GitHub tooling (GitHub CLI (gh), GitHub Actions).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Harden GitHub Actions Security

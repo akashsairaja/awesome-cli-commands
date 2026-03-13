@@ -6,13 +6,15 @@ name: TypeScript Strict Mode Configuration
 description: >-
   Configure TypeScript for maximum type safety — strict mode flags, essential
   tsconfig.json settings, path aliases, and project references for monorepos.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - tsconfig
-  - strict-mode
+  - typescript
+  - strict
+  - mode
   - configuration
+  - best-practices
+  - refactoring
   - type-safety
-  - path-aliases
 compatibility:
   - claude-code
   - cursor
@@ -23,37 +25,20 @@ compatibility:
   - aider
   - tabnine
   - zed
-languages:
-  - typescript
-prerequisites:
-  - TypeScript 5.0+
-  - Node.js project
 faq:
-  - question: What does strict mode do in TypeScript?
+  - question: "When should I use the TypeScript Strict Mode Configuration skill?"
     answer: >-
-      strict: true enables all strict type-checking flags at once:
-      strictNullChecks (null safety), noImplicitAny (require explicit types),
-      strictFunctionTypes (safe function parameters), and more. It catches
-      approximately 40% more type errors than the default configuration and is
-      recommended for all projects.
-  - question: What is noUncheckedIndexedAccess in TypeScript?
+      Configure TypeScript for maximum type safety — strict mode flags,
+      essential tsconfig.json settings, path aliases, and project references
+      for monorepos. It includes practical examples for TypeScript
+      development.
+  - question: "What tools and setup does TypeScript Strict Mode Configuration require?"
     answer: >-
-      noUncheckedIndexedAccess makes array and object indexing return T |
-      undefined instead of just T. This forces you to check that a value exists
-      before using it: arr[0] becomes string | undefined, not just string. This
-      catches out-of-bounds access errors that strict mode alone misses.
-  - question: How do I set up TypeScript path aliases?
-    answer: >-
-      Add 'baseUrl' and 'paths' to tsconfig.json: paths: { '@/*': ['./src/*'] }.
-      This lets you write 'import { User } from @/types/user' instead of
-      relative paths. You must also configure your bundler (Vite, webpack) or
-      test runner (Jest, Vitest) with the same aliases.
-relatedItems:
-  - typescript-generics-patterns
-  - typescript-no-any-rule
-  - typescript-type-guards
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard TypeScript tooling (TypeScript compiler (tsc),
+      tsconfig.json). Review the setup section in the skill content for
+      specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # TypeScript Strict Mode Configuration

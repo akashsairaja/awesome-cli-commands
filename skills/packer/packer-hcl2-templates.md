@@ -7,14 +7,14 @@ description: >-
   Write Packer templates in HCL2 — source blocks, build pipelines, variables
   with validation, data sources, and structuring multi-cloud image definitions
   for maintainable builds.
-difficulty: intermediate
+difficulty: beginner
 tags:
+  - packer
   - hcl2
-  - templates
-  - source-blocks
-  - variables
-  - data-sources
-  - multi-cloud
+  - template
+  - design
+  - docker
+  - type-safety
 compatibility:
   - claude-code
   - cursor
@@ -22,33 +22,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Packer CLI installed
 faq:
-  - question: How do I migrate from Packer JSON to HCL2?
+  - question: "When should I use the Packer HCL2 Template Design skill?"
     answer: >-
-      Run packer hcl2_upgrade template.json to auto-convert. Review the output —
-      some manual fixes may be needed. HCL2 benefits: variables with types and
-      validation, data sources, locals, functions, and multiple files per
-      template. All new Packer projects should use HCL2.
-  - question: How do I find the latest base AMI dynamically?
+      Write Packer templates in HCL2 — source blocks, build pipelines,
+      variables with validation, data sources, and structuring multi-cloud
+      image definitions for maintainable builds. This skill provides a
+      structured workflow for development tasks.
+  - question: "What tools and setup does Packer HCL2 Template Design require?"
     answer: >-
-      Use source_ami_filter in the amazon-ebs source block. Set filters for name
-      pattern, root-device-type, and virtualization-type. Set most_recent = true
-      and owners to the AMI publisher's AWS account ID. This always builds on
-      the latest base image.
-  - question: How do I build for multiple clouds from one template?
-    answer: >-
-      Define multiple source blocks (amazon-ebs, googlecompute, docker) and
-      reference all in the build block's sources list. Provisioners run on each.
-      Use override blocks for source-specific provisioner differences. Packer
-      builds in parallel by default.
-relatedItems:
-  - packer-provisioner-scripts
-  - packer-cicd-pipeline
-  - packer-image-builder
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Requires Docker installed. Works with packer projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Packer HCL2 Template Design

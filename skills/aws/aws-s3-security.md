@@ -4,16 +4,15 @@ stackId: aws
 type: skill
 name: AWS S3 Security Hardening
 description: >-
-  Secure AWS S3 buckets with encryption, access policies, public access blocks,
-  versioning, logging, and lifecycle rules to prevent data breaches and comply
-  with security frameworks.
+  Secure AWS S3 buckets with encryption, access policies, public access
+  blocks, versioning, logging, and lifecycle rules to prevent data breaches
+  and comply with security frameworks.
 difficulty: intermediate
 tags:
-  - s3-security
-  - encryption
-  - bucket-policy
-  - public-access
-  - versioning
+  - aws
+  - security
+  - hardening
+  - api
 compatibility:
   - claude-code
   - cursor
@@ -22,30 +21,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - AWS account
-  - S3 basics
-  - IAM policy understanding
 faq:
-  - question: How do I prevent S3 data breaches?
+  - question: "When should I use the AWS S3 Security Hardening skill?"
     answer: >-
-      Four critical controls: (1) Enable public access blocks on all buckets —
-      block_public_acls, ignore_public_acls, block_public_policy,
-      restrict_public_buckets. (2) Enable server-side encryption (KMS or
-      SSE-S3). (3) Deny unencrypted transport in bucket policy. (4) Use IAM
-      policies with least-privilege, never bucket ACLs.
-  - question: Should I use SSE-S3 or SSE-KMS for S3 encryption?
+      Secure AWS S3 buckets with encryption, access policies, public access
+      blocks, versioning, logging, and lifecycle rules to prevent data
+      breaches and comply with security frameworks. This skill provides a
+      structured workflow for serverless architecture, cost optimization,
+      security hardening, and infrastructure automation.
+  - question: "What tools and setup does AWS S3 Security Hardening require?"
     answer: >-
-      Use SSE-KMS when you need: audit trails (CloudTrail logs every key usage),
-      key rotation control, cross-account access control via key policies, or
-      compliance requirements specifying customer-managed keys. SSE-S3 is
-      sufficient for basic encryption at rest with less operational overhead.
-relatedItems:
-  - aws-iam-security-architect
-  - aws-vpc-architecture
-  - aws-cost-optimization
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard AWS tooling (AWS CLI, CloudFormation). Review the
+      setup section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # AWS S3 Security Hardening

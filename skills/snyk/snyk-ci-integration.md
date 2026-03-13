@@ -9,11 +9,14 @@ description: >-
   gating.
 difficulty: intermediate
 tags:
-  - ci-cd
-  - github-actions
-  - security-gates
-  - pipeline
   - snyk
+  - cicd
+  - pipeline
+  - integration
+  - security
+  - ci-cd
+  - docker
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -21,35 +24,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Snyk CLI or GitHub Action
-  - SNYK_TOKEN in CI secrets
-  - GitHub Actions or equivalent CI
 faq:
-  - question: How do I add Snyk to GitHub Actions?
+  - question: "When should I use the Snyk CI/CD Pipeline Integration skill?"
     answer: >-
-      Use the snyk/actions GitHub Actions (snyk/actions/node,
-      snyk/actions/docker, snyk/actions/iac). Set the SNYK_TOKEN secret in your
-      repository settings. Configure --severity-threshold to control which
-      vulnerabilities block the build.
-  - question: What severity threshold should I use in CI?
+      Integrate Snyk security scanning into CI/CD pipelines with GitHub
+      Actions — dependency tests, container scans, and IaC checks with
+      severity-based build gating. This skill provides a structured workflow
+      for dependency scanning, SAST analysis, container scanning, and
+      vulnerability remediation.
+  - question: "What tools and setup does Snyk CI/CD Pipeline Integration require?"
     answer: >-
-      Start with --severity-threshold=high to block CRITICAL and HIGH
-      vulnerabilities. This catches serious issues without overwhelming
-      developers with LOW/MEDIUM alerts. As your security posture matures,
-      consider adding MEDIUM to the threshold.
-  - question: Should I run snyk monitor on every PR?
-    answer: >-
-      No. Run 'snyk test' on PRs (one-time scan, blocks on vulnerabilities) and
-      'snyk monitor' only on the main branch (creates a snapshot for continuous
-      monitoring). Running monitor on PRs creates noise in the Snyk dashboard
-      with duplicate project entries.
-relatedItems:
-  - snyk-dependency-scanning
-  - snyk-fix-workflow
-  - snyk-devsecops-engineer
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm, Docker, Terraform CLI installed. Works with Snyk
+      projects. Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Snyk CI/CD Pipeline Integration

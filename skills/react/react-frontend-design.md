@@ -8,27 +8,24 @@ description: >-
   quality.
 difficulty: beginner
 tags:
+  - react
   - frontend
   - design
-  - frontend-design
-  - react
+  - performance
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
 faq:
-  - question: "When should I use the frontend-design skill?"
+  - question: "When should I use the Frontend Design skill?"
     answer: >-
       Create distinctive, production-grade frontend interfaces with high
-      design quality. Use this skill when the user asks to build web
-      components, pages, artifacts, posters, or applications (examples include
-      websites, landing pages, dashboards, React components, HTML/CSS layouts,
-      or when styling/beautifying any web UI). Generates creative, polished
-      code and UI design that avoids generic AI aesthetics.
-  - question: "What tools or setup does frontend-design require?"
+      design quality. It includes practical examples for React frontend
+      development.
+  - question: "What tools and setup does Frontend Design require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Works with standard React tooling (React 19+, JSX/TSX). No special setup
+      required beyond a working React frontend environment.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

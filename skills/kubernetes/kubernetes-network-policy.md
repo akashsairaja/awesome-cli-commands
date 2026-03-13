@@ -9,11 +9,14 @@ description: >-
   network segmentation.
 difficulty: advanced
 tags:
-  - network-policy
-  - zero-trust
-  - network-segmentation
-  - pod-isolation
-  - security
+  - kubernetes
+  - network
+  - policies
+  - testing
+  - monitoring
+  - architecture
+  - api
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -21,36 +24,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Kubernetes 1.28+
-  - 'CNI that supports NetworkPolicy (Calico, Cilium, Weave)'
-  - Understanding of pod labels and selectors
 faq:
-  - question: What are Kubernetes NetworkPolicies?
+  - question: "When should I use the Kubernetes Network Policies skill?"
     answer: >-
-      NetworkPolicies are Kubernetes resources that define firewall rules at the
-      pod level. They control which pods can communicate with which other pods,
-      namespaces, and external IP ranges. By default, all pod-to-pod traffic is
-      allowed — NetworkPolicies let you restrict this to only what is needed.
-  - question: Why should I start with a default-deny NetworkPolicy?
+      Implement Kubernetes NetworkPolicies to control pod-to-pod traffic,
+      isolate namespaces, restrict egress to external services, and create
+      zero-trust network segmentation. This skill provides a structured
+      workflow for pod management, deployment strategies, security policies,
+      and resource optimization.
+  - question: "What tools and setup does Kubernetes Network Policies require?"
     answer: >-
-      Default-deny follows the zero-trust principle: no traffic is allowed
-      unless explicitly permitted. This prevents a compromised pod from reaching
-      other services, reduces blast radius, and satisfies compliance
-      requirements. Add specific allow rules for each required communication
-      path.
-  - question: Does every Kubernetes CNI support NetworkPolicies?
-    answer: >-
-      No. The default kubenet CNI does NOT enforce NetworkPolicies — you can
-      create them but they have no effect. You need a CNI that supports them:
-      Calico, Cilium, Weave Net, or Antrea. Verify with a test: create a
-      deny-all policy and confirm traffic is actually blocked.
-relatedItems:
-  - kubernetes-pod-security
-  - kubernetes-rbac-specialist
-  - docker-networking-patterns
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Kubernetes tooling (kubectl, Helm). No special setup
+      required beyond a working Kubernetes cluster environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Kubernetes Network Policies

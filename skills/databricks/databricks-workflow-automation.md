@@ -2,56 +2,40 @@
 id: databricks-workflow-automation
 stackId: databricks
 type: skill
-name: Databricks Workflows & Job Orchestration
+name: >-
+  Databricks Workflows & Job Orchestration
 description: >-
   Build and manage Databricks Workflows — multi-task jobs, dependencies,
   schedules, parameterization, alerting, and CI/CD integration for automated
   data pipelines.
 difficulty: intermediate
 tags:
+  - databricks
   - workflows
-  - jobs
+  - job
   - orchestration
-  - scheduling
-  - pipelines
   - automation
+  - monitoring
+  - best-practices
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-languages:
-  - python
-  - sql
-prerequisites:
-  - Databricks workspace with job creation permissions
-  - Notebooks to orchestrate
 faq:
-  - question: What is a Databricks Workflow?
+  - question: "When should I use the Databricks Workflows & Job Orchestration skill?"
     answer: >-
-      A Databricks Workflow is a multi-task job that orchestrates notebooks,
-      Python scripts, SQL queries, and Delta Live Tables with dependencies,
-      schedules, and monitoring. Tasks execute in order based on dependency
-      definitions, with configurable retry and failure handling.
-  - question: Should I use job clusters or all-purpose clusters for workflows?
+      Build and manage Databricks Workflows — multi-task jobs, dependencies,
+      schedules, parameterization, alerting, and CI/CD integration for
+      automated data pipelines. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Databricks Workflows & Job Orchestration require?"
     answer: >-
-      Always use job clusters for workflows. They auto-terminate when the job
-      completes, reducing costs. All-purpose clusters stay running and are meant
-      for interactive development. Job clusters also support autoscaling
-      specific to the workload.
-  - question: How do I handle workflow failures?
-    answer: >-
-      Configure retry policies for transient failures, set up email/Slack
-      notifications for persistent failures, use task dependencies to prevent
-      downstream tasks from running on upstream failure, and implement data
-      quality checks as dedicated tasks that block the pipeline.
-relatedItems:
-  - databricks-delta-lake-optimization
-  - databricks-unity-catalog-setup
-  - databricks-notebook-engineer
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires pip/poetry installed. Works with databricks projects. Review
+      the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Databricks Workflows & Job Orchestration

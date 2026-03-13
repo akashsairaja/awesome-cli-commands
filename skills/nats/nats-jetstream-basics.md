@@ -2,19 +2,20 @@
 id: nats-jetstream-basics
 stackId: nats
 type: skill
-name: JetStream Streams & Consumers
+name: >-
+  JetStream Streams & Consumers
 description: >-
   Set up durable messaging with NATS JetStream — creating streams, configuring
   retention, durable consumers, acknowledgment patterns, and building reliable
   message processing pipelines.
-difficulty: intermediate
+difficulty: beginner
 tags:
+  - nats
   - jetstream
   - streams
   - consumers
-  - durability
-  - acknowledgment
-  - retention
+  - monitoring
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,37 +23,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - NATS CLI installed
-  - NATS server with JetStream enabled
 faq:
-  - question: What is the difference between pull and push consumers?
+  - question: "When should I use the JetStream Streams & Consumers skill?"
     answer: >-
-      Pull consumers: the client explicitly fetches messages (nats consumer
-      next). Good for batch processing, backpressure control, and workers that
-      process at their own pace. Push consumers: NATS delivers messages to a
-      subject automatically. Good for real-time processing, event handlers, and
-      fan-out patterns.
-  - question: What does deliver=all vs deliver=last mean?
+      Set up durable messaging with NATS JetStream — creating streams,
+      configuring retention, durable consumers, acknowledgment patterns, and
+      building reliable message processing pipelines. This skill provides a
+      structured workflow for development tasks.
+  - question: "What tools and setup does JetStream Streams & Consumers require?"
     answer: >-
-      deliver=all: consumer starts from the first message in the stream (full
-      replay). deliver=last: starts from the most recent message only.
-      deliver=new: only messages published after consumer creation.
-      deliver=by_start_time: from a specific timestamp. Use 'all' for new
-      consumers that need history, 'new' for real-time only.
-  - question: How does message acknowledgment work in JetStream?
-    answer: >-
-      With ack=explicit, each message must be acknowledged after processing. If
-      not acked within the ack_wait period, NATS redelivers it (up to
-      max-deliver times). Ack types: ack (success), nak (reject, redeliver
-      immediately), term (reject permanently), in-progress (extend ack
-      deadline).
-relatedItems:
-  - nats-pubsub-basics
-  - nats-kv-object-store
-  - nats-jetstream-ops
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Works with standard nats tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # JetStream Streams & Consumers

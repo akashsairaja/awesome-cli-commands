@@ -2,19 +2,20 @@
 id: jq-array-operations
 stackId: jq
 type: skill
-name: Array Operations & Aggregation in jq
+name: >-
+  Array Operations & Aggregation in jq
 description: >-
   Process JSON arrays with jq — map, select, group_by, sort_by, unique_by,
-  flatten, and reduce for transforming, filtering, and aggregating array data in
-  pipelines.
+  flatten, and reduce for transforming, filtering, and aggregating array data
+  in pipelines.
 difficulty: intermediate
 tags:
-  - arrays
-  - map
-  - select
-  - group-by
-  - sort
+  - jq
+  - array
+  - operations
   - aggregation
+  - api
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,31 +23,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - jq 1.6+
 faq:
-  - question: How do I group and count items in jq?
+  - question: "When should I use the Array Operations & Aggregation in jq skill?"
     answer: >-
-      Use group_by + length: jq 'group_by(.status) | map({status: .[0].status,
-      count: length})'. This groups items by the status field and counts each
-      group. Add map(.amount) | add inside for sum by group.
-  - question: How do I sort JSON arrays by a field?
+      Process JSON arrays with jq — map, select, group_by, sort_by, unique_by,
+      flatten, and reduce for transforming, filtering, and aggregating array
+      data in pipelines. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Array Operations & Aggregation in jq require?"
     answer: >-
-      Use sort_by: jq 'sort_by(.date)' for ascending, 'sort_by(.date) | reverse'
-      for descending. For multiple sort keys: sort_by(.status, .name). Use
-      min_by and max_by for single extremes without sorting the whole array.
-  - question: How do I remove duplicates from a JSON array?
-    answer: >-
-      For primitive arrays: jq 'unique'. For object arrays by field: jq
-      'unique_by(.id)'. This keeps the first occurrence. To deduplicate while
-      preserving order: jq '[foreach .[] as $x ({}; . + {($x.id | tostring):
-      $x}; .) | to_entries | last.value]'.
-relatedItems:
-  - jq-api-processing
-  - jq-object-construction
-  - jq-data-transformer
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Works with standard jq tooling (relevant CLI tools and frameworks). No
+      special setup required beyond a working jq environment.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Array Operations & Aggregation in jq

@@ -2,17 +2,22 @@
 id: rust-cargo-essentials
 stackId: rust
 type: skill
-name: Cargo Build System & Project Management
+name: >-
+  Cargo Build System & Project Management
 description: >-
   Master Cargo for Rust projects — workspace configuration, dependency
-  management, build profiles, feature flags, and publishing crates to crates.io.
-difficulty: beginner
+  management, build profiles, feature flags, and publishing crates to
+  crates.io.
+difficulty: intermediate
 tags:
+  - rust
   - cargo
-  - build-system
-  - dependencies
-  - workspaces
-  - feature-flags
+  - build
+  - system
+  - project
+  - management
+  - testing
+  - optimization
 compatibility:
   - claude-code
   - cursor
@@ -21,37 +26,18 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - rust
-prerequisites:
-  - Rust 1.75+
 faq:
-  - question: What is Cargo in Rust?
+  - question: "When should I use the Cargo Build System & Project Management skill?"
     answer: >-
-      Cargo is Rust's official build system and package manager. It handles
-      project creation, dependency management, compilation, testing,
-      benchmarking, documentation generation, and publishing to crates.io. Every
-      Rust project uses Cargo — it is the equivalent of npm for Node.js or pip
-      for Python, but with integrated build system.
-  - question: Should I commit Cargo.lock to git?
+      Master Cargo for Rust projects — workspace configuration, dependency
+      management, build profiles, feature flags, and publishing crates to
+      crates.io. It includes practical examples for Rust systems development.
+  - question: "What tools and setup does Cargo Build System & Project Management require?"
     answer: >-
-      Yes for binary projects (applications, CLI tools) — Cargo.lock ensures
-      reproducible builds. No for library projects — libraries should let
-      downstream consumers resolve dependency versions. The Rust convention:
-      commit Cargo.lock for end products, gitignore it for libraries.
-  - question: What are Cargo feature flags?
-    answer: >-
-      Feature flags are compile-time toggles defined in Cargo.toml that enable
-      optional functionality. They let crates offer modular features without
-      forcing all dependencies on every user. Use 'cargo add serde --features
-      derive' to enable features. Define your own features for optional crate
-      capabilities.
-relatedItems:
-  - rust-error-handling-patterns
-  - rust-clippy-rules
-  - rust-testing-patterns
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Cargo, Go toolchain installed. Works with Rust projects. Review
+      the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Cargo Build System & Project Management

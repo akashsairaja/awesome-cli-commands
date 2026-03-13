@@ -2,53 +2,40 @@
 id: bun-testing-setup
 stackId: bun
 type: skill
-name: Testing with Bun's Built-In Test Runner
+name: >-
+  Testing with Bun's Built-In Test Runner
 description: >-
   Write and run tests with Bun's Jest-compatible test runner — assertions,
   mocking, snapshots, coverage, and lifecycle hooks with zero configuration.
-difficulty: beginner
+difficulty: intermediate
 tags:
+  - bun
   - testing
-  - bun-test
-  - jest-compatible
-  - mocking
-  - coverage
+  - buns
+  - built-in
+  - test
+  - runner
+  - migration
+  - api
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-languages:
-  - typescript
-  - javascript
-prerequisites:
-  - Bun 1.1+
 faq:
-  - question: Is Bun's test runner compatible with Jest?
+  - question: "When should I use the Testing with Bun's Built-In Test Runner skill?"
     answer: >-
-      Yes, Bun's test runner supports the same describe/it/expect API as Jest.
-      Most Jest tests can run on Bun with minimal changes — replace jest imports
-      with bun:test and update mock syntax. Bun runs tests 10-20x faster than
-      Jest because it avoids the transpilation step and uses native execution.
-  - question: How do I migrate from Jest to Bun's test runner?
+      Write and run tests with Bun's Jest-compatible test runner — assertions,
+      mocking, snapshots, coverage, and lifecycle hooks with zero
+      configuration. This skill provides a structured workflow for development
+      tasks.
+  - question: "What tools and setup does Testing with Bun's Built-In Test Runner require?"
     answer: >-
-      Three steps: (1) Replace 'import { describe, it } from jest' with 'import
-      { describe, it } from bun:test'. (2) Replace jest.fn() with mock() and
-      jest.spyOn with spyOn from bun:test. (3) Replace jest.mock() with
-      mock.module(). Most assertions (expect, toBe, toEqual) work identically.
-  - question: Does Bun's test runner support code coverage?
-    answer: >-
-      Yes. Run 'bun test --coverage' to generate coverage reports. Bun tracks
-      line, function, and branch coverage natively without external tools like
-      nyc or c8. The coverage report appears in the terminal output and can be
-      exported for CI/CD integration.
-relatedItems:
-  - bun-server-patterns
-  - bun-bundler-config
-  - bun-native-apis
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Jest installed. Works with bun projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Testing with Bun's Built-In Test Runner

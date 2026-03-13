@@ -7,13 +7,14 @@ description: >-
   Implement Pod Security Standards (PSS) to enforce security baselines across
   namespaces — restrict privileged containers, host access, capabilities, and
   volume types.
-difficulty: intermediate
+difficulty: advanced
 tags:
-  - pod-security
-  - psa
-  - security-context
-  - restricted
-  - container-security
+  - kubernetes
+  - pod
+  - security
+  - standards
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,37 +23,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Kubernetes 1.25+
-  - Namespace admin access
-  - Basic pod security concepts
 faq:
-  - question: What are Kubernetes Pod Security Standards?
+  - question: "When should I use the Kubernetes Pod Security Standards skill?"
     answer: >-
-      Pod Security Standards (PSS) define three security profiles: Privileged
-      (no restrictions), Baseline (blocks known privilege escalations), and
-      Restricted (hardened best practices). Pod Security Admission (PSA)
-      enforces these profiles at the namespace level, replacing the deprecated
-      PodSecurityPolicy.
-  - question: What is the difference between Baseline and Restricted pod security?
+      Implement Pod Security Standards (PSS) to enforce security baselines
+      across namespaces — restrict privileged containers, host access,
+      capabilities, and volume types. This skill provides a structured
+      workflow for pod management, deployment strategies, security policies,
+      and resource optimization.
+  - question: "What tools and setup does Kubernetes Pod Security Standards require?"
     answer: >-
-      Baseline blocks dangerous configurations like privileged containers,
-      hostNetwork, and hostPID but allows running as root. Restricted adds
-      requirements: non-root user, dropped ALL capabilities, seccomp profile, no
-      privilege escalation, and read-only root filesystem. Use Restricted for
-      production workloads.
-  - question: How do I migrate existing workloads to Restricted pod security?
-    answer: >-
-      Start by labeling namespaces with 'warn: restricted' to see which pods
-      violate the policy without blocking them. Fix non-compliant workloads by
-      adding securityContext settings. Then switch to 'audit: restricted' for
-      logging, and finally 'enforce: restricted' when all workloads comply.
-relatedItems:
-  - kubernetes-rbac-specialist
-  - kubernetes-network-policy
-  - docker-non-root-containers
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Kubernetes tooling (kubectl, Helm). Review the setup
+      section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Kubernetes Pod Security Standards

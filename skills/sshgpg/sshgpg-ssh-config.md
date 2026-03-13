@@ -7,13 +7,15 @@ description: >-
   Configure ~/.ssh/config for efficient multi-host management — host aliases,
   per-host keys, jump/bastion hosts, connection multiplexing, and wildcard
   patterns.
-difficulty: intermediate
+difficulty: advanced
 tags:
-  - ssh-config
-  - host-aliases
-  - bastion
-  - jump-host
-  - multiplexing
+  - sshgpg
+  - ssh
+  - config
+  - file
+  - mastery
+  - security
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,32 +24,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - OpenSSH 7.3+ (for ProxyJump)
-  - SSH keys generated
 faq:
-  - question: How do I configure SSH host aliases?
+  - question: "When should I use the SSH Config File Mastery skill?"
     answer: >-
-      Add a Host block in ~/.ssh/config with HostName, User, IdentityFile, and
-      Port. For example: 'Host prod\n  HostName 203.0.113.10\n  User deploy'.
-      Then just type 'ssh prod' instead of the full connection string.
-  - question: How does SSH connection multiplexing work?
+      Configure ~/.ssh/config for efficient multi-host management — host
+      aliases, per-host keys, jump/bastion hosts, connection multiplexing, and
+      wildcard patterns. This skill provides a structured workflow for key
+      management, secure connections, threat modeling, and security auditing.
+  - question: "What tools and setup does SSH Config File Mastery require?"
     answer: >-
-      Add 'ControlMaster auto', 'ControlPath ~/.ssh/sockets/%r@%h-%p', and
-      'ControlPersist 600' under 'Host *'. The first SSH connection creates a
-      socket; subsequent connections reuse it. This makes SCP, SFTP, and
-      additional SSH sessions nearly instant.
-  - question: How do I SSH through a bastion/jump host?
-    answer: >-
-      Use ProxyJump in your SSH config: 'Host internal\n  HostName 10.0.1.50\n 
-      ProxyJump bastion'. SSH automatically connects to the bastion first, then
-      tunnels to the internal host. No manual two-step SSH needed.
-relatedItems:
-  - sshgpg-key-management
-  - sshgpg-agent-forwarding
-  - sshgpg-server-hardening
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard SSH/GPG Security tooling (ssh, ssh-agent). Review
+      the setup section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # SSH Config File Mastery

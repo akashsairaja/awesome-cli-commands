@@ -4,15 +4,17 @@ stackId: terraform
 type: skill
 name: Terraform Plan/Apply CI/CD Workflow
 description: >-
-  Implement a safe Terraform CI/CD pipeline with plan on pull requests, apply on
-  merge, approval gates, drift detection, and cost estimation integration.
+  Implement a safe Terraform CI/CD pipeline with plan on pull requests, apply
+  on merge, approval gates, drift detection, and cost estimation integration.
 difficulty: intermediate
 tags:
+  - terraform
+  - planapply
+  - cicd
+  - workflow
   - ci-cd
-  - github-actions
-  - plan-apply
-  - drift-detection
-  - automation
+  - machine-learning
+  - code-review
 compatibility:
   - claude-code
   - cursor
@@ -20,29 +22,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Terraform 1.6+
-  - GitHub Actions or equivalent CI system
-  - Remote state backend configured
 faq:
-  - question: What is the safest way to run Terraform in CI/CD?
+  - question: "When should I use the Terraform Plan/Apply CI/CD Workflow skill?"
     answer: >-
-      Run 'terraform plan' on every pull request and post the output as a PR
-      comment for review. After approval and merge to main, run 'terraform
-      apply' using the saved plan file. Require manual approval for production
-      environments. Never run apply directly from developer laptops.
-  - question: How do I detect infrastructure drift with Terraform?
+      Implement a safe Terraform CI/CD pipeline with plan on pull requests,
+      apply on merge, approval gates, drift detection, and cost estimation
+      integration. This skill provides a structured workflow for resource
+      provisioning, state management, module design, and multi-cloud
+      deployment.
+  - question: "What tools and setup does Terraform Plan/Apply CI/CD Workflow require?"
     answer: >-
-      Run 'terraform plan -detailed-exitcode' on a schedule (e.g., daily). Exit
-      code 2 means changes are needed (drift detected). Set up alerting when
-      drift is found. Common causes: manual console changes, other tools
-      modifying the same resources, or auto-scaling events.
-relatedItems:
-  - terraform-state-guardian
-  - terraform-workspace-strategy
-  - terraform-module-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Terraform CLI installed. Works with Terraform projects. Review
+      the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Terraform Plan/Apply CI/CD Workflow

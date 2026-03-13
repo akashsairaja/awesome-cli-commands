@@ -9,24 +9,22 @@ description: >-
   automating cleanup tasks.
 difficulty: advanced
 tags:
+  - bash
   - file
   - organizer
-  - file-organizer
-  - bash
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the file-organizer skill?"
+  - question: "When should I use the File Organizer skill?"
     answer: >-
       Intelligently organizes your files and folders across your computer by
       understanding context, finding duplicates, suggesting better structures,
-      and automating cleanup tasks. Reduces cognitive load and keeps your
-      digital workspace tidy without manual effort.
-  - question: "What tools or setup does file-organizer require?"
+      and automating cleanup tasks. It includes practical examples for shell
+      scripting development.
+  - question: "What tools and setup does File Organizer require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Works with standard Bash tooling (Bash shell, coreutils). Review the
+      setup section in the skill content for specific configuration steps.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

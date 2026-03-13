@@ -4,15 +4,17 @@ stackId: go
 type: skill
 name: Go Testing with Table-Driven Tests
 description: >-
-  Write effective Go tests — table-driven test patterns, subtests, test helpers,
-  mocking with interfaces, benchmarks, and the testing package best practices.
+  Write effective Go tests — table-driven test patterns, subtests, test
+  helpers, mocking with interfaces, benchmarks, and the testing package best
+  practices.
 difficulty: intermediate
 tags:
+  - go
   - testing
   - table-driven
-  - benchmarks
-  - mocking
-  - coverage
+  - tests
+  - performance
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -21,35 +23,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - go
-prerequisites:
-  - Go 1.21+
 faq:
-  - question: What are table-driven tests in Go?
+  - question: "When should I use the Go Testing with Table-Driven Tests skill?"
     answer: >-
-      Table-driven tests define test cases as a slice of structs, each
-      containing inputs and expected outputs. A loop runs each case as a subtest
-      with t.Run(). This pattern is idiomatic Go — it is concise, easy to add
-      new cases, and produces clear test names in output.
-  - question: How do I mock dependencies in Go tests?
+      Write effective Go tests — table-driven test patterns, subtests, test
+      helpers, mocking with interfaces, benchmarks, and the testing package
+      best practices. This skill provides a structured workflow for
+      concurrency patterns, error handling, testing, and microservice
+      development.
+  - question: "What tools and setup does Go Testing with Table-Driven Tests require?"
     answer: >-
-      Define dependencies as interfaces, then create mock implementations for
-      tests. Go's implicit interface satisfaction means any struct with matching
-      methods satisfies the interface — no mock generation framework needed. For
-      complex mocking, use mockgen or testify/mock.
-  - question: Should I use testify or the standard testing package?
-    answer: >-
-      The standard testing package is sufficient for most projects and keeps
-      dependencies minimal. Use testify if you want assertion helpers
-      (assert.Equal), mock generation, and suite-based test organization. Many
-      Go teams prefer the standard library to avoid the dependency.
-relatedItems:
-  - go-error-handling-patterns
-  - go-concurrency-patterns
-  - go-interface-design
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Go toolchain installed. Works with Go projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Go Testing with Table-Driven Tests

@@ -7,13 +7,16 @@ description: >-
   Step-by-step guide to bootstrapping Flux CD on a Kubernetes cluster with
   GitHub, configuring source controllers, and deploying your first
   Kustomization.
-difficulty: intermediate
+difficulty: advanced
 tags:
-  - flux-bootstrap
-  - gitops-setup
+  - flux
+  - bootstrap
   - kubernetes
-  - source-controller
-  - kustomization
+  - cluster
+  - deployment
+  - ci-cd
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,35 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Kubernetes cluster (1.25+)
-  - kubectl configured
-  - GitHub account with PAT
-  - Flux CLI installed
 faq:
-  - question: How do I bootstrap Flux CD on a Kubernetes cluster?
+  - question: "When should I use the Bootstrap Flux on a Kubernetes Cluster skill?"
     answer: >-
-      Install the Flux CLI, run 'flux check --pre' to verify cluster
-      compatibility, export your GITHUB_TOKEN, then run 'flux bootstrap github'
-      with your org, repo, branch, and path. Flux creates the repo structure,
-      installs controllers, and begins reconciliation automatically.
-  - question: What happens if I delete and recreate my cluster?
+      Step-by-step guide to bootstrapping Flux CD on a Kubernetes cluster with
+      GitHub, configuring source controllers, and deploying your first
+      Kustomization. This skill provides a structured workflow for development
+      tasks.
+  - question: "What tools and setup does Bootstrap Flux on a Kubernetes Cluster require?"
     answer: >-
-      Re-run 'flux bootstrap' with the same repository and path. Flux reads the
-      existing manifests from Git and reconciles the entire cluster state,
-      effectively restoring all workloads. This is one of the key disaster
-      recovery benefits of GitOps.
-  - question: Can I bootstrap Flux on multiple clusters from one repo?
-    answer: >-
-      Yes. Use different --path values per cluster (e.g., clusters/staging,
-      clusters/production). Each cluster's Flux instance watches only its own
-      path, but they can share common base manifests through Kustomize overlays.
-relatedItems:
-  - flux-helmrelease-setup
-  - flux-multi-environment
-  - flux-gitops-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires kubectl installed. Works with flux projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Bootstrap Flux on a Kubernetes Cluster

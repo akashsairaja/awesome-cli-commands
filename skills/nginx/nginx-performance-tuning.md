@@ -5,15 +5,18 @@ type: skill
 name: Tune Nginx for High Performance
 description: >-
   Optimize Nginx performance — worker processes, connection handling, gzip
-  compression, static file caching, buffer tuning, and keepalive configuration.
-difficulty: advanced
+  compression, static file caching, buffer tuning, and keepalive
+  configuration.
+difficulty: intermediate
 tags:
   - nginx
+  - tune
+  - high
   - performance
-  - gzip
-  - caching
-  - tuning
   - optimization
+  - api
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,27 +24,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Nginx installed
-  - Root/sudo access
 faq:
-  - question: How many connections can Nginx handle?
+  - question: "When should I use the Tune Nginx for High Performance skill?"
     answer: >-
-      Nginx can handle tens of thousands of concurrent connections. The limit is
-      worker_processes * worker_connections. With 4 workers and 4096 connections
-      each, that is 16,384 concurrent connections. Increase worker_rlimit_nofile
-      to match. Real-world limits depend on available memory and CPU.
-  - question: What gzip compression level should I use in Nginx?
+      Optimize Nginx performance — worker processes, connection handling, gzip
+      compression, static file caching, buffer tuning, and keepalive
+      configuration. This skill provides a structured workflow for development
+      tasks.
+  - question: "What tools and setup does Tune Nginx for High Performance require?"
     answer: >-
-      Use level 4-6. Level 1 is fast but low compression, level 9 is slow with
-      marginal benefit over level 6. The sweet spot is level 4-6 which provides
-      good compression ratios without excessive CPU usage. Always set
-      gzip_min_length to skip tiny files.
-relatedItems:
-  - nginx-reverse-proxy-architect
-  - nginx-ssl-configuration
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard nginx tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Tune Nginx for High Performance

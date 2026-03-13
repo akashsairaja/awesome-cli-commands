@@ -7,13 +7,15 @@ description: >-
   Build reusable convention plugins in buildSrc to share build logic across
   subprojects — replacing allprojects/subprojects blocks with composable,
   testable build configurations.
-difficulty: advanced
+difficulty: intermediate
 tags:
-  - convention-plugins
-  - buildSrc
-  - build-logic
-  - multi-project
-  - gradle-architecture
+  - gradle
+  - create
+  - convention
+  - plugins
+  - api
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,30 +23,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Gradle 8.0+
-  - Multi-project Gradle build
-  - Kotlin DSL
 faq:
-  - question: What are Gradle convention plugins and why should I use them?
+  - question: "When should I use the Create Gradle Convention Plugins skill?"
     answer: >-
-      Convention plugins are reusable build configurations in buildSrc/ that
-      subprojects apply like regular plugins. They replace
-      allprojects/subprojects blocks, which apply settings to ALL subprojects
-      regardless of need. Convention plugins are composable — each subproject
-      applies only the conventions it needs.
-  - question: Should I use buildSrc or an included build for convention plugins?
+      Build reusable convention plugins in buildSrc to share build logic
+      across subprojects — replacing allprojects/subprojects blocks with
+      composable, testable build configurations. This skill provides a
+      structured workflow for development tasks.
+  - question: "What tools and setup does Create Gradle Convention Plugins require?"
     answer: >-
-      Use buildSrc for project-specific conventions — it is simpler and
-      auto-detected by Gradle. Use an included build (build-logic/ directory)
-      when conventions are shared across multiple repositories or when buildSrc
-      rebuild time is too slow (any change triggers full rebuild).
-relatedItems:
-  - gradle-version-catalog-setup
-  - gradle-build-architect
-  - gradle-build-cache-optimization
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard gradle tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Create Gradle Convention Plugins

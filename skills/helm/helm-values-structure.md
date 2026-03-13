@@ -2,18 +2,22 @@
 id: helm-values-structure
 stackId: helm
 type: skill
-name: Helm Values Design & Schema Validation
+name: >-
+  Helm Values Design & Schema Validation
 description: >-
   Design well-structured Helm values.yaml files with clear sections, sensible
   defaults, JSON schema validation, and per-environment overrides for reliable
   Kubernetes deployments.
 difficulty: intermediate
 tags:
-  - helm-values
-  - schema-validation
-  - chart-configuration
-  - overrides
-  - helm-docs
+  - helm
+  - values
+  - design
+  - schema
+  - validation
+  - deployment
+  - api
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -22,30 +26,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Helm 3.14+
-  - YAML knowledge
-  - Basic Kubernetes concepts
 faq:
-  - question: How should Helm values.yaml be structured?
+  - question: "When should I use the Helm Values Design & Schema Validation skill?"
     answer: >-
-      Group related settings: image (repository, tag, pullPolicy), service
-      (type, port), resources (requests, limits), autoscaling (enabled, min,
-      max), ingress (enabled, hosts, tls). Comment every value. Provide
-      production-safe defaults. Use per-environment override files for dev,
-      staging, production.
-  - question: What is a Helm values schema and why should I use one?
+      Design well-structured Helm values.yaml files with clear sections,
+      sensible defaults, JSON schema validation, and per-environment overrides
+      for reliable Kubernetes deployments. It includes practical examples for
+      Kubernetes packaging development.
+  - question: "What tools and setup does Helm Values Design & Schema Validation require?"
     answer: >-
-      A values.schema.json file validates values before template rendering. It
-      catches errors like wrong types (string instead of number), missing
-      required fields, and invalid enum values at 'helm install' time instead of
-      at Kubernetes apply time. Use JSON Schema draft 2020-12 format.
-relatedItems:
-  - helm-chart-architect
-  - helm-template-patterns
-  - kubernetes-resource-requirements
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Helm CLI installed. Works with Helm projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Helm Values Design & Schema Validation

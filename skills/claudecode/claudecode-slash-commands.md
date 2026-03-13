@@ -4,45 +4,35 @@ stackId: claudecode
 type: skill
 name: Custom Slash Commands
 description: >-
-  Create custom slash commands in Claude Code to trigger reusable workflows, run
-  complex operations with a single keystroke, and standardize team interactions
-  with the AI agent.
-difficulty: beginner
+  Create custom slash commands in Claude Code to trigger reusable workflows,
+  run complex operations with a single keystroke, and standardize team
+  interactions with the AI agent.
+difficulty: intermediate
 tags:
-  - slash-commands
-  - custom-commands
-  - workflows
-  - prompts
-  - productivity
+  - claudecode
+  - custom
+  - slash
+  - commands
+  - performance
+  - security
+  - testing
+  - deployment
 compatibility:
   - claude-code
-prerequisites:
-  - Claude Code CLI installed
 faq:
-  - question: What are Claude Code slash commands?
+  - question: "When should I use the Custom Slash Commands skill?"
     answer: >-
-      Slash commands are shortcuts that trigger predefined prompts or workflows
-      in Claude Code. Built-in commands include /help, /clear, and /review.
-      Custom commands are markdown files in .claude/commands/ that standardize
-      team interactions with the AI agent.
-  - question: How do I create a custom slash command in Claude Code?
+      Create custom slash commands in Claude Code to trigger reusable
+      workflows, run complex operations with a single keystroke, and
+      standardize team interactions with the AI agent. This skill provides a
+      structured workflow for AI-assisted development, code generation,
+      refactoring, and debugging.
+  - question: "What tools and setup does Custom Slash Commands require?"
     answer: >-
-      Create a markdown file in .claude/commands/ with the prompt text you want
-      to execute. The filename becomes the command name. Use $ARGUMENTS to
-      accept user-provided parameters. For example,
-      .claude/commands/scaffold-component.md becomes the /scaffold-component
-      command.
-  - question: Can slash commands accept arguments?
-    answer: >-
-      Yes. Use $ARGUMENTS in your command's markdown file as a placeholder for
-      user input. When a user types '/scaffold-component UserProfile', the
-      $ARGUMENTS placeholder is replaced with 'UserProfile' in the prompt.
-relatedItems:
-  - claudecode-claude-md-setup
-  - claudecode-skill-builder
-  - claudecode-hook-automation
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm installed. Works with Claude Code projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Custom Slash Commands

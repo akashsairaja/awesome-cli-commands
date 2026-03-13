@@ -4,17 +4,18 @@ stackId: nats
 type: skill
 name: Pub/Sub Messaging with NATS CLI
 description: >-
-  Implement publish/subscribe messaging with the NATS CLI — subject hierarchies,
-  wildcards, queue groups, request/reply patterns, and building event-driven
-  communication between services.
+  Implement publish/subscribe messaging with the NATS CLI — subject
+  hierarchies, wildcards, queue groups, request/reply patterns, and building
+  event-driven communication between services.
 difficulty: beginner
 tags:
-  - pub-sub
-  - subjects
-  - wildcards
-  - queue-groups
-  - request-reply
+  - nats
+  - pubsub
   - messaging
+  - cli
+  - debugging
+  - architecture
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,35 +23,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - NATS CLI installed
-  - NATS server running
 faq:
-  - question: How do NATS queue groups work?
+  - question: "When should I use the Pub/Sub Messaging with NATS CLI skill?"
     answer: >-
-      Queue groups distribute messages across subscribers with the same group
-      name. Each message goes to exactly one member of the group. Use for load
-      balancing: nats sub 'tasks' --queue=workers. Without queue groups, all
-      subscribers get every message (fan-out). With queue groups, it's
-      round-robin distribution.
-  - question: What is the difference between * and > wildcards in NATS?
+      Implement publish/subscribe messaging with the NATS CLI — subject
+      hierarchies, wildcards, queue groups, request/reply patterns, and
+      building event-driven communication between services. This skill
+      provides a structured workflow for development tasks.
+  - question: "What tools and setup does Pub/Sub Messaging with NATS CLI require?"
     answer: >-
-      * matches exactly one token: orders.*.created matches orders.us.created
-      but not orders.us.east.created. > matches one or more tokens at the tail:
-      orders.> matches orders.us.created and orders.eu.east.shipped. > must be
-      the last token in the subject.
-  - question: How does NATS request/reply work?
-    answer: >-
-      The requester publishes a message with an auto-generated reply subject.
-      The responder subscribes to the request subject and publishes the response
-      to the reply subject. The requester waits for the response with a timeout.
-      It's synchronous RPC over async messaging.
-relatedItems:
-  - nats-jetstream-basics
-  - nats-kv-object-store
-  - nats-messaging-architect
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Works with standard nats tooling (relevant CLI tools and frameworks). No
+      special setup required beyond a working nats environment.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Pub/Sub Messaging with NATS CLI

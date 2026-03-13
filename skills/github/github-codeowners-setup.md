@@ -7,13 +7,16 @@ description: >-
   Set up GitHub CODEOWNERS to automatically assign the right reviewers to pull
   requests based on file paths, ensuring domain experts review relevant code
   changes.
-difficulty: beginner
+difficulty: intermediate
 tags:
+  - github
+  - configure
   - codeowners
-  - code-review
-  - team-management
-  - branch-protection
-  - automation
+  - automatic
+  - review
+  - assignment
+  - security
+  - api
 compatibility:
   - claude-code
   - cursor
@@ -21,29 +24,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - GitHub repository with admin access
-  - GitHub Teams configured in organization
 faq:
-  - question: How does the GitHub CODEOWNERS file work?
+  - question: "When should I use the Configure CODEOWNERS for Automatic Review Assignment skill?"
     answer: >-
-      CODEOWNERS maps file patterns to GitHub users or teams. When a PR modifies
-      matching files, GitHub automatically requests reviews from the listed
-      owners. Rules are processed top to bottom, with the last matching pattern
-      taking precedence. Place the file in .github/, docs/, or the repository
-      root.
-  - question: Should I use team names or individual usernames in CODEOWNERS?
+      Set up GitHub CODEOWNERS to automatically assign the right reviewers to
+      pull requests based on file paths, ensuring domain experts review
+      relevant code changes. This skill provides a structured workflow for
+      CI/CD workflows, PR automation, issue management, and repository
+      configuration.
+  - question: "What tools and setup does Configure CODEOWNERS for Automatic Review Assignment require?"
     answer: >-
-      Always use team mentions (@org/team-name) instead of individual usernames.
-      Teams survive personnel changes — when someone leaves or joins, you update
-      the team membership once instead of every CODEOWNERS file across all
-      repositories.
-relatedItems:
-  - github-pr-reviewer
-  - github-actions-workflow-ci
-  - git-pr-standards
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker, Terraform CLI installed. Works with GitHub projects.
+      Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Configure CODEOWNERS for Automatic Review Assignment

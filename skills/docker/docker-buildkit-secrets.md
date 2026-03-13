@@ -2,51 +2,42 @@
 id: docker-buildkit-secrets
 stackId: docker
 type: skill
-name: BuildKit Secrets & Build Arguments
+name: >-
+  BuildKit Secrets & Build Arguments
 description: >-
-  Securely pass credentials during Docker builds using BuildKit secrets — access
-  private registries, clone private repos, and configure APIs without leaking
-  secrets into image layers.
+  Securely pass credentials during Docker builds using BuildKit secrets —
+  access private registries, clone private repos, and configure APIs without
+  leaking secrets into image layers.
 difficulty: advanced
 tags:
+  - docker
   - buildkit
   - secrets
-  - docker-security
-  - ssh-forwarding
-  - credentials
+  - build
+  - arguments
+  - security
+  - api
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-prerequisites:
-  - Docker 24+ with BuildKit
-  - Understanding of Docker image layers
 faq:
-  - question: How do I securely pass secrets during Docker build?
+  - question: "When should I use the BuildKit Secrets & Build Arguments skill?"
     answer: >-
-      Use BuildKit secrets with '--mount=type=secret' in your Dockerfile.
-      Secrets are mounted only during the RUN command and never persist in image
-      layers. Build with 'docker build --secret id=mysecret,src=./secret.txt'.
-      Never use ARG or ENV for credentials — they are visible in docker history.
-  - question: Why is using ARG for Docker build secrets dangerous?
+      Securely pass credentials during Docker builds using BuildKit secrets —
+      access private registries, clone private repos, and configure APIs
+      without leaking secrets into image layers. This skill provides a
+      structured workflow for image optimization, multi-stage builds,
+      networking, and container orchestration.
+  - question: "What tools and setup does BuildKit Secrets & Build Arguments require?"
     answer: >-
-      ARG values are saved in the image metadata and can be extracted by anyone
-      with access to the image using 'docker history --no-trunc'. Even if you
-      delete a file created with an ARG in a later layer, the ARG value itself
-      remains in the build history. BuildKit secrets solve this completely.
-  - question: How do I clone private Git repos during Docker build?
-    answer: >-
-      Use BuildKit SSH agent forwarding: add '--mount=type=ssh' to the RUN
-      command in your Dockerfile, then build with 'docker build --ssh default'.
-      This forwards your local SSH agent into the build without copying any keys
-      into the image.
-relatedItems:
-  - docker-multi-stage-builds
-  - docker-security-hardener
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm, Docker, pip/poetry installed. Works with Docker
+      projects. No additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # BuildKit Secrets & Build Arguments

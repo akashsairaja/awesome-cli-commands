@@ -7,13 +7,16 @@ description: >-
   Configure trusted HTTPS in Docker Compose development environments —
   certificate mounting, CA trust in containers, Nginx TLS termination, and
   inter-service secure communication.
-difficulty: intermediate
+difficulty: advanced
 tags:
-  - docker-https
-  - tls-termination
-  - nginx-ssl
-  - container-certificates
-  - development-tls
+  - mkcert
+  - https
+  - docker
+  - compose
+  - security
+  - api
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,29 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - mkcert installed with CA
-  - Docker Compose
-  - Basic Nginx knowledge
 faq:
-  - question: Why don't Docker containers trust mkcert certificates?
+  - question: "When should I use the HTTPS for Docker Compose with mkcert skill?"
     answer: >-
-      Docker containers have their own trust store, separate from the host. When
-      mkcert installs its CA on the host, containers don't inherit that trust.
-      You must mount the rootCA.pem into the container and either update the
-      system trust store or set NODE_EXTRA_CA_CERTS for Node.js applications.
-  - question: Should I terminate TLS at the reverse proxy or at each service?
+      Configure trusted HTTPS in Docker Compose development environments —
+      certificate mounting, CA trust in containers, Nginx TLS termination, and
+      inter-service secure communication. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does HTTPS for Docker Compose with mkcert require?"
     answer: >-
-      Terminate TLS at the reverse proxy (Nginx/Caddy/Traefik). This centralizes
-      certificate management, simplifies service configuration, and mirrors
-      production architecture where a load balancer handles TLS. Individual
-      services communicate over plain HTTP within the Docker network.
-relatedItems:
-  - mkcert-framework-integration
-  - mkcert-local-https-specialist
-  - mkcert-multi-service-agent
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker installed. Works with mkcert projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # HTTPS for Docker Compose with mkcert

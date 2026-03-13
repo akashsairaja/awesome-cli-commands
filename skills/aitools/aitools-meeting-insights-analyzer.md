@@ -6,28 +6,26 @@ name: Meeting Insights Analyzer
 description: >-
   Analyzes meeting transcripts and recordings to uncover behavioral patterns,
   communication insights, and actionable feedback.
-difficulty: advanced
+difficulty: intermediate
 tags:
+  - aitools
   - meeting
   - insights
   - analyzer
-  - meeting-insights-analyzer
-  - aitools
+  - performance
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the meeting-insights-analyzer skill?"
+  - question: "When should I use the Meeting Insights Analyzer skill?"
     answer: >-
       Analyzes meeting transcripts and recordings to uncover behavioral
-      patterns, communication insights, and actionable feedback. Identifies
-      when you avoid conflict, use filler words, dominate conversations, or
-      miss opportunities to listen. Perfect for professionals seeking to
-      improve their communication and leadership skills.
-  - question: "What tools or setup does meeting-insights-analyzer require?"
+      patterns, communication insights, and actionable feedback. It includes
+      practical examples for AI/ML development development.
+  - question: "What tools and setup does Meeting Insights Analyzer require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Works with standard AI & ML Tools tooling (LLM APIs, embedding models).
+      Review the setup section in the skill content for specific configuration
+      steps.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

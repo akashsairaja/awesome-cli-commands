@@ -2,17 +2,22 @@
 id: pulumi-stack-management
 stackId: pulumi
 type: skill
-name: Pulumi Stack & Configuration Management
+name: >-
+  Pulumi Stack & Configuration Management
 description: >-
-  Manage Pulumi stacks for multi-environment deployments — stack configuration,
-  secrets encryption, stack references, and environment promotion patterns.
-difficulty: intermediate
+  Manage Pulumi stacks for multi-environment deployments — stack
+  configuration, secrets encryption, stack references, and environment
+  promotion patterns.
+difficulty: advanced
 tags:
-  - stacks
+  - pulumi
+  - stack
   - configuration
-  - secrets
-  - multi-environment
-  - stack-references
+  - management
+  - deployment
+  - monitoring
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,34 +26,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - typescript
-  - python
-  - go
-prerequisites:
-  - Pulumi CLI 3.100+
-  - Basic Pulumi program knowledge
 faq:
-  - question: What is a Pulumi stack?
+  - question: "When should I use the Pulumi Stack & Configuration Management skill?"
     answer: >-
-      A stack is an isolated instance of a Pulumi program with its own
-      configuration, state, and cloud resources. You create one stack per
-      environment (dev, staging, production) from the same code. Each stack can
-      have different configuration values (instance sizes, replica counts,
-      regions) and maintains independent state.
-  - question: How do Pulumi stack references work?
+      Manage Pulumi stacks for multi-environment deployments — stack
+      configuration, secrets encryption, stack references, and environment
+      promotion patterns. It includes practical examples for pulumi
+      development.
+  - question: "What tools and setup does Pulumi Stack & Configuration Management require?"
     answer: >-
-      Stack references allow one stack to read exported outputs from another
-      stack. For example, a networking stack exports VPC IDs, and an application
-      stack reads them with 'new
-      pulumi.StackReference("org/project/stack").getOutput("vpcId")'. This
-      creates a dependency between stacks without hardcoding resource IDs.
-relatedItems:
-  - pulumi-iac-architect
-  - pulumi-component-patterns
-  - pulumi-devops-engineer
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard pulumi tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Pulumi Stack & Configuration Management

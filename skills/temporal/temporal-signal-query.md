@@ -2,51 +2,37 @@
 id: temporal-signal-query
 stackId: temporal
 type: skill
-name: Temporal Signals & Queries
+name: >-
+  Temporal Signals & Queries
 description: >-
   Implement Temporal signals and queries — sending external events to running
   workflows, querying workflow state without side effects, and building
   interactive long-running processes.
 difficulty: intermediate
 tags:
+  - temporal
   - signals
   - queries
-  - external-events
-  - workflow-interaction
-  - condition
-  - temporal
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-languages:
-  - typescript
-  - go
-prerequisites:
-  - Temporal SDK
-  - Basic workflow knowledge
 faq:
-  - question: What is the difference between Temporal signals and queries?
+  - question: "When should I use the Temporal Signals & Queries skill?"
     answer: >-
-      Signals send data INTO a running workflow and can change its state (e.g.,
-      approve an order, cancel a process). Queries read data FROM a running
-      workflow without changing it (e.g., get current status, check progress).
-      Signals are events; queries are inspections. Signals are recorded in
-      history; queries are not.
-  - question: How does a Temporal workflow wait for an external event?
+      Implement Temporal signals and queries — sending external events to
+      running workflows, querying workflow state without side effects, and
+      building interactive long-running processes. This skill provides a
+      structured workflow for development tasks.
+  - question: "What tools and setup does Temporal Signals & Queries require?"
     answer: >-
-      Use the condition() function: 'await condition(() => approved ||
-      cancelled, timeout)'. This pauses the workflow until the condition becomes
-      true (set by a signal handler) or the timeout expires. The workflow
-      consumes no resources while waiting — it is completely suspended until a
-      signal arrives or the timer fires.
-relatedItems:
-  - temporal-workflow-architect
-  - temporal-activity-patterns
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard temporal tooling (relevant CLI tools and
+      frameworks). No special setup required beyond a working temporal
+      environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Temporal Signals & Queries

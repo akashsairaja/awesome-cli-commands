@@ -9,11 +9,13 @@ description: >-
   plain text.
 difficulty: beginner
 tags:
-  - test-files
-  - assertions
-  - jsonpath
-  - http-requests
   - hurl
+  - test
+  - file
+  - patterns
+  - testing
+  - api
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +24,18 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Hurl installed
-  - API endpoints to test
 faq:
-  - question: How do I write a basic Hurl test?
+  - question: "When should I use the Hurl Test File Patterns skill?"
     answer: >-
-      A Hurl test file contains an HTTP request (method, URL, headers, body)
-      followed by expected response assertions. Start with 'GET http://url',
-      then 'HTTP 200' for the expected status, and [Asserts] for body validation
-      using JSONPath queries. Run with 'hurl --test file.hurl'.
-  - question: What assertion types does Hurl support?
+      Write effective Hurl test files with HTTP requests, JSONPath assertions,
+      header validation, and status code checks for comprehensive API testing
+      in plain text. It includes practical examples for hurl development.
+  - question: "What tools and setup does Hurl Test File Patterns require?"
     answer: >-
-      Hurl supports: JSONPath assertions (field exists, equals value, count,
-      type checking), header assertions (presence, value matching), status code
-      assertions, body assertions (contains, matches regex), and duration
-      assertions (response time). Combine multiple assertions per response.
-  - question: Can Hurl test non-JSON APIs?
-    answer: >-
-      Yes. Hurl supports JSON, XML, HTML, and plain text responses. Use 'body
-      contains' for text matching, 'xpath' for XML/HTML queries, and 'regex' for
-      pattern matching. It also supports file uploads, multipart forms, and
-      binary responses.
-relatedItems:
-  - hurl-captures-chains
-  - hurl-ci-integration
-  - hurl-http-testing-specialist
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard hurl tooling (relevant CLI tools and frameworks). No
+      special setup required beyond a working hurl environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Hurl Test File Patterns

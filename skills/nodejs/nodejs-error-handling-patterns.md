@@ -4,16 +4,17 @@ stackId: nodejs
 type: skill
 name: Node.js Error Handling Patterns
 description: >-
-  Comprehensive error handling for Node.js applications — async/await try-catch,
-  custom error classes, global handlers, Express middleware, and graceful
-  shutdown.
-difficulty: intermediate
+  Comprehensive error handling for Node.js applications — async/await
+  try-catch, custom error classes, global handlers, Express middleware, and
+  graceful shutdown.
+difficulty: advanced
 tags:
-  - error-handling
-  - async-await
-  - middleware
-  - graceful-shutdown
-  - custom-errors
+  - nodejs
+  - error
+  - handling
+  - patterns
+  - monitoring
+  - debugging
 compatibility:
   - claude-code
   - cursor
@@ -22,40 +23,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - javascript
-  - typescript
-prerequisites:
-  - Node.js 18+
-  - Express or similar HTTP framework
 faq:
-  - question: How should I handle errors in async Node.js functions?
+  - question: "When should I use the Node.js Error Handling Patterns skill?"
     answer: >-
-      Wrap async Express route handlers with an asyncHandler wrapper that
-      catches rejected promises and forwards them to error middleware. Use
-      custom error classes (AppError) with status codes and error codes. Always
-      have global unhandledRejection and uncaughtException handlers as safety
-      nets.
-  - question: What is graceful shutdown in Node.js and why does it matter?
+      Comprehensive error handling for Node.js applications — async/await
+      try-catch, custom error classes, global handlers, Express middleware,
+      and graceful shutdown. This skill provides a structured workflow for
+      server-side architecture, error handling, stream processing, and API
+      development.
+  - question: "What tools and setup does Node.js Error Handling Patterns require?"
     answer: >-
-      Graceful shutdown means stopping the server from accepting new
-      connections, finishing in-flight requests, closing database connections,
-      and then exiting. Without it, active requests get terminated mid-response,
-      database connections leak, and data can be corrupted. Handle SIGTERM and
-      SIGINT signals.
-  - question: Should I use try-catch or .catch() for async error handling?
-    answer: >-
-      Use try-catch with async/await for sequential operations — it reads more
-      naturally and handles both sync and async errors. Use .catch() when
-      working with raw promises or when you need to handle errors from specific
-      promise chains independently. In Express, use an async wrapper that calls
-      .catch(next).
-relatedItems:
-  - nodejs-esm-migration
-  - nodejs-stream-processing
-  - nodejs-security-hardening
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Node.js tooling (Node.js runtime, npm/yarn/pnpm). No
+      special setup required beyond a working Node.js backend environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Node.js Error Handling Patterns

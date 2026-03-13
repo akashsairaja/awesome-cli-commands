@@ -2,55 +2,42 @@
 id: huggingface-fine-tuning-setup
 stackId: huggingface
 type: skill
-name: Fine-Tuning Models with PEFT & LoRA
+name: >-
+  Fine-Tuning Models with PEFT & LoRA
 description: >-
   Fine-tune HuggingFace models efficiently using PEFT and LoRA — dataset
-  preparation, training configuration, adapter merging, and model publishing for
-  domain-specific AI.
-difficulty: advanced
+  preparation, training configuration, adapter merging, and model publishing
+  for domain-specific AI.
+difficulty: intermediate
 tags:
+  - huggingface
   - fine-tuning
-  - lora
+  - models
   - peft
-  - training
-  - adapters
-  - datasets
+  - lora
+  - prompting
+  - llm
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-languages:
-  - python
-prerequisites:
-  - Python 3.9+
-  - GPU with 16GB+ VRAM
-  - 'transformers, peft, trl libraries installed'
 faq:
-  - question: What is LoRA fine-tuning?
+  - question: "When should I use the Fine-Tuning Models with PEFT & LoRA skill?"
     answer: >-
-      LoRA (Low-Rank Adaptation) fine-tunes large models by adding small
-      trainable adapter layers instead of updating all parameters. This reduces
-      memory requirements by 75%+ and training time by 90%, making it possible
-      to fine-tune 7B models on a single consumer GPU.
-  - question: How much training data do I need for LoRA fine-tuning?
+      Fine-tune HuggingFace models efficiently using PEFT and LoRA — dataset
+      preparation, training configuration, adapter merging, and model
+      publishing for domain-specific AI. This skill provides a structured
+      workflow for model management, dataset handling, fine-tuning, and ML
+      pipeline deployment.
+  - question: "What tools and setup does Fine-Tuning Models with PEFT & LoRA require?"
     answer: >-
-      A minimum of 1000 high-quality examples for meaningful results. 5000-10000
-      examples is ideal for most tasks. Below 500 examples, the model tends to
-      memorize rather than generalize. Quality matters more than quantity —
-      clean, consistent formatting is essential.
-  - question: What hardware do I need for LoRA fine-tuning?
-    answer: >-
-      A GPU with 16GB+ VRAM (RTX 4090, A100, etc.) for 7B models with 4-bit
-      quantization. For 13B models, you need 24GB+ VRAM. Use gradient
-      accumulation to simulate larger batch sizes when VRAM is limited.
-relatedItems:
-  - huggingface-inference-api
-  - huggingface-datasets-loading
-  - huggingface-model-scout
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Hugging Face tooling (Hugging Face CLI (hf),
+      transformers library). Review the setup section in the skill content for
+      specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Fine-Tuning Models with PEFT & LoRA

@@ -7,14 +7,14 @@ description: >-
   Master PowerShell error handling — try/catch/finally, terminating vs
   non-terminating errors, ErrorAction, error records, and building resilient
   scripts that fail gracefully.
-difficulty: intermediate
+difficulty: advanced
 tags:
-  - error-handling
-  - try-catch
-  - erroraction
-  - exceptions
-  - resilience
   - powershell
+  - error
+  - handling
+  - patterns
+  - automation
+  - api
 compatibility:
   - claude-code
   - cursor
@@ -23,32 +23,21 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - powershell
-prerequisites:
-  - PowerShell 7.0+
-  - Basic PowerShell scripting
 faq:
-  - question: Why doesn't try/catch work for some PowerShell errors?
+  - question: "When should I use the PowerShell Error Handling Patterns skill?"
     answer: >-
-      PowerShell has two error types: terminating (caught by try/catch) and
-      non-terminating (written to error stream but execution continues). Most
-      cmdlets produce non-terminating errors by default. Add -ErrorAction Stop
-      to the cmdlet to convert it to a terminating error that try/catch can
-      handle.
-  - question: >-
-      What is the difference between -ErrorAction Stop and
-      $ErrorActionPreference = 'Stop'?
+      Master PowerShell error handling — try/catch/finally, terminating vs
+      non-terminating errors, ErrorAction, error records, and building
+      resilient scripts that fail gracefully. This skill provides a structured
+      workflow for system administration, script automation, pipeline
+      operations, and remote management.
+  - question: "What tools and setup does PowerShell Error Handling Patterns require?"
     answer: >-
-      -ErrorAction Stop applies to a single cmdlet. $ErrorActionPreference =
-      'Stop' applies to all cmdlets in the current scope (script or function).
-      Set the preference at the top of your script for consistent behavior, and
-      override with -ErrorAction on specific cmdlets when needed.
-relatedItems:
-  - powershell-automation-architect
-  - powershell-module-development
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard PowerShell tooling (PowerShell Core, Windows
+      PowerShell). No special setup required beyond a working Windows
+      automation environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # PowerShell Error Handling Patterns

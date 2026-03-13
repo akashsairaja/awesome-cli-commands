@@ -2,18 +2,22 @@
 id: ansible-inventory-management
 stackId: ansible
 type: skill
-name: Ansible Inventory & Variable Management
+name: >-
+  Ansible Inventory & Variable Management
 description: >-
   Design Ansible inventories for multi-environment infrastructure — static and
-  dynamic inventories, group variables, host variables, and variable precedence
-  for complex deployments.
-difficulty: intermediate
+  dynamic inventories, group variables, host variables, and variable
+  precedence for complex deployments.
+difficulty: advanced
 tags:
+  - ansible
   - inventory
-  - group-vars
-  - host-vars
-  - dynamic-inventory
-  - variable-precedence
+  - variable
+  - management
+  - automation
+  - monitoring
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,31 +26,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Ansible 2.16+
-  - YAML knowledge
-  - SSH access to managed hosts
 faq:
-  - question: How should Ansible inventory be organized for multiple environments?
+  - question: "When should I use the Ansible Inventory & Variable Management skill?"
     answer: >-
-      Create separate inventory directories per environment:
-      inventory/production/, inventory/staging/, inventory/development/. Each
-      has its own hosts file and group_vars. Run playbooks with '-i
-      inventory/production/' to target specific environments. This provides
-      clear separation and prevents accidental cross-environment execution.
-  - question: What is Ansible variable precedence?
+      Design Ansible inventories for multi-environment infrastructure — static
+      and dynamic inventories, group variables, host variables, and variable
+      precedence for complex deployments. It includes practical examples for
+      ansible development.
+  - question: "What tools and setup does Ansible Inventory & Variable Management require?"
     answer: >-
-      Variables have 22 levels of precedence. Most important to know: role
-      defaults are lowest, inventory group_vars override defaults, host_vars
-      override group_vars, play vars override inventory, and extra vars (-e) are
-      highest. This means '-e' always wins, and you can progressively override
-      from general to specific.
-relatedItems:
-  - ansible-role-structure
-  - ansible-playbook-architect
-  - ansible-vault-secrets
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard ansible tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Ansible Inventory & Variable Management

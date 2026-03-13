@@ -2,18 +2,22 @@
 id: gcloud-gke-configuration
 stackId: gcloud
 type: skill
-name: GKE Cluster Configuration & Best Practices
+name: >-
+  GKE Cluster Configuration & Best Practices
 description: >-
   Deploy and configure production-ready GKE clusters — Autopilot vs Standard,
   Workload Identity, Binary Authorization, cluster autoscaling, and security
   hardening.
 difficulty: advanced
 tags:
+  - gcloud
   - gke
+  - cluster
+  - configuration
+  - best
+  - practices
+  - security
   - kubernetes
-  - autopilot
-  - workload-identity
-  - binary-authorization
 compatibility:
   - claude-code
   - cursor
@@ -21,31 +25,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Google Cloud account
-  - gcloud CLI
-  - Kubernetes basics
 faq:
-  - question: Should I use GKE Autopilot or Standard?
+  - question: "When should I use the GKE Cluster Configuration & Best Practices skill?"
     answer: >-
-      Use Autopilot for most workloads. It eliminates node management, enforces
-      security best practices (no privileged containers), and charges per pod
-      resource request. Use Standard only when you need: DaemonSets for custom
-      monitoring, privileged containers, specific machine types, GPUs, or
-      fine-grained node pool control.
-  - question: What is GKE Workload Identity and how does it work?
+      Deploy and configure production-ready GKE clusters — Autopilot vs
+      Standard, Workload Identity, Binary Authorization, cluster autoscaling,
+      and security hardening. It includes practical examples for GCP cloud
+      development.
+  - question: "What tools and setup does GKE Cluster Configuration & Best Practices require?"
     answer: >-
-      Workload Identity links Kubernetes ServiceAccounts (KSA) to Google Cloud
-      service accounts (GSA). Pods using the KSA automatically receive
-      short-lived GCP credentials via the GKE metadata server. This eliminates
-      service account key files entirely. Configure by annotating the KSA with
-      the GSA email and binding the workloadIdentityUser role.
-relatedItems:
-  - gcloud-iam-architect
-  - gcloud-cli-patterns
-  - kubernetes-pod-security
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires gcloud CLI installed. Works with Google Cloud projects. Review
+      the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # GKE Cluster Configuration & Best Practices

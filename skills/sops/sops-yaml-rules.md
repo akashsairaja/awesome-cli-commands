@@ -7,14 +7,16 @@ description: >-
   Configure .sops.yaml for automated encryption rules — path-based key
   selection, creation rules, key groups, regex patterns, and setting up
   consistent encryption across teams.
-difficulty: intermediate
+difficulty: advanced
 tags:
-  - sops-yaml
+  - sops
+  - configuring
+  - sopsyaml
   - rules
-  - configuration
-  - multi-environment
-  - key-groups
+  - security
   - automation
+  - api
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +24,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - SOPS installed
-  - age or cloud KMS keys
 faq:
-  - question: How does .sops.yaml rule matching work?
+  - question: "When should I use the Configuring .sops.yaml Rules skill?"
     answer: >-
-      SOPS matches the file path against path_regex patterns in order, using the
-      first match. Rules are evaluated top to bottom. Put most specific patterns
-      first (secrets/prod/.*) and general patterns last (.*). If no rule
-      matches, SOPS fails with an error.
-  - question: How do I add a new team member to .sops.yaml?
+      Configure .sops.yaml for automated encryption rules — path-based key
+      selection, creation rules, key groups, regex patterns, and setting up
+      consistent encryption across teams. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Configuring .sops.yaml Rules require?"
     answer: >-
-      Add their age public key to the appropriate creation_rules. Then update
-      existing encrypted files: sops updatekeys secrets/file.enc.yaml. This
-      re-encrypts the data key to include the new recipient. They can now
-      decrypt with their private key.
-  - question: Can I use both age and cloud KMS in the same rule?
-    answer: >-
-      Yes. Add both age and kms keys to the same creation_rule. SOPS encrypts
-      the data key for all recipients. Any single key can decrypt the file. This
-      provides redundancy: team members use age keys locally, CI/CD uses cloud
-      KMS. If one key type is unavailable, the other still works.
-relatedItems:
-  - sops-encrypt-decrypt
-  - sops-key-management
-  - sops-cicd-integration
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Works with standard sops tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Configuring .sops.yaml Rules

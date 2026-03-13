@@ -2,19 +2,21 @@
 id: httpie-file-transfers
 stackId: httpie
 type: skill
-name: File Uploads & Downloads with HTTPie
+name: >-
+  File Uploads & Downloads with HTTPie
 description: >-
   Transfer files with HTTPie — multipart form uploads, binary streaming, file
   downloads with progress, and handling large file operations for API
   integrations.
 difficulty: intermediate
 tags:
-  - file-upload
-  - file-download
-  - multipart
-  - streaming
-  - binary
-  - progress
+  - httpie
+  - file
+  - uploads
+  - downloads
+  - automation
+  - api
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,32 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - HTTPie installed
 faq:
-  - question: How do I upload a file with HTTPie?
+  - question: "When should I use the File Uploads & Downloads with HTTPie skill?"
     answer: >-
-      Use -f flag with @ prefix: http -f POST url file@document.pdf. The -f
-      switches to multipart/form-data mode. Add form fields alongside: http -f
-      POST url file@doc.pdf title='My Doc'. Without -f, HTTPie sends JSON, not
-      multipart.
-  - question: How do I download files with HTTPie?
+      Transfer files with HTTPie — multipart form uploads, binary streaming,
+      file downloads with progress, and handling large file operations for API
+      integrations. This skill provides a structured workflow for development
+      tasks.
+  - question: "What tools and setup does File Uploads & Downloads with HTTPie require?"
     answer: >-
-      Use --download: http --download url. HTTPie shows a progress bar and saves
-      with the server-suggested filename. Use --output=name.ext to specify the
-      filename. For authenticated downloads: http --download -A bearer -a $TOKEN
-      url.
-  - question: How do I upload JSON from a file with HTTPie?
-    answer: >-
-      Use input redirection: http POST url < payload.json. HTTPie reads the
-      file, sets Content-Type: application/json, and sends it as the request
-      body. This is different from -f file@ which does multipart form upload.
-relatedItems:
-  - httpie-json-api-testing
-  - httpie-auth-methods
-  - httpie-api-expert
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Requires pip/poetry installed. Works with httpie projects. No additional
+      configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # File Uploads & Downloads with HTTPie

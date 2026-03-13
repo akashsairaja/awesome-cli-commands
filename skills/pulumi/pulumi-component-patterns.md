@@ -7,13 +7,14 @@ description: >-
   Build reusable Pulumi component resources in TypeScript — encapsulate
   infrastructure patterns, accept typed inputs, expose outputs, and enable
   composition of complex cloud architectures.
-difficulty: intermediate
+difficulty: beginner
 tags:
-  - component-resources
-  - typescript
-  - abstraction
-  - reusability
+  - pulumi
+  - component
+  - resource
+  - patterns
   - testing
+  - type-safety
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +23,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - typescript
-prerequisites:
-  - Pulumi CLI 3.100+
-  - TypeScript basics
-  - Cloud provider knowledge
 faq:
-  - question: What is a Pulumi component resource?
+  - question: "When should I use the Pulumi Component Resource Patterns skill?"
     answer: >-
-      A component resource is a custom class that extends
-      pulumi.ComponentResource. It groups related cloud resources into a
-      reusable unit with typed inputs and outputs. For example, a Vpc component
-      creates a VPC, subnets, route tables, and NAT gateways — consumers just
-      provide CIDR and AZ count. It is the Pulumi equivalent of Terraform
-      modules.
-  - question: How do I unit test Pulumi infrastructure code?
+      Build reusable Pulumi component resources in TypeScript — encapsulate
+      infrastructure patterns, accept typed inputs, expose outputs, and enable
+      composition of complex cloud architectures. It includes practical
+      examples for pulumi development.
+  - question: "What tools and setup does Pulumi Component Resource Patterns require?"
     answer: >-
-      Use pulumi.runtime.setMocks() to mock the cloud provider. Your tests
-      create component instances with mocked resources and verify the outputs.
-      This tests your infrastructure LOGIC (how resources are connected,
-      conditional creation, naming) without making real cloud API calls. Use
-      Jest, Mocha, or your preferred test framework.
-relatedItems:
-  - pulumi-iac-architect
-  - pulumi-stack-management
-  - pulumi-testing-strategies
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Terraform CLI installed. Works with pulumi projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Pulumi Component Resource Patterns

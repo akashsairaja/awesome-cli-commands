@@ -2,53 +2,41 @@
 id: ollama-embedding-setup
 stackId: ollama
 type: skill
-name: Local Embeddings & Semantic Search
+name: >-
+  Local Embeddings & Semantic Search
 description: >-
   Set up local embedding models with Ollama for semantic code search, RAG
   pipelines, and documentation indexing — all running privately without cloud
   API dependencies.
-difficulty: advanced
+difficulty: intermediate
 tags:
+  - ollama
+  - local
   - embeddings
-  - semantic-search
+  - semantic
+  - search
+  - migration
+  - api
   - rag
-  - vector-search
-  - code-search
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-prerequisites:
-  - Ollama installed
-  - Embedding model pulled (nomic-embed-text)
-  - Node.js or Python for search implementation
 faq:
-  - question: What embedding models does Ollama support?
+  - question: "When should I use the Local Embeddings & Semantic Search skill?"
     answer: >-
-      Ollama supports several embedding models: nomic-embed-text (137M params,
-      best balance), mxbai-embed-large (335M params, higher quality), and
-      all-minilm (23M params, fastest). Use 'ollama pull <model>' to download
-      them.
-  - question: How do local embeddings compare to OpenAI embeddings?
+      Set up local embedding models with Ollama for semantic code search, RAG
+      pipelines, and documentation indexing — all running privately without
+      cloud API dependencies. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Local Embeddings & Semantic Search require?"
     answer: >-
-      Local embeddings from nomic-embed-text and mxbai-embed-large are
-      competitive with OpenAI's text-embedding-3-small for code search tasks.
-      The main advantages are privacy (data stays local), zero cost, and no rate
-      limits. Quality is slightly lower than OpenAI's largest models.
-  - question: Can I use Ollama embeddings for code search?
-    answer: >-
-      Yes. Generate embeddings for code chunks (functions, classes), store them
-      in a vector database or in-memory array, then compute cosine similarity
-      with the query embedding to find relevant code. This enables natural
-      language code search across your codebase.
-relatedItems:
-  - ollama-api-integration
-  - ollama-model-management
-  - aitools-rag-patterns
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires pip/poetry installed. Works with ollama projects. No additional
+      configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Local Embeddings & Semantic Search

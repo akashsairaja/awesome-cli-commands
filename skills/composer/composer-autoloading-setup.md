@@ -6,13 +6,16 @@ name: Configure PSR-4 Autoloading with Composer
 description: >-
   Set up PSR-4 autoloading in Composer for PHP projects — namespace mapping,
   classmap generation, files autoloading, and production optimization.
-difficulty: beginner
+difficulty: advanced
 tags:
+  - composer
+  - configure
   - psr-4
   - autoloading
-  - namespace-mapping
-  - classmap
-  - php-autoload
+  - performance
+  - deployment
+  - ci-cd
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,29 +24,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - PHP 8.1+
-  - Composer installed
 faq:
-  - question: What is PSR-4 autoloading?
+  - question: "When should I use the Configure PSR-4 Autoloading with Composer skill?"
     answer: >-
-      PSR-4 is a PHP standard for autoloading classes based on
-      namespace-to-directory mapping. When you use a class like App\Models\User,
-      the autoloader translates the namespace to a file path
-      (src/Models/User.php) and loads it automatically. Composer generates the
-      autoloader based on your composer.json configuration.
-  - question: When should I use classmap-authoritative autoloading?
+      Set up PSR-4 autoloading in Composer for PHP projects — namespace
+      mapping, classmap generation, files autoloading, and production
+      optimization. This skill provides a structured workflow for dependency
+      management, autoloading, Laravel patterns, and package publishing.
+  - question: "What tools and setup does Configure PSR-4 Autoloading with Composer require?"
     answer: >-
-      Use --classmap-authoritative in production when you know all classes are
-      in the classmap. It tells the autoloader to only check the classmap, never
-      the filesystem. This is faster but means any class not in the classmap
-      will fail to load. Always run dump-autoload first.
-relatedItems:
-  - composer-ci-optimization
-  - composer-package-architect
-  - composer-security-agent
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Composer/PHP tooling (Composer CLI, packagist).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Configure PSR-4 Autoloading with Composer

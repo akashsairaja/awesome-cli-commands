@@ -7,13 +7,16 @@ description: >-
   Scan project dependencies for known vulnerabilities with Snyk Open Source —
   detect CVEs in npm, pip, Maven, Go, and other package ecosystems with
   remediation guidance.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - dependency-scanning
-  - npm
-  - vulnerabilities
-  - open-source
   - snyk
+  - dependency
+  - vulnerability
+  - scanning
+  - security
+  - testing
+  - monitoring
+  - api
 compatibility:
   - claude-code
   - cursor
@@ -22,35 +25,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Snyk CLI installed
-  - Snyk account
-  - Project with package manager
 faq:
-  - question: How do I scan npm dependencies with Snyk?
+  - question: "When should I use the Dependency Vulnerability Scanning skill?"
     answer: >-
-      Run 'snyk test' in your project directory. Snyk reads package-lock.json
-      (or yarn.lock) and checks all dependencies against its vulnerability
-      database. Use '--severity-threshold=high' to focus on actionable issues.
-      Run 'snyk monitor' to enable continuous monitoring with alerts.
-  - question: What is the difference between snyk test and snyk monitor?
+      Scan project dependencies for known vulnerabilities with Snyk Open
+      Source — detect CVEs in npm, pip, Maven, Go, and other package
+      ecosystems with remediation guidance. This skill provides a structured
+      workflow for dependency scanning, SAST analysis, container scanning, and
+      vulnerability remediation.
+  - question: "What tools and setup does Dependency Vulnerability Scanning require?"
     answer: >-
-      snyk test runs a one-time scan and reports vulnerabilities immediately —
-      use it in CI/CD. snyk monitor takes a snapshot of your dependencies and
-      continuously watches for new vulnerabilities, sending alerts when new CVEs
-      affect your project — use it on main branch.
-  - question: Does Snyk scan transitive dependencies?
-    answer: >-
-      Yes. Snyk scans the entire dependency tree, including transitive
-      (indirect) dependencies. Most vulnerabilities are in transitive
-      dependencies that you did not explicitly install. Snyk shows the full
-      dependency path so you know which direct dependency introduces the risk.
-relatedItems:
-  - snyk-fix-workflow
-  - snyk-ci-integration
-  - snyk-devsecops-engineer
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Snyk tooling (Snyk CLI, Snyk API). No special setup
+      required beyond a working security scanning environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Dependency Vulnerability Scanning

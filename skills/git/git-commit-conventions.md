@@ -2,17 +2,21 @@
 id: git-commit-conventions
 stackId: git
 type: skill
-name: Conventional Commits & Semantic Versioning
+name: >-
+  Conventional Commits & Semantic Versioning
 description: >-
   Implement conventional commit messages that enable automated changelog
   generation, semantic versioning, and clear project history.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - conventional-commits
-  - semantic-versioning
-  - commit-messages
-  - changelog
-  - commitlint
+  - git
+  - conventional
+  - commits
+  - semantic
+  - versioning
+  - performance
+  - deployment
+  - api
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +26,18 @@ compatibility:
   - amazon-q
   - aider
   - tabnine
-prerequisites:
-  - Git installed
-  - Node.js (for commitlint tooling)
 faq:
-  - question: What are conventional commits?
+  - question: "When should I use the Conventional Commits & Semantic Versioning skill?"
     answer: >-
-      Conventional Commits is a specification for adding human and
-      machine-readable meaning to commit messages. It follows the format
-      'type(scope): description' where type indicates the kind of change (feat,
-      fix, docs, etc.) and scope is the affected area of the codebase.
-  - question: How do conventional commits enable automated versioning?
+      Implement conventional commit messages that enable automated changelog
+      generation, semantic versioning, and clear project history. It includes
+      practical examples for version control development.
+  - question: "What tools and setup does Conventional Commits & Semantic Versioning require?"
     answer: >-
-      Tools like semantic-release and standard-version parse conventional commit
-      messages to automatically determine version bumps: feat = minor version,
-      fix = patch version, BREAKING CHANGE = major version. They also generate
-      changelogs from commit history.
-  - question: Should I enforce conventional commits with tooling?
-    answer: >-
-      Yes. Use commitlint with husky pre-commit hooks to validate every commit
-      message against the conventional commits spec. This prevents non-compliant
-      messages from entering the repository and ensures automated tooling works
-      reliably.
-relatedItems:
-  - git-trunk-based-development
-  - git-hook-automation
-  - npm-semantic-release
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm installed. Works with Git projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Conventional Commits & Semantic Versioning

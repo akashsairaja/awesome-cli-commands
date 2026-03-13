@@ -2,17 +2,19 @@
 id: vim-search-replace
 stackId: vim
 type: skill
-name: Advanced Search & Replace in Vim
+name: >-
+  Advanced Search & Replace in Vim
 description: >-
   Master Vim's search and substitution commands — regex patterns, global
-  commands, multi-file search, and interactive replace workflows for large-scale
-  codebase edits.
-difficulty: intermediate
+  commands, multi-file search, and interactive replace workflows for
+  large-scale codebase edits.
+difficulty: beginner
 tags:
-  - search-replace
-  - regex
-  - substitution
-  - global-command
+  - vim
+  - advanced
+  - search
+  - replace
+  - best-practices
   - refactoring
 compatibility:
   - claude-code
@@ -20,27 +22,19 @@ compatibility:
   - copilot
   - codex
   - windsurf
-prerequisites:
-  - Vim or Neovim
-  - Basic regex knowledge helpful
 faq:
-  - question: How do I search and replace across an entire file in Vim?
+  - question: "When should I use the Advanced Search & Replace in Vim skill?"
     answer: >-
-      Use :%s/old/new/g to replace all occurrences in the file. Add the c flag
-      (:%s/old/new/gc) for interactive confirmation on each match. The % means
-      'entire file', s is substitute, and g means 'all matches per line'.
-  - question: How do I do multi-file search and replace in Vim?
+      Master Vim's search and substitution commands — regex patterns, global
+      commands, multi-file search, and interactive replace workflows for
+      large-scale codebase edits. It includes practical examples for vim
+      development.
+  - question: "What tools and setup does Advanced Search & Replace in Vim require?"
     answer: >-
-      Use :args **/*.ts to load files, then :argdo %s/old/new/ge | update to
-      replace in all. Alternatively, use :grep with ripgrep to populate the
-      quickfix list, then :cfdo %s/old/new/ge | update for targeted multi-file
-      replacement.
-relatedItems:
-  - vim-macro-recording
-  - vim-text-objects
-  - vim-motion-mentor
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard vim tooling (relevant CLI tools and frameworks). No
+      special setup required beyond a working vim environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Advanced Search & Replace in Vim

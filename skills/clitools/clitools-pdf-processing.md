@@ -8,23 +8,23 @@ description: >-
   creating new PDFs, merging/splitting documents, and handling forms.
 difficulty: advanced
 tags:
-  - pdf
-  - processing
   - clitools
+  - pdf
+  - document
+  - processing
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the pdf skill?"
+  - question: "When should I use the PDF Document Processing skill?"
     answer: >-
       Comprehensive PDF manipulation toolkit for extracting text and tables,
-      creating new PDFs, merging/splitting documents, and handling forms. When
-      Claude needs to fill in a PDF form or programmatically process,
-      generate, or analyze PDF documents at scale.
-  - question: "What tools or setup does pdf require?"
+      creating new PDFs, merging/splitting documents, and handling forms. It
+      includes practical examples for developer tooling development.
+  - question: "What tools and setup does PDF Document Processing require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Works with standard CLI & Dev Tools tooling (various CLI tools, code
+      generators). No special setup required beyond a working developer
+      tooling environment.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

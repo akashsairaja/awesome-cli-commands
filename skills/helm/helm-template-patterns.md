@@ -2,18 +2,21 @@
 id: helm-template-patterns
 stackId: helm
 type: skill
-name: Helm Template Patterns & Helpers
+name: >-
+  Helm Template Patterns & Helpers
 description: >-
-  Write reusable Helm template helpers with _helpers.tpl — standard labels, name
-  generation, conditional resources, range loops, and named templates for DRY
-  chart development.
+  Write reusable Helm template helpers with _helpers.tpl — standard labels,
+  name generation, conditional resources, range loops, and named templates for
+  DRY chart development.
 difficulty: intermediate
 tags:
-  - helm-templates
-  - go-templates
+  - helm
+  - template
+  - patterns
   - helpers
-  - named-templates
-  - sprig
+  - deployment
+  - kubernetes
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -22,31 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Helm 3.14+
-  - Go template basics
-  - YAML knowledge
 faq:
-  - question: What is _helpers.tpl in Helm charts?
+  - question: "When should I use the Helm Template Patterns & Helpers skill?"
     answer: >-
-      The _helpers.tpl file contains reusable named templates (template
-      definitions) that are included across chart resources. Standard helpers
-      include: fullname (resource naming), labels (standard Kubernetes labels),
-      selectorLabels (for deployments and services), and serviceAccountName. The
-      underscore prefix tells Helm not to render this file as a Kubernetes
-      manifest.
-  - question: What is the difference between include and template in Helm?
+      Write reusable Helm template helpers with _helpers.tpl — standard
+      labels, name generation, conditional resources, range loops, and named
+      templates for DRY chart development. It includes practical examples for
+      Kubernetes packaging development.
+  - question: "What tools and setup does Helm Template Patterns & Helpers require?"
     answer: >-
-      Both render named templates, but 'include' returns the output as a string
-      that can be piped to functions like nindent and quote. 'template' directly
-      inserts the output and cannot be piped. Always use 'include' in Helm
-      charts: '{{ include "myapp.labels" . | nindent 4 }}'.
-relatedItems:
-  - helm-chart-architect
-  - helm-values-structure
-  - kubernetes-pod-labels
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Helm CLI installed. Works with Helm projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Helm Template Patterns & Helpers

@@ -2,19 +2,22 @@
 id: curl-file-operations
 stackId: curl
 type: skill
-name: File Upload & Download with cURL
+name: >-
+  File Upload & Download with cURL
 description: >-
-  Master file operations with cURL — multipart uploads, binary transfers, range
-  requests for resume, progress bars, and large file handling for API
+  Master file operations with cURL — multipart uploads, binary transfers,
+  range requests for resume, progress bars, and large file handling for API
   integrations.
 difficulty: intermediate
 tags:
-  - file-upload
-  - file-download
-  - multipart
-  - binary
-  - resume
-  - progress
+  - curl
+  - file
+  - upload
+  - download
+  - automation
+  - monitoring
+  - api
+  - ci-cd
 compatibility:
   - claude-code
   - cursor
@@ -22,32 +25,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - cURL installed
 faq:
-  - question: How do I upload a file with cURL?
+  - question: "When should I use the File Upload & Download with cURL skill?"
     answer: >-
-      For multipart upload (most common): curl -X POST -F 'file=@document.pdf'
-      URL. For raw binary: curl -X PUT --data-binary @file.zip -H 'Content-Type:
-      application/octet-stream' URL. Always prefix the filename with @ to
-      reference a file.
-  - question: How do I resume a failed download with cURL?
+      Master file operations with cURL — multipart uploads, binary transfers,
+      range requests for resume, progress bars, and large file handling for
+      API integrations. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does File Upload & Download with cURL require?"
     answer: >-
-      Use -C - (dash means auto-detect offset): curl -C - -o file.zip URL. cURL
-      checks how much was already downloaded and requests only the remaining
-      bytes. The server must support Range requests (most do).
-  - question: What is the difference between -d @file and --data-binary @file?
-    answer: >-
-      The -d @file flag strips newlines and carriage returns from the file
-      content. The --data-binary @file flag sends the file exactly as-is,
-      preserving all bytes. Always use --data-binary for non-text files (images,
-      zips, binary data).
-relatedItems:
-  - curl-auth-flows
-  - curl-response-parsing
-  - curl-api-tester
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard curl tooling (relevant CLI tools and frameworks). No
+      special setup required beyond a working curl environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # File Upload & Download with cURL

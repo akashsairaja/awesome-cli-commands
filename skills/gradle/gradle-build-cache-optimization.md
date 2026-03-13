@@ -4,16 +4,19 @@ stackId: gradle
 type: skill
 name: Configure Gradle Build Cache for Fast CI Builds
 description: >-
-  Set up local and remote Gradle build caches for dramatic CI/CD build speedups
-  — cache configuration, cache key optimization, and troubleshooting cache
-  misses.
+  Set up local and remote Gradle build caches for dramatic CI/CD build
+  speedups — cache configuration, cache key optimization, and troubleshooting
+  cache misses.
 difficulty: intermediate
 tags:
-  - build-cache
-  - remote-cache
-  - ci-optimization
-  - task-caching
+  - gradle
+  - configure
+  - build
+  - cache
+  - fast
+  - builds
   - performance
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -21,29 +24,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Gradle 8.0+
-  - 'Remote cache server (optional, for team cache)'
 faq:
-  - question: How does the Gradle build cache work?
+  - question: "When should I use the Configure Gradle Build Cache for Fast CI Builds skill?"
     answer: >-
-      The build cache stores task outputs indexed by a hash of their inputs.
-      When a task runs, Gradle computes a cache key from all inputs (source
-      files, configuration, dependencies). If a matching entry exists in the
-      cache, the outputs are restored instead of executing the task. This works
-      across builds, branches, and machines.
-  - question: 'Should I use local cache, remote cache, or both?'
+      Set up local and remote Gradle build caches for dramatic CI/CD build
+      speedups — cache configuration, cache key optimization, and
+      troubleshooting cache misses. This skill provides a structured workflow
+      for development tasks.
+  - question: "What tools and setup does Configure Gradle Build Cache for Fast CI Builds require?"
     answer: >-
-      Use both. Local cache speeds up repeated local builds (switching branches,
-      incremental changes). Remote cache shares results across CI agents and
-      developers. A remote build cache typically provides 50-90% cache hit rates
-      on CI, dramatically reducing build times.
-relatedItems:
-  - gradle-convention-plugins
-  - gradle-version-catalog-setup
-  - gradle-performance-agent
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard gradle tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Configure Gradle Build Cache for Fast CI Builds

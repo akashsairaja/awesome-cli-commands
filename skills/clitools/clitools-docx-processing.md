@@ -8,25 +8,26 @@ description: >-
   tracked changes, comments, formatting preservation, and text extraction.
 difficulty: advanced
 tags:
-  - docx
-  - processing
   - clitools
+  - docx
+  - document
+  - processing
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the docx skill?"
+  - question: "When should I use the DOCX Document Processing skill?"
     answer: >-
       Comprehensive document creation, editing, and analysis with support for
       tracked changes, comments, formatting preservation, and text extraction.
-      When Claude needs to work with professional documents (.docx files) for:
-      (1) Creating new documents, (2) Modifying or editing content, (3)
-      Working with tracked changes, (4) Adding comments, or any other document
-      tasks
-  - question: "What tools or setup does docx require?"
+      This skill provides a structured workflow for API design, documentation,
+      architecture patterns, and development workflows.
+  - question: "What tools and setup does DOCX Document Processing require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Works with standard CLI & Dev Tools tooling (various CLI tools, code
+      generators). Review the setup section in the skill content for specific
+      configuration steps.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

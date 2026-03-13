@@ -9,12 +9,14 @@ description: >-
   for automated API validation.
 difficulty: intermediate
 tags:
-  - ci-cd
-  - github-actions
-  - junit
-  - pipeline
   - hurl
-  - automation
+  - cicd
+  - pipeline
+  - integration
+  - debugging
+  - api
+  - ci-cd
+  - docker
 compatibility:
   - claude-code
   - cursor
@@ -22,35 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Hurl installed
-  - GitHub Actions or equivalent CI
-  - API server (Docker recommended)
 faq:
-  - question: How do I run Hurl tests in GitHub Actions?
+  - question: "When should I use the Hurl CI/CD Pipeline Integration skill?"
     answer: >-
-      Install Hurl from the .deb package, start your API with Docker Compose,
-      wait for the health endpoint, then run 'hurl --test --report-junit
-      results.xml tests/*.hurl'. Upload results.xml as an artifact. Hurl exits
-      with non-zero code on assertion failures.
-  - question: Can Hurl tests run in parallel in CI?
+      Integrate Hurl API tests into CI/CD pipelines with GitHub Actions — test
+      execution, JUnit reporting, variable injection, and parallel test
+      execution for automated API validation. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Hurl CI/CD Pipeline Integration require?"
     answer: >-
-      Yes. Since each .hurl file is independent, use xargs -P to run multiple
-      files simultaneously: 'ls tests/*.hurl | xargs -P 4 -I {} hurl --test {}'.
-      This cuts execution time for large test suites proportionally to the
-      parallelism level.
-  - question: What output formats does Hurl support for CI?
-    answer: >-
-      Hurl supports JUnit XML (--report-junit), HTML reports (--report-html),
-      and JSON output (--json). JUnit XML integrates with GitHub Actions, GitLab
-      CI, and Jenkins dashboards. HTML reports are useful for human-readable
-      test summaries.
-relatedItems:
-  - hurl-test-patterns
-  - hurl-captures-chains
-  - hurl-http-testing-specialist
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker, pip/poetry installed. Works with hurl projects. Review
+      the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Hurl CI/CD Pipeline Integration

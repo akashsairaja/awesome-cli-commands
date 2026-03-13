@@ -7,13 +7,16 @@ description: >-
   Share Lefthook configurations across repositories using remote hooks —
   centralized organizational standards, versioned hook templates, and
   per-project overrides.
-difficulty: advanced
+difficulty: intermediate
 tags:
-  - remote-hooks
-  - shared-configuration
-  - organizational-standards
-  - versioning
   - lefthook
+  - remote
+  - shared
+  - hook
+  - configurations
+  - security
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,35 +24,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Lefthook 1.4+
-  - Git repository for shared hooks
-  - Organization with multiple repositories
 faq:
-  - question: What are Lefthook remote hooks?
+  - question: "When should I use the Remote and Shared Hook Configurations skill?"
     answer: >-
-      Remote hooks let you inherit Lefthook configurations from a central Git
-      repository. Define organizational standards (secrets scanning, commit
-      conventions, formatting) once and share across all projects. Each project
-      can override or extend the shared configuration.
-  - question: Should I pin remote hooks to a specific version?
+      Share Lefthook configurations across repositories using remote hooks —
+      centralized organizational standards, versioned hook templates, and
+      per-project overrides. It includes practical examples for lefthook
+      development.
+  - question: "What tools and setup does Remote and Shared Hook Configurations require?"
     answer: >-
-      Yes — pin to tagged versions (v1.0.0) for stability. Changes to shared
-      hooks should not break projects without explicit opt-in. The exception is
-      critical security hooks (secrets scanning) which can track 'main' branch
-      for immediate updates.
-  - question: Can I combine remote hooks with local hooks?
-    answer: >-
-      Yes. Define remotes in lefthook.yml alongside local commands. Local
-      commands are merged with remote commands. You can also override specific
-      remote commands by defining a command with the same name locally — use
-      'skip: true' to disable a remote command.
-relatedItems:
-  - lefthook-config-patterns
-  - lefthook-monorepo-setup
-  - lefthook-hook-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard lefthook tooling (relevant CLI tools and
+      frameworks). Review the setup section in the skill content for specific
+      configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Remote and Shared Hook Configurations

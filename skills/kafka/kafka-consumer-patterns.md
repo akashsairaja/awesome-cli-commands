@@ -7,13 +7,12 @@ description: >-
   Implement reliable Kafka consumer patterns — consumer group setup, offset
   management, error handling, dead letter queues, and graceful shutdown for
   production workloads.
-difficulty: intermediate
+difficulty: beginner
 tags:
-  - consumer-groups
-  - offset-management
-  - dead-letter-queue
-  - batch-processing
   - kafka
+  - consumer
+  - group
+  - patterns
 compatibility:
   - claude-code
   - cursor
@@ -21,41 +20,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-languages:
-  - typescript
-  - java
-prerequisites:
-  - Apache Kafka 3.0+
-  - KafkaJS or Java Kafka client
-  - Basic Kafka topic/partition concepts
 faq:
-  - question: What is a Kafka consumer group?
+  - question: "When should I use the Kafka Consumer Group Patterns skill?"
     answer: >-
-      A consumer group is a set of consumers that cooperatively consume messages
-      from topics. Kafka assigns each partition to exactly one consumer in the
-      group, enabling parallel processing. If a consumer fails, its partitions
-      are automatically redistributed to remaining consumers. Multiple consumer
-      groups can independently consume the same topic.
-  - question: What is a Dead Letter Queue in Kafka and do I need one?
+      Implement reliable Kafka consumer patterns — consumer group setup,
+      offset management, error handling, dead letter queues, and graceful
+      shutdown for production workloads. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Kafka Consumer Group Patterns require?"
     answer: >-
-      A Dead Letter Queue (DLQ) is a separate topic where failed messages are
-      sent instead of being retried indefinitely. Yes, you need one in
-      production — without a DLQ, a single malformed message blocks the entire
-      partition. Send the original message plus error metadata to the DLQ for
-      later investigation and replay.
-  - question: Should I use auto-commit or manual offset commit in Kafka?
-    answer: >-
-      Use manual offset commits for production workloads. Auto-commit commits
-      offsets on a timer regardless of whether processing completed — this means
-      messages can be lost if the consumer crashes between commit and
-      processing. Manual commits give you at-least-once delivery by committing
-      only after successful processing.
-relatedItems:
-  - kafka-event-architect
-  - kafka-schema-registry
-  - kafka-operations-specialist
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard kafka tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Kafka Consumer Group Patterns

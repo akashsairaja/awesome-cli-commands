@@ -2,54 +2,41 @@
 id: snowflake-time-travel-usage
 stackId: snowflake
 type: skill
-name: Time Travel & Data Recovery
+name: >-
+  Time Travel & Data Recovery
 description: >-
   Use Snowflake Time Travel to query historical data, recover from accidental
-  changes, compare data across time, and implement audit patterns — all without
-  backup infrastructure.
-difficulty: beginner
+  changes, compare data across time, and implement audit patterns — all
+  without backup infrastructure.
+difficulty: advanced
 tags:
-  - time-travel
-  - data-recovery
-  - undrop
-  - clone
-  - audit
-  - versioning
+  - snowflake
+  - time
+  - travel
+  - data
+  - recovery
+  - debugging
+  - best-practices
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-languages:
-  - sql
-prerequisites:
-  - Snowflake account
 faq:
-  - question: What is Snowflake Time Travel?
+  - question: "When should I use the Time Travel & Data Recovery skill?"
     answer: >-
-      Time Travel lets you query, clone, or restore data as it existed at any
-      point within the retention period (1-90 days). It's built into Snowflake —
-      no backup infrastructure needed. Use AT(TIMESTAMP) or AT(OFFSET) syntax to
-      access historical data.
-  - question: How do I recover a dropped table in Snowflake?
+      Use Snowflake Time Travel to query historical data, recover from
+      accidental changes, compare data across time, and implement audit
+      patterns — all without backup infrastructure. This skill provides a
+      structured workflow for development tasks.
+  - question: "What tools and setup does Time Travel & Data Recovery require?"
     answer: >-
-      Use UNDROP TABLE schema.table_name. This works for tables, schemas, and
-      databases. The object must still be within its retention period. If a new
-      object with the same name exists, rename it first, then UNDROP the
-      original.
-  - question: How much does Time Travel storage cost?
-    answer: >-
-      Time Travel stores changed data for the retention period. Storage cost
-      depends on how much data changes — tables with frequent updates cost more
-      than append-only tables. Use transient tables (0 days retention) for
-      staging data to avoid unnecessary Time Travel storage costs.
-relatedItems:
-  - snowflake-data-pipeline-setup
-  - snowflake-data-sharing
-  - snowflake-data-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard snowflake tooling (relevant CLI tools and
+      frameworks). Review the setup section in the skill content for specific
+      configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Time Travel & Data Recovery

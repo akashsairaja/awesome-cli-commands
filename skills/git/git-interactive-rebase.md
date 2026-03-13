@@ -2,52 +2,40 @@
 id: git-interactive-rebase
 stackId: git
 type: skill
-name: Interactive Rebase & History Rewriting
+name: >-
+  Interactive Rebase & History Rewriting
 description: >-
-  Clean up messy commit history with interactive rebase — squash, reorder, edit,
-  and split commits to create a polished, reviewable Git history.
-difficulty: advanced
+  Clean up messy commit history with interactive rebase — squash, reorder,
+  edit, and split commits to create a polished, reviewable Git history.
+difficulty: beginner
 tags:
+  - git
+  - interactive
   - rebase
-  - interactive-rebase
   - history
-  - squash
-  - commit-cleanup
+  - rewriting
+  - api
+  - best-practices
+  - code-review
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-prerequisites:
-  - Git 2.30+
-  - Comfortable with basic Git operations
-  - Understanding of commit history
 faq:
-  - question: What is Git interactive rebase?
+  - question: "When should I use the Interactive Rebase & History Rewriting skill?"
     answer: >-
-      Git interactive rebase (git rebase -i) is a powerful tool for rewriting
-      commit history. It lets you squash multiple commits into one, reorder
-      commits, edit commit messages, split large commits, and remove unwanted
-      commits — all before pushing to a shared branch.
-  - question: Is it safe to use interactive rebase?
+      Clean up messy commit history with interactive rebase — squash, reorder,
+      edit, and split commits to create a polished, reviewable Git history.
+      This skill provides a structured workflow for branching strategies,
+      workflow automation, hook scripts, and repository maintenance.
+  - question: "What tools and setup does Interactive Rebase & History Rewriting require?"
     answer: >-
-      Yes, if you follow two rules: (1) Only rebase commits that haven't been
-      pushed to shared branches yet, and (2) Create a backup branch before
-      rebasing. If anything goes wrong, use 'git rebase --abort' to return to
-      the original state or 'git reflog' to find lost commits.
-  - question: What is the difference between squash and fixup in interactive rebase?
-    answer: >-
-      Both merge a commit into the previous one. 'squash' combines both commit
-      messages and lets you edit the result. 'fixup' discards the current
-      commit's message and keeps only the previous commit's message. Use fixup
-      for 'fix typo' and 'WIP' commits.
-relatedItems:
-  - git-trunk-based-development
-  - git-commit-conventions
-  - git-conflict-resolution
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Git tooling (Git CLI, git hooks). No special setup
+      required beyond a working version control environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Interactive Rebase & History Rewriting

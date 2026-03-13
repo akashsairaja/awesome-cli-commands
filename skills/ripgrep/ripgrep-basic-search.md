@@ -9,12 +9,11 @@ description: >-
   project.
 difficulty: beginner
 tags:
+  - ripgrep
+  - essential
   - search
-  - regex
-  - file-types
-  - context
-  - code-navigation
-  - productivity
+  - patterns
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,32 +21,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - ripgrep installed (rg command)
 faq:
-  - question: How do I search for a literal string with special characters?
+  - question: "When should I use the Essential Ripgrep Search Patterns skill?"
     answer: >-
-      Use -F (fixed string) flag: rg -F 'file.test.ts' searches for the literal
-      text, not a regex. Without -F, dots match any character. Also use -F for
-      strings with $, *, +, and other regex metacharacters.
-  - question: Why is ripgrep not finding matches I expect?
+      Master everyday ripgrep search patterns — literal search, regex, file
+      type filtering, context lines, and finding code patterns efficiently in
+      any project. This skill provides a structured workflow for development
+      tasks.
+  - question: "What tools and setup does Essential Ripgrep Search Patterns require?"
     answer: >-
-      Most likely causes: 1) File is in .gitignore (use --no-ignore to include).
-      2) File is binary (use -a to search binary files). 3) File is in a hidden
-      directory (use --hidden). 4) Wrong file type filter. Use rg --debug to see
-      which files are searched.
-  - question: How do I search hidden files and gitignored files?
-    answer: >-
-      Use --hidden to include hidden directories (.config, .env). Use
-      --no-ignore to include .gitignore entries. Combine both: rg --hidden
-      --no-ignore 'pattern'. Or use -u for unrestricted: -u (no .gitignore), -uu
-      (also hidden), -uuu (also binary).
-relatedItems:
-  - ripgrep-regex-patterns
-  - ripgrep-replace-refactor
-  - ripgrep-code-search
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Requires pip/poetry installed. Works with ripgrep projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Essential Ripgrep Search Patterns

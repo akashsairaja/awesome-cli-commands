@@ -2,20 +2,18 @@
 id: redis-pub-sub
 stackId: redis
 type: skill
-name: Redis Pub/Sub & Streams Messaging
+name: >-
+  Redis Pub/Sub & Streams Messaging
 description: >-
   Implement real-time messaging with Redis Pub/Sub and Streams — channel
-  subscriptions, pattern matching, consumer groups, message acknowledgment, and
-  dead letter handling.
-difficulty: intermediate
+  subscriptions, pattern matching, consumer groups, message acknowledgment,
+  and dead letter handling.
+difficulty: beginner
 tags:
-  - pub-sub
+  - redis
+  - pubsub
   - streams
   - messaging
-  - consumer-groups
-  - real-time
-  - events
-  - redis
 compatibility:
   - claude-code
   - cursor
@@ -23,33 +21,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-languages:
-  - typescript
-  - python
-prerequisites:
-  - Redis 7.0+
-  - Basic Redis operations
 faq:
-  - question: What is the difference between Redis Pub/Sub and Streams?
+  - question: "When should I use the Redis Pub/Sub & Streams Messaging skill?"
     answer: >-
-      Pub/Sub is fire-and-forget: messages are delivered only to currently
-      connected subscribers and lost if no one is listening. Streams persist
-      messages, support consumer groups with load balancing, message
-      acknowledgment, and replay from any point in history. Use Pub/Sub for live
-      notifications; use Streams for reliable processing.
-  - question: How do Redis Streams consumer groups work?
+      Implement real-time messaging with Redis Pub/Sub and Streams — channel
+      subscriptions, pattern matching, consumer groups, message
+      acknowledgment, and dead letter handling. This skill provides a
+      structured workflow for development tasks.
+  - question: "What tools and setup does Redis Pub/Sub & Streams Messaging require?"
     answer: >-
-      Consumer groups distribute stream messages among multiple consumers — each
-      message is delivered to exactly one consumer in the group (load
-      balancing). Consumers must acknowledge (XACK) processed messages.
-      Unacknowledged messages can be claimed by other consumers if the original
-      consumer fails. This is similar to Kafka consumer groups.
-relatedItems:
-  - redis-data-structures
-  - redis-caching-architect
-  - kafka-consumer-groups
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard redis tooling (relevant CLI tools and frameworks).
+      No special setup required beyond a working redis environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Redis Pub/Sub & Streams Messaging

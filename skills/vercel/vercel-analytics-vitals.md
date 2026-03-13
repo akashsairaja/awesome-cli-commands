@@ -2,18 +2,22 @@
 id: vercel-analytics-vitals
 stackId: vercel
 type: skill
-name: Set Up Vercel Analytics & Web Vitals Monitoring
+name: >-
+  Set Up Vercel Analytics & Web Vitals Monitoring
 description: >-
   Configure Vercel Analytics and Speed Insights for real-user performance
   monitoring — Core Web Vitals, audience insights, and performance regression
   detection.
-difficulty: beginner
+difficulty: intermediate
 tags:
+  - vercel
+  - set
   - analytics
-  - web-vitals
-  - performance
+  - web
+  - vitals
   - monitoring
-  - speed-insights
+  - performance
+  - deployment
 compatibility:
   - claude-code
   - cursor
@@ -22,27 +26,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Next.js project deployed on Vercel
-  - Vercel Pro plan (for full analytics features)
 faq:
-  - question: What is the difference between Vercel Analytics and Speed Insights?
+  - question: "When should I use the Set Up Vercel Analytics & Web Vitals Monitoring skill?"
     answer: >-
-      Vercel Analytics tracks page views, unique visitors, top pages, referrers,
-      and audience demographics. Speed Insights tracks Core Web Vitals (LCP,
-      INP, CLS, TTFB) with real user performance data. Use both together for
-      complete visibility into traffic and performance.
-  - question: How do Vercel Speed Insights help with SEO?
+      Configure Vercel Analytics and Speed Insights for real-user performance
+      monitoring — Core Web Vitals, audience insights, and performance
+      regression detection. This skill provides a structured workflow for
+      deployment automation, edge functions, analytics, and monorepo
+      configuration.
+  - question: "What tools and setup does Set Up Vercel Analytics & Web Vitals Monitoring require?"
     answer: >-
-      Google uses Core Web Vitals (LCP, INP, CLS) as ranking signals. Speed
-      Insights provides real-user data for these metrics, helping you identify
-      and fix performance issues that directly impact search rankings. It also
-      shows per-page scores so you can prioritize optimization.
-relatedItems:
-  - vercel-deployment-architect
-  - vercel-isr-configuration
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm installed. Works with Vercel projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Set Up Vercel Analytics & Web Vitals Monitoring

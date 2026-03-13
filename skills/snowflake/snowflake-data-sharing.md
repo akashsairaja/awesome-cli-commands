@@ -2,54 +2,42 @@
 id: snowflake-data-sharing
 stackId: snowflake
 type: skill
-name: Secure Data Sharing & Marketplace
+name: >-
+  Secure Data Sharing & Marketplace
 description: >-
   Share data securely between Snowflake accounts — direct shares, reader
   accounts, data marketplace listings, and row-level security for controlled
   data distribution.
-difficulty: advanced
+difficulty: intermediate
 tags:
-  - data-sharing
-  - secure-views
+  - snowflake
+  - secure
+  - data
+  - sharing
   - marketplace
-  - reader-accounts
-  - row-level-security
+  - security
+  - monitoring
+  - prompting
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-languages:
-  - sql
-prerequisites:
-  - Snowflake ACCOUNTADMIN role
-  - Data to share
 faq:
-  - question: How does Snowflake Data Sharing work?
+  - question: "When should I use the Secure Data Sharing & Marketplace skill?"
     answer: >-
-      The provider creates a SHARE object, grants access to specific
-      tables/views, and adds consumer account IDs. Consumers create a database
-      from the share and query data using their own compute. No data is copied —
-      consumers query live data directly from the provider's storage.
-  - question: Is shared data always up to date?
+      Share data securely between Snowflake accounts — direct shares, reader
+      accounts, data marketplace listings, and row-level security for
+      controlled data distribution. This skill provides a structured workflow
+      for development tasks.
+  - question: "What tools and setup does Secure Data Sharing & Marketplace require?"
     answer: >-
-      Yes. Snowflake Data Sharing provides live access to the provider's data —
-      there's no ETL, no replication, and no staleness. When the provider
-      updates a table, consumers see the changes immediately on their next
-      query.
-  - question: How do I share data with non-Snowflake users?
-    answer: >-
-      Create a Reader Account (managed account) for the partner. Reader accounts
-      are managed by your Snowflake account — you control the warehouses and pay
-      for their compute. Partners access shared data through the reader account
-      without needing their own Snowflake subscription.
-relatedItems:
-  - snowflake-data-pipeline-setup
-  - snowflake-time-travel-usage
-  - snowflake-data-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard snowflake tooling (relevant CLI tools and
+      frameworks). No special setup required beyond a working snowflake
+      environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Secure Data Sharing & Marketplace

@@ -9,11 +9,11 @@ description: >-
   monorepo projects.
 difficulty: intermediate
 tags:
+  - npm
   - workspaces
-  - monorepo
-  - multi-package
-  - dependency-management
-  - npm-scripts
+  - monorepos
+  - api
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,39 +22,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - javascript
-  - typescript
-prerequisites:
-  - npm 9+
-  - Node.js 18+
 faq:
-  - question: What are npm workspaces and when should I use them?
+  - question: "When should I use the NPM Workspaces for Monorepos skill?"
     answer: >-
-      NPM workspaces manage multiple packages in a single repository with shared
-      node_modules and cross-package references. Use them when you have related
-      packages that are developed together — a shared library used by multiple
-      apps, a component library with a documentation site, or a full-stack app
-      with separate frontend and backend packages.
-  - question: Do I still need Lerna with npm workspaces?
+      Set up npm workspaces to manage multiple packages in a single repository
+      — shared dependencies, cross-package scripts, and publishing workflows
+      for monorepo projects. This skill provides a structured workflow for
+      dependency management, monorepo architecture, script automation, and
+      package publishing.
+  - question: "What tools and setup does NPM Workspaces for Monorepos require?"
     answer: >-
-      For most projects, no. NPM workspaces handle dependency management,
-      cross-references, and script running natively. Lerna adds value for
-      complex publishing workflows (versioning, changelog generation, selective
-      publishing) in monorepos with many independently versioned public
-      packages.
-  - question: How do I add a dependency to a specific workspace?
-    answer: >-
-      Use npm install with the -w flag: 'npm install lodash -w packages/shared'
-      to add lodash to the shared package. For workspace cross-references, add
-      the workspace package name with '*' version to the dependent's
-      package.json and run npm install from the root.
-relatedItems:
-  - npm-scripts-automation
-  - npm-dependency-management
-  - npm-package-publishing
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm installed. Works with npm/pnpm/yarn projects.
+      Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # NPM Workspaces for Monorepos

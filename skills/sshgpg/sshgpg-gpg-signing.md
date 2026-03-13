@@ -4,15 +4,18 @@ stackId: sshgpg
 type: skill
 name: GPG Commit Signing for Git
 description: >-
-  Set up GPG commit signing with Git — key generation, Git configuration, GitHub
-  verified badges, gpg-agent caching, and SSH signing as a modern alternative.
+  Set up GPG commit signing with Git — key generation, Git configuration,
+  GitHub verified badges, gpg-agent caching, and SSH signing as a modern
+  alternative.
 difficulty: intermediate
 tags:
-  - gpg-signing
-  - commit-signing
-  - ssh-signing
-  - verified-commits
-  - git-security
+  - sshgpg
+  - gpg
+  - commit
+  - signing
+  - git
+  - security
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,34 +24,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - GnuPG 2.2+ or Git 2.34+ (for SSH signing)
-  - Git configured with user.email
 faq:
-  - question: Should I use GPG or SSH signing for Git commits?
+  - question: "When should I use the GPG Commit Signing for Git skill?"
     answer: >-
-      SSH signing (Git 2.34+) is simpler — reuse your existing SSH key, no GPG
-      toolchain needed. GPG signing is better for compliance (established
-      standard, key servers, revocation lists). For most developers, SSH signing
-      is the easier choice.
-  - question: How do I get the Verified badge on GitHub commits?
+      Set up GPG commit signing with Git — key generation, Git configuration,
+      GitHub verified badges, gpg-agent caching, and SSH signing as a modern
+      alternative. This skill provides a structured workflow for key
+      management, secure connections, threat modeling, and security auditing.
+  - question: "What tools and setup does GPG Commit Signing for Git require?"
     answer: >-
-      Sign commits with GPG or SSH key, then add the public key to GitHub
-      Settings > SSH and GPG keys. Ensure your GPG/SSH key email matches your
-      GitHub email. Enable 'commit.gpgsign = true' in Git config to sign all
-      commits automatically.
-  - question: Why are my signed commits showing as Unverified on GitHub?
-    answer: >-
-      Common causes: GPG key email doesn't match GitHub email, public key not
-      uploaded to GitHub, key expired, or using a subkey without the primary
-      key's UID. Verify with 'git verify-commit HEAD' locally and check email
-      alignment.
-relatedItems:
-  - sshgpg-key-management
-  - sshgpg-ssh-config
-  - git-security-guardian
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard SSH/GPG Security tooling (ssh, ssh-agent). Review
+      the setup section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # GPG Commit Signing for Git

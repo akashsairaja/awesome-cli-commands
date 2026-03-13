@@ -9,11 +9,12 @@ description: >-
   integration.
 difficulty: beginner
 tags:
-  - brew-services
-  - postgresql
-  - redis
-  - launchd
-  - background-services
+  - homebrew
+  - service
+  - management
+  - testing
+  - monitoring
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,28 +22,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Homebrew installed
-  - macOS (launchd) or Linux (systemd)
 faq:
-  - question: How do I manage databases installed with Homebrew?
+  - question: "When should I use the Homebrew Service Management skill?"
     answer: >-
-      Use 'brew services start postgresql@16' to start and auto-start on boot.
-      Use 'brew services list' to see status. Check logs at $(brew
-      --prefix)/var/log/. Stop with 'brew services stop'. Always pin the major
-      version (postgresql@16) to prevent data-breaking upgrades.
-  - question: What is the difference between brew services start and run?
+      Manage background services with brew services — start, stop, and restart
+      databases, queues, and daemons installed via Homebrew with launchd
+      integration. It includes practical examples for homebrew development.
+  - question: "What tools and setup does Homebrew Service Management require?"
     answer: >-
-      'brew services start' starts the service AND configures it to auto-start
-      on boot (creates a launchd plist). 'brew services run' starts it for the
-      current session only — it won't auto-start after reboot. Use 'start' for
-      databases, 'run' for temporary testing.
-relatedItems:
-  - homebrew-brewfile-design
-  - homebrew-system-manager
-  - homebrew-maintenance
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard homebrew tooling (relevant CLI tools and
+      frameworks). Review the setup section in the skill content for specific
+      configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Homebrew Service Management

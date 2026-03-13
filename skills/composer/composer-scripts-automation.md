@@ -4,16 +4,17 @@ stackId: composer
 type: skill
 name: Automate Tasks with Composer Scripts
 description: >-
-  Use Composer scripts to automate development workflows — test execution, code
-  formatting, database migrations, git hooks, and deployment steps without
-  additional build tools.
-difficulty: beginner
+  Use Composer scripts to automate development workflows — test execution,
+  code formatting, database migrations, git hooks, and deployment steps
+  without additional build tools.
+difficulty: intermediate
 tags:
-  - composer-scripts
-  - task-automation
-  - lifecycle-hooks
-  - php-workflow
-  - development-tools
+  - composer
+  - automate
+  - tasks
+  - scripts
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,29 +23,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Composer 2.x
-  - PHP project with composer.json
 faq:
-  - question: What are Composer scripts?
+  - question: "When should I use the Automate Tasks with Composer Scripts skill?"
     answer: >-
-      Composer scripts are custom commands defined in composer.json that execute
-      PHP code, shell commands, or other Composer scripts. They work like npm
-      scripts for PHP projects — providing a standardized way to run tests,
-      linters, migrations, and other development tasks.
-  - question: Can Composer scripts replace Make or npm scripts?
+      Use Composer scripts to automate development workflows — test execution,
+      code formatting, database migrations, git hooks, and deployment steps
+      without additional build tools. This skill provides a structured
+      workflow for dependency management, autoloading, Laravel patterns, and
+      package publishing.
+  - question: "What tools and setup does Automate Tasks with Composer Scripts require?"
     answer: >-
-      For PHP projects, yes. Composer scripts handle most automation needs:
-      running tests, linting, static analysis, database migrations, and
-      deployment steps. They are cross-platform and require no additional
-      tooling. Use Makefiles only when you need complex shell scripting or
-      non-PHP tasks.
-relatedItems:
-  - composer-autoloading-setup
-  - composer-ci-optimization
-  - composer-package-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm installed. Works with Composer/PHP projects.
+      Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Automate Tasks with Composer Scripts

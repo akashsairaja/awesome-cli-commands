@@ -8,12 +8,12 @@ description: >-
   and network error simulation to create deterministic, fast Cypress tests.
 difficulty: intermediate
 tags:
-  - intercept
-  - api-mocking
-  - network
-  - fixtures
   - cypress
-  - stubbing
+  - network
+  - interception
+  - cyintercept
+  - api
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +22,18 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Cypress 13+
-  - Understanding of REST APIs
 faq:
-  - question: What is cy.intercept in Cypress?
+  - question: "When should I use the Network Interception with cy.intercept skill?"
     answer: >-
-      cy.intercept() intercepts HTTP requests made by your application during
-      tests. You can stub responses with static data or fixtures, validate
-      request payloads, simulate errors and slow responses, and control timing —
-      creating deterministic tests without a running backend.
-  - question: How do I mock API responses in Cypress?
+      Master cy.intercept for API mocking, response stubbing, request
+      validation, and network error simulation to create deterministic, fast
+      Cypress tests. It includes practical examples for cypress development.
+  - question: "What tools and setup does Network Interception with cy.intercept require?"
     answer: >-
-      Use cy.intercept('GET', '/api/endpoint', { body: mockData }).as('alias').
-      Then visit the page and cy.wait('@alias') before making assertions. For
-      large responses, use { fixture: 'file.json' } to load from
-      cypress/fixtures/.
-  - question: Why should I use cy.wait with intercept aliases instead of cy.wait(ms)?
-    answer: >-
-      cy.wait('@alias') waits for the specific network request to complete — it
-      is precise and fast. cy.wait(5000) is an arbitrary delay that either waits
-      too long (slow tests) or not long enough (flaky tests). Always prefer
-      alias-based waiting.
-relatedItems:
-  - cypress-custom-commands
-  - cypress-ci-setup
-  - cypress-e2e-strategist
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Cypress installed. Works with cypress projects. No additional
+      configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Network Interception with cy.intercept

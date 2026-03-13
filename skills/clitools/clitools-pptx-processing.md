@@ -3,26 +3,32 @@ id: clitools-pptx-processing
 stackId: clitools
 type: skill
 name: PPTX Presentation Creation
-description: Presentation creation, editing, and analysis.
+description: >-
+  A user may ask you to create, edit, or analyze the contents of a .pptx file.
+  A .pptx file is essentially a ZIP archive containing XML files and other
+  resources that you can read or edit.
 difficulty: advanced
 tags:
-  - pptx
-  - processing
   - clitools
+  - pptx
+  - presentation
+  - creation
+  - machine-learning
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the pptx skill?"
+  - question: "When should I use the PPTX Presentation Creation skill?"
     answer: >-
-      Presentation creation, editing, and analysis. When Claude needs to work
-      with presentations (.pptx files) for: (1) Creating new presentations,
-      (2) Modifying or editing content, (3) Working with layouts, (4) Adding
-      comments or speaker notes, or any other presentation tasks
-  - question: "What tools or setup does pptx require?"
+      A user may ask you to create, edit, or analyze the contents of a .pptx
+      file. A .pptx file is essentially a ZIP archive containing XML files and
+      other resources that you can read or edit. This skill provides a
+      structured workflow for API design, documentation, architecture
+      patterns, and development workflows.
+  - question: "What tools and setup does PPTX Presentation Creation require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Works with standard CLI & Dev Tools tooling (various CLI tools, code
+      generators). No special setup required beyond a working developer
+      tooling environment.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

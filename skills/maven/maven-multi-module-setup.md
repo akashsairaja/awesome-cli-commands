@@ -8,11 +8,12 @@ description: >-
   dependencies, inter-module references, and proper build ordering.
 difficulty: intermediate
 tags:
+  - maven
+  - design
   - multi-module
-  - parent-pom
-  - dependency-management
-  - project-structure
-  - java-architecture
+  - project
+  - api
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -21,28 +22,18 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Java JDK 17+
-  - Maven 3.9+ or Maven Wrapper
 faq:
-  - question: How do I build a single module in a multi-module Maven project?
+  - question: "When should I use the Design a Multi-Module Maven Project skill?"
     answer: >-
-      Use 'mvn clean install -pl module-name' to build one module. Add '-am'
-      (also-make) to build its dependencies too: 'mvn clean install -pl
-      myapp-service -am'. This builds myapp-common and myapp-api if
-      myapp-service depends on them.
-  - question: What is the difference between dependencyManagement and dependencies?
+      Create a well-structured multi-module Maven project with parent POM,
+      shared dependencies, inter-module references, and proper build ordering.
+      This skill provides a structured workflow for development tasks.
+  - question: "What tools and setup does Design a Multi-Module Maven Project require?"
     answer: >-
-      dependencyManagement declares versions without adding dependencies to the
-      classpath — it is a version catalog. dependencies actually adds libraries
-      to the build. Child modules reference dependencies declared in the
-      parent's dependencyManagement without specifying versions.
-relatedItems:
-  - maven-release-pipeline
-  - maven-project-architect
-  - maven-dependency-resolver
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard maven tooling (relevant CLI tools and frameworks).
+      No special setup required beyond a working maven environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Design a Multi-Module Maven Project

@@ -7,14 +7,16 @@ description: >-
   Enable and configure the most useful Minikube addons — ingress, dashboard,
   metrics-server, registry, and storage provisioner for productive local
   Kubernetes development.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - minikube-addons
-  - ingress
-  - dashboard
-  - metrics-server
-  - local-registry
-  - development-tools
+  - minikube
+  - essential
+  - addons
+  - configuration
+  - deployment
+  - monitoring
+  - docker
+  - kubernetes
 compatibility:
   - claude-code
   - cursor
@@ -23,28 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - minikube installed and running
-  - kubectl configured
 faq:
-  - question: Which minikube addons should I enable for development?
+  - question: "When should I use the Essential Minikube Addons Configuration skill?"
     answer: >-
-      Start with ingress (HTTP routing), metrics-server (resource monitoring and
-      HPA), and storage-provisioner (dynamic PVs). Add dashboard for visual
-      cluster management and registry if you need a local image registry. Enable
-      only what you use to conserve resources.
-  - question: How do I access services running in minikube?
+      Enable and configure the most useful Minikube addons — ingress,
+      dashboard, metrics-server, registry, and storage provisioner for
+      productive local Kubernetes development. It includes practical examples
+      for minikube development.
+  - question: "What tools and setup does Essential Minikube Addons Configuration require?"
     answer: >-
-      Three options: (1) 'minikube tunnel' assigns real IPs to LoadBalancer
-      services. (2) Enable the ingress addon and create Ingress resources for
-      HTTP routing. (3) 'minikube service <name>' opens the service URL
-      directly. Avoid using NodePort for everything.
-relatedItems:
-  - minikube-multi-node-setup
-  - minikube-dev-environment
-  - minikube-testing-agent
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires kubectl, Helm CLI installed. Works with minikube projects.
+      Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Essential Minikube Addons Configuration

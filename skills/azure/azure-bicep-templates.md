@@ -7,13 +7,16 @@ description: >-
   Write Azure Bicep templates for repeatable infrastructure deployments —
   modules, parameters, conditions, loops, and deployment scopes for resource
   groups and subscriptions.
-difficulty: intermediate
+difficulty: advanced
 tags:
+  - azure
   - bicep
-  - arm-templates
-  - infrastructure-as-code
-  - azure-deployment
-  - modules
+  - infrastructure
+  - code
+  - security
+  - deployment
+  - api
+  - type-safety
 compatibility:
   - claude-code
   - cursor
@@ -22,33 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - bicep
-prerequisites:
-  - Azure CLI 2.60+
-  - Bicep CLI (bundled with Azure CLI)
-  - VS Code with Bicep extension
 faq:
-  - question: What is Azure Bicep and how does it relate to ARM templates?
+  - question: "When should I use the Azure Bicep Infrastructure as Code skill?"
     answer: >-
-      Bicep is a domain-specific language that compiles to ARM JSON templates.
-      It provides cleaner syntax (50-80% shorter), type safety, modules for
-      reusability, and IDE support with IntelliSense. Every Bicep file compiles
-      to an equivalent ARM template — they are fully interchangeable. Bicep is
-      the recommended approach for new Azure IaC projects.
-  - question: Should I use Bicep or Terraform for Azure infrastructure?
+      Write Azure Bicep templates for repeatable infrastructure deployments —
+      modules, parameters, conditions, loops, and deployment scopes for
+      resource groups and subscriptions. It includes practical examples for
+      Azure cloud development.
+  - question: "What tools and setup does Azure Bicep Infrastructure as Code require?"
     answer: >-
-      Use Bicep for Azure-only environments — it has day-zero support for new
-      Azure features, native integration with Azure CLI, and simpler state
-      management. Use Terraform for multi-cloud environments or if your team
-      already has Terraform expertise. Both are production-ready; the choice
-      depends on your organization's needs.
-relatedItems:
-  - azure-cli-patterns
-  - azure-infrastructure-architect
-  - terraform-module-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Azure tooling (Azure CLI, Bicep). No special setup
+      required beyond a working Azure cloud environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Azure Bicep Infrastructure as Code

@@ -2,49 +2,37 @@
 id: claudecode-hook-automation
 stackId: claudecode
 type: skill
-name: Claude Code Hooks & Automation
+name: >-
+  Claude Code Hooks & Automation
 description: >-
   Configure Claude Code hooks to automate pre-command validation, post-command
-  testing, and custom triggers that maintain code quality throughout AI-assisted
-  development workflows.
+  testing, and custom triggers that maintain code quality throughout
+  AI-assisted development workflows.
 difficulty: intermediate
 tags:
+  - claudecode
+  - claude
+  - code
   - hooks
   - automation
-  - pre-command
-  - post-command
-  - validation
-  - testing
+  - best-practices
+  - type-safety
 compatibility:
   - claude-code
-prerequisites:
-  - Claude Code CLI installed
-  - Project with test/lint tooling configured
 faq:
-  - question: What are Claude Code hooks?
+  - question: "When should I use the Claude Code Hooks & Automation skill?"
     answer: >-
-      Claude Code hooks are custom scripts that run automatically before or
-      after Claude executes commands. They enable automated quality checks like
-      linting, type-checking, and testing after every code change — ensuring
-      AI-generated code meets your project's standards.
-  - question: How do I prevent Claude Code from introducing lint errors?
+      Configure Claude Code hooks to automate pre-command validation,
+      post-command testing, and custom triggers that maintain code quality
+      throughout AI-assisted development workflows. This skill provides a
+      structured workflow for AI-assisted development, code generation,
+      refactoring, and debugging.
+  - question: "What tools and setup does Claude Code Hooks & Automation require?"
     answer: >-
-      Configure a postCommand hook that runs your linter with auto-fix after
-      every file change. Set onFailure to 'warn' for auto-fixable issues and
-      'error' for critical violations. This catches problems immediately rather
-      than discovering them later.
-  - question: Can hooks run tests automatically after Claude modifies code?
-    answer: >-
-      Yes. Configure a postCommand hook with a condition of 'fileChanged' and a
-      glob pattern matching your source files. Use 'jest --findRelatedTests' or
-      similar to run only the tests affected by the changed files, keeping
-      execution fast.
-relatedItems:
-  - claudecode-claude-md-setup
-  - claudecode-mcp-integration
-  - claudecode-skill-builder
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm installed. Works with Claude Code projects.
+      Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Claude Code Hooks & Automation

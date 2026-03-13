@@ -2,54 +2,39 @@
 id: snowflake-data-pipeline-setup
 stackId: snowflake
 type: skill
-name: 'Data Pipeline with Stages, Pipes & Tasks'
+name: >-
+  Data Pipeline with Stages, Pipes & Tasks
 description: >-
   Build automated data pipelines in Snowflake — external stages for data
   landing, Snowpipe for continuous ingestion, streams for CDC, and tasks for
   scheduled transformations.
 difficulty: intermediate
 tags:
+  - snowflake
+  - data
+  - pipeline
   - stages
-  - snowpipe
-  - streams
+  - pipes
   - tasks
-  - data-pipeline
-  - cdc
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-languages:
-  - sql
-prerequisites:
-  - Snowflake account with SYSADMIN access
-  - Cloud storage (S3/GCS/Azure Blob) configured
 faq:
-  - question: What is Snowpipe and how does it work?
+  - question: "When should I use the Data Pipeline with Stages, Pipes & Tasks skill?"
     answer: >-
-      Snowpipe is Snowflake's continuous data ingestion service. It
-      automatically loads data from cloud storage (S3, GCS, Azure) into
-      Snowflake tables within minutes of file arrival. Configure it with
-      AUTO_INGEST=TRUE and set up cloud event notifications to trigger loading.
-  - question: How do Snowflake Streams enable change data capture?
+      Build automated data pipelines in Snowflake — external stages for data
+      landing, Snowpipe for continuous ingestion, streams for CDC, and tasks
+      for scheduled transformations. This skill provides a structured workflow
+      for development tasks.
+  - question: "What tools and setup does Data Pipeline with Stages, Pipes & Tasks require?"
     answer: >-
-      Streams track row-level changes (inserts, updates, deletes) on a table.
-      When you query a stream, you get only the changes since the last
-      consumption. Use APPEND_ONLY=TRUE for event data (inserts only) for better
-      performance.
-  - question: How do I chain multiple Snowflake Tasks?
-    answer: >-
-      Use the AFTER clause to create task dependencies: CREATE TASK child_task
-      AFTER parent_task. Resume tasks bottom-up (child first, then parent). The
-      child task runs automatically when the parent completes successfully.
-relatedItems:
-  - snowflake-time-travel-usage
-  - snowflake-data-sharing
-  - snowflake-data-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires pip/poetry installed. Works with snowflake projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Data Pipeline with Stages, Pipes & Tasks

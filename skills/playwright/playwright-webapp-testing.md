@@ -8,23 +8,25 @@ description: >-
   Playwright.
 difficulty: intermediate
 tags:
+  - playwright
   - webapp
   - testing
-  - webapp-testing
-  - playwright
+  - automation
+  - api
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the webapp-testing skill?"
+  - question: "When should I use the Webapp Testing skill?"
     answer: >-
       Toolkit for interacting with and testing local web applications using
-      Playwright. Supports verifying frontend functionality, debugging UI
-      behavior, capturing browser screenshots, and viewing browser logs.
-  - question: "What tools or setup does webapp-testing require?"
+      Playwright. This skill provides a structured workflow for end-to-end
+      testing, visual regression, API testing, and CI/CD integration.
+  - question: "What tools and setup does Webapp Testing require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Requires npm/yarn/pnpm, Playwright installed. Works with Playwright
+      projects. No additional configuration needed beyond standard tooling.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

@@ -2,18 +2,22 @@
 id: bash-error-handling-strict
 stackId: bash
 type: skill
-name: Bash Strict Mode & Error Handling
+name: >-
+  Bash Strict Mode & Error Handling
 description: >-
-  Write robust Bash scripts with strict mode (set -euo pipefail), trap handlers
-  for cleanup, proper error messages, and exit code conventions for production
-  automation.
-difficulty: beginner
+  Write robust Bash scripts with strict mode (set -euo pipefail), trap
+  handlers for cleanup, proper error messages, and exit code conventions for
+  production automation.
+difficulty: advanced
 tags:
-  - strict-mode
-  - error-handling
-  - trap
-  - pipefail
-  - exit-codes
+  - bash
+  - strict
+  - mode
+  - error
+  - handling
+  - deployment
+  - ci-cd
+  - docker
 compatibility:
   - claude-code
   - cursor
@@ -22,37 +26,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - bash
-  - shell
-prerequisites:
-  - Bash 4.0+
 faq:
-  - question: What does set -euo pipefail do in Bash?
+  - question: "When should I use the Bash Strict Mode & Error Handling skill?"
     answer: >-
-      set -e exits on command failure. set -u errors on unset variables. set -o
-      pipefail makes pipeline failure propagate (without it, 'bad_cmd |
-      good_cmd' returns success). Together they transform Bash from
-      silently-continuing-on-errors to fail-fast behavior, essential for
-      reliable scripts.
-  - question: How do I clean up temporary files if a Bash script fails?
+      Write robust Bash scripts with strict mode (set -euo pipefail), trap
+      handlers for cleanup, proper error messages, and exit code conventions
+      for production automation. This skill provides a structured workflow for
+      automation scripts, argument parsing, error handling, and system
+      administration.
+  - question: "What tools and setup does Bash Strict Mode & Error Handling require?"
     answer: >-
-      Use 'trap cleanup EXIT' — the cleanup function runs when the script exits
-      for ANY reason: success, error, or signal (Ctrl+C). In cleanup, remove
-      temp files, kill background processes, and restore state. Always use
-      mktemp for temporary files and store the path for cleanup.
-  - question: Why should I quote all variables in Bash?
-    answer: >-
-      Unquoted variables undergo word splitting and glob expansion. If
-      VAR='hello world', then $VAR becomes two arguments, while "$VAR" stays
-      one. If DIR is empty, 'rm -rf $DIR/*' expands to 'rm -rf /*' which deletes
-      everything. Always use "$var" unless you specifically want splitting.
-relatedItems:
-  - bash-argument-parsing
-  - bash-posix-portability
-  - bash-shellcheck-compliance
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker, pip/poetry installed. Works with Bash projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Bash Strict Mode & Error Handling

@@ -7,13 +7,16 @@ description: >-
   Configure essential Starship modules — directory truncation, git branch and
   status, language versions, command duration, and custom module formatting in
   starship.toml.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - starship-modules
-  - toml-config
-  - prompt-setup
-  - git-status
-  - language-detection
+  - starship
+  - module
+  - configuration
+  - guide
+  - performance
+  - docker
+  - kubernetes
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - 'Starship installed (curl -sS https://starship.rs/install.sh | sh)'
-  - Nerd Font installed (recommended)
 faq:
-  - question: How do I configure Starship prompt modules?
+  - question: "When should I use the Starship Module Configuration Guide skill?"
     answer: >-
-      Create ~/.config/starship.toml and add module sections like [git_branch],
-      [nodejs], [directory]. Each module has format, style, and detection
-      options. Use the top-level 'format' key to control module order. Modules
-      auto-activate when relevant files are detected.
-  - question: Which Starship modules should I enable?
+      Configure essential Starship modules — directory truncation, git branch
+      and status, language versions, command duration, and custom module
+      formatting in starship.toml. This skill provides a structured workflow
+      for development tasks.
+  - question: "What tools and setup does Starship Module Configuration Guide require?"
     answer: >-
-      Always enable: directory, git_branch, git_status, character, cmd_duration.
-      Enable language modules (nodejs, python, rust) only for languages you use.
-      Enable cloud modules (aws, gcloud) only when relevant. Fewer modules =
-      faster prompt.
-  - question: How do I control the order of Starship modules?
-    answer: >-
-      Set the 'format' key at the top of starship.toml: format =
-      '$directory$git_branch$git_status$nodejs$cmd_duration$line_break$character'.
-      Modules appear in the order listed. Use $line_break for multi-line
-      prompts.
-relatedItems:
-  - starship-prompt-designer
-  - starship-git-integration
-  - starship-presets
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker installed. Works with starship projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Starship Module Configuration Guide

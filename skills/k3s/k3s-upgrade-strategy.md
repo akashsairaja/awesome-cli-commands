@@ -4,15 +4,19 @@ stackId: k3s
 type: skill
 name: Automated K3s Upgrades with System Upgrade Controller
 description: >-
-  Implement automated rolling upgrades for K3s clusters using the System Upgrade
-  Controller — plan-based upgrades with drain, cordon, and version pinning.
+  Implement automated rolling upgrades for K3s clusters using the System
+  Upgrade Controller — plan-based upgrades with drain, cordon, and version
+  pinning.
 difficulty: intermediate
 tags:
-  - k3s-upgrade
-  - system-upgrade-controller
-  - rolling-upgrade
-  - version-management
-  - kubernetes-maintenance
+  - k3s
+  - automated
+  - upgrades
+  - system
+  - upgrade
+  - controller
+  - testing
+  - kubernetes
 compatibility:
   - claude-code
   - cursor
@@ -20,30 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Running K3s cluster
-  - kubectl access
-  - Target K3s version identified
 faq:
-  - question: How does the K3s System Upgrade Controller work?
+  - question: "When should I use the Automated K3s Upgrades with System Upgrade Controller skill?"
     answer: >-
-      The System Upgrade Controller watches for Plan resources that specify a
-      target K3s version. It cordons and drains nodes one at a time, runs the
-      upgrade container, and uncordons after success. Server nodes are upgraded
-      before agents using the prepare step.
-  - question: Can I roll back a K3s upgrade?
+      Implement automated rolling upgrades for K3s clusters using the System
+      Upgrade Controller — plan-based upgrades with drain, cordon, and version
+      pinning. This skill provides a structured workflow for development
+      tasks.
+  - question: "What tools and setup does Automated K3s Upgrades with System Upgrade Controller require?"
     answer: >-
-      Yes, but it requires manual steps. Restore the etcd snapshot taken before
-      the upgrade with 'k3s server --cluster-reset
-      --cluster-reset-restore-path=/path/to/snapshot', then reinstall the
-      previous K3s version on each node. This is why pre-upgrade snapshots are
-      critical.
-relatedItems:
-  - k3s-ha-cluster-setup
-  - k3s-cluster-architect
-  - k3s-storage-setup
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires kubectl installed. Works with k3s projects. No additional
+      configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Automated K3s Upgrades with System Upgrade Controller

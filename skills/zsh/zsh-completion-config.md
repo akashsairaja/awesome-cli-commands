@@ -5,49 +5,37 @@ type: skill
 name: Zsh Completion System Configuration
 description: >-
   Configure Zsh's powerful completion system (compsys) — enable rich tab
-  completion for commands, customize matching rules, add completions for custom
-  functions, and optimize compinit performance.
-difficulty: advanced
+  completion for commands, customize matching rules, add completions for
+  custom functions, and optimize compinit performance.
+difficulty: beginner
 tags:
+  - zsh
   - completion
-  - compsys
-  - tab-completion
-  - zstyle
-  - compdef
+  - system
+  - configuration
+  - deployment
+  - docker
+  - best-practices
+  - refactoring
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-prerequisites:
-  - Zsh 5.8+
-  - Basic .zshrc configuration
 faq:
-  - question: How do I configure Zsh tab completion?
+  - question: "When should I use the Zsh Completion System Configuration skill?"
     answer: >-
-      Add 'autoload -Uz compinit && compinit' to .zshrc, then use zstyle
-      commands to configure behavior: case-insensitive matching, menu selection,
-      colored output, and caching. The completion system is initialized once and
-      supports hundreds of commands out of the box.
-  - question: How do I add tab completion to a custom Zsh function?
+      Configure Zsh's powerful completion system (compsys) — enable rich tab
+      completion for commands, customize matching rules, add completions for
+      custom functions, and optimize compinit performance. This skill provides
+      a structured workflow for development tasks.
+  - question: "What tools and setup does Zsh Completion System Configuration require?"
     answer: >-
-      Create a completion function prefixed with _ (e.g., _myfunc), use
-      _arguments to define flags and positional parameters, then register with
-      'compdef _myfunc myfunc'. The _arguments helper handles option parsing,
-      descriptions, and value completion automatically.
-  - question: How do I make Zsh completion faster?
-    answer: >-
-      Cache compdump with a date check (rebuild once per day, use -C flag
-      otherwise). Enable completion caching with 'zstyle :completion:* use-cache
-      on'. Avoid loading completions for tools you don't use. Profile with 'time
-      zsh -i -c exit'.
-relatedItems:
-  - zsh-config-specialist
-  - zsh-custom-functions
-  - zsh-alias-library
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker, pip/poetry installed. Works with zsh projects. Review
+      the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Zsh Completion System Configuration

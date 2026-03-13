@@ -4,16 +4,17 @@ stackId: java
 type: skill
 name: Modern Java Features (17-21+)
 description: >-
-  Adopt modern Java features — records for data classes, sealed classes for type
-  hierarchies, pattern matching switch, virtual threads, text blocks, and
+  Adopt modern Java features — records for data classes, sealed classes for
+  type hierarchies, pattern matching switch, virtual threads, text blocks, and
   SequencedCollections.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - modern-java
-  - records
-  - sealed-classes
-  - pattern-matching
-  - virtual-threads
+  - java
+  - modern
+  - features
+  - 17-21
+  - machine-learning
+  - type-safety
 compatibility:
   - claude-code
   - cursor
@@ -22,37 +23,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - java
-prerequisites:
-  - Java 17+ (Java 21 recommended)
 faq:
-  - question: What are the most impactful modern Java features?
+  - question: "When should I use the Modern Java Features (17-21+) skill?"
     answer: >-
-      Records (Java 16) eliminate boilerplate for data classes. Sealed classes
-      (Java 17) enable exhaustive pattern matching. Pattern matching switch
-      (Java 21) replaces instanceof chains. Virtual threads (Java 21) handle
-      millions of concurrent I/O tasks. Together, they make Java significantly
-      more concise and expressive.
-  - question: Can I use records as JPA entities in Spring Boot?
+      Adopt modern Java features — records for data classes, sealed classes
+      for type hierarchies, pattern matching switch, virtual threads, text
+      blocks, and SequencedCollections. It includes practical examples for
+      JVM/JS development development.
+  - question: "What tools and setup does Modern Java Features (17-21+) require?"
     answer: >-
-      No. JPA entities require a no-arg constructor, mutable fields, and proxy
-      support — records are immutable. Use records for DTOs (API
-      request/response), value objects, and event payloads. Use regular classes
-      for JPA entities. Map between entities and records in your service layer.
-  - question: How do virtual threads improve Java application performance?
-    answer: >-
-      Virtual threads are JVM-managed lightweight threads (not OS threads). They
-      allow millions of concurrent threads for I/O-bound work with minimal
-      memory. A traditional thread uses ~1MB of stack; a virtual thread starts
-      at ~1KB. Enable in Spring Boot 3.2+ with
-      spring.threads.virtual.enabled=true.
-relatedItems:
-  - java-spring-boot-setup
-  - java-testing-junit5
-  - java-build-tools
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Java/JavaScript tooling (JDK, build tools). No
+      special setup required beyond a working JVM/JS development environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Modern Java Features (17-21+)

@@ -7,13 +7,13 @@ description: >-
   Master Python async programming — asyncio event loop, TaskGroups for
   structured concurrency, async generators, and building high-performance
   I/O-bound applications.
-difficulty: advanced
+difficulty: beginner
 tags:
-  - async-await
+  - python
+  - asyncawait
+  - patterns
   - asyncio
-  - taskgroup
-  - concurrency
-  - httpx
+  - api
 compatibility:
   - claude-code
   - cursor
@@ -22,38 +22,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - python
-prerequisites:
-  - Python 3.11+
-  - httpx (for HTTP examples)
 faq:
-  - question: When should I use async/await in Python?
+  - question: "When should I use the Python Async/Await Patterns with asyncio skill?"
     answer: >-
-      Use async/await for I/O-bound workloads — HTTP requests, database queries,
-      file operations, WebSocket connections. Async Python handles thousands of
-      concurrent I/O operations on a single thread. For CPU-bound work, use
-      multiprocessing or concurrent.futures.ProcessPoolExecutor instead.
-  - question: What is asyncio.TaskGroup and why should I use it?
+      Master Python async programming — asyncio event loop, TaskGroups for
+      structured concurrency, async generators, and building high-performance
+      I/O-bound applications. This skill provides a structured workflow for
+      package management, testing, async patterns, and project scaffolding.
+  - question: "What tools and setup does Python Async/Await Patterns with asyncio require?"
     answer: >-
-      TaskGroup (Python 3.11+) provides structured concurrency — all tasks in
-      the group must complete before exiting the async with block. If any task
-      raises an exception, all sibling tasks are cancelled. This prevents task
-      leaks and makes error handling predictable, unlike asyncio.gather where
-      errors can be silently swallowed.
-  - question: Why should I use httpx instead of requests for async Python?
-    answer: >-
-      The requests library is synchronous — calling it in async code blocks the
-      event loop and prevents other tasks from running. httpx provides both sync
-      and async APIs with the same interface. Use httpx.AsyncClient for
-      concurrent HTTP requests in async applications, with connection pooling
-      and HTTP/2 support.
-relatedItems:
-  - python-type-annotations
-  - python-packaging
-  - python-testing-patterns
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Python tooling (pip, poetry). No special setup
+      required beyond a working Python development environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Python Async/Await Patterns with asyncio

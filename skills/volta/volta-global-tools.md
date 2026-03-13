@@ -7,13 +7,13 @@ description: >-
   Install and manage global CLI tools through Volta — TypeScript, ESLint,
   Prettier, and other tools that respect per-project Node versions while being
   globally accessible.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - volta-global
-  - global-tools
-  - typescript
-  - cli-tools
-  - shims
+  - volta
+  - global
+  - tool
+  - management
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,27 +22,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Volta installed
 faq:
-  - question: How do Volta global tools differ from npm global installs?
+  - question: "When should I use the Volta Global Tool Management skill?"
     answer: >-
-      Volta global tools are project-aware — they use the project's pinned Node
-      version when run inside a project. npm globals always use the system Node.
-      This means 'volta install typescript' gives you a tsc that adapts to each
-      project's Node version automatically.
-  - question: Which tools should I install globally with Volta?
+      Install and manage global CLI tools through Volta — TypeScript, ESLint,
+      Prettier, and other tools that respect per-project Node versions while
+      being globally accessible. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Volta Global Tool Management require?"
     answer: >-
-      Install tools you use across all projects: typescript, prettier, eslint,
-      tsx (TypeScript runner), turbo (monorepo), and deployment CLIs (vercel,
-      netlify-cli). Keep the list short — project-specific tools should be in
-      devDependencies, not global.
-relatedItems:
-  - volta-project-pinning
-  - volta-toolchain-manager
-  - volta-ci-integration
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm installed. Works with volta projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Volta Global Tool Management

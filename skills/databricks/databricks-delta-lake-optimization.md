@@ -9,49 +9,33 @@ description: >-
   analytics at scale.
 difficulty: intermediate
 tags:
-  - delta-lake
+  - databricks
+  - delta
+  - lake
+  - table
   - optimization
-  - z-ordering
-  - partitioning
-  - vacuum
   - performance
+  - best-practices
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-languages:
-  - sql
-  - python
-prerequisites:
-  - Databricks workspace
-  - Delta Lake tables to optimize
 faq:
-  - question: What is Z-ordering in Delta Lake?
+  - question: "When should I use the Delta Lake Table Optimization skill?"
     answer: >-
-      Z-ordering is a data layout technique that co-locates related data in the
-      same files based on column values. When you Z-ORDER BY user_id, rows with
-      the same user_id are stored together. This enables data skipping — queries
-      filtering by user_id read far fewer files.
-  - question: How often should I run OPTIMIZE and VACUUM?
+      Optimize Delta Lake tables for query performance — partitioning
+      strategies, Z-ordering, file compaction, vacuum schedules, and table
+      properties for fast analytics at scale. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Delta Lake Table Optimization require?"
     answer: >-
-      Run OPTIMIZE daily for tables with frequent writes, weekly for stable
-      tables. Run VACUUM after OPTIMIZE with at least 7 days retention. For
-      streaming tables, enable autoOptimize instead of scheduled OPTIMIZE
-      commands.
-  - question: When should I partition a Delta table?
-    answer: >-
-      Partition when a column has fewer than 10,000 distinct values AND is used
-      in WHERE clauses in most queries. The most common choice is date. Don't
-      partition if each partition would be smaller than 1GB — use Z-ordering
-      instead.
-relatedItems:
-  - databricks-workflow-automation
-  - databricks-unity-catalog-setup
-  - databricks-lakehouse-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard databricks tooling (relevant CLI tools and
+      frameworks). No special setup required beyond a working databricks
+      environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Delta Lake Table Optimization

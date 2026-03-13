@@ -7,50 +7,35 @@ description: >-
   Build blazing-fast HTTP servers with Bun.serve — routing, WebSocket support,
   streaming responses, static file serving, and production configuration for
   maximum throughput.
-difficulty: intermediate
+difficulty: beginner
 tags:
-  - bun-serve
-  - http-server
-  - websockets
-  - streaming
-  - web-standards
+  - bun
+  - high-performance
+  - http
+  - servers
+  - bunserve
+  - performance
+  - api
+  - best-practices
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-languages:
-  - typescript
-  - javascript
-prerequisites:
-  - Bun 1.1+
 faq:
-  - question: How fast is Bun.serve compared to Express?
+  - question: "When should I use the High-Performance HTTP Servers with Bun.serve skill?"
     answer: >-
-      Bun.serve handles 2-4x more requests per second than Express on Node.js in
-      typical benchmarks. For simple JSON API responses, Bun.serve can exceed
-      100K requests/second on a single core. The speed comes from Bun's
-      JavaScriptCore engine and the native uWebSockets HTTP implementation.
-  - question: Can I use Express middleware with Bun.serve?
+      Build blazing-fast HTTP servers with Bun.serve — routing, WebSocket
+      support, streaming responses, static file serving, and production
+      configuration for maximum throughput. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does High-Performance HTTP Servers with Bun.serve require?"
     answer: >-
-      No, Bun.serve uses the Web Standards API (Request/Response) instead of
-      Express's req/res middleware pattern. For Bun projects that need
-      middleware, use Hono or Elysia frameworks which are designed for Bun and
-      provide middleware support while maintaining Bun's performance advantages.
-  - question: Does Bun.serve support WebSockets?
-    answer: >-
-      Yes, natively. Bun.serve has built-in WebSocket support without any
-      additional packages. Define a websocket handler with open, message, close,
-      and drain callbacks. Upgrade HTTP requests to WebSocket connections in the
-      fetch handler using server.upgrade(). This is significantly faster than
-      the ws npm package.
-relatedItems:
-  - bun-testing-setup
-  - bun-bundler-config
-  - bun-native-apis
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard bun tooling (relevant CLI tools and frameworks). No
+      special setup required beyond a working bun environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # High-Performance HTTP Servers with Bun.serve

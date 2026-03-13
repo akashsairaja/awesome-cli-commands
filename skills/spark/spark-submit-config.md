@@ -4,17 +4,18 @@ stackId: spark
 type: skill
 name: spark-submit Configuration Guide
 description: >-
-  Configure spark-submit for optimal job execution — resource allocation, deploy
-  modes, packages, configuration properties, and submitting applications to
-  YARN, Kubernetes, and standalone clusters.
+  Configure spark-submit for optimal job execution — resource allocation,
+  deploy modes, packages, configuration properties, and submitting
+  applications to YARN, Kubernetes, and standalone clusters.
 difficulty: beginner
 tags:
+  - spark
   - spark-submit
   - configuration
-  - resource-allocation
-  - deploy-mode
-  - packages
-  - yarn
+  - guide
+  - performance
+  - debugging
+  - kubernetes
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +23,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Apache Spark installed
-  - Cluster access (YARN/K8s/standalone)
 faq:
-  - question: What is the difference between client and cluster deploy mode?
+  - question: "When should I use the spark-submit Configuration Guide skill?"
     answer: >-
-      Client mode: driver runs on the submitting machine, logs visible in
-      terminal, dies if you disconnect. Cluster mode: driver runs on a cluster
-      node, survives disconnection, logs in YARN/cluster UI. Use client for
-      debugging, cluster for production.
-  - question: How do I choose executor memory and cores?
+      Configure spark-submit for optimal job execution — resource allocation,
+      deploy modes, packages, configuration properties, and submitting
+      applications to YARN, Kubernetes, and standalone clusters. This skill
+      provides a structured workflow for development tasks.
+  - question: "What tools and setup does spark-submit Configuration Guide require?"
     answer: >-
-      Rule of thumb: 4-8GB memory, 2-5 cores per executor. Too many cores cause
-      GC contention. Too much memory causes long GC pauses. Start with 5 cores,
-      8GB and adjust. Leave 1 core and 1GB per node for OS/YARN. Formula:
-      (node_memory - 1GB) / num_executors_per_node.
-  - question: How do I add Python dependencies to a Spark job?
-    answer: >-
-      Use --py-files for .py files or .zip archives: spark-submit --py-files
-      mylib.zip app.py. For pip packages, create a virtual environment, zip
-      site-packages, and pass with --py-files. Or use conda/venv with
-      spark.pyspark.python config pointing to the venv Python binary.
-relatedItems:
-  - spark-performance-tuning
-  - spark-sql-queries
-  - spark-data-engineer
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Requires npm/yarn/pnpm installed. Works with spark projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # spark-submit Configuration Guide

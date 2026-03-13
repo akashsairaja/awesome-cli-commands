@@ -4,15 +4,14 @@ stackId: python
 type: skill
 name: Python Testing with pytest
 description: >-
-  Write effective Python tests with pytest — fixtures, parametrize, mocking with
-  unittest.mock, async testing, and structuring test suites for maintainability.
-difficulty: intermediate
+  Write effective Python tests with pytest — fixtures, parametrize, mocking
+  with unittest.mock, async testing, and structuring test suites for
+  maintainability.
+difficulty: beginner
 tags:
-  - pytest
+  - python
   - testing
-  - fixtures
-  - parametrize
-  - mocking
+  - pytest
 compatibility:
   - claude-code
   - cursor
@@ -21,37 +20,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - python
-prerequisites:
-  - Python 3.11+
-  - pytest
 faq:
-  - question: Why should I use pytest instead of unittest?
+  - question: "When should I use the Python Testing with pytest skill?"
     answer: >-
-      pytest requires less boilerplate (plain assert, no TestCase classes), has
-      a powerful fixture system for reusable setup, supports parametrize for
-      data-driven tests, and has a rich plugin ecosystem. Most Python projects
-      have adopted pytest as the standard test framework.
-  - question: What are pytest fixtures and how do they work?
+      Write effective Python tests with pytest — fixtures, parametrize,
+      mocking with unittest.mock, async testing, and structuring test suites
+      for maintainability. This skill provides a structured workflow for
+      package management, testing, async patterns, and project scaffolding.
+  - question: "What tools and setup does Python Testing with pytest require?"
     answer: >-
-      Fixtures are functions decorated with @pytest.fixture that provide test
-      setup and teardown. They use 'yield' to separate setup (before yield) from
-      cleanup (after yield). Fixtures are composable — a fixture can depend on
-      other fixtures. pytest injects them automatically based on function
-      parameter names.
-  - question: How do I mock external APIs in Python tests?
-    answer: >-
-      Use unittest.mock.patch to replace HTTP clients at the module boundary.
-      For comprehensive API mocking, use the responses library (for requests) or
-      respx (for httpx). Mock at the highest possible level — patch the HTTP
-      client, not internal functions. This keeps tests resilient to refactoring.
-relatedItems:
-  - python-async-patterns
-  - python-type-annotations
-  - python-packaging-modern
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Python tooling (pip, poetry). Review the setup
+      section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Python Testing with pytest

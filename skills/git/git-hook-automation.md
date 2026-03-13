@@ -2,18 +2,21 @@
 id: git-hook-automation
 stackId: git
 type: skill
-name: Git Hooks & Pre-Commit Automation
+name: >-
+  Git Hooks & Pre-Commit Automation
 description: >-
-  Automate code quality checks with Git hooks — run linters, formatters, tests,
-  and security scans automatically before every commit and push.
+  Automate code quality checks with Git hooks — run linters, formatters,
+  tests, and security scans automatically before every commit and push.
 difficulty: intermediate
 tags:
+  - git
   - hooks
   - pre-commit
-  - husky
-  - lefthook
-  - lint-staged
   - automation
+  - security
+  - machine-learning
+  - best-practices
+  - type-safety
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Git 2.30+
-  - Node.js (for husky/lint-staged) or Python (for pre-commit framework)
 faq:
-  - question: What are Git hooks and why should I use them?
+  - question: "When should I use the Git Hooks & Pre-Commit Automation skill?"
     answer: >-
-      Git hooks are scripts that run automatically at key points in your Git
-      workflow — before commits, after merges, before pushes. They automate code
-      quality checks like linting, formatting, testing, and secret scanning,
-      catching issues before they reach the repository.
-  - question: 'Which Git hook tool should I use — Husky, Lefthook, or pre-commit?'
+      Automate code quality checks with Git hooks — run linters, formatters,
+      tests, and security scans automatically before every commit and push.
+      This skill provides a structured workflow for branching strategies,
+      workflow automation, hook scripts, and repository maintenance.
+  - question: "What tools and setup does Git Hooks & Pre-Commit Automation require?"
     answer: >-
-      Use Husky for Node.js/JavaScript projects (most popular, integrates with
-      lint-staged). Use Lefthook for polyglot projects (faster,
-      language-agnostic, parallel execution). Use the pre-commit framework for
-      Python projects (large ecosystem of community hooks).
-  - question: How do I keep Git hooks fast so developers don't skip them?
-    answer: >-
-      Three rules: (1) Use lint-staged to check only staged files, not the
-      entire codebase. (2) Keep pre-commit hooks under 10 seconds — move slow
-      checks to pre-push or CI. (3) Run checks in parallel when possible
-      (Lefthook supports this natively).
-relatedItems:
-  - git-commit-conventions
-  - git-trunk-based-development
-  - lefthook-setup
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm installed. Works with Git projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Git Hooks & Pre-Commit Automation

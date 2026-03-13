@@ -7,13 +7,16 @@ description: >-
   Build a production-ready Spring Boot REST API — project setup, layered
   architecture, JPA entities, exception handling, validation, and testing with
   JUnit 5.
-difficulty: intermediate
+difficulty: advanced
 tags:
-  - spring-boot
-  - rest-api
-  - jpa
-  - layered-architecture
-  - records
+  - java
+  - spring
+  - boot
+  - rest
+  - api
+  - scratch
+  - security
+  - testing
 compatibility:
   - claude-code
   - cursor
@@ -22,37 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - java
-prerequisites:
-  - Java 21+
-  - Spring Boot 3.2+
-  - Maven or Gradle
 faq:
-  - question: What is the standard project structure for a Spring Boot API?
+  - question: "When should I use the Spring Boot REST API from Scratch skill?"
     answer: >-
-      Use layered architecture: controller/ for HTTP endpoints, service/ for
-      business logic, repository/ for data access, model/ for JPA entities, dto/
-      for request/response objects, and exception/ for error handling. This
-      separation keeps concerns clean and makes the codebase testable.
-  - question: Should I use records for DTOs in Spring Boot?
+      Build a production-ready Spring Boot REST API — project setup, layered
+      architecture, JPA entities, exception handling, validation, and testing
+      with JUnit 5. This skill provides a structured workflow for modern
+      language features, testing patterns, and application development.
+  - question: "What tools and setup does Spring Boot REST API from Scratch require?"
     answer: >-
-      Yes. Java records are ideal for DTOs — they are immutable, auto-generate
-      equals/hashCode/toString, and have compact syntax. Use records for
-      CreateUserRequest, UserResponse, and similar data transfer objects. Use
-      regular classes for JPA entities (they need mutability for JPA lifecycle).
-  - question: How does global exception handling work in Spring Boot?
-    answer: >-
-      Use @RestControllerAdvice with @ExceptionHandler methods to catch
-      exceptions globally. Map domain exceptions to HTTP status codes and
-      structured error responses. This replaces try-catch in individual
-      controllers with a single, consistent error handling layer.
-relatedItems:
-  - java-modern-features
-  - java-testing-junit5
-  - java-build-tools
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Java/JavaScript tooling (JDK, build tools). Review
+      the setup section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Spring Boot REST API from Scratch

@@ -2,19 +2,21 @@
 id: ubuntu-user-management
 stackId: ubuntu
 type: skill
-name: Ubuntu User & Group Management
+name: >-
+  Ubuntu User & Group Management
 description: >-
   Manage Ubuntu users and groups — creating service accounts, configuring sudo
   access, SSH key deployment, password policies, and PAM module configuration
   for multi-user servers.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - user-management
-  - groups
-  - sudo
-  - ssh-keys
-  - security
   - ubuntu
+  - user
+  - group
+  - management
+  - security
+  - docker
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -23,28 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Ubuntu 22.04+
-  - sudo access
 faq:
-  - question: How do I create a service user on Ubuntu?
+  - question: "When should I use the Ubuntu User & Group Management skill?"
     answer: >-
-      Use: sudo useradd --system --shell /usr/sbin/nologin --home-dir
-      /opt/servicename servicename. The --system flag creates a user with a UID
-      in the system range, --shell /usr/sbin/nologin prevents interactive login,
-      and the dedicated home directory contains the service files.
-  - question: Should I give developers full sudo access on Ubuntu servers?
+      Manage Ubuntu users and groups — creating service accounts, configuring
+      sudo access, SSH key deployment, password policies, and PAM module
+      configuration for multi-user servers. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Ubuntu User & Group Management require?"
     answer: >-
-      No. Grant minimum necessary sudo permissions using /etc/sudoers.d/ files.
-      For example, allow specific commands: 'deployer ALL=(ALL) NOPASSWD:
-      /usr/bin/systemctl restart myapp'. Full sudo access means any compromised
-      developer account becomes root. Use specific command whitelists.
-relatedItems:
-  - ubuntu-server-architect
-  - ubuntu-ufw-management
-  - linux-security-hardening
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker installed. Works with ubuntu projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Ubuntu User & Group Management

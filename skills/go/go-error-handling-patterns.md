@@ -7,13 +7,14 @@ description: >-
   Master Go error handling — error wrapping with fmt.Errorf, sentinel errors,
   custom error types, errors.Is/As for matching, and idiomatic patterns for
   clean error propagation.
-difficulty: intermediate
+difficulty: beginner
 tags:
-  - error-handling
-  - errors-is
-  - wrapping
-  - sentinel-errors
-  - custom-errors
+  - go
+  - error
+  - handling
+  - best
+  - practices
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,36 +23,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - go
-prerequisites:
-  - Go 1.21+
 faq:
-  - question: How does error handling work in Go?
+  - question: "When should I use the Go Error Handling Best Practices skill?"
     answer: >-
-      Go functions return errors as the last return value. Callers check 'if err
-      != nil' at every call site. Errors are wrapped with fmt.Errorf and %w to
-      add context as they propagate up the stack. Use errors.Is to check for
-      specific errors and errors.As to extract custom error types.
-  - question: What is error wrapping in Go and why is %w important?
+      Master Go error handling — error wrapping with fmt.Errorf, sentinel
+      errors, custom error types, errors.Is/As for matching, and idiomatic
+      patterns for clean error propagation. This skill provides a structured
+      workflow for concurrency patterns, error handling, testing, and
+      microservice development.
+  - question: "What tools and setup does Go Error Handling Best Practices require?"
     answer: >-
-      Error wrapping with fmt.Errorf('context: %w', err) preserves the original
-      error while adding context. The %w verb (not %v) enables errors.Is and
-      errors.As to match the wrapped error through the chain. This lets callers
-      check for specific errors even after multiple layers of wrapping.
-  - question: When should I use sentinel errors vs custom error types in Go?
-    answer: >-
-      Use sentinel errors (var ErrNotFound = errors.New(...)) for simple,
-      well-known failure cases that callers check with errors.Is. Use custom
-      error types (structs implementing Error interface) when callers need
-      structured data about the failure — validation fields, HTTP status codes,
-      retry information.
-relatedItems:
-  - go-concurrency-patterns
-  - go-interface-design
-  - go-testing-patterns
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Go tooling (Go toolchain (go build, go test). Review
+      the setup section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Go Error Handling Best Practices

@@ -4,16 +4,17 @@ stackId: vim
 type: skill
 name: Vim Text Objects Mastery
 description: >-
-  Master Vim text objects for precise, semantic text selection and manipulation
-  — inner/around words, quotes, brackets, paragraphs, tags, and custom
-  Treesitter objects.
-difficulty: beginner
+  Master Vim text objects for precise, semantic text selection and
+  manipulation — inner/around words, quotes, brackets, paragraphs, tags, and
+  custom Treesitter objects.
+difficulty: advanced
 tags:
-  - text-objects
-  - vim-editing
-  - operators
-  - treesitter
-  - selection
+  - vim
+  - text
+  - objects
+  - mastery
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,35 +23,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Vim or Neovim
-  - Understanding of Vim modes
 faq:
-  - question: What are Vim text objects?
+  - question: "When should I use the Vim Text Objects Mastery skill?"
     answer: >-
-      Text objects are Vim's way of selecting semantic units of text. They come
-      in 'inner' (i) and 'around' (a) variants: iw selects the word, aw selects
-      the word plus surrounding space, ci" changes text inside quotes, da{
-      deletes a brace block including braces. They work with any operator (d, c,
-      y, v).
-  - question: What is the difference between inner and around text objects?
+      Master Vim text objects for precise, semantic text selection and
+      manipulation — inner/around words, quotes, brackets, paragraphs, tags,
+      and custom Treesitter objects. This skill provides a structured workflow
+      for development tasks.
+  - question: "What tools and setup does Vim Text Objects Mastery require?"
     answer: >-
-      Inner (i) selects just the content between delimiters — ci" changes text
-      between quotes but keeps the quotes. Around (a) includes the delimiters —
-      da" deletes the entire quoted string including quotes. Use inner for
-      changing content, around for deleting entire structures.
-  - question: How do Treesitter text objects improve Vim editing?
-    answer: >-
-      Treesitter text objects add language-aware selections like 'inner
-      function' (if), 'a class' (ac), and 'inner parameter' (ia). Instead of
-      bracket-based selection, they understand code structure — daf deletes an
-      entire function regardless of its syntax.
-relatedItems:
-  - vim-motion-mentor
-  - vim-macro-recording
-  - vim-config-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard vim tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Vim Text Objects Mastery

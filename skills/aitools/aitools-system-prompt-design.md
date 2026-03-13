@@ -9,11 +9,14 @@ description: >-
   formats, and behavioral guardrails.
 difficulty: intermediate
 tags:
-  - system-prompts
-  - prompt-engineering
-  - coding-agents
-  - constraints
-  - few-shot
+  - aitools
+  - designing
+  - system
+  - prompts
+  - coding
+  - agents
+  - testing
+  - prompting
 compatibility:
   - claude-code
   - cursor
@@ -22,35 +25,21 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Experience with at least one AI coding tool
-  - Understanding of your project's coding conventions
 faq:
-  - question: What is a system prompt for AI coding tools?
+  - question: "When should I use the Designing System Prompts for Coding Agents skill?"
     answer: >-
-      A system prompt is the foundational instruction set given to an AI model
-      before user interactions. For coding tools, it defines the AI's role
-      (e.g., senior TypeScript engineer), coding constraints (no any types,
-      always handle errors), output format, and behavioral guardrails that
-      ensure consistent, high-quality code generation.
-  - question: How long should a system prompt be?
+      Learn to write system prompts that transform generic AI models into
+      specialized coding agents — with role definitions, constraints, output
+      formats, and behavioral guardrails. This skill provides a structured
+      workflow for prompt engineering, RAG pipelines, LLM application
+      development, and AI agent building.
+  - question: "What tools and setup does Designing System Prompts for Coding Agents require?"
     answer: >-
-      Keep system prompts under 2000 tokens (roughly 1500 words). Include role
-      definition, 5-10 key constraints, output format specification, and 1-2
-      examples. Longer prompts waste context window space and can cause the
-      model to lose focus on critical rules.
-  - question: Where do system prompts go in different AI tools?
-    answer: >-
-      Claude Code: CLAUDE.md at project root. Cursor: .cursorrules file. GitHub
-      Copilot: .github/copilot-instructions.md. Windsurf: .windsurfrules. Amazon
-      Q: .amazonq/rules/. Aider: CONVENTIONS.md. Each tool reads its specific
-      file as the system prompt.
-relatedItems:
-  - aitools-rag-patterns
-  - aitools-tool-use-patterns
-  - aitools-context-manager
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard AI & ML Tools tooling (LLM APIs, embedding models).
+      No special setup required beyond a working AI/ML development
+      environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Designing System Prompts for Coding Agents

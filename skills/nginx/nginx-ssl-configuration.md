@@ -2,18 +2,21 @@
 id: nginx-ssl-configuration
 stackId: nginx
 type: skill
-name: Configure SSL/TLS with Let's Encrypt on Nginx
+name: >-
+  Configure SSL/TLS with Let's Encrypt on Nginx
 description: >-
   Set up production-grade SSL/TLS on Nginx with Let's Encrypt — certificate
   automation, HTTPS redirect, HSTS, OCSP stapling, and A+ SSL Labs rating.
 difficulty: intermediate
 tags:
-  - ssl
-  - tls
-  - letsencrypt
-  - https
-  - certificates
-  - hsts
+  - nginx
+  - configure
+  - ssltls
+  - lets
+  - encrypt
+  - security
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,28 +25,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Nginx installed
-  - Domain pointing to server
-  - Root/sudo access
 faq:
-  - question: How do I get an A+ SSL rating on Nginx?
+  - question: "When should I use the Configure SSL/TLS with Let's Encrypt on Nginx skill?"
     answer: >-
-      Enable TLS 1.2/1.3 only, use strong cipher suites (ECDHE), enable HSTS
-      with includeSubDomains and preload, configure OCSP stapling, generate DH
-      parameters, disable ssl_session_tickets, and set ssl_prefer_server_ciphers
-      off for TLS 1.3. Test with SSL Labs to verify.
-  - question: How does Let's Encrypt certificate renewal work with Nginx?
+      Set up production-grade SSL/TLS on Nginx with Let's Encrypt —
+      certificate automation, HTTPS redirect, HSTS, OCSP stapling, and A+ SSL
+      Labs rating. This skill provides a structured workflow for development
+      tasks.
+  - question: "What tools and setup does Configure SSL/TLS with Let's Encrypt on Nginx require?"
     answer: >-
-      Certbot installs a systemd timer that checks for renewal twice daily.
-      Certificates are renewed 30 days before expiry. After renewal, Certbot
-      automatically reloads Nginx. Verify with 'sudo certbot renew --dry-run'.
-      Monitor for renewal failures with alerting.
-relatedItems:
-  - nginx-security-hardening
-  - nginx-reverse-proxy-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard nginx tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Configure SSL/TLS with Let's Encrypt on Nginx

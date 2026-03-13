@@ -9,12 +9,11 @@ description: >-
   bottlenecks with Spark UI.
 difficulty: advanced
 tags:
+  - spark
   - performance
-  - partitioning
-  - caching
-  - joins
-  - shuffle
-  - spark-ui
+  - tuning
+  - optimization
+  - debugging
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +21,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Apache Spark 3.0+
-  - Access to Spark UI
 faq:
-  - question: How do I fix data skew in Spark?
+  - question: "When should I use the Spark Performance Tuning skill?"
     answer: >-
-      Enable AQE skew join: spark.sql.adaptive.skewJoin.enabled=true. This
-      automatically splits skewed partitions. Manual fixes: salt the join key
-      (add random prefix), use broadcast join for small tables, filter out hot
-      keys and process separately, or repartition with more partitions.
-  - question: How many shuffle partitions should I use?
+      Optimize Spark job performance — partitioning strategies, caching,
+      broadcast joins, shuffle optimization, adaptive query execution, and
+      diagnosing bottlenecks with Spark UI. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Spark Performance Tuning require?"
     answer: >-
-      Target 128MB per partition. Formula: total_shuffle_data_size / 128MB. For
-      100GB of shuffled data: ~800 partitions. With AQE enabled, set a high
-      number (spark.sql.shuffle.partitions=1000) and let AQE coalesce small
-      partitions automatically.
-  - question: When should I cache a DataFrame?
-    answer: >-
-      Cache when: 1) The DataFrame is used in multiple actions (joins,
-      aggregations, writes). 2) The DataFrame is expensive to compute (complex
-      transformations). 3) The data fits in memory. Don't cache: one-time-use
-      DataFrames, very large datasets, or DataFrames that change between uses.
-relatedItems:
-  - spark-submit-config
-  - spark-sql-queries
-  - spark-data-engineer
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Requires pip/poetry installed. Works with spark projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Spark Performance Tuning

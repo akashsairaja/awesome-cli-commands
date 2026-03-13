@@ -4,16 +4,16 @@ stackId: playwright
 type: skill
 name: Page Object Model with Playwright
 description: >-
-  Implement the Page Object Model pattern in Playwright to create maintainable,
-  reusable test code with typed page interactions and composable component
-  objects.
+  Implement the Page Object Model pattern in Playwright to create
+  maintainable, reusable test code with typed page interactions and composable
+  component objects.
 difficulty: intermediate
 tags:
-  - page-object-model
-  - design-pattern
-  - test-architecture
-  - maintainability
   - playwright
+  - page
+  - object
+  - model
+  - design-patterns
 compatibility:
   - claude-code
   - cursor
@@ -22,36 +22,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Playwright 1.40+
-  - TypeScript
-  - Understanding of OOP basics
 faq:
-  - question: What is the Page Object Model pattern in Playwright?
+  - question: "When should I use the Page Object Model with Playwright skill?"
     answer: >-
-      Page Object Model (POM) is a design pattern where each page or UI
-      component is represented by a TypeScript class. The class encapsulates
-      locators and actions, so tests interact with methods like
-      loginPage.login(email, password) instead of directly querying the DOM.
-      When the UI changes, you update one class instead of every test.
-  - question: Should I put assertions inside Playwright page objects?
+      Implement the Page Object Model pattern in Playwright to create
+      maintainable, reusable test code with typed page interactions and
+      composable component objects. This skill provides a structured workflow
+      for end-to-end testing, visual regression, API testing, and CI/CD
+      integration.
+  - question: "What tools and setup does Page Object Model with Playwright require?"
     answer: >-
-      Generally no. Page objects should expose state and actions, while tests
-      should contain assertions. However, simple helper assertions like
-      expectError(message) are acceptable when they reduce test verbosity. The
-      key rule: page objects should not contain test logic.
-  - question: How do I handle shared components across multiple pages?
-    answer: >-
-      Create Component Objects — small classes for reusable UI elements like
-      navigation bars, modals, and forms. Page objects compose these component
-      objects rather than duplicating locators. This mirrors your application's
-      component architecture.
-relatedItems:
-  - playwright-fixture-design
-  - playwright-locator-strategy
-  - playwright-test-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Playwright installed. Works with Playwright projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Page Object Model with Playwright

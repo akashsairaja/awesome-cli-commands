@@ -2,19 +2,20 @@
 id: opentofu-variables-outputs
 stackId: opentofu
 type: skill
-name: 'Variables, Outputs & Expressions'
+name: >-
+  Variables, Outputs & Expressions
 description: >-
   Master OpenTofu variables and expressions — input validation, local values,
   output contracts, for_each loops, conditional resources, and dynamic blocks
   for flexible infrastructure definitions.
 difficulty: intermediate
 tags:
+  - opentofu
   - variables
   - outputs
-  - validation
   - expressions
-  - for-each
-  - locals
+  - security
+  - deployment
 compatibility:
   - claude-code
   - cursor
@@ -22,33 +23,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - OpenTofu CLI installed
 faq:
-  - question: How do I validate OpenTofu variable inputs?
+  - question: "When should I use the Variables, Outputs & Expressions skill?"
     answer: >-
-      Add validation blocks: variable 'env' { validation { condition =
-      contains(['dev','prod'], var.env); error_message = 'Must be dev or prod' }
-      }. You can have multiple validation blocks. Validation runs at plan time,
-      preventing invalid infrastructure from being applied.
-  - question: When should I use locals vs variables?
+      Master OpenTofu variables and expressions — input validation, local
+      values, output contracts, for_each loops, conditional resources, and
+      dynamic blocks for flexible infrastructure definitions. This skill
+      provides a structured workflow for development tasks.
+  - question: "What tools and setup does Variables, Outputs & Expressions require?"
     answer: >-
-      Variables: user-provided inputs that change per deployment (environment,
-      region, instance size). Locals: computed values derived from variables
-      (name prefixes, merged tags, conditional flags). Think of variables as
-      function parameters and locals as intermediate calculations.
-  - question: How do I pass outputs between modules?
-    answer: >-
-      Module A defines output 'vpc_id' { value = aws_vpc.main.id }. Module B
-      references it: vpc_id = module.networking.vpc_id. This creates an implicit
-      dependency — module B waits for module A. Use sensitive = true on outputs
-      containing secrets.
-relatedItems:
-  - opentofu-state-management
-  - opentofu-workspace-envs
-  - opentofu-module-designer
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Works with standard opentofu tooling (relevant CLI tools and
+      frameworks). Review the setup section in the skill content for specific
+      configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Variables, Outputs & Expressions

@@ -5,16 +5,16 @@ type: skill
 name: .csproj Package Configuration
 description: >-
   Configure .csproj for NuGet packages — PackageReference management, version
-  ranges, conditional references, private assets, and Directory.Build.props for
-  solution-wide settings.
-difficulty: intermediate
+  ranges, conditional references, private assets, and Directory.Build.props
+  for solution-wide settings.
+difficulty: beginner
 tags:
+  - nuget
   - csproj
-  - package-reference
-  - version-ranges
-  - directory-build-props
+  - package
   - configuration
-  - central-package-management
+  - security
+  - optimization
 compatibility:
   - claude-code
   - cursor
@@ -22,38 +22,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-languages:
-  - csharp
-  - fsharp
-  - vb.net
-prerequisites:
-  - .NET SDK 6.0+
 faq:
-  - question: How do NuGet version ranges work?
+  - question: "When should I use the .csproj Package Configuration skill?"
     answer: >-
-      Exact: 1.2.3. Minimum: 1.2.3 (>= 1.2.3). Range: [1.2.3, 2.0.0) means >=
-      1.2.3 and < 2.0.0. Floating: 1.2.* means latest 1.2.x patch. Brackets [ ]
-      mean inclusive, parentheses ( ) mean exclusive. For production, pin exact
-      versions or use tight ranges.
-  - question: What is PrivateAssets in PackageReference?
+      Configure .csproj for NuGet packages — PackageReference management,
+      version ranges, conditional references, private assets, and
+      Directory.Build.props for solution-wide settings. This skill provides a
+      structured workflow for package management, ASP.NET patterns, and .NET
+      application development.
+  - question: "What tools and setup does .csproj Package Configuration require?"
     answer: >-
-      PrivateAssets controls which package assets are NOT exposed to consuming
-      projects. PrivateAssets='all' means the package is completely private —
-      not included in output and not visible to projects referencing yours. Use
-      for analyzers, source generators, and build tools.
-  - question: How does Central Package Management work?
-    answer: >-
-      Enable with
-      <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>.
-      Define versions once in Directory.Packages.props: <PackageVersion
-      Include='Pkg' Version='1.0.0' />. Projects reference without version:
-      <PackageReference Include='Pkg' />. Ensures all projects use the same
-      version.
-relatedItems:
-  - nuget-package-management
-  - nuget-publishing
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Works with standard NuGet/.NET tooling (dotnet CLI, NuGet CLI). Review
+      the setup section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # .csproj Package Configuration

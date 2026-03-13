@@ -2,18 +2,20 @@
 id: rust-error-handling-patterns
 stackId: rust
 type: skill
-name: Rust Error Handling with Result & Option
+name: >-
+  Rust Error Handling with Result & Option
 description: >-
   Master Rust error handling — Result and Option types, the ? operator, custom
   error types with thiserror, application errors with anyhow, and error
   propagation patterns.
-difficulty: intermediate
+difficulty: advanced
 tags:
-  - error-handling
+  - rust
+  - error
+  - handling
   - result
   - option
-  - thiserror
-  - anyhow
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -22,38 +24,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - rust
-prerequisites:
-  - Rust 1.75+
-  - Understanding of enums
 faq:
-  - question: What is the difference between Result and Option in Rust?
+  - question: "When should I use the Rust Error Handling with Result & Option skill?"
     answer: >-
-      Option<T> represents a value that may be absent (Some(value) or None) —
-      like nullable values. Result<T, E> represents an operation that may fail
-      (Ok(value) or Err(error)) — it carries error information. Use Option when
-      absence is normal (find in a list), Result when absence is an error (file
-      not found).
-  - question: When should I use anyhow vs thiserror in Rust?
+      Master Rust error handling — Result and Option types, the ? operator,
+      custom error types with thiserror, application errors with anyhow, and
+      error propagation patterns. This skill provides a structured workflow
+      for ownership patterns, async programming, error handling, and
+      systems-level development.
+  - question: "What tools and setup does Rust Error Handling with Result & Option require?"
     answer: >-
-      Use thiserror for libraries — it generates structured error enums that
-      callers can match on. Use anyhow for applications (binaries, CLI tools) —
-      it provides easy error context chaining without defining custom types. The
-      rule: libraries export specific errors, applications handle them
-      generically.
-  - question: What does the ? operator do in Rust?
-    answer: >-
-      The ? operator is syntactic sugar for error propagation. On a Result, if
-      the value is Ok(v), it unwraps to v. If Err(e), it returns early from the
-      function with the error, automatically converting via From trait. It
-      replaces verbose match statements and works with both Result and Option.
-relatedItems:
-  - rust-ownership-patterns
-  - rust-clippy-rules
-  - rust-testing-patterns
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Rust tooling (Cargo, rustc). Review the setup
+      section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Rust Error Handling with Result & Option

@@ -2,18 +2,20 @@
 id: taskfile-variables-deps
 stackId: taskfile
 type: skill
-name: Taskfile Variables & Dependencies
+name: >-
+  Taskfile Variables & Dependencies
 description: >-
-  Master Taskfile variables, dynamic values, task dependencies, and environment
-  configuration — the building blocks for maintainable YAML-based task
-  automation.
-difficulty: beginner
+  Master Taskfile variables, dynamic values, task dependencies, and
+  environment configuration — the building blocks for maintainable YAML-based
+  task automation.
+difficulty: advanced
 tags:
-  - taskfile-variables
+  - taskfile
+  - variables
   - dependencies
-  - dynamic-values
-  - preconditions
-  - configuration
+  - docker
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,28 +24,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Task installed
-  - Basic YAML knowledge
 faq:
-  - question: How do Taskfile variables work?
+  - question: "When should I use the Taskfile Variables & Dependencies skill?"
     answer: >-
-      Define variables in the top-level 'vars' section. Static: 'APP_NAME:
-      myapp'. Dynamic: 'VERSION: {sh: git describe --tags}'. Use in tasks with
-      Go template syntax: '{{.VERSION}}'. Override from CLI: 'task build
-      VERSION=1.2.3'.
-  - question: What is the difference between deps and cmds in Taskfile?
+      Master Taskfile variables, dynamic values, task dependencies, and
+      environment configuration — the building blocks for maintainable
+      YAML-based task automation. This skill provides a structured workflow
+      for development tasks.
+  - question: "What tools and setup does Taskfile Variables & Dependencies require?"
     answer: >-
-      deps run in parallel before the task's cmds. Use deps for independent
-      setup tasks (install Go deps + npm deps simultaneously). cmds run
-      sequentially within a task. Use 'task:' in cmds for ordered execution
-      (lint, then test, then build).
-relatedItems:
-  - taskfile-yaml-runner
-  - taskfile-caching
-  - taskfile-includes
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm, Docker, pip/poetry installed. Works with
+      taskfile projects. Review the configuration section for project-specific
+      setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Taskfile Variables & Dependencies

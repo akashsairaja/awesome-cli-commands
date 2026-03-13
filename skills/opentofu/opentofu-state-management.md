@@ -9,12 +9,12 @@ description: >-
   infrastructure state files.
 difficulty: intermediate
 tags:
+  - opentofu
   - state
-  - remote-backend
-  - import
-  - locking
-  - migration
-  - backup
+  - management
+  - security
+  - best-practices
+  - refactoring
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +22,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - OpenTofu CLI installed
-  - Cloud provider credentials
 faq:
-  - question: How do I import existing infrastructure into OpenTofu?
+  - question: "When should I use the OpenTofu State Management skill?"
     answer: >-
-      1) Write the resource block in HCL matching the existing resource. 2) Run
-      tofu import TYPE.NAME CLOUD_ID (e.g., tofu import aws_vpc.main
-      vpc-abc123). 3) Run tofu plan — it should show no changes if config
-      matches. Adjust config until plan is clean.
-  - question: How do I rename a resource without recreating it?
+      Manage OpenTofu state effectively — remote backends, state locking,
+      import existing resources, move and remove state entries, and disaster
+      recovery for infrastructure state files. This skill provides a
+      structured workflow for development tasks.
+  - question: "What tools and setup does OpenTofu State Management require?"
     answer: >-
-      Use a moved block: moved { from = aws_instance.old; to = aws_instance.new
-      }. This is preferred over tofu state mv because it's declarative and
-      version-controlled. Run tofu plan to confirm it shows 'moved' not
-      'destroy/create'.
-  - question: What should I do if OpenTofu state is locked?
-    answer: >-
-      First check if another team member is running a plan/apply. If the lock is
-      stale (crashed process), use tofu force-unlock LOCK_ID. Get the lock ID
-      from the error message. Only force-unlock if you're sure no operation is
-      in progress.
-relatedItems:
-  - opentofu-variables-outputs
-  - opentofu-workspace-envs
-  - opentofu-infra-architect
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Requires Terraform CLI installed. Works with opentofu projects. Review
+      the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # OpenTofu State Management

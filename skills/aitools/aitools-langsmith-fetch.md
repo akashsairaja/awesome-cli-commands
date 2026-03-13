@@ -8,25 +8,24 @@ description: >-
   LangSmith Studio.
 difficulty: advanced
 tags:
+  - aitools
   - langsmith
   - fetch
-  - langsmith-fetch
-  - aitools
+  - performance
+  - debugging
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the langsmith-fetch skill?"
+  - question: "When should I use the Langsmith Fetch skill?"
     answer: >-
       Debug LangChain and LangGraph agents by fetching execution traces from
-      LangSmith Studio. Use when debugging agent behavior, investigating
-      errors, analyzing tool calls, checking memory operations, or examining
-      agent performance. Automatically fetches recent traces and analyzes
-      execution patterns. Requires langsmith-fetch CLI installed.
-  - question: "What tools or setup does langsmith-fetch require?"
+      LangSmith Studio. This skill provides a structured workflow for prompt
+      engineering, RAG pipelines, LLM application development, and AI agent
+      building.
+  - question: "What tools and setup does Langsmith Fetch require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Requires pip/poetry installed. Works with AI & ML Tools projects. Review
+      the configuration section for project-specific setup.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

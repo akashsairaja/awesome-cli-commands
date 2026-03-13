@@ -9,43 +9,30 @@ description: >-
   AI-assisted development.
 difficulty: intermediate
 tags:
+  - claudecode
   - mcp
-  - model-context-protocol
-  - integrations
-  - databases
-  - github
-  - tools
+  - server
+  - integration
+  - api
+  - prompting
+  - best-practices
 compatibility:
   - claude-code
-prerequisites:
-  - Claude Code CLI installed
-  - Node.js (for npx-based MCP servers)
 faq:
-  - question: What is MCP in Claude Code?
+  - question: "When should I use the MCP Server Integration skill?"
     answer: >-
-      MCP (Model Context Protocol) is a standard that lets Claude Code connect
-      to external tools and data sources through MCP servers. These servers
-      expose databases, APIs, file systems, and custom tools that Claude can use
-      directly during development — eliminating the need to copy-paste data into
-      prompts.
-  - question: How do I add an MCP server to Claude Code?
+      Connect Claude Code to external tools and data sources via MCP servers —
+      databases, GitHub, file systems, APIs, and custom integrations for
+      enhanced AI-assisted development. This skill provides a structured
+      workflow for AI-assisted development, code generation, refactoring, and
+      debugging.
+  - question: "What tools and setup does MCP Server Integration require?"
     answer: >-
-      Create a .mcp.json file at your project root (or ~/.claude/.mcp.json for
-      global access). Define each server with a command to start it and any
-      required environment variables. Claude Code automatically discovers and
-      connects to configured MCP servers on startup.
-  - question: Is it safe to use MCP servers with database access?
-    answer: >-
-      Yes, with precautions: use read-only database credentials when possible,
-      limit MCP server permissions to specific schemas or tables, never commit
-      connection strings to version control, and review Claude's proposed
-      database operations before execution.
-relatedItems:
-  - claudecode-claude-md-setup
-  - claudecode-hook-automation
-  - claudecode-project-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Claude Code tooling (Claude Code CLI, CLAUDE.md
+      configuration). Review the setup section in the skill content for
+      specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # MCP Server Integration

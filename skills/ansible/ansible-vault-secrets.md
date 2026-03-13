@@ -7,13 +7,16 @@ description: >-
   Securely manage secrets in Ansible with Vault encryption — encrypt files and
   strings, use vault IDs for multi-environment passwords, and integrate with
   external secret managers.
-difficulty: intermediate
+difficulty: advanced
 tags:
-  - ansible-vault
-  - secrets
-  - encryption
+  - ansible
+  - vault
+  - secret
+  - management
   - security
-  - credential-management
+  - automation
+  - api
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -22,29 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Ansible 2.16+
-  - Basic Ansible playbook knowledge
 faq:
-  - question: What is Ansible Vault and how does it work?
+  - question: "When should I use the Ansible Vault Secret Management skill?"
     answer: >-
-      Ansible Vault encrypts files or individual strings using AES-256.
-      Encrypted content can be stored in Git safely. During playbook execution,
-      you provide the vault password and Ansible decrypts values in memory. It
-      supports multiple passwords via vault IDs for different environments.
-  - question: Should I use Ansible Vault or an external secret manager?
+      Securely manage secrets in Ansible with Vault encryption — encrypt files
+      and strings, use vault IDs for multi-environment passwords, and
+      integrate with external secret managers. It includes practical examples
+      for ansible development.
+  - question: "What tools and setup does Ansible Vault Secret Management require?"
     answer: >-
-      Use Ansible Vault for simple setups with a small team. Use external secret
-      managers (HashiCorp Vault, AWS Secrets Manager, Azure Key Vault) for:
-      centralized secret management across tools, automatic rotation, audit
-      logging, and dynamic credentials. Many teams use both — Ansible Vault for
-      static config, external managers for dynamic secrets.
-relatedItems:
-  - ansible-role-structure
-  - ansible-playbook-architect
-  - ansible-security-auditor
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard ansible tooling (relevant CLI tools and frameworks).
+      No special setup required beyond a working ansible environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Ansible Vault Secret Management

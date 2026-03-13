@@ -2,19 +2,18 @@
 id: go-concurrency-patterns
 stackId: go
 type: skill
-name: Go Concurrency with Goroutines & Channels
+name: >-
+  Go Concurrency with Goroutines & Channels
 description: >-
   Build concurrent Go applications — goroutine lifecycle management, channel
-  patterns (fan-in, fan-out, pipeline), context cancellation, worker pools, and
-  preventing goroutine leaks.
-difficulty: advanced
+  patterns (fan-in, fan-out, pipeline), context cancellation, worker pools,
+  and preventing goroutine leaks.
+difficulty: intermediate
 tags:
+  - go
+  - concurrency
   - goroutines
   - channels
-  - concurrency
-  - worker-pool
-  - context
-  - fan-out
 compatibility:
   - claude-code
   - cursor
@@ -22,39 +21,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-languages:
-  - go
-prerequisites:
-  - Go 1.21+
-  - Understanding of concurrency concepts
 faq:
-  - question: What is a goroutine and how is it different from a thread?
+  - question: "When should I use the Go Concurrency with Goroutines & Channels skill?"
     answer: >-
-      A goroutine is a lightweight thread managed by the Go runtime, not the OS.
-      It starts with ~2KB of stack (vs ~1MB for OS threads) and the Go scheduler
-      multiplexes thousands of goroutines onto a few OS threads. Start a
-      goroutine with the 'go' keyword: go doWork(). They are cheap to create and
-      destroy.
-  - question: How do I prevent goroutine leaks in Go?
+      Build concurrent Go applications — goroutine lifecycle management,
+      channel patterns (fan-in, fan-out, pipeline), context cancellation,
+      worker pools, and preventing goroutine leaks. This skill provides a
+      structured workflow for concurrency patterns, error handling, testing,
+      and microservice development.
+  - question: "What tools and setup does Go Concurrency with Goroutines & Channels require?"
     answer: >-
-      Every goroutine must have a defined exit path. Use context.Context with
-      cancellation, done channels, or channel closure to signal goroutines to
-      stop. Use sync.WaitGroup to wait for completion. Test with
-      runtime.NumGoroutine() to verify goroutines are cleaned up. Always select
-      on ctx.Done() in long-running goroutines.
-  - question: What is the fan-out fan-in pattern in Go?
-    answer: >-
-      Fan-out distributes work from one channel to multiple goroutines for
-      parallel processing. Fan-in merges results from multiple goroutines into a
-      single channel. This pattern maximizes throughput for I/O-bound or
-      CPU-bound work by utilizing multiple cores while keeping the consumer
-      interface simple (one output channel).
-relatedItems:
-  - go-error-handling-patterns
-  - go-testing-patterns
-  - go-interface-design
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires pip/poetry installed. Works with Go projects. No additional
+      configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Go Concurrency with Goroutines & Channels

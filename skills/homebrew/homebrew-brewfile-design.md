@@ -7,13 +7,16 @@ description: >-
   Create comprehensive Brewfiles for reproducible development environments —
   formulae, casks, taps, Mac App Store apps, and VS Code extensions in a
   declarative format.
-difficulty: beginner
+difficulty: intermediate
 tags:
+  - homebrew
   - brewfile
+  - design
   - reproducible
-  - environment-setup
-  - declarative
-  - macos-setup
+  - environments
+  - security
+  - migration
+  - docker
 compatibility:
   - claude-code
   - cursor
@@ -22,35 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Homebrew installed
-  - macOS or Linux
 faq:
-  - question: What is a Brewfile and how do I use it?
+  - question: "When should I use the Brewfile Design for Reproducible Environments skill?"
     answer: >-
-      A Brewfile is a declarative list of Homebrew packages, casks, taps, and
-      Mac App Store apps. Create it manually or generate with 'brew bundle
-      dump'. Install everything with 'brew bundle'. Remove unlisted packages
-      with 'brew bundle cleanup --force'. It's the standard for reproducible
-      macOS environments.
-  - question: How do I generate a Brewfile from my current system?
+      Create comprehensive Brewfiles for reproducible development environments
+      — formulae, casks, taps, Mac App Store apps, and VS Code extensions in a
+      declarative format. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Brewfile Design for Reproducible Environments require?"
     answer: >-
-      Run 'brew bundle dump --file=~/Brewfile --describe --force'. The
-      --describe flag adds comments showing what each formula does. The --force
-      flag overwrites an existing file. Review and organize the output into
-      logical sections before committing to your dotfiles.
-  - question: Can I use a Brewfile on Linux?
-    answer: >-
-      Yes. Homebrew works on Linux, and brew bundle reads Brewfiles. Cask
-      entries are macOS-only and will be skipped on Linux. Formulae work
-      cross-platform. You can use conditional logic or separate Brewfiles for
-      platform-specific packages.
-relatedItems:
-  - homebrew-system-manager
-  - homebrew-service-management
-  - homebrew-maintenance
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker, kubectl, Terraform CLI installed. Works with homebrew
+      projects. Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Brewfile Design for Reproducible Environments

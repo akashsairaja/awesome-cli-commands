@@ -2,19 +2,20 @@
 id: vault-policies-auth
 stackId: vault
 type: skill
-name: Vault Policies & Authentication
+name: >-
+  Vault Policies & Authentication
 description: >-
-  Configure Vault access control — writing ACL policies, setting up auth methods
-  (AppRole, OIDC, Kubernetes), token management, and designing least-privilege
-  access for applications and users.
-difficulty: intermediate
+  Configure Vault access control — writing ACL policies, setting up auth
+  methods (AppRole, OIDC, Kubernetes), token management, and designing
+  least-privilege access for applications and users.
+difficulty: advanced
 tags:
+  - vault
   - policies
   - authentication
-  - approle
-  - oidc
+  - security
+  - automation
   - kubernetes
-  - tokens
 compatibility:
   - claude-code
   - cursor
@@ -22,35 +23,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Vault CLI installed
-  - Vault server running
 faq:
-  - question: How do Vault policies work?
+  - question: "When should I use the Vault Policies & Authentication skill?"
     answer: >-
-      Policies define path-based ACLs with capabilities: create, read, update,
-      delete, list, sudo, deny. Policies are deny-by-default — you must
-      explicitly grant access. Attach policies to tokens via auth methods. Use
-      the most specific path possible: secret/data/myapp/database is better than
-      secret/data/*.
-  - question: How do I authenticate a server application with Vault?
+      Configure Vault access control — writing ACL policies, setting up auth
+      methods (AppRole, OIDC, Kubernetes), token management, and designing
+      least-privilege access for applications and users. This skill provides a
+      structured workflow for development tasks.
+  - question: "What tools and setup does Vault Policies & Authentication require?"
     answer: >-
-      Use AppRole: 1) Create a role with policies. 2) Deploy role-id with the
-      app (not sensitive). 3) Deliver secret-id securely (CI secret, wrapped
-      token). 4) App calls auth/approle/login to get a Vault token. 5) App uses
-      token to read secrets. Token auto-renews or app re-authenticates.
-  - question: What capabilities should I use in Vault policies?
-    answer: >-
-      read: get secret values. list: enumerate paths. create: write new secrets.
-      update: modify existing secrets. delete: remove secrets. sudo: override
-      restrictions. deny: explicit deny (overrides all). Most app policies need
-      only read and list. Only admins need create/update/delete.
-relatedItems:
-  - vault-kv-secrets
-  - vault-dynamic-secrets
-  - vault-secrets-expert
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Works with standard vault tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Vault Policies & Authentication

@@ -9,12 +9,14 @@ description: >-
   specific code constructs.
 difficulty: intermediate
 tags:
+  - ripgrep
   - regex
-  - pcre2
-  - code-patterns
-  - extraction
-  - language-specific
-  - anchors
+  - patterns
+  - code
+  - search
+  - machine-learning
+  - refactoring
+  - code-review
 compatibility:
   - claude-code
   - cursor
@@ -22,31 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - ripgrep installed (with PCRE2 for -P flag)
 faq:
-  - question: When should I use PCRE2 (-P) with ripgrep?
+  - question: "When should I use the Regex Patterns for Code Search skill?"
     answer: >-
-      Only when you need lookahead/lookbehind, backreferences, or other
-      PCRE2-specific features. PCRE2 is slower than ripgrep's default Rust regex
-      engine. For most searches — character classes, quantifiers, alternation,
-      groups — the default engine is sufficient and faster.
-  - question: 'How do I extract just the matched text, not the whole line?'
+      Write effective regex patterns for ripgrep — character classes,
+      quantifiers, anchors, groups, lookaround with PCRE2, and crafting
+      patterns that find specific code constructs. This skill provides a
+      structured workflow for development tasks.
+  - question: "What tools and setup does Regex Patterns for Code Search require?"
     answer: >-
-      Use -o (only-matching): rg -o 'pattern' file. Combine with -N (no line
-      numbers) and --no-filename for clean output. Useful for extraction: rg -oN
-      'from "([^"]+)"' --type ts gives you import paths.
-  - question: How do I find multi-line patterns with ripgrep?
-    answer: >-
-      Use -U (multiline) flag: rg -U 'pattern.*\npattern2' allows matching
-      across line boundaries. Use [\s\S]*? for non-greedy multiline matching. Be
-      careful with unbounded patterns — they can match very large sections.
-relatedItems:
-  - ripgrep-basic-search
-  - ripgrep-replace-refactor
-  - ripgrep-advanced-patterns
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Works with standard ripgrep tooling (relevant CLI tools and frameworks).
+      No special setup required beyond a working ripgrep environment.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Regex Patterns for Code Search

@@ -2,18 +2,21 @@
 id: make-variables-patterns
 stackId: make
 type: skill
-name: Makefile Variables & Pattern Rules
+name: >-
+  Makefile Variables & Pattern Rules
 description: >-
   Master Makefile variables, pattern rules, and functions — environment
   overrides, conditional logic, automatic variables, and DRY patterns for
   maintainable build files.
 difficulty: intermediate
 tags:
-  - makefile-variables
-  - pattern-rules
-  - automatic-variables
-  - functions
-  - dry-patterns
+  - make
+  - makefile
+  - variables
+  - pattern
+  - rules
+  - docker
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,28 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - GNU Make 4.0+
-  - Basic Makefile knowledge
 faq:
-  - question: 'What is the difference between = and := in Makefiles?'
+  - question: "When should I use the Makefile Variables & Pattern Rules skill?"
     answer: >-
-      ':=' (simple/immediate) evaluates the value once at definition time. '='
-      (recursive) evaluates each time the variable is used. Use ':=' for most
-      variables for predictable behavior. Use '=' when you need the value to
-      update dynamically based on other variables that change.
-  - question: How do pattern rules work in Makefiles?
+      Master Makefile variables, pattern rules, and functions — environment
+      overrides, conditional logic, automatic variables, and DRY patterns for
+      maintainable build files. It includes practical examples for make
+      development.
+  - question: "What tools and setup does Makefile Variables & Pattern Rules require?"
     answer: >-
-      Pattern rules use % as a wildcard: 'bin/%: cmd/%/main.go' matches any
-      target like bin/app and maps it to cmd/app/main.go. Use $@ for the target
-      name, $< for the first prerequisite, and $* for the matched stem. They
-      eliminate repetitive target definitions.
-relatedItems:
-  - make-self-documenting
-  - make-build-architect
-  - make-docker-targets
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker, Go toolchain installed. Works with make projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Makefile Variables & Pattern Rules

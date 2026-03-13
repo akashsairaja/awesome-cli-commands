@@ -9,11 +9,13 @@ description: >-
   boundary.
 difficulty: intermediate
 tags:
-  - server-components
-  - react-19
-  - ssr
-  - data-fetching
-  - server-actions
+  - react
+  - server
+  - components
+  - rsc
+  - architecture
+  - api
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -22,38 +24,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - typescript
-  - javascript
-prerequisites:
-  - React 19
-  - Next.js 15 (or React framework with RSC support)
 faq:
-  - question: What are React Server Components?
+  - question: "When should I use the React Server Components (RSC) skill?"
     answer: >-
-      React Server Components (RSC) are components that render exclusively on
-      the server. They produce HTML with zero JavaScript sent to the client, can
-      directly access databases and file systems, and support async/await for
-      data fetching. They are the default component type in Next.js App Router.
-  - question: When should I use 'use client' in React?
+      Master React Server Components in React 19 — server-only rendering, zero
+      client JavaScript, data fetching patterns, and the Server/Client
+      component boundary. This skill provides a structured workflow for
+      component architecture, state management, performance optimization, and
+      UI patterns.
+  - question: "What tools and setup does React Server Components (RSC) require?"
     answer: >-
-      Add 'use client' only when a component needs interactivity: useState,
-      useEffect, event handlers (onClick, onChange), browser APIs (localStorage,
-      window), or third-party client libraries. Keep 'use client' components as
-      small leaf nodes — everything else should remain a Server Component.
-  - question: Can Server Components replace API routes?
-    answer: >-
-      For data fetching, yes — Server Components can directly query databases
-      and call internal APIs without an API route intermediary. For mutations,
-      Server Actions replace API routes. You still need API routes for webhooks,
-      third-party integrations, and endpoints consumed by non-React clients
-      (mobile apps, external services).
-relatedItems:
-  - react-performance-optimization
-  - react-hooks-patterns
-  - react-testing-patterns
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard React tooling (React 19+, JSX/TSX). No special setup
+      required beyond a working React frontend environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # React Server Components (RSC)

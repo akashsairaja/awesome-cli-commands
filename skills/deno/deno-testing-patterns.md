@@ -2,55 +2,39 @@
 id: deno-testing-patterns
 stackId: deno
 type: skill
-name: Deno Built-In Testing & Coverage
+name: >-
+  Deno Built-In Testing & Coverage
 description: >-
   Use Deno's built-in test runner for unit tests, integration tests, and
   coverage reports — zero configuration, built-in assertions, mocking, and
   snapshot testing.
-difficulty: beginner
+difficulty: advanced
 tags:
+  - deno
+  - built-in
   - testing
-  - test-runner
-  - assertions
-  - mocking
   - coverage
+  - api
+  - best-practices
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-languages:
-  - typescript
-  - javascript
-prerequisites:
-  - Deno 2.0+
 faq:
-  - question: Does Deno have a built-in test runner?
+  - question: "When should I use the Deno Built-In Testing & Coverage skill?"
     answer: >-
-      Yes. Deno includes a complete test runner with assertions (@std/assert),
-      mocking (@std/testing/mock), snapshot testing, code coverage, watch mode,
-      and test filtering. No external testing framework is needed. Run tests
-      with 'deno test' and generate coverage reports with 'deno coverage'.
-  - question: How do I mock functions in Deno tests?
+      Use Deno's built-in test runner for unit tests, integration tests, and
+      coverage reports — zero configuration, built-in assertions, mocking, and
+      snapshot testing. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Deno Built-In Testing & Coverage require?"
     answer: >-
-      Use @std/testing/mock which provides spy() for observing calls, stub() for
-      replacing function behavior, and assertSpyCalls() for verifying call
-      counts. Always restore mocks in a finally block to prevent test pollution.
-      The API is similar to sinon.js but built into Deno's standard library.
-  - question: How do I generate test coverage reports in Deno?
-    answer: >-
-      Run 'deno test --coverage=./coverage' to collect coverage data, then 'deno
-      coverage ./coverage' to display a text summary, or 'deno coverage
-      ./coverage --lcov > coverage.lcov' to generate LCOV format for tools like
-      Codecov or Coveralls. Coverage tracking is built-in with no additional
-      packages needed.
-relatedItems:
-  - deno-permissions-security
-  - deno-std-library
-  - deno-deploy-setup
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Jest installed. Works with deno projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Deno Built-In Testing & Coverage

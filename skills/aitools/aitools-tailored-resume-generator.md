@@ -8,24 +8,27 @@ description: >-
   relevant experience, skills, and achievements to maximize interview chances.
 difficulty: intermediate
 tags:
+  - aitools
   - tailored
   - resume
   - generator
-  - tailored-resume-generator
-  - aitools
+  - testing
+  - automation
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the tailored-resume-generator skill?"
+  - question: "When should I use the Tailored Resume Generator skill?"
     answer: >-
       Analyzes job descriptions and generates tailored resumes that highlight
       relevant experience, skills, and achievements to maximize interview
-      chances
-  - question: "What tools or setup does tailored-resume-generator require?"
+      chances. This skill provides a structured workflow for prompt
+      engineering, RAG pipelines, LLM application development, and AI agent
+      building.
+  - question: "What tools and setup does Tailored Resume Generator require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Works with standard AI & ML Tools tooling (LLM APIs, embedding models).
+      No special setup required beyond a working AI/ML development
+      environment.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

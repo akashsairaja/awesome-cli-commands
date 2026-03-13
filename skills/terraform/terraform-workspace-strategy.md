@@ -2,18 +2,20 @@
 id: terraform-workspace-strategy
 stackId: terraform
 type: skill
-name: Terraform Workspace & Environment Strategy
+name: >-
+  Terraform Workspace & Environment Strategy
 description: >-
   Design multi-environment Terraform deployments using workspaces,
   directory-based separation, or Terragrunt — manage dev, staging, and
   production with consistent infrastructure and minimal duplication.
-difficulty: intermediate
+difficulty: advanced
 tags:
-  - workspaces
-  - environments
-  - terragrunt
-  - multi-environment
-  - infrastructure-as-code
+  - terraform
+  - workspace
+  - environment
+  - strategy
+  - ci-cd
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,38 +24,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Terraform 1.6+
-  - Understanding of Terraform modules
-  - Cloud provider account
 faq:
-  - question: What is the best way to manage multiple environments in Terraform?
+  - question: "When should I use the Terraform Workspace & Environment Strategy skill?"
     answer: >-
-      For most teams, use directory-based separation: shared modules in a
-      modules/ directory, per-environment configurations in environments/dev,
-      environments/staging, environments/production. Each environment has its
-      own state file, tfvars, and backend config. This provides clear isolation
-      with good code reuse.
-  - question: Should I use Terraform workspaces for dev/staging/production?
+      Design multi-environment Terraform deployments using workspaces,
+      directory-based separation, or Terragrunt — manage dev, staging, and
+      production with consistent infrastructure and minimal duplication. It
+      includes practical examples for infrastructure as code development.
+  - question: "What tools and setup does Terraform Workspace & Environment Strategy require?"
     answer: >-
-      Workspaces work for simple setups but have limitations: same backend,
-      harder to restrict access per environment, unclear which workspace is
-      active. Directory-based separation is preferred because the file path
-      makes the environment explicit, state is fully isolated, and CI/CD
-      pipelines are clearer.
-  - question: When should I use Terragrunt instead of plain Terraform?
-    answer: >-
-      Terragrunt adds value when you have: many environments across multiple
-      accounts/regions, need to keep configurations DRY across 10+ environments,
-      want to generate backend configs dynamically, or need to orchestrate
-      dependencies between Terraform modules. For small to medium projects,
-      plain Terraform with directories is sufficient.
-relatedItems:
-  - terraform-module-architect
-  - terraform-state-guardian
-  - terraform-naming-conventions
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Terraform CLI installed. Works with Terraform projects. Review
+      the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Terraform Workspace & Environment Strategy

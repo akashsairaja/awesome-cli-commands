@@ -2,18 +2,22 @@
 id: aitools-cursor-rules-setup
 stackId: aitools
 type: skill
-name: Setting Up Cursor Rules & Copilot Instructions
+name: >-
+  Setting Up Cursor Rules & Copilot Instructions
 description: >-
   Configure AI coding tool instruction files across platforms — .cursorrules,
   copilot-instructions.md, .windsurfrules, and AGENTS.md for consistent AI
   behavior in your project.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - cursorrules
-  - copilot-instructions
-  - windsurfrules
-  - ai-configuration
-  - multi-tool
+  - aitools
+  - setting
+  - cursor
+  - rules
+  - copilot
+  - instructions
+  - api
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,33 +26,21 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - At least one AI coding tool installed
-  - A project with established coding conventions
 faq:
-  - question: Which AI coding tool instruction file should I create first?
+  - question: "When should I use the Setting Up Cursor Rules & Copilot Instructions skill?"
     answer: >-
-      Start with the tool your team uses most. Create thorough instructions for
-      that tool, test them, then adapt the same rules for other tools. Most
-      rules translate directly — the main difference is file name and location.
-  - question: How do I keep multiple AI tool instruction files in sync?
+      Configure AI coding tool instruction files across platforms —
+      .cursorrules, copilot-instructions.md, .windsurfrules, and AGENTS.md for
+      consistent AI behavior in your project. This skill provides a structured
+      workflow for prompt engineering, RAG pipelines, LLM application
+      development, and AI agent building.
+  - question: "What tools and setup does Setting Up Cursor Rules & Copilot Instructions require?"
     answer: >-
-      Maintain a single source of truth (e.g., CLAUDE.md or a conventions
-      document) and derive other tool files from it. Consider creating a script
-      that generates tool-specific files from a shared template. Update all
-      files whenever conventions change.
-  - question: Do AI tool instruction files affect all team members?
-    answer: >-
-      Yes, when committed to version control. Any developer who clones the repo
-      and uses the corresponding AI tool will automatically get the
-      project-specific instructions. This is the primary benefit — team-wide AI
-      consistency without per-developer setup.
-relatedItems:
-  - aitools-system-prompt-design
-  - aitools-prompt-engineer
-  - claudecode-claude-md-setup
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard AI & ML Tools tooling (LLM APIs, embedding models).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Setting Up Cursor Rules & Copilot Instructions

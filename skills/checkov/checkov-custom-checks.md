@@ -7,13 +7,14 @@ description: >-
   Create custom Checkov checks in Python and YAML for organization-specific
   security standards — attribute validation, resource relationship rules, and
   naming conventions.
-difficulty: advanced
+difficulty: intermediate
 tags:
-  - custom-checks
-  - python
-  - yaml
-  - policy-as-code
   - checkov
+  - writing
+  - custom
+  - policies
+  - security
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -21,36 +22,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Checkov installed
-  - Python 3.8+ (for Python checks)
-  - Terraform or CloudFormation templates
 faq:
-  - question: How do I write a custom Checkov check?
+  - question: "When should I use the Writing Custom Checkov Policies skill?"
     answer: >-
-      For simple attribute checks, use YAML definition files with metadata (id,
-      name, category) and conditions (attribute exists, equals value). For
-      complex logic, write a Python class extending BaseResourceCheck with a
-      scan_resource_conf method. Place in a directory and pass
-      --external-checks-dir to Checkov.
-  - question: Should I use YAML or Python for custom Checkov checks?
+      Create custom Checkov checks in Python and YAML for
+      organization-specific security standards — attribute validation,
+      resource relationship rules, and naming conventions. It includes
+      practical examples for checkov development.
+  - question: "What tools and setup does Writing Custom Checkov Policies require?"
     answer: >-
-      Use YAML for simple attribute validation (field exists, equals value,
-      matches pattern). Use Python when you need complex logic — regex matching,
-      cross-resource validation, conditional checks based on multiple
-      attributes. YAML is faster to write; Python is more flexible.
-  - question: How do I test custom Checkov checks?
-    answer: >-
-      Create test Terraform files with both compliant and non-compliant
-      configurations. Run Checkov against them with --external-checks-dir and
-      verify the expected pass/fail results. Automate this in your CI pipeline
-      to prevent regressions in custom checks.
-relatedItems:
-  - checkov-terraform-scanning
-  - checkov-ci-integration
-  - checkov-policy-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Terraform CLI installed. Works with checkov projects. Review
+      the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Writing Custom Checkov Policies

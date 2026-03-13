@@ -4,17 +4,19 @@ stackId: trivy
 type: skill
 name: Infrastructure as Code Security Scanning
 description: >-
-  Scan Terraform, CloudFormation, Kubernetes YAML, and Dockerfiles for security
-  misconfigurations with Trivy — detect exposed ports, missing encryption,
-  overly permissive IAM policies, and compliance violations.
-difficulty: intermediate
+  Scan Terraform, CloudFormation, Kubernetes YAML, and Dockerfiles for
+  security misconfigurations with Trivy — detect exposed ports, missing
+  encryption, overly permissive IAM policies, and compliance violations.
+difficulty: advanced
 tags:
-  - iac-scanning
-  - terraform
-  - kubernetes
-  - misconfiguration
   - trivy
-  - cloud-security
+  - infrastructure
+  - code
+  - security
+  - scanning
+  - deployment
+  - docker
+  - kubernetes
 compatibility:
   - claude-code
   - cursor
@@ -22,35 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Trivy installed
-  - 'IaC templates (Terraform, K8s, CloudFormation)'
 faq:
-  - question: What IaC formats can Trivy scan?
+  - question: "When should I use the Infrastructure as Code Security Scanning skill?"
     answer: >-
-      Trivy scans Terraform (.tf), CloudFormation (JSON/YAML), Kubernetes
-      manifests (YAML), Dockerfiles, Helm charts (rendered), and Azure ARM
-      templates. It detects security misconfigurations like unencrypted storage,
-      overly permissive access, and missing security controls.
-  - question: How is Trivy IaC scanning different from Checkov?
+      Scan Terraform, CloudFormation, Kubernetes YAML, and Dockerfiles for
+      security misconfigurations with Trivy — detect exposed ports, missing
+      encryption, overly permissive IAM policies, and compliance violations.
+      It includes practical examples for security scanning development.
+  - question: "What tools and setup does Infrastructure as Code Security Scanning require?"
     answer: >-
-      Both scan IaC for misconfigurations. Trivy is a unified scanner
-      (containers + IaC + SBOM) with simpler setup. Checkov specializes in IaC
-      with more policies (1000+), custom check support in Python, and deeper
-      compliance framework mapping. Use Trivy for unified scanning, Checkov for
-      deep IaC-specific coverage.
-  - question: Can Trivy scan Helm charts for misconfigurations?
-    answer: >-
-      Yes, but render them first. Run 'helm template my-release ./chart | trivy
-      config -' to scan the rendered Kubernetes manifests. Direct Helm chart
-      scanning with values resolution is supported via 'trivy config' on the
-      chart directory.
-relatedItems:
-  - trivy-container-scanning
-  - trivy-ci-pipeline
-  - trivy-vulnerability-advisor
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker, Terraform CLI, pip/poetry installed. Works with Trivy
+      projects. Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Infrastructure as Code Security Scanning

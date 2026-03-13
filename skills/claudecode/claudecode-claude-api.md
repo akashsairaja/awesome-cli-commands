@@ -3,28 +3,31 @@ id: claudecode-claude-api
 stackId: claudecode
 type: skill
 name: Claude API
-description: Build apps with the Claude API or Anthropic SDK.
-difficulty: advanced
+description: >-
+  This skill helps you build LLM-powered applications with Claude. Choose the
+  right surface based on your needs, detect the project language, then read
+  the relevant language-specific documentation.
+difficulty: intermediate
 tags:
+  - claudecode
   - claude
   - api
-  - claude-api
-  - claudecode
+  - machine-learning
+  - llm
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the claude-api skill?"
+  - question: "When should I use the Claude API skill?"
     answer: >-
-      Build apps with the Claude API or Anthropic SDK. TRIGGER when: code
-      imports `anthropic`/`@anthropic-ai/sdk`/`claude_agent_sdk`, or user asks
-      to use Claude API, Anthropic SDKs, or Agent SDK. DO NOT TRIGGER when:
-      code imports `openai`/other AI SDK, general programming, or
-      ML/data-science tasks.
-  - question: "What tools or setup does claude-api require?"
+      This skill helps you build LLM-powered applications with Claude. Choose
+      the right surface based on your needs, detect the project language, then
+      read the relevant language-specific documentation. This skill provides a
+      structured workflow for AI-assisted development, code generation,
+      refactoring, and debugging.
+  - question: "What tools and setup does Claude API require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Requires pip/poetry installed. Works with Claude Code projects. Review
+      the configuration section for project-specific setup.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

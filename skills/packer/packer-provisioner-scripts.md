@@ -9,12 +9,12 @@ description: >-
   for production deployment.
 difficulty: intermediate
 tags:
+  - packer
   - shell
-  - provisioners
-  - scripts
-  - cleanup
-  - idempotent
-  - installation
+  - provisioner
+  - patterns
+  - security
+  - debugging
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +22,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Packer CLI installed
-  - Bash scripting knowledge
 faq:
-  - question: Why does my Packer shell provisioner fail with apt-get?
+  - question: "When should I use the Packer Shell Provisioner Patterns skill?"
     answer: >-
-      Most likely cloud-init is still running and holds the apt lock. Add
-      'cloud-init status --wait || true' before apt commands. Also set
-      DEBIAN_FRONTEND=noninteractive and use -y flag. Check for missing sudo
-      (provisioner runs as non-root by default).
-  - question: What should I clean up in a Packer image?
+      Write effective Packer shell provisioners — idempotent scripts,
+      environment variables, error handling, multi-step installations, and
+      cleaning up images for production deployment. This skill provides a
+      structured workflow for development tasks.
+  - question: "What tools and setup does Packer Shell Provisioner Patterns require?"
     answer: >-
-      Essential cleanup: apt cache (apt-get clean), SSH host keys (regenerated
-      on boot), authorized_keys, shell history, temp files, log files. Optional:
-      zero free space with dd (smaller image). Never leave secrets, API tokens,
-      or build credentials in the image.
-  - question: How do I make Packer shell scripts idempotent?
-    answer: >-
-      Check before acting: [ -f /etc/app.conf ] || create_config. Use package
-      manager's built-in idempotency (apt install is already idempotent). Use
-      systemctl enable (idempotent) over manual init.d scripts. Test by running
-      the build twice — second run should succeed without changes.
-relatedItems:
-  - packer-hcl2-templates
-  - packer-cicd-pipeline
-  - packer-provisioner-chains
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Requires pip/poetry installed. Works with packer projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Packer Shell Provisioner Patterns

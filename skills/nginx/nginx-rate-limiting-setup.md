@@ -9,10 +9,13 @@ description: >-
 difficulty: intermediate
 tags:
   - nginx
-  - rate-limiting
-  - security
-  - ddos
-  - api-protection
+  - implement
+  - rate
+  - limiting
+  - monitoring
+  - api
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -20,28 +23,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Nginx installed
-  - Understanding of expected traffic patterns
 faq:
-  - question: How does Nginx rate limiting work?
+  - question: "When should I use the Implement Rate Limiting in Nginx skill?"
     answer: >-
-      Nginx uses the leaky bucket algorithm. You define a rate (e.g., 10r/s) and
-      a zone (memory area tracking client IPs). Requests within the rate pass
-      through. Excess requests either queue (up to burst limit) or are rejected
-      with 429 status. Each zone tracks clients independently.
-  - question: What is the difference between burst with nodelay vs delay in Nginx?
+      Configure Nginx rate limiting — per-IP request limits, burst handling,
+      zone configuration, and different limits for API endpoints vs static
+      content. This skill provides a structured workflow for development
+      tasks.
+  - question: "What tools and setup does Implement Rate Limiting in Nginx require?"
     answer: >-
-      With nodelay, burst requests are processed immediately — if 20 requests
-      arrive at once and burst=20, all 20 are served instantly. With delay=10,
-      the first 10 are served immediately, and the remaining 10 are queued and
-      released at the configured rate. Nodelay is better for APIs, delay for web
-      pages.
-relatedItems:
-  - nginx-security-hardening
-  - nginx-reverse-proxy-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard nginx tooling (relevant CLI tools and frameworks).
+      No special setup required beyond a working nginx environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Implement Rate Limiting in Nginx

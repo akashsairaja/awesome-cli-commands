@@ -9,11 +9,12 @@ description: >-
   missing logging.
 difficulty: beginner
 tags:
-  - terraform
-  - iac-scanning
-  - aws
-  - security-checks
   - checkov
+  - terraform
+  - security
+  - scanning
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,36 +23,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Checkov installed (pip install checkov)
-  - Terraform configuration files
 faq:
-  - question: How do I scan Terraform with Checkov?
+  - question: "When should I use the Terraform Security Scanning with Checkov skill?"
     answer: >-
-      Run 'checkov -d ./terraform/' to scan all .tf files in a directory.
-      Checkov checks for 750+ security misconfigurations including unencrypted
-      storage, public access, missing logging, and overly permissive IAM. Use
-      '--check CKV_ID' to run specific checks or '--skip-check' to exclude them.
-  - question: >-
-      How do I handle existing Terraform infrastructure with many Checkov
-      findings?
+      Scan Terraform configurations for security misconfigurations with
+      Checkov — detect unencrypted resources, overly permissive IAM, public
+      access, and missing logging. This skill provides a structured workflow
+      for development tasks.
+  - question: "What tools and setup does Terraform Security Scanning with Checkov require?"
     answer: >-
-      Use '--create-baseline' to snapshot current findings, then '--baseline
-      .checkov.baseline' on future scans. This reports only NEW findings,
-      letting you adopt Checkov incrementally without blocking all PRs. Fix
-      baseline findings over time.
-  - question: Does Checkov scan Terraform modules?
-    answer: >-
-      Yes. Use '--download-external-modules true' to scan external modules
-      referenced in your Terraform code. Without this flag, Checkov only scans
-      the root module. Module scanning catches misconfigurations in shared
-      infrastructure code that might be reused across projects.
-relatedItems:
-  - checkov-custom-checks
-  - checkov-ci-integration
-  - checkov-policy-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Terraform CLI, Azure CLI installed. Works with checkov
+      projects. Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Terraform Security Scanning with Checkov

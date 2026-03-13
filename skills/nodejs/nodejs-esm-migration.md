@@ -9,11 +9,11 @@ description: >-
   cases and dependencies.
 difficulty: intermediate
 tags:
+  - nodejs
+  - migrating
   - esm
   - modules
-  - migration
-  - commonjs
-  - import-export
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,38 +22,21 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - javascript
-  - typescript
-prerequisites:
-  - Node.js 20+
-  - Existing CommonJS project
 faq:
-  - question: How do I migrate Node.js from CommonJS to ESM?
+  - question: "When should I use the Migrating Node.js to ESM Modules skill?"
     answer: >-
-      Add 'type': 'module' to package.json, replace require() with import
-      statements, replace module.exports with export, add .js extensions to
-      relative imports, replace __dirname with import.meta.dirname (Node 21.2+)
-      or fileURLToPath(import.meta.url), and use 'with { type: "json" }' for
-      JSON imports.
-  - question: Can I mix CommonJS and ESM in the same Node.js project?
+      Step-by-step guide to migrating a Node.js project from CommonJS
+      require() to ECMAScript Modules (ESM) with import/export syntax,
+      including handling edge cases and dependencies. This skill provides a
+      structured workflow for server-side architecture, error handling, stream
+      processing, and API development.
+  - question: "What tools and setup does Migrating Node.js to ESM Modules require?"
     answer: >-
-      Yes. With 'type': 'module' in package.json, .js files are ESM and .cjs
-      files are CommonJS. ESM files can import CommonJS modules, but CommonJS
-      files cannot require() ESM modules (use dynamic import() instead). During
-      migration, convert files incrementally.
-  - question: Why do ESM imports require file extensions in Node.js?
-    answer: >-
-      Node.js ESM follows the browser module resolution standard, which requires
-      explicit file extensions. This eliminates ambiguity (is 'utils' a file or
-      directory?), enables static analysis, and matches how browsers resolve
-      modules. Always include .js, .mjs, or .cjs in relative import paths.
-relatedItems:
-  - nodejs-error-handling-patterns
-  - nodejs-stream-processing
-  - typescript-strict-config
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Node.js tooling (Node.js runtime, npm/yarn/pnpm).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Migrating Node.js to ESM Modules

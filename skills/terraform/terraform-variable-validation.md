@@ -2,18 +2,21 @@
 id: terraform-variable-validation
 stackId: terraform
 type: skill
-name: Terraform Variable Validation & Type Constraints
+name: >-
+  Terraform Variable Validation & Type Constraints
 description: >-
   Implement robust input validation in Terraform with custom validation rules,
   complex type constraints, nullable variables, and default value patterns for
   fail-fast infrastructure code.
-difficulty: intermediate
+difficulty: beginner
 tags:
-  - variable-validation
-  - type-constraints
-  - input-validation
-  - hcl
-  - fail-fast
+  - terraform
+  - variable
+  - validation
+  - type
+  - constraints
+  - deployment
+  - monitoring
 compatibility:
   - claude-code
   - cursor
@@ -22,27 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Terraform 1.6+
-  - Basic HCL syntax
 faq:
-  - question: How do Terraform variable validations work?
+  - question: "When should I use the Terraform Variable Validation & Type Constraints skill?"
     answer: >-
-      Variable validation blocks define custom conditions that are checked
-      during 'terraform plan' before any resources are created. If a condition
-      evaluates to false, Terraform displays the custom error_message and stops.
-      You can have multiple validation blocks per variable for different rules.
-  - question: What is the optional() function in Terraform variable types?
+      Implement robust input validation in Terraform with custom validation
+      rules, complex type constraints, nullable variables, and default value
+      patterns for fail-fast infrastructure code. It includes practical
+      examples for infrastructure as code development.
+  - question: "What tools and setup does Terraform Variable Validation & Type Constraints require?"
     answer: >-
-      The optional() function (Terraform 1.3+) makes object attributes optional
-      with an optional default value. For example, 'optional(number, 7)' means
-      the attribute can be omitted and will default to 7. This is ideal for
-      configuration objects where most settings have sensible defaults.
-relatedItems:
-  - terraform-module-architect
-  - terraform-naming-conventions
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Terraform CLI, Azure CLI installed. Works with Terraform
+      projects. Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Terraform Variable Validation & Type Constraints

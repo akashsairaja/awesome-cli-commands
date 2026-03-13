@@ -10,10 +10,13 @@ description: >-
 difficulty: intermediate
 tags:
   - tailscale
-  - subnet-routing
-  - exit-nodes
-  - vpc
-  - networking
+  - set
+  - subnet
+  - routing
+  - exit
+  - nodes
+  - security
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,28 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Tailscale installed on router device
-  - Admin access for route approval
-  - IP forwarding enabled on router device
 faq:
-  - question: What is a Tailscale subnet router?
+  - question: "When should I use the Set Up Tailscale Subnet Routing and Exit Nodes skill?"
     answer: >-
-      A subnet router is a Tailscale device that provides access to an entire
-      private network. Instead of installing Tailscale on every device in your
-      AWS VPC or office LAN, you install it on one device and advertise the
-      subnet. All Tailscale clients can then reach any device on that subnet.
-  - question: What is the difference between a subnet router and an exit node?
+      Configure Tailscale subnet routers to access private networks and exit
+      nodes for secure internet access — AWS VPC access, office network
+      routing, and remote work security. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Set Up Tailscale Subnet Routing and Exit Nodes require?"
     answer: >-
-      A subnet router provides access to a specific private network (e.g.,
-      10.0.0.0/16). An exit node routes ALL internet traffic through itself. Use
-      subnet routers for accessing internal resources, exit nodes for securing
-      all browsing traffic or accessing region-restricted content.
-relatedItems:
-  - tailscale-network-architect
-  - tailscale-acl-design
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires psql installed. Works with tailscale projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Set Up Tailscale Subnet Routing and Exit Nodes

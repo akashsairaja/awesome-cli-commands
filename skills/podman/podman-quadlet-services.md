@@ -9,11 +9,14 @@ description: >-
   configuration.
 difficulty: intermediate
 tags:
+  - podman
+  - create
+  - systemd
+  - services
   - quadlet
-  - systemd-containers
-  - podman-services
-  - auto-update
-  - pod-management
+  - docker
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,30 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Podman 4.4+
-  - systemd-based Linux
-  - Rootless Podman configured
 faq:
-  - question: What is the difference between Quadlet and podman generate systemd?
+  - question: "When should I use the Create Systemd Services with Podman Quadlet skill?"
     answer: >-
-      Quadlet uses simple declarative .container files that systemd's generator
-      converts to units on daemon-reload. 'podman generate systemd' creates
-      static unit files that become outdated as Podman evolves. Quadlet is the
-      recommended approach starting with Podman 4.4 and 'podman generate
-      systemd' is deprecated.
-  - question: How do Quadlet auto-updates work?
+      Build production-ready container services using Podman Quadlet —
+      declarative .container files, pod grouping, volume management, and
+      auto-update configuration. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Create Systemd Services with Podman Quadlet require?"
     answer: >-
-      Add Label=io.containers.autoupdate=registry to your .container file and
-      enable the podman-auto-update.timer. Podman periodically checks if a newer
-      image exists in the registry. If found, it pulls the new image, stops the
-      container, and restarts it with the updated image.
-relatedItems:
-  - podman-rootless-setup
-  - podman-compose-migration
-  - podman-quadlet-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker installed. Works with podman projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Create Systemd Services with Podman Quadlet

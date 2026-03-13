@@ -4,44 +4,39 @@ stackId: grafana
 type: skill
 name: Implement Grafana Dashboard-as-Code
 description: >-
-  Set up Grafana provisioning — dashboard JSON files, data source configuration,
-  alert rules as code, and automated deployment for consistent monitoring across
-  environments.
-difficulty: advanced
+  Set up Grafana provisioning — dashboard JSON files, data source
+  configuration, alert rules as code, and automated deployment for consistent
+  monitoring across environments.
+difficulty: intermediate
 tags:
   - grafana
-  - provisioning
-  - infrastructure-as-code
-  - dashboards
-  - automation
+  - implement
+  - dashboard-as-code
+  - deployment
+  - monitoring
+  - api
+  - ci-cd
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-prerequisites:
-  - Grafana instance with admin access
-  - File system or API access to Grafana
 faq:
-  - question: What is Grafana dashboard provisioning?
+  - question: "When should I use the Implement Grafana Dashboard-as-Code skill?"
     answer: >-
-      Provisioning lets you manage Grafana dashboards, data sources, and alert
-      rules as files. Place JSON dashboard files and YAML configuration in the
-      provisioning directory, and Grafana loads them automatically on startup.
-      This enables version control and consistent deployment across
-      environments.
-  - question: Should I use file provisioning or the Grafana API?
+      Set up Grafana provisioning — dashboard JSON files, data source
+      configuration, alert rules as code, and automated deployment for
+      consistent monitoring across environments. This skill provides a
+      structured workflow for dashboard creation, alerting, PromQL queries,
+      and monitoring setup.
+  - question: "What tools and setup does Implement Grafana Dashboard-as-Code require?"
     answer: >-
-      Use file provisioning for infrastructure-as-code (dashboards bundled with
-      Grafana deployment). Use the HTTP API for CI/CD pipelines that deploy
-      dashboards independently. Both approaches enable version control — file
-      provisioning is simpler, API is more flexible for dynamic environments.
-relatedItems:
-  - grafana-dashboard-architect
-  - grafana-alerting-setup
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Grafana tooling (Grafana CLI, Grafana API). Review
+      the setup section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Implement Grafana Dashboard-as-Code

@@ -4,16 +4,19 @@ stackId: github
 type: skill
 name: Build a Production CI/CD Pipeline with GitHub Actions
 description: >-
-  Create a complete CI/CD pipeline with GitHub Actions — lint, test, build, and
-  deploy with caching, matrix builds, environment protection rules, and reusable
-  workflows.
-difficulty: intermediate
+  Create a complete CI/CD pipeline with GitHub Actions — lint, test, build,
+  and deploy with caching, matrix builds, environment protection rules, and
+  reusable workflows.
+difficulty: beginner
 tags:
-  - github-actions
-  - ci-cd
+  - github
+  - build
+  - production
+  - cicd
   - pipeline
+  - actions
+  - testing
   - deployment
-  - reusable-workflows
 compatibility:
   - claude-code
   - cursor
@@ -22,36 +25,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - GitHub repository
-  - Node.js project (examples use npm)
-  - Basic YAML knowledge
 faq:
-  - question: How do I set up a CI/CD pipeline with GitHub Actions?
+  - question: "When should I use the Build a Production CI/CD Pipeline with GitHub Actions skill?"
     answer: >-
-      Create a .github/workflows/ci.yml file that triggers on push and
-      pull_request events. Define jobs for linting, testing, building, and
-      deploying. Use concurrency groups for efficiency, cache dependencies, and
-      add environment protection rules for production deployments.
-  - question: What are reusable workflows in GitHub Actions?
+      Create a complete CI/CD pipeline with GitHub Actions — lint, test,
+      build, and deploy with caching, matrix builds, environment protection
+      rules, and reusable workflows. This skill provides a structured workflow
+      for CI/CD workflows, PR automation, issue management, and repository
+      configuration.
+  - question: "What tools and setup does Build a Production CI/CD Pipeline with GitHub Actions require?"
     answer: >-
-      Reusable workflows use the workflow_call trigger to create shared CI/CD
-      templates. Other workflows call them with 'uses:
-      org/repo/.github/workflows/reusable.yml@main'. They accept inputs and
-      secrets, eliminating duplication across multiple repositories.
-  - question: How do I reduce GitHub Actions minutes usage?
-    answer: >-
-      Four key strategies: (1) Cache dependencies with actions/cache or built-in
-      package manager caching. (2) Use concurrency groups with
-      cancel-in-progress to stop superseded runs. (3) Split fast checks (lint)
-      from slow checks (e2e) so PRs fail fast. (4) Use path filters to skip
-      irrelevant workflows.
-relatedItems:
-  - github-actions-architect
-  - github-codeowners-setup
-  - github-dependabot-config
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm, pip/poetry installed. Works with GitHub
+      projects. Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Build a Production CI/CD Pipeline with GitHub Actions

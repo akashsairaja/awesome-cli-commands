@@ -7,14 +7,16 @@ description: >-
   Integrate Ollama's REST API into your applications — chat completions,
   streaming responses, embeddings, and model management endpoints for building
   local AI-powered features.
-difficulty: intermediate
+difficulty: beginner
 tags:
+  - ollama
+  - rest
   - api
-  - rest-api
   - integration
-  - streaming
-  - embeddings
-  - localhost
+  - prompting
+  - rag
+  - llm
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +24,19 @@ compatibility:
   - codex
   - windsurf
   - aider
-prerequisites:
-  - Ollama installed and running
-  - At least one model pulled
 faq:
-  - question: What is the Ollama REST API?
+  - question: "When should I use the Ollama REST API Integration skill?"
     answer: >-
-      Ollama runs a REST API on localhost:11434 that provides chat completions,
-      text generation, embeddings, and model management. It's compatible with
-      the OpenAI API format, making it a drop-in replacement for cloud APIs in
-      local development.
-  - question: How do I stream responses from Ollama?
+      Integrate Ollama's REST API into your applications — chat completions,
+      streaming responses, embeddings, and model management endpoints for
+      building local AI-powered features. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Ollama REST API Integration require?"
     answer: >-
-      Set 'stream': true in your request body. The response will be a stream of
-      JSON objects, each containing a chunk of the generated text in
-      message.content. Read the stream with a reader and decode each chunk as it
-      arrives.
-  - question: Can I use Ollama as a drop-in replacement for OpenAI?
-    answer: >-
-      Yes. Ollama supports the OpenAI-compatible API at
-      http://localhost:11434/v1/. Most libraries that work with OpenAI
-      (openai-python, langchain, etc.) can point to Ollama by changing the base
-      URL and using any string as the API key.
-relatedItems:
-  - ollama-model-management
-  - ollama-embedding-setup
-  - ollama-gpu-optimization
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard ollama tooling (relevant CLI tools and frameworks).
+      No special setup required beyond a working ollama environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Ollama REST API Integration

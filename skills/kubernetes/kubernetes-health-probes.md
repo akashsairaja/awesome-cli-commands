@@ -5,15 +5,17 @@ type: skill
 name: Kubernetes Health Probes Configuration
 description: >-
   Configure liveness, readiness, and startup probes to ensure Kubernetes
-  automatically detects and recovers from application failures, manages traffic
-  routing, and handles slow-starting containers.
-difficulty: beginner
+  automatically detects and recovers from application failures, manages
+  traffic routing, and handles slow-starting containers.
+difficulty: advanced
 tags:
-  - health-probes
-  - liveness
-  - readiness
-  - startup-probe
-  - self-healing
+  - kubernetes
+  - health
+  - probes
+  - configuration
+  - deployment
+  - api
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -22,37 +24,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Kubernetes 1.28+
-  - Basic Deployment knowledge
 faq:
-  - question: >-
-      What is the difference between liveness and readiness probes in
-      Kubernetes?
+  - question: "When should I use the Kubernetes Health Probes Configuration skill?"
     answer: >-
-      Liveness probe answers 'is the container alive?' — failure triggers a
-      container restart. Readiness probe answers 'can this container serve
-      traffic?' — failure removes the pod from Service endpoints (load
-      balancer). A container can be alive but not ready (e.g., during warmup or
-      when a dependency is down).
-  - question: When should I use a Kubernetes startup probe?
+      Configure liveness, readiness, and startup probes to ensure Kubernetes
+      automatically detects and recovers from application failures, manages
+      traffic routing, and handles slow-starting containers. It includes
+      practical examples for Kubernetes cluster development.
+  - question: "What tools and setup does Kubernetes Health Probes Configuration require?"
     answer: >-
-      Use a startup probe for containers that take more than 10-15 seconds to
-      initialize (e.g., JVM warmup, loading ML models, database migrations). The
-      startup probe disables liveness and readiness probes until the container
-      is fully started, preventing premature restarts.
-  - question: Why should liveness probes not check external dependencies?
-    answer: >-
-      If a liveness probe checks the database and the database goes down
-      temporarily, Kubernetes restarts ALL pods, creating a cascading failure
-      when the database recovers. Liveness should only verify the container
-      process is healthy. Use readiness probes to check external dependencies.
-relatedItems:
-  - kubernetes-resource-management
-  - kubernetes-pod-security
-  - docker-health-checks
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Kubernetes tooling (kubectl, Helm). Review the setup
+      section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Kubernetes Health Probes Configuration

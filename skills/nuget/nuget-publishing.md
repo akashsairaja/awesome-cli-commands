@@ -4,17 +4,19 @@ stackId: nuget
 type: skill
 name: Publishing NuGet Packages
 description: >-
-  Create and publish NuGet packages — .csproj metadata, pack, push to nuget.org
-  or private feeds, versioning with SemVer, symbols, and CI/CD publishing
-  pipelines.
+  Create and publish NuGet packages — .csproj metadata, pack, push to
+  nuget.org or private feeds, versioning with SemVer, symbols, and CI/CD
+  publishing pipelines.
 difficulty: intermediate
 tags:
+  - nuget
   - publishing
-  - pack
-  - push
-  - semver
-  - nuget-org
+  - packages
+  - debugging
+  - api
   - ci-cd
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,37 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-languages:
-  - csharp
-  - fsharp
-prerequisites:
-  - .NET SDK installed
-  - NuGet API key (for nuget.org)
 faq:
-  - question: How do I publish a package to nuget.org?
+  - question: "When should I use the Publishing NuGet Packages skill?"
     answer: >-
-      1) Configure metadata in .csproj (PackageId, Version, etc). 2) Pack:
-      dotnet pack --configuration Release. 3) Push: dotnet nuget push pkg.nupkg
-      --api-key KEY --source https://api.nuget.org/v3/index.json. Get API key
-      from nuget.org/account/apikeys.
-  - question: How do I version NuGet packages correctly?
+      Create and publish NuGet packages — .csproj metadata, pack, push to
+      nuget.org or private feeds, versioning with SemVer, symbols, and CI/CD
+      publishing pipelines. This skill provides a structured workflow for
+      package management, ASP.NET patterns, and .NET application development.
+  - question: "What tools and setup does Publishing NuGet Packages require?"
     answer: >-
-      Follow SemVer: MAJOR for breaking changes, MINOR for new features, PATCH
-      for bug fixes. Set in .csproj <Version>1.2.3</Version> or pass at pack
-      time: dotnet pack /p:Version=1.2.3. Use prerelease suffixes for beta:
-      1.2.3-beta.1.
-  - question: How do I include a README in my NuGet package?
-    answer: >-
-      Add <PackageReadmeFile>README.md</PackageReadmeFile> to PropertyGroup. Add
-      <None Include='README.md' Pack='true' PackagePath='/' /> to ItemGroup. The
-      README displays on nuget.org package page. Keep it concise with install
-      instructions and basic usage examples.
-relatedItems:
-  - nuget-package-management
-  - nuget-version-strategy
-  - nuget-csproj-management
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Requires pip/poetry installed. Works with NuGet/.NET projects. Review
+      the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Publishing NuGet Packages

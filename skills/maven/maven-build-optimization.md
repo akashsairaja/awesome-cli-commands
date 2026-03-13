@@ -4,15 +4,19 @@ stackId: maven
 type: skill
 name: Optimize Maven Build Performance
 description: >-
-  Speed up Maven builds with parallel execution, dependency caching, incremental
-  compilation, profile-based test skipping, and CI-specific optimizations.
+  Speed up Maven builds with parallel execution, dependency caching,
+  incremental compilation, profile-based test skipping, and CI-specific
+  optimizations.
 difficulty: intermediate
 tags:
-  - build-performance
-  - parallel-builds
-  - maven-daemon
-  - caching
-  - ci-optimization
+  - maven
+  - optimize
+  - build
+  - performance
+  - optimization
+  - api
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,28 +25,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Maven 3.9+ project
-  - Multi-module project (for parallel build benefits)
 faq:
-  - question: How can I make Maven builds faster?
+  - question: "When should I use the Optimize Maven Build Performance skill?"
     answer: >-
-      Four key optimizations: (1) Use Maven Daemon (mvnd) for 2-10x speedup from
-      JVM reuse. (2) Enable parallel builds with -T 1C. (3) Cache
-      ~/.m2/repository in CI. (4) Use -pl and -am to build only changed modules.
-      Combined, these can reduce build time by 50-80%.
-  - question: What is Maven Daemon (mvnd)?
+      Speed up Maven builds with parallel execution, dependency caching,
+      incremental compilation, profile-based test skipping, and CI-specific
+      optimizations. This skill provides a structured workflow for development
+      tasks.
+  - question: "What tools and setup does Optimize Maven Build Performance require?"
     answer: >-
-      Maven Daemon (mvnd) keeps a JVM running between builds, eliminating
-      startup time and leveraging JIT compilation. It is a drop-in replacement
-      for mvn with the same flags and behavior but 2-10x faster, especially for
-      repeated builds during development.
-relatedItems:
-  - maven-multi-module-setup
-  - maven-project-architect
-  - maven-release-pipeline
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard maven tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Optimize Maven Build Performance

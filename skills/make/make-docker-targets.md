@@ -2,18 +2,22 @@
 id: make-docker-targets
 stackId: make
 type: skill
-name: Makefile Docker & Deployment Targets
+name: >-
+  Makefile Docker & Deployment Targets
 description: >-
-  Create Makefile targets for Docker builds, image tagging, multi-stage builds,
-  container orchestration, and deployment workflows with environment-based
-  configuration.
+  Create Makefile targets for Docker builds, image tagging, multi-stage
+  builds, container orchestration, and deployment workflows with
+  environment-based configuration.
 difficulty: intermediate
 tags:
-  - docker-makefile
+  - make
+  - makefile
+  - docker
   - deployment
+  - targets
   - ci-cd
-  - container
-  - image-tagging
+  - prompting
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,28 +25,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - GNU Make 4.0+
-  - Docker installed
 faq:
-  - question: How do I add Docker build targets to a Makefile?
+  - question: "When should I use the Makefile Docker & Deployment Targets skill?"
     answer: >-
-      Define variables for registry, image name, and version (from git
-      describe). Create docker-build, docker-push, and docker-run targets. Use
-      --build-arg to pass version info into the Dockerfile. Tag with both
-      :version and :latest for flexibility.
-  - question: How do I add deployment safety to Makefile targets?
+      Create Makefile targets for Docker builds, image tagging, multi-stage
+      builds, container orchestration, and deployment workflows with
+      environment-based configuration. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Makefile Docker & Deployment Targets require?"
     answer: >-
-      Use ifeq conditional to check if ENV=production, then add a confirmation
-      prompt with 'read -p'. This prevents accidental production deployments.
-      Also use colored output (red for production warnings) and require explicit
-      ENV= parameter.
-relatedItems:
-  - make-build-architect
-  - make-variables-patterns
-  - make-self-documenting
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker, kubectl installed. Works with make projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Makefile Docker & Deployment Targets

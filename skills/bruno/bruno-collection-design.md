@@ -7,13 +7,15 @@ description: >-
   Design Bruno API collections with logical folder structure, naming
   conventions, and request ordering for maintainable, team-friendly API test
   suites.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - collection-design
-  - organization
-  - bru-format
-  - structure
   - bruno
+  - collection
+  - organization
+  - structure
+  - testing
+  - api
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +24,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Bruno installed
-  - API to test
 faq:
-  - question: How should I organize a Bruno collection?
+  - question: "When should I use the Collection Organization and Structure skill?"
     answer: >-
-      Group requests by API domain (Auth, Users, Products, Orders), not by HTTP
-      method. Name requests descriptively ('Create Product' not 'POST 1'). Order
-      requests logically within each folder. Include both success and error test
-      cases.
-  - question: What is the Bru file format?
+      Design Bruno API collections with logical folder structure, naming
+      conventions, and request ordering for maintainable, team-friendly API
+      test suites. It includes practical examples for bruno development.
+  - question: "What tools and setup does Collection Organization and Structure require?"
     answer: >-
-      Bru is Bruno's plain-text file format for storing API requests. Each .bru
-      file contains the request method, URL, headers, body, assertions, and
-      scripts in a readable, git-friendly format. Unlike JSON (Postman), Bru
-      files produce clean diffs in version control.
-  - question: Can Bruno collections be version controlled?
-    answer: >-
-      Yes — this is Bruno's key advantage. Collections are stored as plain files
-      on your filesystem. Add the collection directory to your Git repository
-      and it evolves alongside your API code. PRs can include both API changes
-      and test updates.
-relatedItems:
-  - bruno-scripting-assertions
-  - bruno-ci-runner
-  - bruno-api-testing-specialist
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard bruno tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Collection Organization and Structure

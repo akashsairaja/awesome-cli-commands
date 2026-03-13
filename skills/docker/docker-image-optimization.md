@@ -6,13 +6,16 @@ name: Docker Image Size Optimization
 description: >-
   Reduce Docker image size with .dockerignore, layer caching strategies,
   BuildKit cache mounts, slim base images, and dependency pruning techniques.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - image-optimization
-  - dockerfile
-  - dockerignore
-  - caching
-  - slim-images
+  - docker
+  - image
+  - size
+  - optimization
+  - security
+  - deployment
+  - ci-cd
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -21,27 +24,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Docker 24+ with BuildKit
 faq:
-  - question: How do I reduce Docker image size?
+  - question: "When should I use the Docker Image Size Optimization skill?"
     answer: >-
-      Five key techniques: (1) Use slim or Alpine base images instead of full OS
-      images. (2) Use multi-stage builds to exclude build tools. (3) Add a
-      .dockerignore to skip node_modules, .git, etc. (4) Combine and clean up
-      apt-get installs in a single RUN layer. (5) Use BuildKit cache mounts for
-      package managers.
-  - question: What is Docker layer caching and how does it work?
+      Reduce Docker image size with .dockerignore, layer caching strategies,
+      BuildKit cache mounts, slim base images, and dependency pruning
+      techniques. This skill provides a structured workflow for image
+      optimization, multi-stage builds, networking, and container
+      orchestration.
+  - question: "What tools and setup does Docker Image Size Optimization require?"
     answer: >-
-      Docker caches each instruction (layer) in a Dockerfile. If a layer and all
-      layers before it are unchanged, Docker reuses the cached version. Order
-      your Dockerfile from least-changing (base image, system packages) to
-      most-changing (application code) to maximize cache hits.
-relatedItems:
-  - docker-multi-stage-builds
-  - docker-security-hardener
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm, Docker, pip/poetry installed. Works with Docker
+      projects. No additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Docker Image Size Optimization

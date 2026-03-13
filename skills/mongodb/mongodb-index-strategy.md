@@ -8,12 +8,11 @@ description: >-
   Range field ordering for maximum query coverage and minimal index overhead.
 difficulty: intermediate
 tags:
-  - indexing
-  - compound-index
-  - esr-rule
-  - covered-queries
-  - performance
   - mongodb
+  - compound
+  - index
+  - design
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,31 +21,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - javascript
-  - typescript
-prerequisites:
-  - MongoDB 6.0+
-  - Basic find/sort operations
 faq:
-  - question: What is the ESR rule for MongoDB compound indexes?
+  - question: "When should I use the MongoDB Compound Index Design skill?"
     answer: >-
-      ESR stands for Equality-Sort-Range. When creating a compound index, place
-      fields used for exact matches first (status = 'active'), fields used for
-      sorting second (sort by date), and fields used for range queries last
-      ($gt, $lt, $regex). This ordering maximizes the index's usefulness.
-  - question: How many indexes should a MongoDB collection have?
+      Design optimal MongoDB compound indexes using the ESR rule — Equality,
+      Sort, Range field ordering for maximum query coverage and minimal index
+      overhead. This skill provides a structured workflow for aggregation
+      pipelines, index strategy, change streams, and schema design.
+  - question: "What tools and setup does MongoDB Compound Index Design require?"
     answer: >-
-      Aim for the minimum number that covers your most frequent queries. Each
-      index adds ~10% overhead to writes and consumes RAM. Most collections need
-      3-7 indexes. Use db.collection.aggregate([{$indexStats:{}}]) to identify
-      unused indexes and remove them.
-relatedItems:
-  - mongodb-aggregation-pipeline
-  - mongodb-performance-analyst
-  - mongodb-schema-designer
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard MongoDB tooling (mongosh, MongoDB Compass). No
+      special setup required beyond a working MongoDB NoSQL environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # MongoDB Compound Index Design

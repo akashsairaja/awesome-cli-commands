@@ -7,14 +7,14 @@ description: >-
   Configure Ubuntu's UFW firewall — enable default deny, allow specific ports
   and services, create application profiles, rate limiting, and logging for
   production server security.
-difficulty: beginner
+difficulty: advanced
 tags:
+  - ubuntu
   - ufw
   - firewall
+  - configuration
   - security
-  - networking
-  - iptables
-  - ubuntu
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -23,35 +23,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Ubuntu 22.04+
-  - sudo access
-  - SSH access
 faq:
-  - question: What is UFW on Ubuntu and should I enable it?
+  - question: "When should I use the Ubuntu UFW Firewall Configuration skill?"
     answer: >-
-      UFW (Uncomplicated Firewall) is Ubuntu's user-friendly interface for
-      managing iptables/nftables firewall rules. Yes, always enable it on any
-      server accessible from the internet. Set default deny incoming, allow only
-      needed ports (SSH, HTTP, HTTPS), and restrict database ports to specific
-      source IPs.
-  - question: How do I avoid locking myself out when enabling UFW?
+      Configure Ubuntu's UFW firewall — enable default deny, allow specific
+      ports and services, create application profiles, rate limiting, and
+      logging for production server security. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Ubuntu UFW Firewall Configuration require?"
     answer: >-
-      Before running 'ufw enable', always run 'ufw allow ssh' (or your custom
-      SSH port). Verify with 'ufw status' that SSH is listed. If you do get
-      locked out, most cloud providers offer console access to disable UFW. On
-      physical servers, boot into recovery mode.
-  - question: What is the difference between UFW allow and UFW limit?
-    answer: >-
-      ufw allow permits unlimited connections to a port. ufw limit permits
-      connections but blocks an IP address if it makes more than 6 connection
-      attempts in 30 seconds. Use limit for SSH to slow down brute force
-      attacks. For more sophisticated rate limiting, use fail2ban alongside UFW.
-relatedItems:
-  - ubuntu-server-architect
-  - linux-security-hardening
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard ubuntu tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Ubuntu UFW Firewall Configuration

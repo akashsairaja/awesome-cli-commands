@@ -4,17 +4,18 @@ stackId: clitools
 type: skill
 name: Finding Files with find and fd
 description: >-
-  Locate files efficiently with find and fd — name patterns, type filters, size
-  and date criteria, exec actions, and building file discovery workflows for
-  large directory trees.
+  Locate files efficiently with find and fd — name patterns, type filters,
+  size and date criteria, exec actions, and building file discovery workflows
+  for large directory trees.
 difficulty: beginner
 tags:
+  - clitools
+  - finding
+  - files
   - find
-  - fd
-  - file-search
-  - directory-traversal
-  - glob
-  - file-management
+  - performance
+  - automation
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +23,21 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - find (built-in)
-  - 'fd (optional, install separately)'
 faq:
-  - question: What is fd and why is it faster than find?
+  - question: "When should I use the Finding Files with find and fd skill?"
     answer: >-
-      fd is a modern alternative to find written in Rust. It's faster because:
-      respects .gitignore (skips node_modules etc.), smart case matching by
-      default, parallel directory traversal, simpler syntax. Use fd for
-      interactive searches, find for scripts that need universal compatibility.
-  - question: How do I find and delete old files safely?
+      Locate files efficiently with find and fd — name patterns, type filters,
+      size and date criteria, exec actions, and building file discovery
+      workflows for large directory trees. This skill provides a structured
+      workflow for API design, documentation, architecture patterns, and
+      development workflows.
+  - question: "What tools and setup does Finding Files with find and fd require?"
     answer: >-
-      First preview: find /tmp -type f -mtime +30 -print. Then delete: find /tmp
-      -type f -mtime +30 -delete. Or use -ok for confirmation: find /tmp -type f
-      -mtime +30 -ok rm {} \;. Always preview before deleting. Use -delete
-      instead of -exec rm for efficiency.
-  - question: How do I exclude directories from find?
-    answer: >-
-      Use -prune: find . -path ./node_modules -prune -o -name '*.ts' -print. The
-      -prune stops descending into the directory. For multiple exclusions: find
-      . \( -path ./node_modules -o -path ./dist \) -prune -o -name '*.ts'
-      -print.
-relatedItems:
-  - clitools-text-processing
-  - clitools-xargs-parallel
-  - clitools-pipeline-architect
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Works with standard CLI & Dev Tools tooling (various CLI tools, code
+      generators). No special setup required beyond a working developer
+      tooling environment.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Finding Files with find and fd

@@ -2,18 +2,21 @@
 id: ansible-role-structure
 stackId: ansible
 type: skill
-name: Ansible Role Design & Structure
+name: >-
+  Ansible Role Design & Structure
 description: >-
   Design production-quality Ansible roles with proper directory structure,
   defaults, handlers, templates, molecule tests, and Galaxy metadata for
   reusable automation.
-difficulty: intermediate
+difficulty: advanced
 tags:
-  - ansible-roles
-  - role-structure
-  - molecule
-  - galaxy
-  - reusability
+  - ansible
+  - role
+  - design
+  - structure
+  - testing
+  - automation
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -22,31 +25,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Ansible 2.16+
-  - molecule (for testing)
-  - Basic YAML knowledge
 faq:
-  - question: What is the standard Ansible role directory structure?
+  - question: "When should I use the Ansible Role Design & Structure skill?"
     answer: >-
-      An Ansible role has: defaults/ (default variables), vars/ (internal
-      variables), tasks/ (automation steps), handlers/ (event-triggered
-      actions), templates/ (Jinja2 configs), files/ (static files), meta/
-      (metadata and dependencies), and molecule/ (tests). tasks/main.yml and
-      defaults/main.yml are the most important files.
-  - question: What is the difference between defaults and vars in Ansible roles?
+      Design production-quality Ansible roles with proper directory structure,
+      defaults, handlers, templates, molecule tests, and Galaxy metadata for
+      reusable automation. It includes practical examples for ansible
+      development.
+  - question: "What tools and setup does Ansible Role Design & Structure require?"
     answer: >-
-      defaults/main.yml has the LOWEST variable precedence — users can easily
-      override these values in playbooks, inventory, or extra vars.
-      vars/main.yml has HIGHER precedence and is intended for internal role
-      constants that should not be overridden. Put user-configurable values in
-      defaults/, internal values in vars/.
-relatedItems:
-  - ansible-playbook-architect
-  - ansible-vault-secrets
-  - ansible-inventory-management
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard ansible tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Ansible Role Design & Structure

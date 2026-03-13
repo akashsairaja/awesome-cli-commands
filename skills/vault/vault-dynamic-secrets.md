@@ -7,14 +7,13 @@ description: >-
   Generate dynamic, short-lived credentials with Vault — database credentials,
   AWS IAM, PKI certificates, and SSH keys that are automatically created and
   revoked based on TTL.
-difficulty: advanced
+difficulty: intermediate
 tags:
-  - dynamic-secrets
-  - database
-  - aws
-  - leases
-  - ttl
-  - credential-management
+  - vault
+  - dynamic
+  - secrets
+  - security
+  - automation
 compatibility:
   - claude-code
   - cursor
@@ -22,35 +21,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Vault CLI installed
-  - Vault server with secret engines configured
 faq:
-  - question: How do dynamic database secrets work?
+  - question: "When should I use the Dynamic Secrets with Vault skill?"
     answer: >-
-      When you read database/creds/rolename, Vault connects to the database,
-      creates a temporary user with the role's SQL statements, and returns the
-      credentials with a lease. When the lease expires (or is revoked), Vault
-      connects again and drops the user. The application never sees the database
-      admin password.
-  - question: What happens when a dynamic secret's lease expires?
+      Generate dynamic, short-lived credentials with Vault — database
+      credentials, AWS IAM, PKI certificates, and SSH keys that are
+      automatically created and revoked based on TTL. This skill provides a
+      structured workflow for development tasks.
+  - question: "What tools and setup does Dynamic Secrets with Vault require?"
     answer: >-
-      Vault revokes the credentials — for database secrets, it drops the user;
-      for AWS, it deletes the IAM user. Active connections using the credentials
-      may continue until the database enforces the expiration. Set VALID UNTIL
-      in SQL to force disconnection at lease expiry.
-  - question: How do I renew dynamic secrets before they expire?
-    answer: >-
-      Use vault lease renew LEASE_ID to extend the TTL. Renew before expiry
-      (Vault Agent does this automatically). Set -increment for custom duration.
-      Renewal cannot exceed max_ttl. If you need longer access, create a new
-      credential before the current one expires.
-relatedItems:
-  - vault-kv-secrets
-  - vault-policies-auth
-  - vault-transit-pki
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Requires psql installed. Works with vault projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Dynamic Secrets with Vault

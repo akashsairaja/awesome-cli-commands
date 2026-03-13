@@ -4,16 +4,17 @@ stackId: grafana
 type: skill
 name: Configure Grafana Unified Alerting
 description: >-
-  Set up Grafana Unified Alerting — alert rules, notification policies, contact
-  points, silence rules, and multi-channel routing for effective incident
-  response.
+  Set up Grafana Unified Alerting — alert rules, notification policies,
+  contact points, silence rules, and multi-channel routing for effective
+  incident response.
 difficulty: intermediate
 tags:
   - grafana
+  - configure
+  - unified
   - alerting
-  - notifications
-  - pagerduty
-  - slack
+  - monitoring
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -21,28 +22,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Grafana 9+ with Unified Alerting
-  - Data source with metrics
 faq:
-  - question: How do I set up Grafana alert routing by severity?
+  - question: "When should I use the Configure Grafana Unified Alerting skill?"
     answer: >-
-      Add severity labels to alert rules (critical, warning, info). Create
-      notification policies that match on severity: route 'severity=critical' to
-      PagerDuty, 'severity=warning' to Slack, and 'severity=info' to email. Use
-      'continue: true' to send critical alerts to multiple channels.
-  - question: What is the 'for' duration in Grafana alerting?
+      Set up Grafana Unified Alerting — alert rules, notification policies,
+      contact points, silence rules, and multi-channel routing for effective
+      incident response. This skill provides a structured workflow for
+      dashboard creation, alerting, PromQL queries, and monitoring setup.
+  - question: "What tools and setup does Configure Grafana Unified Alerting require?"
     answer: >-
-      The 'for' duration is how long a condition must be true before the alert
-      fires. Setting 'for: 5m' means error rate must be above threshold for 5
-      continuous minutes. This prevents false alerts from momentary spikes and
-      network blips. Use at least 5m for most alerts.
-relatedItems:
-  - grafana-dashboard-architect
-  - grafana-promql-mastery
-  - grafana-provisioning-workflow
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Grafana tooling (Grafana CLI, Grafana API). Review
+      the setup section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Configure Grafana Unified Alerting

@@ -9,25 +9,25 @@ description: >-
   feedback on each section.
 difficulty: advanced
 tags:
+  - aitools
   - content
   - research
   - writer
-  - content-research-writer
-  - aitools
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the content-research-writer skill?"
+  - question: "When should I use the Content Research Writer skill?"
     answer: >-
       Assists in writing high-quality content by conducting research, adding
       citations, improving hooks, iterating on outlines, and providing
-      real-time feedback on each section. Transforms your writing process from
-      solo effort to collaborative partnership.
-  - question: "What tools or setup does content-research-writer require?"
+      real-time feedback on each section. This skill provides a structured
+      workflow for prompt engineering, RAG pipelines, LLM application
+      development, and AI agent building.
+  - question: "What tools and setup does Content Research Writer require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Works with standard AI & ML Tools tooling (LLM APIs, embedding models).
+      Review the setup section in the skill content for specific configuration
+      steps.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

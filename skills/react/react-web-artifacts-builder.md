@@ -3,29 +3,28 @@ id: react-web-artifacts-builder
 stackId: react
 type: skill
 name: Web Artifacts Builder
-description: Suite of tools for creating elaborate, multi-component claude.
-difficulty: beginner
+description: >-
+  Suite of tools for creating elaborate, multi-component claude.
+difficulty: intermediate
 tags:
+  - react
   - web
   - artifacts
   - builder
-  - web-artifacts-builder
-  - react
+  - testing
+  - machine-learning
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the web-artifacts-builder skill?"
+  - question: "When should I use the Web Artifacts Builder skill?"
     answer: >-
-      Suite of tools for creating elaborate, multi-component claude.ai HTML
-      artifacts using modern frontend web technologies (React, Tailwind CSS,
-      shadcn/ui). Use for complex artifacts requiring state management,
-      routing, or shadcn/ui components - not for simple single-file HTML/JSX
-      artifacts.
-  - question: "What tools or setup does web-artifacts-builder require?"
+      Suite of tools for creating elaborate, multi-component claude. This
+      skill provides a structured workflow for component architecture, state
+      management, performance optimization, and UI patterns.
+  - question: "What tools and setup does Web Artifacts Builder require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Works with standard React tooling (React 19+, JSX/TSX). Review the setup
+      section in the skill content for specific configuration steps.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

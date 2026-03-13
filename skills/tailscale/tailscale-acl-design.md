@@ -6,13 +6,16 @@ name: Design Tailscale ACL Policies
 description: >-
   Master Tailscale ACL design — groups, tags, autogroups, port-based access,
   subnet policies, and testing ACL changes before deployment.
-difficulty: intermediate
+difficulty: advanced
 tags:
   - tailscale
+  - design
   - acl
-  - access-control
-  - zero-trust
-  - security
+  - policies
+  - testing
+  - deployment
+  - monitoring
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -20,35 +23,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Tailscale account with admin access
-  - Understanding of network ports and protocols
 faq:
-  - question: How do Tailscale ACL tests work?
+  - question: "When should I use the Design Tailscale ACL Policies skill?"
     answer: >-
-      ACL tests verify that your rules work as expected before applying them.
-      Define test cases with src (user or tag), accept (should be allowed), and
-      deny (should be blocked). Tailscale evaluates the tests against your ACL
-      rules and reports any failures. Always write tests before modifying
-      production ACLs.
-  - question: What is the difference between groups and tags in Tailscale ACLs?
+      Master Tailscale ACL design — groups, tags, autogroups, port-based
+      access, subnet policies, and testing ACL changes before deployment. This
+      skill provides a structured workflow for development tasks.
+  - question: "What tools and setup does Design Tailscale ACL Policies require?"
     answer: >-
-      Groups represent people (users with email addresses). Tags represent
-      devices and services (tag:server, tag:ci). Groups are used in 'src' for
-      who is making the connection. Tags are used in both 'src' and 'dst' for
-      device-to-device communication rules.
-  - question: What are autoApprovers in Tailscale?
-    answer: >-
-      AutoApprovers automatically approve subnet routes and exit nodes
-      advertised by tagged devices. Without autoApprovers, an admin must
-      manually approve each route advertisement. Use them for CI/CD runners,
-      autoscaling servers, and any automated infrastructure that needs to
-      advertise routes.
-relatedItems:
-  - tailscale-network-architect
-  - tailscale-ssh-setup
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard tailscale tooling (relevant CLI tools and
+      frameworks). Review the setup section in the skill content for specific
+      configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Design Tailscale ACL Policies

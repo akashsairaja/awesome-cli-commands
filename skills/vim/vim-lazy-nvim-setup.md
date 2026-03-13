@@ -4,15 +4,16 @@ stackId: vim
 type: skill
 name: Neovim Plugin Management with lazy.nvim
 description: >-
-  Set up lazy.nvim for Neovim plugin management — bootstrap installation, plugin
-  specs, lazy-loading strategies, and modular configuration structure.
+  Set up lazy.nvim for Neovim plugin management — bootstrap installation,
+  plugin specs, lazy-loading strategies, and modular configuration structure.
 difficulty: intermediate
 tags:
-  - lazy-nvim
-  - neovim-plugins
-  - plugin-management
-  - lua-config
-  - lsp-setup
+  - vim
+  - neovim
+  - plugin
+  - management
+  - lazynvim
+  - performance
 compatibility:
   - claude-code
   - cursor
@@ -21,35 +22,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Neovim 0.9+
-  - Git installed
-  - Basic Lua knowledge (optional)
 faq:
-  - question: What is lazy.nvim and why should I use it?
+  - question: "When should I use the Neovim Plugin Management with lazy.nvim skill?"
     answer: >-
-      lazy.nvim is the modern Neovim plugin manager that replaced packer.nvim.
-      It features automatic lazy-loading (plugins load only when needed), a
-      lockfile for reproducible setups, a visual UI for management, built-in
-      profiling, and modular plugin specs.
-  - question: How do I lazy-load Neovim plugins for faster startup?
+      Set up lazy.nvim for Neovim plugin management — bootstrap installation,
+      plugin specs, lazy-loading strategies, and modular configuration
+      structure. This skill provides a structured workflow for development
+      tasks.
+  - question: "What tools and setup does Neovim Plugin Management with lazy.nvim require?"
     answer: >-
-      Use lazy-load triggers in your plugin spec: 'event' (BufReadPre,
-      InsertEnter), 'cmd' (Telescope, Git), 'keys' (leader mappings), or 'ft'
-      (filetype). This defers loading until the trigger fires, keeping startup
-      under 50ms even with 30+ plugins.
-  - question: Should I use init.lua or init.vim for Neovim configuration?
-    answer: >-
-      Use init.lua for new configurations. Lua is faster than Vimscript,
-      provides better error messages, has access to Neovim's full Lua API, and
-      is required by modern plugins like lazy.nvim, telescope.nvim, and
-      nvim-cmp.
-relatedItems:
-  - vim-config-architect
-  - vim-treesitter-setup
-  - vim-lsp-keybindings
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard vim tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Neovim Plugin Management with lazy.nvim

@@ -5,17 +5,14 @@ type: skill
 name: Redis Data Structures in Practice
 description: >-
   Master Redis data structures — strings, hashes, sets, sorted sets, streams,
-  and HyperLogLog with real-world implementation patterns for caching, counting,
-  ranking, and messaging.
-difficulty: beginner
+  and HyperLogLog with real-world implementation patterns for caching,
+  counting, ranking, and messaging.
+difficulty: advanced
 tags:
-  - data-structures
-  - strings
-  - hashes
-  - sets
-  - sorted-sets
-  - streams
   - redis
+  - data
+  - structures
+  - practice
 compatibility:
   - claude-code
   - cursor
@@ -24,35 +21,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Redis 7.0+
-  - redis-cli or Redis client library
 faq:
-  - question: What data structures does Redis support?
+  - question: "When should I use the Redis Data Structures in Practice skill?"
     answer: >-
-      Redis supports Strings (simple values, counters), Hashes (field-value
-      maps), Lists (ordered sequences), Sets (unique unordered collections),
-      Sorted Sets (unique scored collections), Streams (append-only event logs
-      with consumer groups), HyperLogLog (approximate unique counting), and
-      Bitmaps (bit-level operations).
-  - question: When should I use Redis Hashes vs Strings for storing objects?
+      Master Redis data structures — strings, hashes, sets, sorted sets,
+      streams, and HyperLogLog with real-world implementation patterns for
+      caching, counting, ranking, and messaging. This skill provides a
+      structured workflow for development tasks.
+  - question: "What tools and setup does Redis Data Structures in Practice require?"
     answer: >-
-      Use Hashes when you need to read or update individual fields (HGET, HSET)
-      without deserializing the entire object. Use Strings with JSON when you
-      always read/write the entire object at once. Hashes also use less memory
-      for small objects due to ziplist encoding.
-  - question: How do Redis Streams differ from Lists for message queues?
-    answer: >-
-      Streams support consumer groups (multiple consumers processing different
-      messages), message acknowledgment, pending message tracking, and automatic
-      ID generation. Lists have none of these — LPUSH/BRPOP gives basic queuing
-      but no delivery guarantees, no consumer groups, and no replay capability.
-relatedItems:
-  - redis-caching-architect
-  - redis-lua-scripting
-  - redis-pub-sub
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard redis tooling (relevant CLI tools and frameworks).
+      No special setup required beyond a working redis environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Redis Data Structures in Practice

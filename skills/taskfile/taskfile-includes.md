@@ -2,18 +2,22 @@
 id: taskfile-includes
 stackId: taskfile
 type: skill
-name: Taskfile Includes & Modular Configuration
+name: >-
+  Taskfile Includes & Modular Configuration
 description: >-
   Split large Taskfile configurations into modular includes — namespaced task
   groups, shared variables, monorepo support, and DRY patterns for complex
   projects.
 difficulty: intermediate
 tags:
-  - taskfile-includes
+  - taskfile
+  - includes
   - modular
-  - namespacing
-  - monorepo
   - configuration
+  - testing
+  - deployment
+  - api
+  - docker
 compatibility:
   - claude-code
   - cursor
@@ -22,28 +26,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Task installed
-  - Basic Taskfile knowledge
 faq:
-  - question: How do Taskfile includes work?
+  - question: "When should I use the Taskfile Includes & Modular Configuration skill?"
     answer: >-
-      Add an 'includes' section to root Taskfile.yml mapping names to file
-      paths. Tasks in included files are namespaced: 'docker:
-      ./taskfiles/docker.yml' makes tasks available as 'task docker:build'.
-      Included files inherit root variables.
-  - question: How do I use Taskfile with a monorepo?
+      Split large Taskfile configurations into modular includes — namespaced
+      task groups, shared variables, monorepo support, and DRY patterns for
+      complex projects. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Taskfile Includes & Modular Configuration require?"
     answer: >-
-      Create a root Taskfile.yml with includes for each package/service, using
-      'dir' to set the working directory. Each service gets its own
-      Taskfile.yml. The root orchestrates cross-service tasks: 'task api:build',
-      'task web:test', 'task build-all'.
-relatedItems:
-  - taskfile-yaml-runner
-  - taskfile-variables-deps
-  - taskfile-caching
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm, Docker, pip/poetry installed. Works with
+      taskfile projects. Review the configuration section for project-specific
+      setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Taskfile Includes & Modular Configuration

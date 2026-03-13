@@ -2,56 +2,39 @@
 id: bun-native-apis
 stackId: bun
 type: skill
-name: Bun Native APIs & Performance Shortcuts
+name: >-
+  Bun Native APIs & Performance Shortcuts
 description: >-
   Leverage Bun's native APIs for maximum performance — Bun.file, Bun.write,
-  Bun.password, Bun.spawn, built-in SQLite, and other Bun-specific optimizations
-  over Node.js equivalents.
-difficulty: intermediate
+  Bun.password, Bun.spawn, built-in SQLite, and other Bun-specific
+  optimizations over Node.js equivalents.
+difficulty: advanced
 tags:
-  - native-apis
-  - bun-file
-  - sqlite
-  - password-hashing
+  - bun
+  - native
+  - apis
   - performance
+  - shortcuts
+  - best-practices
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-languages:
-  - typescript
-  - javascript
-prerequisites:
-  - Bun 1.1+
 faq:
-  - question: What Bun native APIs replace npm packages?
+  - question: "When should I use the Bun Native APIs & Performance Shortcuts skill?"
     answer: >-
-      Key replacements: Bun.file()/Bun.write() replace fs, Bun.password replaces
-      bcrypt/argon2, bun:sqlite replaces better-sqlite3, Bun.spawn() replaces
-      child_process, built-in .env loading replaces dotenv, and Bun.serve()
-      replaces Express/Fastify for HTTP servers. Removing these packages reduces
-      bundle size and improves performance.
-  - question: How much faster is Bun.file compared to fs.readFile?
+      Leverage Bun's native APIs for maximum performance — Bun.file,
+      Bun.write, Bun.password, Bun.spawn, built-in SQLite, and other
+      Bun-specific optimizations over Node.js equivalents. It includes
+      practical examples for bun development.
+  - question: "What tools and setup does Bun Native APIs & Performance Shortcuts require?"
     answer: >-
-      Bun.file() uses zero-copy reads and lazy loading — the file is not read
-      until you call .text(), .json(), or .arrayBuffer(). This is 10x+ faster
-      for checking file metadata (size, type) and significantly faster for
-      reading, especially for large files where avoiding memory copies matters.
-  - question: Does Bun have a built-in database?
-    answer: >-
-      Yes, Bun includes a native SQLite driver via bun:sqlite. It is one of the
-      fastest SQLite implementations available for JavaScript, supporting
-      prepared statements, transactions, WAL mode, and custom functions. It is
-      ideal for embedded databases, local caching, and applications that don't
-      need a separate database server.
-relatedItems:
-  - bun-server-patterns
-  - bun-testing-setup
-  - bun-bundler-config
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires pip/poetry installed. Works with bun projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Bun Native APIs & Performance Shortcuts

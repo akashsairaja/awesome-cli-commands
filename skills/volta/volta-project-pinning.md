@@ -4,16 +4,16 @@ stackId: volta
 type: skill
 name: Volta Project Version Pinning
 description: >-
-  Pin Node.js, npm, and Yarn versions per project with Volta — automatic version
-  switching, package.json integration, and team-wide consistency without manual
-  intervention.
-difficulty: beginner
+  Pin Node.js, npm, and Yarn versions per project with Volta — automatic
+  version switching, package.json integration, and team-wide consistency
+  without manual intervention.
+difficulty: advanced
 tags:
-  - volta-pin
-  - nodejs-version
-  - package-json
-  - version-pinning
-  - automatic-switching
+  - volta
+  - project
+  - version
+  - pinning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,32 +22,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Volta installed
 faq:
-  - question: How does Volta pin Node.js versions?
+  - question: "When should I use the Volta Project Version Pinning skill?"
     answer: >-
-      Run 'volta pin node@20' in your project directory. Volta adds a 'volta'
-      section to package.json with the exact version. When anyone with Volta
-      cd's into the project, the correct Node version activates automatically.
-      No .nvmrc needed.
-  - question: Does Volta work with monorepos and workspaces?
+      Pin Node.js, npm, and Yarn versions per project with Volta — automatic
+      version switching, package.json integration, and team-wide consistency
+      without manual intervention. This skill provides a structured workflow
+      for development tasks.
+  - question: "What tools and setup does Volta Project Version Pinning require?"
     answer: >-
-      Yes. Pin the Node version in the root package.json. All workspace packages
-      inherit the root's volta configuration. Individual packages don't need
-      their own volta section unless they require a different version (rare).
-  - question: How do I install global npm packages with Volta?
-    answer: >-
-      Use 'volta install <package>' instead of 'npm install -g'. Volta creates
-      shims that respect per-project Node versions. A globally installed tool
-      runs with the project's pinned Node version when inside that project, and
-      the default version elsewhere.
-relatedItems:
-  - volta-toolchain-manager
-  - volta-ci-integration
-  - volta-global-tools
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm installed. Works with volta projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Volta Project Version Pinning

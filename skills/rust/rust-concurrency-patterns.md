@@ -2,19 +2,20 @@
 id: rust-concurrency-patterns
 stackId: rust
 type: skill
-name: Rust Concurrency & Async with Tokio
+name: >-
+  Rust Concurrency & Async with Tokio
 description: >-
   Build concurrent Rust applications with threads, channels, and async/await
   using Tokio — task spawning, shared state, message passing, and async I/O
   patterns.
-difficulty: advanced
+difficulty: intermediate
 tags:
+  - rust
   - concurrency
   - async
   - tokio
-  - threads
-  - channels
-  - fearless-concurrency
+  - performance
+  - api
 compatibility:
   - claude-code
   - cursor
@@ -22,39 +23,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-languages:
-  - rust
-prerequisites:
-  - Rust 1.75+
-  - Tokio 1.x
-  - Understanding of ownership
 faq:
-  - question: What is fearless concurrency in Rust?
+  - question: "When should I use the Rust Concurrency & Async with Tokio skill?"
     answer: >-
-      Fearless concurrency means Rust's type system prevents data races at
-      compile time. The Send and Sync marker traits ensure only thread-safe
-      types are shared across threads. If your code compiles, it is free from
-      data races — a guarantee no other systems language provides without a
-      garbage collector.
-  - question: When should I use threads vs async in Rust?
+      Build concurrent Rust applications with threads, channels, and
+      async/await using Tokio — task spawning, shared state, message passing,
+      and async I/O patterns. This skill provides a structured workflow for
+      ownership patterns, async programming, error handling, and systems-level
+      development.
+  - question: "What tools and setup does Rust Concurrency & Async with Tokio require?"
     answer: >-
-      Use async (Tokio) for I/O-bound work — network requests, database queries,
-      file operations. Async handles thousands of concurrent tasks with minimal
-      threads. Use std::thread for CPU-bound work — data processing,
-      cryptography, image manipulation. Use tokio::spawn_blocking to bridge CPU
-      work into an async context.
-  - question: What is the difference between std Mutex and Tokio Mutex?
-    answer: >-
-      std::sync::Mutex blocks the thread while waiting for the lock — fine for
-      short critical sections in sync code. tokio::sync::Mutex is async-aware —
-      it yields the task while waiting, allowing other tasks to run. Always use
-      tokio::sync::Mutex in async code to prevent blocking the runtime.
-relatedItems:
-  - rust-error-handling-patterns
-  - rust-ownership-patterns
-  - rust-cargo-essentials
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Rust tooling (Cargo, rustc). No special setup
+      required beyond a working Rust systems environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Rust Concurrency & Async with Tokio

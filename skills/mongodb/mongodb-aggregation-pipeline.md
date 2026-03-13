@@ -9,13 +9,12 @@ description: >-
   pipeline design.
 difficulty: intermediate
 tags:
+  - mongodb
   - aggregation
   - pipeline
-  - match
-  - group
-  - lookup
-  - facet
-  - mongodb
+  - mastery
+  - performance
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -24,38 +23,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - javascript
-  - typescript
-prerequisites:
-  - MongoDB 6.0+
-  - Basic CRUD operations
-  - Understanding of document structure
 faq:
-  - question: What is a MongoDB aggregation pipeline?
+  - question: "When should I use the MongoDB Aggregation Pipeline Mastery skill?"
     answer: >-
-      An aggregation pipeline processes documents through a sequence of stages —
-      $match (filter), $group (aggregate), $sort (order), $lookup (join),
-      $project (reshape). Each stage transforms the document stream. It is
-      MongoDB's equivalent of SQL GROUP BY, JOIN, and subqueries combined.
-  - question: How do I optimize MongoDB aggregation pipeline performance?
+      Build powerful MongoDB aggregation pipelines — $match, $group, $lookup,
+      $unwind, $facet stages with stage ordering optimization and index-aware
+      pipeline design. This skill provides a structured workflow for
+      aggregation pipelines, index strategy, change streams, and schema
+      design.
+  - question: "What tools and setup does MongoDB Aggregation Pipeline Mastery require?"
     answer: >-
-      Three rules: (1) Put $match first to reduce documents entering the
-      pipeline. (2) Add $project early to drop unneeded fields. (3) Create
-      indexes that support your $match and $sort stages. Also use allowDiskUse
-      for large datasets and set maxTimeMS to prevent runaway queries.
-  - question: How does $lookup work in MongoDB and is it like a SQL JOIN?
-    answer: >-
-      Yes, $lookup performs a left outer join between collections. It matches a
-      field in the input documents (localField) with a field in the joined
-      collection (foreignField) and adds the matching documents as an array.
-      Unlike SQL JOINs, it always returns an array — use $unwind to flatten it.
-relatedItems:
-  - mongodb-schema-designer
-  - mongodb-index-strategy
-  - mongodb-performance-analyst
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires pip/poetry installed. Works with MongoDB projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # MongoDB Aggregation Pipeline Mastery

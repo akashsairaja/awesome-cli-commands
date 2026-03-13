@@ -7,13 +7,16 @@ description: >-
   Step-by-step migration guide from Docker Compose to Podman — compatibility
   setup, compose file adjustments, networking differences, and production
   deployment patterns.
-difficulty: intermediate
+difficulty: advanced
 tags:
-  - podman-compose
-  - docker-migration
-  - compose-compatibility
-  - rootless-compose
-  - container-orchestration
+  - podman
+  - migrate
+  - docker
+  - compose
+  - security
+  - deployment
+  - kubernetes
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -22,30 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Podman 3.0+
-  - podman-compose or docker-compose installed
-  - Existing Docker Compose project
 faq:
-  - question: Can I use my existing Docker Compose files with Podman?
+  - question: "When should I use the Migrate from Docker Compose to Podman skill?"
     answer: >-
-      Yes. Most Docker Compose files work unchanged with 'podman compose'.
-      Common adjustments needed: map ports > 1024 for rootless mode, use
-      --userns=keep-id for bind mount permissions, and set the DOCKER_HOST
-      variable to the Podman socket if using docker-compose binary.
-  - question: What is the difference between podman-compose and podman compose?
+      Step-by-step migration guide from Docker Compose to Podman —
+      compatibility setup, compose file adjustments, networking differences,
+      and production deployment patterns. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Migrate from Docker Compose to Podman require?"
     answer: >-
-      'podman compose' is a built-in Podman subcommand (Podman 3.0+) that
-      delegates to an external compose provider (docker-compose or
-      podman-compose). 'podman-compose' is a standalone Python tool that
-      reimplements compose functionality natively for Podman. Both work with
-      standard docker-compose.yml files.
-relatedItems:
-  - podman-rootless-setup
-  - podman-quadlet-services
-  - podman-rootless-specialist
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker, pip/poetry installed. Works with podman projects.
+      Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Migrate from Docker Compose to Podman

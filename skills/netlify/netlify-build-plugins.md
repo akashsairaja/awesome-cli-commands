@@ -9,11 +9,14 @@ description: >-
   API.
 difficulty: intermediate
 tags:
-  - build-plugins
-  - caching
-  - lighthouse
-  - sitemap
-  - build-optimization
+  - netlify
+  - optimize
+  - builds
+  - build
+  - plugins
+  - performance
+  - deployment
+  - automation
 compatibility:
   - claude-code
   - cursor
@@ -21,27 +24,21 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Netlify site deployed
-  - netlify.toml configured
 faq:
-  - question: What are Netlify Build Plugins?
+  - question: "When should I use the Optimize Builds with Netlify Build Plugins skill?"
     answer: >-
-      Build Plugins are modules that hook into Netlify's build lifecycle
-      (preBuild, postBuild, onSuccess, onError). Community plugins handle common
-      tasks like caching, Lighthouse auditing, and sitemap submission. You can
-      also create custom plugins for project-specific automation.
-  - question: How do I cache build outputs between Netlify deployments?
+      Extend Netlify builds with plugins — cache optimization, sitemap
+      generation, Lighthouse auditing, and custom build steps using the
+      Netlify Build Plugin API. This skill provides a structured workflow for
+      deployment automation, serverless functions, build plugins, and redirect
+      configuration.
+  - question: "What tools and setup does Optimize Builds with Netlify Build Plugins require?"
     answer: >-
-      Use the netlify-plugin-cache plugin or create a custom plugin using
-      utils.cache.save() and utils.cache.restore(). Cache node_modules, .cache
-      directories, and generated files that do not change between builds. This
-      can reduce build times by 30-50%.
-relatedItems:
-  - netlify-deployment-specialist
-  - netlify-functions-setup
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Netlify tooling (Netlify CLI, Netlify Dashboard).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Optimize Builds with Netlify Build Plugins

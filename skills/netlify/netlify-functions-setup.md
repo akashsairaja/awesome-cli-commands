@@ -7,14 +7,16 @@ description: >-
   Create serverless API endpoints with Netlify Functions — TypeScript setup,
   request handling, environment variables, background functions, and scheduled
   tasks.
-difficulty: intermediate
+difficulty: beginner
 tags:
-  - netlify-functions
+  - netlify
+  - build
   - serverless
+  - apis
+  - functions
   - api
-  - typescript
-  - background-functions
-  - scheduled-functions
+  - machine-learning
+  - type-safety
 compatibility:
   - claude-code
   - cursor
@@ -23,35 +25,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Netlify site
-  - Node.js 18+
-  - TypeScript (recommended)
 faq:
-  - question: How do I create a Netlify Function?
+  - question: "When should I use the Build Serverless APIs with Netlify Functions skill?"
     answer: >-
-      Create a TypeScript file in your functions directory (default:
-      netlify/functions/). Export a handler function that receives an event and
-      context, and returns an object with statusCode, headers, and body. The
-      function is accessible at /.netlify/functions/{filename}.
-  - question: What is the timeout for Netlify Functions?
+      Create serverless API endpoints with Netlify Functions — TypeScript
+      setup, request handling, environment variables, background functions,
+      and scheduled tasks. This skill provides a structured workflow for
+      deployment automation, serverless functions, build plugins, and redirect
+      configuration.
+  - question: "What tools and setup does Build Serverless APIs with Netlify Functions require?"
     answer: >-
-      Regular Netlify Functions have a 10-second timeout (26 seconds on Pro).
-      For longer tasks, use background functions which run for up to 15 minutes
-      and return a 202 response immediately. Scheduled functions also support
-      the extended 15-minute timeout.
-  - question: Can I use TypeScript with Netlify Functions?
-    answer: >-
-      Yes. Install @netlify/functions for type definitions and set node_bundler
-      to esbuild in netlify.toml. Netlify automatically compiles TypeScript
-      during the build process. You get full type safety for event, context, and
-      response objects.
-relatedItems:
-  - netlify-functions-specialist
-  - netlify-deployment-specialist
-  - netlify-redirects-config
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm, pip/poetry installed. Works with Netlify
+      projects. Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Build Serverless APIs with Netlify Functions

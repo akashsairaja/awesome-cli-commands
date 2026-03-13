@@ -2,17 +2,22 @@
 id: bash-argument-parsing
 stackId: bash
 type: skill
-name: Bash Argument Parsing & CLI Design
+name: >-
+  Bash Argument Parsing & CLI Design
 description: >-
   Build user-friendly Bash CLI scripts — argument parsing with getopts, long
-  options, help messages, input validation, and following Unix CLI conventions.
+  options, help messages, input validation, and following Unix CLI
+  conventions.
 difficulty: intermediate
 tags:
-  - argument-parsing
-  - cli-design
-  - getopts
-  - help-message
-  - unix-conventions
+  - bash
+  - argument
+  - parsing
+  - cli
+  - design
+  - deployment
+  - automation
+  - docker
 compatibility:
   - claude-code
   - cursor
@@ -21,36 +26,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - bash
-  - shell
-prerequisites:
-  - Bash 4.0+
 faq:
-  - question: How do I parse command-line arguments in Bash?
+  - question: "When should I use the Bash Argument Parsing & CLI Design skill?"
     answer: >-
-      Use a while loop with case statement to process arguments. Match short
-      flags (-v), long flags (--verbose), and options with values (--tag TAG).
-      Shift consumed arguments. Collect remaining positional arguments. Always
-      provide a usage() function that displays with -h/--help.
-  - question: Should I use getopts or manual parsing for Bash arguments?
+      Build user-friendly Bash CLI scripts — argument parsing with getopts,
+      long options, help messages, input validation, and following Unix CLI
+      conventions. This skill provides a structured workflow for automation
+      scripts, argument parsing, error handling, and system administration.
+  - question: "What tools and setup does Bash Argument Parsing & CLI Design require?"
     answer: >-
-      Manual parsing (while/case loop) is more flexible and supports long
-      options (--verbose). getopts only supports short options (-v) and has
-      quirky syntax. For simple scripts with 2-3 flags, getopts is fine. For
-      anything with long options or complex arguments, use manual parsing.
-  - question: What are the Unix conventions for CLI argument design?
-    answer: >-
-      Use -h for help, -v for verbose, -q for quiet, -f for force, -n for
-      dry-run. Long options use double dash (--verbose). Options that take
-      values: -t VALUE or --tag VALUE. Use -- to signal end of options. Exit 0
-      for success, 1 for errors, 2 for usage errors.
-relatedItems:
-  - bash-error-handling-strict
-  - bash-posix-portability
-  - bash-shellcheck-compliance
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker, pip/poetry installed. Works with Bash projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Bash Argument Parsing & CLI Design

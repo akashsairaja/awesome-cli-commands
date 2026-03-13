@@ -2,18 +2,19 @@
 id: typescript-type-guards
 stackId: typescript
 type: skill
-name: TypeScript Type Guards & Narrowing
+name: >-
+  TypeScript Type Guards & Narrowing
 description: >-
   Implement type narrowing in TypeScript — typeof checks, instanceof,
-  discriminated unions, custom type guard functions, and assertion functions for
-  runtime type safety.
+  discriminated unions, custom type guard functions, and assertion functions
+  for runtime type safety.
 difficulty: intermediate
 tags:
-  - type-guards
+  - typescript
+  - type
+  - guards
   - narrowing
-  - type-predicates
-  - discriminated-unions
-  - assertion-functions
+  - type-safety
 compatibility:
   - claude-code
   - cursor
@@ -22,39 +23,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - typescript
-prerequisites:
-  - TypeScript 5.0+
-  - Understanding of union types
 faq:
-  - question: What is type narrowing in TypeScript?
+  - question: "When should I use the TypeScript Type Guards & Narrowing skill?"
     answer: >-
-      Type narrowing is the process of refining a broad type to a more specific
-      type within a code block. TypeScript automatically narrows types after
-      typeof checks, instanceof checks, equality checks, and custom type guard
-      functions. This gives you full type safety without using 'as Type'
-      assertions.
-  - question: What is a type predicate in TypeScript?
+      Implement type narrowing in TypeScript — typeof checks, instanceof,
+      discriminated unions, custom type guard functions, and assertion
+      functions for runtime type safety. It includes practical examples for
+      TypeScript development.
+  - question: "What tools and setup does TypeScript Type Guards & Narrowing require?"
     answer: >-
-      A type predicate is a return type annotation of the form 'param is Type'
-      on a function that returns boolean. It tells TypeScript that if the
-      function returns true, the parameter has been narrowed to that specific
-      type. Example: function isString(x: unknown): x is string { return typeof
-      x === 'string'; }
-  - question: How do I ensure exhaustive handling of union types?
-    answer: >-
-      Use the never type in a default case: assign the discriminant to a
-      variable of type never. If a new variant is added to the union but not
-      handled in the switch, TypeScript will error at compile time because the
-      new variant cannot be assigned to never. This guarantees every variant is
-      explicitly handled.
-relatedItems:
-  - typescript-generics-patterns
-  - typescript-strict-config
-  - typescript-no-any-rule
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard TypeScript tooling (TypeScript compiler (tsc),
+      tsconfig.json). No special setup required beyond a working TypeScript
+      environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # TypeScript Type Guards & Narrowing

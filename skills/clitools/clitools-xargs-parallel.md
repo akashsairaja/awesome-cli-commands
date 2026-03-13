@@ -2,19 +2,22 @@
 id: clitools-xargs-parallel
 stackId: clitools
 type: skill
-name: Parallel Execution with xargs & GNU Parallel
+name: >-
+  Parallel Execution with xargs & GNU Parallel
 description: >-
   Run commands in parallel using xargs and GNU Parallel — batch processing,
   CPU-bound parallelism, progress tracking, and scaling CLI workflows across
   multiple cores.
-difficulty: intermediate
+difficulty: beginner
 tags:
-  - xargs
+  - clitools
   - parallel
-  - concurrency
-  - batch-processing
-  - performance
-  - gnu-parallel
+  - execution
+  - xargs
+  - gnu
+  - testing
+  - optimization
+  - api
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +25,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - xargs (built-in)
-  - 'GNU Parallel (optional, install separately)'
 faq:
-  - question: When should I use xargs vs GNU Parallel?
+  - question: "When should I use the Parallel Execution with xargs & GNU Parallel skill?"
     answer: >-
-      xargs: built-in everywhere, good for simple parallel tasks with -P flag.
-      GNU Parallel: more features — progress bars, job logging, resume, remote
-      execution, ordered output. Use xargs for quick parallel ops, GNU Parallel
-      for complex batch processing.
-  - question: How many parallel processes should I use?
+      Run commands in parallel using xargs and GNU Parallel — batch
+      processing, CPU-bound parallelism, progress tracking, and scaling CLI
+      workflows across multiple cores. This skill provides a structured
+      workflow for API design, documentation, architecture patterns, and
+      development workflows.
+  - question: "What tools and setup does Parallel Execution with xargs & GNU Parallel require?"
     answer: >-
-      CPU-bound tasks: match CPU cores with -P$(nproc). I/O-bound tasks (disk):
-      2-4 processes (more causes thrashing). Network I/O (API calls): 10-50
-      depending on server limits. Start conservative and increase until you stop
-      seeing speedup.
-  - question: How do I handle errors in parallel execution?
-    answer: >-
-      xargs: use -P with set -e (stops on first failure). GNU Parallel: use
-      --halt soon,fail=1 to stop on first failure, or --joblog to log
-      success/failure per job. Always test with -P1 first to catch errors before
-      parallelizing.
-relatedItems:
-  - clitools-text-processing
-  - clitools-io-redirection
-  - clitools-pipeline-architect
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Requires pip/poetry installed. Works with CLI & Dev Tools projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Parallel Execution with xargs & GNU Parallel

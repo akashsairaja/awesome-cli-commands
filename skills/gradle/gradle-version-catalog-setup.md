@@ -4,16 +4,19 @@ stackId: gradle
 type: skill
 name: Centralize Dependencies with Gradle Version Catalogs
 description: >-
-  Set up Gradle Version Catalogs (libs.versions.toml) for centralized dependency
-  management — version declarations, library aliases, bundle groups, and plugin
-  references.
+  Set up Gradle Version Catalogs (libs.versions.toml) for centralized
+  dependency management — version declarations, library aliases, bundle
+  groups, and plugin references.
 difficulty: intermediate
 tags:
-  - version-catalogs
-  - dependency-management
-  - libs-versions-toml
-  - centralized-versions
-  - gradle-kts
+  - gradle
+  - centralize
+  - dependencies
+  - version
+  - catalogs
+  - testing
+  - machine-learning
+  - type-safety
 compatibility:
   - claude-code
   - cursor
@@ -22,29 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Gradle 7.4.2+ (Version Catalogs stable)
-  - Kotlin DSL build files
 faq:
-  - question: What are Gradle Version Catalogs?
+  - question: "When should I use the Centralize Dependencies with Gradle Version Catalogs skill?"
     answer: >-
-      Version Catalogs are a centralized dependency management feature using a
-      TOML file (gradle/libs.versions.toml). They declare all dependency
-      versions, library coordinates, bundles (groups of related dependencies),
-      and plugin versions in one place, providing type-safe accessors in
-      build.gradle.kts files.
-  - question: How do Version Catalogs compare to Maven BOM?
+      Set up Gradle Version Catalogs (libs.versions.toml) for centralized
+      dependency management — version declarations, library aliases, bundle
+      groups, and plugin references. This skill provides a structured workflow
+      for development tasks.
+  - question: "What tools and setup does Centralize Dependencies with Gradle Version Catalogs require?"
     answer: >-
-      Both centralize version management. Maven BOMs declare versions in a
-      parent POM with XML. Gradle Version Catalogs use a TOML file with
-      type-safe Kotlin accessors. Version Catalogs also support bundles
-      (dependency groups) and plugin version management, which BOMs do not.
-relatedItems:
-  - gradle-convention-plugins
-  - gradle-build-architect
-  - gradle-build-cache-optimization
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard gradle tooling (relevant CLI tools and frameworks).
+      No special setup required beyond a working gradle environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Centralize Dependencies with Gradle Version Catalogs

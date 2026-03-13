@@ -6,13 +6,13 @@ name: Node.js Stream Processing Patterns
 description: >-
   Master Node.js streams for processing large files, HTTP responses, and data
   pipelines efficiently without loading everything into memory.
-difficulty: advanced
+difficulty: intermediate
 tags:
-  - streams
-  - pipeline
-  - file-processing
-  - memory-efficiency
-  - backpressure
+  - nodejs
+  - stream
+  - processing
+  - patterns
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -20,38 +20,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-languages:
-  - javascript
-  - typescript
-prerequisites:
-  - Node.js 20+
-  - Understanding of async/await
 faq:
-  - question: When should I use Node.js streams instead of reading files into memory?
+  - question: "When should I use the Node.js Stream Processing Patterns skill?"
     answer: >-
-      Use streams whenever the data is large or unbounded — files over 100MB,
-      HTTP responses from slow APIs, log processing, CSV/JSON imports, or any
-      case where you want to start processing before the entire payload is
-      available. Streams use constant memory regardless of data size.
-  - question: What is backpressure in Node.js streams?
+      Master Node.js streams for processing large files, HTTP responses, and
+      data pipelines efficiently without loading everything into memory. This
+      skill provides a structured workflow for server-side architecture, error
+      handling, stream processing, and API development.
+  - question: "What tools and setup does Node.js Stream Processing Patterns require?"
     answer: >-
-      Backpressure occurs when a writable stream can't process data as fast as
-      the readable stream produces it. The stream system automatically signals
-      the producer to slow down. Use pipeline() from node:stream/promises to
-      handle backpressure correctly — manual .pipe() chains often ignore it.
-  - question: Why should I use pipeline instead of pipe in Node.js?
-    answer: >-
-      pipeline() (from node:stream/promises) properly handles errors, cleanup,
-      and backpressure across the entire stream chain. If any stream in the
-      pipeline fails, all streams are destroyed and resources are cleaned up.
-      With .pipe(), errors on intermediate streams are silently ignored and
-      resources can leak.
-relatedItems:
-  - nodejs-esm-migration
-  - nodejs-worker-threads
-  - nodejs-error-handling-patterns
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires pip/poetry installed. Works with Node.js projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Node.js Stream Processing Patterns

@@ -2,19 +2,21 @@
 id: ripgrep-replace-refactor
 stackId: ripgrep
 type: skill
-name: Search & Replace with Ripgrep
+name: >-
+  Search & Replace with Ripgrep
 description: >-
-  Use ripgrep for codebase-wide search and replace — previewing changes, piping
-  to sed for replacement, using capture groups, and safely refactoring across
-  large projects.
+  Use ripgrep for codebase-wide search and replace — previewing changes,
+  piping to sed for replacement, using capture groups, and safely refactoring
+  across large projects.
 difficulty: intermediate
 tags:
+  - ripgrep
+  - search
   - replace
-  - refactoring
-  - sed
-  - capture-groups
   - migration
-  - bulk-edit
+  - api
+  - best-practices
+  - refactoring
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +24,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - ripgrep installed
-  - sed (GNU or BSD)
 faq:
-  - question: How do I do codebase-wide search and replace with ripgrep?
+  - question: "When should I use the Search & Replace with Ripgrep skill?"
     answer: >-
-      Two-step process: 1) Find files: rg -l 'pattern' --type ts. 2) Replace:
-      pipe to xargs sed: rg -l 'old' --type ts | xargs sed -i 's/old/new/g'.
-      Always preview with rg first, create a git branch, and run tests after
-      replacing.
-  - question: How do I use capture groups in ripgrep replacement?
+      Use ripgrep for codebase-wide search and replace — previewing changes,
+      piping to sed for replacement, using capture groups, and safely
+      refactoring across large projects. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Search & Replace with Ripgrep require?"
     answer: >-
-      Use -r flag for preview: rg '(\w+)Error' -r '${1}Exception' shows what the
-      replacement would look like. For actual replacement, use sed with capture
-      groups: sed 's/\(\w\+\)Error/\1Exception/g'. Use extended regex (-E) for
-      cleaner syntax.
-  - question: How do I replace only whole words to avoid partial matches?
-    answer: >-
-      Use -w flag in ripgrep to find whole-word matches: rg -wl 'user' lists
-      files where 'user' appears as a whole word (not 'username'). For sed: use
-      word boundaries: sed 's/\buser\b/account/g' (GNU sed) or sed
-      's/[[:<:]]user[[:>:]]/account/g' (BSD sed).
-relatedItems:
-  - ripgrep-basic-search
-  - ripgrep-regex-patterns
-  - ripgrep-code-search
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Works with standard ripgrep tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Search & Replace with Ripgrep

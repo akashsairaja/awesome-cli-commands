@@ -4,17 +4,19 @@ stackId: curl
 type: skill
 name: Authentication Flows with cURL
 description: >-
-  Implement complete authentication flows with cURL — Bearer tokens, OAuth2, API
-  keys, Basic auth, cookie sessions, and JWT refresh patterns for API testing
-  and automation.
-difficulty: intermediate
+  Implement complete authentication flows with cURL — Bearer tokens, OAuth2,
+  API keys, Basic auth, cookie sessions, and JWT refresh patterns for API
+  testing and automation.
+difficulty: beginner
 tags:
+  - curl
   - authentication
-  - oauth2
-  - bearer-token
-  - api-key
-  - cookies
-  - jwt
+  - flows
+  - security
+  - testing
+  - automation
+  - debugging
+  - api
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - cURL installed
-  - jq installed (for JSON parsing)
 faq:
-  - question: How do I authenticate API requests with cURL?
+  - question: "When should I use the Authentication Flows with cURL skill?"
     answer: >-
-      The most common methods: Bearer token: -H 'Authorization: Bearer TOKEN'.
-      Basic auth: -u user:password. API key: -H 'X-API-Key: KEY'. OAuth2: POST
-      to token endpoint first, extract access_token with jq, then use as Bearer
-      token.
-  - question: How do I implement OAuth2 with cURL?
+      Implement complete authentication flows with cURL — Bearer tokens,
+      OAuth2, API keys, Basic auth, cookie sessions, and JWT refresh patterns
+      for API testing and automation. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Authentication Flows with cURL require?"
     answer: >-
-      Exchange the authorization code for tokens: curl -X POST token_url -d
-      'grant_type=authorization_code&code=CODE&client_id=ID&client_secret=SECRET'.
-      Parse the response with jq to extract access_token and refresh_token. Use
-      the access_token as a Bearer token.
-  - question: How do I handle token refresh in cURL scripts?
-    answer: >-
-      Check for 401 responses, then POST to the token endpoint with
-      grant_type=refresh_token and your refresh_token. Extract the new
-      access_token and retry the original request. Store the new refresh_token
-      if one is provided.
-relatedItems:
-  - curl-file-operations
-  - curl-response-parsing
-  - curl-api-tester
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard curl tooling (relevant CLI tools and frameworks). No
+      special setup required beyond a working curl environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Authentication Flows with cURL

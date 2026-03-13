@@ -6,13 +6,14 @@ name: Implement Supabase Auth with RLS Integration
 description: >-
   Set up Supabase Authentication with multiple providers, session management,
   and Row Level Security integration for end-to-end authorization.
-difficulty: intermediate
+difficulty: advanced
 tags:
-  - authentication
-  - supabase-auth
+  - supabase
+  - implement
+  - auth
   - rls
-  - oauth
-  - session-management
+  - integration
+  - security
 compatibility:
   - claude-code
   - cursor
@@ -21,34 +22,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Supabase project
-  - React/Next.js application
 faq:
-  - question: How does Supabase Auth integrate with Row Level Security?
+  - question: "When should I use the Implement Supabase Auth with RLS Integration skill?"
     answer: >-
-      When a user authenticates, Supabase includes their JWT token with every
-      database request. RLS policies access this token via auth.uid() (user ID)
-      and auth.jwt() (full claims). The database automatically filters rows
-      based on these policies, creating end-to-end authorization without
-      middleware.
-  - question: Should I use the anon key or service_role key in my app?
+      Set up Supabase Authentication with multiple providers, session
+      management, and Row Level Security integration for end-to-end
+      authorization. This skill provides a structured workflow for auth
+      configuration, database migrations, real-time subscriptions, and edge
+      functions.
+  - question: "What tools and setup does Implement Supabase Auth with RLS Integration require?"
     answer: >-
-      Use the anon key on the client — it respects RLS policies and limits
-      access based on the authenticated user. The service_role key bypasses ALL
-      RLS and should ONLY be used in secure server-side code (Edge Functions,
-      API routes). Never expose the service_role key to the browser.
-  - question: How do I add custom user data beyond what Supabase Auth stores?
-    answer: >-
-      Create a 'profiles' table linked to auth.users via a foreign key on user
-      ID. Use a database trigger or auth hook to create a profile automatically
-      when a user signs up. Store additional data (avatar, bio, preferences) in
-      this profiles table with RLS policies.
-relatedItems:
-  - supabase-rls-architect
-  - supabase-migrations-workflow
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Supabase CLI installed. Works with Supabase projects. Review
+      the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Implement Supabase Auth with RLS Integration

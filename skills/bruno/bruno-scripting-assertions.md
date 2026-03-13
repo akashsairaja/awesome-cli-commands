@@ -5,15 +5,16 @@ type: skill
 name: Scripting and Assertions in Bruno
 description: >-
   Write pre-request and post-response scripts in Bruno for dynamic test data,
-  variable extraction, response assertions, and request chaining across API test
-  flows.
+  variable extraction, response assertions, and request chaining across API
+  test flows.
 difficulty: intermediate
 tags:
+  - bruno
   - scripting
   - assertions
-  - request-chaining
-  - pre-request
-  - bruno
+  - testing
+  - api
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,34 +22,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Bruno installed
-  - JavaScript basics
 faq:
-  - question: How do I write assertions in Bruno?
+  - question: "When should I use the Scripting and Assertions in Bruno skill?"
     answer: >-
-      Bruno supports declarative assertions in the 'assert' block: 'res.status:
-      eq 200', 'res.body.name: isDefined'. For complex validation, use
-      post-response scripts with expect() syntax. Both approaches validate API
-      responses — use declarative for simple checks, scripts for complex logic.
-  - question: How do I chain requests in Bruno?
+      Write pre-request and post-response scripts in Bruno for dynamic test
+      data, variable extraction, response assertions, and request chaining
+      across API test flows. It includes practical examples for bruno
+      development.
+  - question: "What tools and setup does Scripting and Assertions in Bruno require?"
     answer: >-
-      In post-response scripts, extract values with bru.setVar('key',
-      res.body.value). Subsequent requests use {{key}} in URLs, headers, and
-      bodies. Example: Login extracts authToken, Create extracts resourceId, Get
-      uses the resourceId, Delete cleans up.
-  - question: Can Bruno generate dynamic test data?
-    answer: >-
-      Yes. Use pre-request scripts to generate unique emails
-      (test-{timestamp}@example.com), UUIDs, random numbers, and dynamic dates.
-      Set them as variables with bru.setVar() for use in the request body and
-      assertions.
-relatedItems:
-  - bruno-collection-design
-  - bruno-ci-runner
-  - bruno-environment-manager
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard bruno tooling (relevant CLI tools and frameworks).
+      No special setup required beyond a working bruno environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Scripting and Assertions in Bruno

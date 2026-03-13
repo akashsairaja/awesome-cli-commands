@@ -2,18 +2,22 @@
 id: taskfile-caching
 stackId: taskfile
 type: skill
-name: Taskfile Smart Caching with Sources & Generates
+name: >-
+  Taskfile Smart Caching with Sources & Generates
 description: >-
-  Use Taskfile's sources and generates for intelligent task caching — skip tasks
-  when inputs haven't changed, fingerprint-based detection, and status commands
-  for custom cache logic.
+  Use Taskfile's sources and generates for intelligent task caching — skip
+  tasks when inputs haven't changed, fingerprint-based detection, and status
+  commands for custom cache logic.
 difficulty: intermediate
 tags:
+  - taskfile
+  - smart
   - caching
   - sources
   - generates
-  - incremental-builds
-  - fingerprinting
+  - debugging
+  - docker
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -21,28 +25,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Task installed
-  - Basic Taskfile knowledge
 faq:
-  - question: How does Taskfile caching work?
+  - question: "When should I use the Taskfile Smart Caching with Sources & Generates skill?"
     answer: >-
-      Taskfile computes fingerprints of 'sources' files. If no sources changed
-      since the last run and 'generates' files exist, the task is skipped. Use
-      'status' for custom cache logic (e.g., check if a Docker image exists).
-      Force re-run with 'task --force'.
-  - question: How do I make Taskfile builds incremental?
+      Use Taskfile's sources and generates for intelligent task caching — skip
+      tasks when inputs haven't changed, fingerprint-based detection, and
+      status commands for custom cache logic. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Taskfile Smart Caching with Sources & Generates require?"
     answer: >-
-      Add 'sources' (input files) and 'generates' (output files) to your build
-      tasks. Taskfile fingerprints the sources and skips the task if nothing
-      changed. For example: sources: ['**/*.go'], generates: ['bin/app'] makes
-      Go builds incremental.
-relatedItems:
-  - taskfile-variables-deps
-  - taskfile-yaml-runner
-  - taskfile-includes
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm, Docker, Go toolchain installed. Works with
+      taskfile projects. Review the configuration section for project-specific
+      setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Taskfile Smart Caching with Sources & Generates

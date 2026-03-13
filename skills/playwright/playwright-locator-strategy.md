@@ -4,17 +4,18 @@ stackId: playwright
 type: skill
 name: Resilient Locator Strategies
 description: >-
-  Master Playwright's locator API — choose the right selector strategy for each
-  element using getByRole, getByLabel, getByText, and getByTestId in the correct
-  priority order.
-difficulty: beginner
+  Master Playwright's locator API — choose the right selector strategy for
+  each element using getByRole, getByLabel, getByText, and getByTestId in the
+  correct priority order.
+difficulty: intermediate
 tags:
-  - locators
-  - selectors
-  - getByRole
-  - resilient-tests
   - playwright
-  - accessibility
+  - resilient
+  - locator
+  - strategies
+  - api
+  - best-practices
+  - refactoring
 compatibility:
   - claude-code
   - cursor
@@ -23,34 +24,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Playwright 1.40+
-  - Basic HTML/accessibility knowledge
 faq:
-  - question: What is the best locator strategy in Playwright?
+  - question: "When should I use the Resilient Locator Strategies skill?"
     answer: >-
-      getByRole() is the best primary locator strategy. It finds elements the
-      way screen readers and users see them — by their semantic role and
-      accessible name. This makes tests resilient to CSS/HTML refactors and
-      inherently validates accessibility.
-  - question: When should I use data-testid in Playwright?
+      Master Playwright's locator API — choose the right selector strategy for
+      each element using getByRole, getByLabel, getByText, and getByTestId in
+      the correct priority order. It includes practical examples for browser
+      testing development.
+  - question: "What tools and setup does Resilient Locator Strategies require?"
     answer: >-
-      Use data-testid only as a last resort — when an element has no semantic
-      role, visible label, or accessible name. Common cases include canvas
-      elements, chart containers, and purely decorative wrappers. If you can add
-      an aria-label instead, prefer that.
-  - question: How do I scope Playwright locators to a specific section of the page?
-    answer: >-
-      Chain locators to narrow scope. For example,
-      page.getByRole('navigation').getByRole('link', { name: 'Home' }) finds the
-      Home link specifically within the nav element, avoiding matches in the
-      footer or sidebar.
-relatedItems:
-  - playwright-pom-patterns
-  - playwright-accessibility-auditor
-  - playwright-test-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Playwright installed. Works with Playwright projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Resilient Locator Strategies

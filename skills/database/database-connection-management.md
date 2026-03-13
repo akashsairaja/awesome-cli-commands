@@ -4,17 +4,16 @@ stackId: database
 type: skill
 name: Database Connection Pool Management
 description: >-
-  Configure database connection pools correctly — pool sizing formulas, timeout
-  settings, health checks, connection lifecycle management, and monitoring for
-  Node.js, Python, and Java applications.
+  Configure database connection pools correctly — pool sizing formulas,
+  timeout settings, health checks, connection lifecycle management, and
+  monitoring for Node.js, Python, and Java applications.
 difficulty: intermediate
 tags:
-  - connection-pool
-  - pool-sizing
-  - configuration
-  - performance
-  - monitoring
   - database
+  - connection
+  - pool
+  - management
+  - monitoring
 compatibility:
   - claude-code
   - cursor
@@ -23,31 +22,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - typescript
-  - python
-  - java
-prerequisites:
-  - Database basics
-  - Application deployment experience
 faq:
-  - question: How do I size a database connection pool?
+  - question: "When should I use the Database Connection Pool Management skill?"
     answer: >-
-      Use the formula: pool_size = (CPU cores * 2) + 1 per application instance.
-      For 4 CPU cores, that is 9 connections. Total across all instances must be
-      less than the database's max_connections. Too large a pool overwhelms the
-      database; too small causes request queuing. Monitor waitingCount to tune.
-  - question: Why do I need connection pooling for databases?
+      Configure database connection pools correctly — pool sizing formulas,
+      timeout settings, health checks, connection lifecycle management, and
+      monitoring for Node.js, Python, and Java applications. This skill
+      provides a structured workflow for schema design, query optimization,
+      migration strategies, and data modeling.
+  - question: "What tools and setup does Database Connection Pool Management require?"
     answer: >-
-      Each database connection costs ~10MB RAM and ~100ms to establish (TCP +
-      TLS + auth). Without pooling, every request creates and destroys a
-      connection. Pooling reuses connections, reducing overhead to ~1ms per
-      request and capping total connections to prevent database exhaustion.
-relatedItems:
-  - database-design-architect
-  - postgresql-connection-pooling
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Database tooling (SQL clients, ORM tools). Review
+      the setup section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Database Connection Pool Management

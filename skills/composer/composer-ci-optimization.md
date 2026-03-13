@@ -4,15 +4,19 @@ stackId: composer
 type: skill
 name: Optimize Composer for CI/CD Pipelines
 description: >-
-  Speed up Composer installs in CI/CD — caching strategies, parallel downloads,
-  production flags, and security checks for fast and reliable PHP deployments.
+  Speed up Composer installs in CI/CD — caching strategies, parallel
+  downloads, production flags, and security checks for fast and reliable PHP
+  deployments.
 difficulty: intermediate
 tags:
-  - ci-optimization
-  - composer-cache
-  - github-actions
-  - production-deploy
-  - security-audit
+  - composer
+  - optimize
+  - cicd
+  - pipelines
+  - security
+  - ci-cd
+  - machine-learning
+  - prompting
 compatibility:
   - claude-code
   - cursor
@@ -21,29 +25,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Composer 2.x
-  - CI/CD platform
-  - PHP project with composer.lock
 faq:
-  - question: Why should I use composer install instead of update in CI?
+  - question: "When should I use the Optimize Composer for CI/CD Pipelines skill?"
     answer: >-
-      composer install reads the composer.lock file and installs exact versions
-      that were tested during development. composer update resolves new versions
-      and rewrites the lock file, potentially installing untested code. Always
-      use install in CI for reproducible, tested builds.
-  - question: What Composer flags should I use for production deployment?
+      Speed up Composer installs in CI/CD — caching strategies, parallel
+      downloads, production flags, and security checks for fast and reliable
+      PHP deployments. This skill provides a structured workflow for
+      dependency management, autoloading, Laravel patterns, and package
+      publishing.
+  - question: "What tools and setup does Optimize Composer for CI/CD Pipelines require?"
     answer: >-
-      Use: --no-dev (exclude dev dependencies), --optimize-autoloader (generate
-      classmap), --classmap-authoritative (fastest loading), --no-interaction
-      (no prompts), and --prefer-dist (download archives instead of cloning).
-      This produces the fastest, smallest production installation.
-relatedItems:
-  - composer-autoloading-setup
-  - composer-package-architect
-  - composer-security-agent
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires pip/poetry installed. Works with Composer/PHP projects. Review
+      the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Optimize Composer for CI/CD Pipelines

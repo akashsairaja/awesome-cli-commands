@@ -9,10 +9,13 @@ description: >-
 difficulty: beginner
 tags:
   - ngrok
+  - test
   - webhooks
-  - stripe
-  - github
-  - local-development
+  - locally
+  - security
+  - debugging
+  - api
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -21,34 +24,18 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - ngrok installed and authenticated
-  - Local development server running
 faq:
-  - question: How do I test Stripe webhooks locally?
+  - question: "When should I use the Test Webhooks Locally with Ngrok skill?"
     answer: >-
-      Two options: (1) Use the Stripe CLI with 'stripe listen --forward-to
-      localhost:3000/api/webhooks/stripe' — it automatically routes Stripe
-      events to your local server. (2) Use ngrok with a stable domain and set it
-      as the webhook endpoint in the Stripe Dashboard. The Stripe CLI is
-      recommended for development.
-  - question: How do I replay a webhook request with ngrok?
+      Set up ngrok for local webhook development — Stripe, GitHub, and Twilio
+      webhook testing with payload inspection, request replay, and stable
+      URLs. This skill provides a structured workflow for development tasks.
+  - question: "What tools and setup does Test Webhooks Locally with Ngrok require?"
     answer: >-
-      Open ngrok's inspection UI at localhost:4040. Find the request you want to
-      replay in the request list. Click the 'Replay' button to re-send the exact
-      same request to your local server. This lets you test your webhook handler
-      repeatedly without triggering the event in the source service.
-  - question: Why do I need a stable ngrok URL for webhooks?
-    answer: >-
-      Webhook URLs are configured in external services (Stripe, GitHub). With
-      ngrok's free plan, URLs change every restart, requiring you to update the
-      configuration each time. A custom domain (paid plan) gives you a stable
-      URL that persists across sessions.
-relatedItems:
-  - ngrok-tunnel-architect
-  - ngrok-config-setup
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm installed. Works with ngrok projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Test Webhooks Locally with Ngrok

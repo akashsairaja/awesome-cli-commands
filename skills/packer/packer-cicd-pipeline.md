@@ -7,14 +7,15 @@ description: >-
   Integrate Packer into CI/CD pipelines — GitHub Actions workflows, automated
   builds on merge, image promotion across environments, and managing image
   lifecycle in production.
-difficulty: advanced
+difficulty: intermediate
 tags:
-  - ci-cd
-  - github-actions
-  - automation
-  - image-lifecycle
+  - packer
+  - cicd
+  - image
+  - pipelines
   - testing
-  - promotion
+  - ci-cd
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -22,35 +23,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Packer CLI installed
-  - 'CI/CD platform (GitHub Actions, GitLab CI)'
-  - Cloud credentials configured
 faq:
-  - question: How do I automate Packer builds in GitHub Actions?
+  - question: "When should I use the Packer CI/CD Image Pipelines skill?"
     answer: >-
-      Use hashicorp/setup-packer action to install Packer. Configure cloud
-      credentials with OIDC (aws-actions/configure-aws-credentials). Run packer
-      init, packer validate, then packer build with -var flags for version
-      metadata. Upload manifest.json as an artifact for downstream tracking.
-  - question: How do I test a Packer image before deploying?
+      Integrate Packer into CI/CD pipelines — GitHub Actions workflows,
+      automated builds on merge, image promotion across environments, and
+      managing image lifecycle in production. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Packer CI/CD Image Pipelines require?"
     answer: >-
-      After build: parse manifest.json for AMI ID, launch a test instance, run
-      smoke tests (check services, ports, configs), then terminate. Automate
-      with a test script in CI. Only promote to production after tests pass. Use
-      InSpec or Serverspec for structured image testing.
-  - question: How do I clean up old AMIs automatically?
-    answer: >-
-      List images sorted by date, keep the last N versions, deregister the rest.
-      Also delete associated snapshots. Run as a scheduled CI job or Lambda
-      function. Tag images with expiration dates for lifecycle policies. AWS has
-      native AMI lifecycle management via DLM.
-relatedItems:
-  - packer-hcl2-templates
-  - packer-provisioner-scripts
-  - packer-image-builder
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Requires pip/poetry installed. Works with packer projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Packer CI/CD Image Pipelines

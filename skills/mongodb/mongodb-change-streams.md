@@ -4,17 +4,18 @@ stackId: mongodb
 type: skill
 name: MongoDB Change Streams for Real-Time Data
 description: >-
-  Implement MongoDB change streams to react to data changes in real time — watch
-  collections, filter events, resume after failures, and build event-driven
-  architectures.
-difficulty: advanced
+  Implement MongoDB change streams to react to data changes in real time —
+  watch collections, filter events, resume after failures, and build
+  event-driven architectures.
+difficulty: beginner
 tags:
-  - change-streams
-  - real-time
-  - event-driven
-  - oplog
-  - reactive
   - mongodb
+  - change
+  - streams
+  - real-time
+  - data
+  - architecture
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,33 +23,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-languages:
-  - javascript
-  - typescript
-prerequisites:
-  - MongoDB 6.0+ (replica set or sharded cluster)
-  - Node.js MongoDB driver
 faq:
-  - question: What are MongoDB change streams?
+  - question: "When should I use the MongoDB Change Streams for Real-Time Data skill?"
     answer: >-
-      Change streams are a MongoDB feature that lets your application subscribe
-      to real-time data changes (inserts, updates, deletes) without polling.
-      They use the oplog internally, work with replica sets and sharded
-      clusters, and support resumability — your app can pick up where it left
-      off after a crash.
-  - question: How do I handle change stream failures and restarts?
+      Implement MongoDB change streams to react to data changes in real time —
+      watch collections, filter events, resume after failures, and build
+      event-driven architectures. This skill provides a structured workflow
+      for aggregation pipelines, index strategy, change streams, and schema
+      design.
+  - question: "What tools and setup does MongoDB Change Streams for Real-Time Data require?"
     answer: >-
-      Persist the resume token (_id field) from each change event to durable
-      storage (database, file, Redis). When restarting, pass the last resume
-      token as resumeAfter in the watch() options. MongoDB will replay all
-      changes from that point forward. Process changes idempotently since
-      duplicates are possible.
-relatedItems:
-  - mongodb-schema-designer
-  - mongodb-aggregation-pipeline
-  - kafka-event-streaming
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires pip/poetry installed. Works with MongoDB projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # MongoDB Change Streams for Real-Time Data

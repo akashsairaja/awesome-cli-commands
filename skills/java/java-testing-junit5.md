@@ -2,18 +2,19 @@
 id: java-testing-junit5
 stackId: java
 type: skill
-name: Java Testing with JUnit 5 & Mockito
+name: >-
+  Java Testing with JUnit 5 & Mockito
 description: >-
   Write effective Java tests with JUnit 5 — parameterized tests, lifecycle
-  hooks, Mockito mocking, Spring Boot integration tests, and test containers for
-  databases.
+  hooks, Mockito mocking, Spring Boot integration tests, and test containers
+  for databases.
 difficulty: intermediate
 tags:
-  - junit5
+  - java
   - testing
+  - junit
   - mockito
-  - parameterized-tests
-  - integration-tests
+  - api
 compatibility:
   - claude-code
   - cursor
@@ -22,39 +23,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - java
-prerequisites:
-  - Java 21+
-  - JUnit 5
-  - Mockito
 faq:
-  - question: What is JUnit 5 and how is it different from JUnit 4?
+  - question: "When should I use the Java Testing with JUnit 5 & Mockito skill?"
     answer: >-
-      JUnit 5 features a modular architecture (jupiter, vintage, platform),
-      parameterized tests, nested tests, display names, and extension model
-      (replacing JUnit 4 Rules and Runners). It uses @BeforeEach instead of
-      @Before, @ExtendWith instead of @RunWith, and supports lambda assertions.
-  - question: When should I use unit tests vs integration tests in Spring Boot?
+      Write effective Java tests with JUnit 5 — parameterized tests, lifecycle
+      hooks, Mockito mocking, Spring Boot integration tests, and test
+      containers for databases. This skill provides a structured workflow for
+      modern language features, testing patterns, and application development.
+  - question: "What tools and setup does Java Testing with JUnit 5 & Mockito require?"
     answer: >-
-      Use unit tests (Mockito) for service and utility logic — they run in
-      milliseconds with no Spring context. Use integration tests
-      (@SpringBootTest) for verifying controller endpoints, JPA queries, and
-      configuration. Aim for 80% unit tests and 20% integration tests for fast
-      feedback with good coverage.
-  - question: How do I mock a Spring repository with Mockito?
-    answer: >-
-      Use @ExtendWith(MockitoExtension.class) on the test class, @Mock on the
-      repository field, and @InjectMocks on the service. Use
-      when(repo.method()).thenReturn(value) to stub behavior and
-      verify(repo).method() to check interactions. This tests service logic
-      without a database.
-relatedItems:
-  - java-spring-boot-setup
-  - java-modern-features
-  - java-build-tools
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Java/JavaScript tooling (JDK, build tools). Review
+      the setup section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Java Testing with JUnit 5 & Mockito

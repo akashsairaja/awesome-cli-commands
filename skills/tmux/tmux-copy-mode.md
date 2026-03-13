@@ -2,18 +2,21 @@
 id: tmux-copy-mode
 stackId: tmux
 type: skill
-name: Tmux Copy Mode & Clipboard Integration
+name: >-
+  Tmux Copy Mode & Clipboard Integration
 description: >-
-  Master tmux copy mode with vi keybindings — navigate scrollback, select text,
-  yank to system clipboard, and integrate with macOS pbcopy, Linux xclip, and
-  WSL clip.exe.
-difficulty: beginner
+  Master tmux copy mode with vi keybindings — navigate scrollback, select
+  text, yank to system clipboard, and integrate with macOS pbcopy, Linux
+  xclip, and WSL clip.exe.
+difficulty: intermediate
 tags:
-  - copy-mode
+  - tmux
+  - copy
+  - mode
   - clipboard
-  - vi-mode
-  - tmux-yank
-  - scrollback
+  - integration
+  - rag
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,28 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - tmux 3.0+
-  - Clipboard tool (pbcopy/xclip/wl-copy)
 faq:
-  - question: How do I copy text from tmux to the system clipboard?
+  - question: "When should I use the Tmux Copy Mode & Clipboard Integration skill?"
     answer: >-
-      Configure vi copy mode in tmux.conf, then: prefix+[ to enter copy mode, v
-      to start selection, y to yank. Connect to system clipboard with
-      copy-pipe-and-cancel: 'pbcopy' on macOS, 'xclip -selection clipboard' on
-      Linux, 'clip.exe' on WSL. Or install tmux-yank plugin for automatic setup.
-  - question: How do I search scrollback history in tmux?
+      Master tmux copy mode with vi keybindings — navigate scrollback, select
+      text, yank to system clipboard, and integrate with macOS pbcopy, Linux
+      xclip, and WSL clip.exe. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Tmux Copy Mode & Clipboard Integration require?"
     answer: >-
-      Enter copy mode with prefix+[, then press / to search forward or ? to
-      search backward. Use n/N to jump between matches. This works like Vim
-      search. Increase scrollback with 'set -g history-limit 50000' for more
-      history.
-relatedItems:
-  - tmux-session-architect
-  - tmux-scripted-sessions
-  - vim-motion-mentor
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires pip/poetry installed. Works with tmux projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Tmux Copy Mode & Clipboard Integration

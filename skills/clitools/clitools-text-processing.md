@@ -2,19 +2,22 @@
 id: clitools-text-processing
 stackId: clitools
 type: skill
-name: 'Text Processing with awk, sed, and cut'
+name: >-
+  Text Processing with awk, sed, and cut
 description: >-
   Master text processing with core Unix tools — awk for column extraction and
   calculations, sed for stream editing and substitution, and cut for field
   splitting in data pipelines.
 difficulty: intermediate
 tags:
+  - clitools
+  - text
+  - processing
   - awk
   - sed
   - cut
-  - text-processing
-  - data-transformation
-  - unix
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +25,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Unix-like shell with GNU coreutils
 faq:
-  - question: When should I use awk vs sed vs cut?
+  - question: "When should I use the Text Processing with awk, sed, and cut skill?"
     answer: >-
-      cut: simple field extraction by delimiter or character position. sed:
-      search-and-replace, line deletion, in-place file editing. awk:
-      column-based processing with math, conditionals, and formatting. Rule of
-      thumb: if you need math or if/else, use awk. If you need substitution, use
-      sed. If you need columns, try cut first.
-  - question: How do I process CSV files with awk?
+      Master text processing with core Unix tools — awk for column extraction
+      and calculations, sed for stream editing and substitution, and cut for
+      field splitting in data pipelines. This skill provides a structured
+      workflow for API design, documentation, architecture patterns, and
+      development workflows.
+  - question: "What tools and setup does Text Processing with awk, sed, and cut require?"
     answer: >-
-      Set the field separator: awk -F',' '{print $2}' data.csv. For CSVs with
-      quoted fields containing commas, use gawk with FPAT: gawk
-      'BEGIN{FPAT="[^,]*|\"[^\"]*\""} {print $2}' data.csv. For complex CSVs,
-      consider csvkit or Miller instead.
-  - question: How do I edit files in-place with sed?
-    answer: >-
-      Use -i flag: sed -i 's/old/new/g' file.txt. On macOS, use -i '' (empty
-      backup extension). Always make backups: sed -i.bak 's/old/new/g' file.txt.
-      Test without -i first to preview changes. Use -i with -e for multiple
-      operations.
-relatedItems:
-  - clitools-io-redirection
-  - clitools-xargs-parallel
-  - clitools-pipeline-architect
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Requires pip/poetry installed. Works with CLI & Dev Tools projects.
+      Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Text Processing with awk, sed, and cut

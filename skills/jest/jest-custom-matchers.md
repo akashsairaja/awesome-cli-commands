@@ -5,15 +5,16 @@ type: skill
 name: Custom Matchers and Test Utilities
 description: >-
   Create custom Jest matchers with expect.extend to build domain-specific
-  assertions that make tests more expressive and reduce boilerplate across your
-  test suite.
-difficulty: advanced
+  assertions that make tests more expressive and reduce boilerplate across
+  your test suite.
+difficulty: intermediate
 tags:
-  - custom-matchers
-  - expect-extend
-  - test-utilities
-  - domain-testing
   - jest
+  - custom
+  - matchers
+  - test
+  - utilities
+  - api
 compatibility:
   - claude-code
   - cursor
@@ -21,35 +22,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Jest 29+
-  - TypeScript
-  - Understanding of Jest expect API
 faq:
-  - question: What are custom Jest matchers?
+  - question: "When should I use the Custom Matchers and Test Utilities skill?"
     answer: >-
-      Custom matchers extend Jest's expect() API with your own assertions.
-      Instead of writing complex assertion logic in every test, you encapsulate
-      it in a matcher like expect(response).toBeSuccessful(). They improve
-      readability, reduce duplication, and provide clear error messages.
-  - question: How do I add TypeScript support for custom Jest matchers?
+      Create custom Jest matchers with expect.extend to build domain-specific
+      assertions that make tests more expressive and reduce boilerplate across
+      your test suite. It includes practical examples for JavaScript testing
+      development.
+  - question: "What tools and setup does Custom Matchers and Test Utilities require?"
     answer: >-
-      Create a .d.ts declaration file that extends the jest.Matchers interface
-      with your custom matcher signatures. Add it to your tsconfig.json includes
-      or place it alongside your matcher implementation. This enables
-      autocompletion and type checking in tests.
-  - question: When should I create a custom matcher vs a helper function?
-    answer: >-
-      Create a custom matcher when the assertion is reused across many test
-      files and benefits from the expect().not syntax and clear error messages.
-      Use a helper function for complex setup/teardown logic or multi-step
-      operations that are not purely assertions.
-relatedItems:
-  - jest-mocking-mastery
-  - jest-async-patterns
-  - jest-testing-strategist
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Jest installed. Works with Jest projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Custom Matchers and Test Utilities

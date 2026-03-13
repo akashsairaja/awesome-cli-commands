@@ -10,11 +10,11 @@ description: >-
 difficulty: beginner
 tags:
   - xh
-  - http-requests
-  - json
-  - get
-  - post
-  - api-testing
+  - http
+  - requests
+  - testing
+  - api
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +22,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - xh installed
 faq:
-  - question: How is xh different from HTTPie?
+  - question: "When should I use the HTTP Requests with xh skill?"
     answer: >-
-      xh uses the same key=value syntax as HTTPie but is written in Rust for
-      2-5x better performance. It handles JSON automatically, colorizes output,
-      and supports the same request syntax. Missing from xh: persistent
-      sessions, config file, and plugins. xh is a lean, fast alternative for
-      daily API testing.
-  - question: How do I send arrays and objects in xh?
+      Make HTTP requests with xh — GET, POST, PUT, DELETE, JSON handling,
+      headers, query parameters, form data, and leveraging xh's intuitive
+      HTTPie-compatible syntax for API interactions. This skill provides a
+      structured workflow for development tasks.
+  - question: "What tools and setup does HTTP Requests with xh require?"
     answer: >-
-      Use := with JSON syntax: tags:='["a","b"]' for arrays,
-      metadata:='{"key":"value"}' for objects. The := operator sends raw JSON
-      (not strings). Regular = always sends strings. This matches HTTPie syntax
-      exactly.
-  - question: What does the xhs command do?
-    answer: >-
-      xhs is a shortcut for xh https://. Instead of typing xh
-      https://api.example.com/users, type xhs api.example.com/users. It
-      automatically prepends https://. This saves keystrokes for the most common
-      case (HTTPS requests).
-relatedItems:
-  - xh-response-handling
-  - xh-download-progress
-  - xh-http-client
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Works with standard xh tooling (relevant CLI tools and frameworks). No
+      special setup required beyond a working xh environment.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # HTTP Requests with xh

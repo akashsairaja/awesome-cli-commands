@@ -2,18 +2,21 @@
 id: aitools-tool-use-patterns
 stackId: aitools
 type: skill
-name: AI Tool Use & Function Calling Patterns
+name: >-
+  AI Tool Use & Function Calling Patterns
 description: >-
   Design effective tool use patterns for AI agents — defining tool schemas,
-  handling multi-step tool chains, error recovery, and building reliable agentic
-  coding workflows.
-difficulty: advanced
+  handling multi-step tool chains, error recovery, and building reliable
+  agentic coding workflows.
+difficulty: intermediate
 tags:
-  - tool-use
-  - function-calling
-  - agent-patterns
-  - multi-step
-  - error-recovery
+  - aitools
+  - tool
+  - function
+  - calling
+  - patterns
+  - api
+  - type-safety
 compatibility:
   - claude-code
   - cursor
@@ -21,35 +24,21 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Understanding of AI agent architectures
-  - Programming experience with async/await patterns
-  - Familiarity with API design
 faq:
-  - question: What is tool use in AI coding agents?
+  - question: "When should I use the AI Tool Use & Function Calling Patterns skill?"
     answer: >-
-      Tool use (function calling) allows AI agents to execute real operations —
-      reading files, writing code, running commands, querying databases. Instead
-      of just generating text, the AI calls defined tools with parameters, gets
-      results, and uses them to complete multi-step coding tasks.
-  - question: How do I design safe tool schemas for AI agents?
+      Design effective tool use patterns for AI agents — defining tool
+      schemas, handling multi-step tool chains, error recovery, and building
+      reliable agentic coding workflows. This skill provides a structured
+      workflow for prompt engineering, RAG pipelines, LLM application
+      development, and AI agent building.
+  - question: "What tools and setup does AI Tool Use & Function Calling Patterns require?"
     answer: >-
-      Write specific descriptions so AI understands when to use each tool. Add
-      parameter constraints (path prefixes, file type restrictions). Implement
-      confirmation prompts for destructive operations. Validate all parameters
-      before execution. Log every tool call for audit.
-  - question: What happens when a tool call fails?
-    answer: >-
-      Return structured error information to the AI so it can adjust its
-      approach. Implement retry logic for transient failures. For permanent
-      failures, the AI should try alternative tools or approaches. Never let
-      tool failures crash the entire agent — handle errors gracefully.
-relatedItems:
-  - aitools-system-prompt-design
-  - aitools-rag-patterns
-  - aitools-prompt-engineer
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard AI & ML Tools tooling (LLM APIs, embedding models).
+      No special setup required beyond a working AI/ML development
+      environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # AI Tool Use & Function Calling Patterns

@@ -5,16 +5,18 @@ type: skill
 name: Batch Media Processing Scripts
 description: >-
   Build batch processing scripts with FFmpeg — directory traversal, format
-  conversion, thumbnail generation, metadata extraction, and parallel processing
-  for media libraries.
+  conversion, thumbnail generation, metadata extraction, and parallel
+  processing for media libraries.
 difficulty: intermediate
 tags:
-  - batch-processing
-  - scripting
+  - ffmpeg
+  - batch
+  - media
+  - processing
+  - scripts
   - automation
-  - thumbnails
-  - parallel
-  - media-library
+  - ci-cd
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - FFmpeg installed
-  - Bash shell (Linux/macOS/WSL)
 faq:
-  - question: How do I batch convert videos with FFmpeg?
+  - question: "When should I use the Batch Media Processing Scripts skill?"
     answer: >-
-      Use a bash loop: for file in ./input/*.mp4; do ffmpeg -i "$file" [options]
-      "./output/$(basename "$file")"; done. Add error handling with || echo
-      "Failed: $file", use -y for automatic overwrite, and -loglevel error for
-      cleaner output.
-  - question: How do I speed up batch FFmpeg processing?
+      Build batch processing scripts with FFmpeg — directory traversal, format
+      conversion, thumbnail generation, metadata extraction, and parallel
+      processing for media libraries. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Batch Media Processing Scripts require?"
     answer: >-
-      Three approaches: (1) Use -preset fast or veryfast instead of medium. (2)
-      Process files in parallel with xargs -P or GNU parallel. (3) Use hardware
-      encoding (NVENC, QSV) for 5-10x speed improvement at the cost of slightly
-      larger files.
-  - question: How do I generate thumbnails from videos with FFmpeg?
-    answer: >-
-      Use: ffmpeg -i video.mp4 -ss 5 -vframes 1 -vf 'scale=640:-1'
-      thumbnail.jpg. The -ss flag seeks to the timestamp (5 seconds), -vframes 1
-      extracts one frame, and scale resizes. For better thumbnails, seek to 10%
-      of video duration.
-relatedItems:
-  - ffmpeg-web-optimization
-  - ffmpeg-audio-processing
-  - ffmpeg-media-processor
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard ffmpeg tooling (relevant CLI tools and frameworks).
+      No special setup required beyond a working ffmpeg environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Batch Media Processing Scripts

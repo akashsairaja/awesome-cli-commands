@@ -4,15 +4,16 @@ stackId: mkcert
 type: skill
 name: Integrate mkcert with Development Frameworks
 description: >-
-  Configure HTTPS with mkcert certificates in Next.js, Vite, webpack-dev-server,
-  Express, and other development servers for trusted local TLS.
-difficulty: beginner
+  Configure HTTPS with mkcert certificates in Next.js, Vite,
+  webpack-dev-server, Express, and other development servers for trusted local
+  TLS.
+difficulty: advanced
 tags:
-  - mkcert-integration
-  - nextjs-https
-  - vite-https
-  - express-https
-  - framework-tls
+  - mkcert
+  - integrate
+  - development
+  - frameworks
+  - api
 compatibility:
   - claude-code
   - cursor
@@ -21,34 +22,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - mkcert installed
-  - CA installed with mkcert -install
-  - Development framework project
 faq:
-  - question: How do I set up HTTPS in Next.js with mkcert?
+  - question: "When should I use the Integrate mkcert with Development Frameworks skill?"
     answer: >-
-      Generate certs with 'mkcert -cert-file certs/local-cert.pem -key-file
-      certs/local-key.pem localhost 127.0.0.1'. Create a custom server.js that
-      uses Node's https.createServer with the mkcert certificates and passes
-      requests to the Next.js handler.
-  - question: How do I configure Vite for HTTPS with mkcert?
+      Configure HTTPS with mkcert certificates in Next.js, Vite,
+      webpack-dev-server, Express, and other development servers for trusted
+      local TLS. This skill provides a structured workflow for development
+      tasks.
+  - question: "What tools and setup does Integrate mkcert with Development Frameworks require?"
     answer: >-
-      Generate certificates, then set server.https in vite.config.ts with key
-      and cert pointing to the mkcert PEM files. Vite will automatically serve
-      over HTTPS with trusted certificates.
-  - question: Do all team members need to install mkcert separately?
-    answer: >-
-      Yes. mkcert's CA is per-machine — each developer must run 'mkcert
-      -install' to trust the local CA. The generated certificates can be shared
-      (add them to a team-accessible location), but the CA installation must
-      happen on each machine.
-relatedItems:
-  - mkcert-docker-https
-  - mkcert-local-https-specialist
-  - mkcert-multi-service-agent
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard mkcert tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Integrate mkcert with Development Frameworks

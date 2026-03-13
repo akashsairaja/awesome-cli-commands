@@ -2,19 +2,21 @@
 id: jq-object-construction
 stackId: jq
 type: skill
-name: Object Construction & Reshaping with jq
+name: >-
+  Object Construction & Reshaping with jq
 description: >-
-  Reshape JSON data with jq — constructing new objects, renaming fields, merging
-  structures, string interpolation, and building output formats like CSV, TSV,
-  and custom templates.
+  Reshape JSON data with jq — constructing new objects, renaming fields,
+  merging structures, string interpolation, and building output formats like
+  CSV, TSV, and custom templates.
 difficulty: intermediate
 tags:
-  - object-construction
-  - string-interpolation
-  - csv
-  - data-reshaping
-  - merging
-  - format-conversion
+  - jq
+  - object
+  - construction
+  - reshaping
+  - api
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,30 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - jq 1.6+
 faq:
-  - question: How do I rename fields in jq?
+  - question: "When should I use the Object Construction & Reshaping with jq skill?"
     answer: >-
-      Construct a new object with the desired names: jq '{new_name: .old_name}'.
-      For multiple fields: jq '{user_name: .name, user_email: .email, id}'
-      (shorthand keeps original name for id).
-  - question: How do I merge two JSON objects with jq?
+      Reshape JSON data with jq — constructing new objects, renaming fields,
+      merging structures, string interpolation, and building output formats
+      like CSV, TSV, and custom templates. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Object Construction & Reshaping with jq require?"
     answer: >-
-      Use * for deep merge: jq '. * {"new_field": "value"}'. Use + for shallow
-      merge. Merge files: jq -s '.[0] * .[1]' file1.json file2.json. The right
-      operand wins on conflicts for both operators.
-  - question: How do I convert JSON to CSV with jq?
-    answer: >-
-      Use @csv format: jq -r '.[] | [.id, .name, .email] | @csv'. This properly
-      escapes quotes and commas. Add a header: (echo 'id,name,email'; jq -r '.[]
-      | [.id, .name, .email] | @csv' data.json) > output.csv.
-relatedItems:
-  - jq-api-processing
-  - jq-array-operations
-  - jq-data-transformer
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Works with standard jq tooling (relevant CLI tools and frameworks). No
+      special setup required beyond a working jq environment.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Object Construction & Reshaping with jq

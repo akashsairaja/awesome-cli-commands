@@ -2,20 +2,20 @@
 id: linux-process-management
 stackId: linux
 type: skill
-name: Linux Process Management & Monitoring
+name: >-
+  Linux Process Management & Monitoring
 description: >-
   Master Linux process management — finding processes, reading resource usage,
   sending signals, managing priorities, diagnosing high CPU/memory, and using
   /proc for deep inspection.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - processes
-  - monitoring
-  - signals
-  - top
-  - htop
-  - resource-management
   - linux
+  - process
+  - management
+  - monitoring
+  - debugging
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -24,27 +24,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Linux terminal basics
 faq:
-  - question: 'What is the difference between kill, kill -9, and kill -HUP on Linux?'
+  - question: "When should I use the Linux Process Management & Monitoring skill?"
     answer: >-
-      kill (SIGTERM) asks the process to shut down gracefully — it can save
-      state and clean up. kill -9 (SIGKILL) forces immediate termination — the
-      process cannot catch or ignore it, no cleanup occurs. kill -HUP (SIGHUP)
-      traditionally means 'reload configuration' — many daemons re-read their
-      config files on this signal.
-  - question: How do I find which process is using the most CPU or memory on Linux?
+      Master Linux process management — finding processes, reading resource
+      usage, sending signals, managing priorities, diagnosing high CPU/memory,
+      and using /proc for deep inspection. This skill provides a structured
+      workflow for shell scripting, process management, file permissions, and
+      system troubleshooting.
+  - question: "What tools and setup does Linux Process Management & Monitoring require?"
     answer: >-
-      For CPU: 'ps aux --sort=-%cpu | head' or press P in top/htop. For memory:
-      'ps aux --sort=-%mem | head' or press M in top/htop. Check 'free -h' for
-      system-wide memory and 'uptime' for CPU load averages. Load average above
-      your CPU core count indicates overload.
-relatedItems:
-  - linux-system-administrator
-  - linux-systemd-services
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Linux tooling (Bash, coreutils). Review the setup
+      section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Linux Process Management & Monitoring

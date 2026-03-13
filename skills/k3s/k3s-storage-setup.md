@@ -9,12 +9,12 @@ description: >-
   and file stores.
 difficulty: intermediate
 tags:
-  - k3s-storage
-  - longhorn
-  - local-path
-  - persistent-volumes
-  - nfs
-  - stateful-workloads
+  - k3s
+  - configure
+  - persistent
+  - storage
+  - kubernetes
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,29 +22,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - K3s cluster running
-  - kubectl access
-  - 'For Longhorn: open-iscsi installed on all nodes'
 faq:
-  - question: What storage options are available for K3s?
+  - question: "When should I use the Configure Persistent Storage for K3s skill?"
     answer: >-
-      K3s includes local-path-provisioner by default for single-node storage.
-      For multi-node clusters, use Longhorn (built-in replication, snapshots,
-      backups), NFS CSI driver (external NFS server), or cloud provider CSI
-      drivers (EBS, Azure Disk, etc.).
-  - question: Should I use local-path or Longhorn for K3s storage?
+      Set up persistent storage in K3s clusters using local-path-provisioner,
+      Longhorn distributed storage, and NFS for stateful workloads like
+      databases and file stores. It includes practical examples for k3s
+      development.
+  - question: "What tools and setup does Configure Persistent Storage for K3s require?"
     answer: >-
-      Use local-path for development and single-node clusters where data
-      locality is fine. Use Longhorn for multi-node production clusters where
-      you need data replication across nodes, volume snapshots, and backup
-      capabilities.
-relatedItems:
-  - k3s-ha-cluster-setup
-  - k3s-cluster-architect
-  - k3s-upgrade-strategy
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires kubectl, Helm CLI installed. Works with k3s projects. Review
+      the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Configure Persistent Storage for K3s

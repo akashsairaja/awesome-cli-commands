@@ -4,16 +4,18 @@ stackId: azure
 type: skill
 name: Azure CLI Automation Patterns
 description: >-
-  Master Azure CLI patterns for scripting and automation — resource management,
-  output formatting, JMESPath queries, batch operations, and CI/CD integration
-  with service principals.
-difficulty: beginner
+  Master Azure CLI patterns for scripting and automation — resource
+  management, output formatting, JMESPath queries, batch operations, and CI/CD
+  integration with service principals.
+difficulty: advanced
 tags:
-  - azure-cli
+  - azure
+  - cli
   - automation
-  - jmespath
-  - scripting
-  - service-principal
+  - patterns
+  - deployment
+  - ci-cd
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,30 +24,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Azure CLI 2.60+
-  - Azure subscription
 faq:
-  - question: How do I authenticate Azure CLI in CI/CD pipelines?
+  - question: "When should I use the Azure CLI Automation Patterns skill?"
     answer: >-
-      Use a service principal: 'az login --service-principal -u $CLIENT_ID -p
-      $CLIENT_SECRET --tenant $TENANT_ID'. Store credentials as CI secrets. For
-      GitHub Actions, use the azure/login action with OIDC federation (no stored
-      secrets). For Azure DevOps, use the built-in Azure service connection.
-  - question: What is JMESPath and how do I use it with Azure CLI?
+      Master Azure CLI patterns for scripting and automation — resource
+      management, output formatting, JMESPath queries, batch operations, and
+      CI/CD integration with service principals. It includes practical
+      examples for Azure cloud development.
+  - question: "What tools and setup does Azure CLI Automation Patterns require?"
     answer: >-
-      JMESPath is a query language for JSON used by Azure CLI's --query
-      parameter. It lets you filter, select, and transform output server-side.
-      Example: '--query
-      "[?location==\'eastus\'].{Name:name,Size:hardwareProfile.vmSize}"' returns
-      only East US VMs with specific fields. It is much faster than piping JSON
-      through jq.
-relatedItems:
-  - azure-rbac-governance
-  - azure-resource-group-conventions
-  - azure-infrastructure-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Azure CLI, pip/poetry installed. Works with Azure projects.
+      Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Azure CLI Automation Patterns

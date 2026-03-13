@@ -2,19 +2,21 @@
 id: xh-response-handling
 stackId: xh
 type: skill
-name: Response Handling & Debugging with xh
+name: >-
+  Response Handling & Debugging with xh
 description: >-
   Inspect and debug HTTP responses with xh — status codes, headers, verbose
   mode, response timing, and integrating xh output with jq for JSON processing
   pipelines.
-difficulty: intermediate
+difficulty: advanced
 tags:
+  - xh
   - response
+  - handling
   - debugging
-  - status-codes
-  - jq-integration
-  - headers
-  - verbose
+  - automation
+  - monitoring
+  - api
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - xh installed
-  - jq installed (for JSON processing)
 faq:
-  - question: How do I check if an API is healthy with xh?
+  - question: "When should I use the Response Handling & Debugging with xh skill?"
     answer: >-
-      Use --check-status and --quiet: xh --check-status --quiet url. Exit code 0
-      means 2xx, non-zero means error. Use in scripts: if xh --check-status
-      --quiet url; then echo 'OK'; else echo 'DOWN'; fi. Add --timeout=5 for
-      health checks.
-  - question: How do I extract JSON fields from xh responses?
+      Inspect and debug HTTP responses with xh — status codes, headers,
+      verbose mode, response timing, and integrating xh output with jq for
+      JSON processing pipelines. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Response Handling & Debugging with xh require?"
     answer: >-
-      Pipe through jq with --print=b: xh --print=b url | jq '.field'. The
-      --print=b flag outputs only the response body (no headers). Store in
-      variable: value=$(xh --print=b url | jq -r '.data.name'). Use -r flag in
-      jq for raw strings.
-  - question: What do xh exit codes mean?
-    answer: >-
-      0: success (2xx). 2: request error (connection failed, timeout). 3:
-      redirect (3xx, when not following). 4: client error (4xx). 5: server error
-      (5xx). Use --check-status to enable these exit codes (without it, xh
-      always exits 0 if the request completed).
-relatedItems:
-  - xh-request-basics
-  - xh-download-progress
-  - xh-scripting-patterns
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Requires pip/poetry installed. Works with xh projects. No additional
+      configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Response Handling & Debugging with xh

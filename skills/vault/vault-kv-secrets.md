@@ -7,14 +7,14 @@ description: >-
   Manage secrets with Vault's KV v2 engine — storing, retrieving, versioning,
   deleting, and restoring secrets with metadata, custom metadata, and
   check-and-set operations from the CLI.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - kv
-  - secrets
-  - versioning
-  - metadata
-  - check-and-set
-  - crud
+  - vault
+  - secret
+  - engine
+  - operations
+  - api
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +22,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Vault CLI installed
-  - Vault server with KV v2 engine
 faq:
-  - question: What is the difference between KV v1 and KV v2?
+  - question: "When should I use the KV Secret Engine Operations skill?"
     answer: >-
-      KV v1: simple key-value, no versioning, permanent deletes. KV v2:
-      versioned secrets, soft-delete with undelete, check-and-set for safe
-      concurrency, custom metadata. Always use v2 for new deployments. Migrate
-      v1 to v2 with vault secrets enable -version=2.
-  - question: How do I roll back a secret to a previous version?
+      Manage secrets with Vault's KV v2 engine — storing, retrieving,
+      versioning, deleting, and restoring secrets with metadata, custom
+      metadata, and check-and-set operations from the CLI. This skill provides
+      a structured workflow for development tasks.
+  - question: "What tools and setup does KV Secret Engine Operations require?"
     answer: >-
-      Read the old version: vault kv get -version=N secret/path. Then write
-      those values as a new version: vault kv put secret/path key=old_value. Or
-      read as JSON and pipe: vault kv get -format=json -version=N secret/path |
-      vault kv put secret/path -.
-  - question: How do I use Vault secrets in shell scripts?
-    answer: >-
-      Use -field flag: DB_PASS=$(vault kv get -field=password secret/myapp/db).
-      For multiple fields: vault kv get -format=json secret/myapp/db | jq -r
-      '.data.data | to_entries[] | "export \(.key)=\(.value)"' | source
-      /dev/stdin.
-relatedItems:
-  - vault-dynamic-secrets
-  - vault-policies-auth
-  - vault-secrets-expert
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Works with standard vault tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # KV Secret Engine Operations

@@ -2,20 +2,21 @@
 id: database-orm-best-practices
 stackId: database
 type: skill
-name: ORM Best Practices & N+1 Query Prevention
+name: >-
+  ORM Best Practices & N+1 Query Prevention
 description: >-
-  Use ORMs effectively — prevent N+1 queries, understand eager vs lazy loading,
-  optimize generated SQL, handle transactions correctly, and know when to bypass
-  the ORM for raw SQL.
+  Use ORMs effectively — prevent N+1 queries, understand eager vs lazy
+  loading, optimize generated SQL, handle transactions correctly, and know
+  when to bypass the ORM for raw SQL.
 difficulty: intermediate
 tags:
-  - orm
-  - n-plus-one
-  - eager-loading
-  - prisma
-  - typeorm
-  - query-optimization
   - database
+  - orm
+  - best
+  - practices
+  - query
+  - prevention
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -24,33 +25,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - typescript
-  - python
-  - java
-prerequisites:
-  - Familiarity with one ORM
-  - Basic SQL
 faq:
-  - question: What is the N+1 query problem?
+  - question: "When should I use the ORM Best Practices & N+1 Query Prevention skill?"
     answer: >-
-      N+1 occurs when you load N parent records (1 query) and then load related
-      records for each parent individually (N queries). For 100 users with
-      posts, this means 101 database queries instead of 2. It causes exponential
-      slowdown as data grows. Fix it with eager loading (include/join) to load
-      relations in a single query.
-  - question: When should I use raw SQL instead of an ORM?
+      Use ORMs effectively — prevent N+1 queries, understand eager vs lazy
+      loading, optimize generated SQL, handle transactions correctly, and know
+      when to bypass the ORM for raw SQL. This skill provides a structured
+      workflow for schema design, query optimization, migration strategies,
+      and data modeling.
+  - question: "What tools and setup does ORM Best Practices & N+1 Query Prevention require?"
     answer: >-
-      Use raw SQL for: complex aggregations with GROUP BY and HAVING, window
-      functions (ROW_NUMBER, LAG/LEAD), recursive CTEs, bulk operations
-      (INSERT...SELECT, COPY), and any query where the ORM generates inefficient
-      SQL. Use the ORM for simple CRUD, transactions, and type-safe queries.
-relatedItems:
-  - database-migration-patterns
-  - database-design-architect
-  - postgresql-query-optimizer
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Database tooling (SQL clients, ORM tools). No
+      special setup required beyond a working database environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # ORM Best Practices & N+1 Query Prevention

@@ -7,13 +7,16 @@ description: >-
   Build and test container images locally with Minikube without pushing to a
   remote registry — using image loading, Docker environment sharing, and build
   caching.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - local-images
-  - image-loading
-  - docker-env
-  - development-workflow
-  - inner-loop
+  - minikube
+  - local
+  - image
+  - development
+  - workflow
+  - deployment
+  - docker
+  - kubernetes
 compatibility:
   - claude-code
   - cursor
@@ -22,28 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - minikube installed and running
-  - Docker or Podman for building images
 faq:
-  - question: How do I use local Docker images with minikube?
+  - question: "When should I use the Local Image Development Workflow with Minikube skill?"
     answer: >-
-      Three methods: (1) 'minikube image load myapp:tag' copies a host image
-      into minikube. (2) 'eval $(minikube docker-env)' shares minikube's Docker
-      daemon so builds happen inside minikube. (3) 'minikube image build' builds
-      directly in minikube. Always set imagePullPolicy: Never in your
-      deployment.
-  - question: Why does Kubernetes say ImagePullBackOff for my local image?
+      Build and test container images locally with Minikube without pushing to
+      a remote registry — using image loading, Docker environment sharing, and
+      build caching. This skill provides a structured workflow for development
+      tasks.
+  - question: "What tools and setup does Local Image Development Workflow with Minikube require?"
     answer: >-
-      Kubernetes defaults to pulling images from a registry. For local images,
-      set imagePullPolicy: Never or IfNotPresent in your pod spec. Also verify
-      the image exists in minikube with 'minikube image ls | grep myapp'.
-relatedItems:
-  - minikube-addon-management
-  - minikube-dev-environment
-  - minikube-multi-node-setup
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker, kubectl installed. Works with minikube projects. Review
+      the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Local Image Development Workflow with Minikube

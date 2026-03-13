@@ -2,18 +2,22 @@
 id: starship-git-integration
 stackId: starship
 type: skill
-name: Starship Git Status & Branch Display
+name: >-
+  Starship Git Status & Branch Display
 description: >-
   Configure Starship's git modules for rich repository status display — branch
-  names, ahead/behind counts, modified/staged indicators, and stash counts with
-  custom symbols.
-difficulty: beginner
+  names, ahead/behind counts, modified/staged indicators, and stash counts
+  with custom symbols.
+difficulty: intermediate
 tags:
-  - git-status
-  - git-branch
-  - prompt-git
-  - starship-git
-  - version-control
+  - starship
+  - git
+  - status
+  - branch
+  - display
+  - performance
+  - optimization
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -21,28 +25,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Starship installed
-  - Git 2.30+
 faq:
-  - question: How do I show git status in my Starship prompt?
+  - question: "When should I use the Starship Git Status & Branch Display skill?"
     answer: >-
-      Configure the [git_status] module in starship.toml with format, style, and
-      indicator symbols. By default, Starship shows modified (!), staged (+),
-      untracked (?), and ahead/behind (⇡⇣) counts. Add count variables like
-      '!${count}' to show how many files are affected.
-  - question: Why is my Starship prompt slow in large git repositories?
+      Configure Starship's git modules for rich repository status display —
+      branch names, ahead/behind counts, modified/staged indicators, and stash
+      counts with custom symbols. This skill provides a structured workflow
+      for development tasks.
+  - question: "What tools and setup does Starship Git Status & Branch Display require?"
     answer: >-
-      Git status scanning is expensive in large repos. Set 'command_timeout =
-      1000' globally, add 'ignore_submodules = true' under [git_status], and
-      consider disabling git_status for specific repos with a local
-      starship.toml. Profile with STARSHIP_LOG=trace.
-relatedItems:
-  - starship-module-config
-  - starship-prompt-designer
-  - git-workflow-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard starship tooling (relevant CLI tools and
+      frameworks). Review the setup section in the skill content for specific
+      configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Starship Git Status & Branch Display

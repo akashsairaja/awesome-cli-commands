@@ -4,46 +4,35 @@ stackId: claudecode
 type: skill
 name: Writing an Effective CLAUDE.md
 description: >-
-  Master the art of writing CLAUDE.md files that give Claude Code the context it
-  needs — project structure, conventions, anti-patterns, and workflow rules for
-  consistent AI-assisted development.
-difficulty: beginner
+  Master the art of writing CLAUDE.md files that give Claude Code the context
+  it needs — project structure, conventions, anti-patterns, and workflow rules
+  for consistent AI-assisted development.
+difficulty: advanced
 tags:
-  - claude-md
-  - configuration
-  - project-setup
-  - conventions
-  - ai-context
+  - claudecode
+  - writing
+  - effective
+  - claudemd
+  - api
+  - best-practices
+  - type-safety
 compatibility:
   - claude-code
-prerequisites:
-  - Claude Code CLI installed
 faq:
-  - question: What is CLAUDE.md and why do I need it?
+  - question: "When should I use the Writing an Effective CLAUDE.md skill?"
     answer: >-
-      CLAUDE.md is a configuration file at your project root that tells Claude
-      Code how to work with your codebase. It includes project structure, coding
-      conventions, anti-patterns, and common commands. Without it, Claude Code
-      has no project-specific context and may generate code that doesn't follow
-      your standards.
-  - question: Where should I put my CLAUDE.md file?
+      Master the art of writing CLAUDE.md files that give Claude Code the
+      context it needs — project structure, conventions, anti-patterns, and
+      workflow rules for consistent AI-assisted development. This skill
+      provides a structured workflow for AI-assisted development, code
+      generation, refactoring, and debugging.
+  - question: "What tools and setup does Writing an Effective CLAUDE.md require?"
     answer: >-
-      Put project-specific CLAUDE.md at the repository root. For personal
-      preferences that apply to all projects (commit style, editor preferences),
-      use ~/.claude/CLAUDE.md. Project-level rules take precedence over global
-      rules when there's a conflict.
-  - question: How long should CLAUDE.md be?
-    answer: >-
-      Keep it under 500 lines. Focus on rules, patterns, and anti-patterns — not
-      documentation. Use bullet points and code examples for scanability. Link
-      to external docs (README, wiki) for detailed explanations rather than
-      including everything inline.
-relatedItems:
-  - claudecode-mcp-integration
-  - claudecode-hook-automation
-  - claudecode-project-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Claude Code tooling (Claude Code CLI, CLAUDE.md
+      configuration). Review the setup section in the skill content for
+      specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Writing an Effective CLAUDE.md

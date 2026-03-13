@@ -4,15 +4,19 @@ stackId: firebase
 type: skill
 name: Configure Firebase Hosting with Cloud Functions
 description: >-
-  Set up Firebase Hosting for static sites and SSR — deploy targets, multi-site
-  hosting, Cloud Functions integration, and CDN caching configuration.
-difficulty: beginner
+  Set up Firebase Hosting for static sites and SSR — deploy targets,
+  multi-site hosting, Cloud Functions integration, and CDN caching
+  configuration.
+difficulty: advanced
 tags:
-  - firebase-hosting
-  - cdn
-  - ssr
-  - multi-site
-  - deployment
+  - firebase
+  - configure
+  - hosting
+  - cloud
+  - functions
+  - security
+  - testing
+  - api
 compatibility:
   - claude-code
   - cursor
@@ -21,27 +25,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Firebase project
-  - Firebase CLI installed
 faq:
-  - question: How do I integrate Firebase Hosting with Cloud Functions?
+  - question: "When should I use the Configure Firebase Hosting with Cloud Functions skill?"
     answer: >-
-      Use the rewrites field in firebase.json to route specific URL patterns to
-      Cloud Functions. For example, route '/api/**' to a function named 'api'.
-      The Hosting CDN handles static files while Functions handle dynamic
-      routes, giving you the best of both worlds.
-  - question: What are Firebase Hosting preview channels?
+      Set up Firebase Hosting for static sites and SSR — deploy targets,
+      multi-site hosting, Cloud Functions integration, and CDN caching
+      configuration. This skill provides a structured workflow for
+      authentication, Firestore modeling, hosting, and cloud functions.
+  - question: "What tools and setup does Configure Firebase Hosting with Cloud Functions require?"
     answer: >-
-      Preview channels create temporary deployment URLs for testing. Run
-      'firebase hosting:channel:deploy my-preview' to deploy a branch to a
-      unique URL. Channels expire automatically and are perfect for PR reviews
-      and QA testing without affecting production.
-relatedItems:
-  - firebase-cloud-functions
-  - firebase-security-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Firebase tooling (Firebase CLI, Firebase Console).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Configure Firebase Hosting with Cloud Functions

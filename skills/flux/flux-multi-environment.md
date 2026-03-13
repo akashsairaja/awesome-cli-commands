@@ -6,13 +6,14 @@ name: Multi-Environment Promotion with Flux
 description: >-
   Design a GitOps promotion pipeline from dev to staging to production using
   Flux Kustomize overlays, dependency chains, and controlled reconciliation.
-difficulty: advanced
+difficulty: intermediate
 tags:
+  - flux
   - multi-environment
-  - kustomize-overlays
-  - promotion-pipeline
-  - gitops
-  - flux-cd
+  - promotion
+  - deployment
+  - kubernetes
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -20,29 +21,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Flux bootstrapped on target clusters
-  - Kustomize familiarity
-  - Git branching strategy
 faq:
-  - question: How do I promote deployments from staging to production with Flux?
+  - question: "When should I use the Multi-Environment Promotion with Flux skill?"
     answer: >-
-      Use Kustomize overlays with a shared base directory. Staging and
-      production each have their own overlay with environment-specific patches.
-      Promote changes by updating the production overlay (via PR) with the same
-      image tag or config that was validated in staging.
-  - question: Should I use one Git repository or multiple for multi-environment Flux?
+      Design a GitOps promotion pipeline from dev to staging to production
+      using Flux Kustomize overlays, dependency chains, and controlled
+      reconciliation. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Multi-Environment Promotion with Flux require?"
     answer: >-
-      A mono-repo with path-based separation (clusters/staging,
-      clusters/production) works well for most teams. Use separate repos only
-      when teams need different access controls per environment or when the repo
-      becomes too large for fast Git operations.
-relatedItems:
-  - flux-bootstrap-cluster
-  - flux-helmrelease-setup
-  - flux-gitops-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard flux tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Multi-Environment Promotion with Flux

@@ -4,15 +4,19 @@ stackId: checkov
 type: skill
 name: Checkov CI/CD Pipeline Integration
 description: >-
-  Integrate Checkov into CI/CD pipelines with GitHub Actions — IaC scanning with
-  baseline support, severity gating, SARIF uploads, and compliance reporting.
+  Integrate Checkov into CI/CD pipelines with GitHub Actions — IaC scanning
+  with baseline support, severity gating, SARIF uploads, and compliance
+  reporting.
 difficulty: intermediate
 tags:
-  - ci-cd
-  - github-actions
-  - baseline
-  - security-gates
   - checkov
+  - cicd
+  - pipeline
+  - integration
+  - security
+  - deployment
+  - ci-cd
+  - docker
 compatibility:
   - claude-code
   - cursor
@@ -20,35 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Checkov or checkov-action
-  - GitHub Actions or equivalent CI
-  - IaC templates in repository
 faq:
-  - question: How do I add Checkov to GitHub Actions?
+  - question: "When should I use the Checkov CI/CD Pipeline Integration skill?"
     answer: >-
-      Use the bridgecrewio/checkov-action. Set the directory to scan, framework
-      to target (terraform, kubernetes, dockerfile), and output format (cli for
-      logs, sarif for GitHub Security). Use soft_fail_on for LOW/MEDIUM to avoid
-      blocking PRs on minor findings.
-  - question: What is a Checkov baseline and when should I use it?
+      Integrate Checkov into CI/CD pipelines with GitHub Actions — IaC
+      scanning with baseline support, severity gating, SARIF uploads, and
+      compliance reporting. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Checkov CI/CD Pipeline Integration require?"
     answer: >-
-      A baseline snapshots current findings so future scans only report NEW
-      issues. Use it when adopting Checkov on existing infrastructure with many
-      findings. Create with '--create-baseline', then pass '--baseline
-      .checkov.baseline' on future scans. Fix baseline findings over time.
-  - question: Should Checkov block PRs on all findings?
-    answer: >-
-      No. Use soft_fail_on for LOW and MEDIUM severity. Block only on CRITICAL
-      and HIGH findings that represent real security risks (unencrypted data,
-      public access, wildcard IAM). This prevents alert fatigue while still
-      catching serious misconfigurations.
-relatedItems:
-  - checkov-terraform-scanning
-  - checkov-custom-checks
-  - checkov-policy-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker, Terraform CLI, pip/poetry installed. Works with checkov
+      projects. Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Checkov CI/CD Pipeline Integration

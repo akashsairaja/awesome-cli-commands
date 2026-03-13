@@ -2,55 +2,41 @@
 id: databricks-unity-catalog-setup
 stackId: databricks
 type: skill
-name: Unity Catalog Setup & Governance
+name: >-
+  Unity Catalog Setup & Governance
 description: >-
   Set up Databricks Unity Catalog for centralized data governance — metastore
   configuration, catalog/schema hierarchy, access controls, data lineage, and
   cross-workspace sharing.
-difficulty: advanced
+difficulty: intermediate
 tags:
-  - unity-catalog
+  - databricks
+  - unity
+  - catalog
+  - setup
   - governance
-  - access-control
-  - lineage
-  - data-security
+  - security
+  - best-practices
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-languages:
-  - sql
-prerequisites:
-  - Databricks workspace with Unity Catalog enabled
-  - Account admin or metastore admin role
 faq:
-  - question: What is Unity Catalog in Databricks?
+  - question: "When should I use the Unity Catalog Setup & Governance skill?"
     answer: >-
-      Unity Catalog is Databricks' centralized governance layer for all data
-      assets. It provides a three-level namespace (catalog.schema.table),
-      fine-grained access controls, automatic data lineage tracking, and audit
-      logging. It replaces the legacy hive_metastore for governance.
-  - question: How should I organize catalogs and schemas?
+      Set up Databricks Unity Catalog for centralized data governance —
+      metastore configuration, catalog/schema hierarchy, access controls, data
+      lineage, and cross-workspace sharing. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Unity Catalog Setup & Governance require?"
     answer: >-
-      Create one catalog per environment (dev_catalog, prod_catalog). Within
-      each catalog, create schemas following the medallion architecture (bronze,
-      silver, gold). This gives clean separation between environments and data
-      quality layers with appropriate access controls at each level.
-  - question: How does Unity Catalog handle data lineage?
-    answer: >-
-      Unity Catalog automatically tracks lineage when Databricks notebooks and
-      jobs read from or write to Delta tables. It records table-level and
-      column-level lineage, showing which sources feed which targets. View
-      lineage in the Catalog Explorer UI or query system.access tables
-      programmatically.
-relatedItems:
-  - databricks-delta-lake-optimization
-  - databricks-workflow-automation
-  - databricks-lakehouse-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard databricks tooling (relevant CLI tools and
+      frameworks). Review the setup section in the skill content for specific
+      configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Unity Catalog Setup & Governance

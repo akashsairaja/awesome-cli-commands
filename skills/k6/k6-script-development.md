@@ -7,13 +7,15 @@ description: >-
   Write k6 load test scripts with realistic user scenarios — HTTP requests,
   checks, groups, think time, and parameterized data for comprehensive API
   performance testing.
-difficulty: intermediate
+difficulty: beginner
 tags:
-  - k6-scripts
-  - load-testing
-  - checks
-  - groups
-  - parameterization
+  - k6
+  - load
+  - test
+  - script
+  - development
+  - performance
+  - api
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +24,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - k6 installed
-  - JavaScript basics
-  - Target API endpoints documented
 faq:
-  - question: How do I write a k6 load test script?
+  - question: "When should I use the K6 Load Test Script Development skill?"
     answer: >-
-      A k6 script exports a default function that runs once per virtual user
-      iteration. Use http.get/post for requests, check() for response
-      validation, sleep() for think time, and group() for transaction grouping.
-      Define load profile in the options object with stages or scenarios.
-  - question: What are k6 checks and why are they important?
+      Write k6 load test scripts with realistic user scenarios — HTTP
+      requests, checks, groups, think time, and parameterized data for
+      comprehensive API performance testing. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does K6 Load Test Script Development require?"
     answer: >-
-      Checks validate response data — status codes, body content, headers.
-      Without checks, a server returning 500 errors is counted as 'successful'
-      in metrics. Checks provide a pass/fail rate that reveals functional
-      failures under load, not just latency.
-  - question: How do I simulate multiple users with different data in k6?
-    answer: >-
-      Use SharedArray with CSV data files. Each virtual user (VU) picks a
-      different row using __VU modulo. SharedArray loads data once and shares it
-      across VUs efficiently, avoiding memory duplication for large datasets.
-relatedItems:
-  - k6-threshold-config
-  - k6-ci-integration
-  - k6-load-testing-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard k6 tooling (relevant CLI tools and frameworks). No
+      special setup required beyond a working k6 environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # K6 Load Test Script Development

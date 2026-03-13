@@ -8,25 +8,26 @@ description: >-
   algorithm insights.
 difficulty: intermediate
 tags:
+  - aitools
   - twitter
   - algorithm
   - optimizer
-  - twitter-algorithm-optimizer
-  - aitools
+  - optimization
+  - architecture
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the twitter-algorithm-optimizer skill?"
+  - question: "When should I use the Twitter Algorithm Optimizer skill?"
     answer: >-
       Analyze and optimize tweets for maximum reach using Twitter's
-      open-source algorithm insights. Rewrite and edit user tweets to improve
-      engagement and visibility based on how the recommendation system ranks
-      content.
-  - question: "What tools or setup does twitter-algorithm-optimizer require?"
+      open-source algorithm insights. This skill provides a structured
+      workflow for prompt engineering, RAG pipelines, LLM application
+      development, and AI agent building.
+  - question: "What tools and setup does Twitter Algorithm Optimizer require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Works with standard AI & ML Tools tooling (LLM APIs, embedding models).
+      No special setup required beyond a working AI/ML development
+      environment.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

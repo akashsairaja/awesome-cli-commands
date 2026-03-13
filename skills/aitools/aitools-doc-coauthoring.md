@@ -3,30 +3,29 @@ id: aitools-doc-coauthoring
 stackId: aitools
 type: skill
 name: Doc Coauthoring
-description: Guide users through a structured workflow for co-authoring documentation.
-difficulty: advanced
+description: >-
+  Guide users through a structured workflow for co-authoring documentation.
+difficulty: intermediate
 tags:
+  - aitools
   - doc
   - coauthoring
-  - doc-coauthoring
-  - aitools
+  - testing
+  - architecture
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the doc-coauthoring skill?"
+  - question: "When should I use the Doc Coauthoring skill?"
     answer: >-
       Guide users through a structured workflow for co-authoring
-      documentation. Use when user wants to write documentation, proposals,
-      technical specs, decision docs, or similar structured content. This
-      workflow helps users efficiently transfer context, refine content
-      through iteration, and verify the doc works for readers. Trigger when
-      user mentions writing docs, creating proposals, drafting specs, or
-      similar documentation tasks.
-  - question: "What tools or setup does doc-coauthoring require?"
+      documentation. This skill provides a structured workflow for prompt
+      engineering, RAG pipelines, LLM application development, and AI agent
+      building.
+  - question: "What tools and setup does Doc Coauthoring require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Works with standard AI & ML Tools tooling (LLM APIs, embedding models).
+      Review the setup section in the skill content for specific configuration
+      steps.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

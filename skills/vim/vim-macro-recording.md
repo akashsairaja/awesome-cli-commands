@@ -2,17 +2,20 @@
 id: vim-macro-recording
 stackId: vim
 type: skill
-name: Vim Macro Recording & Replay
+name: >-
+  Vim Macro Recording & Replay
 description: >-
   Master Vim macro recording for batch text transformations — record, replay,
   edit, and chain macros to automate repetitive editing tasks across files.
 difficulty: intermediate
 tags:
-  - vim-macros
+  - vim
+  - macro
   - recording
-  - batch-editing
-  - text-transformation
-  - registers
+  - replay
+  - testing
+  - debugging
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -20,33 +23,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Vim or Neovim
-  - Understanding of basic Vim motions and operators
 faq:
-  - question: How do I record and replay a macro in Vim?
+  - question: "When should I use the Vim Macro Recording & Replay skill?"
     answer: >-
-      Press qq to start recording into register q, perform your edits, then
-      press q again to stop. Replay with @q (once), 5@q (5 times), or :%normal
-      @q (entire file). Macros capture every keystroke including motions,
-      operators, and mode switches.
-  - question: How do I edit a Vim macro after recording it?
+      Master Vim macro recording for batch text transformations — record,
+      replay, edit, and chain macros to automate repetitive editing tasks
+      across files. This skill provides a structured workflow for development
+      tasks.
+  - question: "What tools and setup does Vim Macro Recording & Replay require?"
     answer: >-
-      Paste the macro contents with "qp (paste register q), edit the text as
-      needed, then yank it back with 0"qy$. You can also set it directly with
-      :let @q = 'keystrokes'. This is useful for fixing small mistakes without
-      re-recording.
-  - question: Can Vim macros work across multiple files?
-    answer: >-
-      Yes. Use :argdo normal @q to apply a macro across all argument files,
-      :bufdo normal @q for all open buffers, or :cdo normal @q for all quickfix
-      list entries. Combine with :wa to save all files afterward.
-relatedItems:
-  - vim-motion-mentor
-  - vim-registers-guide
-  - vim-text-objects
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard vim tooling (relevant CLI tools and frameworks). No
+      special setup required beyond a working vim environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Vim Macro Recording & Replay

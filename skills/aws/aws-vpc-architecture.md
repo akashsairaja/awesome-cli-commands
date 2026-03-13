@@ -4,15 +4,17 @@ stackId: aws
 type: skill
 name: AWS VPC Architecture Design
 description: >-
-  Design production-ready AWS VPC architectures with public/private subnets, NAT
-  gateways, VPC endpoints, flow logs, and multi-AZ high availability patterns.
+  Design production-ready AWS VPC architectures with public/private subnets,
+  NAT gateways, VPC endpoints, flow logs, and multi-AZ high availability
+  patterns.
 difficulty: intermediate
 tags:
+  - aws
   - vpc
-  - networking
-  - subnets
-  - security-groups
-  - nat-gateway
+  - architecture
+  - design
+  - security
+  - api
 compatibility:
   - claude-code
   - cursor
@@ -21,30 +23,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - AWS account
-  - 'Basic networking concepts (CIDR, subnets, routing)'
-  - Terraform (for IaC examples)
 faq:
-  - question: How should I design AWS VPC subnets?
+  - question: "When should I use the AWS VPC Architecture Design skill?"
     answer: >-
-      Use a three-tier design: public subnets for load balancers and NAT
-      gateways, private subnets for application servers and containers, database
-      subnets for RDS and ElastiCache. Distribute across 3 AZs for high
-      availability. Use /16 for the VPC and /24 for each subnet.
-  - question: How do VPC endpoints save money on AWS?
+      Design production-ready AWS VPC architectures with public/private
+      subnets, NAT gateways, VPC endpoints, flow logs, and multi-AZ high
+      availability patterns. It includes practical examples for AWS cloud
+      development.
+  - question: "What tools and setup does AWS VPC Architecture Design require?"
     answer: >-
-      Without VPC endpoints, traffic from private subnets to S3 or DynamoDB
-      routes through NAT gateways, which charge per GB of data processed.
-      Gateway endpoints for S3 and DynamoDB are free and route traffic directly
-      over the AWS network. For S3-heavy workloads, this can save hundreds of
-      dollars per month.
-relatedItems:
-  - aws-iam-security-architect
-  - aws-s3-security
-  - terraform-module-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Terraform CLI, Azure CLI installed. Works with AWS projects.
+      Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # AWS VPC Architecture Design

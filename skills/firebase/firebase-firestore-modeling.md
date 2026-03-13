@@ -5,15 +5,17 @@ type: skill
 name: Design Firestore Data Models
 description: >-
   Master Firestore data modeling — document structure, subcollections,
-  denormalization, composite indexes, and query optimization for scalable NoSQL
-  databases.
+  denormalization, composite indexes, and query optimization for scalable
+  NoSQL databases.
 difficulty: intermediate
 tags:
+  - firebase
+  - design
   - firestore
-  - data-modeling
-  - nosql
-  - denormalization
-  - indexes
+  - data
+  - models
+  - performance
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,37 +24,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Firebase project with Firestore
-  - Basic NoSQL understanding
 faq:
-  - question: How is Firestore data modeling different from SQL?
+  - question: "When should I use the Design Firestore Data Models skill?"
     answer: >-
-      Firestore has no JOINs, so you denormalize data — store the author name
-      inside each post document instead of referencing a users table. You model
-      data around your queries: if you need to display posts with author names,
-      put both in the same document. Read performance is proportional to result
-      set, not collection size.
-  - question: When should I use subcollections vs root collections in Firestore?
+      Master Firestore data modeling — document structure, subcollections,
+      denormalization, composite indexes, and query optimization for scalable
+      NoSQL databases. This skill provides a structured workflow for
+      authentication, Firestore modeling, hosting, and cloud functions.
+  - question: "What tools and setup does Design Firestore Data Models require?"
     answer: >-
-      Use subcollections when data belongs to a parent and you primarily query
-      within that parent (user's orders, post's comments). Use root collections
-      when you need to query across all documents regardless of parent (all
-      orders by date, all comments for moderation). Collection group queries can
-      bridge both approaches.
-  - question: How do I handle counters and aggregations in Firestore?
-    answer: >-
-      Use Cloud Functions triggers to maintain counter fields (likeCount,
-      commentCount) when related documents are created or deleted. Do not rely
-      on client-side counting or transactions — they do not scale. For complex
-      aggregations, use Firestore's count() and sum() queries or Cloud Functions
-      scheduled aggregations.
-relatedItems:
-  - firebase-security-architect
-  - firebase-cloud-functions
-  - firebase-auth-setup
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Firebase tooling (Firebase CLI, Firebase Console).
+      No special setup required beyond a working Firebase platform
+      environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Design Firestore Data Models

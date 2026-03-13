@@ -4,17 +4,19 @@ stackId: httpie
 type: skill
 name: Authentication Methods in HTTPie
 description: >-
-  Implement authentication with HTTPie — Basic auth, Bearer tokens, digest auth,
-  sessions for cookie persistence, and configuring auth plugins for OAuth and
-  custom schemes.
-difficulty: intermediate
+  Implement authentication with HTTPie — Basic auth, Bearer tokens, digest
+  auth, sessions for cookie persistence, and configuring auth plugins for
+  OAuth and custom schemes.
+difficulty: beginner
 tags:
+  - httpie
   - authentication
-  - sessions
-  - bearer-token
-  - basic-auth
-  - cookies
-  - api-key
+  - methods
+  - security
+  - testing
+  - api
+  - prompting
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,33 +24,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - HTTPie installed
 faq:
-  - question: How do HTTPie sessions persist authentication?
+  - question: "When should I use the Authentication Methods in HTTPie skill?"
     answer: >-
-      Named sessions (--session=name) save cookies and custom headers to
-      ~/.config/httpie/sessions/host/name.json. Subsequent requests with the
-      same session name automatically include saved cookies. Login once, then
-      all requests use the session. Delete session files to log out.
-  - question: How do I use OAuth2 with HTTPie?
+      Implement authentication with HTTPie — Basic auth, Bearer tokens, digest
+      auth, sessions for cookie persistence, and configuring auth plugins for
+      OAuth and custom schemes. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Authentication Methods in HTTPie require?"
     answer: >-
-      Install the httpie-oauth plugin: pip install httpie-oauth. For simple
-      Bearer token OAuth2, use -A bearer -a TOKEN. For full OAuth2 flows, first
-      POST to the token endpoint to get an access_token, then use it as a Bearer
-      token in subsequent requests.
-  - question: How do I avoid leaking credentials in shell history?
-    answer: >-
-      Store tokens in environment variables: export TOKEN=xxx. Use $TOKEN in
-      commands: http -A bearer -a $TOKEN url. For passwords, use -a user
-      (without password) to get a prompt. Prefix commands with a space to
-      exclude from history (if HISTCONTROL=ignorespace).
-relatedItems:
-  - httpie-json-api-testing
-  - httpie-file-transfers
-  - httpie-session-manager
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Works with standard httpie tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Authentication Methods in HTTPie

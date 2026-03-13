@@ -2,18 +2,22 @@
 id: docker-networking-patterns
 stackId: docker
 type: skill
-name: Docker Networking & Service Discovery
+name: >-
+  Docker Networking & Service Discovery
 description: >-
   Configure Docker networking for multi-container applications — bridge
-  networks, DNS-based service discovery, network isolation, and troubleshooting
-  connectivity issues.
-difficulty: intermediate
+  networks, DNS-based service discovery, network isolation, and
+  troubleshooting connectivity issues.
+difficulty: advanced
 tags:
-  - docker-networking
-  - service-discovery
-  - bridge-network
-  - network-isolation
-  - dns
+  - docker
+  - networking
+  - service
+  - discovery
+  - security
+  - api
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,36 +25,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Docker 24+
-  - Docker Compose V2
-  - Basic networking concepts
 faq:
-  - question: How do Docker containers discover each other?
+  - question: "When should I use the Docker Networking & Service Discovery skill?"
     answer: >-
-      Docker provides DNS-based service discovery on custom bridge networks.
-      Containers can reach each other using their container name or Docker
-      Compose service name as a hostname. For example, an API container can
-      connect to a database container named 'db' at 'postgresql://db:5432'.
-  - question: What is the difference between bridge and host networking in Docker?
+      Configure Docker networking for multi-container applications — bridge
+      networks, DNS-based service discovery, network isolation, and
+      troubleshooting connectivity issues. It includes practical examples for
+      container development.
+  - question: "What tools and setup does Docker Networking & Service Discovery require?"
     answer: >-
-      Bridge networking creates an isolated virtual network where containers
-      communicate via Docker DNS and port mapping. Host networking removes
-      isolation — the container shares the host's network stack directly. Use
-      bridge for production (security/isolation), host only for specific
-      performance-critical workloads.
-  - question: How do I isolate database containers from the internet?
-    answer: >-
-      Create an internal Docker network with 'internal: true' and place the
-      database on it. Only the API service should bridge between the
-      public-facing network and the internal data network. This prevents any
-      direct external access to the database.
-relatedItems:
-  - docker-compose-architect
-  - docker-security-hardener
-  - kubernetes-network-policy
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker installed. Works with Docker projects. No additional
+      configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Docker Networking & Service Discovery

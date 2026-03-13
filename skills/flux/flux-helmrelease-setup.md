@@ -5,14 +5,18 @@ type: skill
 name: Deploy Helm Charts with Flux HelmRelease
 description: >-
   Configure Flux HelmRelease resources to deploy and manage Helm charts from
-  repositories with values overrides, upgrade strategies, and rollback policies.
+  repositories with values overrides, upgrade strategies, and rollback
+  policies.
 difficulty: intermediate
 tags:
+  - flux
+  - deploy
+  - helm
+  - charts
   - helmrelease
-  - helm-charts
-  - flux-cd
-  - gitops
-  - kubernetes-deployment
+  - architecture
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,30 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Flux 2.0+ installed on cluster
-  - Helm chart repository URL
-  - Basic Helm knowledge
 faq:
-  - question: How does Flux HelmRelease differ from helm install?
+  - question: "When should I use the Deploy Helm Charts with Flux HelmRelease skill?"
     answer: >-
-      Flux HelmRelease is a declarative Kubernetes resource that describes the
-      desired Helm chart state. Flux continuously reconciles the actual state
-      with the desired state, handling installs, upgrades, rollbacks, and drift
-      correction automatically. Unlike 'helm install', changes are tracked in
-      Git and applied through GitOps.
-  - question: How does Flux handle failed Helm upgrades?
+      Configure Flux HelmRelease resources to deploy and manage Helm charts
+      from repositories with values overrides, upgrade strategies, and
+      rollback policies. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Deploy Helm Charts with Flux HelmRelease require?"
     answer: >-
-      Configure spec.upgrade.remediation with retries and remediateLastFailure:
-      true. When an upgrade fails, Flux retries the specified number of times
-      and can automatically roll back to the last successful release if all
-      retries fail.
-relatedItems:
-  - flux-bootstrap-cluster
-  - flux-multi-environment
-  - flux-gitops-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Helm CLI installed. Works with flux projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Deploy Helm Charts with Flux HelmRelease

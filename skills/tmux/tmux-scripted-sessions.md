@@ -5,15 +5,17 @@ type: skill
 name: Scripted Tmux Session Creation
 description: >-
   Automate tmux workspace creation with shell scripts and tmuxinator — define
-  project-specific layouts, window splits, and startup commands for one-command
-  environment setup.
+  project-specific layouts, window splits, and startup commands for
+  one-command environment setup.
 difficulty: intermediate
 tags:
-  - tmux-scripting
-  - tmuxinator
-  - workspace-automation
-  - session-management
-  - shell-scripts
+  - tmux
+  - scripted
+  - session
+  - creation
+  - docker
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,35 +24,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - tmux 3.0+
-  - Bash or Zsh
-  - 'tmuxinator (optional, install via gem install tmuxinator)'
 faq:
-  - question: How do I automate tmux session creation?
+  - question: "When should I use the Scripted Tmux Session Creation skill?"
     answer: >-
-      Write a shell script using tmux commands: new-session, new-window,
-      split-window, and send-keys. Or use tmuxinator (YAML config) for complex
-      layouts. Both approaches let you create your entire workspace with one
-      command — named windows, pane splits, and running processes.
-  - question: What is tmuxinator and how is it different from tmux scripts?
+      Automate tmux workspace creation with shell scripts and tmuxinator —
+      define project-specific layouts, window splits, and startup commands for
+      one-command environment setup. This skill provides a structured workflow
+      for development tasks.
+  - question: "What tools and setup does Scripted Tmux Session Creation require?"
     answer: >-
-      Tmuxinator is a Ruby gem that manages tmux sessions via YAML config files.
-      It's easier to read and maintain than shell scripts for complex layouts.
-      Install with 'gem install tmuxinator', create with 'tmuxinator new
-      project', and launch with 'tmuxinator start project'.
-  - question: How do I reattach to a tmux session without creating a duplicate?
-    answer: >-
-      Use 'tmux has-session -t name' to check existence first. If it exists,
-      attach with 'tmux attach -t name'. If not, create it. This pattern
-      prevents duplicate sessions and is the standard approach in automation
-      scripts.
-relatedItems:
-  - tmux-session-architect
-  - tmux-copy-mode
-  - tmux-plugin-setup
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm, Docker installed. Works with tmux projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Scripted Tmux Session Creation

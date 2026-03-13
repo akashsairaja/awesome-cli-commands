@@ -7,48 +7,37 @@ description: >-
   Implement Retrieval-Augmented Generation patterns to give AI coding tools
   access to your documentation, API specs, and codebase knowledge for more
   accurate code generation.
-difficulty: advanced
+difficulty: intermediate
 tags:
+  - aitools
   - rag
-  - retrieval-augmented-generation
+  - patterns
+  - code
   - documentation
-  - embeddings
-  - vector-search
+  - testing
+  - api
+  - prompting
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-prerequisites:
-  - Understanding of embeddings and vector search
-  - Documentation that needs to be indexed
-  - Familiarity with AI coding tool configuration
 faq:
-  - question: What is RAG for coding tools?
+  - question: "When should I use the RAG Patterns for Code Documentation skill?"
     answer: >-
-      RAG (Retrieval-Augmented Generation) dynamically retrieves relevant
-      documentation, API specs, and code examples based on the current task and
-      includes them in the AI's context. This gives coding tools access to your
-      full documentation without exceeding context window limits.
-  - question: How is RAG different from just including docs in the system prompt?
+      Implement Retrieval-Augmented Generation patterns to give AI coding
+      tools access to your documentation, API specs, and codebase knowledge
+      for more accurate code generation. This skill provides a structured
+      workflow for prompt engineering, RAG pipelines, LLM application
+      development, and AI agent building.
+  - question: "What tools and setup does RAG Patterns for Code Documentation require?"
     answer: >-
-      System prompts have fixed content and token limits. RAG dynamically
-      retrieves only the documentation relevant to the current task. For a
-      10,000-page API reference, RAG fetches the 5 most relevant sections rather
-      than trying to include everything.
-  - question: Which AI coding tools support RAG?
-    answer: >-
-      Cursor supports @docs for indexing documentation URLs. Claude Code
-      supports RAG through MCP servers that provide file system and database
-      access. Copilot uses repository-level indexing. Custom RAG pipelines can
-      be built for any tool using embeddings and vector search.
-relatedItems:
-  - aitools-system-prompt-design
-  - aitools-tool-use-patterns
-  - aitools-context-manager
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard AI & ML Tools tooling (LLM APIs, embedding models).
+      No special setup required beyond a working AI/ML development
+      environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # RAG Patterns for Code Documentation

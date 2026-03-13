@@ -2,19 +2,21 @@
 id: curl-response-parsing
 stackId: curl
 type: skill
-name: Response Parsing & Debugging
+name: >-
+  Response Parsing & Debugging
 description: >-
   Parse and debug HTTP responses with cURL — status code extraction, header
   inspection, timing metrics, verbose output, and jq integration for JSON API
   response analysis.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - response-parsing
+  - curl
+  - response
+  - parsing
   - debugging
-  - status-codes
-  - timing
-  - jq
-  - headers
+  - monitoring
+  - api
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - cURL installed
-  - jq installed (recommended)
 faq:
-  - question: How do I get the HTTP status code from cURL?
+  - question: "When should I use the Response Parsing & Debugging skill?"
     answer: >-
-      Use -w '%{http_code}': curl -sS -o /dev/null -w '%{http_code}' URL. This
-      outputs just the status code. To get both status and body, use -w
-      '\n%{http_code}' and split the output — body is everything except the last
-      line.
-  - question: How do I measure API response time with cURL?
+      Parse and debug HTTP responses with cURL — status code extraction,
+      header inspection, timing metrics, verbose output, and jq integration
+      for JSON API response analysis. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Response Parsing & Debugging require?"
     answer: >-
-      Use -w with timing variables: %{time_namelookup} (DNS), %{time_connect}
-      (TCP), %{time_appconnect} (TLS), %{time_starttransfer} (TTFB),
-      %{time_total} (complete). TTFB (Time To First Byte) is the most useful
-      metric for API performance.
-  - question: How do I parse JSON API responses from cURL?
-    answer: >-
-      Pipe through jq: curl -sS URL | jq '.data.field'. Use jq -e for validation
-      (exits non-zero for false/null). Use jq '.[]' for arrays, jq '{name,
-      email}' for field selection, and jq 'select(.status=="active")' for
-      filtering.
-relatedItems:
-  - curl-auth-flows
-  - curl-file-operations
-  - curl-api-tester
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard curl tooling (relevant CLI tools and frameworks). No
+      special setup required beyond a working curl environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Response Parsing & Debugging

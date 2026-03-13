@@ -3,28 +3,29 @@ id: react-algorithmic-art
 stackId: react
 type: skill
 name: Algorithmic Art
-description: Creating algorithmic art using p5.
+description: >-
+  Algorithmic philosophies are computational aesthetic movements that are then
+  expressed through code. Output.
 difficulty: advanced
 tags:
+  - react
   - algorithmic
   - art
-  - algorithmic-art
-  - react
+  - optimization
+  - machine-learning
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the algorithmic-art skill?"
+  - question: "When should I use the Algorithmic Art skill?"
     answer: >-
-      Creating algorithmic art using p5.js with seeded randomness and
-      interactive parameter exploration. Use this when users request creating
-      art using code, generative art, algorithmic art, flow fields, or
-      particle systems. Create original algorithmic art rather than copying
-      existing artists' work to avoid copyright violations.
-  - question: "What tools or setup does algorithmic-art require?"
+      Algorithmic philosophies are computational aesthetic movements that are
+      then expressed through code. Output. This skill provides a structured
+      workflow for component architecture, state management, performance
+      optimization, and UI patterns.
+  - question: "What tools and setup does Algorithmic Art require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Works with standard React tooling (React 19+, JSX/TSX). Review the setup
+      section in the skill content for specific configuration steps.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

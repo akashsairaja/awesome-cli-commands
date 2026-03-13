@@ -7,13 +7,16 @@ description: >-
   Implement a production-safe Prisma migration workflow — creating migrations,
   handling breaking changes with expand-and-contract, seeding, and CI/CD
   deployment.
-difficulty: intermediate
+difficulty: advanced
 tags:
   - prisma
+  - master
   - migrations
-  - database
-  - schema-evolution
+  - production
+  - deployment
+  - migration
   - ci-cd
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -22,36 +25,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Prisma project with schema.prisma
-  - PostgreSQL or supported database
 faq:
-  - question: >-
-      What is the difference between prisma migrate dev and prisma migrate
-      deploy?
+  - question: "When should I use the Master Prisma Migrations for Production skill?"
     answer: >-
-      prisma migrate dev is for development — it creates new migrations,
-      auto-applies them, and can reset the database. prisma migrate deploy is
-      for production — it only applies pending migrations without creating new
-      ones or resetting data. Never use 'dev' in production.
-  - question: How do I rename a column in Prisma without losing data?
+      Implement a production-safe Prisma migration workflow — creating
+      migrations, handling breaking changes with expand-and-contract, seeding,
+      and CI/CD deployment. This skill provides a structured workflow for
+      schema design, migration workflows, query optimization, and database
+      seeding.
+  - question: "What tools and setup does Master Prisma Migrations for Production require?"
     answer: >-
-      Use the expand-and-contract pattern: (1) Add the new column and copy data
-      in one migration. (2) Update your application code to use the new column.
-      (3) Remove the old column in a separate migration after deployment. This
-      ensures zero downtime and no data loss.
-  - question: How do I seed a Prisma database?
-    answer: >-
-      Create a prisma/seed.ts file with PrismaClient operations, add a
-      'prisma.seed' script to package.json, and run 'npx prisma db seed'. Use
-      upsert operations for idempotent seeding so the script can run multiple
-      times safely. It runs automatically after 'prisma migrate dev'.
-relatedItems:
-  - prisma-schema-architect
-  - prisma-query-optimization
-  - prisma-seeding-setup
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires pip/poetry, Prisma CLI installed. Works with Prisma projects.
+      No additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Master Prisma Migrations for Production

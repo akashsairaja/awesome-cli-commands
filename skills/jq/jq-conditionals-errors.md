@@ -2,19 +2,21 @@
 id: jq-conditionals-errors
 stackId: jq
 type: skill
-name: Conditionals & Error Handling in jq
+name: >-
+  Conditionals & Error Handling in jq
 description: >-
-  Handle edge cases in jq — if/then/else logic, try-catch, alternative operator,
-  type checking, and building robust jq filters that handle missing data and
-  unexpected formats.
-difficulty: advanced
+  Handle edge cases in jq — if/then/else logic, try-catch, alternative
+  operator, type checking, and building robust jq filters that handle missing
+  data and unexpected formats.
+difficulty: beginner
 tags:
+  - jq
   - conditionals
-  - error-handling
-  - try-catch
-  - type-checking
-  - defaults
-  - validation
+  - error
+  - handling
+  - api
+  - best-practices
+  - type-safety
 compatibility:
   - claude-code
   - cursor
@@ -22,32 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - jq 1.6+
 faq:
-  - question: How do I handle null values in jq?
+  - question: "When should I use the Conditionals & Error Handling in jq skill?"
     answer: >-
-      Use the alternative operator //: .name // "unknown" returns "unknown" if
-      .name is null or missing. For arithmetic: (.count // 0) + 1 prevents null
-      propagation. Use select(. != null) to filter nulls from arrays.
-  - question: How do I skip errors in jq processing?
+      Handle edge cases in jq — if/then/else logic, try-catch, alternative
+      operator, type checking, and building robust jq filters that handle
+      missing data and unexpected formats. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Conditionals & Error Handling in jq require?"
     answer: >-
-      Use try: [.[] | try tonumber] silently skips items that can't be
-      converted. Use try-catch for fallbacks: [.[] | try tonumber catch 0]
-      replaces failures with 0. Use ? for optional access: .data[]?.name won't
-      error if data is null.
-  - question: How do I validate JSON structure with jq?
-    answer: >-
-      Check types: if (.id | type) == "number" then "valid" else "invalid" end.
-      Check required fields: jq -e '.id and .name and .email' (exits non-zero if
-      any is null/false). Combine with has(): if has("id") and has("name") then
-      ... end.
-relatedItems:
-  - jq-api-processing
-  - jq-array-operations
-  - jq-advanced-functions
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Works with standard jq tooling (relevant CLI tools and frameworks). No
+      special setup required beyond a working jq environment.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Conditionals & Error Handling in jq

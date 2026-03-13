@@ -7,50 +7,35 @@ description: >-
   Implement Change Data Capture (CDC) with Kafka Connect and Debezium — stream
   database changes to Kafka topics in real time for event-driven architectures
   and data pipelines.
-difficulty: advanced
+difficulty: intermediate
 tags:
-  - cdc
-  - change-data-capture
-  - debezium
-  - kafka-connect
-  - data-pipeline
   - kafka
+  - change
+  - data
+  - capture
+  - connect
+  - docker
+  - microservices
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-languages:
-  - typescript
-  - java
-  - bash
-prerequisites:
-  - Apache Kafka 3.0+
-  - Kafka Connect
-  - Debezium
-  - PostgreSQL or MySQL
 faq:
-  - question: What is Change Data Capture (CDC) with Kafka?
+  - question: "When should I use the Change Data Capture with Kafka Connect skill?"
     answer: >-
-      CDC captures every INSERT, UPDATE, and DELETE from a database transaction
-      log and streams them to Kafka topics in real time. Using Debezium with
-      Kafka Connect, you get a reliable event stream of all data changes without
-      modifying application code. Use cases include search index sync, analytics
-      pipelines, and microservice event sourcing.
-  - question: How does Debezium CDC work with PostgreSQL?
+      Implement Change Data Capture (CDC) with Kafka Connect and Debezium —
+      stream database changes to Kafka topics in real time for event-driven
+      architectures and data pipelines. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Change Data Capture with Kafka Connect require?"
     answer: >-
-      Debezium reads PostgreSQL's Write-Ahead Log (WAL) via logical replication.
-      It creates a replication slot and publication, captures every change to
-      configured tables, and produces Kafka messages with before/after states
-      plus metadata. The process is non-intrusive — no triggers or application
-      changes needed.
-relatedItems:
-  - kafka-event-architect
-  - kafka-consumer-patterns
-  - postgresql-migration-safety
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker installed. Works with kafka projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Change Data Capture with Kafka Connect

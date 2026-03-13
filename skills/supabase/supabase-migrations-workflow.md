@@ -4,15 +4,19 @@ stackId: supabase
 type: skill
 name: Manage Database Migrations with Supabase CLI
 description: >-
-  Master Supabase database migrations — create, test, and deploy schema changes
-  with the Supabase CLI, including RLS policies, functions, and seed data.
-difficulty: intermediate
+  Master Supabase database migrations — create, test, and deploy schema
+  changes with the Supabase CLI, including RLS policies, functions, and seed
+  data.
+difficulty: advanced
 tags:
-  - migrations
+  - supabase
+  - manage
   - database
-  - supabase-cli
-  - schema
-  - postgresql
+  - migrations
+  - cli
+  - security
+  - deployment
+  - migration
 compatibility:
   - claude-code
   - cursor
@@ -20,36 +24,21 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Supabase CLI installed
-  - Docker (for local development)
-  - PostgreSQL knowledge
 faq:
-  - question: How do Supabase database migrations work?
+  - question: "When should I use the Manage Database Migrations with Supabase CLI skill?"
     answer: >-
-      Migrations are numbered SQL files in supabase/migrations/. They run in
-      order to build your database schema. Use 'supabase migration new' to
-      create new migrations, 'supabase db reset' to test locally, and 'supabase
-      db push' to apply to production. Never modify already-deployed migrations.
-  - question: Can I roll back a Supabase migration?
+      Master Supabase database migrations — create, test, and deploy schema
+      changes with the Supabase CLI, including RLS policies, functions, and
+      seed data. This skill provides a structured workflow for auth
+      configuration, database migrations, real-time subscriptions, and edge
+      functions.
+  - question: "What tools and setup does Manage Database Migrations with Supabase CLI require?"
     answer: >-
-      Supabase does not have automatic rollback. To undo a migration, create a
-      new migration that reverses the changes (DROP TABLE, ALTER TABLE). For
-      local development, 'supabase db reset' reapplies all migrations from
-      scratch. Always backup production data before applying destructive
-      migrations.
-  - question: How do I handle migration conflicts in a team?
-    answer: >-
-      Supabase migrations use timestamps as prefixes, so conflicts are rare. If
-      two developers create migrations simultaneously, rebase to ensure correct
-      ordering. Use 'supabase migration list' to verify migration order. The key
-      rule: never modify a migration that has been pushed to production.
-relatedItems:
-  - supabase-rls-architect
-  - supabase-auth-setup
-  - supabase-realtime-setup
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm, Docker, Supabase CLI installed. Works with
+      Supabase projects. No additional configuration needed beyond standard
+      tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Manage Database Migrations with Supabase CLI

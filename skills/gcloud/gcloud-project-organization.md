@@ -2,18 +2,22 @@
 id: gcloud-project-organization
 stackId: gcloud
 type: skill
-name: Google Cloud Project & Organization Structure
+name: >-
+  Google Cloud Project & Organization Structure
 description: >-
   Design Google Cloud organization hierarchy with folders, projects, and
   resource labels — implement project naming conventions, billing management,
   and organization-level policies.
-difficulty: intermediate
+difficulty: advanced
 tags:
+  - gcloud
+  - google
+  - cloud
+  - project
   - organization
-  - projects
-  - folders
-  - naming-conventions
-  - governance
+  - structure
+  - security
+  - monitoring
 compatibility:
   - claude-code
   - cursor
@@ -22,31 +26,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Google Cloud Organization
-  - Organization Admin role
-  - gcloud CLI
 faq:
-  - question: How should GCP projects be organized?
+  - question: "When should I use the Google Cloud Project & Organization Structure skill?"
     answer: >-
-      Create one project per workload per environment (myapp-prod,
-      myapp-staging, myapp-dev). Group projects into folders by environment
-      (Production/, Development/). Create shared projects for cross-cutting
-      concerns (networking, CI/CD, monitoring). Apply Organization Policies at
-      the folder level for consistent governance.
-  - question: 'What is the difference between GCP folders, projects, and labels?'
+      Design Google Cloud organization hierarchy with folders, projects, and
+      resource labels — implement project naming conventions, billing
+      management, and organization-level policies. It includes practical
+      examples for GCP cloud development.
+  - question: "What tools and setup does Google Cloud Project & Organization Structure require?"
     answer: >-
-      Folders are organizational containers for projects that enable policy
-      inheritance. Projects are the fundamental unit of resource isolation and
-      billing. Labels are key-value metadata on resources for cost attribution
-      and filtering. Use folders for structure, projects for isolation, and
-      labels for tracking.
-relatedItems:
-  - gcloud-iam-architect
-  - gcloud-cli-patterns
-  - terraform-workspace-strategy
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires gcloud CLI installed. Works with Google Cloud projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Google Cloud Project & Organization Structure

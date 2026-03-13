@@ -7,13 +7,14 @@ description: >-
   Create Playwright custom fixtures to manage authentication state, database
   seeding, API mocking, and test data — ensuring every test runs in complete
   isolation.
-difficulty: advanced
+difficulty: intermediate
 tags:
-  - fixtures
-  - test-isolation
-  - authentication
-  - database-seeding
   - playwright
+  - custom
+  - fixtures
+  - test
+  - isolation
+  - debugging
 compatibility:
   - claude-code
   - cursor
@@ -21,35 +22,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Playwright 1.40+
-  - TypeScript
-  - Understanding of Page Object Model
 faq:
-  - question: What are Playwright fixtures and why do they matter?
+  - question: "When should I use the Custom Fixtures for Test Isolation skill?"
     answer: >-
-      Playwright fixtures are setup/teardown functions that provide isolated
-      resources to each test — like authenticated browser contexts, seeded
-      database records, or page objects. They ensure every test starts from a
-      clean state, enabling parallel execution without flakiness.
-  - question: How do I share authentication state across Playwright tests?
+      Create Playwright custom fixtures to manage authentication state,
+      database seeding, API mocking, and test data — ensuring every test runs
+      in complete isolation. This skill provides a structured workflow for
+      end-to-end testing, visual regression, API testing, and CI/CD
+      integration.
+  - question: "What tools and setup does Custom Fixtures for Test Isolation require?"
     answer: >-
-      Use Playwright's storageState feature. Create a setup project that logs in
-      once and saves cookies/storage to a JSON file. Other tests load this state
-      via browserContext options, skipping the login flow entirely. This is
-      faster and more reliable than logging in per test.
-  - question: Should fixtures clean up their own test data?
-    answer: >-
-      Yes. Every fixture should include teardown logic that removes any data it
-      created. This prevents test pollution across runs. Use the pattern: create
-      data before 'use', clean up after 'use' completes — Playwright handles the
-      lifecycle automatically.
-relatedItems:
-  - playwright-pom-patterns
-  - playwright-ci-pipeline
-  - playwright-test-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Playwright installed. Works with Playwright projects. Review
+      the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Custom Fixtures for Test Isolation

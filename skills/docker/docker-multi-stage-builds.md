@@ -7,13 +7,13 @@ description: >-
   Master multi-stage Docker builds to create minimal production images —
   separate build dependencies from runtime, reduce image size by 90%, and
   eliminate security vulnerabilities.
-difficulty: intermediate
+difficulty: advanced
 tags:
-  - multi-stage-build
-  - dockerfile
-  - image-optimization
-  - distroless
-  - buildkit
+  - docker
+  - multi-stage
+  - builds
+  - deployment
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,35 +22,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Docker 24+ with BuildKit
-  - Basic Dockerfile knowledge
 faq:
-  - question: What is a multi-stage Docker build?
+  - question: "When should I use the Multi-Stage Docker Builds skill?"
     answer: >-
-      A multi-stage Docker build uses multiple FROM statements in one
-      Dockerfile. Each FROM starts a new build stage with its own base image.
-      You copy only the artifacts you need (compiled binaries, built assets)
-      from build stages into a minimal runtime stage, producing images that are
-      10-50x smaller.
-  - question: How much can multi-stage builds reduce Docker image size?
+      Master multi-stage Docker builds to create minimal production images —
+      separate build dependencies from runtime, reduce image size by 90%, and
+      eliminate security vulnerabilities. This skill provides a structured
+      workflow for image optimization, multi-stage builds, networking, and
+      container orchestration.
+  - question: "What tools and setup does Multi-Stage Docker Builds require?"
     answer: >-
-      Dramatically. A typical Node.js app drops from ~1.2 GB (full node image
-      with dev deps) to ~130 MB (distroless with prod deps only). Go
-      applications can shrink to ~15 MB using scratch base images. The reduction
-      comes from excluding build tools, compilers, and dev dependencies.
-  - question: What base image should I use for the final stage?
-    answer: >-
-      Use distroless (gcr.io/distroless) for most languages — it has no shell or
-      package manager, minimizing attack surface. Use scratch for statically
-      compiled binaries (Go, Rust). Use Alpine only if you need a shell for
-      debugging. Avoid full OS images (ubuntu, debian) in production.
-relatedItems:
-  - docker-image-optimization
-  - docker-security-hardener
-  - docker-buildkit-secrets
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm, Docker installed. Works with Docker projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Multi-Stage Docker Builds

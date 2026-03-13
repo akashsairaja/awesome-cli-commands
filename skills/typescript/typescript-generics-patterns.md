@@ -2,17 +2,19 @@
 id: typescript-generics-patterns
 stackId: typescript
 type: skill
-name: TypeScript Generics & Utility Types
+name: >-
+  TypeScript Generics & Utility Types
 description: >-
-  Master TypeScript generics — type parameters, constraints, conditional types,
-  mapped types, and building reusable utility types for type-safe libraries and
-  APIs.
-difficulty: advanced
+  Master TypeScript generics — type parameters, constraints, conditional
+  types, mapped types, and building reusable utility types for type-safe
+  libraries and APIs.
+difficulty: beginner
 tags:
+  - typescript
   - generics
-  - utility-types
-  - conditional-types
-  - mapped-types
+  - utility
+  - types
+  - api
   - type-safety
 compatibility:
   - claude-code
@@ -22,38 +24,21 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - typescript
-prerequisites:
-  - TypeScript 5.0+
-  - Basic TypeScript knowledge
 faq:
-  - question: What are TypeScript generics and when should I use them?
+  - question: "When should I use the TypeScript Generics & Utility Types skill?"
     answer: >-
-      Generics are type parameters that make functions, classes, and types work
-      with multiple data types while preserving type safety. Use them when you
-      have a function or type that should work with different types but maintain
-      the relationship between input and output types — like a function that
-      takes an array of T and returns T.
-  - question: What is the difference between conditional types and mapped types?
+      Master TypeScript generics — type parameters, constraints, conditional
+      types, mapped types, and building reusable utility types for type-safe
+      libraries and APIs. This skill provides a structured workflow for
+      advanced type patterns, strict configuration, generic constraints, and
+      type-safe development.
+  - question: "What tools and setup does TypeScript Generics & Utility Types require?"
     answer: >-
-      Conditional types (T extends U ? X : Y) select between types based on a
-      condition — useful for type-level if/else. Mapped types ({ [K in keyof T]:
-      ... }) transform every property of an object type — useful for making all
-      properties optional, readonly, or changing their types systematically.
-  - question: What are discriminated unions in TypeScript?
-    answer: >-
-      Discriminated unions are union types where each variant has a common
-      property (discriminant) with a literal type. TypeScript narrows the type
-      automatically in switch/if statements based on the discriminant. They are
-      ideal for state machines, API responses, and any data that can be in one
-      of several distinct states.
-relatedItems:
-  - typescript-strict-config
-  - typescript-no-any-rule
-  - typescript-type-guards
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard TypeScript tooling (TypeScript compiler (tsc),
+      tsconfig.json). No special setup required beyond a working TypeScript
+      environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # TypeScript Generics & Utility Types

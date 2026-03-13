@@ -10,10 +10,10 @@ description: >-
 difficulty: beginner
 tags:
   - prisma
-  - seeding
+  - set
   - database
-  - test-data
-  - factories
+  - seeding
+  - testing
 compatibility:
   - claude-code
   - cursor
@@ -22,26 +22,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Prisma project with schema.prisma
-  - tsx or ts-node installed
 faq:
-  - question: How do I make Prisma seed scripts idempotent?
+  - question: "When should I use the Set Up Prisma Database Seeding skill?"
     answer: >-
-      Use upsert instead of create. Upsert checks if a record exists (by unique
-      field), updates it if found, or creates it if not. This makes the seed
-      script safe to run multiple times without duplicate data errors.
-  - question: When does Prisma automatically run the seed script?
+      Create idempotent database seed scripts with Prisma — development data,
+      test fixtures, production reference data, and factory patterns for
+      realistic test data. This skill provides a structured workflow for
+      schema design, migration workflows, query optimization, and database
+      seeding.
+  - question: "What tools and setup does Set Up Prisma Database Seeding require?"
     answer: >-
-      Prisma runs the seed script automatically after 'prisma migrate dev'
-      (which resets the dev database) and 'prisma migrate reset'. You can also
-      run it manually with 'npx prisma db seed'. Configure the seed command in
-      package.json under 'prisma.seed'.
-relatedItems:
-  - prisma-schema-architect
-  - prisma-migration-workflow
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Prisma tooling (Prisma CLI, Prisma Studio). Review
+      the setup section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Set Up Prisma Database Seeding

@@ -2,17 +2,21 @@
 id: starship-presets
 stackId: starship
 type: skill
-name: Starship Preset Themes & Custom Layouts
+name: >-
+  Starship Preset Themes & Custom Layouts
 description: >-
   Use and customize Starship presets — apply built-in themes, create two-line
   prompts, design right-prompts, and build team-shareable configuration files.
 difficulty: intermediate
 tags:
-  - starship-presets
+  - starship
+  - preset
   - themes
-  - prompt-layout
-  - right-prompt
-  - two-line-prompt
+  - custom
+  - layouts
+  - docker
+  - kubernetes
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -21,28 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Starship installed
-  - Nerd Font (for icon presets)
 faq:
-  - question: How do I use Starship presets?
+  - question: "When should I use the Starship Preset Themes & Custom Layouts skill?"
     answer: >-
-      Run 'starship preset --list' to see available themes, then 'starship
-      preset nerd-font-symbols -o ~/.config/starship.toml' to apply one. Presets
-      provide complete configurations — customize from there by editing
-      individual module sections in the TOML file.
-  - question: How do I create a two-line Starship prompt?
+      Use and customize Starship presets — apply built-in themes, create
+      two-line prompts, design right-prompts, and build team-shareable
+      configuration files. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Starship Preset Themes & Custom Layouts require?"
     answer: >-
-      Add '$line_break' in your format string where you want the line break. Put
-      context info (directory, git, language) on line 1 and the input character
-      on line 2. This gives you maximum information without crowding the command
-      input area.
-relatedItems:
-  - starship-module-config
-  - starship-prompt-designer
-  - starship-git-integration
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker, Terraform CLI installed. Works with starship projects.
+      Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Starship Preset Themes & Custom Layouts

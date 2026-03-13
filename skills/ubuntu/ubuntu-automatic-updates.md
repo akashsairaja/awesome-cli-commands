@@ -5,16 +5,15 @@ type: skill
 name: Ubuntu Automatic Security Updates
 description: >-
   Configure unattended-upgrades on Ubuntu — automatic security patches, email
-  notifications, reboot scheduling, blacklist specific packages, and monitoring
-  update status.
-difficulty: beginner
+  notifications, reboot scheduling, blacklist specific packages, and
+  monitoring update status.
+difficulty: advanced
 tags:
-  - unattended-upgrades
-  - security-updates
-  - apt
-  - patching
-  - automation
   - ubuntu
+  - automatic
+  - security
+  - updates
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -23,29 +22,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Ubuntu 22.04+
-  - sudo access
 faq:
-  - question: Should I enable automatic updates on production Ubuntu servers?
+  - question: "When should I use the Ubuntu Automatic Security Updates skill?"
     answer: >-
-      Yes, always enable automatic security updates. Most breaches exploit
-      known, patched vulnerabilities. The risk of a security update breaking
-      something is far lower than the risk of an unpatched vulnerability being
-      exploited. Blacklist critical packages (databases, runtimes) and test
-      those manually.
-  - question: Do automatic updates require reboots on Ubuntu?
+      Configure unattended-upgrades on Ubuntu — automatic security patches,
+      email notifications, reboot scheduling, blacklist specific packages, and
+      monitoring update status. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Ubuntu Automatic Security Updates require?"
     answer: >-
-      Most security updates don't require a reboot — services are restarted
-      automatically. Kernel updates do require a reboot to take effect.
-      Configure Automatic-Reboot in unattended-upgrades to reboot during
-      maintenance windows. Check 'needs-restarting' or /var/run/reboot-required
-      to see if a reboot is pending.
-relatedItems:
-  - ubuntu-server-architect
-  - ubuntu-package-manager
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard ubuntu tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Ubuntu Automatic Security Updates

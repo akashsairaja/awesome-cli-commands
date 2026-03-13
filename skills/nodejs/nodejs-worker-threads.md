@@ -7,54 +7,34 @@ description: >-
   Offload CPU-intensive operations to worker threads in Node.js — image
   processing, data transformation, cryptography, and parallel computation
   without blocking the event loop.
-difficulty: advanced
+difficulty: beginner
 tags:
-  - worker-threads
-  - parallel-processing
-  - cpu-intensive
-  - worker-pool
-  - shared-memory
+  - nodejs
+  - worker
+  - threads
+  - cpu
+  - tasks
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-languages:
-  - javascript
-  - typescript
-prerequisites:
-  - Node.js 20+
-  - Understanding of threading concepts
 faq:
-  - question: When should I use worker threads in Node.js?
+  - question: "When should I use the Node.js Worker Threads for CPU Tasks skill?"
     answer: >-
-      Use worker threads for CPU-intensive tasks: image/video processing, data
-      compression, cryptographic operations, large JSON parsing, machine
-      learning inference, and complex mathematical computations. Do NOT use
-      workers for I/O-bound tasks (HTTP requests, database queries) —
-      async/await handles those efficiently on the main thread.
-  - question: >-
-      What is the difference between worker threads and child processes in
-      Node.js?
+      Offload CPU-intensive operations to worker threads in Node.js — image
+      processing, data transformation, cryptography, and parallel computation
+      without blocking the event loop. This skill provides a structured
+      workflow for server-side architecture, error handling, stream
+      processing, and API development.
+  - question: "What tools and setup does Node.js Worker Threads for CPU Tasks require?"
     answer: >-
-      Worker threads run in the same process, share memory via
-      SharedArrayBuffer, and have lower startup overhead. Child processes run in
-      separate OS processes with isolated memory. Use workers for CPU
-      parallelism within your app; use child processes for running separate
-      programs or when you need full process isolation.
-  - question: How many worker threads should I create?
-    answer: >-
-      Match the number of workers to available CPU cores: os.cpus().length. For
-      mixed I/O and CPU workloads, use fewer workers (cores - 1) to leave a core
-      for the main event loop. Use a worker pool library like piscina or
-      workerpool rather than managing workers manually.
-relatedItems:
-  - nodejs-stream-processing
-  - nodejs-error-handling-patterns
-  - nodejs-esm-migration
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Node.js tooling (Node.js runtime, npm/yarn/pnpm).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Node.js Worker Threads for CPU Tasks

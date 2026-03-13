@@ -8,11 +8,13 @@ description: >-
   ignored build steps, root directory settings, and shared package management.
 difficulty: intermediate
 tags:
-  - monorepo
+  - vercel
+  - deploy
+  - monorepos
   - turborepo
-  - build-optimization
-  - remote-caching
   - deployment
+  - api
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -20,35 +22,21 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Monorepo with Turborepo
-  - Vercel account
-  - pnpm/npm/yarn workspaces
 faq:
-  - question: How do I deploy a monorepo on Vercel?
+  - question: "When should I use the Deploy Monorepos on Vercel with Turborepo skill?"
     answer: >-
-      Create a separate Vercel project for each deployable app. Set each
-      project's Root Directory to the app subdirectory (e.g., apps/web).
-      Configure turbo-ignore as the Ignored Build Step to skip rebuilds when the
-      app hasn't changed. Enable Turborepo Remote Caching for shared build
-      artifacts.
-  - question: What is turbo-ignore and why do I need it?
+      Configure monorepo deployments on Vercel with Turborepo — remote
+      caching, ignored build steps, root directory settings, and shared
+      package management. This skill provides a structured workflow for
+      deployment automation, edge functions, analytics, and monorepo
+      configuration.
+  - question: "What tools and setup does Deploy Monorepos on Vercel with Turborepo require?"
     answer: >-
-      turbo-ignore is a Turborepo command that checks if a specific app or its
-      dependencies changed since the last deployment. Used as Vercel's Ignored
-      Build Step, it prevents unnecessary rebuilds — saving build minutes and
-      deployment time in monorepos.
-  - question: How does Turborepo Remote Caching work with Vercel?
-    answer: >-
-      Turborepo Remote Caching stores build outputs (compiled code, type-check
-      results) in Vercel's cloud. When the same inputs are detected on any
-      machine — local dev, CI, or Vercel — the cached output is downloaded
-      instead of rebuilding. This can reduce build times by 40-80%.
-relatedItems:
-  - vercel-deployment-architect
-  - vercel-isr-configuration
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Vercel tooling (Vercel CLI, Vercel Dashboard).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Deploy Monorepos on Vercel with Turborepo

@@ -4,15 +4,18 @@ stackId: k6
 type: skill
 name: Threshold Configuration and Scenarios
 description: >-
-  Configure k6 thresholds for pass/fail criteria and scenarios for complex load
-  patterns — ramping, constant arrival rate, and multi-scenario test execution.
-difficulty: intermediate
+  Configure k6 thresholds for pass/fail criteria and scenarios for complex
+  load patterns — ramping, constant arrival rate, and multi-scenario test
+  execution.
+difficulty: beginner
 tags:
-  - thresholds
-  - scenarios
-  - load-patterns
-  - performance-criteria
   - k6
+  - threshold
+  - configuration
+  - scenarios
+  - performance
+  - testing
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -20,35 +23,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - k6 installed
-  - Understanding of load testing concepts
 faq:
-  - question: What are k6 thresholds?
+  - question: "When should I use the Threshold Configuration and Scenarios skill?"
     answer: >-
-      Thresholds are pass/fail criteria for k6 load tests. They define
-      acceptable performance limits — e.g., p95 response time under 500ms, error
-      rate below 1%, check pass rate above 99%. If any threshold is breached, k6
-      exits with a non-zero code, failing the CI pipeline.
-  - question: What is the difference between ramping-vus and constant-arrival-rate?
+      Configure k6 thresholds for pass/fail criteria and scenarios for complex
+      load patterns — ramping, constant arrival rate, and multi-scenario test
+      execution. It includes practical examples for k6 development.
+  - question: "What tools and setup does Threshold Configuration and Scenarios require?"
     answer: >-
-      ramping-vus controls how many virtual users are active — if the server is
-      slow, throughput drops. constant-arrival-rate maintains a fixed request
-      rate regardless of response time — if the server is slow, k6 spawns more
-      VUs. Use arrival rate when you want to test at a specific
-      requests-per-second target.
-  - question: How do I run multiple scenarios in one k6 test?
-    answer: >-
-      Define multiple scenarios in the options object, each with its own
-      executor, duration, and exec function. Use the exec property to point each
-      scenario to a different exported function. This lets you model mixed
-      workloads — e.g., 80% browse, 20% purchase.
-relatedItems:
-  - k6-script-development
-  - k6-ci-integration
-  - k6-performance-analyst
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard k6 tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Threshold Configuration and Scenarios

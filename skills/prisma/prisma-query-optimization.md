@@ -9,10 +9,10 @@ description: >-
 difficulty: advanced
 tags:
   - prisma
-  - query-optimization
-  - n-plus-one
-  - pagination
+  - optimize
+  - queries
   - performance
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -20,27 +20,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Prisma project
-  - Understanding of SQL query performance
 faq:
-  - question: What is the N+1 query problem in Prisma?
+  - question: "When should I use the Optimize Prisma Queries for Performance skill?"
     answer: >-
-      N+1 occurs when you fetch a list of N items, then make a separate query
-      for each item's relation — resulting in N+1 total queries. In Prisma, use
-      'include' to eager-load relations in 2 queries total, or 'select' with
-      nested relations to fetch everything efficiently.
-  - question: When should I use select vs include in Prisma?
+      Eliminate N+1 queries, implement efficient pagination, use
+      select/include strategically, and optimize bulk operations with Prisma
+      Client. This skill provides a structured workflow for schema design,
+      migration workflows, query optimization, and database seeding.
+  - question: "What tools and setup does Optimize Prisma Queries for Performance require?"
     answer: >-
-      Use 'select' when you need specific fields (list views, cards) — it limits
-      the SQL SELECT clause. Use 'include' when you need the full model plus
-      relations (detail pages). You can combine them: include a relation but
-      select only specific fields from it.
-relatedItems:
-  - prisma-schema-architect
-  - prisma-migration-workflow
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Prisma tooling (Prisma CLI, Prisma Studio). No
+      special setup required beyond a working Node.js ORM environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Optimize Prisma Queries for Performance

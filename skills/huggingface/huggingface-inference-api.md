@@ -5,15 +5,17 @@ type: skill
 name: HuggingFace Inference API Integration
 description: >-
   Integrate HuggingFace's Inference API into your applications — serverless
-  model inference, streaming responses, and dedicated endpoints without managing
-  infrastructure.
+  model inference, streaming responses, and dedicated endpoints without
+  managing infrastructure.
 difficulty: beginner
 tags:
-  - inference-api
+  - huggingface
+  - inference
+  - api
+  - integration
   - serverless
-  - api-integration
-  - streaming
-  - endpoints
+  - best-practices
+  - refactoring
 compatibility:
   - claude-code
   - cursor
@@ -21,37 +23,21 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-languages:
-  - typescript
-  - python
-prerequisites:
-  - HuggingFace account with API token
-  - Node.js or Python
 faq:
-  - question: What is the HuggingFace Inference API?
+  - question: "When should I use the HuggingFace Inference API Integration skill?"
     answer: >-
-      The Inference API provides serverless access to HuggingFace models via
-      HTTP requests. Send your input, get model output — no GPU servers to
-      manage. It supports text generation, classification, embeddings, image
-      generation, and more across 200k+ models.
-  - question: What is the difference between serverless and dedicated endpoints?
+      Integrate HuggingFace's Inference API into your applications —
+      serverless model inference, streaming responses, and dedicated endpoints
+      without managing infrastructure. This skill provides a structured
+      workflow for model management, dataset handling, fine-tuning, and ML
+      pipeline deployment.
+  - question: "What tools and setup does HuggingFace Inference API Integration require?"
     answer: >-
-      Serverless is free/cheap for development — models are shared and may have
-      cold starts. Dedicated endpoints give you reserved GPU instances with
-      guaranteed availability, autoscaling, and SLA for production use. Use
-      serverless for development, dedicated for production.
-  - question: How do I handle model loading delays on the Inference API?
-    answer: >-
-      The serverless API returns 503 when a model is loading (cold start).
-      Implement retry logic with exponential backoff — wait 20-60 seconds and
-      retry. The model stays loaded for ~15 minutes after last request.
-      Dedicated endpoints avoid this issue entirely.
-relatedItems:
-  - huggingface-fine-tuning-setup
-  - huggingface-datasets-loading
-  - huggingface-model-scout
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Hugging Face tooling (Hugging Face CLI (hf),
+      transformers library). No special setup required beyond a working ML/AI
+      platform environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # HuggingFace Inference API Integration

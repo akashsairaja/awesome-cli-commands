@@ -2,18 +2,22 @@
 id: sshgpg-agent-forwarding
 stackId: sshgpg
 type: skill
-name: SSH Agent Forwarding & Key Caching
+name: >-
+  SSH Agent Forwarding & Key Caching
 description: >-
   Configure SSH agent for passphrase caching and secure agent forwarding —
   ssh-agent setup, keychain integration, forwarding to remote hosts, and
   security considerations.
-difficulty: intermediate
+difficulty: advanced
 tags:
-  - ssh-agent
-  - agent-forwarding
-  - passphrase
-  - keychain
+  - sshgpg
+  - ssh
+  - agent
+  - forwarding
+  - key
+  - caching
   - security
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,28 +25,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - SSH keys with passphrases
-  - OpenSSH 7.3+
 faq:
-  - question: What is SSH agent forwarding?
+  - question: "When should I use the SSH Agent Forwarding & Key Caching skill?"
     answer: >-
-      SSH agent forwarding lets a remote server use your local SSH keys for
-      authentication without copying private keys to the server. When you SSH to
-      a bastion and then to an internal server, the internal server
-      authenticates using your local key through the forwarded agent connection.
-  - question: Is SSH agent forwarding secure?
+      Configure SSH agent for passphrase caching and secure agent forwarding —
+      ssh-agent setup, keychain integration, forwarding to remote hosts, and
+      security considerations. This skill provides a structured workflow for
+      key management, secure connections, threat modeling, and security
+      auditing.
+  - question: "What tools and setup does SSH Agent Forwarding & Key Caching require?"
     answer: >-
-      It has risks — root on the remote server can hijack your agent socket.
-      Only enable ForwardAgent for hosts you fully trust. Never use it in Host *
-      wildcard. For most use cases, ProxyJump is a safer alternative that
-      tunnels the connection without exposing your agent.
-relatedItems:
-  - sshgpg-ssh-config
-  - sshgpg-key-management
-  - sshgpg-gpg-signing
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard SSH/GPG Security tooling (ssh, ssh-agent). Review
+      the setup section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # SSH Agent Forwarding & Key Caching

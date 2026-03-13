@@ -2,19 +2,18 @@
 id: powershell-pipeline-optimization
 stackId: powershell
 type: skill
-name: PowerShell Pipeline & Performance
+name: >-
+  PowerShell Pipeline & Performance
 description: >-
   Optimize PowerShell pipeline performance — streaming vs collecting,
   ForEach-Object -Parallel, Where-Object -FilterScript, avoiding common
   bottlenecks, and measuring execution time.
 difficulty: intermediate
 tags:
+  - powershell
   - pipeline
   - performance
-  - parallel
-  - streaming
-  - optimization
-  - powershell
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -23,31 +22,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - powershell
-prerequisites:
-  - PowerShell 7.0+
-  - Basic pipeline concepts
 faq:
-  - question: How does ForEach-Object -Parallel work in PowerShell 7?
+  - question: "When should I use the PowerShell Pipeline & Performance skill?"
     answer: >-
-      ForEach-Object -Parallel runs script blocks concurrently in separate
-      runspaces. Each iteration runs in its own thread. Use -ThrottleLimit to
-      control concurrency (default 5). Access variables from the calling scope
-      with $using:variable. Best for I/O-bound tasks (network calls, disk
-      operations). Not beneficial for CPU-bound work on single-core.
-  - question: Why is += slow for building arrays in PowerShell?
+      Optimize PowerShell pipeline performance — streaming vs collecting,
+      ForEach-Object -Parallel, Where-Object -FilterScript, avoiding common
+      bottlenecks, and measuring execution time. This skill provides a
+      structured workflow for system administration, script automation,
+      pipeline operations, and remote management.
+  - question: "What tools and setup does PowerShell Pipeline & Performance require?"
     answer: >-
-      Arrays in PowerShell are fixed-size. The += operator creates a new, larger
-      array and copies all elements every iteration. For 10,000 items, this
-      creates 10,000 arrays and copies 50 million elements total (O(N^2)). Use
-      [System.Collections.Generic.List[object]] with .Add() or pipeline output
-      assignment instead.
-relatedItems:
-  - powershell-automation-architect
-  - powershell-error-handling
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires pip/poetry installed. Works with PowerShell projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # PowerShell Pipeline & Performance

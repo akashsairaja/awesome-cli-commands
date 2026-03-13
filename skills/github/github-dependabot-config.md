@@ -7,13 +7,15 @@ description: >-
   Set up Dependabot for automated dependency updates with grouped PRs,
   auto-merge for safe updates, and custom schedules to reduce maintenance
   burden.
-difficulty: beginner
+difficulty: intermediate
 tags:
+  - github
+  - configure
   - dependabot
-  - dependency-management
-  - security-updates
   - auto-merge
-  - automation
+  - grouping
+  - security
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -21,34 +23,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - GitHub repository with admin access
-  - CI pipeline configured (for auto-merge safety)
 faq:
-  - question: How do I reduce Dependabot PR noise?
+  - question: "When should I use the Configure Dependabot with Auto-Merge and Grouping skill?"
     answer: >-
-      Use Dependabot groups to batch related updates into single PRs, auto-merge
-      patch updates that pass CI, ignore major version bumps (review manually),
-      and set a weekly schedule instead of daily. This typically reduces PR
-      volume by 70-80%.
-  - question: Is it safe to auto-merge Dependabot PRs?
+      Set up Dependabot for automated dependency updates with grouped PRs,
+      auto-merge for safe updates, and custom schedules to reduce maintenance
+      burden. This skill provides a structured workflow for CI/CD workflows,
+      PR automation, issue management, and repository configuration.
+  - question: "What tools and setup does Configure Dependabot with Auto-Merge and Grouping require?"
     answer: >-
-      It is safe to auto-merge patch updates (bug fixes) and minor updates (new
-      features, backward compatible) if your CI suite is comprehensive. Never
-      auto-merge major version updates as they may contain breaking changes.
-      Always require CI to pass before auto-merge.
-  - question: Should I use Dependabot or Renovate for dependency updates?
-    answer: >-
-      Dependabot is built into GitHub with zero setup — great for most teams.
-      Renovate offers more customization (regex managers, custom datasources,
-      package grouping rules). Use Dependabot for simplicity, Renovate for
-      advanced multi-repo or monorepo setups.
-relatedItems:
-  - github-security-scanner
-  - github-actions-workflow-ci
-  - github-pr-reviewer
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm installed. Works with GitHub projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Configure Dependabot with Auto-Merge and Grouping

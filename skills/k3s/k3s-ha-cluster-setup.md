@@ -8,11 +8,13 @@ description: >-
   nodes, worker agents, and automated failover for lightweight Kubernetes.
 difficulty: advanced
 tags:
-  - k3s-ha
+  - k3s
+  - set
   - high-availability
-  - embedded-etcd
-  - cluster-setup
-  - production-kubernetes
+  - cluster
+  - api
+  - kubernetes
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,34 +23,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - 3+ Linux servers (2GB RAM each)
-  - Network connectivity between nodes
-  - Root/sudo access
 faq:
-  - question: How many server nodes do I need for K3s HA?
+  - question: "When should I use the Set Up a High-Availability K3s Cluster skill?"
     answer: >-
-      Minimum 3 server nodes for HA with embedded etcd. Etcd requires a majority
-      quorum — with 3 nodes, the cluster tolerates 1 failure. With 5 nodes, it
-      tolerates 2 failures. Always use an odd number to avoid split-brain
-      scenarios.
-  - question: Can I add more server nodes to a running K3s HA cluster?
+      Deploy a production-ready HA K3s cluster with embedded etcd, multiple
+      server nodes, worker agents, and automated failover for lightweight
+      Kubernetes. This skill provides a structured workflow for development
+      tasks.
+  - question: "What tools and setup does Set Up a High-Availability K3s Cluster require?"
     answer: >-
-      Yes. Join new server nodes with the same token and --server flag pointing
-      to any existing server node. The new node automatically joins the etcd
-      cluster. Scale from 3 to 5 nodes for higher fault tolerance.
-  - question: How do I backup and restore a K3s HA cluster?
-    answer: >-
-      K3s automatically takes etcd snapshots. Configure retention with
-      --etcd-snapshot-schedule-cron and --etcd-snapshot-retention. Manual
-      snapshots: 'k3s etcd-snapshot save'. Restore: 'k3s server --cluster-reset
-      --cluster-reset-restore-path=/path/to/snapshot'.
-relatedItems:
-  - k3s-upgrade-strategy
-  - k3s-storage-setup
-  - k3s-cluster-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires kubectl installed. Works with k3s projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Set Up a High-Availability K3s Cluster

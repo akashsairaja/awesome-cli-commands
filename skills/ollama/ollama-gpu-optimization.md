@@ -2,19 +2,21 @@
 id: ollama-gpu-optimization
 stackId: ollama
 type: skill
-name: GPU & Performance Optimization
+name: >-
+  GPU & Performance Optimization
 description: >-
   Optimize Ollama inference performance — GPU layer allocation, batch
-  processing, context window tuning, concurrent requests, and hardware-specific
-  configuration for fast local AI.
-difficulty: advanced
+  processing, context window tuning, concurrent requests, and
+  hardware-specific configuration for fast local AI.
+difficulty: intermediate
 tags:
+  - ollama
   - gpu
   - performance
   - optimization
-  - vram
-  - context-window
-  - benchmarking
+  - api
+  - prompting
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,35 +24,20 @@ compatibility:
   - codex
   - windsurf
   - aider
-prerequisites:
-  - Ollama installed
-  - GPU with CUDA or Metal support
-  - Basic understanding of LLM inference
 faq:
-  - question: How do I make Ollama faster?
+  - question: "When should I use the GPU & Performance Optimization skill?"
     answer: >-
-      Enable Flash Attention (OLLAMA_FLASH_ATTENTION=1), keep all model layers
-      on GPU (num_gpu=-1), use quantized models (Q4_K_M), set context window to
-      only what you need, and limit concurrent request slots. These changes can
-      improve speed by 2-5x.
-  - question: Why is Ollama slow on the first request?
+      Optimize Ollama inference performance — GPU layer allocation, batch
+      processing, context window tuning, concurrent requests, and
+      hardware-specific configuration for fast local AI. This skill provides a
+      structured workflow for development tasks.
+  - question: "What tools and setup does GPU & Performance Optimization require?"
     answer: >-
-      The first request loads the model from disk into GPU/RAM, which takes
-      10-30 seconds depending on model size. Subsequent requests are fast
-      because the model stays loaded. Set OLLAMA_MAX_LOADED_MODELS to keep
-      models in memory between requests.
-  - question: How much VRAM do I need for coding models?
-    answer: >-
-      For 7B models (Q4): 4-5GB VRAM. For 13B models (Q4): 8-9GB. For 34B models
-      (Q4): 20-22GB. Add 25-50% more for larger context windows. If your VRAM is
-      insufficient, Ollama spills layers to CPU RAM automatically, but inference
-      is slower.
-relatedItems:
-  - ollama-model-management
-  - ollama-api-integration
-  - ollama-model-manager
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard ollama tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # GPU & Performance Optimization

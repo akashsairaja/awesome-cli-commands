@@ -10,11 +10,13 @@ description: >-
 difficulty: beginner
 tags:
   - nuget
-  - dotnet
-  - packages
-  - dependencies
-  - versioning
-  - sources
+  - package
+  - management
+  - basics
+  - security
+  - api
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,38 +24,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-languages:
-  - csharp
-  - fsharp
-  - vb.net
-prerequisites:
-  - .NET SDK installed
 faq:
-  - question: How do I check for vulnerable NuGet packages?
+  - question: "When should I use the NuGet Package Management Basics skill?"
     answer: >-
-      Run dotnet list package --vulnerable. This checks all packages against
-      known vulnerability databases. Use --include-transitive to check indirect
-      dependencies too. Fix by updating: dotnet add package PackageName (latest
-      version). Run in CI to catch new vulnerabilities.
-  - question: How do I use a private NuGet feed?
+      Manage .NET packages with NuGet CLI and dotnet — adding, updating, and
+      removing packages, configuring sources, resolving version conflicts, and
+      maintaining clean dependency graphs. This skill provides a structured
+      workflow for package management, ASP.NET patterns, and .NET application
+      development.
+  - question: "What tools and setup does NuGet Package Management Basics require?"
     answer: >-
-      Add source: dotnet nuget add source URL --name MyFeed --username user
-      --password PAT. Or add to nuget.config: <add key='MyFeed' value='URL' />.
-      Use package source mapping to control which packages come from which
-      source for supply chain security.
-  - question: What is Central Package Management in NuGet?
-    answer: >-
-      CPM lets you manage all package versions in one Directory.Packages.props
-      file at the solution root. Individual .csproj files reference packages
-      without versions. Set
-      <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally> in
-      props file. This ensures consistent versions across all projects.
-relatedItems:
-  - nuget-publishing
-  - nuget-version-strategy
-  - nuget-csproj-management
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Works with standard NuGet/.NET tooling (dotnet CLI, NuGet CLI). Review
+      the setup section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # NuGet Package Management Basics

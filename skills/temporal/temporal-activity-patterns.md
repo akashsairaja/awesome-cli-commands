@@ -7,14 +7,14 @@ description: >-
   Design robust Temporal activities — idempotent operations, heartbeat
   reporting, timeout configuration, retry policies with backoff, and
   compensation logic for saga patterns.
-difficulty: intermediate
+difficulty: beginner
 tags:
-  - activities
-  - retry-policy
-  - heartbeat
-  - saga-pattern
-  - idempotent
   - temporal
+  - activity
+  - design
+  - patterns
+  - api
+  - design-patterns
 compatibility:
   - claude-code
   - cursor
@@ -22,40 +22,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-languages:
-  - typescript
-  - go
-prerequisites:
-  - Temporal SDK
-  - Basic Temporal concepts
 faq:
-  - question: What does it mean for a Temporal activity to be idempotent?
+  - question: "When should I use the Temporal Activity Design Patterns skill?"
     answer: >-
-      An idempotent activity produces the same result whether executed once or
-      multiple times with the same input. Since Temporal retries failed
-      activities, a payment activity must use an idempotency key to prevent
-      double-charging. A database insert must use upsert or check-before-insert.
-      Design every activity assuming it will be called more than once.
-  - question: What is a heartbeat in Temporal activities?
+      Design robust Temporal activities — idempotent operations, heartbeat
+      reporting, timeout configuration, retry policies with backoff, and
+      compensation logic for saga patterns. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Temporal Activity Design Patterns require?"
     answer: >-
-      A heartbeat is a periodic signal from a running activity to the Temporal
-      server saying 'I am still working.' If no heartbeat is received within
-      heartbeatTimeout, Temporal considers the activity stuck and schedules it
-      on another worker. Heartbeats also report progress data and support
-      graceful cancellation by checking ctx.heartbeat().
-  - question: What is the saga pattern in Temporal?
-    answer: >-
-      The saga pattern manages distributed transactions by executing a series of
-      steps with compensation logic for each. If step 3 fails, you run
-      compensations for steps 2 and 1 in reverse order (e.g., refund payment,
-      release inventory). Temporal makes sagas reliable because workflow state
-      is durable — compensations run even if the worker crashes.
-relatedItems:
-  - temporal-workflow-architect
-  - temporal-signal-query
-  - temporal-testing
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard temporal tooling (relevant CLI tools and
+      frameworks). Review the setup section in the skill content for specific
+      configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Temporal Activity Design Patterns

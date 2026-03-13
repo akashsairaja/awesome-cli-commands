@@ -5,49 +5,33 @@ type: skill
 name: Testing Temporal Workflows
 description: >-
   Write comprehensive tests for Temporal workflows — unit testing with
-  TestWorkflowEnvironment, mocking activities, testing signals and queries, and
-  integration testing patterns.
-difficulty: advanced
+  TestWorkflowEnvironment, mocking activities, testing signals and queries,
+  and integration testing patterns.
+difficulty: beginner
 tags:
-  - testing
-  - unit-tests
-  - mocking
-  - time-skipping
-  - integration-tests
   - temporal
+  - testing
+  - workflows
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-languages:
-  - typescript
-  - go
-prerequisites:
-  - Temporal SDK
-  - Jest or Go testing framework
 faq:
-  - question: How do I test Temporal workflows without a running server?
+  - question: "When should I use the Testing Temporal Workflows skill?"
     answer: >-
-      Use TestWorkflowEnvironment from @temporalio/testing. It creates an
-      in-memory Temporal server for testing. You can create a local environment
-      (createLocal) for full testing or a time-skipping environment
-      (createTimeSkipping) for testing timers and timeouts. Mock activities to
-      isolate workflow logic.
-  - question: How do I test Temporal workflow timeouts?
+      Write comprehensive tests for Temporal workflows — unit testing with
+      TestWorkflowEnvironment, mocking activities, testing signals and
+      queries, and integration testing patterns. This skill provides a
+      structured workflow for development tasks.
+  - question: "What tools and setup does Testing Temporal Workflows require?"
     answer: >-
-      Use TestWorkflowEnvironment.createTimeSkipping() which lets you
-      fast-forward time with testEnv.sleep('25h'). This skips the workflow timer
-      without waiting in real time. Essential for testing timeout paths,
-      scheduled activities, and expiration logic that would otherwise take hours
-      or days to execute.
-relatedItems:
-  - temporal-workflow-architect
-  - temporal-activity-patterns
-  - temporal-signal-query
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard temporal tooling (relevant CLI tools and
+      frameworks). No special setup required beyond a working temporal
+      environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Testing Temporal Workflows

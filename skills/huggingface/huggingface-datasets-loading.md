@@ -2,18 +2,19 @@
 id: huggingface-datasets-loading
 stackId: huggingface
 type: skill
-name: Loading & Processing Datasets
+name: >-
+  Loading & Processing Datasets
 description: >-
-  Master HuggingFace datasets library — loading from Hub, local files, and APIs,
-  with filtering, mapping, tokenization, and streaming for efficient data
-  processing pipelines.
+  Master HuggingFace datasets library — loading from Hub, local files, and
+  APIs, with filtering, mapping, tokenization, and streaming for efficient
+  data processing pipelines.
 difficulty: intermediate
 tags:
+  - huggingface
+  - loading
+  - processing
   - datasets
-  - data-loading
-  - preprocessing
-  - streaming
-  - tokenization
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,36 +22,21 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-languages:
-  - python
-prerequisites:
-  - Python 3.9+
-  - datasets library installed
 faq:
-  - question: How do I load large datasets without running out of memory?
+  - question: "When should I use the Loading & Processing Datasets skill?"
     answer: >-
-      Use streaming mode: load_dataset('name', streaming=True). This processes
-      data on-the-fly without downloading the entire dataset. For cached
-      datasets, HuggingFace uses memory-mapped files that don't load into RAM —
-      only accessed portions are read.
-  - question: How do I create a dataset from my own data?
+      Master HuggingFace datasets library — loading from Hub, local files, and
+      APIs, with filtering, mapping, tokenization, and streaming for efficient
+      data processing pipelines. This skill provides a structured workflow for
+      model management, dataset handling, fine-tuning, and ML pipeline
+      deployment.
+  - question: "What tools and setup does Loading & Processing Datasets require?"
     answer: >-
-      Use load_dataset('csv', data_files='file.csv') for CSV,
-      load_dataset('json', data_files='file.jsonl') for JSON/JSONL, or
-      Dataset.from_pandas(df) for DataFrames. Push to the Hub with
-      dataset.push_to_hub('org/name') for team sharing.
-  - question: Why is map() with batched=True faster?
-    answer: >-
-      Batched processing sends multiple examples to your function at once,
-      reducing Python overhead and enabling vectorized operations. Tokenizers
-      especially benefit — they can process batches in parallel using Rust
-      backends. Set num_proc for additional multi-core parallelism.
-relatedItems:
-  - huggingface-fine-tuning-setup
-  - huggingface-inference-api
-  - huggingface-model-scout
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Hugging Face tooling (Hugging Face CLI (hf),
+      transformers library). No special setup required beyond a working ML/AI
+      platform environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Loading & Processing Datasets

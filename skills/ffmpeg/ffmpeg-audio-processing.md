@@ -2,19 +2,20 @@
 id: ffmpeg-audio-processing
 stackId: ffmpeg
 type: skill
-name: Audio Processing & Conversion
+name: >-
+  Audio Processing & Conversion
 description: >-
-  Process audio with FFmpeg — format conversion, normalization, noise reduction,
-  splitting, merging, and metadata management for podcasts, music, and voice
-  content.
-difficulty: beginner
+  Process audio with FFmpeg — format conversion, normalization, noise
+  reduction, splitting, merging, and metadata management for podcasts, music,
+  and voice content.
+difficulty: intermediate
 tags:
+  - ffmpeg
   - audio
+  - processing
   - conversion
-  - normalization
-  - podcast
-  - mp3
-  - aac
+  - automation
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,33 +23,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - FFmpeg installed
 faq:
-  - question: What is the best audio format for web delivery?
+  - question: "When should I use the Audio Processing & Conversion skill?"
     answer: >-
-      AAC (.m4a) for broadest compatibility, or Opus for modern browsers (30%
-      smaller at same quality). Use MP3 only when AAC/Opus are not supported.
-      For lossless needs, use FLAC. Opus at 128kbps matches MP3 at 192kbps in
-      perceived quality.
-  - question: How do I normalize audio volume with FFmpeg?
+      Process audio with FFmpeg — format conversion, normalization, noise
+      reduction, splitting, merging, and metadata management for podcasts,
+      music, and voice content. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Audio Processing & Conversion require?"
     answer: >-
-      Use the loudnorm filter with two passes: first pass analyzes levels
-      (ffmpeg -i input -af loudnorm=print_format=json -f null /dev/null), second
-      pass applies normalization. Target -16 LUFS for podcasts and -14 LUFS for
-      music (broadcast standards).
-  - question: How do I extract audio from a video file?
-    answer: >-
-      Use: ffmpeg -i video.mp4 -vn -c:a copy audio.aac. The -vn flag removes
-      video, and -c:a copy extracts audio without re-encoding (fastest, no
-      quality loss). Use -c:a libmp3lame -b:a 192k instead of copy if you need a
-      specific format.
-relatedItems:
-  - ffmpeg-web-optimization
-  - ffmpeg-batch-processing
-  - ffmpeg-media-processor
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires pip/poetry installed. Works with ffmpeg projects. No additional
+      configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Audio Processing & Conversion

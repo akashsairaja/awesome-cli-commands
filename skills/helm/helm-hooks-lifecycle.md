@@ -2,18 +2,21 @@
 id: helm-hooks-lifecycle
 stackId: helm
 type: skill
-name: Helm Hooks & Release Lifecycle
+name: >-
+  Helm Hooks & Release Lifecycle
 description: >-
   Use Helm hooks for database migrations, pre-install checks, post-upgrade
   notifications, and cleanup tasks — control execution order and handle hook
   failures gracefully.
-difficulty: advanced
+difficulty: intermediate
 tags:
-  - helm-hooks
+  - helm
+  - hooks
+  - release
   - lifecycle
-  - migrations
-  - pre-install
-  - post-upgrade
+  - deployment
+  - migration
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -21,31 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Helm 3.14+
-  - Kubernetes Jobs knowledge
-  - Basic Helm chart experience
 faq:
-  - question: How do Helm hooks work?
+  - question: "When should I use the Helm Hooks & Release Lifecycle skill?"
     answer: >-
-      Helm hooks are Kubernetes resources with special annotations that tell
-      Helm to create them at specific lifecycle points (pre-install,
-      post-upgrade, etc.) instead of with the regular release resources. Hooks
-      run as Jobs and Helm waits for them to complete before proceeding. If a
-      hook fails and --atomic is set, the entire release is rolled back.
-  - question: How should I run database migrations with Helm?
+      Use Helm hooks for database migrations, pre-install checks, post-upgrade
+      notifications, and cleanup tasks — control execution order and handle
+      hook failures gracefully. It includes practical examples for Kubernetes
+      packaging development.
+  - question: "What tools and setup does Helm Hooks & Release Lifecycle require?"
     answer: >-
-      Create a Job with 'helm.sh/hook: pre-upgrade,pre-install' annotation. This
-      runs migrations before the new application version starts. Set hook-weight
-      to -1 (run before other hooks), hook-delete-policy to
-      'before-hook-creation,hook-succeeded', and use --atomic on helm upgrade so
-      a migration failure triggers rollback.
-relatedItems:
-  - helm-chart-architect
-  - helm-release-manager
-  - helm-values-structure
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm, Helm CLI installed. Works with Helm projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Helm Hooks & Release Lifecycle

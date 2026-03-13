@@ -9,11 +9,14 @@ description: >-
   builds.
 difficulty: intermediate
 tags:
-  - volta-ci
-  - github-actions
-  - ci-cd
+  - volta
+  - cicd
   - pipeline
-  - nodejs-ci
+  - integration
+  - ci-cd
+  - docker
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,28 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Volta version pinned in package.json
-  - 'CI/CD platform (GitHub Actions, GitLab CI, etc.)'
 faq:
-  - question: How do I use Volta in GitHub Actions?
+  - question: "When should I use the Volta CI/CD Pipeline Integration skill?"
     answer: >-
-      Use the volta-cli/action: 'uses: volta-cli/action@v4'. It installs Volta
-      and automatically reads the Node version from your package.json volta
-      section. No version parameter needed — it uses whatever is pinned in the
-      project.
-  - question: Can I use Volta with Docker?
+      Integrate Volta into CI/CD pipelines — GitHub Actions, GitLab CI, and
+      other platforms for consistent Node.js versions between local
+      development and CI builds. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Volta CI/CD Pipeline Integration require?"
     answer: >-
-      Yes. Install Volta in the Dockerfile with 'curl https://get.volta.sh |
-      bash', set VOLTA_HOME and PATH env vars, copy package.json, then run
-      'volta install node'. Volta reads the pinned version from package.json and
-      installs exactly that version.
-relatedItems:
-  - volta-project-pinning
-  - volta-toolchain-manager
-  - volta-migration-specialist
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm, Docker, pip/poetry installed. Works with volta
+      projects. Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Volta CI/CD Pipeline Integration

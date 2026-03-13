@@ -9,12 +9,13 @@ description: >-
   interactive data analysis workflows.
 difficulty: intermediate
 tags:
-  - spark-sql
+  - spark
   - sql
-  - parquet
-  - csv
-  - interactive
-  - data-analysis
+  - command
+  - line
+  - optimization
+  - debugging
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,33 +23,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Apache Spark installed
 faq:
-  - question: How do I query Parquet files with spark-sql?
+  - question: "When should I use the Spark SQL from the Command Line skill?"
     answer: >-
-      Use backtick syntax: SELECT * FROM parquet.`/path/to/files/` LIMIT 10.
-      Spark reads the Parquet schema automatically. For partitioned data, point
-      to the root directory and Spark discovers partitions. Use DESCRIBE
-      parquet.`/path/` to see the schema.
-  - question: How do I use spark-sql in scripts?
+      Run SQL queries with spark-sql CLI — querying Parquet, CSV, and JSON
+      files directly, creating temporary views, using Hive metastore, and
+      building interactive data analysis workflows. This skill provides a
+      structured workflow for development tasks.
+  - question: "What tools and setup does Spark SQL from the Command Line require?"
     answer: >-
-      Use -e for inline SQL: spark-sql -e 'SELECT count(*) FROM
-      parquet.`/data/`'. Use -f for SQL files: spark-sql -f report.sql. Redirect
-      output: spark-sql -e 'query' > output.tsv. Combine with shell variables:
-      spark-sql -e "SELECT * WHERE date = '$DATE'".
-  - question: How do I optimize spark-sql queries?
-    answer: >-
-      1) Use EXPLAIN to check the query plan. 2) Enable AQE:
-      spark.sql.adaptive.enabled=true. 3) Use partitioned data and filter on
-      partition columns. 4) Avoid SELECT * (project only needed columns). 5) Use
-      LIMIT during exploration. 6) Increase driver memory for large result sets.
-relatedItems:
-  - spark-submit-config
-  - spark-performance-tuning
-  - spark-data-engineer
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Requires npm/yarn/pnpm, pip/poetry installed. Works with spark projects.
+      Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Spark SQL from the Command Line

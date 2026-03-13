@@ -4,16 +4,17 @@ stackId: python
 type: skill
 name: Modern Python Packaging with pyproject.toml
 description: >-
-  Set up Python projects with pyproject.toml — dependency management with uv or
-  poetry, virtual environments, building packages, and publishing to PyPI
+  Set up Python projects with pyproject.toml — dependency management with uv
+  or poetry, virtual environments, building packages, and publishing to PyPI
   following PEP 621/517.
 difficulty: intermediate
 tags:
+  - python
+  - modern
   - packaging
-  - pyproject-toml
-  - uv
-  - virtual-environments
-  - dependencies
+  - pyprojecttoml
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,37 +23,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - python
-prerequisites:
-  - Python 3.11+
-  - uv or pip
 faq:
-  - question: What is pyproject.toml and should I use it?
+  - question: "When should I use the Modern Python Packaging with pyproject.toml skill?"
     answer: >-
-      pyproject.toml is the Python standard (PEP 621) for project configuration.
-      It replaces setup.py, setup.cfg, and requirements.txt with a single
-      declarative file. Yes, all new Python projects should use pyproject.toml —
-      it is supported by pip, uv, poetry, hatch, and all modern Python tools.
-  - question: 'Should I use uv, pip, or poetry for Python dependency management?'
+      Set up Python projects with pyproject.toml — dependency management with
+      uv or poetry, virtual environments, building packages, and publishing to
+      PyPI following PEP 621/517. This skill provides a structured workflow
+      for package management, testing, async patterns, and project
+      scaffolding.
+  - question: "What tools and setup does Modern Python Packaging with pyproject.toml require?"
     answer: >-
-      Use uv for new projects — it is 10-100x faster than pip for installs and
-      resolving. It is a drop-in pip replacement. Use poetry if you need its
-      lock file format and virtual env management. Use pip only if you cannot
-      install uv. All three support pyproject.toml.
-  - question: Why should I use a src/ layout for Python projects?
-    answer: >-
-      The src/ layout prevents accidentally importing your package from the
-      project root instead of the installed version. Without it, 'import
-      my_package' might use the local directory instead of the built package,
-      hiding import errors and missing dependencies. The src/ layout forces
-      proper installation.
-relatedItems:
-  - python-type-annotations
-  - python-testing-patterns
-  - python-async-patterns
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires pip/poetry installed. Works with Python projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Modern Python Packaging with pyproject.toml

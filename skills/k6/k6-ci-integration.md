@@ -9,11 +9,14 @@ description: >-
   outputs.
 difficulty: intermediate
 tags:
-  - ci-cd
-  - github-actions
-  - performance-gates
-  - automation
   - k6
+  - cicd
+  - integration
+  - performance
+  - testing
+  - ci-cd
+  - docker
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -21,35 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - k6 installed
-  - GitHub Actions (or equivalent CI)
-  - Docker (for application setup)
 faq:
-  - question: How do I run k6 load tests in GitHub Actions?
+  - question: "When should I use the K6 CI/CD Integration skill?"
     answer: >-
-      Install k6 from the official apt repository, start your application with
-      Docker Compose, wait for it to be healthy, then run k6 scripts. Upload
-      results as artifacts. k6 exits with non-zero code when thresholds fail,
-      automatically failing the CI step.
-  - question: Should I run load tests on every pull request?
+      Integrate k6 load tests into CI/CD pipelines with GitHub Actions —
+      automated performance gates, result artifacts, trend tracking, and
+      Grafana dashboard outputs. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does K6 CI/CD Integration require?"
     answer: >-
-      Run smoke tests (1 VU, 30 seconds) on every PR — they are fast and catch
-      obvious regressions. Run full load tests on merge to main or on a nightly
-      schedule. Full load tests take 10+ minutes and should not block PR
-      reviews.
-  - question: How do I track performance trends across k6 runs?
-    answer: >-
-      Export results with --out json=results.json and
-      --summary-export=summary.json. Upload as CI artifacts. For dashboards,
-      output to InfluxDB (--out influxdb=http://localhost:8086/k6) and visualize
-      in Grafana. This shows performance trends across releases.
-relatedItems:
-  - k6-script-development
-  - k6-threshold-config
-  - k6-load-testing-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker installed. Works with k6 projects. No additional
+      configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # K6 CI/CD Integration

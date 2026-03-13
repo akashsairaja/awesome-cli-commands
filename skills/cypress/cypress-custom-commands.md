@@ -9,11 +9,14 @@ description: >-
   used across your test suite.
 difficulty: intermediate
 tags:
-  - custom-commands
-  - reusability
-  - authentication
   - cypress
-  - test-helpers
+  - custom
+  - commands
+  - reusable
+  - test
+  - actions
+  - api
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,33 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Cypress 13+
-  - TypeScript (recommended)
 faq:
-  - question: What are Cypress custom commands?
+  - question: "When should I use the Custom Commands for Reusable Test Actions skill?"
     answer: >-
-      Custom commands extend the cy object with reusable actions like
-      cy.login(), cy.seedDatabase(), or cy.getByCy(). They encapsulate
-      repetitive test logic — login flows, API calls, selector helpers — so
-      tests stay clean and maintainable.
-  - question: How do I add TypeScript support for Cypress custom commands?
+      Build Cypress custom commands to encapsulate repetitive test actions —
+      authentication flows, API interactions, form filling, and assertion
+      helpers used across your test suite. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Custom Commands for Reusable Test Actions require?"
     answer: >-
-      Declare your commands in the Cypress namespace by extending the Chainable
-      interface in cypress/support/commands.ts. This enables IDE autocompletion
-      and type checking for custom command arguments and return types.
-  - question: What is cy.session and when should I use it?
-    answer: >-
-      cy.session() caches browser state (cookies, localStorage, sessionStorage)
-      between tests. Use it for login commands — it logs in once and restores
-      the session for subsequent tests, dramatically speeding up suites with
-      many authenticated tests.
-relatedItems:
-  - cypress-intercept-patterns
-  - cypress-ci-setup
-  - cypress-e2e-strategist
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Cypress installed. Works with cypress projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Custom Commands for Reusable Test Actions

@@ -7,13 +7,16 @@ description: >-
   Create self-documenting Makefiles with auto-generated help targets — every
   target gets a description, and 'make help' displays all available commands
   with explanations.
-difficulty: beginner
+difficulty: intermediate
 tags:
+  - make
   - self-documenting
-  - help-target
-  - developer-experience
-  - discoverability
-  - makefile-pattern
+  - makefile
+  - pattern
+  - testing
+  - deployment
+  - docker
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -22,27 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - GNU Make 4.0+
-  - grep and awk available
 faq:
-  - question: How do I make a Makefile self-documenting?
+  - question: "When should I use the Self-Documenting Makefile Pattern skill?"
     answer: >-
-      Add '## Description' comments after each target, then create a help target
-      that greps for '##' and formats the output. Set .DEFAULT_GOAL := help so
-      bare 'make' shows the help. This pattern auto-generates documentation from
-      inline comments.
-  - question: 'Why use ## instead of # for Makefile target descriptions?'
+      Create self-documenting Makefiles with auto-generated help targets —
+      every target gets a description, and 'make help' displays all available
+      commands with explanations. It includes practical examples for make
+      development.
+  - question: "What tools and setup does Self-Documenting Makefile Pattern require?"
     answer: >-
-      Using ## distinguishes target descriptions from regular comments. The help
-      target greps for '##' specifically, ignoring implementation comments (#).
-      This prevents internal comments from appearing in the help output.
-relatedItems:
-  - make-build-architect
-  - make-variables-patterns
-  - make-polyglot-runner
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker, Go toolchain installed. Works with make projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Self-Documenting Makefile Pattern

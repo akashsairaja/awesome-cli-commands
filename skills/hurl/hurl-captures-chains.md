@@ -4,16 +4,18 @@ stackId: hurl
 type: skill
 name: Variable Captures and Request Chaining
 description: >-
-  Chain Hurl requests with variable captures — extract tokens, IDs, and dynamic
-  values from responses to use in subsequent requests for multi-step API test
-  flows.
-difficulty: intermediate
+  Chain Hurl requests with variable captures — extract tokens, IDs, and
+  dynamic values from responses to use in subsequent requests for multi-step
+  API test flows.
+difficulty: beginner
 tags:
-  - captures
-  - variables
-  - request-chaining
-  - dynamic-data
   - hurl
+  - variable
+  - captures
+  - request
+  - chaining
+  - api
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,33 +23,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Hurl installed
-  - Understanding of basic Hurl syntax
 faq:
-  - question: How do I chain requests in Hurl?
+  - question: "When should I use the Variable Captures and Request Chaining skill?"
     answer: >-
-      Use [Captures] to extract values from responses: 'token: jsonpath
-      "$.token"'. Then reference captured values in subsequent requests with
-      {{token}} in URLs, headers, or body. This enables multi-step flows: login
-      → create → verify → delete.
-  - question: What types of values can Hurl capture?
+      Chain Hurl requests with variable captures — extract tokens, IDs, and
+      dynamic values from responses to use in subsequent requests for
+      multi-step API test flows. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Variable Captures and Request Chaining require?"
     answer: >-
-      Hurl captures JSONPath values (body fields), headers, cookies, regex
-      matches, body text, and response metadata (status, duration). JSONPath
-      captures are most common for REST APIs. Header captures are useful for
-      ETag-based caching tests.
-  - question: How do I pass variables to Hurl from the command line?
-    answer: >-
-      Use --variable key=value: 'hurl --test --variable
-      base_url=http://localhost:3000 test.hurl'. In the .hurl file, reference as
-      {{base_url}}. This separates environment configuration from test logic.
-relatedItems:
-  - hurl-test-patterns
-  - hurl-ci-integration
-  - hurl-http-testing-specialist
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard hurl tooling (relevant CLI tools and frameworks). No
+      special setup required beyond a working hurl environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Variable Captures and Request Chaining

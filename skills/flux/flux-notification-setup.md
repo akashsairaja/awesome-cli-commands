@@ -9,11 +9,13 @@ description: >-
   drift detection.
 difficulty: intermediate
 tags:
-  - flux-notifications
+  - flux
+  - configure
+  - notifications
   - alerts
-  - slack-integration
-  - webhooks
-  - gitops-observability
+  - deployment
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,28 +23,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Flux installed with notification controller
-  - Slack/Teams/Discord webhook URL
 faq:
-  - question: How do I get Slack notifications from Flux CD?
+  - question: "When should I use the Configure Flux Notifications and Alerts skill?"
     answer: >-
-      Create a Slack incoming webhook, store the URL in a Kubernetes Secret,
-      create a Provider resource referencing that secret, then create Alert
-      resources specifying which Flux resources (Kustomizations, HelmReleases)
-      should trigger notifications and at what severity level.
-  - question: Can Flux trigger immediate reconciliation from GitHub webhooks?
+      Set up Flux notification controller to send alerts to Slack, Teams,
+      Discord, and webhooks when reconciliation events occur — deployments,
+      failures, and drift detection. This skill provides a structured workflow
+      for development tasks.
+  - question: "What tools and setup does Configure Flux Notifications and Alerts require?"
     answer: >-
-      Yes. Create a Receiver resource of type 'github' with the push event. This
-      exposes an endpoint that GitHub webhooks can call. When Flux receives the
-      webhook, it immediately reconciles the referenced GitRepository instead of
-      waiting for the next poll interval.
-relatedItems:
-  - flux-bootstrap-cluster
-  - flux-gitops-architect
-  - flux-image-automation-agent
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard flux tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Configure Flux Notifications and Alerts

@@ -10,25 +10,26 @@ description: >-
   report to your Slack DMs.
 difficulty: advanced
 tags:
+  - git
   - developer
   - growth
   - analysis
-  - developer-growth-analysis
-  - git
+  - code-review
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the developer-growth-analysis skill?"
+  - question: "When should I use the Developer Growth Analysis skill?"
     answer: >-
       Analyzes your recent Claude Code chat history to identify coding
       patterns, development gaps, and areas for improvement, curates relevant
       learning resources from HackerNews, and automatically sends a
-      personalized growth report to your Slack DMs.
-  - question: "What tools or setup does developer-growth-analysis require?"
+      personalized growth report to your Slack DMs. This skill provides a
+      structured workflow for branching strategies, workflow automation, hook
+      scripts, and repository maintenance.
+  - question: "What tools and setup does Developer Growth Analysis require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Works with standard Git tooling (Git CLI, git hooks). Review the setup
+      section in the skill content for specific configuration steps.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

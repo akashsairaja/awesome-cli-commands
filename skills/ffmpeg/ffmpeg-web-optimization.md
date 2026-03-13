@@ -4,17 +4,17 @@ stackId: ffmpeg
 type: skill
 name: Video Optimization for Web Delivery
 description: >-
-  Optimize video files for web delivery with FFmpeg — H.264/H.265 encoding, CRF
-  quality tuning, faststart for progressive download, and multi-resolution
+  Optimize video files for web delivery with FFmpeg — H.264/H.265 encoding,
+  CRF quality tuning, faststart for progressive download, and multi-resolution
   adaptive streaming.
-difficulty: intermediate
+difficulty: beginner
 tags:
-  - web-video
-  - h264
-  - crf
-  - hls
+  - ffmpeg
+  - video
   - optimization
-  - streaming
+  - web
+  - delivery
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,33 +22,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - FFmpeg installed with libx264
 faq:
-  - question: What is CRF encoding in FFmpeg?
+  - question: "When should I use the Video Optimization for Web Delivery skill?"
     answer: >-
-      CRF (Constant Rate Factor) is quality-based encoding where FFmpeg adjusts
-      bitrate per frame to maintain consistent visual quality. Lower CRF =
-      higher quality and larger files. CRF 23 is the default for H.264 — a good
-      balance for web content. CRF 18 is visually lossless.
-  - question: Why do I need -movflags +faststart?
+      Optimize video files for web delivery with FFmpeg — H.264/H.265
+      encoding, CRF quality tuning, faststart for progressive download, and
+      multi-resolution adaptive streaming. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Video Optimization for Web Delivery require?"
     answer: >-
-      The +faststart flag moves the MP4 metadata (moov atom) to the beginning of
-      the file. Without it, browsers must download the entire file before
-      playback starts. With it, video begins playing immediately as it downloads
-      (progressive download).
-  - question: What is HLS adaptive streaming?
-    answer: >-
-      HLS (HTTP Live Streaming) splits video into small segments at multiple
-      quality levels. The player automatically switches between quality levels
-      based on the viewer's bandwidth. Use FFmpeg to generate HLS manifests and
-      segments for seamless adaptive playback.
-relatedItems:
-  - ffmpeg-batch-processing
-  - ffmpeg-audio-processing
-  - ffmpeg-media-processor
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard ffmpeg tooling (relevant CLI tools and frameworks).
+      No special setup required beyond a working ffmpeg environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Video Optimization for Web Delivery

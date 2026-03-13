@@ -2,18 +2,21 @@
 id: kubernetes-resource-management
 stackId: kubernetes
 type: skill
-name: Kubernetes Resource Requests & Limits
+name: >-
+  Kubernetes Resource Requests & Limits
 description: >-
   Configure CPU and memory requests and limits for Kubernetes workloads —
-  prevent OOMKilled errors, avoid CPU throttling, optimize cluster utilization,
-  and set up resource quotas.
-difficulty: intermediate
+  prevent OOMKilled errors, avoid CPU throttling, optimize cluster
+  utilization, and set up resource quotas.
+difficulty: advanced
 tags:
-  - resource-management
-  - cpu-limits
-  - memory-limits
-  - oomkilled
-  - resource-quota
+  - kubernetes
+  - resource
+  - requests
+  - limits
+  - api
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,36 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Kubernetes 1.28+
-  - Metrics Server installed
 faq:
-  - question: What is the difference between Kubernetes resource requests and limits?
+  - question: "When should I use the Kubernetes Resource Requests & Limits skill?"
     answer: >-
-      Requests are the guaranteed minimum resources a container gets — the
-      scheduler uses requests to decide which node can host the pod. Limits are
-      the maximum a container can use — exceeding memory limits causes
-      OOMKilled, exceeding CPU limits causes throttling. Always set both for
-      production workloads.
-  - question: Should I set CPU limits in Kubernetes?
+      Configure CPU and memory requests and limits for Kubernetes workloads —
+      prevent OOMKilled errors, avoid CPU throttling, optimize cluster
+      utilization, and set up resource quotas. It includes practical examples
+      for Kubernetes cluster development.
+  - question: "What tools and setup does Kubernetes Resource Requests & Limits require?"
     answer: >-
-      It depends. CPU limits cause throttling which increases latency — many
-      teams set CPU requests but omit CPU limits, allowing pods to burst when
-      CPU is available. However, set CPU limits in multi-tenant clusters to
-      prevent noisy neighbors. Always set memory limits — there is no 'memory
-      throttling', only OOMKilled.
-  - question: How do I determine the right resource values for my pods?
-    answer: >-
-      Run workloads without limits for a week and observe actual usage with
-      'kubectl top pods' or Prometheus metrics. Set requests to P95 usage, and
-      memory limits to 1.5-2x requests. Use Vertical Pod Autoscaler (VPA) in
-      recommendation mode for automated suggestions.
-relatedItems:
-  - kubernetes-health-probes
-  - kubernetes-pod-security
-  - kubernetes-troubleshooter
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Kubernetes tooling (kubectl, Helm). Review the setup
+      section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Kubernetes Resource Requests & Limits

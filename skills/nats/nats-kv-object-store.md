@@ -2,19 +2,19 @@
 id: nats-kv-object-store
 stackId: nats
 type: skill
-name: NATS Key-Value & Object Store
+name: >-
+  NATS Key-Value & Object Store
 description: >-
-  Use NATS built-in Key-Value and Object stores — storing configuration, feature
-  flags, state data, and binary objects with history, TTL, and watch
+  Use NATS built-in Key-Value and Object stores — storing configuration,
+  feature flags, state data, and binary objects with history, TTL, and watch
   capabilities from the NATS CLI.
-difficulty: intermediate
+difficulty: beginner
 tags:
+  - nats
   - key-value
-  - object-store
-  - configuration
-  - feature-flags
-  - watch
-  - distributed-state
+  - object
+  - store
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,33 +22,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - NATS CLI installed
-  - NATS server with JetStream enabled
 faq:
-  - question: When should I use NATS KV vs a traditional database?
+  - question: "When should I use the NATS Key-Value & Object Store skill?"
     answer: >-
-      Use NATS KV for: configuration, feature flags, service discovery, session
-      state, and small frequently-read data. Use a database for: complex
-      queries, large datasets, relational data, and transactional writes. NATS
-      KV is best for data that changes infrequently and is read often.
-  - question: How does NATS KV watch work?
+      Use NATS built-in Key-Value and Object stores — storing configuration,
+      feature flags, state data, and binary objects with history, TTL, and
+      watch capabilities from the NATS CLI. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does NATS Key-Value & Object Store require?"
     answer: >-
-      Watch subscribes to changes on keys matching a pattern. When any matching
-      key is created, updated, or deleted, the watcher receives the new value in
-      real-time. Use for reactive configuration: nats kv watch CONFIG
-      'feature.>' updates your service when feature flags change.
-  - question: What is the difference between NATS KV and Object store?
-    answer: >-
-      KV: small values (under 1MB), key-based access, history, watch, TTL.
-      Object store: large binary objects, chunked upload/download, metadata, no
-      watch. Use KV for config/state, Object store for files/artifacts/binaries.
-relatedItems:
-  - nats-pubsub-basics
-  - nats-jetstream-basics
-  - nats-messaging-architect
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Works with standard nats tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # NATS Key-Value & Object Store

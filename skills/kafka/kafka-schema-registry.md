@@ -2,53 +2,38 @@
 id: kafka-schema-registry
 stackId: kafka
 type: skill
-name: Kafka Schema Registry & Schema Evolution
+name: >-
+  Kafka Schema Registry & Schema Evolution
 description: >-
   Implement Confluent Schema Registry for Kafka — Avro and Protobuf schema
   management, compatibility modes, schema evolution strategies, and
   producer/consumer integration.
-difficulty: intermediate
+difficulty: advanced
 tags:
-  - schema-registry
-  - avro
-  - protobuf
-  - schema-evolution
-  - compatibility
   - kafka
+  - schema
+  - registry
+  - evolution
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-languages:
-  - typescript
-  - java
-prerequisites:
-  - Apache Kafka 3.0+
-  - Confluent Schema Registry
-  - Basic Avro or Protobuf knowledge
 faq:
-  - question: What is Kafka Schema Registry and why do I need it?
+  - question: "When should I use the Kafka Schema Registry & Schema Evolution skill?"
     answer: >-
-      Schema Registry is a centralized service that stores and manages schemas
-      for Kafka messages. It enforces compatibility rules so schema changes by
-      producers don't break consumers. Without it, any producer can send any
-      format, leading to runtime deserialization failures across all consumers.
-  - question: >-
-      What is the difference between backward and forward compatibility in
-      Schema Registry?
+      Implement Confluent Schema Registry for Kafka — Avro and Protobuf schema
+      management, compatibility modes, schema evolution strategies, and
+      producer/consumer integration. This skill provides a structured workflow
+      for development tasks.
+  - question: "What tools and setup does Kafka Schema Registry & Schema Evolution require?"
     answer: >-
-      Backward compatibility means consumers with the NEW schema can read data
-      written by the OLD schema. Forward compatibility means consumers with the
-      OLD schema can read data written by the NEW schema. Full compatibility
-      requires both. Backward is the default and most common — it lets you
-      upgrade consumers before producers.
-relatedItems:
-  - kafka-consumer-patterns
-  - kafka-event-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard kafka tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Kafka Schema Registry & Schema Evolution

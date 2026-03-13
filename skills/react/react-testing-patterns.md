@@ -4,15 +4,16 @@ stackId: react
 type: skill
 name: React Testing with Testing Library
 description: >-
-  Write effective React tests with Testing Library — user-centric queries, async
-  testing, mocking, accessibility assertions, and testing hooks and context.
+  Write effective React tests with Testing Library — user-centric queries,
+  async testing, mocking, accessibility assertions, and testing hooks and
+  context.
 difficulty: intermediate
 tags:
+  - react
   - testing
-  - testing-library
-  - jest
-  - vitest
-  - user-events
+  - library
+  - best-practices
+  - refactoring
 compatibility:
   - claude-code
   - cursor
@@ -21,39 +22,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - typescript
-  - javascript
-prerequisites:
-  - React 18+
-  - Jest or Vitest
-  - '@testing-library/react'
 faq:
-  - question: What is the best way to query elements in React Testing Library?
+  - question: "When should I use the React Testing with Testing Library skill?"
     answer: >-
-      Use queries in this priority order: (1) getByRole — matches accessible
-      roles, ensures a11y. (2) getByLabelText — for form elements. (3)
-      getByPlaceholderText — if no label exists. (4) getByText — for visible
-      text. (5) getByTestId — last resort. The first options test accessibility
-      as a side effect.
-  - question: Should I use fireEvent or userEvent in React Testing Library?
+      Write effective React tests with Testing Library — user-centric queries,
+      async testing, mocking, accessibility assertions, and testing hooks and
+      context. This skill provides a structured workflow for component
+      architecture, state management, performance optimization, and UI
+      patterns.
+  - question: "What tools and setup does React Testing with Testing Library require?"
     answer: >-
-      Always use userEvent.setup() — it simulates actual user behavior including
-      focus management, keyboard events, pointer events, and clipboard
-      interactions. fireEvent dispatches a single DOM event, which misses the
-      full interaction sequence. userEvent catches more real-world bugs.
-  - question: How do I test components that fetch data?
-    answer: >-
-      Mock the API layer (not fetch itself) using MSW (Mock Service Worker) for
-      realistic network mocking. Render the component, verify the loading state
-      appears, use findBy queries to wait for the loaded content, and verify the
-      loading state disappears. Test both success and error states.
-relatedItems:
-  - react-hooks-patterns
-  - react-server-components
-  - react-accessibility-testing
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard React tooling (React 19+, JSX/TSX). Review the setup
+      section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # React Testing with Testing Library

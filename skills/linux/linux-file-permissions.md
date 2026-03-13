@@ -2,20 +2,20 @@
 id: linux-file-permissions
 stackId: linux
 type: skill
-name: Linux File Permissions & Ownership
+name: >-
+  Linux File Permissions & Ownership
 description: >-
   Master Linux file permissions — chmod numeric and symbolic modes, chown
-  ownership, setuid/setgid, sticky bit, ACLs, and umask configuration for secure
-  file management.
+  ownership, setuid/setgid, sticky bit, ACLs, and umask configuration for
+  secure file management.
 difficulty: beginner
 tags:
+  - linux
+  - file
   - permissions
-  - chmod
-  - chown
   - ownership
   - security
-  - file-system
-  - linux
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -24,28 +24,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Linux terminal basics
 faq:
-  - question: What do Linux file permission numbers like 644 and 755 mean?
+  - question: "When should I use the Linux File Permissions & Ownership skill?"
     answer: >-
-      Each digit represents permissions for owner, group, and others. The digit
-      is a sum: 4=read, 2=write, 1=execute. So 644 means owner read+write (6),
-      group read (4), others read (4). 755 means owner all permissions (7),
-      group read+execute (5), others read+execute (5). 600 means owner
-      read+write only.
-  - question: What is the sticky bit in Linux and when should I use it?
+      Master Linux file permissions — chmod numeric and symbolic modes, chown
+      ownership, setuid/setgid, sticky bit, ACLs, and umask configuration for
+      secure file management. This skill provides a structured workflow for
+      shell scripting, process management, file permissions, and system
+      troubleshooting.
+  - question: "What tools and setup does Linux File Permissions & Ownership require?"
     answer: >-
-      The sticky bit (chmod +t) on a directory prevents users from deleting or
-      renaming files they don't own, even if they have write permission on the
-      directory. /tmp uses this (permissions 1777) so all users can create files
-      but can't delete each other's files. Use it on any shared writable
-      directory.
-relatedItems:
-  - linux-system-administrator
-  - linux-security-hardening
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Linux tooling (Bash, coreutils). Review the setup
+      section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Linux File Permissions & Ownership

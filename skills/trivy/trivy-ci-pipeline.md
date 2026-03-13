@@ -4,17 +4,19 @@ stackId: trivy
 type: skill
 name: Trivy CI/CD Pipeline Integration
 description: >-
-  Integrate Trivy scanning into CI/CD pipelines with GitHub Actions — container
-  scanning, IaC scanning, SBOM generation, and security gate enforcement with
-  SARIF uploads.
+  Integrate Trivy scanning into CI/CD pipelines with GitHub Actions —
+  container scanning, IaC scanning, SBOM generation, and security gate
+  enforcement with SARIF uploads.
 difficulty: intermediate
 tags:
-  - ci-cd
-  - github-actions
-  - sarif
-  - security-gates
   - trivy
-  - sbom
+  - cicd
+  - pipeline
+  - integration
+  - security
+  - deployment
+  - ci-cd
+  - docker
 compatibility:
   - claude-code
   - cursor
@@ -22,35 +24,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Trivy or trivy-action
-  - GitHub Actions
-  - Docker for image scanning
 faq:
-  - question: How do I add Trivy to GitHub Actions?
+  - question: "When should I use the Trivy CI/CD Pipeline Integration skill?"
     answer: >-
-      Use the aquasecurity/trivy-action GitHub Action. Configure image-ref for
-      container scanning or scan-type: config for IaC scanning. Set exit-code: 1
-      to fail the workflow on vulnerabilities. Upload SARIF output to GitHub
-      Security tab with github/codeql-action/upload-sarif.
-  - question: Should Trivy block CI builds on vulnerabilities?
+      Integrate Trivy scanning into CI/CD pipelines with GitHub Actions —
+      container scanning, IaC scanning, SBOM generation, and security gate
+      enforcement with SARIF uploads. This skill provides a structured
+      workflow for container scanning, filesystem scanning, IaC scanning, and
+      SBOM generation.
+  - question: "What tools and setup does Trivy CI/CD Pipeline Integration require?"
     answer: >-
-      Yes, for CRITICAL and HIGH severity. Use '--exit-code 1 --severity
-      CRITICAL,HIGH' to fail builds only on actionable vulnerabilities. Do not
-      block on LOW/MEDIUM in CI — track those in dashboards instead. Adjust
-      thresholds as your security posture matures.
-  - question: How do I generate SBOMs with Trivy in CI?
-    answer: >-
-      Use 'trivy image --format cyclonedx --output sbom.json <image>' or the
-      trivy-action with format: cyclonedx. Upload the SBOM as a build artifact.
-      CycloneDX and SPDX formats are both supported. Generate SBOMs on every
-      release for supply chain compliance.
-relatedItems:
-  - trivy-container-scanning
-  - trivy-iac-scanning
-  - trivy-security-scanner
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker, Terraform CLI, pip/poetry installed. Works with Trivy
+      projects. Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Trivy CI/CD Pipeline Integration

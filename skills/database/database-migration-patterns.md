@@ -2,20 +2,22 @@
 id: database-migration-patterns
 stackId: database
 type: skill
-name: Database Migration Patterns & Tools
+name: >-
+  Database Migration Patterns & Tools
 description: >-
   Implement version-controlled database migrations — tool selection (Prisma,
   Knex, Flyway, Alembic), migration file structure, rollback strategies, and
   CI/CD integration for safe schema evolution.
-difficulty: intermediate
+difficulty: advanced
 tags:
-  - migrations
-  - prisma
-  - knex
-  - flyway
-  - alembic
-  - schema-evolution
   - database
+  - migration
+  - patterns
+  - tools
+  - deployment
+  - ci-cd
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -24,42 +26,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - sql
-  - typescript
-  - python
-  - java
-prerequisites:
-  - Basic SQL
-  - Familiarity with one migration tool
 faq:
-  - question: What is a database migration?
+  - question: "When should I use the Database Migration Patterns & Tools skill?"
     answer: >-
-      A database migration is a version-controlled script that changes the
-      database schema (create tables, add columns, modify indexes). Migrations
-      run sequentially, each building on the previous state. They ensure every
-      environment has the same schema and enable rollbacks. Think of them as Git
-      for your database schema.
-  - question: Which database migration tool should I use?
+      Implement version-controlled database migrations — tool selection
+      (Prisma, Knex, Flyway, Alembic), migration file structure, rollback
+      strategies, and CI/CD integration for safe schema evolution. This skill
+      provides a structured workflow for schema design, query optimization,
+      migration strategies, and data modeling.
+  - question: "What tools and setup does Database Migration Patterns & Tools require?"
     answer: >-
-      Use Prisma for TypeScript/Node.js projects (best DX, type-safe). Use Knex
-      for JavaScript with more manual control. Use Flyway for Java/JVM projects
-      (SQL-first approach). Use Alembic for Python/SQLAlchemy. Use
-      golang-migrate for Go projects. Choose based on your tech stack and
-      preference for SQL-first vs ORM-driven migrations.
-  - question: Should I ever edit an applied migration?
-    answer: >-
-      Never. Once a migration has been applied to any environment, it is
-      immutable. If you need to change something, create a new migration that
-      modifies the schema. Editing applied migrations causes schema drift — your
-      development database will differ from production, leading to deployment
-      failures.
-relatedItems:
-  - database-design-architect
-  - database-orm-best-practices
-  - postgresql-migration-safety
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires pip/poetry, Prisma CLI installed. Works with Database projects.
+      No additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Database Migration Patterns & Tools

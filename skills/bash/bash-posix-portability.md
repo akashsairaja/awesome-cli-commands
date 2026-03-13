@@ -4,16 +4,18 @@ stackId: bash
 type: skill
 name: POSIX-Compatible Shell Scripting
 description: >-
-  Write portable shell scripts that work across Linux, macOS, and BSD — POSIX sh
-  compatibility, avoiding Bash-specific features, and handling platform
+  Write portable shell scripts that work across Linux, macOS, and BSD — POSIX
+  sh compatibility, avoiding Bash-specific features, and handling platform
   differences.
-difficulty: advanced
+difficulty: intermediate
 tags:
-  - posix
-  - portability
-  - shell-scripting
-  - cross-platform
-  - macos-linux
+  - bash
+  - posix-compatible
+  - shell
+  - scripting
+  - ci-cd
+  - docker
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,39 +23,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-languages:
-  - shell
-  - bash
-prerequisites:
-  - Basic shell scripting knowledge
 faq:
-  - question: What is POSIX sh and how is it different from Bash?
+  - question: "When should I use the POSIX-Compatible Shell Scripting skill?"
     answer: >-
-      POSIX sh is the portable shell standard supported by all Unix-like
-      systems. Bash extends POSIX sh with features like arrays, [[ ]] test
-      syntax, process substitution, and regex matching. Scripts using #!/bin/sh
-      must only use POSIX features. Scripts using #!/bin/bash can use
-      Bash-specific features but may not work on all systems.
-  - question: When should I write POSIX sh vs Bash scripts?
+      Write portable shell scripts that work across Linux, macOS, and BSD —
+      POSIX sh compatibility, avoiding Bash-specific features, and handling
+      platform differences. It includes practical examples for shell scripting
+      development.
+  - question: "What tools and setup does POSIX-Compatible Shell Scripting require?"
     answer: >-
-      Use POSIX sh when the script must run in minimal environments: Docker
-      alpine images, CI/CD runners, BSD systems, embedded Linux. Use Bash when
-      you control the runtime and need arrays, regex matching, or advanced
-      string operations. If unsure, start with POSIX and add Bash only when
-      needed.
-  - question: How do I handle differences between Linux and macOS shell commands?
-    answer: >-
-      Check for command variants at runtime: test 'date --version' to detect GNU
-      vs BSD. Install GNU coreutils on macOS (brew install coreutils) for gdate,
-      gsed, etc. Alternatively, use platform-detection functions that wrap the
-      differences. For complex cross-platform needs, consider Python or Go
-      instead.
-relatedItems:
-  - bash-error-handling-strict
-  - bash-argument-parsing
-  - bash-shellcheck-compliance
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker installed. Works with Bash projects. No additional
+      configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # POSIX-Compatible Shell Scripting

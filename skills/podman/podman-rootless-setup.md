@@ -6,13 +6,16 @@ name: Set Up Rootless Podman from Scratch
 description: >-
   Configure rootless Podman with user namespace mappings, storage drivers,
   networking, and verify the setup with your first rootless container.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - podman-rootless
-  - container-setup
-  - user-namespace
-  - subuid
-  - daemonless
+  - podman
+  - set
+  - rootless
+  - scratch
+  - performance
+  - security
+  - docker
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,28 +24,18 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Linux with kernel 5.11+ (user namespaces)
-  - Non-root user account
 faq:
-  - question: How do I set up rootless Podman?
+  - question: "When should I use the Set Up Rootless Podman from Scratch skill?"
     answer: >-
-      Install Podman, configure subuid/subgid with 'usermod --add-subuids', run
-      'podman system migrate', and verify with 'podman info | grep rootless'.
-      Enable lingering with 'loginctl enable-linger' for containers that should
-      survive logout.
-  - question: Can rootless Podman containers bind to port 80?
+      Configure rootless Podman with user namespace mappings, storage drivers,
+      networking, and verify the setup with your first rootless container.
+      This skill provides a structured workflow for development tasks.
+  - question: "What tools and setup does Set Up Rootless Podman from Scratch require?"
     answer: >-
-      By default, rootless containers cannot bind ports below 1024. Either use a
-      higher port with -p 8080:80 mapping, or lower the unprivileged port start
-      with 'sysctl net.ipv4.ip_unprivileged_port_start=80' (requires root to
-      set).
-relatedItems:
-  - podman-quadlet-services
-  - podman-compose-migration
-  - podman-rootless-specialist
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker installed. Works with podman projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Set Up Rootless Podman from Scratch

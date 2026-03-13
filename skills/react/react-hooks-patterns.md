@@ -9,11 +9,13 @@ description: >-
   type-safe hooks.
 difficulty: intermediate
 tags:
-  - custom-hooks
-  - state-management
-  - data-fetching
-  - composition
-  - typescript
+  - react
+  - custom
+  - hooks
+  - best
+  - practices
+  - api
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,38 +24,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - typescript
-  - javascript
-prerequisites:
-  - React 18+
-  - Understanding of useState and useEffect
 faq:
-  - question: When should I create a custom React hook?
+  - question: "When should I use the React Custom Hooks Best Practices skill?"
     answer: >-
-      Create a custom hook when you see stateful logic (useState, useEffect,
-      event listeners) duplicated across components. Common candidates: data
-      fetching, form handling, browser API subscriptions, debounce/throttle, and
-      localStorage sync. If the logic has no state or effects, use a plain
-      function instead.
-  - question: How do I test custom React hooks?
+      Design reusable custom React hooks — composable state logic, data
+      fetching patterns, cleanup and subscriptions, and proper TypeScript
+      generics for type-safe hooks. This skill provides a structured workflow
+      for component architecture, state management, performance optimization,
+      and UI patterns.
+  - question: "What tools and setup does React Custom Hooks Best Practices require?"
     answer: >-
-      Use renderHook from @testing-library/react to test hooks in isolation.
-      This renders the hook in a test component and returns its current result.
-      Use act() to trigger state updates. For hooks that make API calls, mock
-      fetch or use MSW (Mock Service Worker) for realistic API mocking.
-  - question: Should custom hooks return objects or tuples?
-    answer: >-
-      Return tuples [value, setter] for simple two-value hooks (like useState
-      pattern). Return objects { data, error, isLoading } for hooks with
-      multiple return values — objects allow consumers to destructure only what
-      they need and are easier to extend without breaking changes.
-relatedItems:
-  - react-server-components
-  - react-performance-optimization
-  - react-testing-patterns
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard React tooling (React 19+, JSX/TSX). No special setup
+      required beyond a working React frontend environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # React Custom Hooks Best Practices

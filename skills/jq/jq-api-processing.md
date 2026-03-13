@@ -9,12 +9,13 @@ description: >-
   pipelines from the command line.
 difficulty: beginner
 tags:
+  - jq
+  - processing
   - api
-  - json
-  - data-extraction
-  - filtering
-  - aggregation
-  - curl-integration
+  - responses
+  - automation
+  - debugging
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +23,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - jq installed
-  - curl or httpie for API calls
 faq:
-  - question: How do I extract a single field from a JSON API response?
+  - question: "When should I use the Processing API Responses with jq skill?"
     answer: >-
-      Pipe through jq with the field path: curl -sS url | jq '.data.name'. For
-      arrays: jq '.data[].name'. For raw string output (no quotes): jq -r
-      '.data.name'. Chain with select() to filter: jq '.data[] | select(.id ==
-      5) | .name'.
-  - question: How do I handle paginated API responses with jq?
+      Transform API JSON responses with jq — extracting fields, filtering
+      arrays, reshaping data, pagination handling, and building API data
+      processing pipelines from the command line. This skill provides a
+      structured workflow for development tasks.
+  - question: "What tools and setup does Processing API Responses with jq require?"
     answer: >-
-      Loop with page counter: fetch each page, process with jq, break when
-      results are fewer than the page size. Store results in a file and process
-      after: while fetch; do jq '.data[]' >> all.json; done. Or use jq --slurp
-      to combine multiple API calls.
-  - question: How do I validate an API response structure with jq?
-    answer: >-
-      Use jq -e for boolean assertions: curl url | jq -e '.data | length > 0'
-      checks the array is non-empty. Check required fields: jq -e '.data |
-      all(.id and .name)' verifies all items have id and name. The -e flag exits
-      non-zero on false/null for script error handling.
-relatedItems:
-  - jq-object-construction
-  - jq-array-operations
-  - jq-data-transformer
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Requires pip/poetry installed. Works with jq projects. No additional
+      configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Processing API Responses with jq

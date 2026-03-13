@@ -2,18 +2,22 @@
 id: scoop-export-import
 stackId: scoop
 type: skill
-name: Scoop Export & Import for Reproducible Environments
+name: >-
+  Scoop Export & Import for Reproducible Environments
 description: >-
   Create reproducible Windows environments with Scoop export/import — backup
-  installed apps, share configurations across machines, and automate environment
-  provisioning.
-difficulty: beginner
+  installed apps, share configurations across machines, and automate
+  environment provisioning.
+difficulty: intermediate
 tags:
-  - scoop-export
+  - scoop
+  - export
+  - import
   - reproducible
-  - environment-setup
-  - windows-provisioning
-  - backup
+  - environments
+  - testing
+  - migration
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,28 +26,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Scoop installed on Windows
-  - PowerShell 5.1+
 faq:
-  - question: How do I backup my Scoop packages?
+  - question: "When should I use the Scoop Export & Import for Reproducible Environments skill?"
     answer: >-
-      Run 'scoop export > ~/scoop-packages.json' to create a JSON snapshot of
-      all installed apps, buckets, and versions. Store this file in your
-      dotfiles repository. Restore on any machine with 'scoop import
-      ~/scoop-packages.json'.
-  - question: What is the Windows equivalent of a Brewfile?
+      Create reproducible Windows environments with Scoop export/import —
+      backup installed apps, share configurations across machines, and
+      automate environment provisioning. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Scoop Export & Import for Reproducible Environments require?"
     answer: >-
-      Scoop's export JSON file serves the same purpose as Homebrew's Brewfile.
-      Run 'scoop export' to generate it. It lists all buckets and installed apps
-      with versions. Import with 'scoop import' on a new machine for
-      reproducible environments.
-relatedItems:
-  - scoop-environment-manager
-  - scoop-bucket-management
-  - scoop-automation-agent
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard scoop tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Scoop Export & Import for Reproducible Environments

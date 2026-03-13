@@ -7,13 +7,16 @@ description: >-
   Set up multi-node Minikube clusters for testing distributed systems, pod
   anti-affinity, node selectors, and failure scenarios in local Kubernetes
   development.
-difficulty: intermediate
+difficulty: advanced
 tags:
+  - minikube
+  - create
   - multi-node
-  - pod-affinity
-  - topology-spread
-  - failure-testing
-  - node-management
+  - clusters
+  - testing
+  - deployment
+  - docker
+  - kubernetes
 compatibility:
   - claude-code
   - cursor
@@ -21,28 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - minikube 1.30+
-  - Docker driver
-  - 8GB+ RAM available
 faq:
-  - question: How do I create a multi-node Kubernetes cluster with minikube?
+  - question: "When should I use the Create Multi-Node Minikube Clusters skill?"
     answer: >-
-      Use 'minikube start --nodes 3' to create a 3-node cluster. The first node
-      becomes the control plane, and additional nodes are workers. You can add
-      and remove nodes dynamically with 'minikube node add' and 'minikube node
-      delete'.
-  - question: Can I simulate node failures with minikube?
+      Set up multi-node Minikube clusters for testing distributed systems, pod
+      anti-affinity, node selectors, and failure scenarios in local Kubernetes
+      development. This skill provides a structured workflow for development
+      tasks.
+  - question: "What tools and setup does Create Multi-Node Minikube Clusters require?"
     answer: >-
-      Yes. Use 'minikube node stop <name>' to stop a node, simulating a failure.
-      Kubernetes will detect the node as NotReady and reschedule pods to healthy
-      nodes. Restart with 'minikube node start <name>' to simulate recovery.
-relatedItems:
-  - minikube-addon-management
-  - minikube-dev-environment
-  - minikube-testing-agent
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker, kubectl installed. Works with minikube projects. No
+      additional configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Create Multi-Node Minikube Clusters

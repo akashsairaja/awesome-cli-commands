@@ -8,25 +8,23 @@ description: >-
   size constraints and composable animation primitives.
 difficulty: advanced
 tags:
+  - aitools
   - slack
   - gif
   - creator
-  - slack-gif-creator
-  - aitools
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the slack-gif-creator skill?"
+  - question: "When should I use the Slack GIF Creator skill?"
     answer: >-
       Toolkit for creating animated GIFs optimized for Slack, with validators
-      for size constraints and composable animation primitives. This skill
-      applies when users request animated GIFs or emoji animations for Slack
-      from descriptions like "make me a GIF for Slack of X doing Y".
-  - question: "What tools or setup does slack-gif-creator require?"
+      for size constraints and composable animation primitives. It includes
+      practical examples for AI/ML development development.
+  - question: "What tools and setup does Slack GIF Creator require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Works with standard AI & ML Tools tooling (LLM APIs, embedding models).
+      No special setup required beyond a working AI/ML development
+      environment.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

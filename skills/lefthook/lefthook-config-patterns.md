@@ -5,15 +5,16 @@ type: skill
 name: Lefthook Configuration Patterns
 description: >-
   Design lefthook.yml configurations with parallel execution, glob filtering,
-  staged file targeting, and multi-hook orchestration for fast, focused Git hook
-  workflows.
+  staged file targeting, and multi-hook orchestration for fast, focused Git
+  hook workflows.
 difficulty: beginner
 tags:
-  - configuration
-  - parallel
-  - glob-filtering
-  - lefthook-yml
   - lefthook
+  - configuration
+  - patterns
+  - machine-learning
+  - best-practices
+  - type-safety
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +23,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Lefthook installed
-  - Git repository
 faq:
-  - question: How do I configure Lefthook for a new project?
+  - question: "When should I use the Lefthook Configuration Patterns skill?"
     answer: >-
-      Create lefthook.yml in your project root. Define hooks (pre-commit,
-      commit-msg, pre-push) with commands. Each command specifies a glob pattern
-      and a run command. Use 'parallel: true' for independent checks. Run
-      'lefthook install' to activate hooks.
-  - question: How does Lefthook handle staged files?
+      Design lefthook.yml configurations with parallel execution, glob
+      filtering, staged file targeting, and multi-hook orchestration for fast,
+      focused Git hook workflows. It includes practical examples for lefthook
+      development.
+  - question: "What tools and setup does Lefthook Configuration Patterns require?"
     answer: >-
-      Use {staged_files} in the run command to pass only staged files to your
-      tool. Combined with glob filtering, this means only relevant, staged files
-      are checked — for example, ESLint runs only on staged .ts files, not the
-      entire codebase.
-  - question: Can Lefthook run different tools for different file types?
-    answer: >-
-      Yes. Define multiple commands with different glob patterns: one for *.ts
-      (ESLint), one for *.css (Stylelint), one for *.py (Ruff). Each command
-      runs only when matching files are staged. With parallel: true, they all
-      run simultaneously.
-relatedItems:
-  - lefthook-monorepo-setup
-  - lefthook-remote-hooks
-  - lefthook-hook-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm installed. Works with lefthook projects. Review
+      the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Lefthook Configuration Patterns

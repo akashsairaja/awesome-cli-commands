@@ -9,11 +9,13 @@ description: >-
   long-lived branches.
 difficulty: intermediate
 tags:
-  - trunk-based-development
-  - feature-flags
-  - branching-strategy
-  - continuous-delivery
+  - git
+  - trunk-based
+  - development
+  - feature
+  - flags
   - ci-cd
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,44 +24,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Git 2.30+
-  - 'CI/CD pipeline (GitHub Actions, GitLab CI, etc.)'
-  - Feature flag system (optional but recommended)
 faq:
-  - question: What is trunk-based development in Git?
+  - question: "When should I use the Trunk-Based Development with Feature Flags skill?"
     answer: >-
-      Trunk-based development is a Git workflow where developers integrate
-      small, incremental changes directly to the main branch (trunk) at least
-      once per day. Instead of long-lived feature branches, developers use
-      short-lived branches (1-2 days max) and feature flags to hide incomplete
-      work.
-  - question: How is trunk-based development different from Git Flow?
+      Master trunk-based development — the modern Git workflow where
+      developers integrate small changes to main daily, using feature flags
+      instead of long-lived branches. This skill provides a structured
+      workflow for branching strategies, workflow automation, hook scripts,
+      and repository maintenance.
+  - question: "What tools and setup does Trunk-Based Development with Feature Flags require?"
     answer: >-
-      Git Flow uses multiple long-lived branches (develop, release, hotfix) and
-      features branches that can live for weeks. Trunk-based development uses
-      only main plus short-lived feature branches (1-2 days). TBD is simpler,
-      reduces merge conflicts, and enables continuous delivery.
-  - question: Can trunk-based development work for large teams?
-    answer: >-
-      Yes — Google, Meta, and Microsoft use trunk-based development with
-      thousands of engineers. The keys are: automated CI that runs fast (<10
-      min), feature flags for incomplete work, small focused PRs, and strong
-      code review culture.
-  - question: >-
-      What are feature flags and why are they needed for trunk-based
-      development?
-    answer: >-
-      Feature flags are conditional switches in code that enable or disable
-      features at runtime. In trunk-based development, they let you merge
-      incomplete code to main safely — the flag keeps it hidden from users until
-      the feature is complete and tested.
-relatedItems:
-  - git-commit-conventions
-  - git-interactive-rebase
-  - github-pr-workflow
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Git tooling (Git CLI, git hooks). No special setup
+      required beyond a working version control environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Trunk-Based Development with Feature Flags

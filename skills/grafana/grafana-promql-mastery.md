@@ -4,15 +4,19 @@ stackId: grafana
 type: skill
 name: Write Effective PromQL Queries for Grafana
 description: >-
-  Master PromQL for Grafana dashboards — rate calculations, histogram quantiles,
-  label filtering, aggregations, and common patterns for monitoring services.
+  Master PromQL for Grafana dashboards — rate calculations, histogram
+  quantiles, label filtering, aggregations, and common patterns for monitoring
+  services.
 difficulty: intermediate
 tags:
+  - grafana
+  - write
+  - effective
   - promql
-  - prometheus
   - queries
-  - metrics
+  - performance
   - monitoring
+  - debugging
 compatibility:
   - claude-code
   - cursor
@@ -20,34 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Grafana with Prometheus data source
-  - Application instrumented with Prometheus metrics
 faq:
-  - question: What is the difference between rate() and irate() in PromQL?
+  - question: "When should I use the Write Effective PromQL Queries for Grafana skill?"
     answer: >-
-      rate() calculates the per-second average rate over the entire range (e.g.,
-      5 minutes), producing smooth graphs. irate() uses only the last two data
-      points, producing volatile graphs that show instant spikes. Use rate() for
-      dashboards and alerting, irate() only for debugging specific moments.
-  - question: How do I calculate percentile latency in PromQL?
+      Master PromQL for Grafana dashboards — rate calculations, histogram
+      quantiles, label filtering, aggregations, and common patterns for
+      monitoring services. This skill provides a structured workflow for
+      dashboard creation, alerting, PromQL queries, and monitoring setup.
+  - question: "What tools and setup does Write Effective PromQL Queries for Grafana require?"
     answer: >-
-      Use histogram_quantile() with rate() on histogram buckets:
-      histogram_quantile(0.95, sum by (le)
-      (rate(http_request_duration_seconds_bucket[5m]))). The 'le' label (less
-      than or equal) must be preserved in the sum aggregation for the quantile
-      calculation to work correctly.
-  - question: What range should I use in rate() for PromQL queries?
-    answer: >-
-      Use [5m] for dashboard panels — it provides smooth, readable graphs. Use
-      [1m] or [2m] for alert rules — shorter ranges detect issues faster. The
-      range should be at least 4x your scrape interval to ensure enough data
-      points for accurate calculation.
-relatedItems:
-  - grafana-dashboard-architect
-  - grafana-alerting-setup
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Grafana tooling (Grafana CLI, Grafana API). No
+      special setup required beyond a working observability environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Write Effective PromQL Queries for Grafana

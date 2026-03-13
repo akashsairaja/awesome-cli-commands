@@ -8,12 +8,13 @@ description: >-
   recording, screenshot capture, and spec balancing for optimal build times.
 difficulty: intermediate
 tags:
-  - ci-cd
-  - github-actions
-  - parallel-testing
   - cypress
+  - cicd
   - pipeline
-  - automation
+  - configuration
+  - ci-cd
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,35 +22,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Cypress 13+
-  - GitHub Actions (or equivalent CI)
-  - Node.js 18+
 faq:
-  - question: How do I run Cypress tests in GitHub Actions?
+  - question: "When should I use the Cypress CI/CD Pipeline Configuration skill?"
     answer: >-
-      Use the official cypress-io/github-action@v6 action. Configure it with
-      'start' to launch your app, 'wait-on' to wait for it to be ready, and
-      'record: true' with 'parallel: true' for distributed execution. Upload
-      screenshots and videos as artifacts.
-  - question: How do I speed up Cypress CI runs?
+      Set up Cypress in CI/CD with GitHub Actions — parallel test execution,
+      video recording, screenshot capture, and spec balancing for optimal
+      build times. This skill provides a structured workflow for development
+      tasks.
+  - question: "What tools and setup does Cypress CI/CD Pipeline Configuration require?"
     answer: >-
-      Use parallel execution with matrix strategy (3-4 containers). Enable spec
-      balancing via Cypress Cloud. Cache node_modules and the Cypress binary.
-      Use cy.session() for auth caching. Keep individual specs under 2 minutes.
-      Use retries for flaky infrastructure issues.
-  - question: Should I record videos for every Cypress CI run?
-    answer: >-
-      Yes in CI for debugging failures. Set video: true and upload as artifacts.
-      Locally, set video: false to save disk space and speed up runs. Videos are
-      invaluable for understanding why a test failed in CI when you cannot
-      reproduce locally.
-relatedItems:
-  - cypress-custom-commands
-  - cypress-intercept-patterns
-  - cypress-e2e-strategist
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm, pip/poetry, Cypress installed. Works with
+      cypress projects. Review the configuration section for project-specific
+      setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Cypress CI/CD Pipeline Configuration

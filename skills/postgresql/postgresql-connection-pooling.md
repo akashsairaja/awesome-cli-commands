@@ -4,16 +4,17 @@ stackId: postgresql
 type: skill
 name: PostgreSQL Connection Pooling with PgBouncer
 description: >-
-  Configure PgBouncer for PostgreSQL connection pooling — transaction vs session
-  pooling, sizing pool limits, monitoring connections, and handling prepared
-  statements.
+  Configure PgBouncer for PostgreSQL connection pooling — transaction vs
+  session pooling, sizing pool limits, monitoring connections, and handling
+  prepared statements.
 difficulty: intermediate
 tags:
+  - postgresql
+  - connection
+  - pooling
   - pgbouncer
-  - connection-pooling
-  - performance
-  - scaling
-  - configuration
+  - docker
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -21,41 +22,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-languages:
-  - sql
-  - bash
-prerequisites:
-  - PostgreSQL 14+
-  - Linux/Docker for PgBouncer installation
 faq:
-  - question: What is PostgreSQL connection pooling and why do I need it?
+  - question: "When should I use the PostgreSQL Connection Pooling with PgBouncer skill?"
     answer: >-
-      Connection pooling reuses a small set of database connections across many
-      application clients. Without it, each app instance opens its own
-      connections, quickly exhausting PostgreSQL's max_connections limit
-      (default 100) and consuming excessive memory (~10MB per connection).
-  - question: >-
-      What is the difference between transaction and session pooling in
-      PgBouncer?
+      Configure PgBouncer for PostgreSQL connection pooling — transaction vs
+      session pooling, sizing pool limits, monitoring connections, and
+      handling prepared statements. This skill provides a structured workflow
+      for query optimization, index strategy, connection pooling, and
+      migration safety.
+  - question: "What tools and setup does PostgreSQL Connection Pooling with PgBouncer require?"
     answer: >-
-      Transaction pooling returns the connection to the pool after each
-      transaction — most efficient, supports thousands of clients on few
-      connections, but cannot use session-level features (SET, prepared
-      statements, LISTEN/NOTIFY). Session pooling holds a connection for the
-      entire client session — less efficient but supports all PostgreSQL
-      features.
-  - question: How do I size my PgBouncer connection pool?
-    answer: >-
-      Set default_pool_size to the number of concurrent queries your database
-      can handle efficiently (typically 2-4x CPU cores). Set max_db_connections
-      to 80% of PostgreSQL's max_connections. Set max_client_conn much higher
-      (1000+) since PgBouncer handles idle clients with minimal overhead.
-relatedItems:
-  - postgresql-query-optimizer
-  - postgresql-monitoring
-  - database-connection-management
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker installed. Works with PostgreSQL projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # PostgreSQL Connection Pooling with PgBouncer

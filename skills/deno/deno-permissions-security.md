@@ -2,55 +2,41 @@
 id: deno-permissions-security
 stackId: deno
 type: skill
-name: Deno Permissions & Security Model
+name: >-
+  Deno Permissions & Security Model
 description: >-
   Master Deno's permission-based security model — configuring granular file,
-  network, and environment access for secure-by-default TypeScript applications.
-difficulty: beginner
+  network, and environment access for secure-by-default TypeScript
+  applications.
+difficulty: intermediate
 tags:
+  - deno
   - permissions
   - security
-  - least-privilege
-  - deno-run
-  - supply-chain
+  - model
+  - deployment
+  - api
+  - prompting
+  - best-practices
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-languages:
-  - typescript
-  - javascript
-prerequisites:
-  - Deno 2.0+
 faq:
-  - question: How does Deno's permission system work?
+  - question: "When should I use the Deno Permissions & Security Model skill?"
     answer: >-
-      Deno scripts run with zero permissions by default. You must explicitly
-      grant access to the filesystem (--allow-read), network (--allow-net),
-      environment variables (--allow-env), and subprocess execution
-      (--allow-run). Permissions can be scoped to specific paths, hosts, and
-      variable names for granular control.
-  - question: Why is Deno more secure than Node.js?
+      Master Deno's permission-based security model — configuring granular
+      file, network, and environment access for secure-by-default TypeScript
+      applications. This skill provides a structured workflow for development
+      tasks.
+  - question: "What tools and setup does Deno Permissions & Security Model require?"
     answer: >-
-      Node.js grants full system access to all code including dependencies — any
-      npm package can read files, make network requests, or access environment
-      variables. Deno requires explicit permission for each capability, so a
-      malicious dependency cannot exfiltrate data or access the filesystem
-      without your knowledge.
-  - question: Can I request permissions at runtime in Deno?
-    answer: >-
-      Yes. Use Deno.permissions.request() to prompt the user for specific
-      permissions at runtime. Use Deno.permissions.query() to check current
-      permission state without prompting. This enables progressive permission
-      acquisition — request access only when the feature that needs it is used.
-relatedItems:
-  - deno-std-library
-  - deno-testing-patterns
-  - deno-deploy-setup
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm installed. Works with deno projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Deno Permissions & Security Model

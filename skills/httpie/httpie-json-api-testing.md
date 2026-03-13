@@ -7,14 +7,15 @@ description: >-
   Test JSON APIs effectively with HTTPie — request construction, JSON type
   handling, response inspection, and building readable API test workflows with
   automatic content negotiation.
-difficulty: beginner
+difficulty: intermediate
 tags:
+  - httpie
   - json
-  - api-testing
-  - get
-  - post
-  - put
-  - content-type
+  - api
+  - testing
+  - debugging
+  - best-practices
+  - type-safety
 compatibility:
   - claude-code
   - cursor
@@ -22,32 +23,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - HTTPie installed (pip install httpie)
 faq:
-  - question: How do I send nested JSON with HTTPie?
+  - question: "When should I use the JSON API Testing with HTTPie skill?"
     answer: >-
-      Two ways: 1) Use nested key syntax: address[city]='NYC'
-      address[zip]='10001'. 2) Use := with JSON string:
-      address:='{"city":"NYC","zip":"10001"}'. The nested key syntax is more
-      readable for simple objects.
-  - question: 'What is the difference between = and := in HTTPie?'
+      Test JSON APIs effectively with HTTPie — request construction, JSON type
+      handling, response inspection, and building readable API test workflows
+      with automatic content negotiation. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does JSON API Testing with HTTPie require?"
     answer: >-
-      = sends string values: age=30 sends {"age": "30"}. := sends raw JSON:
-      age:=30 sends {"age": 30}. Use := for numbers, booleans, arrays, and
-      objects. Use = for strings. This is the most common HTTPie mistake.
-  - question: How do I pretty-print JSON responses in HTTPie?
-    answer: >-
-      HTTPie pretty-prints and colorizes JSON by default when output goes to a
-      terminal. For piped output, use --pretty=all to force formatting. Use
-      --pretty=none for raw output. Use --style=monokai (or other pygments
-      style) to change colors.
-relatedItems:
-  - httpie-auth-methods
-  - httpie-file-transfers
-  - httpie-api-expert
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Requires pip/poetry installed. Works with httpie projects. No additional
+      configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # JSON API Testing with HTTPie

@@ -4,16 +4,18 @@ stackId: zsh
 type: skill
 name: Custom Zsh Functions for Developer Workflows
 description: >-
-  Create powerful Zsh shell functions with argument parsing, error handling, and
-  interactive features for project management, git workflows, and system
+  Create powerful Zsh shell functions with argument parsing, error handling,
+  and interactive features for project management, git workflows, and system
   automation.
 difficulty: intermediate
 tags:
-  - zsh-functions
-  - shell-scripting
-  - automation
-  - fzf
-  - developer-tools
+  - zsh
+  - custom
+  - functions
+  - developer
+  - workflows
+  - docker
+  - refactoring
 compatibility:
   - claude-code
   - cursor
@@ -21,27 +23,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Zsh 5.8+
-  - 'fzf (optional, for interactive selection)'
 faq:
-  - question: How do I create a reusable Zsh function?
+  - question: "When should I use the Custom Zsh Functions for Developer Workflows skill?"
     answer: >-
-      Define it in .zshrc with 'funcname() { ... }'. Use 'local' for variables,
-      validate $# for argument count, and return exit codes. For complex
-      functions, put them in separate files under ~/.zsh/functions/ and source
-      them from .zshrc.
-  - question: How do I add argument parsing to Zsh functions?
+      Create powerful Zsh shell functions with argument parsing, error
+      handling, and interactive features for project management, git
+      workflows, and system automation. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Custom Zsh Functions for Developer Workflows require?"
     answer: >-
-      Use a while loop with case statement: 'while [[ $# -gt 0 ]]; do case $1 in
-      -v) verbose=true;; *) break;; esac; shift; done'. For complex options, use
-      zparseopts: 'zparseopts -D -E v=verbose h=help'.
-relatedItems:
-  - zsh-alias-library
-  - zsh-config-specialist
-  - zsh-completion-config
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Docker installed. Works with zsh projects. No additional
+      configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Custom Zsh Functions for Developer Workflows

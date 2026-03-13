@@ -9,11 +9,14 @@ description: >-
   Azure Key Vault and Container Registry.
 difficulty: advanced
 tags:
+  - azure
   - aks
+  - cluster
+  - configuration
+  - security
+  - deployment
+  - api
   - kubernetes
-  - azure-networking
-  - workload-identity
-  - container-registry
 compatibility:
   - claude-code
   - cursor
@@ -21,33 +24,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Azure subscription
-  - Azure CLI 2.60+
-  - Kubernetes basics
 faq:
-  - question: What is Azure Workload Identity for AKS?
+  - question: "When should I use the Azure AKS Cluster Configuration skill?"
     answer: >-
-      Workload Identity allows Kubernetes pods to authenticate to Azure services
-      using managed identities without storing credentials. It uses OIDC
-      federation between AKS and Azure AD. Pods get short-lived tokens
-      automatically. It replaces the deprecated pod identity v1
-      (aad-pod-identity) and is the recommended approach for AKS workloads
-      accessing Azure resources.
-  - question: Should I use kubenet or Azure CNI for AKS networking?
+      Deploy and configure production-ready AKS clusters with managed
+      identity, Azure CNI, node pool auto-scaling, workload identity, and
+      integration with Azure Key Vault and Container Registry. This skill
+      provides a structured workflow for resource management, serverless
+      functions, AKS configuration, and infrastructure automation.
+  - question: "What tools and setup does Azure AKS Cluster Configuration require?"
     answer: >-
-      Use Azure CNI for production. It assigns VNet IP addresses directly to
-      pods, enabling VNet-native communication, NetworkPolicy enforcement with
-      Calico, and Private Endpoint connectivity. Kubenet uses a separate pod
-      CIDR with NAT, which limits networking features and complicates security.
-      Azure CNI Overlay is the latest option combining VNet integration with
-      flexible IP addressing.
-relatedItems:
-  - azure-rbac-governance
-  - azure-cli-patterns
-  - kubernetes-pod-security
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Azure CLI installed. Works with Azure projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Azure AKS Cluster Configuration

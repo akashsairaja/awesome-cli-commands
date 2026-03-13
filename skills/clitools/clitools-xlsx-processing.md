@@ -8,26 +8,24 @@ description: >-
   formulas, formatting, data analysis, and visualization.
 difficulty: advanced
 tags:
-  - xlsx
-  - processing
   - clitools
+  - xlsx
+  - spreadsheet
+  - processing
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the xlsx skill?"
+  - question: "When should I use the XLSX Spreadsheet Processing skill?"
     answer: >-
       Comprehensive spreadsheet creation, editing, and analysis with support
-      for formulas, formatting, data analysis, and visualization. When Claude
-      needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1)
-      Creating new spreadsheets with formulas and formatting, (2) Reading or
-      analyzing data, (3) Modify existing spreadsheets while preserving
-      formulas, (4) Data analysis and visualization in spreadsheets, or (5)
-      Recalculating formulas
-  - question: "What tools or setup does xlsx require?"
+      for formulas, formatting, data analysis, and visualization. This skill
+      provides a structured workflow for API design, documentation,
+      architecture patterns, and development workflows.
+  - question: "What tools and setup does XLSX Spreadsheet Processing require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Works with standard CLI & Dev Tools tooling (various CLI tools, code
+      generators). Review the setup section in the skill content for specific
+      configuration steps.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

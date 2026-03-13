@@ -3,27 +3,31 @@ id: claudecode-skill-creator
 stackId: claudecode
 type: skill
 name: Skill Creator
-description: Guide for creating effective skills.
+description: >-
+  This skill provides guidance for creating effective skills. Skills are
+  modular, self-contained packages that extend Claude's capabilities by
+  providing specialized knowledge, workflows, and tools.
 difficulty: intermediate
 tags:
-  - skill
-  - creator
-  - skill-creator
   - claudecode
+  - creator
+  - api
+  - machine-learning
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the skill-creator skill?"
+  - question: "When should I use the Skill Creator skill?"
     answer: >-
-      Guide for creating effective skills. This skill should be used when
-      users want to create a new skill (or update an existing skill) that
-      extends Claude's capabilities with specialized knowledge, workflows, or
-      tool integrations.
-  - question: "What tools or setup does skill-creator require?"
+      This skill provides guidance for creating effective skills. Skills are
+      modular, self-contained packages that extend Claude's capabilities by
+      providing specialized knowledge, workflows, and tools. This skill
+      provides a structured workflow for AI-assisted development, code
+      generation, refactoring, and debugging.
+  - question: "What tools and setup does Skill Creator require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Works with standard Claude Code tooling (Claude Code CLI, CLAUDE.md
+      configuration). No special setup required beyond a working AI coding
+      assistant environment.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

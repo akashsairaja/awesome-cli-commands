@@ -9,11 +9,12 @@ description: >-
   applications.
 difficulty: intermediate
 tags:
+  - supabase
+  - build
+  - real-time
+  - features
   - realtime
-  - websocket
-  - presence
-  - broadcast
-  - live-updates
+  - security
 compatibility:
   - claude-code
   - cursor
@@ -21,35 +22,21 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Supabase project with Realtime enabled
-  - React/Next.js application
 faq:
-  - question: What are the three real-time primitives in Supabase?
+  - question: "When should I use the Build Real-Time Features with Supabase Realtime skill?"
     answer: >-
-      Supabase Realtime provides three primitives: (1) Postgres Changes — listen
-      for INSERT, UPDATE, DELETE events on database tables. (2) Presence — track
-      online users and their state. (3) Broadcast — send messages between
-      clients without database writes. All three use WebSocket connections
-      managed by Supabase.
-  - question: Does Supabase Realtime respect Row Level Security?
+      Implement real-time subscriptions with Supabase — database changes,
+      presence tracking, broadcast messaging, and optimistic UI updates for
+      collaborative applications. This skill provides a structured workflow
+      for auth configuration, database migrations, real-time subscriptions,
+      and edge functions.
+  - question: "What tools and setup does Build Real-Time Features with Supabase Realtime require?"
     answer: >-
-      Yes. Real-time subscriptions to Postgres Changes are filtered by RLS
-      policies. Users only receive events for rows they have permission to read.
-      This means you can safely subscribe to table changes without worrying
-      about unauthorized data leaking through real-time events.
-  - question: When should I use broadcast vs database changes in Supabase?
-    answer: >-
-      Use broadcast for ephemeral data that does not need persistence — typing
-      indicators, cursor positions, temporary notifications. Use database
-      changes when the data must be stored permanently — new messages, updated
-      records, deleted items. Broadcast is faster since it skips the database
-      entirely.
-relatedItems:
-  - supabase-auth-setup
-  - supabase-rls-architect
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard Supabase tooling (Supabase CLI, Supabase Dashboard).
+      No special setup required beyond a working Supabase platform
+      environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Build Real-Time Features with Supabase Realtime

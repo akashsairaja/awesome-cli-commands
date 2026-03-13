@@ -9,12 +9,13 @@ description: >-
   failures.
 difficulty: intermediate
 tags:
-  - ci-cd
-  - github-actions
-  - sharding
-  - parallel-testing
   - playwright
+  - cicd
   - pipeline
+  - setup
+  - deployment
+  - ci-cd
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -22,36 +23,21 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Playwright 1.40+
-  - GitHub Actions (or equivalent CI)
-  - Node.js 18+
 faq:
-  - question: How do I run Playwright tests in GitHub Actions?
+  - question: "When should I use the Playwright CI/CD Pipeline Setup skill?"
     answer: >-
-      Install Node.js and dependencies, run 'npx playwright install --with-deps'
-      to get browsers with OS-level dependencies, then run 'npx playwright
-      test'. Upload the playwright-report directory as an artifact for HTML
-      reports, and test-results for traces on failure.
-  - question: What is Playwright test sharding?
+      Configure Playwright tests in CI/CD pipelines with GitHub Actions —
+      parallel execution, artifact collection, sharding, and trace uploads for
+      debugging failures. This skill provides a structured workflow for
+      end-to-end testing, visual regression, API testing, and CI/CD
+      integration.
+  - question: "What tools and setup does Playwright CI/CD Pipeline Setup require?"
     answer: >-
-      Sharding splits your test suite across multiple parallel CI jobs. With
-      '--shard=1/4', each job runs 25% of tests simultaneously. A 20-minute
-      suite becomes ~5 minutes with 4 shards. Use the merge-reports command to
-      combine results afterward.
-  - question: How do I debug Playwright failures in CI?
-    answer: >-
-      Configure 'trace: on-first-retry' in playwright.config.ts and upload the
-      test-results directory as an artifact on failure. Download the trace file
-      and open it with 'npx playwright show-trace trace.zip' — it shows
-      screenshots, DOM snapshots, network requests, and console logs for every
-      action.
-relatedItems:
-  - playwright-test-architect
-  - playwright-fixture-design
-  - playwright-visual-testing
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm, pip/poetry, Playwright installed. Works with
+      Playwright projects. Review the configuration section for
+      project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Playwright CI/CD Pipeline Setup

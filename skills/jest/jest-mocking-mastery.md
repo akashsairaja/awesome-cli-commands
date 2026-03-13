@@ -9,11 +9,14 @@ description: >-
   meaningful.
 difficulty: intermediate
 tags:
-  - mocking
-  - jest-mock
-  - spy-on
-  - test-isolation
   - jest
+  - mocking
+  - strategies
+  - jestmock
+  - spyon
+  - testing
+  - api
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,36 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Jest 29+
-  - TypeScript (recommended)
-  - Module system basics
 faq:
-  - question: What is the difference between jest.mock and jest.spyOn?
+  - question: "When should I use the Mocking Strategies with jest.mock and spyOn skill?"
     answer: >-
-      jest.mock() replaces an entire module with mock implementations — all
-      exports become jest.fn(). jest.spyOn() wraps a single method on an
-      existing object, letting you monitor calls or override behavior while
-      keeping other methods real. Use mock for external dependencies, spyOn for
-      partial mocking.
-  - question: How do I mock async functions in Jest?
+      Master Jest mocking — learn when to use jest.mock, jest.spyOn, and
+      manual mocks to isolate units under test while keeping tests
+      maintainable and meaningful. It includes practical examples for
+      JavaScript testing development.
+  - question: "What tools and setup does Mocking Strategies with jest.mock and spyOn require?"
     answer: >-
-      Use mockResolvedValue() for successful async returns and
-      mockRejectedValue() for errors: mockFn.mockResolvedValue({ data: 'result'
-      }) or mockFn.mockRejectedValue(new Error('fail')). For multiple calls,
-      chain with mockResolvedValueOnce().
-  - question: Why do my Jest mocks leak between tests?
-    answer: >-
-      Jest mocks persist across tests in the same file unless explicitly
-      cleared. Add jest.restoreAllMocks() in an afterEach block, or set
-      restoreMocks: true in jest.config.ts. This resets mock state and restores
-      original implementations between tests.
-relatedItems:
-  - jest-async-patterns
-  - jest-testing-strategist
-  - jest-snapshot-testing
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires Jest installed. Works with Jest projects. No additional
+      configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Mocking Strategies with jest.mock and spyOn

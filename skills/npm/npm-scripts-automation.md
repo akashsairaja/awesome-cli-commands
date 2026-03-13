@@ -2,18 +2,21 @@
 id: npm-scripts-automation
 stackId: npm
 type: skill
-name: NPM Scripts & Lifecycle Hooks
+name: >-
+  NPM Scripts & Lifecycle Hooks
 description: >-
   Master npm scripts for task automation — custom scripts, lifecycle hooks,
   cross-platform commands, script composition, and replacing Makefiles with
   package.json scripts.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - npm-scripts
-  - automation
-  - lifecycle-hooks
-  - task-runner
-  - cross-platform
+  - npm
+  - scripts
+  - lifecycle
+  - hooks
+  - testing
+  - best-practices
+  - type-safety
 compatibility:
   - claude-code
   - cursor
@@ -23,38 +26,19 @@ compatibility:
   - amazon-q
   - aider
   - tabnine
-languages:
-  - javascript
-  - typescript
-prerequisites:
-  - npm 9+
 faq:
-  - question: What npm lifecycle hooks are available?
+  - question: "When should I use the NPM Scripts & Lifecycle Hooks skill?"
     answer: >-
-      NPM supports pre/post hooks for any script: prebuild runs before build,
-      postbuild runs after. Special hooks include: prepare (runs after install,
-      before publish), prepublishOnly (runs before npm publish), preinstall,
-      postinstall. Use prepare for husky setup and prepublishOnly for build
-      validation.
-  - question: How do I run multiple npm scripts in parallel?
+      Master npm scripts for task automation — custom scripts, lifecycle
+      hooks, cross-platform commands, script composition, and replacing
+      Makefiles with package.json scripts. It includes practical examples for
+      JavaScript package management development.
+  - question: "What tools and setup does NPM Scripts & Lifecycle Hooks require?"
     answer: >-
-      Use the concurrently package: 'concurrently "tsc -w" "nodemon server.js"'.
-      Alternatively, use npm-run-all: 'run-p build:* ' runs all scripts starting
-      with 'build:' in parallel. For sequential execution, chain with && or use
-      run-s from npm-run-all.
-  - question: Should I use npm scripts or a task runner like Gulp?
-    answer: >-
-      Use npm scripts for most projects — they are universal, require no
-      additional dependencies, and cover most automation needs. Consider a task
-      runner only for complex build pipelines with file watching, streaming
-      transforms, and conditional logic that would be unwieldy as shell
-      commands.
-relatedItems:
-  - npm-workspaces-monorepo
-  - npm-dependency-management
-  - npm-package-publishing
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm installed. Works with npm/pnpm/yarn projects.
+      Review the configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # NPM Scripts & Lifecycle Hooks

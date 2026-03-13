@@ -7,13 +7,14 @@ description: >-
   Install and configure TPM for tmux plugin management — essential plugins for
   session persistence, clipboard integration, status themes, and pane
   navigation.
-difficulty: beginner
+difficulty: intermediate
 tags:
+  - tmux
+  - plugin
+  - manager
   - tpm
-  - tmux-plugins
-  - tmux-resurrect
-  - tmux-continuum
-  - plugin-manager
+  - setup
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +23,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - tmux 3.0+
-  - Git installed
 faq:
-  - question: What is TPM and how do I install tmux plugins?
+  - question: "When should I use the Tmux Plugin Manager (TPM) Setup skill?"
     answer: >-
-      TPM (Tmux Plugin Manager) is the standard plugin manager for tmux. Install
-      it with 'git clone https://github.com/tmux-plugins/tpm
-      ~/.tmux/plugins/tpm', add plugins to tmux.conf with 'set -g @plugin', then
-      press prefix + I inside tmux to install them.
-  - question: How do I persist tmux sessions across reboots?
+      Install and configure TPM for tmux plugin management — essential plugins
+      for session persistence, clipboard integration, status themes, and pane
+      navigation. This skill provides a structured workflow for development
+      tasks.
+  - question: "What tools and setup does Tmux Plugin Manager (TPM) Setup require?"
     answer: >-
-      Install tmux-resurrect and tmux-continuum via TPM. Resurrect
-      saves/restores sessions manually (prefix+Ctrl+s/r). Continuum auto-saves
-      every 15 minutes and auto-restores on tmux start. Together they ensure you
-      never lose your workspace layout.
-  - question: What are the must-have tmux plugins?
-    answer: >-
-      The essential stack is: tmux-sensible (sane defaults), tmux-resurrect
-      (session persistence), tmux-continuum (auto save/restore), tmux-yank
-      (clipboard integration), and vim-tmux-navigator (seamless Vim/tmux pane
-      navigation). These five cover 90% of needs.
-relatedItems:
-  - tmux-session-architect
-  - tmux-copy-mode
-  - tmux-scripted-sessions
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard tmux tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Tmux Plugin Manager (TPM) Setup

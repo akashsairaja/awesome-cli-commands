@@ -3,28 +3,27 @@ id: aitools-canvas-design
 stackId: aitools
 type: skill
 name: Canvas Design
-description: Create beautiful visual art in.
+description: >-
+  These are instructions for creating design philosophies - aesthetic
+  movements that are then EXPRESSED VISUALLY. Output only.
 difficulty: intermediate
 tags:
+  - aitools
   - canvas
   - design
-  - canvas-design
-  - aitools
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the canvas-design skill?"
+  - question: "When should I use the Canvas Design skill?"
     answer: >-
-      Create beautiful visual art in .png and .pdf documents using design
-      philosophy. You should use this skill when the user asks to create a
-      poster, piece of art, design, or other static piece. Create original
-      visual designs, never copying existing artists' work to avoid copyright
-      violations.
-  - question: "What tools or setup does canvas-design require?"
+      These are instructions for creating design philosophies - aesthetic
+      movements that are then EXPRESSED VISUALLY. Output only. It includes
+      practical examples for AI/ML development development.
+  - question: "What tools and setup does Canvas Design require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Works with standard AI & ML Tools tooling (LLM APIs, embedding models).
+      No special setup required beyond a working AI/ML development
+      environment.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

@@ -2,18 +2,19 @@
 id: homebrew-maintenance
 stackId: homebrew
 type: skill
-name: Homebrew Maintenance & Cleanup
+name: >-
+  Homebrew Maintenance & Cleanup
 description: >-
   Keep Homebrew healthy with regular maintenance — safe upgrades, cleanup
   routines, doctor diagnostics, pinning critical versions, and disk space
   recovery.
-difficulty: beginner
+difficulty: intermediate
 tags:
+  - homebrew
   - maintenance
   - cleanup
-  - brew-doctor
-  - upgrades
-  - disk-space
+  - security
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,27 +23,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Homebrew installed
 faq:
-  - question: How do I safely upgrade Homebrew packages?
+  - question: "When should I use the Homebrew Maintenance & Cleanup skill?"
     answer: >-
-      Run 'brew update' to refresh definitions, 'brew outdated' to review
-      pending upgrades, then upgrade selectively by category. Upgrade CLI tools
-      freely, but backup databases before upgrading them. Pin critical versions
-      with 'brew pin'. Follow with 'brew doctor' and 'brew cleanup'.
-  - question: How much disk space does Homebrew use and how do I reclaim it?
+      Keep Homebrew healthy with regular maintenance — safe upgrades, cleanup
+      routines, doctor diagnostics, pinning critical versions, and disk space
+      recovery. This skill provides a structured workflow for development
+      tasks.
+  - question: "What tools and setup does Homebrew Maintenance & Cleanup require?"
     answer: >-
-      Homebrew can accumulate 10GB+ of old versions. Check with 'du -sh $(brew
-      --cellar)'. Reclaim space with 'brew cleanup --prune=30' (removes versions
-      older than 30 days) and 'brew autoremove' (removes unused dependencies).
-      Run monthly.
-relatedItems:
-  - homebrew-brewfile-design
-  - homebrew-system-manager
-  - homebrew-troubleshooter
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard homebrew tooling (relevant CLI tools and
+      frameworks). Review the setup section in the skill content for specific
+      configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Homebrew Maintenance & Cleanup

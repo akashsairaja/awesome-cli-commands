@@ -7,50 +7,34 @@ description: >-
   Leverage Deno's standard library for common tasks — file operations, HTTP
   serving, path manipulation, encoding, and datetime utilities without
   third-party dependencies.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - standard-library
-  - std
-  - built-in-modules
-  - file-system
-  - http-server
+  - deno
+  - standard
+  - library
+  - essentials
+  - api
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
   - copilot
   - codex
   - windsurf
-languages:
-  - typescript
-prerequisites:
-  - Deno 2.0+
 faq:
-  - question: What is included in Deno's standard library?
+  - question: "When should I use the Deno Standard Library Essentials skill?"
     answer: >-
-      Deno's @std library includes modules for file system operations (fs), path
-      manipulation (path), HTTP serving, encoding (base64, hex), cryptographic
-      hashing, YAML/TOML/CSV parsing, assertions, testing utilities, datetime
-      formatting, and streaming utilities. All modules are audited by the Deno
-      team.
-  - question: Should I use Deno standard library or npm packages?
+      Leverage Deno's standard library for common tasks — file operations,
+      HTTP serving, path manipulation, encoding, and datetime utilities
+      without third-party dependencies. It includes practical examples for
+      deno development.
+  - question: "What tools and setup does Deno Standard Library Essentials require?"
     answer: >-
-      Prefer the standard library when it covers your use case. It has zero
-      external dependencies, is audited for security, and follows consistent API
-      patterns. Use npm packages only for functionality the standard library
-      doesn't provide, like database drivers, complex HTTP frameworks, or
-      domain-specific libraries.
-  - question: How do I import Deno standard library modules?
-    answer: >-
-      Import from @std/ with the module name: import { parse } from '@std/yaml'.
-      In deno.json, map @std to specific versions using the imports field. Deno
-      2.0+ supports bare specifiers with import maps, so you don't need full
-      URLs like older Deno versions required.
-relatedItems:
-  - deno-permissions-security
-  - deno-testing-patterns
-  - deno-deploy-setup
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires npm/yarn/pnpm installed. Works with deno projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Deno Standard Library Essentials

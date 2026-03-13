@@ -2,17 +2,17 @@
 id: scoop-cleanup-maintenance
 stackId: scoop
 type: skill
-name: Scoop Cleanup & Maintenance
+name: >-
+  Scoop Cleanup & Maintenance
 description: >-
   Keep Scoop installations clean and performant — cleanup old versions, reset
   broken apps, manage cache, and resolve common Windows-specific issues.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - scoop-cleanup
+  - scoop
+  - cleanup
   - maintenance
-  - cache
-  - disk-space
-  - shims
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -20,27 +20,18 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - Scoop installed on Windows
 faq:
-  - question: How do I clean up disk space used by Scoop?
+  - question: "When should I use the Scoop Cleanup & Maintenance skill?"
     answer: >-
-      Run 'scoop cleanup *' to remove old versions of all apps. Add '--cache' to
-      also clear downloaded files. Check space with 'scoop cache show'. Monthly
-      cleanup typically recovers 500MB-2GB. Use 'scoop cleanup * --dry-run' to
-      preview before cleaning.
-  - question: How do I fix broken Scoop shims?
+      Keep Scoop installations clean and performant — cleanup old versions,
+      reset broken apps, manage cache, and resolve common Windows-specific
+      issues. It includes practical examples for scoop development.
+  - question: "What tools and setup does Scoop Cleanup & Maintenance require?"
     answer: >-
-      Run 'scoop reset <app>' to recreate shims and shortcuts for a specific
-      app, or 'scoop reset *' for all apps. This fixes PATH issues, missing
-      executables, and stale shim pointers. It's the Scoop equivalent of 'brew
-      link --overwrite'.
-relatedItems:
-  - scoop-environment-manager
-  - scoop-export-import
-  - scoop-bucket-management
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard scoop tooling (relevant CLI tools and frameworks).
+      No special setup required beyond a working scoop environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Scoop Cleanup & Maintenance

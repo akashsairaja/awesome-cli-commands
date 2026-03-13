@@ -2,20 +2,20 @@
 id: postgresql-index-strategy
 stackId: postgresql
 type: skill
-name: PostgreSQL Index Strategy & Design
+name: >-
+  PostgreSQL Index Strategy & Design
 description: >-
   Master PostgreSQL indexing — B-tree, GIN, GiST, BRIN index types, partial
   indexes, covering indexes, and composite index column ordering for optimal
   query performance.
-difficulty: intermediate
+difficulty: advanced
 tags:
-  - indexing
-  - b-tree
-  - gin
-  - gist
-  - brin
-  - partial-index
+  - postgresql
+  - index
+  - strategy
+  - design
   - performance
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -24,38 +24,20 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - sql
-prerequisites:
-  - PostgreSQL 14+
-  - Basic SQL knowledge
-  - Understanding of EXPLAIN output
 faq:
-  - question: What are the different index types in PostgreSQL?
+  - question: "When should I use the PostgreSQL Index Strategy & Design skill?"
     answer: >-
-      PostgreSQL supports B-tree (default, for equality/range), GIN (full-text
-      search, JSONB, arrays), GiST (geometric data, range types,
-      nearest-neighbor), BRIN (large naturally-ordered tables like time-series),
-      and Hash (equality only, rarely used). B-tree and GIN cover 95% of use
-      cases.
-  - question: How do I choose the right column order for a composite index?
+      Master PostgreSQL indexing — B-tree, GIN, GiST, BRIN index types,
+      partial indexes, covering indexes, and composite index column ordering
+      for optimal query performance. This skill provides a structured workflow
+      for query optimization, index strategy, connection pooling, and
+      migration safety.
+  - question: "What tools and setup does PostgreSQL Index Strategy & Design require?"
     answer: >-
-      Put equality columns first (WHERE status = 'active'), then range columns
-      (AND created_at > '2025-01-01'). The index can only use columns
-      left-to-right up to the first range condition. A query using only the
-      second column of a composite index cannot use the index at all.
-  - question: What is a partial index and when should I use one?
-    answer: >-
-      A partial index includes only rows matching a WHERE condition. Use them
-      when queries consistently filter on a constant value — e.g., WHERE status
-      = 'active' on a table where 90% of rows are inactive. The index is
-      dramatically smaller and faster to scan.
-relatedItems:
-  - postgresql-query-optimizer
-  - postgresql-explain-analyze
-  - postgresql-migration-safety
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard PostgreSQL tooling (psql, pg_dump). No special setup
+      required beyond a working PostgreSQL database environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # PostgreSQL Index Strategy & Design

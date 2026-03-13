@@ -5,15 +5,15 @@ type: skill
 name: Scoop Bucket Management
 description: >-
   Manage Scoop buckets for comprehensive package coverage — add official and
-  community buckets, create custom buckets for internal tools, and organize app
-  sources.
-difficulty: beginner
+  community buckets, create custom buckets for internal tools, and organize
+  app sources.
+difficulty: intermediate
 tags:
-  - scoop-buckets
-  - package-sources
-  - custom-manifests
-  - app-management
-  - windows-packages
+  - scoop
+  - bucket
+  - management
+  - deployment
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,27 +22,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - Scoop installed on Windows
 faq:
-  - question: What are Scoop buckets?
+  - question: "When should I use the Scoop Bucket Management skill?"
     answer: >-
-      Scoop buckets are Git repositories containing JSON manifest files that
-      describe how to install applications. The 'main' bucket ships with Scoop.
-      Add 'extras' for GUI apps, 'versions' for specific tool versions, and
-      'nerd-fonts' for terminal fonts. Create custom buckets for internal tools.
-  - question: Which Scoop buckets should I add first?
+      Manage Scoop buckets for comprehensive package coverage — add official
+      and community buckets, create custom buckets for internal tools, and
+      organize app sources. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does Scoop Bucket Management require?"
     answer: >-
-      Add 'extras' (essential — most dev tools are there), 'versions' (for
-      specific runtime versions), and 'nerd-fonts' (for terminal customization).
-      These three cover 95% of developer needs. Add 'java' if you need JDK
-      distributions.
-relatedItems:
-  - scoop-environment-manager
-  - scoop-export-import
-  - scoop-manifest-creation
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard scoop tooling (relevant CLI tools and frameworks).
+      No special setup required beyond a working scoop environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Scoop Bucket Management

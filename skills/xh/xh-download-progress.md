@@ -2,19 +2,21 @@
 id: xh-download-progress
 stackId: xh
 type: skill
-name: File Downloads & Progress with xh
+name: >-
+  File Downloads & Progress with xh
 description: >-
   Download files with xh — progress bars, output control, authenticated
   downloads, large file handling, and integrating downloads into automation
   scripts.
 difficulty: beginner
 tags:
-  - download
+  - xh
+  - file
+  - downloads
   - progress
-  - files
   - automation
-  - authenticated
-  - scripting
+  - api
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,32 +24,19 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - xh installed
 faq:
-  - question: How do I download a file with xh?
+  - question: "When should I use the File Downloads & Progress with xh skill?"
     answer: >-
-      Use --download flag: xh --download url. xh shows a progress bar and saves
-      with the server-suggested filename. Use --output=name to specify the
-      filename. For authenticated downloads: xh --download -A bearer -a $TOKEN
-      url.
-  - question: How do I download files silently in scripts?
+      Download files with xh — progress bars, output control, authenticated
+      downloads, large file handling, and integrating downloads into
+      automation scripts. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does File Downloads & Progress with xh require?"
     answer: >-
-      Use --quiet: xh --download --quiet --output=file.zip url. Combine with
-      --check-status for error handling: xh --download --quiet --check-status
-      --output=file.zip url || echo 'Failed'. Check exit code: 0=success,
-      non-zero=error.
-  - question: How do I check file size before downloading?
-    answer: >-
-      Send a HEAD request: xh --print=h HEAD url | grep -i content-length. This
-      returns the file size without downloading. Useful for checking available
-      disk space. Note: not all servers support HEAD or return Content-Length.
-relatedItems:
-  - xh-request-basics
-  - xh-response-handling
-  - xh-http-client
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Requires pip/poetry installed. Works with xh projects. No additional
+      configuration needed beyond standard tooling.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # File Downloads & Progress with xh

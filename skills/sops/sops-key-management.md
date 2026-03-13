@@ -2,19 +2,22 @@
 id: sops-key-management
 stackId: sops
 type: skill
-name: SOPS Key Management & Rotation
+name: >-
+  SOPS Key Management & Rotation
 description: >-
   Manage encryption keys for SOPS — generating and distributing age keys,
   integrating with AWS KMS and GCP KMS, key rotation procedures, and handling
   team member onboarding and offboarding.
-difficulty: advanced
+difficulty: intermediate
 tags:
-  - key-management
+  - sops
+  - key
+  - management
   - rotation
-  - onboarding
-  - offboarding
-  - kms
-  - recovery
+  - security
+  - api
+  - ci-cd
+  - machine-learning
 compatibility:
   - claude-code
   - cursor
@@ -22,34 +25,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - SOPS installed
-  - age or cloud KMS configured
 faq:
-  - question: What is the difference between key rotation and data key rotation?
+  - question: "When should I use the SOPS Key Management & Rotation skill?"
     answer: >-
-      Data key rotation (sops --rotate): generates a new random data key and
-      re-encrypts the file content. The master keys (age/KMS) remain the same.
-      Master key rotation: generate new age key or KMS key, update .sops.yaml,
-      then run sops updatekeys to re-encrypt data keys with new master keys.
-  - question: What do I do when a team member leaves?
+      Manage encryption keys for SOPS — generating and distributing age keys,
+      integrating with AWS KMS and GCP KMS, key rotation procedures, and
+      handling team member onboarding and offboarding. This skill provides a
+      structured workflow for development tasks.
+  - question: "What tools and setup does SOPS Key Management & Rotation require?"
     answer: >-
-      1) Remove their age public key from .sops.yaml. 2) Run sops updatekeys on
-      all encrypted files. 3) Run sops --rotate on all files. 4) Rotate any
-      actual secrets they had access to (passwords, tokens). Steps 2-3 ensure
-      they can't decrypt even if they kept their private key.
-  - question: How do I recover if all age keys are lost?
-    answer: >-
-      If you also use cloud KMS, you can still decrypt (KMS handles key
-      management). Generate new age keys and update .sops.yaml. If ALL keys (age
-      AND KMS) are lost, the secrets are unrecoverable. Always maintain at least
-      two independent key types for redundancy.
-relatedItems:
-  - sops-encrypt-decrypt
-  - sops-yaml-rules
-  - sops-secret-manager
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Works with standard sops tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # SOPS Key Management & Rotation

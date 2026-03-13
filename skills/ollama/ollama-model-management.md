@@ -2,18 +2,22 @@
 id: ollama-model-management
 stackId: ollama
 type: skill
-name: Model Management & Organization
+name: >-
+  Model Management & Organization
 description: >-
   Master Ollama model lifecycle — pulling, listing, copying, removing models,
-  managing storage, and organizing custom model variants for efficient local AI
-  development.
-difficulty: beginner
+  managing storage, and organizing custom model variants for efficient local
+  AI development.
+difficulty: intermediate
 tags:
-  - model-management
-  - ollama-pull
-  - storage
-  - custom-models
+  - ollama
+  - model
+  - management
   - organization
+  - performance
+  - api
+  - best-practices
+  - type-safety
 compatibility:
   - claude-code
   - cursor
@@ -21,33 +25,19 @@ compatibility:
   - codex
   - windsurf
   - aider
-prerequisites:
-  - Ollama installed
 faq:
-  - question: How do I manage Ollama model storage?
+  - question: "When should I use the Model Management & Organization skill?"
     answer: >-
-      Use 'ollama list' to see all models with sizes, 'ollama rm <model>' to
-      remove unused ones. Models are stored in ~/.ollama/models (Linux/Mac) or
-      C:\Users\<user>\.ollama\models (Windows). Regularly remove models you
-      haven't used in 30+ days to free disk space.
-  - question: What quantization level should I use for Ollama models?
+      Master Ollama model lifecycle — pulling, listing, copying, removing
+      models, managing storage, and organizing custom model variants for
+      efficient local AI development. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Model Management & Organization require?"
     answer: >-
-      Q4_K_M offers the best balance of speed and quality for most tasks. Q5_K_M
-      provides slightly better quality at ~15% more memory. Use Q8_0 only if you
-      have ample VRAM and need maximum quality. Avoid Q2/Q3 — quality drops
-      significantly.
-  - question: How do I create a custom Ollama model for coding?
-    answer: >-
-      Create a Modelfile that specifies a base model (FROM), system prompt
-      (SYSTEM), and parameters (temperature, context size). Build it with
-      'ollama create my-coder -f Modelfile'. Customize the system prompt for
-      your language/framework.
-relatedItems:
-  - ollama-api-integration
-  - ollama-embedding-setup
-  - ollama-model-manager
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard ollama tooling (relevant CLI tools and frameworks).
+      No special setup required beyond a working ollama environment.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # Model Management & Organization

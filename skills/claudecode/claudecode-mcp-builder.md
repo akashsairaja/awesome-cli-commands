@@ -8,25 +8,26 @@ description: >-
   enable LLMs to interact with external services through well-designed tools.
 difficulty: intermediate
 tags:
+  - claudecode
   - mcp
   - builder
-  - mcp-builder
-  - claudecode
+  - performance
+  - api
+  - best-practices
 compatibility:
   - claude-code
 faq:
-  - question: "When should I use the mcp-builder skill?"
+  - question: "When should I use the MCP Builder skill?"
     answer: >-
       Guide for creating high-quality MCP (Model Context Protocol) servers
       that enable LLMs to interact with external services through
-      well-designed tools. Use when building MCP servers to integrate external
-      APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP
-      SDK).
-  - question: "What tools or setup does mcp-builder require?"
+      well-designed tools. This skill provides a structured workflow for
+      AI-assisted development, code generation, refactoring, and debugging.
+  - question: "What tools and setup does MCP Builder require?"
     answer: >-
-      This skill works with Claude Code out of the box. Review the skill
-      content for any specific tool or package requirements mentioned in the
-      instructions.
+      Works with standard Claude Code tooling (Claude Code CLI, CLAUDE.md
+      configuration). Review the setup section in the skill content for
+      specific configuration steps.
 version: "1.0.0"
 lastUpdated: "2026-03-12"
 ---

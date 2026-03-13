@@ -9,11 +9,14 @@ description: >-
   structured logging and X-Ray tracing.
 difficulty: intermediate
 tags:
+  - aws
   - lambda
-  - serverless
-  - cold-start
+  - best
+  - practices
+  - performance
   - optimization
-  - powertools
+  - debugging
+  - api
 compatibility:
   - claude-code
   - cursor
@@ -22,33 +25,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-languages:
-  - typescript
-  - python
-  - go
-prerequisites:
-  - AWS account
-  - Lambda basics
-  - Node.js or Python
 faq:
-  - question: How do I reduce AWS Lambda cold start time?
+  - question: "When should I use the AWS Lambda Best Practices skill?"
     answer: >-
-      Four key strategies: (1) Initialize SDK clients outside the handler. (2)
-      Keep deployment packages small (under 50 MB). (3) Use provisioned
-      concurrency for latency-sensitive functions. (4) Choose a fast runtime —
-      Node.js and Python have faster cold starts than Java/.NET. Avoid
-      VPC-attached Lambda unless necessary (adds ~1s cold start).
-  - question: What is the best memory setting for AWS Lambda?
+      Build efficient AWS Lambda functions with proper memory sizing, cold
+      start optimization, connection pooling, error handling, and
+      observability using structured logging and X-Ray tracing. It includes
+      practical examples for AWS cloud development.
+  - question: "What tools and setup does AWS Lambda Best Practices require?"
     answer: >-
-      Start with 1769 MB which gives exactly 1 full vCPU. Lambda CPU scales
-      linearly with memory, so 128 MB gets only 0.08 vCPU — often making
-      execution slower AND more expensive. Use AWS Lambda Power Tuning to find
-      the optimal memory/cost balance for your specific function.
-relatedItems:
-  - aws-iam-security-architect
-  - aws-s3-security
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard AWS tooling (AWS CLI, CloudFormation). Review the
+      setup section in the skill content for specific configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # AWS Lambda Best Practices

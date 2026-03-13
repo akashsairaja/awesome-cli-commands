@@ -2,19 +2,22 @@
 id: sops-encrypt-decrypt
 stackId: sops
 type: skill
-name: Encrypting & Decrypting Files with SOPS
+name: >-
+  Encrypting & Decrypting Files with SOPS
 description: >-
   Encrypt and decrypt secret files with SOPS — YAML, JSON, ENV, and binary
   formats using age keys, in-place editing, selective field encryption, and
   extracting individual secrets.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - encrypt
-  - decrypt
-  - age
-  - yaml
-  - json
-  - env-files
+  - sops
+  - encrypting
+  - decrypting
+  - files
+  - security
+  - testing
+  - machine-learning
+  - best-practices
 compatibility:
   - claude-code
   - cursor
@@ -22,35 +25,20 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-prerequisites:
-  - SOPS installed
-  - age installed (for age keys)
 faq:
-  - question: How do I start using SOPS for the first time?
+  - question: "When should I use the Encrypting & Decrypting Files with SOPS skill?"
     answer: >-
-      1) Install sops and age. 2) Generate key: age-keygen -o key.txt. 3) Set
-      SOPS_AGE_KEY_FILE=./key.txt. 4) Encrypt: sops --encrypt --age PUBLIC_KEY
-      secrets.yaml > secrets.enc.yaml. 5) Decrypt: sops --decrypt
-      secrets.enc.yaml. 6) Edit: sops secrets.enc.yaml. Add key.txt to
-      .gitignore.
-  - question: How do I encrypt only specific fields?
+      Encrypt and decrypt secret files with SOPS — YAML, JSON, ENV, and binary
+      formats using age keys, in-place editing, selective field encryption,
+      and extracting individual secrets. This skill provides a structured
+      workflow for development tasks.
+  - question: "What tools and setup does Encrypting & Decrypting Files with SOPS require?"
     answer: >-
-      Use --encrypted-regex: sops --encrypt --encrypted-regex
-      '^(password|token|secret)$' --age KEY file.yaml. Only fields matching the
-      regex are encrypted, others stay plaintext. This makes diffs more readable
-      and allows non-sensitive config to be inspected without decryption.
-  - question: How do I add a new team member to encrypted files?
-    answer: >-
-      Add their age public key to the .sops.yaml creation rules or to the
-      command line. Then rotate all encrypted files: find . -name '*.enc.yaml'
-      -exec sops updatekeys {} \;. This re-encrypts the data key for all
-      recipients. The new member can now decrypt with their private key.
-relatedItems:
-  - sops-yaml-rules
-  - sops-key-management
-  - sops-secret-manager
-version: 1.0.0
-lastUpdated: '2026-03-12'
+      Works with standard sops tooling (relevant CLI tools and frameworks).
+      Review the setup section in the skill content for specific configuration
+      steps.
+version: "1.0.0"
+lastUpdated: "2026-03-12"
 ---
 
 # Encrypting & Decrypting Files with SOPS

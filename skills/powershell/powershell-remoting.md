@@ -2,19 +2,17 @@
 id: powershell-remoting
 stackId: powershell
 type: skill
-name: PowerShell Remoting & Invoke-Command
+name: >-
+  PowerShell Remoting & Invoke-Command
 description: >-
   Execute PowerShell commands on remote machines — WinRM configuration,
   Invoke-Command patterns, persistent sessions, credential management, and
   cross-platform SSH remoting.
-difficulty: intermediate
+difficulty: advanced
 tags:
+  - powershell
   - remoting
   - invoke-command
-  - winrm
-  - ssh
-  - remote-management
-  - powershell
 compatibility:
   - claude-code
   - cursor
@@ -22,30 +20,21 @@ compatibility:
   - codex
   - windsurf
   - amazon-q
-languages:
-  - powershell
-prerequisites:
-  - PowerShell 7.0+
-  - WinRM or SSH configured on targets
 faq:
-  - question: What is the difference between Invoke-Command and Enter-PSSession?
+  - question: "When should I use the PowerShell Remoting & Invoke-Command skill?"
     answer: >-
-      Invoke-Command runs a script block on remote machines non-interactively —
-      it is scriptable, supports multiple computers simultaneously, and returns
-      results as objects. Enter-PSSession starts an interactive remote session
-      (like SSH) for one machine. Use Invoke-Command for automation and
-      Enter-PSSession for troubleshooting.
-  - question: Can PowerShell remoting work between Windows and Linux?
+      Execute PowerShell commands on remote machines — WinRM configuration,
+      Invoke-Command patterns, persistent sessions, credential management, and
+      cross-platform SSH remoting. This skill provides a structured workflow
+      for system administration, script automation, pipeline operations, and
+      remote management.
+  - question: "What tools and setup does PowerShell Remoting & Invoke-Command require?"
     answer: >-
-      Yes, PowerShell 7+ supports SSH-based remoting which works cross-platform
-      (Windows to Linux, Linux to Windows, Linux to Linux). Install PowerShell
-      on both machines, configure the SSH subsystem, and use -HostName parameter
-      instead of -ComputerName. No WinRM needed.
-relatedItems:
-  - powershell-automation-architect
-  - powershell-error-handling
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Works with standard PowerShell tooling (PowerShell Core, Windows
+      PowerShell). Review the setup section in the skill content for specific
+      configuration steps.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # PowerShell Remoting & Invoke-Command

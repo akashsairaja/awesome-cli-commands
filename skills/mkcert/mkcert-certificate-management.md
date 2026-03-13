@@ -7,13 +7,14 @@ description: >-
   Manage mkcert certificates across teams — generation scripts, rotation, CA
   installation verification, and troubleshooting trust issues in development
   environments.
-difficulty: beginner
+difficulty: intermediate
 tags:
-  - certificate-management
-  - team-setup
-  - onboarding
-  - troubleshooting
-  - ca-verification
+  - mkcert
+  - certificate
+  - lifecycle
+  - management
+  - security
+  - api
 compatibility:
   - claude-code
   - cursor
@@ -22,32 +23,19 @@ compatibility:
   - windsurf
   - amazon-q
   - aider
-prerequisites:
-  - mkcert installed
-  - Shell scripting basics
 faq:
-  - question: How long do mkcert certificates last?
+  - question: "When should I use the mkcert Certificate Lifecycle Management skill?"
     answer: >-
-      mkcert certificates are valid for about 2 years and 3 months from
-      generation. Check expiration with 'openssl x509 -in cert.pem -enddate
-      -noout'. Regenerate by running the same mkcert command that created them.
-  - question: Can I add a new domain to an existing mkcert certificate?
+      Manage mkcert certificates across teams — generation scripts, rotation,
+      CA installation verification, and troubleshooting trust issues in
+      development environments. This skill provides a structured workflow for
+      development tasks.
+  - question: "What tools and setup does mkcert Certificate Lifecycle Management require?"
     answer: >-
-      No. You must regenerate the certificate with all domains included. Run the
-      mkcert command again with the full list of domains (old and new). The new
-      certificate replaces the old one.
-  - question: Why does Firefox not trust my mkcert certificates?
-    answer: >-
-      Firefox uses its own certificate store (NSS) separate from the system
-      store. Install libnss3-tools (Linux) or nss (macOS via Homebrew) before
-      running 'mkcert -install'. If already installed without NSS tools,
-      reinstall them and run 'mkcert -install' again.
-relatedItems:
-  - mkcert-framework-integration
-  - mkcert-docker-https
-  - mkcert-local-https-specialist
-version: 1.0.0
-lastUpdated: '2026-03-11'
+      Requires pip/poetry installed. Works with mkcert projects. Review the
+      configuration section for project-specific setup.
+version: "1.0.0"
+lastUpdated: "2026-03-11"
 ---
 
 # mkcert Certificate Lifecycle Management
